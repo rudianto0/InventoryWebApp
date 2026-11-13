@@ -1,0 +1,98 @@
+@model DashboardSummary
+@{
+    ViewData["Title"] = "Dashboard";
+    var locations = (IReadOnlyList<SelectOption>)ViewBag.Locations;
+    var locationId = ViewBag.LocationId as int?;
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h4 class="mb-0">Dashboard</h4>
+    <form method="get" class="d-flex gap-2">
+        <select name="locationId" class="form-select form-select-sm" asp-items="@(new SelectList(locations, "Id", "Text", locationId))">
+            <option value="">Semua Lokasi</option>
+        </select>
+        <button type="submit" class="btn btn-sm btn-outline-primary">Filter</button>
+    </form>
+</div>
+
+<div class="row g-3 mb-4">
+    <div class="col-6 col-lg-3">
+        <div class="card shadow-sm h-100"><div class="card-body">
+            <div class="text-muted small">Total Produk Aktif</div>
+            <div class="fs-3 fw-semibold">@Model.TotalProducts</div>
+        </div></div>
+    </div>
+    <div class="col-6 col-lg-3">
+        <div class="card shadow-sm h-100"><div class="card-body">
+            <div class="text-muted small">Total Saldo Stok</div>
+            <div class="fs-3 fw-semibold">@Model.TotalStockQuantity.ToString("N4")</div>
+        </div></div>
+    </div>
+    <div class="col-6 col-lg-3">
+        <div class="card shadow-sm h-100"><div class="card-body">
+            <div class="text-muted small">Di Bawah Reorder Level</div>
+            <div class="fs-3 fw-semibold text-danger">@Model.BelowReorderCount</div>
+        </div></div>
+    </div>
+    <div class="col-6 col-lg-3">
+        <div class="card shadow-sm h-100"><div class="card-body">
+            <div class="text-muted small">Menunggu Approval</div>
+            <div class="fs-3 fw-semibold text-warning">@Model.PendingApprovals</div>
+        </div></div>
+    </div>
+</div>
+
+<div class="row g-3">
+    <div class="col-lg-6">
+        <div class="card shadow-sm h-100">
+            <div class="card-header bg-white fw-semibold">Reorder Alert</div>
+            <div class="table-responsive">
+                <table class="table table-sm mb-0">
+                    <thead><tr><th>SKU</th><th>Produk</th><th>Lokasi</th><th class="text-end">Stok</th><th class="text-end">Reorder</th></tr></thead>
+                    <tbody>
+                    @if (Model.ReorderItems.Count == 0)
+                    {
+                        <tr><td colspan="5" class="text-center text-muted py-3">Tidak ada produk di bawah reorder level.</td></tr>
+                    }
+                    @foreach (var item in Model.ReorderItems)
+                    {
+                        <tr>
+                            <td>@item.Sku</td>
+                            <td>@item.ProductName</td>
+                            <td>@item.LocationName</td>
+                            <td class="text-end text-danger">@item.Quantity.ToString("N4")</td>
+                            <td class="text-end">@item.ReorderLevel</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card shadow-sm h-100">
+            <div class="card-header bg-white fw-semibold">Mutasi Terakhir</div>
+            <div class="table-responsive">
+                <table class="table table-sm mb-0">
+                    <thead><tr><th>Waktu</th><th>No</th><th>Produk</th><th>Lokasi</th><th class="text-end">Qty</th></tr></thead>
+                    <tbody>
+                    @if (Model.RecentMovements.Count == 0)
+                    {
+                        <tr><td colspan="5" class="text-center text-muted py-3">Belum ada mutasi stok.</td></tr>
+                    }
+                    @foreach (var item in Model.RecentMovements)
+                    {
+                        <tr>
+                            <td>@item.CreatedAt.ToLocalTime().ToString("dd/MM/yyyy HH:mm")</td>
+                            <td>@item.MovementNo</td>
+                            <td>@item.Sku - @item.ProductName</td>
+                            <td>@item.LocationName</td>
+                            <td class="text-end">@item.Quantity.ToString("N4")</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

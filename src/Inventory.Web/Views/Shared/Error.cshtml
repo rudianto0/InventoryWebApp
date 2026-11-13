@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Error";
+    var code = ViewBag.StatusCode as int?;
+}
+
+<div class="text-center mt-5">
+    <h1 class="display-4 text-danger">@(code ?? 500)</h1>
+    <p class="lead">Terjadi kesalahan saat memproses permintaan Anda.</p>
+    <p class="text-muted">Silakan kembali dan coba lagi. Jika masalah berlanjut, hubungi administrator.</p>
+    <a asp-controller="Dashboard" asp-action="Index" class="btn btn-primary">Kembali ke Dashboard</a>
+</div>

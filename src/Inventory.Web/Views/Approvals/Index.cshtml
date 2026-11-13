@@ -1,0 +1,72 @@
+@model IReadOnlyList<ApprovalItem>
+@{
+    ViewData["Title"] = "Approvals";
+    string ControllerFor(string type) => type switch
+    {
+        "StockIn" => "StockIns",
+        "StockOut" => "StockOuts",
+        "StockTransfer" => "StockTransfers",
+        "StockAdjustment" => "StockAdjustments",
+        _ => "StockOpnames"
+    };
+    string LabelFor(string type) => type switch
+    {
+        "StockIn" => "Stock In",
+        "StockOut" => "Stock Out",
+        "StockTransfer" => "Stock Transfer",
+        "StockAdjustment" => "Stock Adjustment",
+        _ => "Stock Opname"
+    };
+}
+
+<h4>Pending Approvals</h4>
+<p class="text-muted">Dokumen berstatus Submitted yang menunggu persetujuan Anda.</p>
+
+<div class="card shadow-sm">
+    <div class="table-responsive">
+        <table class="table table-hover mb-0">
+            <thead><tr><th>Tipe</th><th>No Dokumen</th><th>Tanggal</th><th>Lokasi</th><th>Requester</th><th>Submitted</th><th class="text-end">Aksi</th></tr></thead>
+            <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@LabelFor(item.Type)</td>
+                    <td><a asp-controller="@ControllerFor(item.Type)" asp-action="Details" asp-route-id="@item.Id">@item.DocNo</a></td>
+                    <td>@item.Date.ToLocalTime().ToString("dd/MM/yyyy")</td>
+                    <td>@item.LocationName</td>
+                    <td>@item.RequesterName</td>
+                    <td>@item.SubmittedAt?.ToLocalTime().ToString("dd/MM/yyyy HH:mm")</td>
+                    <td class="text-end text-nowrap">
+                        <form asp-action="Approve" method="post" class="d-inline">
+                            <input type="hidden" name="id" value="@item.Id" />
+                            <input type="hidden" name="type" value="@item.Type" />
+                            <button class="btn btn-sm btn-success" onclick="return confirm('Setujui dokumen ini?')">Approve</button>
+                        </form>
+                        <form asp-action="Reject" method="post" class="d-inline" onsubmit="return setReason(this)">
+                            <input type="hidden" name="id" value="@item.Id" />
+                            <input type="hidden" name="type" value="@item.Type" />
+                            <input type="hidden" name="reason" />
+                            <button class="btn btn-sm btn-outline-danger">Reject</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+            @if (Model.Count == 0)
+            {
+                <tr><td colspan="7" class="text-center text-muted py-3">Tidak ada dokumen yang menunggu approval.</td></tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+<script>
+    function setReason(form) {
+        const reason = prompt('Alasan penolakan:');
+        if (!reason) return false;
+        form.querySelector('input[name="reason"]').value = reason;
+        return true;
+    }
+</script>
+}

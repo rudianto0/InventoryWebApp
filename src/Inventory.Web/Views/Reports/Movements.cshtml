@@ -1,0 +1,34 @@
+@model PagedReportModel<StockMovementItem>
+@{
+    ViewData["Title"] = Model.Title;
+    ViewBag.ReportKey = Model.ReportKey;
+}
+<h4>@Model.Title</h4>
+<partial name="_Filter" model="Model.Filter" />
+<div class="card shadow-sm">
+    <div class="table-responsive">
+        <table class="table table-hover mb-0">
+            <thead><tr><th>Waktu</th><th>No Mutasi</th><th>Tipe</th><th>SKU</th><th>Produk</th><th>Lokasi</th><th class="text-end">Quantity</th><th>Catatan</th></tr></thead>
+            <tbody>
+            @foreach (var item in Model.Result.Items)
+            {
+                <tr>
+                    <td>@item.CreatedAt.ToLocalTime().ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@item.MovementNo</td>
+                    <td>@item.Type</td>
+                    <td>@item.Sku</td>
+                    <td>@item.ProductName</td>
+                    <td>@item.LocationName</td>
+                    <td class="text-end">@item.Quantity.ToString("N4")</td>
+                    <td>@item.Notes</td>
+                </tr>
+            }
+            @if (Model.Result.Items.Count == 0)
+            {
+                <tr><td colspan="8" class="text-center text-muted py-3">Tidak ada mutasi pada periode ini.</td></tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
+<partial name="_Pager" model="Model.Result" />

@@ -1,0 +1,20 @@
+@model ApprovalStatus
+@{
+    var css = Model switch
+    {
+        ApprovalStatus.Draft => "bg-secondary",
+        ApprovalStatus.Submitted => "bg-warning text-dark",
+        ApprovalStatus.Approved => "bg-success",
+        ApprovalStatus.Rejected => "bg-danger",
+        _ => "bg-dark"
+    };
+    var label = Model switch
+    {
+        ApprovalStatus.Draft => "Draft",
+        ApprovalStatus.Submitted => "Submitted",
+        ApprovalStatus.Approved => "Approved",
+        ApprovalStatus.Rejected => "Rejected",
+        _ => "Cancelled"
+    };
+}
+<span class="badge @css">@label</span>

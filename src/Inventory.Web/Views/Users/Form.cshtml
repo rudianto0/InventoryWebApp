@@ -1,0 +1,64 @@
+@model UserFormModel
+@{
+    ViewData["Title"] = Model.Id.HasValue ? "Edit User" : "Tambah User";
+}
+<h4>@ViewData["Title"]</h4>
+<div class="row">
+    <div class="col-md-6">
+        <form method="post" asp-action="@(Model.Id.HasValue ? "Edit" : "Create")" asp-route-id="@Model.Id" class="card card-body shadow-sm">
+            <div asp-validation-summary="ModelOnly" class="text-danger small mb-2"></div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="UserName" class="form-label">Username</label>
+                    <input asp-for="UserName" class="form-control" />
+                    <span asp-validation-for="UserName" class="text-danger small"></span>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label asp-for="FullName" class="form-label">Nama Lengkap</label>
+                    <input asp-for="FullName" class="form-control" />
+                    <span asp-validation-for="FullName" class="text-danger small"></span>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label">Email</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger small"></span>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="RoleName" class="form-label">Role</label>
+                    <select asp-for="RoleName" class="form-select">
+                        <option value="">-- pilih role --</option>
+                        @foreach (var role in Model.Roles)
+                        {
+                            <option value="@role" selected="@(Model.RoleName == role)">@role</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label asp-for="ParentId" class="form-label">Atasan (SPV)</label>
+                    <select asp-for="ParentId" class="form-select" asp-items="@(new SelectList(Model.Parents, "Id", "Text"))">
+                        <option value="">-- tanpa atasan --</option>
+                    </select>
+                </div>
+            </div>
+            @if (!Model.Id.HasValue)
+            {
+                <div class="mb-3">
+                    <label asp-for="Password" class="form-label">Password</label>
+                    <input asp-for="Password" type="password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger small"></span>
+                </div>
+            }
+            <div class="form-check mb-3">
+                <input asp-for="IsActive" class="form-check-input" />
+                <label asp-for="IsActive" class="form-check-label">Aktif</label>
+            </div>
+            <div>
+                <button class="btn btn-primary">Simpan</button>
+                <a class="btn btn-outline-secondary" asp-action="Index">Batal</a>
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

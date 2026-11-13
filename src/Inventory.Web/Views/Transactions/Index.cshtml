@@ -1,0 +1,101 @@
+@model TransactionIndexModel
+@{
+    ViewData["Title"] = Model.Title;
+    var canCreate = User.IsInRole("Admin") || User.IsInRole("Staff");
+    var canApprove = User.IsInRole("Admin") || User.IsInRole("SPV") || User.IsInRole("Manager");
+    var status = Model.Filter.Status;
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h4>@Model.Title</h4>
+    @if (canCreate)
+    {
+        <a class="btn btn-primary" asp-controller="@Model.ControllerName" asp-action="Create">Buat Baru</a>
+    }
+</div>
+
+<form method="get" class="row g-2 mb-3">
+    <div class="col-auto">
+        <select name="status" class="form-select">
+            <option value="">Semua Status</option>
+            @foreach (var value in Enum.GetValues<ApprovalStatus>())
+            {
+                <option value="@value" selected="@(status == value)">@value</option>
+            }
+        </select>
+    </div>
+    <div class="col-auto"><input type="date" name="from" value="@Model.Filter.From?.ToString("yyyy-MM-dd")" class="form-control" /></div>
+    <div class="col-auto"><input type="date" name="to" value="@Model.Filter.To?.ToString("yyyy-MM-dd")" class="form-control" /></div>
+    <div class="col-auto"><button class="btn btn-outline-secondary">Filter</button></div>
+</form>
+
+<div class="card shadow-sm">
+    <div class="table-responsive">
+        <table class="table table-hover mb-0">
+            <thead>
+                <tr>
+                    <th>No Dokumen</th>
+                    <th>Tanggal</th>
+                    <th>Lokasi</th>
+                    @if (Model.ShowSecondaryLocation) { <th>Tujuan</th> }
+                    @if (Model.ShowPartner) { <th>Keterangan</th> }
+                    <th class="text-end">Baris</th>
+                    <th>Status</th>
+                    <th>Dibuat Oleh</th>
+                    <th class="text-end">Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model.Result.Items)
+            {
+                <tr>
+                    <td><a asp-controller="@Model.ControllerName" asp-action="Details" asp-route-id="@item.Id">@item.DocNo</a></td>
+                    <td>@item.Date.ToLocalTime().ToString("dd/MM/yyyy")</td>
+                    <td>@item.LocationName</td>
+                    @if (Model.ShowSecondaryLocation) { <td>@item.SecondaryLocationName</td> }
+                    @if (Model.ShowPartner) { <td>@item.PartnerName</td> }
+                    <td class="text-end">@item.LineCount</td>
+                    <td><partial name="_StatusBadge" model="item.Status" /></td>
+                    <td>@item.CreatedByName</td>
+                    <td class="text-end text-nowrap">
+                        <a class="btn btn-sm btn-outline-secondary" asp-controller="@Model.ControllerName" asp-action="Details" asp-route-id="@item.Id">Detail</a>
+                        @if (item.Status is ApprovalStatus.Draft or ApprovalStatus.Rejected && canCreate)
+                        {
+                            <a class="btn btn-sm btn-outline-primary" asp-controller="@Model.ControllerName" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                            <form asp-controller="@Model.ControllerName" asp-action="Submit" asp-route-id="@item.Id" method="post" class="d-inline">
+                                <button class="btn btn-sm btn-outline-success" onclick="return confirm('Submit dokumen ini untuk approval?')">Submit</button>
+                            </form>
+                        }
+                        @if (item.Status == ApprovalStatus.Submitted && canApprove)
+                        {
+                            <form asp-controller="@Model.ControllerName" asp-action="Approve" asp-route-id="@item.Id" method="post" class="d-inline">
+                                <button class="btn btn-sm btn-success" onclick="return confirm('Setujui dokumen ini?')">Approve</button>
+                            </form>
+                            <form asp-controller="@Model.ControllerName" asp-action="Reject" asp-route-id="@item.Id" method="post" class="d-inline" onsubmit="return setReason(this)">
+                                <input type="hidden" name="reason" />
+                                <button class="btn btn-sm btn-outline-danger">Reject</button>
+                            </form>
+                        }
+                    </td>
+                </tr>
+            }
+            @if (Model.Result.Items.Count == 0)
+            {
+                <tr><td colspan="9" class="text-center text-muted py-3">Belum ada dokumen.</td></tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
+<partial name="_Pager" model="Model.Result" />
+
+@section Scripts {
+<script>
+    function setReason(form) {
+        const reason = prompt('Alasan penolakan:');
+        if (!reason) return false;
+        form.querySelector('input[name="reason"]').value = reason;
+        return true;
+    }
+</script>
+}

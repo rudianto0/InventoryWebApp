@@ -1,0 +1,160 @@
+@model TransactionDetailsModel
+@{
+    ViewData["Title"] = Model.Title;
+    var detail = Model.Detail;
+    var canCreate = User.IsInRole("Admin") || User.IsInRole("Staff");
+    var canApprove = User.IsInRole("Admin") || User.IsInRole("SPV") || User.IsInRole("Manager");
+    var isAdjustLike = Model.Mode is "adjustment" or "opname";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h4>@Model.Title - @detail.DocNo</h4>
+    <div>
+        <partial name="_StatusBadge" model="detail.Status" />
+    </div>
+</div>
+
+<div class="row g-3">
+    <div class="col-lg-8">
+        <div class="card shadow-sm mb-3">
+            <div class="card-header bg-white fw-semibold">Informasi Dokumen</div>
+            <div class="card-body">
+                <div class="row small">
+                    <div class="col-md-4 mb-2"><span class="text-muted">Tanggal:</span> @detail.Date.ToLocalTime().ToString("dd/MM/yyyy")</div>
+                    <div class="col-md-4 mb-2"><span class="text-muted">Lokasi:</span> @detail.LocationName</div>
+                    @if (detail.SecondaryLocationName is not null)
+                    {
+                        <div class="col-md-4 mb-2"><span class="text-muted">Tujuan:</span> @detail.SecondaryLocationName</div>
+                    }
+                    @if (detail.PartnerName is not null)
+                    {
+                        <div class="col-md-4 mb-2"><span class="text-muted">Mitra:</span> @detail.PartnerName</div>
+                    }
+                    @if (detail.Purpose is not null)
+                    {
+                        <div class="col-md-4 mb-2"><span class="text-muted">Purpose:</span> @detail.Purpose</div>
+                    }
+                    @if (detail.Reason is not null)
+                    {
+                        <div class="col-md-4 mb-2"><span class="text-muted">Alasan:</span> @detail.Reason</div>
+                    }
+                    <div class="col-md-4 mb-2"><span class="text-muted">Dibuat oleh:</span> @detail.CreatedByName</div>
+                    <div class="col-md-4 mb-2"><span class="text-muted">Dibuat pada:</span> @detail.CreatedAt.ToLocalTime().ToString("dd/MM/yyyy HH:mm")</div>
+                    @if (detail.ApproverName is not null)
+                    {
+                        <div class="col-md-4 mb-2"><span class="text-muted">Approver:</span> @detail.ApproverName</div>
+                    }
+                    @if (detail.SubmittedAt.HasValue)
+                    {
+                        <div class="col-md-4 mb-2"><span class="text-muted">Submitted:</span> @detail.SubmittedAt.Value.ToLocalTime().ToString("dd/MM/yyyy HH:mm")</div>
+                    }
+                    @if (detail.ApprovedAt.HasValue)
+                    {
+                        <div class="col-md-4 mb-2"><span class="text-muted">Approved:</span> @detail.ApprovedAt.Value.ToLocalTime().ToString("dd/MM/yyyy HH:mm")</div>
+                    }
+                    @if (!string.IsNullOrWhiteSpace(detail.Notes))
+                    {
+                        <div class="col-12 mb-2"><span class="text-muted">Catatan:</span> @detail.Notes</div>
+                    }
+                    @if (!string.IsNullOrWhiteSpace(detail.RejectionReason))
+                    {
+                        <div class="col-12 mb-2"><span class="text-muted">Alasan penolakan:</span> <span class="text-danger">@detail.RejectionReason</span></div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="card shadow-sm">
+            <div class="card-header bg-white fw-semibold">Detail Baris</div>
+            <div class="table-responsive">
+                <table class="table mb-0">
+                    <thead>
+                        <tr>
+                            <th>SKU</th><th>Produk</th><th>Unit</th>
+                            @if (isAdjustLike)
+                            {
+                                <th class="text-end">System Qty</th>
+                                <th class="text-end">Counted Qty</th>
+                                <th class="text-end">Difference</th>
+                            }
+                            else
+                            {
+                                <th class="text-end">Quantity</th>
+                                @if (Model.Mode == "document") { <th class="text-end">Unit Cost</th> }
+                            }
+                            <th>Catatan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var line in detail.Lines)
+                    {
+                        <tr>
+                            <td>@line.Sku</td>
+                            <td>@line.ProductName</td>
+                            <td>@line.UnitName</td>
+                            @if (isAdjustLike)
+                            {
+                                <td class="text-end">@((line.SystemQuantity ?? 0).ToString("N4"))</td>
+                                <td class="text-end">@((line.CountedQuantity ?? 0).ToString("N4"))</td>
+                                <td class="text-end @((line.Difference ?? 0) < 0 ? "text-danger" : "")">@((line.Difference ?? 0).ToString("N4"))</td>
+                            }
+                            else
+                            {
+                                <td class="text-end">@line.Quantity.ToString("N4")</td>
+                                @if (Model.Mode == "document") { <td class="text-end">@(line.UnitCost?.ToString("N4"))</td> }
+                            }
+                            <td>@line.Notes</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="card shadow-sm">
+            <div class="card-header bg-white fw-semibold">Aksi</div>
+            <div class="card-body d-grid gap-2">
+                @if (detail.Status is ApprovalStatus.Draft or ApprovalStatus.Rejected && canCreate)
+                {
+                    <a class="btn btn-outline-primary" asp-controller="@Model.ControllerName" asp-action="Edit" asp-route-id="@detail.Id">
+                        @(Model.Mode == "opname" ? "Input Hasil Hitung" : "Edit Dokumen")
+                    </a>
+                    <form asp-controller="@Model.ControllerName" asp-action="Submit" asp-route-id="@detail.Id" method="post">
+                        <button class="btn btn-success w-100" onclick="return confirm('Submit dokumen ini untuk approval?')">Submit</button>
+                    </form>
+                    <form asp-controller="@Model.ControllerName" asp-action="Delete" asp-route-id="@detail.Id" method="post">
+                        <button class="btn btn-outline-danger w-100" onclick="return confirm('Hapus dokumen draft ini?')">Hapus</button>
+                    </form>
+                }
+                @if (detail.Status == ApprovalStatus.Submitted && canApprove)
+                {
+                    <form asp-controller="@Model.ControllerName" asp-action="Approve" asp-route-id="@detail.Id" method="post">
+                        <div class="mb-2">
+                            <label class="form-label small">Catatan approval (opsional)</label>
+                            <input name="notes" class="form-control form-control-sm" />
+                        </div>
+                        <button class="btn btn-success w-100" onclick="return confirm('Setujui dokumen ini?')">Approve</button>
+                    </form>
+                    <form asp-controller="@Model.ControllerName" asp-action="Reject" asp-route-id="@detail.Id" method="post" onsubmit="return setReason(this)">
+                        <input type="hidden" name="reason" />
+                        <button class="btn btn-outline-danger w-100">Reject</button>
+                    </form>
+                }
+                <a class="btn btn-outline-secondary" asp-controller="@Model.ControllerName" asp-action="Index">Kembali</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+<script>
+    function setReason(form) {
+        const reason = prompt('Alasan penolakan:');
+        if (!reason) return false;
+        form.querySelector('input[name="reason"]').value = reason;
+        return true;
+    }
+</script>
+}

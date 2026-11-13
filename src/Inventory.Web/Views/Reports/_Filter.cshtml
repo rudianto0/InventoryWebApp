@@ -1,0 +1,48 @@
+@model ReportFilter
+@{
+    var locations = (IReadOnlyList<SelectOption>)ViewBag.Locations;
+    var products = (IReadOnlyList<SelectOption>)ViewBag.Products;
+    var reportKey = ViewBag.ReportKey as string;
+}
+<form method="get" class="row g-2 mb-3 align-items-end">
+    <div class="col-auto">
+        <label class="form-label small mb-0">Lokasi</label>
+        <select name="LocationId" class="form-select form-select-sm" asp-items="@(new SelectList(locations, "Id", "Text", Model.LocationId))">
+            <option value="">Semua</option>
+        </select>
+    </div>
+    <div class="col-auto">
+        <label class="form-label small mb-0">Branch Code</label>
+        <input name="BranchCode" value="@Model.BranchCode" class="form-control form-control-sm" />
+    </div>
+    <div class="col-auto">
+        <label class="form-label small mb-0">Produk</label>
+        <select name="ProductId" class="form-select form-select-sm" asp-items="@(new SelectList(products, "Id", "Text", Model.ProductId))">
+            <option value="">Semua</option>
+        </select>
+    </div>
+    <div class="col-auto">
+        <label class="form-label small mb-0">Dari</label>
+        <input type="date" name="From" value="@Model.From?.ToString("yyyy-MM-dd")" class="form-control form-control-sm" />
+    </div>
+    <div class="col-auto">
+        <label class="form-label small mb-0">Sampai</label>
+        <input type="date" name="To" value="@Model.To?.ToString("yyyy-MM-dd")" class="form-control form-control-sm" />
+    </div>
+    <div class="col-auto">
+        <button class="btn btn-sm btn-outline-primary">Terapkan</button>
+    </div>
+    @if (!string.IsNullOrWhiteSpace(reportKey))
+    {
+        <div class="col-auto">
+            <a class="btn btn-sm btn-outline-success"
+               asp-action="Export"
+               asp-route-report="@reportKey"
+               asp-route-LocationId="@Model.LocationId"
+               asp-route-BranchCode="@Model.BranchCode"
+               asp-route-ProductId="@Model.ProductId"
+               asp-route-From="@Model.From?.ToString("yyyy-MM-dd")"
+               asp-route-To="@Model.To?.ToString("yyyy-MM-dd")">Export CSV</a>
+        </div>
+    }
+</form>

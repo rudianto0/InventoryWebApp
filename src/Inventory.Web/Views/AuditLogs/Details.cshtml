@@ -1,0 +1,42 @@
+@model AuditDetailItem
+@{
+    ViewData["Title"] = "Audit Detail";
+    string Pretty(string? json)
+    {
+        if (string.IsNullOrWhiteSpace(json)) return "-";
+        try
+        {
+            using var doc = System.Text.Json.JsonDocument.Parse(json);
+            return System.Text.Json.JsonSerializer.Serialize(doc, new System.Text.Json.JsonSerializerOptions { WriteIndented = true });
+        }
+        catch
+        {
+            return json;
+        }
+    }
+}
+<h4>Audit Detail #@Model.Id</h4>
+<div class="card card-body shadow-sm mb-3">
+    <div class="row small">
+        <div class="col-md-3 mb-2"><span class="text-muted">Waktu:</span> @Model.CreatedAt.ToLocalTime().ToString("dd/MM/yyyy HH:mm:ss")</div>
+        <div class="col-md-3 mb-2"><span class="text-muted">Entity:</span> @Model.EntityName (#@Model.EntityId)</div>
+        <div class="col-md-3 mb-2"><span class="text-muted">Action:</span> @Model.Action</div>
+        <div class="col-md-3 mb-2"><span class="text-muted">User:</span> @Model.UserName</div>
+        <div class="col-md-3 mb-2"><span class="text-muted">IP:</span> @Model.IpAddress</div>
+    </div>
+</div>
+<div class="row g-3">
+    <div class="col-lg-6">
+        <div class="card shadow-sm h-100">
+            <div class="card-header bg-white fw-semibold">Old Values</div>
+            <pre class="m-0 p-3 small">@Pretty(Model.OldValues)</pre>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card shadow-sm h-100">
+            <div class="card-header bg-white fw-semibold">New Values</div>
+            <pre class="m-0 p-3 small">@Pretty(Model.NewValues)</pre>
+        </div>
+    </div>
+</div>
+<a class="btn btn-outline-secondary mt-3" asp-action="Index">Kembali</a>

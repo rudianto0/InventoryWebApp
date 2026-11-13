@@ -1,0 +1,51 @@
+@model SupplierFormModel
+@{
+    ViewData["Title"] = Model.Id.HasValue ? "Edit Supplier" : "Tambah Supplier";
+}
+<h4>@ViewData["Title"]</h4>
+<div class="row">
+    <div class="col-md-6">
+        <form method="post" asp-action="@(Model.Id.HasValue ? "Edit" : "Create")" asp-route-id="@Model.Id" class="card card-body shadow-sm">
+            <div asp-validation-summary="ModelOnly" class="text-danger small mb-2"></div>
+            <div class="row">
+                <div class="col-md-5 mb-3">
+                    <label asp-for="Code" class="form-label">Kode</label>
+                    <input asp-for="Code" class="form-control" />
+                    <span asp-validation-for="Code" class="text-danger small"></span>
+                </div>
+                <div class="col-md-7 mb-3">
+                    <label asp-for="Name" class="form-label">Nama</label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger small"></span>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label asp-for="ContactPerson" class="form-label">Contact Person</label>
+                <input asp-for="ContactPerson" class="form-control" />
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Phone" class="form-label">Telepon</label>
+                    <input asp-for="Phone" class="form-control" />
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Email" class="form-label">Email</label>
+                    <input asp-for="Email" class="form-control" />
+                </div>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Address" class="form-label">Alamat</label>
+                <textarea asp-for="Address" class="form-control"></textarea>
+            </div>
+            <div class="form-check mb-3">
+                <input asp-for="IsActive" class="form-check-input" />
+                <label asp-for="IsActive" class="form-check-label">Aktif</label>
+            </div>
+            <div>
+                <button class="btn btn-primary">Simpan</button>
+                <a class="btn btn-outline-secondary" asp-action="Index">Batal</a>
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }
