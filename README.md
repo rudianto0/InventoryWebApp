@@ -5,7 +5,7 @@ memantau level stok per gudang/cabang, dan menyediakan laporan yang akurat.
 
 ## Overview
 
-Inventory Web App adalah aplikasi **ASP.NET Core MVC (.NET 8)** dengan pendekatan
+Inventory Web App adalah aplikasi **ASP.NET Core MVC (.NET 10 LTS)** dengan pendekatan
 **Clean Architecture + DDD ringan**. Aplikasi ini menjadi *single source of truth*
 untuk data stok dan memastikan setiap perubahan dapat dilacak.
 
@@ -51,9 +51,9 @@ Prinsip utama:
 
 | Layer | Pilihan |
 |-------|---------|
-| Backend | ASP.NET Core MVC (.NET 8) |
+| Backend | ASP.NET Core MVC (.NET 10 LTS) |
 | View | Razor Views + Bootstrap 5 |
-| ORM | EF Core 8 |
+| ORM | EF Core 10 |
 | Database | SQL Server **atau** PostgreSQL (via konfigurasi) |
 | Auth | ASP.NET Core Identity + Cookie Auth |
 | Testing | xUnit |
@@ -120,7 +120,7 @@ Lihat [docs/adr/001-database-provider-strategy.md](docs/adr/001-database-provide
 
 ### 1. Prasyarat
 
-- **.NET 8 SDK** — cek dengan `dotnet --version`.
+- **.NET 10 SDK** (LTS) — cek dengan `dotnet --version`. Versi SDK dipin melalui `global.json`.
 - Salah satu database:
   - **SQL Server** (LocalDB / Express / full), atau
   - **PostgreSQL** 13+.

@@ -32,7 +32,7 @@ laporan yang akurat untuk pengambilan keputusan.
 
 | Layer | Pilihan | Catatan |
 |-------|---------|---------|
-| Backend | ASP.NET Core MVC (.NET 8) | Server-rendered, mini project |
+| Backend | ASP.NET Core MVC (.NET 10 LTS) | Server-rendered, mini project |
 | View | Razor Views + Bootstrap 5 | Tanpa SPA, tanpa build pipeline terpisah |
 | ORM | EF Core | Query provider-agnostic |
 | Database | SQL Server **atau** PostgreSQL | Dipilih via konfigurasi `Database:Provider` |

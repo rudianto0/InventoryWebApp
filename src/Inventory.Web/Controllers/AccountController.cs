@@ -6,15 +6,16 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Inventory.Web.Controllers;
 
-[AllowAnonymous]
 public sealed class AccountController(
     SignInManager<AppUser> signInManager,
     UserManager<AppUser> userManager) : Controller
 {
+    [AllowAnonymous]
     [HttpGet]
     public IActionResult Login(string? returnUrl = null) =>
         View(new LoginModel { ReturnUrl = returnUrl });
 
+    [AllowAnonymous]
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Login(LoginModel model)
