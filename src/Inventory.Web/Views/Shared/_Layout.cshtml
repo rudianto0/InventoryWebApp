@@ -1,5 +1,22 @@
-﻿@{
+﻿@using System.Security.Claims
+@{
     var isAuthenticated = User.Identity?.IsAuthenticated == true;
+    var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+    var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
+    string NavActive(string controller, string? action = null) =>
+        string.Equals(currentController, controller, StringComparison.OrdinalIgnoreCase)
+        && (action is null || string.Equals(currentAction, action, StringComparison.OrdinalIgnoreCase))
+            ? "active" : "";
+
+    var roles = User.FindAll(ClaimTypes.Role).Select(c => c.Value).ToArray();
+    var roleText = roles.Length > 0 ? string.Join(", ", roles) : "-";
+    var displayName = User.Identity?.Name ?? string.Empty;
+    var initials = string.Concat(
+        displayName.Split(' ', StringSplitOptions.RemoveEmptyEntries)
+            .Take(2)
+            .Select(part => char.ToUpperInvariant(part[0])));
+    if (string.IsNullOrEmpty(initials))
+        initials = "?";
 }
 <!DOCTYPE html>
 <html lang="id">
@@ -11,104 +28,133 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 <body class="bg-light">
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-controller="Dashboard" asp-action="Index">Inventory</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="mainNav">
-                    @if (isAuthenticated)
+    <div class="app-shell">
+        @if (isAuthenticated)
+        {
+            <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+            <aside class="sidebar" id="appSidebar">
+                <a class="sidebar-brand" asp-controller="Dashboard" asp-action="Index">Inventory</a>
+
+                <nav class="sidebar-nav" aria-label="Main navigation">
+                    <div class="sidebar-heading">Overview</div>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link @NavActive("Dashboard")" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
+                        </li>
+                    </ul>
+
+                    <div class="sidebar-heading">Master Data</div>
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a class="nav-link @NavActive("Categories")" asp-controller="Categories" asp-action="Index">Categories</a></li>
+                        <li class="nav-item"><a class="nav-link @NavActive("Units")" asp-controller="Units" asp-action="Index">Units</a></li>
+                        <li class="nav-item"><a class="nav-link @NavActive("Products")" asp-controller="Products" asp-action="Index">Products</a></li>
+                        <li class="nav-item"><a class="nav-link @NavActive("Locations")" asp-controller="Locations" asp-action="Index">Locations</a></li>
+                        <li class="nav-item"><a class="nav-link @NavActive("Suppliers")" asp-controller="Suppliers" asp-action="Index">Suppliers</a></li>
+                    </ul>
+
+                    <div class="sidebar-heading">Transactions</div>
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a class="nav-link @NavActive("StockIns")" asp-controller="StockIns" asp-action="Index">Stock In</a></li>
+                        <li class="nav-item"><a class="nav-link @NavActive("StockOuts")" asp-controller="StockOuts" asp-action="Index">Stock Out</a></li>
+                        <li class="nav-item"><a class="nav-link @NavActive("StockTransfers")" asp-controller="StockTransfers" asp-action="Index">Stock Transfer</a></li>
+                        <li class="nav-item"><a class="nav-link @NavActive("StockAdjustments")" asp-controller="StockAdjustments" asp-action="Index">Stock Adjustment</a></li>
+                        <li class="nav-item"><a class="nav-link @NavActive("StockOpnames")" asp-controller="StockOpnames" asp-action="Index">Stock Opname</a></li>
+                        @if (User.IsInRole("Admin") || User.IsInRole("SPV") || User.IsInRole("Manager"))
+                        {
+                            <li class="nav-item"><a class="nav-link @NavActive("Approvals")" asp-controller="Approvals" asp-action="Index">Approvals</a></li>
+                        }
+                    </ul>
+
+                    <div class="sidebar-heading">Reports</div>
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a class="nav-link @NavActive("Reports", "StockBalance")" asp-controller="Reports" asp-action="StockBalance">Stock Balance</a></li>
+                        <li class="nav-item"><a class="nav-link @NavActive("Reports", "StockCard")" asp-controller="Reports" asp-action="StockCard">Stock Card</a></li>
+                        @if (!User.IsInRole("Staff"))
+                        {
+                            <li class="nav-item"><a class="nav-link @NavActive("Reports", "Movements")" asp-controller="Reports" asp-action="Movements">Movements</a></li>
+                            <li class="nav-item"><a class="nav-link @NavActive("Reports", "Reorder")" asp-controller="Reports" asp-action="Reorder">Reorder Alert</a></li>
+                        }
+                    </ul>
+
+                    @if (User.IsInRole("Admin") || User.IsInRole("SPV") || User.IsInRole("Manager") || User.IsInRole("Auditor"))
                     {
-                        <ul class="navbar-nav me-auto">
-                            <li class="nav-item"><a class="nav-link" asp-controller="Dashboard" asp-action="Index">Dashboard</a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Master Data</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" asp-controller="Categories" asp-action="Index">Categories</a></li>
-                                    <li><a class="dropdown-item" asp-controller="Units" asp-action="Index">Units</a></li>
-                                    <li><a class="dropdown-item" asp-controller="Products" asp-action="Index">Products</a></li>
-                                    <li><a class="dropdown-item" asp-controller="Locations" asp-action="Index">Locations</a></li>
-                                    <li><a class="dropdown-item" asp-controller="Suppliers" asp-action="Index">Suppliers</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Transactions</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" asp-controller="StockIns" asp-action="Index">Stock In</a></li>
-                                    <li><a class="dropdown-item" asp-controller="StockOuts" asp-action="Index">Stock Out</a></li>
-                                    <li><a class="dropdown-item" asp-controller="StockTransfers" asp-action="Index">Stock Transfer</a></li>
-                                    <li><a class="dropdown-item" asp-controller="StockAdjustments" asp-action="Index">Stock Adjustment</a></li>
-                                    <li><a class="dropdown-item" asp-controller="StockOpnames" asp-action="Index">Stock Opname</a></li>
-                                </ul>
-                            </li>
-                            @if (User.IsInRole("Admin") || User.IsInRole("SPV") || User.IsInRole("Manager"))
-                            {
-                                <li class="nav-item"><a class="nav-link" asp-controller="Approvals" asp-action="Index">Approvals</a></li>
-                            }
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Reports</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" asp-controller="Reports" asp-action="StockBalance">Stock Balance</a></li>
-                                    <li><a class="dropdown-item" asp-controller="Reports" asp-action="StockCard">Stock Card</a></li>
-                                    @if (!User.IsInRole("Staff"))
-                                    {
-                                        <li><a class="dropdown-item" asp-controller="Reports" asp-action="Movements">Movements</a></li>
-                                        <li><a class="dropdown-item" asp-controller="Reports" asp-action="Reorder">Reorder Alert</a></li>
-                                    }
-                                </ul>
-                            </li>
+                        <div class="sidebar-heading">Administration</div>
+                        <ul class="nav flex-column">
                             @if (User.IsInRole("Admin"))
                             {
-                                <li class="nav-item"><a class="nav-link" asp-controller="Users" asp-action="Index">Users</a></li>
+                                <li class="nav-item"><a class="nav-link @NavActive("Users")" asp-controller="Users" asp-action="Index">Users</a></li>
                             }
                             @if (User.IsInRole("Admin") || User.IsInRole("Auditor"))
                             {
-                                <li class="nav-item"><a class="nav-link" asp-controller="AuditLogs" asp-action="Index">Audit Trail</a></li>
+                                <li class="nav-item"><a class="nav-link @NavActive("AuditLogs")" asp-controller="AuditLogs" asp-action="Index">Audit Trail</a></li>
                             }
                         </ul>
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <span class="navbar-text me-3">@User.Identity!.Name</span>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" asp-controller="Account" asp-action="ChangePassword">Ganti Password</a></li>
-                            <li class="nav-item">
-                                <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
-                                    <button type="submit" class="btn btn-link nav-link">Logout</button>
+                    }
+                </nav>
+
+                <div class="sidebar-footer">Inventory Management</div>
+            </aside>
+        }
+
+        <div class="app-main">
+            <header class="topbar">
+                @if (isAuthenticated)
+                {
+                    <button type="button" class="btn sidebar-toggle" id="sidebarToggle" aria-controls="appSidebar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span aria-hidden="true">&#9776;</span>
+                    </button>
+                    <span class="topbar-title text-truncate">@ViewData["Title"]</span>
+
+                    <div class="dropdown ms-auto">
+                        <a class="topbar-user text-decoration-none text-reset dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="user-meta d-none d-sm-block">
+                                <span class="user-name d-block">@displayName</span>
+                                <span class="user-role d-block">@roleText</span>
+                            </span>
+                            <span class="user-avatar" aria-hidden="true">@initials</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><span class="dropdown-item-text small text-muted">@displayName &mdash; @roleText</span></li>
+                            <li><hr class="dropdown-divider" /></li>
+                            <li><a class="dropdown-item" asp-controller="Account" asp-action="ChangePassword">Ganti Password</a></li>
+                            <li>
+                                <form asp-controller="Account" asp-action="Logout" method="post">
+                                    <button type="submit" class="dropdown-item text-danger">Logout</button>
                                 </form>
                             </li>
                         </ul>
-                    }
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container-fluid px-4">
-        <main role="main" class="pb-3">
-            @if (TempData["Success"] is string success)
-            {
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    @success
-                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                </div>
-            }
-            @if (TempData["Error"] is string error)
-            {
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    @error
-                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                </div>
-            }
-            @RenderBody()
-        </main>
+                    </div>
+                }
+                else
+                {
+                    <a class="topbar-brand" asp-controller="Dashboard" asp-action="Index">Inventory</a>
+                }
+            </header>
+
+            <main role="main" class="app-content">
+                @if (TempData["Success"] is string success)
+                {
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        @success
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                }
+                @if (TempData["Error"] is string error)
+                {
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        @error
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                }
+                @RenderBody()
+            </main>
+
+            <footer class="app-footer">
+                &copy; 2026 - Inventory Management
+            </footer>
+        </div>
     </div>
 
-    <footer class="border-top footer text-muted mt-4">
-        <div class="container-fluid px-4">
-            &copy; 2026 - Inventory Management
-        </div>
-    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
