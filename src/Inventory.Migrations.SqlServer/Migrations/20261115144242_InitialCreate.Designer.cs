@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Inventory.Migrations.SqlServer.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20261115102304_InitialCreate")]
+    [Migration("20261115144242_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -298,9 +298,8 @@ namespace Inventory.Migrations.SqlServer.Migrations
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<decimal>("Quantity")
-                        .HasPrecision(18, 4)
-                        .HasColumnType("decimal(18,4)");
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -328,9 +327,8 @@ namespace Inventory.Migrations.SqlServer.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<decimal>("CountedQuantity")
-                        .HasPrecision(18, 4)
-                        .HasColumnType("decimal(18,4)");
+                    b.Property<int>("CountedQuantity")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -344,9 +342,8 @@ namespace Inventory.Migrations.SqlServer.Migrations
                     b.Property<int?>("DeletedById")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("Difference")
-                        .HasPrecision(18, 4)
-                        .HasColumnType("decimal(18,4)");
+                    b.Property<int>("Difference")
+                        .HasColumnType("int");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -361,9 +358,8 @@ namespace Inventory.Migrations.SqlServer.Migrations
                     b.Property<Guid>("StockAdjustmentHeaderId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<decimal>("SystemQuantity")
-                        .HasPrecision(18, 4)
-                        .HasColumnType("decimal(18,4)");
+                    b.Property<int>("SystemQuantity")
+                        .HasColumnType("int");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -486,9 +482,8 @@ namespace Inventory.Migrations.SqlServer.Migrations
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<decimal>("Quantity")
-                        .HasPrecision(18, 4)
-                        .HasColumnType("decimal(18,4)");
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
 
                     b.Property<Guid>("StockInHeaderId")
                         .HasColumnType("uniqueidentifier");
@@ -619,9 +614,8 @@ namespace Inventory.Migrations.SqlServer.Migrations
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<decimal>("Quantity")
-                        .HasPrecision(18, 4)
-                        .HasColumnType("decimal(18,4)");
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
 
                     b.Property<Guid>("ReferenceId")
                         .HasColumnType("uniqueidentifier");
@@ -653,9 +647,8 @@ namespace Inventory.Migrations.SqlServer.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<decimal?>("CountedQuantity")
-                        .HasPrecision(18, 4)
-                        .HasColumnType("decimal(18,4)");
+                    b.Property<int?>("CountedQuantity")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -669,9 +662,8 @@ namespace Inventory.Migrations.SqlServer.Migrations
                     b.Property<int?>("DeletedById")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("Difference")
-                        .HasPrecision(18, 4)
-                        .HasColumnType("decimal(18,4)");
+                    b.Property<int>("Difference")
+                        .HasColumnType("int");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -686,9 +678,8 @@ namespace Inventory.Migrations.SqlServer.Migrations
                     b.Property<Guid>("StockOpnameHeaderId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<decimal>("SystemQuantity")
-                        .HasPrecision(18, 4)
-                        .HasColumnType("decimal(18,4)");
+                    b.Property<int>("SystemQuantity")
+                        .HasColumnType("int");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -806,9 +797,8 @@ namespace Inventory.Migrations.SqlServer.Migrations
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<decimal>("Quantity")
-                        .HasPrecision(18, 4)
-                        .HasColumnType("decimal(18,4)");
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
 
                     b.Property<Guid>("StockOutHeaderId")
                         .HasColumnType("uniqueidentifier");
@@ -933,9 +923,8 @@ namespace Inventory.Migrations.SqlServer.Migrations
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<decimal>("Quantity")
-                        .HasPrecision(18, 4)
-                        .HasColumnType("decimal(18,4)");
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
 
                     b.Property<Guid>("StockTransferHeaderId")
                         .HasColumnType("uniqueidentifier");

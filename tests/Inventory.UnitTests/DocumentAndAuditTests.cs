@@ -155,7 +155,7 @@ public class AuditTrailExtraTests
         {
             SupplierId = fixture.SupplierId,
             LocationId = fixture.WarehouseId,
-            Lines = new() { new DocumentLineInput { ProductId = fixture.ProductId, Quantity = 1m } }
+            Lines = new() { new DocumentLineInput { ProductId = fixture.ProductId, Quantity = 1 } }
         });
 
         await service.SubmitAsync(header.Id);

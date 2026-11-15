@@ -8,7 +8,7 @@ namespace Inventory.UnitTests;
 
 public class StockTransferServiceTests
 {
-    private static StockTransferInput ValidInput(TestDatabase fixture, decimal quantity = 4m) => new()
+    private static StockTransferInput ValidInput(TestDatabase fixture, int quantity = 4) => new()
     {
         FromLocationId = fixture.WarehouseId,
         ToLocationId = fixture.Warehouse2Id,
@@ -81,14 +81,14 @@ public class StockTransferServiceTests
             ToLocationId = fixture.Warehouse2Id,
             Lines = new()
             {
-                new() { ProductId = fixture.ProductId, Quantity = 1m },
-                new() { ProductId = fixture.ProductId, Quantity = 1m }
+                new() { ProductId = fixture.ProductId, Quantity = 1 },
+                new() { ProductId = fixture.ProductId, Quantity = 1 }
             }
         };
 
         await FluentActions.Awaiting(() => service.CreateAsync(duplicate))
             .Should().ThrowAsync<ValidationException>().WithMessage("*duplikat*");
-        await FluentActions.Awaiting(() => service.CreateAsync(ValidInput(fixture, 0m)))
+        await FluentActions.Awaiting(() => service.CreateAsync(ValidInput(fixture, 0)))
             .Should().ThrowAsync<ValidationException>().WithMessage("*Quantity*");
     }
 
@@ -97,9 +97,9 @@ public class StockTransferServiceTests
     {
         await using var fixture = new TestDatabase();
         await fixture.SeedBasicsAsync();
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 2m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 2);
         var service = ServiceFactory.Transfer(fixture, ServiceFactory.Staff(10), ServiceFactory.Directory(20));
-        var header = await service.CreateAsync(ValidInput(fixture, 5m));
+        var header = await service.CreateAsync(ValidInput(fixture, 5));
 
         var action = () => service.SubmitAsync(header.Id);
 
@@ -111,7 +111,7 @@ public class StockTransferServiceTests
     {
         await using var fixture = new TestDatabase();
         await fixture.SeedBasicsAsync();
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10);
         var service = ServiceFactory.Transfer(fixture, ServiceFactory.Staff(10), ServiceFactory.Directory(20));
         var header = await service.CreateAsync(ValidInput(fixture));
 
@@ -125,16 +125,16 @@ public class StockTransferServiceTests
     {
         await using var fixture = new TestDatabase();
         await fixture.SeedBasicsAsync();
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10);
         var service = ServiceFactory.Transfer(fixture, ServiceFactory.Staff(10), ServiceFactory.Directory(20));
-        var header = await service.CreateAsync(ValidInput(fixture, 4m));
+        var header = await service.CreateAsync(ValidInput(fixture, 4));
         await service.SubmitAsync(header.Id);
         var approver = ServiceFactory.Transfer(fixture, ServiceFactory.Staff(20), ServiceFactory.Directory(20));
 
         await approver.ApproveAsync(header.Id);
 
-        (await fixture.Db.Stocks.SingleAsync(x => x.LocationId == fixture.WarehouseId)).Quantity.Should().Be(6m);
-        (await fixture.Db.Stocks.SingleAsync(x => x.LocationId == fixture.Warehouse2Id)).Quantity.Should().Be(4m);
+        (await fixture.Db.Stocks.SingleAsync(x => x.LocationId == fixture.WarehouseId)).Quantity.Should().Be(6);
+        (await fixture.Db.Stocks.SingleAsync(x => x.LocationId == fixture.Warehouse2Id)).Quantity.Should().Be(4);
         var movements = await fixture.Db.StockMovements.ToListAsync();
         movements.Should().HaveCount(2);
         movements.Should().Contain(x => x.Type == MovementType.TransferOut);
@@ -146,12 +146,12 @@ public class StockTransferServiceTests
     {
         await using var fixture = new TestDatabase();
         await fixture.SeedBasicsAsync();
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10);
         var service = ServiceFactory.Transfer(fixture, ServiceFactory.Staff(10), ServiceFactory.Directory(20));
-        var header = await service.CreateAsync(ValidInput(fixture, 5m));
+        var header = await service.CreateAsync(ValidInput(fixture, 5));
         await service.SubmitAsync(header.Id);
         var stock = await fixture.Db.Stocks.SingleAsync(x => x.LocationId == fixture.WarehouseId);
-        stock.Quantity = 1m;
+        stock.Quantity = 1;
         await fixture.Db.SaveChangesAsync();
         var approver = ServiceFactory.Transfer(fixture, ServiceFactory.Staff(20), ServiceFactory.Directory(20));
 
@@ -166,15 +166,15 @@ public class StockTransferServiceTests
     {
         await using var fixture = new TestDatabase();
         await fixture.SeedBasicsAsync();
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10);
         var service = ServiceFactory.Transfer(fixture, ServiceFactory.Admin(1), ServiceFactory.Directory());
 
-        var header = await service.CreateAsync(ValidInput(fixture, 3m));
+        var header = await service.CreateAsync(ValidInput(fixture, 3));
         await service.SubmitAsync(header.Id);
 
         (await fixture.Db.StockTransferHeaders.SingleAsync()).Status.Should().Be(ApprovalStatus.Approved);
-        (await fixture.Db.Stocks.SingleAsync(x => x.LocationId == fixture.WarehouseId)).Quantity.Should().Be(7m);
-        (await fixture.Db.Stocks.SingleAsync(x => x.LocationId == fixture.Warehouse2Id)).Quantity.Should().Be(3m);
+        (await fixture.Db.Stocks.SingleAsync(x => x.LocationId == fixture.WarehouseId)).Quantity.Should().Be(7);
+        (await fixture.Db.Stocks.SingleAsync(x => x.LocationId == fixture.Warehouse2Id)).Quantity.Should().Be(3);
     }
 
     [Fact]
@@ -182,7 +182,7 @@ public class StockTransferServiceTests
     {
         await using var fixture = new TestDatabase();
         await fixture.SeedBasicsAsync();
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10);
         var service = ServiceFactory.Transfer(fixture, ServiceFactory.Staff(10), ServiceFactory.Directory(20));
         var header = await service.CreateAsync(ValidInput(fixture));
         await service.SubmitAsync(header.Id);

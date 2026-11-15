@@ -27,7 +27,7 @@ public sealed class AuditFilter
 public sealed class DashboardSummary
 {
     public int TotalProducts { get; init; }
-    public decimal TotalStockQuantity { get; init; }
+    public int TotalStockQuantity { get; init; }
     public int BelowReorderCount { get; init; }
     public int PendingApprovals { get; init; }
     public int TotalLocations { get; init; }
@@ -44,7 +44,7 @@ public sealed class StockBalanceItem
     public Guid LocationId { get; init; }
     public string LocationName { get; init; } = string.Empty;
     public string? BranchCode { get; init; }
-    public decimal Quantity { get; init; }
+    public int Quantity { get; init; }
     public DateTime UpdatedAt { get; init; }
 }
 
@@ -54,8 +54,8 @@ public sealed class StockCardItem
     public string MovementNo { get; init; } = string.Empty;
     public MovementType Type { get; init; }
     public string LocationName { get; init; } = string.Empty;
-    public decimal Quantity { get; init; }
-    public decimal RunningBalance { get; init; }
+    public int Quantity { get; init; }
+    public int RunningBalance { get; init; }
     public string? Notes { get; init; }
 }
 
@@ -67,7 +67,7 @@ public sealed class StockMovementItem
     public string Sku { get; init; } = string.Empty;
     public string ProductName { get; init; } = string.Empty;
     public string LocationName { get; init; } = string.Empty;
-    public decimal Quantity { get; init; }
+    public int Quantity { get; init; }
     public string? Notes { get; init; }
 }
 
@@ -77,7 +77,7 @@ public sealed class ReorderItem
     public string Sku { get; init; } = string.Empty;
     public string ProductName { get; init; } = string.Empty;
     public string LocationName { get; init; } = string.Empty;
-    public decimal Quantity { get; init; }
+    public int Quantity { get; init; }
     public int ReorderLevel { get; init; }
 }
 

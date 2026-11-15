@@ -5,7 +5,7 @@ namespace Inventory.Contracts;
 public sealed class DocumentLineInput
 {
     public Guid ProductId { get; init; }
-    public decimal Quantity { get; init; }
+    public int Quantity { get; init; }
     public decimal? UnitCost { get; init; }
     public string? Notes { get; init; }
 }
@@ -13,14 +13,14 @@ public sealed class DocumentLineInput
 public sealed class AdjustmentLineInput
 {
     public Guid ProductId { get; init; }
-    public decimal CountedQuantity { get; init; }
+    public int CountedQuantity { get; init; }
     public string? Notes { get; init; }
 }
 
 public sealed class OpnameLineInput
 {
     public Guid DetailId { get; init; }
-    public decimal? CountedQuantity { get; init; }
+    public int? CountedQuantity { get; init; }
     public string? Notes { get; init; }
 }
 
@@ -100,11 +100,11 @@ public sealed class DocumentLineView
     public string Sku { get; init; } = string.Empty;
     public string ProductName { get; init; } = string.Empty;
     public string UnitName { get; init; } = string.Empty;
-    public decimal Quantity { get; init; }
+    public int Quantity { get; init; }
     public decimal? UnitCost { get; init; }
-    public decimal? SystemQuantity { get; init; }
-    public decimal? CountedQuantity { get; init; }
-    public decimal? Difference { get; init; }
+    public int? SystemQuantity { get; init; }
+    public int? CountedQuantity { get; init; }
+    public int? Difference { get; init; }
     public string? Notes { get; init; }
 }
 
@@ -144,7 +144,7 @@ public sealed class StockAvailability
 {
     public Guid ProductId { get; init; }
     public Guid LocationId { get; init; }
-    public decimal Quantity { get; init; }
+    public int Quantity { get; init; }
 }
 
 public sealed class ApprovalItem

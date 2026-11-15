@@ -245,7 +245,7 @@ public sealed class StockAdjustmentService(
         }
     }
 
-    private Task<decimal> GetSystemQuantityAsync(Guid locationId, Guid productId, CancellationToken ct) =>
+    private Task<int> GetSystemQuantityAsync(Guid locationId, Guid productId, CancellationToken ct) =>
         db.Stocks.Where(x => x.LocationId == locationId && x.ProductId == productId)
             .Select(x => x.Quantity).FirstOrDefaultAsync(ct);
 

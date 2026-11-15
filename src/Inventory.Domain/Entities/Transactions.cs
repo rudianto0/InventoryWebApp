@@ -36,7 +36,7 @@ public class StockInDetail : IAuditableEntity, ISoftDeletable
     public StockInHeader? Header { get; set; }
     public Guid ProductId { get; set; }
     public Product? Product { get; set; }
-    public decimal Quantity { get; set; }
+    public int Quantity { get; set; }
     public decimal? UnitCost { get; set; }
     public string? Notes { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
@@ -80,7 +80,7 @@ public class StockOutDetail : IAuditableEntity, ISoftDeletable
     public StockOutHeader? Header { get; set; }
     public Guid ProductId { get; set; }
     public Product? Product { get; set; }
-    public decimal Quantity { get; set; }
+    public int Quantity { get; set; }
     public string? Notes { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public int? CreatedById { get; set; }
@@ -124,7 +124,7 @@ public class StockTransferDetail : IAuditableEntity, ISoftDeletable
     public StockTransferHeader? Header { get; set; }
     public Guid ProductId { get; set; }
     public Product? Product { get; set; }
-    public decimal Quantity { get; set; }
+    public int Quantity { get; set; }
     public string? Notes { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public int? CreatedById { get; set; }
@@ -167,9 +167,9 @@ public class StockAdjustmentDetail : IAuditableEntity, ISoftDeletable
     public StockAdjustmentHeader? Header { get; set; }
     public Guid ProductId { get; set; }
     public Product? Product { get; set; }
-    public decimal SystemQuantity { get; set; }
-    public decimal CountedQuantity { get; set; }
-    public decimal Difference { get; set; }
+    public int SystemQuantity { get; set; }
+    public int CountedQuantity { get; set; }
+    public int Difference { get; set; }
     public string? Notes { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public int? CreatedById { get; set; }
@@ -211,9 +211,9 @@ public class StockOpnameDetail : IAuditableEntity, ISoftDeletable
     public StockOpnameHeader? Header { get; set; }
     public Guid ProductId { get; set; }
     public Product? Product { get; set; }
-    public decimal SystemQuantity { get; set; }
-    public decimal? CountedQuantity { get; set; }
-    public decimal Difference { get; set; }
+    public int SystemQuantity { get; set; }
+    public int? CountedQuantity { get; set; }
+    public int Difference { get; set; }
     public string? Notes { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public int? CreatedById { get; set; }

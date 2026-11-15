@@ -14,7 +14,7 @@ public class ReportServiceTests
     {
         await using var fixture = new TestDatabase();
         await fixture.SeedBasicsAsync();
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10);
         var product = await fixture.Db.Products.SingleAsync();
         product.ReorderLevel = 20;
         fixture.Db.StockInHeaders.Add(new StockInHeader
@@ -28,7 +28,7 @@ public class ReportServiceTests
         var dashboard = await service.GetDashboardAsync();
 
         dashboard.TotalProducts.Should().Be(1);
-        dashboard.TotalStockQuantity.Should().Be(10m);
+        dashboard.TotalStockQuantity.Should().Be(10);
         dashboard.TotalLocations.Should().Be(3);
         dashboard.PendingApprovals.Should().Be(1);
         dashboard.BelowReorderCount.Should().Be(1);
@@ -40,13 +40,13 @@ public class ReportServiceTests
     {
         await using var fixture = new TestDatabase();
         await fixture.SeedBasicsAsync();
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10m);
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.Warehouse2Id, 5m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.Warehouse2Id, 5);
         var service = new ReportService(fixture.Db);
 
         var dashboard = await service.GetDashboardAsync(fixture.Warehouse2Id);
 
-        dashboard.TotalStockQuantity.Should().Be(5m);
+        dashboard.TotalStockQuantity.Should().Be(5);
     }
 
     [Fact]
@@ -54,8 +54,8 @@ public class ReportServiceTests
     {
         await using var fixture = new TestDatabase();
         await fixture.SeedBasicsAsync();
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10m);
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.Warehouse2Id, 5m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.Warehouse2Id, 5);
         var service = new ReportService(fixture.Db);
 
         var all = await service.GetStockBalanceAsync(new ReportFilter());
@@ -88,12 +88,12 @@ public class ReportServiceTests
             new StockMovement
             {
                 MovementNo = "MOV-1", Type = MovementType.In, ProductId = fixture.ProductId,
-                LocationId = fixture.WarehouseId, Quantity = 5m, CreatedAt = new DateTime(2026, 11, 1, 0, 0, 0, DateTimeKind.Utc)
+                LocationId = fixture.WarehouseId, Quantity = 5, CreatedAt = new DateTime(2026, 11, 1, 0, 0, 0, DateTimeKind.Utc)
             },
             new StockMovement
             {
                 MovementNo = "MOV-2", Type = MovementType.In, ProductId = fixture.ProductId,
-                LocationId = fixture.WarehouseId, Quantity = 3m, CreatedAt = new DateTime(2026, 11, 15, 0, 0, 0, DateTimeKind.Utc)
+                LocationId = fixture.WarehouseId, Quantity = 3, CreatedAt = new DateTime(2026, 11, 15, 0, 0, 0, DateTimeKind.Utc)
             });
         await fixture.Db.SaveChangesAsync();
         var opening = await fixture.Db.StockMovements.SingleAsync(x => x.MovementNo == "MOV-1");
@@ -111,7 +111,7 @@ public class ReportServiceTests
         });
 
         result.Should().ContainSingle();
-        result[0].RunningBalance.Should().Be(8m);
+        result[0].RunningBalance.Should().Be(8);
     }
 
     [Fact]
@@ -123,12 +123,12 @@ public class ReportServiceTests
             new StockMovement
             {
                 MovementNo = "MOV-1", Type = MovementType.In, ProductId = fixture.ProductId,
-                LocationId = fixture.WarehouseId, Quantity = 5m, CreatedAt = new DateTime(2026, 11, 1, 0, 0, 0, DateTimeKind.Utc)
+                LocationId = fixture.WarehouseId, Quantity = 5, CreatedAt = new DateTime(2026, 11, 1, 0, 0, 0, DateTimeKind.Utc)
             },
             new StockMovement
             {
                 MovementNo = "MOV-2", Type = MovementType.In, ProductId = fixture.ProductId,
-                LocationId = fixture.WarehouseId, Quantity = 3m, CreatedAt = new DateTime(2026, 11, 2, 0, 0, 0, DateTimeKind.Utc)
+                LocationId = fixture.WarehouseId, Quantity = 3, CreatedAt = new DateTime(2026, 11, 2, 0, 0, 0, DateTimeKind.Utc)
             });
         await fixture.Db.SaveChangesAsync();
         var first = await fixture.Db.StockMovements.SingleAsync(x => x.MovementNo == "MOV-1");
@@ -149,7 +149,7 @@ public class ReportServiceTests
     {
         await using var fixture = new TestDatabase();
         await fixture.SeedBasicsAsync();
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 5m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 5);
         var product = await fixture.Db.Products.SingleAsync();
         product.ReorderLevel = 5;
         await fixture.Db.SaveChangesAsync();
@@ -169,7 +169,7 @@ public class ReportServiceTests
         fixture.Db.StockMovements.Add(new StockMovement
         {
             MovementNo = "MOV-1", Type = MovementType.In, ProductId = fixture.ProductId,
-            LocationId = fixture.WarehouseId, Quantity = 5m, Notes = "a,b", CreatedAt = DateTime.UtcNow
+            LocationId = fixture.WarehouseId, Quantity = 5, Notes = "a,b", CreatedAt = DateTime.UtcNow
         });
         await fixture.Db.SaveChangesAsync();
         var service = new ReportService(fixture.Db);
@@ -185,7 +185,7 @@ public class ReportServiceTests
     {
         await using var fixture = new TestDatabase();
         await fixture.SeedBasicsAsync();
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 1m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 1);
         var service = new ReportService(fixture.Db);
 
         var balance = await service.ExportCsvAsync("stock-balance", new ReportFilter());

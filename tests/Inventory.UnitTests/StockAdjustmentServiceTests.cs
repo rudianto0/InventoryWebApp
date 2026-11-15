@@ -8,7 +8,7 @@ namespace Inventory.UnitTests;
 
 public class StockAdjustmentServiceTests
 {
-    private static StockAdjustmentInput ValidInput(TestDatabase fixture, decimal counted = 8m) => new()
+    private static StockAdjustmentInput ValidInput(TestDatabase fixture, int counted = 8) => new()
     {
         LocationId = fixture.WarehouseId,
         Date = new DateTime(2026, 11, 15),
@@ -21,16 +21,16 @@ public class StockAdjustmentServiceTests
     {
         await using var fixture = new TestDatabase();
         await fixture.SeedBasicsAsync();
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10);
         var service = ServiceFactory.Adjustment(fixture, ServiceFactory.Staff(), ServiceFactory.Directory());
 
-        var header = await service.CreateAsync(ValidInput(fixture, 8m));
+        var header = await service.CreateAsync(ValidInput(fixture, 8));
 
         header.Reason.Should().Be("correction");
         var detail = header.Details.Single();
-        detail.SystemQuantity.Should().Be(10m);
-        detail.CountedQuantity.Should().Be(8m);
-        detail.Difference.Should().Be(-2m);
+        detail.SystemQuantity.Should().Be(10);
+        detail.CountedQuantity.Should().Be(8);
+        detail.Difference.Should().Be(-2);
     }
 
     [Fact]
@@ -48,7 +48,7 @@ public class StockAdjustmentServiceTests
 
         await FluentActions.Awaiting(() => service.CreateAsync(noReason))
             .Should().ThrowAsync<ValidationException>().WithMessage("*Alasan*");
-        await FluentActions.Awaiting(() => service.CreateAsync(ValidInput(fixture, -1m)))
+        await FluentActions.Awaiting(() => service.CreateAsync(ValidInput(fixture, -1)))
             .Should().ThrowAsync<ValidationException>().WithMessage("*Counted quantity*");
     }
 
@@ -64,8 +64,8 @@ public class StockAdjustmentServiceTests
             Reason = "dup",
             Lines = new()
             {
-                new() { ProductId = fixture.ProductId, CountedQuantity = 1m },
-                new() { ProductId = fixture.ProductId, CountedQuantity = 2m }
+                new() { ProductId = fixture.ProductId, CountedQuantity = 1 },
+                new() { ProductId = fixture.ProductId, CountedQuantity = 2 }
             }
         };
         var inactiveLocation = new StockAdjustmentInput
@@ -86,16 +86,16 @@ public class StockAdjustmentServiceTests
     {
         await using var fixture = new TestDatabase();
         await fixture.SeedBasicsAsync();
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10);
         var service = ServiceFactory.Adjustment(fixture, ServiceFactory.Staff(), ServiceFactory.Directory());
-        var header = await service.CreateAsync(ValidInput(fixture, 8m));
+        var header = await service.CreateAsync(ValidInput(fixture, 8));
         await fixture.Db.Database.ExecuteSqlRawAsync("UPDATE Stocks SET Quantity = 12");
 
-        await service.UpdateAsync(header.Id, ValidInput(fixture, 9m));
+        await service.UpdateAsync(header.Id, ValidInput(fixture, 9));
 
         var detail = await fixture.Db.StockAdjustmentDetails.SingleAsync();
-        detail.SystemQuantity.Should().Be(12m);
-        detail.Difference.Should().Be(-3m);
+        detail.SystemQuantity.Should().Be(12);
+        detail.Difference.Should().Be(-3);
     }
 
     [Fact]
@@ -103,17 +103,17 @@ public class StockAdjustmentServiceTests
     {
         await using var fixture = new TestDatabase();
         await fixture.SeedBasicsAsync();
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10);
         var service = ServiceFactory.Adjustment(fixture, ServiceFactory.Admin(1), ServiceFactory.Directory());
 
-        var header = await service.CreateAsync(ValidInput(fixture, 12m));
+        var header = await service.CreateAsync(ValidInput(fixture, 12));
         await service.SubmitAsync(header.Id);
 
         (await fixture.Db.StockAdjustmentHeaders.SingleAsync()).Status.Should().Be(ApprovalStatus.Approved);
-        (await fixture.Db.Stocks.SingleAsync()).Quantity.Should().Be(12m);
+        (await fixture.Db.Stocks.SingleAsync()).Quantity.Should().Be(12);
         var movement = await fixture.Db.StockMovements.SingleAsync();
         movement.Type.Should().Be(MovementType.Adjustment);
-        movement.Quantity.Should().Be(2m);
+        movement.Quantity.Should().Be(2);
     }
 
     [Fact]
@@ -121,16 +121,16 @@ public class StockAdjustmentServiceTests
     {
         await using var fixture = new TestDatabase();
         await fixture.SeedBasicsAsync();
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10);
         var service = ServiceFactory.Adjustment(fixture, ServiceFactory.Staff(10), ServiceFactory.Directory(20));
-        var header = await service.CreateAsync(ValidInput(fixture, 7m));
+        var header = await service.CreateAsync(ValidInput(fixture, 7));
         await service.SubmitAsync(header.Id);
         var approver = ServiceFactory.Adjustment(fixture, ServiceFactory.Staff(20), ServiceFactory.Directory(20));
 
         await approver.ApproveAsync(header.Id);
 
-        (await fixture.Db.Stocks.SingleAsync()).Quantity.Should().Be(7m);
-        (await fixture.Db.StockMovements.SingleAsync()).Quantity.Should().Be(-3m);
+        (await fixture.Db.Stocks.SingleAsync()).Quantity.Should().Be(7);
+        (await fixture.Db.StockMovements.SingleAsync()).Quantity.Should().Be(-3);
     }
 
     [Fact]
@@ -138,7 +138,7 @@ public class StockAdjustmentServiceTests
     {
         await using var fixture = new TestDatabase();
         await fixture.SeedBasicsAsync();
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10);
         var service = ServiceFactory.Adjustment(fixture, ServiceFactory.Staff(10), ServiceFactory.Directory(20));
         var header = await service.CreateAsync(ValidInput(fixture));
         await service.SubmitAsync(header.Id);
@@ -163,16 +163,16 @@ public class StockOpnameServiceTests
     {
         await using var fixture = new TestDatabase();
         await fixture.SeedBasicsAsync();
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10m);
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.Warehouse2Id, 99m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.Warehouse2Id, 99);
         var service = ServiceFactory.Opname(fixture, ServiceFactory.Staff(), ServiceFactory.Directory());
 
         var header = await service.CreateAsync(Input(fixture));
 
         var detail = header.Details.Single();
-        detail.SystemQuantity.Should().Be(10m);
+        detail.SystemQuantity.Should().Be(10);
         detail.CountedQuantity.Should().BeNull();
-        detail.Difference.Should().Be(0m);
+        detail.Difference.Should().Be(0);
     }
 
     [Fact]
@@ -192,19 +192,19 @@ public class StockOpnameServiceTests
     {
         await using var fixture = new TestDatabase();
         await fixture.SeedBasicsAsync();
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10);
         var service = ServiceFactory.Opname(fixture, ServiceFactory.Staff(), ServiceFactory.Directory());
         var header = await service.CreateAsync(Input(fixture));
         var detail = header.Details.Single();
 
         await service.UpdateAsync(header.Id, new[]
         {
-            new OpnameLineInput { DetailId = detail.DetailId, CountedQuantity = 7m, Notes = "  counted  " }
+            new OpnameLineInput { DetailId = detail.DetailId, CountedQuantity = 7, Notes = "  counted  " }
         }, "  note  ");
 
         var saved = await fixture.Db.StockOpnameDetails.SingleAsync();
-        saved.CountedQuantity.Should().Be(7m);
-        saved.Difference.Should().Be(-3m);
+        saved.CountedQuantity.Should().Be(7);
+        saved.Difference.Should().Be(-3);
         saved.Notes.Should().Be("counted");
         (await fixture.Db.StockOpnameHeaders.SingleAsync()).Notes.Should().Be("note");
     }
@@ -214,13 +214,13 @@ public class StockOpnameServiceTests
     {
         await using var fixture = new TestDatabase();
         await fixture.SeedBasicsAsync();
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10);
         var service = ServiceFactory.Opname(fixture, ServiceFactory.Staff(), ServiceFactory.Directory());
         var header = await service.CreateAsync(Input(fixture));
 
         var action = () => service.UpdateAsync(header.Id, new[]
         {
-            new OpnameLineInput { DetailId = header.Details.Single().DetailId, CountedQuantity = -1m }
+            new OpnameLineInput { DetailId = header.Details.Single().DetailId, CountedQuantity = -1 }
         }, null);
 
         await action.Should().ThrowAsync<ValidationException>().WithMessage("*Counted quantity*");
@@ -231,7 +231,7 @@ public class StockOpnameServiceTests
     {
         await using var fixture = new TestDatabase();
         await fixture.SeedBasicsAsync();
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10);
         var service = ServiceFactory.Opname(fixture, ServiceFactory.Staff(10), ServiceFactory.Directory(20));
         var header = await service.CreateAsync(Input(fixture));
 
@@ -245,18 +245,18 @@ public class StockOpnameServiceTests
     {
         await using var fixture = new TestDatabase();
         await fixture.SeedBasicsAsync();
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10);
         var service = ServiceFactory.Opname(fixture, ServiceFactory.Staff(10), ServiceFactory.Directory(20));
         var first = await service.CreateAsync(Input(fixture));
         await service.UpdateAsync(first.Id, new[]
         {
-            new OpnameLineInput { DetailId = first.Details.Single().DetailId, CountedQuantity = 10m }
+            new OpnameLineInput { DetailId = first.Details.Single().DetailId, CountedQuantity = 10 }
         }, null);
         await service.SubmitAsync(first.Id);
         var second = await service.CreateAsync(Input(fixture));
         await service.UpdateAsync(second.Id, new[]
         {
-            new OpnameLineInput { DetailId = second.Details.Single().DetailId, CountedQuantity = 10m }
+            new OpnameLineInput { DetailId = second.Details.Single().DetailId, CountedQuantity = 10 }
         }, null);
 
         var action = () => service.SubmitAsync(second.Id);
@@ -269,18 +269,18 @@ public class StockOpnameServiceTests
     {
         await using var fixture = new TestDatabase();
         await fixture.SeedBasicsAsync();
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10);
         var service = ServiceFactory.Opname(fixture, ServiceFactory.Admin(1), ServiceFactory.Directory());
         var header = await service.CreateAsync(Input(fixture));
         await service.UpdateAsync(header.Id, new[]
         {
-            new OpnameLineInput { DetailId = header.Details.Single().DetailId, CountedQuantity = 7m }
+            new OpnameLineInput { DetailId = header.Details.Single().DetailId, CountedQuantity = 7 }
         }, null);
 
         await service.SubmitAsync(header.Id);
 
         (await fixture.Db.StockOpnameHeaders.SingleAsync()).Status.Should().Be(ApprovalStatus.Approved);
-        (await fixture.Db.Stocks.SingleAsync()).Quantity.Should().Be(7m);
+        (await fixture.Db.Stocks.SingleAsync()).Quantity.Should().Be(7);
         (await fixture.Db.StockMovements.SingleAsync()).Type.Should().Be(MovementType.Opname);
     }
 
@@ -289,19 +289,19 @@ public class StockOpnameServiceTests
     {
         await using var fixture = new TestDatabase();
         await fixture.SeedBasicsAsync();
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10);
         var service = ServiceFactory.Opname(fixture, ServiceFactory.Staff(10), ServiceFactory.Directory(20));
         var header = await service.CreateAsync(Input(fixture));
         await service.UpdateAsync(header.Id, new[]
         {
-            new OpnameLineInput { DetailId = header.Details.Single().DetailId, CountedQuantity = 12m }
+            new OpnameLineInput { DetailId = header.Details.Single().DetailId, CountedQuantity = 12 }
         }, null);
         await service.SubmitAsync(header.Id);
         var approver = ServiceFactory.Opname(fixture, ServiceFactory.Staff(20), ServiceFactory.Directory(20));
 
         await approver.ApproveAsync(header.Id);
 
-        (await fixture.Db.Stocks.SingleAsync()).Quantity.Should().Be(12m);
+        (await fixture.Db.Stocks.SingleAsync()).Quantity.Should().Be(12);
         (await fixture.Db.StockOpnameHeaders.SingleAsync()).Status.Should().Be(ApprovalStatus.Approved);
     }
 }

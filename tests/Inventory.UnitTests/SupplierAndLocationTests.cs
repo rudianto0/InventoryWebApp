@@ -282,7 +282,7 @@ public class LocationServiceTests
         await fixture.SeedBasicsAsync();
         var service = new LocationService(fixture.Db);
         var child = await fixture.SeedLocationAsync("WH-CHILD", LocationType.Warehouse, parentId: fixture.WarehouseId);
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 1m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 1);
 
         await FluentActions.Awaiting(() => service.DeactivateAsync(fixture.WarehouseId))
             .Should().ThrowAsync<ValidationException>()
@@ -296,7 +296,7 @@ public class LocationServiceTests
     {
         await using var fixture = new TestDatabase();
         await fixture.SeedBasicsAsync();
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 1m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 1);
         var service = new LocationService(fixture.Db);
 
         var action = () => service.DeactivateAsync(fixture.WarehouseId);
@@ -309,7 +309,7 @@ public class LocationServiceTests
     {
         await using var fixture = new TestDatabase();
         await fixture.SeedBasicsAsync();
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 1m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 1);
         var service = new LocationService(fixture.Db);
 
         var action = () => service.DeleteAsync(fixture.WarehouseId);

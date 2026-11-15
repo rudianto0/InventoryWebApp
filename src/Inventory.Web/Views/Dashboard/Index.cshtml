@@ -25,7 +25,7 @@
     <div class="col-6 col-lg-3">
         <div class="card shadow-sm h-100"><div class="card-body">
             <div class="text-muted small">Total Saldo Stok</div>
-            <div class="fs-3 fw-semibold">@Model.TotalStockQuantity.ToString("N4")</div>
+            <div class="fs-3 fw-semibold">@Model.TotalStockQuantity</div>
         </div></div>
     </div>
     <div class="col-6 col-lg-3">
@@ -60,7 +60,7 @@
                             <td>@item.Sku</td>
                             <td>@item.ProductName</td>
                             <td>@item.LocationName</td>
-                            <td class="text-end text-danger">@item.Quantity.ToString("N4")</td>
+                            <td class="text-end text-danger">@item.Quantity</td>
                             <td class="text-end">@item.ReorderLevel</td>
                         </tr>
                     }
@@ -87,7 +87,7 @@
                             <td>@item.MovementNo</td>
                             <td>@item.Sku - @item.ProductName</td>
                             <td>@item.LocationName</td>
-                            <td class="text-end">@item.Quantity.ToString("N4")</td>
+                            <td class="text-end">@item.Quantity</td>
                         </tr>
                     }
                     </tbody>

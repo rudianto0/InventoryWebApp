@@ -60,7 +60,7 @@ submit, dan approval single-level ke SPV. Stok bertambah hanya saat Approved.
 | `Id` | Guid | Ya | PK | Identitas baris |
 | `StockInHeaderId` | Guid | Ya | FK StockInHeaders | Dokumen induk |
 | `ProductId` | Guid | Ya | FK Products, aktif | Produk yang diterima |
-| `Quantity` | decimal(18,4) | Ya | `> 0` | Jumlah diterima |
+| `Quantity` | int | Ya | `> 0` | Jumlah diterima |
 | `UnitCost` | decimal(18,4)? | Tidak | `>= 0` | Harga satuan (valuasi) |
 | `Notes` | string(500) | Tidak | - | Catatan baris |
 | audit + soft delete | - | - | Otomatis | Jejak create/update/delete |
@@ -95,7 +95,7 @@ submit, dan approval single-level ke SPV. Stok bertambah hanya saat Approved.
 public sealed class StockInLineViewModel
 {
     public Guid ProductId { get; set; }
-    [Range(0.0001, double.MaxValue)] public decimal Quantity { get; set; }
+    [Range(1, int.MaxValue)] public int Quantity { get; set; }
     [Range(0, double.MaxValue)] public decimal? UnitCost { get; set; }
     public string? Notes { get; set; }
 }

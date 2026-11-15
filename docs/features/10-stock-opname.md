@@ -55,16 +55,16 @@ yang ditemukan ditindaklanjuti sebagai adjustment setelah approval.
 | `Id` | Guid | Ya | PK | Identitas baris |
 | `StockOpnameHeaderId` | Guid | Ya | FK header | Sesi induk |
 | `ProductId` | Guid | Ya | FK Products, aktif | Produk yang dihitung |
-| `SystemQuantity` | decimal(18,4) | Ya | - | Snapshot stok sistem |
-| `CountedQuantity` | decimal(18,4)? | Tidak | `>= 0` | Hasil hitung fisik |
-| `Difference` | decimal(18,4) | Ya | - | `Counted - System` |
+| `SystemQuantity` | int | Ya | - | Snapshot stok sistem |
+| `CountedQuantity` | int? | Tidak | `>= 0` | Hasil hitung fisik |
+| `Difference` | int | Ya | - | `Counted - System` |
 | `Notes` | string(500) | Tidak | - | Catatan baris |
 | audit + soft delete | - | - | Otomatis | Jejak create/update/delete |
 
 ## 5. Workflow
 
 1. Staff membuat sesi opname untuk satu lokasi.
-2. Sistem snapshot `SystemQuantity` untuk produk yang dipilih (atau semua stok lokasi).
+2. Sistem snapshot `SystemQuantity` untuk semua stok pada lokasi terpilih; lokasi tanpa stok ditolak.
 3. Staff input `CountedQuantity`.
 4. Submit → SPV review selisih.
 5. Approve → terapkan selisih ke `Stocks` + `StockMovements` Type=Opname.

@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Inventory.Migrations.PostgreSql.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20261115102319_InitialCreate")]
+    [Migration("20261115144223_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -298,9 +298,8 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uuid");
 
-                    b.Property<decimal>("Quantity")
-                        .HasPrecision(18, 4)
-                        .HasColumnType("numeric(18,4)");
+                    b.Property<int>("Quantity")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
@@ -328,9 +327,8 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<decimal>("CountedQuantity")
-                        .HasPrecision(18, 4)
-                        .HasColumnType("numeric(18,4)");
+                    b.Property<int>("CountedQuantity")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
@@ -344,9 +342,8 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                     b.Property<int?>("DeletedById")
                         .HasColumnType("integer");
 
-                    b.Property<decimal>("Difference")
-                        .HasPrecision(18, 4)
-                        .HasColumnType("numeric(18,4)");
+                    b.Property<int>("Difference")
+                        .HasColumnType("integer");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("boolean");
@@ -361,9 +358,8 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                     b.Property<Guid>("StockAdjustmentHeaderId")
                         .HasColumnType("uuid");
 
-                    b.Property<decimal>("SystemQuantity")
-                        .HasPrecision(18, 4)
-                        .HasColumnType("numeric(18,4)");
+                    b.Property<int>("SystemQuantity")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
@@ -486,9 +482,8 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uuid");
 
-                    b.Property<decimal>("Quantity")
-                        .HasPrecision(18, 4)
-                        .HasColumnType("numeric(18,4)");
+                    b.Property<int>("Quantity")
+                        .HasColumnType("integer");
 
                     b.Property<Guid>("StockInHeaderId")
                         .HasColumnType("uuid");
@@ -619,9 +614,8 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uuid");
 
-                    b.Property<decimal>("Quantity")
-                        .HasPrecision(18, 4)
-                        .HasColumnType("numeric(18,4)");
+                    b.Property<int>("Quantity")
+                        .HasColumnType("integer");
 
                     b.Property<Guid>("ReferenceId")
                         .HasColumnType("uuid");
@@ -653,9 +647,8 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<decimal?>("CountedQuantity")
-                        .HasPrecision(18, 4)
-                        .HasColumnType("numeric(18,4)");
+                    b.Property<int?>("CountedQuantity")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
@@ -669,9 +662,8 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                     b.Property<int?>("DeletedById")
                         .HasColumnType("integer");
 
-                    b.Property<decimal>("Difference")
-                        .HasPrecision(18, 4)
-                        .HasColumnType("numeric(18,4)");
+                    b.Property<int>("Difference")
+                        .HasColumnType("integer");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("boolean");
@@ -686,9 +678,8 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                     b.Property<Guid>("StockOpnameHeaderId")
                         .HasColumnType("uuid");
 
-                    b.Property<decimal>("SystemQuantity")
-                        .HasPrecision(18, 4)
-                        .HasColumnType("numeric(18,4)");
+                    b.Property<int>("SystemQuantity")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
@@ -806,9 +797,8 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uuid");
 
-                    b.Property<decimal>("Quantity")
-                        .HasPrecision(18, 4)
-                        .HasColumnType("numeric(18,4)");
+                    b.Property<int>("Quantity")
+                        .HasColumnType("integer");
 
                     b.Property<Guid>("StockOutHeaderId")
                         .HasColumnType("uuid");
@@ -933,9 +923,8 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uuid");
 
-                    b.Property<decimal>("Quantity")
-                        .HasPrecision(18, 4)
-                        .HasColumnType("numeric(18,4)");
+                    b.Property<int>("Quantity")
+                        .HasColumnType("integer");
 
                     b.Property<Guid>("StockTransferHeaderId")
                         .HasColumnType("uuid");

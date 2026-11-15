@@ -20,14 +20,14 @@ public class StockLedgerTests
         await ledger.ApplyAsync(new[]
         {
             new StockChange(MovementType.In, ReferenceType.StockIn, Guid.NewGuid(),
-                fixture.ProductId, fixture.WarehouseId, 10m, 1, "receive")
+                fixture.ProductId, fixture.WarehouseId, 10, 1, "receive")
         });
         await fixture.Db.SaveChangesAsync();
 
         var stock = await fixture.Db.Stocks.SingleAsync();
-        stock.Quantity.Should().Be(10m);
+        stock.Quantity.Should().Be(10);
         var movement = await fixture.Db.StockMovements.SingleAsync();
-        movement.Quantity.Should().Be(10m);
+        movement.Quantity.Should().Be(10);
         movement.Type.Should().Be(MovementType.In);
     }
 
@@ -41,7 +41,7 @@ public class StockLedgerTests
         var action = () => ledger.ApplyAsync(new[]
         {
             new StockChange(MovementType.Out, ReferenceType.StockOut, Guid.NewGuid(),
-                fixture.ProductId, fixture.WarehouseId, -1m, 1, null)
+                fixture.ProductId, fixture.WarehouseId, -1, 1, null)
         });
 
         await action.Should().ThrowAsync<ValidationException>();
@@ -57,14 +57,14 @@ public class StockTransactionApprovalTests
         var currentUser = new FakeCurrentUser { UserId = 10, Roles = new[] { "Staff" } };
         await using var fixture = new TestDatabase(currentUser);
         await fixture.SeedBasicsAsync();
-        fixture.Db.Stocks.Add(new Stock { ProductId = fixture.ProductId, LocationId = fixture.WarehouseId, Quantity = 2m });
+        fixture.Db.Stocks.Add(new Stock { ProductId = fixture.ProductId, LocationId = fixture.WarehouseId, Quantity = 2 });
         await fixture.Db.SaveChangesAsync();
 
         var service = new StockOutService(fixture.Db, currentUser, new FakeUserDirectory(), new StockLedger(fixture.Db, new FakeDocumentNumbers()), new FakeDocumentNumbers());
         var header = await service.CreateAsync(new Inventory.Contracts.StockOutInput
         {
             LocationId = fixture.WarehouseId,
-            Lines = new() { new Inventory.Contracts.DocumentLineInput { ProductId = fixture.ProductId, Quantity = 5m } }
+            Lines = new() { new Inventory.Contracts.DocumentLineInput { ProductId = fixture.ProductId, Quantity = 5 } }
         });
 
         var action = () => service.SubmitAsync(header.Id);
@@ -87,7 +87,7 @@ public class StockTransactionApprovalTests
         {
             SupplierId = fixture.SupplierId,
             LocationId = fixture.WarehouseId,
-            Lines = new() { new Inventory.Contracts.DocumentLineInput { ProductId = fixture.ProductId, Quantity = 7m } }
+            Lines = new() { new Inventory.Contracts.DocumentLineInput { ProductId = fixture.ProductId, Quantity = 7 } }
         });
         await creatorService.SubmitAsync(header.Id);
 
@@ -96,7 +96,7 @@ public class StockTransactionApprovalTests
         await approverService.ApproveAsync(header.Id);
 
         var stock = await fixture.Db.Stocks.SingleAsync();
-        stock.Quantity.Should().Be(7m);
+        stock.Quantity.Should().Be(7);
         var savedHeader = await fixture.Db.StockInHeaders.SingleAsync();
         savedHeader.Status.Should().Be(ApprovalStatus.Approved);
         savedHeader.ApprovedById.Should().Be(20);
@@ -116,7 +116,7 @@ public class StockTransactionApprovalTests
         {
             SupplierId = fixture.SupplierId,
             LocationId = fixture.WarehouseId,
-            Lines = new() { new Inventory.Contracts.DocumentLineInput { ProductId = fixture.ProductId, Quantity = 1m } }
+            Lines = new() { new Inventory.Contracts.DocumentLineInput { ProductId = fixture.ProductId, Quantity = 1 } }
         });
         await creatorService.SubmitAsync(header.Id);
 

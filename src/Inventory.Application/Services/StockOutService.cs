@@ -241,7 +241,7 @@ public sealed class StockOutService(
             var available = await db.Stocks.Where(x => x.ProductId == line.ProductId && x.LocationId == locationId)
                 .Select(x => x.Quantity).FirstOrDefaultAsync(ct);
             if (available < line.Quantity)
-                throw new ValidationException($"Stok tidak mencukupi untuk salah satu produk (tersedia {available:0.####}).");
+                throw new ValidationException($"Stok tidak mencukupi untuk salah satu produk (tersedia {available}).");
         }
     }
 

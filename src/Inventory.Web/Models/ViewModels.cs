@@ -96,7 +96,7 @@ public sealed class ChangePasswordModel
 public sealed class TransactionLineRow
 {
     public Guid ProductId { get; set; }
-    public decimal Quantity { get; set; }
+    public int Quantity { get; set; }
     public decimal? UnitCost { get; set; }
     public string? Notes { get; set; }
 }
@@ -104,7 +104,7 @@ public sealed class TransactionLineRow
 public sealed class AdjustmentLineRow
 {
     public Guid ProductId { get; set; }
-    public decimal CountedQuantity { get; set; }
+    public int CountedQuantity { get; set; }
     public string? Notes { get; set; }
 }
 
@@ -114,8 +114,8 @@ public sealed class OpnameLineRow
     public string Sku { get; set; } = string.Empty;
     public string ProductName { get; set; } = string.Empty;
     public string UnitName { get; set; } = string.Empty;
-    public decimal SystemQuantity { get; set; }
-    public decimal? CountedQuantity { get; set; }
+    public int SystemQuantity { get; set; }
+    public int? CountedQuantity { get; set; }
     public string? Notes { get; set; }
 }
 

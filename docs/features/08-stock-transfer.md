@@ -55,7 +55,7 @@ dua mutasi: keluar dari lokasi asal dan masuk ke lokasi tujuan.
 | `Id` | Guid | Ya | PK | Identitas baris |
 | `StockTransferHeaderId` | Guid | Ya | FK header | Dokumen induk |
 | `ProductId` | Guid | Ya | FK Products, aktif | Produk yang dipindah |
-| `Quantity` | decimal(18,4) | Ya | `> 0` | Jumlah dipindah |
+| `Quantity` | int | Ya | `> 0` | Jumlah dipindah |
 | `Notes` | string(500) | Tidak | - | Catatan baris |
 | audit + soft delete | - | - | Otomatis | Jejak create/update/delete |
 

@@ -10,7 +10,7 @@ public class Stock : IAuditableEntity
     public Product? Product { get; set; }
     public Guid LocationId { get; set; }
     public Location? Location { get; set; }
-    public decimal Quantity { get; set; }
+    public int Quantity { get; set; }
     public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
     public int Version { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
@@ -33,7 +33,7 @@ public class StockMovement : IAuditableEntity
     public Product? Product { get; set; }
     public Guid LocationId { get; set; }
     public Location? Location { get; set; }
-    public decimal Quantity { get; set; }
+    public int Quantity { get; set; }
     public ReferenceType ReferenceType { get; set; }
     public Guid ReferenceId { get; set; }
     public string? Notes { get; set; }

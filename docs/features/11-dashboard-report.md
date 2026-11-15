@@ -58,12 +58,12 @@ filter `IsDeleted = false`.
 | `LocationId` | Guid | ID lokasi baris laporan |
 | `LocationName` | string | Nama lokasi |
 | `BranchCode` | string? | Kode cabang |
-| `Quantity` | decimal | Saldo/mutasi kuantitas |
+| `Quantity` | int | Saldo/mutasi kuantitas |
 | `UpdatedAt` | DateTime | Waktu update saldo (stock balance) |
 | `CreatedAt` | DateTime | Waktu mutasi (stock card/movement) |
 | `MovementNo` | string | Nomor mutasi |
 | `Type` | enum | Jenis mutasi |
-| `RunningBalance` | decimal | Saldo berjalan pada kartu stok |
+| `RunningBalance` | int | Saldo berjalan pada kartu stok |
 | `ReorderLevel` | int | Ambang reorder produk |
 
 ### 4.3 Field Dictionary - DashboardSummary
@@ -71,7 +71,7 @@ filter `IsDeleted = false`.
 | Field | Type | Fungsi |
 |-------|------|--------|
 | `TotalProducts` | int | Jumlah produk aktif |
-| `TotalStockQuantity` | decimal | Total saldo stok |
+| `TotalStockQuantity` | int | Total saldo stok |
 | `BelowReorderCount` | int | Jumlah baris di bawah reorder |
 | `PendingApprovals` | int | Total dokumen Submitted |
 | `TotalLocations` | int | Jumlah lokasi aktif |

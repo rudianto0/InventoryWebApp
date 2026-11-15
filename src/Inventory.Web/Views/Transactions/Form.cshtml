@@ -121,7 +121,7 @@
                                     }
                                 </select>
                             </td>
-                            <td><input name="AdjustmentLines[@i].CountedQuantity" value="@Model.AdjustmentLines[i].CountedQuantity" type="number" step="0.0001" min="0" class="form-control" /></td>
+                            <td><input name="AdjustmentLines[@i].CountedQuantity" value="@Model.AdjustmentLines[i].CountedQuantity" type="number" step="1" min="0" class="form-control" /></td>
                             <td><input name="AdjustmentLines[@i].Notes" value="@Model.AdjustmentLines[i].Notes" class="form-control" /></td>
                             <td><button type="button" class="btn btn-sm btn-outline-danger" onclick="this.closest('tr').remove()">Hapus</button></td>
                         </tr>
@@ -141,7 +141,7 @@
                         }
                     </select>
                 </td>
-                <td><input name="AdjustmentLines[__index__].CountedQuantity" type="number" step="0.0001" min="0" value="0" class="form-control" /></td>
+                <td><input name="AdjustmentLines[__index__].CountedQuantity" type="number" step="1" min="0" value="0" class="form-control" /></td>
                 <td><input name="AdjustmentLines[__index__].Notes" class="form-control" /></td>
                 <td><button type="button" class="btn btn-sm btn-outline-danger" onclick="this.closest('tr').remove()">Hapus</button></td>
             </tr>
@@ -163,10 +163,10 @@
                                 <td>@Model.OpnameLines[i].Sku</td>
                                 <td>@Model.OpnameLines[i].ProductName</td>
                                 <td>@Model.OpnameLines[i].UnitName</td>
-                                <td class="text-end">@Model.OpnameLines[i].SystemQuantity.ToString("N4")</td>
+                                <td class="text-end">@Model.OpnameLines[i].SystemQuantity</td>
                                 <td>
                                     <input type="hidden" name="OpnameLines[@i].DetailId" value="@Model.OpnameLines[i].DetailId" />
-                                    <input name="OpnameLines[@i].CountedQuantity" value="@Model.OpnameLines[i].CountedQuantity" type="number" step="0.0001" min="0" class="form-control" />
+                                    <input name="OpnameLines[@i].CountedQuantity" value="@Model.OpnameLines[i].CountedQuantity" type="number" step="1" min="0" class="form-control" />
                                 </td>
                                 <td><input name="OpnameLines[@i].Notes" value="@Model.OpnameLines[i].Notes" class="form-control" /></td>
                             </tr>
@@ -212,7 +212,7 @@
                                     }
                                 </select>
                             </td>
-                            <td><input name="Lines[@i].Quantity" value="@Model.Lines[i].Quantity" type="number" step="0.0001" min="0" class="form-control" /></td>
+                            <td><input name="Lines[@i].Quantity" value="@Model.Lines[i].Quantity" type="number" step="1" min="0" class="form-control" /></td>
                             @if (Model.ShowUnitCost)
                             {
                                 <td><input name="Lines[@i].UnitCost" value="@Model.Lines[i].UnitCost" type="number" step="0.0001" min="0" class="form-control" /></td>
@@ -236,7 +236,7 @@
                         }
                     </select>
                 </td>
-                <td><input name="Lines[__index__].Quantity" type="number" step="0.0001" min="0" value="0" class="form-control" /></td>
+                <td><input name="Lines[__index__].Quantity" type="number" step="1" min="0" value="0" class="form-control" /></td>
                 @if (Model.ShowUnitCost)
                 {
                     <td><input name="Lines[__index__].UnitCost" type="number" step="0.0001" min="0" class="form-control" /></td>

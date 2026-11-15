@@ -335,7 +335,7 @@ public class CatalogProductTests
     {
         await using var fixture = new TestDatabase();
         await fixture.SeedBasicsAsync();
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 1m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 1);
         var service = new CatalogService(fixture.Db);
 
         var action = () => service.DeleteProductAsync(fixture.ProductId);

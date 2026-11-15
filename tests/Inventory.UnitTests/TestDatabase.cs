@@ -96,7 +96,7 @@ internal sealed class TestDatabase : IAsyncDisposable
         SupplierId = supplier.Id;
     }
 
-    public async Task SeedStockAsync(Guid productId, Guid locationId, decimal quantity)
+    public async Task SeedStockAsync(Guid productId, Guid locationId, int quantity)
     {
         Db.Stocks.Add(new Stock { ProductId = productId, LocationId = locationId, Quantity = quantity });
         await Db.SaveChangesAsync();

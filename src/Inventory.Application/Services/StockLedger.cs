@@ -13,7 +13,7 @@ public sealed record StockChange(
     Guid ReferenceId,
     Guid ProductId,
     Guid LocationId,
-    decimal Quantity,
+    int Quantity,
     int UserId,
     string? Notes);
 

@@ -55,9 +55,9 @@ dan approval. Mencatat system quantity vs counted quantity.
 | `Id` | Guid | Ya | PK | Identitas baris |
 | `StockAdjustmentHeaderId` | Guid | Ya | FK header | Dokumen induk |
 | `ProductId` | Guid | Ya | FK Products, aktif | Produk yang dikoreksi |
-| `SystemQuantity` | decimal(18,4) | Ya | - | Stok sistem saat snapshot |
-| `CountedQuantity` | decimal(18,4) | Ya | `>= 0` | Hasil hitung/koreksi |
-| `Difference` | decimal(18,4) | Ya | - | `Counted - System` |
+| `SystemQuantity` | int | Ya | - | Stok sistem saat snapshot |
+| `CountedQuantity` | int | Ya | `>= 0` | Hasil hitung/koreksi |
+| `Difference` | int | Ya | - | `Counted - System` |
 | `Notes` | string(500) | Tidak | - | Catatan baris |
 | audit + soft delete | - | - | Otomatis | Jejak create/update/delete |
 

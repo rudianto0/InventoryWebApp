@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
-<body class="bg-light">
+<body class="bg-light @(isAuthenticated ? "is-authenticated" : "")">
     <div class="app-shell">
         @if (isAuthenticated)
         {
@@ -97,9 +97,9 @@
         }
 
         <div class="app-main">
-            <header class="topbar">
-                @if (isAuthenticated)
-                {
+            @if (isAuthenticated)
+            {
+                <header class="topbar">
                     <button type="button" class="btn sidebar-toggle" id="sidebarToggle" aria-controls="appSidebar" aria-expanded="false" aria-label="Toggle navigation">
                         <span aria-hidden="true">&#9776;</span>
                     </button>
@@ -124,12 +124,8 @@
                             </li>
                         </ul>
                     </div>
-                }
-                else
-                {
-                    <a class="topbar-brand" asp-controller="Dashboard" asp-action="Index">Inventory</a>
-                }
-            </header>
+                </header>
+            }
 
             <main role="main" class="app-content">
                 @if (TempData["Success"] is string success)

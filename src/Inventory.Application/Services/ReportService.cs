@@ -16,7 +16,7 @@ public sealed class ReportService(IAppDbContext db)
             stockQuery = stockQuery.Where(x => x.LocationId == locationId.Value);
 
         var totalProducts = await db.Products.CountAsync(x => x.IsActive, ct);
-        var totalQuantity = await stockQuery.SumAsync(x => (decimal?)x.Quantity, ct) ?? 0m;
+        var totalQuantity = await stockQuery.SumAsync(x => (int?)x.Quantity, ct) ?? 0;
         var totalLocations = await db.Locations.CountAsync(x => x.IsActive, ct);
         var pending = await db.StockInHeaders.CountAsync(x => x.Status == ApprovalStatus.Submitted, ct)
             + await db.StockOutHeaders.CountAsync(x => x.Status == ApprovalStatus.Submitted, ct)
@@ -110,14 +110,14 @@ public sealed class ReportService(IAppDbContext db)
         if (filter.To.HasValue)
             query = query.Where(x => x.CreatedAt < filter.To.Value.AddDays(1).ToDateTime(TimeOnly.MinValue));
 
-        decimal opening = 0m;
+        int opening = 0;
         if (filter.From.HasValue)
         {
             var beforeQuery = db.StockMovements.AsNoTracking()
                 .Where(x => x.ProductId == filter.ProductId.Value && x.CreatedAt < filter.From.Value.ToDateTime(TimeOnly.MinValue));
             if (filter.LocationId.HasValue)
                 beforeQuery = beforeQuery.Where(x => x.LocationId == filter.LocationId.Value);
-            opening = await beforeQuery.SumAsync(x => (decimal?)x.Quantity, ct) ?? 0m;
+            opening = await beforeQuery.SumAsync(x => (int?)x.Quantity, ct) ?? 0;
         }
 
         var movements = await query.OrderBy(x => x.CreatedAt).ThenBy(x => x.Id)

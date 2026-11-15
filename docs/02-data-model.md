@@ -2,7 +2,7 @@
 
 Semua ID data bisnis menggunakan `Guid` (`Guid.CreateVersion7()`, time-ordered).
 ID user tetap `int` karena terikat ASP.NET Identity. Semua timestamp `DateTime`
-(UTC). Quantity & cost `decimal(18,4)`. Tidak ada `TenantId`. Cabang ditandai
+(UTC). Quantity menggunakan `int`, cost menggunakan `decimal(18,4)`. Tidak ada `TenantId`. Cabang ditandai
 pada `Locations` (lihat ADR-004).
 
 Semua entity bisnis memiliki **audit fields**:
@@ -105,7 +105,7 @@ Aturan audit:
 | Stock | `Id` | Guid | Ya | PK | Identitas baris saldo |
 | Stock | `ProductId` | Guid | Ya | FK Products | Produk saldo |
 | Stock | `LocationId` | Guid | Ya | FK Locations | Lokasi saldo |
-| Stock | `Quantity` | decimal(18,4) | Ya | `>= 0` | Saldo terkini |
+| Stock | `Quantity` | int | Ya | `>= 0` | Saldo terkini |
 | Stock | `UpdatedAt` | DateTime | Ya | Otomatis | Waktu update saldo |
 | Stock | `Version` | int | Ya | Concurrency token | Optimistic concurrency |
 | StockMovement | `Id` | Guid | Ya | PK | Identitas mutasi |
@@ -113,7 +113,7 @@ Aturan audit:
 | StockMovement | `Type` | enum | Ya | MovementType | Jenis mutasi |
 | StockMovement | `ProductId` | Guid | Ya | FK Products | Produk yang bergerak |
 | StockMovement | `LocationId` | Guid | Ya | FK Locations | Lokasi mutasi |
-| StockMovement | `Quantity` | decimal(18,4) | Ya | Signed | Delta kuantitas |
+| StockMovement | `Quantity` | int | Ya | Signed | Delta kuantitas |
 | StockMovement | `ReferenceType` | enum | Ya | ReferenceType | Jenis dokumen sumber |
 | StockMovement | `ReferenceId` | Guid | Ya | - | ID header dokumen sumber |
 | StockMovement | `Notes` | string(500) | Tidak | - | Catatan mutasi |
@@ -167,11 +167,11 @@ dan `ToLocationId` (Transfer), `Purpose` (Stock Out), `Reason` (Adjustment).
 | `Id` | Guid | Ya | PK | Identitas baris |
 | `{Header}Id` | Guid | Ya | FK header | Dokumen induk |
 | `ProductId` | Guid | Ya | FK Products | Produk pada baris |
-| `Quantity` | decimal(18,4) | Ya | `> 0` | Kuantitas transaksi |
+| `Quantity` | int | Ya | `> 0` | Kuantitas transaksi |
 | `UnitCost` | decimal(18,4)? | Tidak | `>= 0` | Harga satuan (Stock In) |
-| `SystemQuantity` | decimal(18,4) | Ya | - | Stok sistem saat snapshot |
-| `CountedQuantity` | decimal(18,4)? | Tidak | `>= 0` | Hasil hitung fisik |
-| `Difference` | decimal(18,4) | Ya | - | `Counted - System` |
+| `SystemQuantity` | int | Ya | - | Stok sistem saat snapshot |
+| `CountedQuantity` | int? | Tidak | `>= 0` | Hasil hitung fisik |
+| `Difference` | int | Ya | - | `Counted - System` |
 | `Notes` | string(500) | Tidak | - | Catatan baris |
 | audit + `IsDeleted` | - | - | Otomatis | Jejak create/update/delete |
 

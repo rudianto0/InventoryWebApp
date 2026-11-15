@@ -135,7 +135,6 @@ public class AppDbContext : IdentityDbContext<AppUser, AppRole, int>, IAppDbCont
 
         builder.Entity<Stock>(b =>
         {
-            b.Property(x => x.Quantity).HasPrecision(18, 4);
             b.Property(x => x.Version).IsConcurrencyToken();
             b.HasIndex(x => new { x.ProductId, x.LocationId }).IsUnique();
             b.HasOne(x => x.Product).WithMany().HasForeignKey(x => x.ProductId).OnDelete(DeleteBehavior.Restrict);
@@ -146,7 +145,6 @@ public class AppDbContext : IdentityDbContext<AppUser, AppRole, int>, IAppDbCont
         builder.Entity<StockMovement>(b =>
         {
             b.Property(x => x.MovementNo).HasMaxLength(50).IsRequired();
-            b.Property(x => x.Quantity).HasPrecision(18, 4);
             b.Property(x => x.Notes).HasMaxLength(500);
             b.HasIndex(x => new { x.ProductId, x.LocationId, x.CreatedAt });
             b.HasOne(x => x.Product).WithMany().HasForeignKey(x => x.ProductId).OnDelete(DeleteBehavior.Restrict);
@@ -166,7 +164,6 @@ public class AppDbContext : IdentityDbContext<AppUser, AppRole, int>, IAppDbCont
 
         builder.Entity<StockInDetail>(b =>
         {
-            b.Property(x => x.Quantity).HasPrecision(18, 4);
             b.Property(x => x.UnitCost).HasPrecision(18, 4);
             b.Property(x => x.Notes).HasMaxLength(500);
             b.HasOne(x => x.Product).WithMany().HasForeignKey(x => x.ProductId).OnDelete(DeleteBehavior.Restrict);
@@ -183,7 +180,6 @@ public class AppDbContext : IdentityDbContext<AppUser, AppRole, int>, IAppDbCont
 
         builder.Entity<StockOutDetail>(b =>
         {
-            b.Property(x => x.Quantity).HasPrecision(18, 4);
             b.Property(x => x.Notes).HasMaxLength(500);
             b.HasOne(x => x.Product).WithMany().HasForeignKey(x => x.ProductId).OnDelete(DeleteBehavior.Restrict);
         });
@@ -199,7 +195,6 @@ public class AppDbContext : IdentityDbContext<AppUser, AppRole, int>, IAppDbCont
 
         builder.Entity<StockTransferDetail>(b =>
         {
-            b.Property(x => x.Quantity).HasPrecision(18, 4);
             b.Property(x => x.Notes).HasMaxLength(500);
             b.HasOne(x => x.Product).WithMany().HasForeignKey(x => x.ProductId).OnDelete(DeleteBehavior.Restrict);
         });
@@ -215,9 +210,6 @@ public class AppDbContext : IdentityDbContext<AppUser, AppRole, int>, IAppDbCont
 
         builder.Entity<StockAdjustmentDetail>(b =>
         {
-            b.Property(x => x.SystemQuantity).HasPrecision(18, 4);
-            b.Property(x => x.CountedQuantity).HasPrecision(18, 4);
-            b.Property(x => x.Difference).HasPrecision(18, 4);
             b.Property(x => x.Notes).HasMaxLength(500);
             b.HasOne(x => x.Product).WithMany().HasForeignKey(x => x.ProductId).OnDelete(DeleteBehavior.Restrict);
         });
@@ -232,9 +224,6 @@ public class AppDbContext : IdentityDbContext<AppUser, AppRole, int>, IAppDbCont
 
         builder.Entity<StockOpnameDetail>(b =>
         {
-            b.Property(x => x.SystemQuantity).HasPrecision(18, 4);
-            b.Property(x => x.CountedQuantity).HasPrecision(18, 4);
-            b.Property(x => x.Difference).HasPrecision(18, 4);
             b.Property(x => x.Notes).HasMaxLength(500);
             b.HasOne(x => x.Product).WithMany().HasForeignKey(x => x.ProductId).OnDelete(DeleteBehavior.Restrict);
         });

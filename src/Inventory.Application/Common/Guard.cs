@@ -10,10 +10,22 @@ public static class Guard
             throw new ValidationException($"{field} wajib diisi.");
     }
 
+    public static void Positive(int value, string field)
+    {
+        if (value <= 0)
+            throw new ValidationException($"{field} harus lebih besar dari 0.");
+    }
+
     public static void Positive(decimal value, string field)
     {
         if (value <= 0)
             throw new ValidationException($"{field} harus lebih besar dari 0.");
+    }
+
+    public static void NotNegative(int value, string field)
+    {
+        if (value < 0)
+            throw new ValidationException($"{field} tidak boleh negatif.");
     }
 
     public static void NotNegative(decimal value, string field)

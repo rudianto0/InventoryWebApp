@@ -55,7 +55,7 @@ single-level. Stok berkurang saat Approved.
 | `Id` | Guid | Ya | PK | Identitas baris |
 | `StockOutHeaderId` | Guid | Ya | FK StockOutHeaders | Dokumen induk |
 | `ProductId` | Guid | Ya | FK Products, aktif | Produk yang keluar |
-| `Quantity` | decimal(18,4) | Ya | `> 0` | Jumlah keluar |
+| `Quantity` | int | Ya | `> 0` | Jumlah keluar |
 | `Notes` | string(500) | Tidak | - | Catatan baris |
 | audit + soft delete | - | - | Otomatis | Jejak create/update/delete |
 

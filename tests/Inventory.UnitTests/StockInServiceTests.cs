@@ -9,7 +9,7 @@ namespace Inventory.UnitTests;
 
 public class StockInServiceTests
 {
-    private static StockInInput ValidInput(TestDatabase fixture, decimal quantity = 5m) => new()
+    private static StockInInput ValidInput(TestDatabase fixture, int quantity = 5) => new()
     {
         SupplierId = fixture.SupplierId,
         LocationId = fixture.WarehouseId,
@@ -33,7 +33,7 @@ public class StockInServiceTests
         header.Status.Should().Be(ApprovalStatus.Draft);
         header.DocNo.Should().NotBeNullOrWhiteSpace();
         header.CreatedById.Should().Be(10);
-        header.Details.Should().ContainSingle(x => x.Quantity == 5m);
+        header.Details.Should().ContainSingle(x => x.Quantity == 5);
     }
 
     [Fact]
@@ -92,8 +92,8 @@ public class StockInServiceTests
             LocationId = fixture.WarehouseId,
             Lines = new()
             {
-                new() { ProductId = fixture.ProductId, Quantity = 1m },
-                new() { ProductId = fixture.ProductId, Quantity = 2m }
+                new() { ProductId = fixture.ProductId, Quantity = 1 },
+                new() { ProductId = fixture.ProductId, Quantity = 2 }
             }
         };
 
@@ -109,7 +109,7 @@ public class StockInServiceTests
         await fixture.SeedBasicsAsync();
         var service = ServiceFactory.StockIn(fixture, ServiceFactory.Staff(), ServiceFactory.Directory());
 
-        var action = () => service.CreateAsync(ValidInput(fixture, 0m));
+        var action = () => service.CreateAsync(ValidInput(fixture, 0));
 
         await action.Should().ThrowAsync<ValidationException>().WithMessage("*Quantity*");
     }
@@ -124,7 +124,7 @@ public class StockInServiceTests
         {
             SupplierId = fixture.SupplierId,
             LocationId = fixture.WarehouseId,
-            Lines = new() { new() { ProductId = fixture.ProductId, Quantity = 1m, UnitCost = -1m } }
+            Lines = new() { new() { ProductId = fixture.ProductId, Quantity = 1, UnitCost = -1m } }
         };
 
         var action = () => service.CreateAsync(input);
@@ -141,7 +141,7 @@ public class StockInServiceTests
         var created = await ServiceFactory.StockIn(fixture, creator, ServiceFactory.Directory()).CreateAsync(ValidInput(fixture));
         var other = ServiceFactory.StockIn(fixture, ServiceFactory.Staff(99), ServiceFactory.Directory());
 
-        var action = () => other.UpdateAsync(created.Id, ValidInput(fixture, 8m));
+        var action = () => other.UpdateAsync(created.Id, ValidInput(fixture, 8));
 
         await action.Should().ThrowAsync<ValidationException>().WithMessage("*tidak berhak*");
     }
@@ -157,7 +157,7 @@ public class StockInServiceTests
         var created = await service.CreateAsync(ValidInput(fixture));
         await service.SubmitAsync(created.Id);
 
-        var action = () => service.UpdateAsync(created.Id, ValidInput(fixture, 8m));
+        var action = () => service.UpdateAsync(created.Id, ValidInput(fixture, 8));
 
         await action.Should().ThrowAsync<ValidationException>().WithMessage("*Draft atau Rejected*");
     }
@@ -278,13 +278,13 @@ public class StockInServiceTests
         var admin = ServiceFactory.Admin(1);
         var service = ServiceFactory.StockIn(fixture, admin, ServiceFactory.Directory());
 
-        var created = await service.CreateAsync(ValidInput(fixture, 7m));
+        var created = await service.CreateAsync(ValidInput(fixture, 7));
         await service.SubmitAsync(created.Id);
 
         var saved = await fixture.Db.StockInHeaders.SingleAsync();
         saved.Status.Should().Be(ApprovalStatus.Approved);
         saved.ApprovedById.Should().Be(1);
-        (await fixture.Db.Stocks.SingleAsync()).Quantity.Should().Be(7m);
+        (await fixture.Db.Stocks.SingleAsync()).Quantity.Should().Be(7);
     }
 
     [Fact]

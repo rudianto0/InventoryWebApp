@@ -48,7 +48,7 @@ public class StockLedgerExtraTests
         await ledger.ApplyAsync(new[]
         {
             new StockChange(MovementType.Adjustment, ReferenceType.StockAdjustment, Guid.NewGuid(),
-                fixture.ProductId, fixture.WarehouseId, 0m, 1, null)
+                fixture.ProductId, fixture.WarehouseId, 0, 1, null)
         });
         await fixture.Db.SaveChangesAsync();
 
@@ -61,18 +61,18 @@ public class StockLedgerExtraTests
     {
         await using var fixture = new TestDatabase();
         await fixture.SeedBasicsAsync();
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10);
         var ledger = new StockLedger(fixture.Db, new FakeDocumentNumbers());
 
         await ledger.ApplyAsync(new[]
         {
             new StockChange(MovementType.Out, ReferenceType.StockOut, Guid.NewGuid(),
-                fixture.ProductId, fixture.WarehouseId, -4m, 1, null)
+                fixture.ProductId, fixture.WarehouseId, -4, 1, null)
         });
         await fixture.Db.SaveChangesAsync();
 
-        (await fixture.Db.Stocks.SingleAsync()).Quantity.Should().Be(6m);
-        (await fixture.Db.StockMovements.SingleAsync()).Quantity.Should().Be(-4m);
+        (await fixture.Db.Stocks.SingleAsync()).Quantity.Should().Be(6);
+        (await fixture.Db.StockMovements.SingleAsync()).Quantity.Should().Be(-4);
     }
 
     [Fact]
@@ -84,12 +84,12 @@ public class StockLedgerExtraTests
 
         await ledger.ApplyAsync(new[]
         {
-            new StockChange(MovementType.In, ReferenceType.StockIn, Guid.NewGuid(), fixture.ProductId, fixture.WarehouseId, 5m, 1, null),
-            new StockChange(MovementType.In, ReferenceType.StockIn, Guid.NewGuid(), fixture.ProductId, fixture.WarehouseId, 3m, 1, null)
+            new StockChange(MovementType.In, ReferenceType.StockIn, Guid.NewGuid(), fixture.ProductId, fixture.WarehouseId, 5, 1, null),
+            new StockChange(MovementType.In, ReferenceType.StockIn, Guid.NewGuid(), fixture.ProductId, fixture.WarehouseId, 3, 1, null)
         });
         await fixture.Db.SaveChangesAsync();
 
-        (await fixture.Db.Stocks.SingleAsync()).Quantity.Should().Be(8m);
+        (await fixture.Db.Stocks.SingleAsync()).Quantity.Should().Be(8);
         (await fixture.Db.StockMovements.CountAsync()).Should().Be(2);
     }
 
@@ -104,7 +104,7 @@ public class StockLedgerExtraTests
         await ledger.ApplyAsync(new[]
         {
             new StockChange(MovementType.In, ReferenceType.StockIn, referenceId,
-                fixture.ProductId, fixture.WarehouseId, 10m, 7, "receive")
+                fixture.ProductId, fixture.WarehouseId, 10, 7, "receive")
         });
         await fixture.Db.SaveChangesAsync();
 
@@ -131,7 +131,7 @@ public class StockLedgerExtraTests
         var action = () => ledger.ApplyAsync(new[]
         {
             new StockChange(MovementType.Out, ReferenceType.StockOut, Guid.NewGuid(),
-                fixture.ProductId, fixture.WarehouseId, -2m, 1, null)
+                fixture.ProductId, fixture.WarehouseId, -2, 1, null)
         });
 
         var exception = await action.Should().ThrowAsync<ValidationException>();
@@ -143,18 +143,18 @@ public class StockLedgerExtraTests
     {
         await using var fixture = new TestDatabase();
         await fixture.SeedBasicsAsync();
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 10);
         var ledger = new StockLedger(fixture.Db, new FakeDocumentNumbers());
 
         await ledger.ApplyAsync(new[]
         {
-            new StockChange(MovementType.TransferOut, ReferenceType.StockTransfer, Guid.NewGuid(), fixture.ProductId, fixture.WarehouseId, -4m, 1, null),
-            new StockChange(MovementType.TransferIn, ReferenceType.StockTransfer, Guid.NewGuid(), fixture.ProductId, fixture.Warehouse2Id, 4m, 1, null)
+            new StockChange(MovementType.TransferOut, ReferenceType.StockTransfer, Guid.NewGuid(), fixture.ProductId, fixture.WarehouseId, -4, 1, null),
+            new StockChange(MovementType.TransferIn, ReferenceType.StockTransfer, Guid.NewGuid(), fixture.ProductId, fixture.Warehouse2Id, 4, 1, null)
         });
         await fixture.Db.SaveChangesAsync();
 
-        (await fixture.Db.Stocks.SingleAsync(x => x.LocationId == fixture.WarehouseId)).Quantity.Should().Be(6m);
-        (await fixture.Db.Stocks.SingleAsync(x => x.LocationId == fixture.Warehouse2Id)).Quantity.Should().Be(4m);
+        (await fixture.Db.Stocks.SingleAsync(x => x.LocationId == fixture.WarehouseId)).Quantity.Should().Be(6);
+        (await fixture.Db.Stocks.SingleAsync(x => x.LocationId == fixture.Warehouse2Id)).Quantity.Should().Be(4);
         (await fixture.Db.StockMovements.CountAsync()).Should().Be(2);
     }
 
@@ -163,17 +163,17 @@ public class StockLedgerExtraTests
     {
         await using var fixture = new TestDatabase();
         await fixture.SeedBasicsAsync();
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 5m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 5);
         var ledger = new StockLedger(fixture.Db, new FakeDocumentNumbers());
 
         await ledger.ApplyAsync(new[]
         {
             new StockChange(MovementType.Adjustment, ReferenceType.StockAdjustment, Guid.NewGuid(),
-                fixture.ProductId, fixture.WarehouseId, -5m, 1, null)
+                fixture.ProductId, fixture.WarehouseId, -5, 1, null)
         });
         await fixture.Db.SaveChangesAsync();
 
-        (await fixture.Db.Stocks.SingleAsync()).Quantity.Should().Be(0m);
+        (await fixture.Db.Stocks.SingleAsync()).Quantity.Should().Be(0);
     }
 }
 
@@ -184,7 +184,7 @@ public class QueryFilterTests
     {
         await using var fixture = new TestDatabase();
         await fixture.SeedBasicsAsync();
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 5m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 5);
         var product = await fixture.Db.Products.SingleAsync(x => x.Id == fixture.ProductId);
         product.IsDeleted = true;
         product.IsActive = false;
@@ -199,7 +199,7 @@ public class QueryFilterTests
     {
         await using var fixture = new TestDatabase();
         await fixture.SeedBasicsAsync();
-        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 5m);
+        await fixture.SeedStockAsync(fixture.ProductId, fixture.WarehouseId, 5);
         var location = await fixture.Db.Locations.SingleAsync(x => x.Id == fixture.WarehouseId);
         location.IsDeleted = true;
         location.IsActive = false;

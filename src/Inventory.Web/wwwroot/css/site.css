@@ -202,7 +202,7 @@ body.sidebar-open .sidebar-backdrop {
     transform: none;
   }
 
-  .app-main {
+  .is-authenticated .app-main {
     margin-left: var(--sidebar-width);
   }
 

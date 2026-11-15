@@ -24,7 +24,7 @@ tergantung kebutuhan deployment, tanpa mengubah kode domain/application.
    karena DDL EF Core bersifat provider-specific.
 5. Hindari tipe kolom native yang tidak portabel. Gunakan:
    - `string` dengan panjang eksplisit (indexable di kedua provider).
-   - `decimal(18,4)` untuk quantity & cost.
+   - `int` untuk quantity dan `decimal(18,4)` untuk cost.
    - `DateTime` dalam **UTC**.
    - Nilai JSON disimpan sebagai `string` (bukan tipe `jsonb` native).
 6. Row versioning / concurrency memakai `rowversion` (SQL Server) atau

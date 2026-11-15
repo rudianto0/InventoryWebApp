@@ -237,7 +237,7 @@ public sealed class StockTransferService(
                 var available = await db.Stocks.Where(x => x.ProductId == line.ProductId && x.LocationId == fromId)
                     .Select(x => x.Quantity).FirstOrDefaultAsync(ct);
                 if (available < line.Quantity)
-                    throw new ValidationException($"Stok asal tidak mencukupi untuk salah satu produk (tersedia {available:0.####}).");
+                    throw new ValidationException($"Stok asal tidak mencukupi untuk salah satu produk (tersedia {available}).");
             }
         }
     }

@@ -94,13 +94,13 @@
                             <td>@line.UnitName</td>
                             @if (isAdjustLike)
                             {
-                                <td class="text-end">@((line.SystemQuantity ?? 0).ToString("N4"))</td>
-                                <td class="text-end">@((line.CountedQuantity ?? 0).ToString("N4"))</td>
-                                <td class="text-end @((line.Difference ?? 0) < 0 ? "text-danger" : "")">@((line.Difference ?? 0).ToString("N4"))</td>
+                                <td class="text-end">@(line.SystemQuantity ?? 0)</td>
+                                <td class="text-end">@(line.CountedQuantity ?? 0)</td>
+                                <td class="text-end @((line.Difference ?? 0) < 0 ? "text-danger" : "")">@(line.Difference ?? 0)</td>
                             }
                             else
                             {
-                                <td class="text-end">@line.Quantity.ToString("N4")</td>
+                                <td class="text-end">@line.Quantity</td>
                                 @if (Model.Mode == "document") { <td class="text-end">@(line.UnitCost?.ToString("N4"))</td> }
                             }
                             <td>@line.Notes</td>
