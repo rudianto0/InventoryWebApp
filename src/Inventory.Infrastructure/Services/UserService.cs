@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Inventory.Application.Abstractions;
 using Inventory.Application.Common;
-using Inventory.Application.Dtos;
+using Inventory.Contracts;
 using Inventory.Infrastructure.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;

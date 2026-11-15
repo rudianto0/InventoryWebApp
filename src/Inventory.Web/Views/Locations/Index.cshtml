@@ -1,4 +1,4 @@
-@model IReadOnlyList<Location>
+@model IReadOnlyList<LocationResponse>
 @{
     ViewData["Title"] = "Locations";
     var isAdmin = User.IsInRole("Admin");
@@ -26,7 +26,7 @@
                 <td>@item.Code</td>
                 <td>@item.Name</td>
                 <td>@item.Type</td>
-                <td>@item.ParentLocation?.Name</td>
+                <td>@item.ParentLocationName</td>
                 <td>@item.BranchCode</td>
                 <td><span class="badge @(item.IsActive ? "bg-success" : "bg-secondary")">@(item.IsActive ? "Aktif" : "Non-aktif")</span></td>
                 <td class="text-end">

@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Inventory.Application.Abstractions;
 using Inventory.Application.Common;
-using Inventory.Application.Dtos;
+using Inventory.Contracts;
 using Inventory.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,7 +9,7 @@ namespace Inventory.Application.Services;
 
 public sealed class CatalogService(IAppDbContext db)
 {
-    public async Task<IReadOnlyList<Category>> GetCategoriesAsync(string? search = null, CancellationToken ct = default)
+    public async Task<IReadOnlyList<CategoryResponse>> GetCategoriesAsync(string? search = null, CancellationToken ct = default)
     {
         var query = db.Categories.AsNoTracking();
         if (!string.IsNullOrWhiteSpace(search))
@@ -17,13 +17,19 @@ public sealed class CatalogService(IAppDbContext db)
             var term = search.Trim();
             query = query.Where(x => x.Name.Contains(term));
         }
-        return await query.OrderBy(x => x.Name).ToListAsync(ct);
+        return await query.OrderBy(x => x.Name).Select(x => new CategoryResponse
+        {
+            Id = x.Id, Name = x.Name, Description = x.Description, IsActive = x.IsActive
+        }).ToListAsync(ct);
     }
 
-    public Task<Category?> GetCategoryAsync(Guid id, CancellationToken ct = default) =>
-        db.Categories.FirstOrDefaultAsync(x => x.Id == id, ct);
+    public Task<CategoryResponse?> GetCategoryAsync(Guid id, CancellationToken ct = default) =>
+        db.Categories.Where(x => x.Id == id).Select(x => new CategoryResponse
+        {
+            Id = x.Id, Name = x.Name, Description = x.Description, IsActive = x.IsActive
+        }).FirstOrDefaultAsync(ct);
 
-    public async Task<Category> CreateCategoryAsync(CategoryInput input, CancellationToken ct = default)
+    public async Task<CategoryResponse> CreateCategoryAsync(CategoryInput input, CancellationToken ct = default)
     {
         Guard.Required(input.Name, "Nama kategori");
         var name = input.Name.Trim();
@@ -33,7 +39,11 @@ public sealed class CatalogService(IAppDbContext db)
         var entity = new Category { Name = name, Description = Guard.TrimOrNull(input.Description), IsActive = input.IsActive };
         db.Categories.Add(entity);
         await db.SaveChangesAsync(ct);
-        return entity;
+        return new CategoryResponse
+        {
+            Id = entity.Id, Name = entity.Name, Description = entity.Description,
+            IsActive = entity.IsActive, CreatedById = entity.CreatedById
+        };
     }
 
     public async Task UpdateCategoryAsync(Guid id, CategoryInput input, CancellationToken ct = default)
@@ -71,7 +81,7 @@ public sealed class CatalogService(IAppDbContext db)
         await db.SaveChangesAsync(ct);
     }
 
-    public async Task<IReadOnlyList<Unit>> GetUnitsAsync(string? search = null, CancellationToken ct = default)
+    public async Task<IReadOnlyList<UnitResponse>> GetUnitsAsync(string? search = null, CancellationToken ct = default)
     {
         var query = db.Units.AsNoTracking();
         if (!string.IsNullOrWhiteSpace(search))
@@ -79,13 +89,19 @@ public sealed class CatalogService(IAppDbContext db)
             var term = search.Trim();
             query = query.Where(x => x.Code.Contains(term) || x.Name.Contains(term));
         }
-        return await query.OrderBy(x => x.Code).ToListAsync(ct);
+        return await query.OrderBy(x => x.Code).Select(x => new UnitResponse
+        {
+            Id = x.Id, Code = x.Code, Name = x.Name
+        }).ToListAsync(ct);
     }
 
-    public Task<Unit?> GetUnitAsync(Guid id, CancellationToken ct = default) =>
-        db.Units.FirstOrDefaultAsync(x => x.Id == id, ct);
+    public Task<UnitResponse?> GetUnitAsync(Guid id, CancellationToken ct = default) =>
+        db.Units.Where(x => x.Id == id).Select(x => new UnitResponse
+        {
+            Id = x.Id, Code = x.Code, Name = x.Name
+        }).FirstOrDefaultAsync(ct);
 
-    public async Task<Unit> CreateUnitAsync(UnitInput input, CancellationToken ct = default)
+    public async Task<UnitResponse> CreateUnitAsync(UnitInput input, CancellationToken ct = default)
     {
         Guard.Required(input.Code, "Kode unit");
         Guard.Required(input.Name, "Nama unit");
@@ -96,7 +112,7 @@ public sealed class CatalogService(IAppDbContext db)
         var entity = new Unit { Code = code, Name = input.Name.Trim() };
         db.Units.Add(entity);
         await db.SaveChangesAsync(ct);
-        return entity;
+        return new UnitResponse { Id = entity.Id, Code = entity.Code, Name = entity.Name };
     }
 
     public async Task UpdateUnitAsync(Guid id, UnitInput input, CancellationToken ct = default)
@@ -149,10 +165,14 @@ public sealed class CatalogService(IAppDbContext db)
         }).ToListAsync(ct);
     }
 
-    public Task<Product?> GetProductAsync(Guid id, CancellationToken ct = default) =>
-        db.Products.FirstOrDefaultAsync(x => x.Id == id, ct);
+    public Task<ProductResponse?> GetProductAsync(Guid id, CancellationToken ct = default) =>
+        db.Products.Where(x => x.Id == id).Select(x => new ProductResponse
+        {
+            Id = x.Id, Sku = x.Sku, Name = x.Name, CategoryId = x.CategoryId,
+            UnitId = x.UnitId, ReorderLevel = x.ReorderLevel, IsActive = x.IsActive, CreatedAt = x.CreatedAt
+        }).FirstOrDefaultAsync(ct);
 
-    public async Task<Product> CreateProductAsync(ProductInput input, CancellationToken ct = default)
+    public async Task<ProductResponse> CreateProductAsync(ProductInput input, CancellationToken ct = default)
     {
         await ValidateProductInputAsync(input, null, ct);
         var entity = new Product
@@ -167,7 +187,12 @@ public sealed class CatalogService(IAppDbContext db)
         };
         db.Products.Add(entity);
         await db.SaveChangesAsync(ct);
-        return entity;
+        return new ProductResponse
+        {
+            Id = entity.Id, Sku = entity.Sku, Name = entity.Name, CategoryId = entity.CategoryId,
+            UnitId = entity.UnitId, ReorderLevel = entity.ReorderLevel, IsActive = entity.IsActive,
+            CreatedAt = entity.CreatedAt
+        };
     }
 
     public async Task UpdateProductAsync(Guid id, ProductInput input, CancellationToken ct = default)

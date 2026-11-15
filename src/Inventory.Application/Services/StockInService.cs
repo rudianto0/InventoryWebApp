@@ -1,9 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 using Inventory.Application.Abstractions;
 using Inventory.Application.Common;
-using Inventory.Application.Dtos;
+using Inventory.Contracts;
 using Inventory.Domain.Entities;
-using Inventory.Domain.Enums;
+using Inventory.Contracts.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace Inventory.Application.Services;
@@ -64,7 +64,7 @@ public sealed class StockInService(
         return header is null ? null : await MapDetailAsync(header, ct);
     }
 
-    public async Task<StockInHeader> CreateAsync(StockInInput input, CancellationToken ct = default)
+    public async Task<TransactionCreatedResponse> CreateAsync(StockInInput input, CancellationToken ct = default)
     {
         await ValidateInputAsync(input, ct);
         var header = new StockInHeader
@@ -90,7 +90,21 @@ public sealed class StockInService(
         }
         db.StockInHeaders.Add(header);
         await db.SaveChangesAsync(ct);
-        return header;
+        return new TransactionCreatedResponse
+        {
+            Id = header.Id,
+            DocNo = header.DocNo,
+            Status = header.Status,
+            CreatedById = header.CreatedById,
+            CreatedAt = header.CreatedAt,
+            SupplierId = header.SupplierId,
+            LocationId = header.LocationId,
+            Notes = header.Notes,
+            Details = header.Details.Select(d => new DocumentLineView
+            {
+                ProductId = d.ProductId, Quantity = d.Quantity, UnitCost = d.UnitCost, Notes = d.Notes
+            }).ToList()
+        };
     }
 
     public async Task UpdateAsync(Guid id, StockInInput input, CancellationToken ct = default)
@@ -108,7 +122,7 @@ public sealed class StockInService(
         header.Status = ApprovalStatus.Draft;
         header.RejectionReason = null;
         db.StockInDetails.RemoveRange(header.Details);
-        header.Details = input.Lines.Select(line => new StockInDetail
+        var details = input.Lines.Select(line => new StockInDetail
         {
             StockInHeaderId = header.Id,
             ProductId = line.ProductId,
@@ -116,6 +130,8 @@ public sealed class StockInService(
             UnitCost = line.UnitCost,
             Notes = Guard.TrimOrNull(line.Notes)
         }).ToList();
+        db.StockInDetails.AddRange(details);
+        header.Details = details;
         await db.SaveChangesAsync(ct);
     }
 
@@ -137,6 +153,11 @@ public sealed class StockInService(
         ApprovalGuard.EnsureOwner(header.CreatedById, CurrentUserId, IsAdmin, "submit");
         ApprovalGuard.EnsureEditable(header);
         await ValidateStoredAsync(header, ct);
+        if (IsAdmin)
+        {
+            await ApplyApprovalAsync(header, null, ct);
+            return;
+        }
         await ApprovalGuard.SubmitAsync(header, CurrentUserId, users, ct);
         await db.SaveChangesAsync(ct);
     }
@@ -147,13 +168,15 @@ public sealed class StockInService(
             ?? throw new ValidationException("Dokumen Stock In tidak ditemukan.");
         ApprovalGuard.EnsureCanApprove(header, header.CreatedById, CurrentUserId, IsAdmin);
         await ValidateStoredAsync(header, ct);
+        await ApplyApprovalAsync(header, notes, ct);
+    }
 
+    private async Task ApplyApprovalAsync(StockInHeader header, string? notes, CancellationToken ct)
+    {
         await using var transaction = await db.BeginTransactionAsync(ct);
         try
         {
-            header.Status = ApprovalStatus.Approved;
-            header.ApprovedAt = DateTime.UtcNow;
-            header.ApprovedById = CurrentUserId;
+            ApprovalGuard.MarkApproved(header, CurrentUserId);
             if (!string.IsNullOrWhiteSpace(notes))
                 header.Notes = notes.Trim();
 
@@ -190,7 +213,11 @@ public sealed class StockInService(
         await EnsureLocationActiveAsync(input.LocationId, ct);
         await ValidateLinesAsync(input.Lines.Select(x => x.ProductId).ToList(), ct);
         foreach (var line in input.Lines)
+        {
             Guard.Positive(line.Quantity, "Quantity");
+            if (line.UnitCost.HasValue)
+                Guard.NotNegative(line.UnitCost.Value, "Unit cost");
+        }
     }
 
     private async Task ValidateStoredAsync(StockInHeader header, CancellationToken ct)
@@ -203,6 +230,11 @@ public sealed class StockInService(
             throw new ValidationException("Supplier tidak aktif.");
         await EnsureLocationActiveAsync(header.LocationId, ct);
         await ValidateLinesAsync(header.Details.Select(x => x.ProductId).ToList(), ct);
+        foreach (var detail in header.Details)
+        {
+            if (detail.UnitCost.HasValue)
+                Guard.NotNegative(detail.UnitCost.Value, "Unit cost");
+        }
     }
 
     private async Task EnsureLocationActiveAsync(Guid locationId, CancellationToken ct)

@@ -1,4 +1,4 @@
-namespace Inventory.Application.Dtos;
+namespace Inventory.Contracts;
 
 public sealed class UserInput
 {

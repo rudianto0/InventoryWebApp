@@ -1,6 +1,6 @@
-using Inventory.Application.Dtos;
-using Inventory.Application.Services;
-using Inventory.Domain.Enums;
+using Inventory.Contracts;
+using Inventory.Client;
+using Inventory.Contracts.Enums;
 using Inventory.Web.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -9,10 +9,10 @@ namespace Inventory.Web.Controllers;
 
 [Authorize]
 public sealed class StockInsController(
-    StockInService service,
-    CatalogService catalog,
-    SupplierService suppliers,
-    LocationService locations) : AppControllerBase
+    IStockInClient service,
+    ICatalogClient catalog,
+    ISupplierClient suppliers,
+    ILocationClient locations) : AppControllerBase
 {
     [HttpGet]
     public async Task<IActionResult> Index(ApprovalStatus? status, DateTime? from, DateTime? to, int page = 1, CancellationToken ct = default)

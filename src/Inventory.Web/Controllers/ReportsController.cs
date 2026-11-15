@@ -1,5 +1,5 @@
-using Inventory.Application.Dtos;
-using Inventory.Application.Services;
+using Inventory.Contracts;
+using Inventory.Client;
 using Inventory.Web.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Inventory.Web.Controllers;
 
 [Authorize]
-public sealed class DashboardController(ReportService reports, LocationService locations) : AppControllerBase
+public sealed class DashboardController(IReportClient reports, ILocationClient locations) : AppControllerBase
 {
     [HttpGet]
     public async Task<IActionResult> Index(Guid? locationId, CancellationToken ct)
@@ -20,9 +20,9 @@ public sealed class DashboardController(ReportService reports, LocationService l
 
 [Authorize]
 public sealed class ReportsController(
-    ReportService reports,
-    LocationService locations,
-    CatalogService catalog) : AppControllerBase
+    IReportClient reports,
+    ILocationClient locations,
+    ICatalogClient catalog) : AppControllerBase
 {
     [HttpGet]
     public IActionResult Index() => RedirectToAction("Index", "Dashboard");

@@ -1,5 +1,5 @@
-using Inventory.Application.Dtos;
-using Inventory.Application.Services;
+using Inventory.Contracts;
+using Inventory.Client;
 using Inventory.Web.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -7,10 +7,10 @@ using Microsoft.AspNetCore.Mvc;
 namespace Inventory.Web.Controllers;
 
 [Authorize]
-public sealed class LocationsController(LocationService locations) : AppControllerBase
+public sealed class LocationsController(ILocationClient locations) : AppControllerBase
 {
     [HttpGet]
-    public async Task<IActionResult> Index(Domain.Enums.LocationType? type, CancellationToken ct)
+    public async Task<IActionResult> Index(Contracts.Enums.LocationType? type, CancellationToken ct)
     {
         ViewBag.Type = type;
         return View(await locations.ListAsync(type, null, ct));
@@ -136,7 +136,7 @@ public sealed class LocationsController(LocationService locations) : AppControll
 }
 
 [Authorize]
-public sealed class SuppliersController(SupplierService suppliers) : AppControllerBase
+public sealed class SuppliersController(ISupplierClient suppliers) : AppControllerBase
 {
     [HttpGet]
     public async Task<IActionResult> Index(string? search, CancellationToken ct)

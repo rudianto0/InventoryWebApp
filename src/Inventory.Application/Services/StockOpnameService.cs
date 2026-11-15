@@ -1,9 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 using Inventory.Application.Abstractions;
 using Inventory.Application.Common;
-using Inventory.Application.Dtos;
+using Inventory.Contracts;
 using Inventory.Domain.Entities;
-using Inventory.Domain.Enums;
+using Inventory.Contracts.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace Inventory.Application.Services;
@@ -62,7 +62,7 @@ public sealed class StockOpnameService(
         return header is null ? null : await MapDetailAsync(header, ct);
     }
 
-    public async Task<StockOpnameHeader> CreateAsync(StockOpnameInput input, CancellationToken ct = default)
+    public async Task<TransactionCreatedResponse> CreateAsync(StockOpnameInput input, CancellationToken ct = default)
     {
         await EnsureLocationActiveAsync(input.LocationId, ct);
         var stocks = await db.Stocks.AsNoTracking()
@@ -71,15 +71,7 @@ public sealed class StockOpnameService(
             .ToListAsync(ct);
 
         if (stocks.Count == 0)
-        {
-            stocks = await db.Products.AsNoTracking().Where(x => x.IsActive)
-                .Select(x => new { x.Id, Quantity = 0m })
-                .Select(x => new { ProductId = x.Id, x.Quantity })
-                .ToListAsync(ct);
-        }
-
-        if (stocks.Count == 0)
-            throw new ValidationException("Belum ada produk yang dapat diopname pada lokasi ini.");
+            throw new ValidationException("Belum ada stok pada lokasi ini. Pilih lokasi lain yang memiliki stok.");
 
         var header = new StockOpnameHeader
         {
@@ -103,7 +95,25 @@ public sealed class StockOpnameService(
         }
         db.StockOpnameHeaders.Add(header);
         await db.SaveChangesAsync(ct);
-        return header;
+        return new TransactionCreatedResponse
+        {
+            Id = header.Id,
+            DocNo = header.DocNo,
+            Status = header.Status,
+            CreatedById = header.CreatedById,
+            CreatedAt = header.CreatedAt,
+            LocationId = header.LocationId,
+            Notes = header.Notes,
+            Details = header.Details.Select(d => new DocumentLineView
+            {
+                DetailId = d.Id,
+                ProductId = d.ProductId,
+                SystemQuantity = d.SystemQuantity,
+                CountedQuantity = d.CountedQuantity,
+                Difference = d.Difference,
+                Notes = d.Notes
+            }).ToList()
+        };
     }
 
     public async Task UpdateAsync(Guid id, IReadOnlyList<OpnameLineInput> lines, string? notes, CancellationToken ct = default)
@@ -160,6 +170,11 @@ public sealed class StockOpnameService(
             detail.SystemQuantity = await GetSystemQuantityAsync(header.LocationId, detail.ProductId, ct);
             detail.Difference = detail.CountedQuantity!.Value - detail.SystemQuantity;
         }
+        if (IsAdmin)
+        {
+            await ApplyApprovalAsync(header, null, ct);
+            return;
+        }
         await ApprovalGuard.SubmitAsync(header, CurrentUserId, users, ct);
         await db.SaveChangesAsync(ct);
     }
@@ -173,6 +188,11 @@ public sealed class StockOpnameService(
         if (header.Details.Any(x => !x.CountedQuantity.HasValue))
             throw new ValidationException("Terdapat baris yang belum memiliki counted quantity.");
 
+        await ApplyApprovalAsync(header, notes, ct);
+    }
+
+    private async Task ApplyApprovalAsync(StockOpnameHeader header, string? notes, CancellationToken ct)
+    {
         await using var transaction = await db.BeginTransactionAsync(ct);
         try
         {
@@ -182,9 +202,7 @@ public sealed class StockOpnameService(
                 detail.Difference = detail.CountedQuantity!.Value - detail.SystemQuantity;
             }
 
-            header.Status = ApprovalStatus.Approved;
-            header.ApprovedAt = DateTime.UtcNow;
-            header.ApprovedById = CurrentUserId;
+            ApprovalGuard.MarkApproved(header, CurrentUserId);
             if (!string.IsNullOrWhiteSpace(notes))
                 header.Notes = notes.Trim();
 

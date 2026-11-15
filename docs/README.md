@@ -25,10 +25,11 @@ docs/
 | [01-architecture.md](01-architecture.md) | Solution layout, layer, provider selection |
 | [02-data-model.md](02-data-model.md) | ERD, entitas, enum, constraint |
 | [adr/001-database-provider-strategy.md](adr/001-database-provider-strategy.md) | Dukungan SQL Server + PostgreSQL |
-| [adr/002-frontend-mvc.md](adr/002-frontend-mvc.md) | MVC + Razor (bukan SPA/Blazor) |
+| [adr/002-frontend-mvc.md](adr/002-frontend-mvc.md) | MVC + Razor sebagai UI saat ini, dengan boundary client untuk pemisahan API |
 | [adr/003-single-level-approval.md](adr/003-single-level-approval.md) | Approval 1 level ke SPV |
 | [adr/004-location-branch.md](adr/004-location-branch.md) | Tanpa multi-tenant, cabang di Location |
 | [adr/005-guid-soft-delete-audit.md](adr/005-guid-soft-delete-audit.md) | GUID untuk data bisnis, soft delete, dan audit user |
+| [adr/006-api-first-client-server.md](adr/006-api-first-client-server.md) | Boundary API-first: Contracts + Client, target pemisahan API/UI |
 
 ## Index Fitur
 

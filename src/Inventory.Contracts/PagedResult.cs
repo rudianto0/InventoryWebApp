@@ -1,4 +1,4 @@
-namespace Inventory.Application.Common;
+namespace Inventory.Contracts;
 
 public sealed class PagedResult<T>
 {

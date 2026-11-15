@@ -1,4 +1,6 @@
-namespace Inventory.Application.Dtos;
+using Inventory.Contracts.Enums;
+
+namespace Inventory.Contracts;
 
 public sealed class CategoryInput
 {
@@ -38,7 +40,7 @@ public sealed class LocationInput
 {
     public string Code { get; init; } = string.Empty;
     public string Name { get; init; } = string.Empty;
-    public Domain.Enums.LocationType Type { get; init; }
+    public Enums.LocationType Type { get; init; }
     public Guid? ParentLocationId { get; init; }
     public string? BranchCode { get; init; }
     public string? Address { get; init; }

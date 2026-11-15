@@ -1,12 +1,12 @@
-using Inventory.Application.Dtos;
-using Inventory.Application.Services;
+using Inventory.Contracts;
+using Inventory.Client;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Inventory.Web.Controllers;
 
 [Authorize(Roles = "Admin,Auditor")]
-public sealed class AuditLogsController(AuditQueryService audit) : AppControllerBase
+public sealed class AuditLogsController(IAuditClient audit) : AppControllerBase
 {
     [HttpGet]
     public async Task<IActionResult> Index(AuditFilter filter, CancellationToken ct)

@@ -3,7 +3,7 @@ using FluentAssertions;
 using Inventory.Application.Common;
 using Inventory.Application.Services;
 using Inventory.Domain.Entities;
-using Inventory.Domain.Enums;
+using Inventory.Contracts.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace Inventory.UnitTests;
@@ -61,10 +61,10 @@ public class StockTransactionApprovalTests
         await fixture.Db.SaveChangesAsync();
 
         var service = new StockOutService(fixture.Db, currentUser, new FakeUserDirectory(), new StockLedger(fixture.Db, new FakeDocumentNumbers()), new FakeDocumentNumbers());
-        var header = await service.CreateAsync(new Inventory.Application.Dtos.StockOutInput
+        var header = await service.CreateAsync(new Inventory.Contracts.StockOutInput
         {
             LocationId = fixture.WarehouseId,
-            Lines = new() { new Inventory.Application.Dtos.DocumentLineInput { ProductId = fixture.ProductId, Quantity = 5m } }
+            Lines = new() { new Inventory.Contracts.DocumentLineInput { ProductId = fixture.ProductId, Quantity = 5m } }
         });
 
         var action = () => service.SubmitAsync(header.Id);
@@ -83,11 +83,11 @@ public class StockTransactionApprovalTests
         var ledger = new StockLedger(fixture.Db, new FakeDocumentNumbers());
         var creatorService = new StockInService(fixture.Db, creator, directory, ledger, new FakeDocumentNumbers());
 
-        var header = await creatorService.CreateAsync(new Inventory.Application.Dtos.StockInInput
+        var header = await creatorService.CreateAsync(new Inventory.Contracts.StockInInput
         {
             SupplierId = fixture.SupplierId,
             LocationId = fixture.WarehouseId,
-            Lines = new() { new Inventory.Application.Dtos.DocumentLineInput { ProductId = fixture.ProductId, Quantity = 7m } }
+            Lines = new() { new Inventory.Contracts.DocumentLineInput { ProductId = fixture.ProductId, Quantity = 7m } }
         });
         await creatorService.SubmitAsync(header.Id);
 
@@ -112,11 +112,11 @@ public class StockTransactionApprovalTests
         var ledger = new StockLedger(fixture.Db, new FakeDocumentNumbers());
         var creatorService = new StockInService(fixture.Db, creator, directory, ledger, new FakeDocumentNumbers());
 
-        var header = await creatorService.CreateAsync(new Inventory.Application.Dtos.StockInInput
+        var header = await creatorService.CreateAsync(new Inventory.Contracts.StockInInput
         {
             SupplierId = fixture.SupplierId,
             LocationId = fixture.WarehouseId,
-            Lines = new() { new Inventory.Application.Dtos.DocumentLineInput { ProductId = fixture.ProductId, Quantity = 1m } }
+            Lines = new() { new Inventory.Contracts.DocumentLineInput { ProductId = fixture.ProductId, Quantity = 1m } }
         });
         await creatorService.SubmitAsync(header.Id);
 
@@ -174,10 +174,10 @@ public class SoftDeleteTests
         await using var fixture = new TestDatabase();
         var catalog = new CatalogService(fixture.Db);
 
-        var created = await catalog.CreateCategoryAsync(new Inventory.Application.Dtos.CategoryInput { Name = "Audited" });
+        var created = await catalog.CreateCategoryAsync(new Inventory.Contracts.CategoryInput { Name = "Audited" });
         created.CreatedById.Should().Be(1);
 
-        await catalog.UpdateCategoryAsync(created.Id, new Inventory.Application.Dtos.CategoryInput { Name = "Audited Updated" });
+        await catalog.UpdateCategoryAsync(created.Id, new Inventory.Contracts.CategoryInput { Name = "Audited Updated" });
         var raw = await fixture.Db.Categories.IgnoreQueryFilters().SingleAsync(x => x.Id == created.Id);
         raw.UpdatedById.Should().Be(1);
         raw.UpdatedAt.Should().NotBeNull();

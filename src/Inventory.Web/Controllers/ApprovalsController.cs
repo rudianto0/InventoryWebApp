@@ -1,5 +1,5 @@
-using Inventory.Application.Dtos;
-using Inventory.Application.Services;
+using Inventory.Contracts;
+using Inventory.Client;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,12 +7,12 @@ namespace Inventory.Web.Controllers;
 
 [Authorize(Roles = "Admin,SPV,Manager")]
 public sealed class ApprovalsController(
-    ApprovalService approvals,
-    StockInService stockIns,
-    StockOutService stockOuts,
-    StockTransferService transfers,
-    StockAdjustmentService adjustments,
-    StockOpnameService opnames) : AppControllerBase
+    IApprovalClient approvals,
+    IStockInClient stockIns,
+    IStockOutClient stockOuts,
+    IStockTransferClient transfers,
+    IStockAdjustmentClient adjustments,
+    IStockOpnameClient opnames) : AppControllerBase
 {
     [HttpGet]
     public async Task<IActionResult> Index(CancellationToken ct) =>

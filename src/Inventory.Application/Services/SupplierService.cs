@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Inventory.Application.Abstractions;
 using Inventory.Application.Common;
-using Inventory.Application.Dtos;
+using Inventory.Contracts;
 using Inventory.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,7 +9,7 @@ namespace Inventory.Application.Services;
 
 public sealed class SupplierService(IAppDbContext db)
 {
-    public async Task<IReadOnlyList<Supplier>> ListAsync(string? search = null, bool? activeOnly = null, CancellationToken ct = default)
+    public async Task<IReadOnlyList<SupplierResponse>> ListAsync(string? search = null, bool? activeOnly = null, CancellationToken ct = default)
     {
         var query = db.Suppliers.AsNoTracking();
         if (!string.IsNullOrWhiteSpace(search))
@@ -19,13 +19,21 @@ public sealed class SupplierService(IAppDbContext db)
         }
         if (activeOnly == true)
             query = query.Where(x => x.IsActive);
-        return await query.OrderBy(x => x.Code).ToListAsync(ct);
+        return await query.OrderBy(x => x.Code).Select(x => new SupplierResponse
+        {
+            Id = x.Id, Code = x.Code, Name = x.Name, ContactPerson = x.ContactPerson,
+            Phone = x.Phone, Email = x.Email, Address = x.Address, IsActive = x.IsActive
+        }).ToListAsync(ct);
     }
 
-    public Task<Supplier?> GetAsync(Guid id, CancellationToken ct = default) =>
-        db.Suppliers.FirstOrDefaultAsync(x => x.Id == id, ct);
+    public Task<SupplierResponse?> GetAsync(Guid id, CancellationToken ct = default) =>
+        db.Suppliers.Where(x => x.Id == id).Select(x => new SupplierResponse
+        {
+            Id = x.Id, Code = x.Code, Name = x.Name, ContactPerson = x.ContactPerson,
+            Phone = x.Phone, Email = x.Email, Address = x.Address, IsActive = x.IsActive
+        }).FirstOrDefaultAsync(ct);
 
-    public async Task<Supplier> CreateAsync(SupplierInput input, CancellationToken ct = default)
+    public async Task<SupplierResponse> CreateAsync(SupplierInput input, CancellationToken ct = default)
     {
         Guard.Required(input.Code, "Kode supplier");
         Guard.Required(input.Name, "Nama supplier");
@@ -46,7 +54,11 @@ public sealed class SupplierService(IAppDbContext db)
         };
         db.Suppliers.Add(entity);
         await db.SaveChangesAsync(ct);
-        return entity;
+        return new SupplierResponse
+        {
+            Id = entity.Id, Code = entity.Code, Name = entity.Name, ContactPerson = entity.ContactPerson,
+            Phone = entity.Phone, Email = entity.Email, Address = entity.Address, IsActive = entity.IsActive
+        };
     }
 
     public async Task UpdateAsync(Guid id, SupplierInput input, CancellationToken ct = default)

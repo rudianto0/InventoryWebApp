@@ -1,8 +1,8 @@
 using System.Text;
 using Inventory.Application.Abstractions;
 using Inventory.Application.Common;
-using Inventory.Application.Dtos;
-using Inventory.Domain.Enums;
+using Inventory.Contracts;
+using Inventory.Contracts.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace Inventory.Application.Services;

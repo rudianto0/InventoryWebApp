@@ -1,9 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 using Inventory.Application.Abstractions;
 using Inventory.Application.Common;
-using Inventory.Application.Dtos;
+using Inventory.Contracts;
 using Inventory.Domain.Entities;
-using Inventory.Domain.Enums;
+using Inventory.Contracts.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace Inventory.Application.Services;
@@ -64,7 +64,7 @@ public sealed class StockOutService(
         return header is null ? null : await MapDetailAsync(header, ct);
     }
 
-    public async Task<StockOutHeader> CreateAsync(StockOutInput input, CancellationToken ct = default)
+    public async Task<TransactionCreatedResponse> CreateAsync(StockOutInput input, CancellationToken ct = default)
     {
         await ValidateInputAsync(input, checkStock: false, ct);
         var header = new StockOutHeader
@@ -89,7 +89,21 @@ public sealed class StockOutService(
         }
         db.StockOutHeaders.Add(header);
         await db.SaveChangesAsync(ct);
-        return header;
+        return new TransactionCreatedResponse
+        {
+            Id = header.Id,
+            DocNo = header.DocNo,
+            Status = header.Status,
+            CreatedById = header.CreatedById,
+            CreatedAt = header.CreatedAt,
+            LocationId = header.LocationId,
+            Purpose = header.Purpose,
+            Notes = header.Notes,
+            Details = header.Details.Select(d => new DocumentLineView
+            {
+                ProductId = d.ProductId, Quantity = d.Quantity, Notes = d.Notes
+            }).ToList()
+        };
     }
 
     public async Task UpdateAsync(Guid id, StockOutInput input, CancellationToken ct = default)
@@ -107,13 +121,15 @@ public sealed class StockOutService(
         header.Status = ApprovalStatus.Draft;
         header.RejectionReason = null;
         db.StockOutDetails.RemoveRange(header.Details);
-        header.Details = input.Lines.Select(line => new StockOutDetail
+        var details = input.Lines.Select(line => new StockOutDetail
         {
             StockOutHeaderId = header.Id,
             ProductId = line.ProductId,
             Quantity = line.Quantity,
             Notes = Guard.TrimOrNull(line.Notes)
         }).ToList();
+        db.StockOutDetails.AddRange(details);
+        header.Details = details;
         await db.SaveChangesAsync(ct);
     }
 
@@ -135,6 +151,11 @@ public sealed class StockOutService(
         ApprovalGuard.EnsureOwner(header.CreatedById, CurrentUserId, IsAdmin, "submit");
         ApprovalGuard.EnsureEditable(header);
         await ValidateStoredAsync(header, checkStock: true, ct);
+        if (IsAdmin)
+        {
+            await ApplyApprovalAsync(header, null, ct);
+            return;
+        }
         await ApprovalGuard.SubmitAsync(header, CurrentUserId, users, ct);
         await db.SaveChangesAsync(ct);
     }
@@ -145,13 +166,15 @@ public sealed class StockOutService(
             ?? throw new ValidationException("Dokumen Stock Out tidak ditemukan.");
         ApprovalGuard.EnsureCanApprove(header, header.CreatedById, CurrentUserId, IsAdmin);
         await ValidateStoredAsync(header, checkStock: true, ct);
+        await ApplyApprovalAsync(header, notes, ct);
+    }
 
+    private async Task ApplyApprovalAsync(StockOutHeader header, string? notes, CancellationToken ct)
+    {
         await using var transaction = await db.BeginTransactionAsync(ct);
         try
         {
-            header.Status = ApprovalStatus.Approved;
-            header.ApprovedAt = DateTime.UtcNow;
-            header.ApprovedById = CurrentUserId;
+            ApprovalGuard.MarkApproved(header, CurrentUserId);
             if (!string.IsNullOrWhiteSpace(notes))
                 header.Notes = notes.Trim();
 

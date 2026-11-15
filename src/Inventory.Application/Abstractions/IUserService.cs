@@ -1,5 +1,5 @@
 using Inventory.Application.Common;
-using Inventory.Application.Dtos;
+using Inventory.Contracts;
 
 namespace Inventory.Application.Abstractions;
 

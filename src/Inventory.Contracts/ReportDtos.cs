@@ -1,6 +1,6 @@
-using Inventory.Domain.Enums;
+using Inventory.Contracts.Enums;
 
-namespace Inventory.Application.Dtos;
+namespace Inventory.Contracts;
 
 public sealed class ReportFilter
 {

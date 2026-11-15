@@ -1,9 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 using Inventory.Application.Abstractions;
 using Inventory.Application.Common;
-using Inventory.Application.Dtos;
+using Inventory.Contracts;
 using Inventory.Domain.Entities;
-using Inventory.Domain.Enums;
+using Inventory.Contracts.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace Inventory.Application.Services;
@@ -65,7 +65,7 @@ public sealed class StockTransferService(
         return header is null ? null : await MapDetailAsync(header, ct);
     }
 
-    public async Task<StockTransferHeader> CreateAsync(StockTransferInput input, CancellationToken ct = default)
+    public async Task<TransactionCreatedResponse> CreateAsync(StockTransferInput input, CancellationToken ct = default)
     {
         await ValidateInputAsync(input.FromLocationId, input.ToLocationId, input.Lines, checkStock: false, ct);
         var header = new StockTransferHeader
@@ -90,7 +90,21 @@ public sealed class StockTransferService(
         }
         db.StockTransferHeaders.Add(header);
         await db.SaveChangesAsync(ct);
-        return header;
+        return new TransactionCreatedResponse
+        {
+            Id = header.Id,
+            DocNo = header.DocNo,
+            Status = header.Status,
+            CreatedById = header.CreatedById,
+            CreatedAt = header.CreatedAt,
+            FromLocationId = header.FromLocationId,
+            ToLocationId = header.ToLocationId,
+            Notes = header.Notes,
+            Details = header.Details.Select(d => new DocumentLineView
+            {
+                ProductId = d.ProductId, Quantity = d.Quantity, Notes = d.Notes
+            }).ToList()
+        };
     }
 
     public async Task UpdateAsync(Guid id, StockTransferInput input, CancellationToken ct = default)
@@ -108,13 +122,15 @@ public sealed class StockTransferService(
         header.Status = ApprovalStatus.Draft;
         header.RejectionReason = null;
         db.StockTransferDetails.RemoveRange(header.Details);
-        header.Details = input.Lines.Select(line => new StockTransferDetail
+        var details = input.Lines.Select(line => new StockTransferDetail
         {
             StockTransferHeaderId = header.Id,
             ProductId = line.ProductId,
             Quantity = line.Quantity,
             Notes = Guard.TrimOrNull(line.Notes)
         }).ToList();
+        db.StockTransferDetails.AddRange(details);
+        header.Details = details;
         await db.SaveChangesAsync(ct);
     }
 
@@ -136,6 +152,11 @@ public sealed class StockTransferService(
         ApprovalGuard.EnsureOwner(header.CreatedById, CurrentUserId, IsAdmin, "submit");
         ApprovalGuard.EnsureEditable(header);
         await ValidateStoredAsync(header, checkStock: true, ct);
+        if (IsAdmin)
+        {
+            await ApplyApprovalAsync(header, null, ct);
+            return;
+        }
         await ApprovalGuard.SubmitAsync(header, CurrentUserId, users, ct);
         await db.SaveChangesAsync(ct);
     }
@@ -146,13 +167,15 @@ public sealed class StockTransferService(
             ?? throw new ValidationException("Dokumen Stock Transfer tidak ditemukan.");
         ApprovalGuard.EnsureCanApprove(header, header.CreatedById, CurrentUserId, IsAdmin);
         await ValidateStoredAsync(header, checkStock: true, ct);
+        await ApplyApprovalAsync(header, notes, ct);
+    }
 
+    private async Task ApplyApprovalAsync(StockTransferHeader header, string? notes, CancellationToken ct)
+    {
         await using var transaction = await db.BeginTransactionAsync(ct);
         try
         {
-            header.Status = ApprovalStatus.Approved;
-            header.ApprovedAt = DateTime.UtcNow;
-            header.ApprovedById = CurrentUserId;
+            ApprovalGuard.MarkApproved(header, CurrentUserId);
             if (!string.IsNullOrWhiteSpace(notes))
                 header.Notes = notes.Trim();
 

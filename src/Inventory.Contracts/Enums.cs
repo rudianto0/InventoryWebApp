@@ -1,4 +1,4 @@
-namespace Inventory.Domain.Enums;
+namespace Inventory.Contracts.Enums;
 
 public enum LocationType
 {

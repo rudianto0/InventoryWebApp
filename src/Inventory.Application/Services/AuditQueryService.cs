@@ -1,6 +1,6 @@
 using Inventory.Application.Abstractions;
 using Inventory.Application.Common;
-using Inventory.Application.Dtos;
+using Inventory.Contracts;
 using Microsoft.EntityFrameworkCore;
 
 namespace Inventory.Application.Services;

@@ -35,30 +35,37 @@ laporan yang akurat untuk pengambilan keputusan.
 
 | Layer | Pilihan | Catatan |
 |-------|---------|---------|
-| Backend | ASP.NET Core MVC (.NET 10 LTS) | Server-rendered, mini project |
+| Backend | ASP.NET Core (.NET 10 LTS) MVC + Razor | Server-rendered saat ini; disiapkan menjadi API terpisah |
+| Client boundary | `Inventory.Contracts` + `Inventory.Client` | Kontrak DTO stabil; client in-process sekarang, HTTP menyusul |
 | View | Razor Views + Bootstrap 5 | Tanpa SPA, tanpa build pipeline terpisah |
 | ORM | EF Core | Query provider-agnostic |
 | Database | SQL Server **atau** PostgreSQL | Dipilih via konfigurasi `Database:Provider` |
-| Auth | ASP.NET Core Identity + Cookie Auth | Role-based access control |
+| Auth | ASP.NET Core Identity + Cookie Auth | Target: dual cookie + JWT untuk API |
 | Testing | xUnit + FluentAssertions | Unit & integration test |
 | Deployment | Docker (opsional) | |
 
 ## 6. Arsitektur Tingkat Tinggi (High Level)
 
+Target jangka menengah: **API-first** dengan UI sebagai client.
+
 ```
-Client (Angular)
-      │  HTTPS / JSON
+Inventory.Web (Razor UI)
+      │  memakai Inventory.Client
       ▼
-ASP.NET Core Web API
-      ├─ Authentication / Authorization
-      ├─ Application (use cases, DTO, validators)
-      ├─ Domain (entities, business rules)
-      └─ Infrastructure (EF Core, repositories, external services)
+Inventory.Client  ──▶  Inventory.Contracts
+      │
+      ▼ (saat ini in-process, nanti HTTP /api/v1)
+Inventory.Api  ──▶  Inventory.Application ──▶ Inventory.Domain
+                           ▲
+                  Inventory.Infrastructure (EF Core, Identity)
       ▼
 Database
 ```
 
-Prinsip: Clean Architecture + DDD ringan, SOLID, async/await end-to-end.
+Prinsip: Clean Architecture + DDD ringan, SOLID, async/await end-to-end,
+serta boundary kontrak yang mencegah UI bergantung pada entity/DB.
+
+Lihat [adr/006-api-first-client-server.md](adr/006-api-first-client-server.md).
 
 ## 7. Domain Utama
 
@@ -80,7 +87,7 @@ Prinsip: Clean Architecture + DDD ringan, SOLID, async/await end-to-end.
 ## 9. Keputusan & Asumsi (Resolved)
 
 - **Database:** mendukung SQL Server dan PostgreSQL, dipilih lewat konfigurasi. Tidak ada query provider-specific. Lihat `adr/001-database-provider-strategy.md`.
-- **Frontend:** ASP.NET Core MVC + Razor (bukan Blazor/SPA) demi kesederhanaan mini project. Lihat `adr/002-frontend-mvc.md`.
+- **Frontend:** ASP.NET Core MVC + Razor sebagai UI saat ini, diakses melalui boundary `Inventory.Client` + `Inventory.Contracts` agar siap dipisah menjadi API + client/SPA di masa depan. Lihat `adr/002-frontend-mvc.md` dan `adr/006-api-first-client-server.md`.
 - **Multi-tenant:** tidak ada. Cabang ditandai pada master **Location**. Lihat `adr/004-location-branch.md`.
 - **Approval:** single-level, hanya 1 tahap ke SPV (parent dari person). Lihat `adr/003-single-level-approval.md`.
 

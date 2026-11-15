@@ -1,35 +1,45 @@
 using System.ComponentModel.DataAnnotations;
 using Inventory.Application.Abstractions;
 using Inventory.Application.Common;
-using Inventory.Application.Dtos;
+using Inventory.Contracts;
 using Inventory.Domain.Entities;
-using Inventory.Domain.Enums;
+using Inventory.Contracts.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace Inventory.Application.Services;
 
 public sealed class LocationService(IAppDbContext db)
 {
-    public async Task<IReadOnlyList<Location>> ListAsync(LocationType? type = null, bool? activeOnly = null, CancellationToken ct = default)
+    public async Task<IReadOnlyList<LocationResponse>> ListAsync(LocationType? type = null, bool? activeOnly = null, CancellationToken ct = default)
     {
-        var query = db.Locations.AsNoTracking().Include(x => x.ParentLocation).AsQueryable();
+        var query = db.Locations.AsNoTracking().AsQueryable();
         if (type.HasValue)
             query = query.Where(x => x.Type == type.Value);
         if (activeOnly == true)
             query = query.Where(x => x.IsActive);
-        return await query.OrderBy(x => x.Code).ToListAsync(ct);
+        return await query.OrderBy(x => x.Code).Select(x => new LocationResponse
+        {
+            Id = x.Id, Code = x.Code, Name = x.Name, Type = x.Type,
+            ParentLocationId = x.ParentLocationId, ParentLocationName = x.ParentLocation!.Name,
+            BranchCode = x.BranchCode, Address = x.Address, IsActive = x.IsActive
+        }).ToListAsync(ct);
     }
 
-    public Task<Location?> GetAsync(Guid id, CancellationToken ct = default) =>
-        db.Locations.FirstOrDefaultAsync(x => x.Id == id, ct);
+    public Task<LocationResponse?> GetAsync(Guid id, CancellationToken ct = default) =>
+        db.Locations.Where(x => x.Id == id).Select(x => new LocationResponse
+        {
+            Id = x.Id, Code = x.Code, Name = x.Name, Type = x.Type,
+            ParentLocationId = x.ParentLocationId, ParentLocationName = x.ParentLocation!.Name,
+            BranchCode = x.BranchCode, Address = x.Address, IsActive = x.IsActive
+        }).FirstOrDefaultAsync(ct);
 
-    public async Task<Location> CreateAsync(LocationInput input, CancellationToken ct = default)
+    public async Task<LocationResponse> CreateAsync(LocationInput input, CancellationToken ct = default)
     {
         await ValidateAsync(input, null, ct);
         var entity = Map(new Location(), input);
         db.Locations.Add(entity);
         await db.SaveChangesAsync(ct);
-        return entity;
+        return MapResponse(entity, null);
     }
 
     public async Task UpdateAsync(Guid id, LocationInput input, CancellationToken ct = default)
@@ -119,6 +129,19 @@ public sealed class LocationService(IAppDbContext db)
         }
         return false;
     }
+
+    private static LocationResponse MapResponse(Location entity, string? parentName) => new()
+    {
+        Id = entity.Id,
+        Code = entity.Code,
+        Name = entity.Name,
+        Type = entity.Type,
+        ParentLocationId = entity.ParentLocationId,
+        ParentLocationName = parentName,
+        BranchCode = entity.BranchCode,
+        Address = entity.Address,
+        IsActive = entity.IsActive
+    };
 
     private static Location Map(Location entity, LocationInput input)
     {

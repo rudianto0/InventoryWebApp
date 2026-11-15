@@ -1,6 +1,6 @@
 using Inventory.Application.Common;
-using Inventory.Application.Dtos;
-using Inventory.Domain.Enums;
+using Inventory.Contracts;
+using Inventory.Contracts.Enums;
 
 namespace Inventory.Web.Models;
 

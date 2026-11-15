@@ -1,5 +1,5 @@
-using Inventory.Application.Dtos;
-using Inventory.Application.Services;
+using Inventory.Contracts;
+using Inventory.Client;
 using Inventory.Web.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Inventory.Web.Controllers;
 
 [Authorize]
-public sealed class CategoriesController(CatalogService catalog) : AppControllerBase
+public sealed class CategoriesController(ICatalogClient catalog) : AppControllerBase
 {
     [HttpGet]
     public async Task<IActionResult> Index(string? search, CancellationToken ct)
@@ -111,7 +111,7 @@ public sealed class CategoriesController(CatalogService catalog) : AppController
 }
 
 [Authorize]
-public sealed class UnitsController(CatalogService catalog) : AppControllerBase
+public sealed class UnitsController(ICatalogClient catalog) : AppControllerBase
 {
     [HttpGet]
     public async Task<IActionResult> Index(string? search, CancellationToken ct)
@@ -189,7 +189,7 @@ public sealed class UnitsController(CatalogService catalog) : AppControllerBase
 }
 
 [Authorize]
-public sealed class ProductsController(CatalogService catalog) : AppControllerBase
+public sealed class ProductsController(ICatalogClient catalog) : AppControllerBase
 {
     [HttpGet]
     public async Task<IActionResult> Index(string? search, Guid? categoryId, CancellationToken ct)

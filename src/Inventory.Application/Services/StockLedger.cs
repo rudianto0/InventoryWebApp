@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using Inventory.Application.Abstractions;
 using Inventory.Application.Common;
 using Inventory.Domain.Entities;
-using Inventory.Domain.Enums;
+using Inventory.Contracts.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace Inventory.Application.Services;
@@ -27,7 +27,9 @@ public sealed class StockLedger(IAppDbContext db, IDocumentNumberService documen
                 continue;
 
             var stock = await db.Stocks.FirstOrDefaultAsync(
-                x => x.ProductId == change.ProductId && x.LocationId == change.LocationId, ct);
+                x => x.ProductId == change.ProductId && x.LocationId == change.LocationId, ct)
+                ?? db.Stocks.Local.FirstOrDefault(
+                    x => x.ProductId == change.ProductId && x.LocationId == change.LocationId);
 
             if (stock is null)
             {
@@ -91,6 +93,17 @@ internal static class ApprovalGuard
         header.ApproverId = approverId;
         header.SubmittedAt = DateTime.UtcNow;
         header.Status = ApprovalStatus.Submitted;
+        header.RejectionReason = null;
+    }
+
+    public static void MarkApproved(IApprovable header, int currentUserId)
+    {
+        var now = DateTime.UtcNow;
+        header.Status = ApprovalStatus.Approved;
+        header.SubmittedAt ??= now;
+        header.ApproverId ??= currentUserId;
+        header.ApprovedAt = now;
+        header.ApprovedById = currentUserId;
         header.RejectionReason = null;
     }
 

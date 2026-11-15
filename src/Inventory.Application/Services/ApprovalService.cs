@@ -1,8 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 using Inventory.Application.Abstractions;
-using Inventory.Application.Dtos;
+using Inventory.Contracts;
 using Inventory.Domain.Entities;
-using Inventory.Domain.Enums;
+using Inventory.Contracts.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace Inventory.Application.Services;

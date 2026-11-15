@@ -1,5 +1,5 @@
-using Inventory.Application.Abstractions;
-using Inventory.Application.Dtos;
+using Inventory.Client;
+using Inventory.Contracts;
 using Inventory.Web.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Inventory.Web.Controllers;
 
 [Authorize(Roles = "Admin")]
-public sealed class UsersController(IUserService users) : AppControllerBase
+public sealed class UsersController(IUserClient users) : AppControllerBase
 {
     [HttpGet]
     public async Task<IActionResult> Index(string? search, string? roleName, bool? isActive, int page = 1, CancellationToken ct = default)

@@ -24,6 +24,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\src\Inventory.Application\Inventory.Application.csproj" />
     <ProjectReference Include="..\..\src\Inventory.Infrastructure\Inventory.Infrastructure.csproj" />
   </ItemGroup>

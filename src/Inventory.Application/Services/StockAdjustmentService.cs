@@ -1,9 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 using Inventory.Application.Abstractions;
 using Inventory.Application.Common;
-using Inventory.Application.Dtos;
+using Inventory.Contracts;
 using Inventory.Domain.Entities;
-using Inventory.Domain.Enums;
+using Inventory.Contracts.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace Inventory.Application.Services;
@@ -63,7 +63,7 @@ public sealed class StockAdjustmentService(
         return header is null ? null : await MapDetailAsync(header, ct);
     }
 
-    public async Task<StockAdjustmentHeader> CreateAsync(StockAdjustmentInput input, CancellationToken ct = default)
+    public async Task<TransactionCreatedResponse> CreateAsync(StockAdjustmentInput input, CancellationToken ct = default)
     {
         await ValidateInputAsync(input, ct);
         var header = new StockAdjustmentHeader
@@ -91,7 +91,25 @@ public sealed class StockAdjustmentService(
         }
         db.StockAdjustmentHeaders.Add(header);
         await db.SaveChangesAsync(ct);
-        return header;
+        return new TransactionCreatedResponse
+        {
+            Id = header.Id,
+            DocNo = header.DocNo,
+            Status = header.Status,
+            CreatedById = header.CreatedById,
+            CreatedAt = header.CreatedAt,
+            LocationId = header.LocationId,
+            Reason = header.Reason,
+            Notes = header.Notes,
+            Details = header.Details.Select(d => new DocumentLineView
+            {
+                ProductId = d.ProductId,
+                SystemQuantity = d.SystemQuantity,
+                CountedQuantity = d.CountedQuantity,
+                Difference = d.Difference,
+                Notes = d.Notes
+            }).ToList()
+        };
     }
 
     public async Task UpdateAsync(Guid id, StockAdjustmentInput input, CancellationToken ct = default)
@@ -123,6 +141,7 @@ public sealed class StockAdjustmentService(
                 Notes = Guard.TrimOrNull(line.Notes)
             });
         }
+        db.StockAdjustmentDetails.AddRange(details);
         header.Details = details;
         await db.SaveChangesAsync(ct);
     }
@@ -149,6 +168,11 @@ public sealed class StockAdjustmentService(
         Guard.Required(header.Reason, "Alasan");
         await EnsureLocationActiveAsync(header.LocationId, ct);
         await RefreshSystemQuantitiesAsync(header, ct);
+        if (IsAdmin)
+        {
+            await ApplyApprovalAsync(header, null, ct);
+            return;
+        }
         await ApprovalGuard.SubmitAsync(header, CurrentUserId, users, ct);
         await db.SaveChangesAsync(ct);
     }
@@ -160,13 +184,15 @@ public sealed class StockAdjustmentService(
         ApprovalGuard.EnsureCanApprove(header, header.CreatedById, CurrentUserId, IsAdmin);
         await EnsureLocationActiveAsync(header.LocationId, ct);
         await RefreshSystemQuantitiesAsync(header, ct);
+        await ApplyApprovalAsync(header, notes, ct);
+    }
 
+    private async Task ApplyApprovalAsync(StockAdjustmentHeader header, string? notes, CancellationToken ct)
+    {
         await using var transaction = await db.BeginTransactionAsync(ct);
         try
         {
-            header.Status = ApprovalStatus.Approved;
-            header.ApprovedAt = DateTime.UtcNow;
-            header.ApprovedById = CurrentUserId;
+            ApprovalGuard.MarkApproved(header, CurrentUserId);
             if (!string.IsNullOrWhiteSpace(notes))
                 header.Notes = notes.Trim();
 

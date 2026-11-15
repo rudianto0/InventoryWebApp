@@ -1,5 +1,5 @@
 using Inventory.Domain.Entities;
-using Inventory.Domain.Enums;
+using Inventory.Contracts.Enums;
 using Inventory.Infrastructure.Identity;
 using Inventory.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Identity;

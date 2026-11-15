@@ -53,35 +53,50 @@ Prinsip utama:
 
 | Layer | Pilihan |
 |-------|---------|
-| Backend | ASP.NET Core MVC (.NET 10 LTS) |
+| Backend | ASP.NET Core (.NET 10 LTS) MVC + Razor |
+| Client boundary | `Inventory.Contracts` + `Inventory.Client` (in-process sekarang, HTTP client siap untuk API) |
 | View | Razor Views + Bootstrap 5 |
 | ORM | EF Core 10 |
 | Database | SQL Server **atau** PostgreSQL (via konfigurasi) |
-| Auth | ASP.NET Core Identity + Cookie Auth |
+| Auth | ASP.NET Core Identity + Cookie Auth (target: dual cookie + JWT) |
 | Testing | xUnit |
 | Provider Packages | `Microsoft.EntityFrameworkCore.SqlServer`, `Npgsql.EntityFrameworkCore.PostgreSQL` |
 
 ## Architecture
 
-### Alur dependency
+### Alur dependency (transisi menuju API-first)
 
 ```
-Inventory.Web  ──▶  Inventory.Infrastructure  ──▶  Inventory.Application  ──▶  Inventory.Domain
-      │                        │
-      └──▶ Migrations.*         └──▶ EF Core (SqlServer / Npgsql)
+Inventory.Web (Razor UI)
+      │
+      ▼
+Inventory.Client  ──▶  Inventory.Contracts
+      │
+      ▼ (in-process saat ini)
+Inventory.Application ──▶ Inventory.Domain ──▶ Inventory.Contracts
+      ▲
+Inventory.Infrastructure ──▶ Application/Domain
 ```
 
-Arah dependency: `Web → Infrastructure → Application → Domain`.
-`Domain` tidak bergantung pada proyek lain. Layer `Application` dan `Domain`
-**tidak boleh** mereferensikan namespace provider database.
+Aturan boundary:
+- `Inventory.Web` memakai `Inventory.Client` + `Inventory.Contracts` untuk seluruh
+  use case bisnis; tidak boleh memakai entity Domain atau service Application
+  secara langsung. Komposisi startup, autentikasi Identity, dan penanganan
+  concurrency masih transisi sampai `Inventory.Api` tersedia.
+- `Inventory.Client` tidak boleh memakai `Inventory.Infrastructure`.
+- `Inventory.Application` / `Inventory.Domain` tidak boleh mereferensikan provider database.
+- `Inventory.Api` (target) akan menjadi host REST; `Inventory.Web` cukup mengganti
+  implementasi client dari in-process menjadi HTTP.
 
 ### Kegunaan tiap layer
 
 | Proyek | Tanggung jawab |
 |--------|----------------|
-| **Inventory.Domain** | Inti bisnis: entity (`Product`, `Stock`, `StockMovement`, header/detail transaksi), enum (`ApprovalStatus`, `MovementType`, `LocationType`, `ReferenceType`), invariant & business rule murni. Tanpa dependency eksternal. |
-| **Inventory.Application** | Use case per fitur (`StockInService`, `StockOutService`, `StockTransferService`, `StockAdjustmentService`, `StockOpnameService`, `ApprovalService`, `ReportService`, `CatalogService`, `SupplierService`, `LocationService`, `AuditQueryService`), DTO request/response, abstraksi (`IAppDbContext`, `IUserDirectory`, `IDocumentNumberService`, `IUserService`), dan orkestrasi. Tidak tahu DB apa yang dipakai. |
-| **Inventory.Infrastructure** | Implementasi teknis: `AppDbContext`, `IEntityTypeConfiguration<T>`, Identity (`AppUser`, `AppRole`), `UserService`, `DocumentNumberService`, `UserDirectory`, pemilihan provider DB, dan seeding (`DatabaseBootstrapper`). |
+| **Inventory.Domain** | Inti bisnis: entity (`Product`, `Stock`, `StockMovement`, header/detail transaksi), invariant & business rule murni. |
+| **Inventory.Contracts** | Kontrak publik lintas boundary: request/response DTO, `PagedResult<T>`, enum publik (`ApprovalStatus`, `MovementType`, `LocationType`, `ReferenceType`), response master data. Tidak ada entity Domain. |
+| **Inventory.Application** | Use case per fitur (`StockInService`, `StockOutService`, `StockTransferService`, `StockAdjustmentService`, `StockOpnameService`, `ApprovalService`, `ReportService`, `CatalogService`, `SupplierService`, `LocationService`, `AuditQueryService`), mapping ke `Inventory.Contracts`, abstraksi (`IAppDbContext`, `IUserDirectory`, `IDocumentNumberService`, `IUserService`). Tidak tahu DB apa yang dipakai. |
+| **Inventory.Client** | Interface client per area (`ICatalogClient`, `IStockInClient`, dst.) + implementasi in-process. Nanti ditambah implementasi HTTP tanpa mengubah controller Web. |
+| **Inventory.Infrastructure** | Implementasi teknis: `AppDbContext`, Identity (`AppUser`, `AppRole`), `UserService`, `DocumentNumberService`, `UserDirectory`, pemilihan provider DB, seeding (`DatabaseBootstrapper`). |
 | **Inventory.Migrations.SqlServer** | Migration EF Core khusus SQL Server (DDL provider-specific). |
 | **Inventory.Migrations.PostgreSql** | Migration EF Core khusus PostgreSQL. |
 | **Inventory.Web** | Presentation: Controller, ViewModel, Razor View, filter otorisasi, konfigurasi startup (`Program.cs`), layout Bootstrap. |
@@ -93,7 +108,9 @@ Arah dependency: `Web → Infrastructure → Application → Domain`.
 Inventory.sln
 ├─ src/
 │  ├─ Inventory.Domain/
+│  ├─ Inventory.Contracts/
 │  ├─ Inventory.Application/
+│  ├─ Inventory.Client/
 │  ├─ Inventory.Infrastructure/
 │  ├─ Inventory.Migrations.SqlServer/
 │  ├─ Inventory.Migrations.PostgreSql/
@@ -102,6 +119,12 @@ Inventory.sln
 │  └─ Inventory.UnitTests/
 └─ docs/                     # Dokumentasi perancangan & ADR
 ```
+
+> **Roadmap pemisahan API/Client:** lihat
+> [docs/adr/006-api-first-client-server.md](docs/adr/006-api-first-client-server.md).
+> Saat ini Web memakai `Inventory.Client` in-process; tahap berikutnya `Inventory.Api`
+> menyediakan REST `/api/v1`, lalu implementasi HTTP di `Inventory.Client` menggantikan
+> in-process tanpa perubahan controller Web.
 
 ### Pemilihan provider database
 
