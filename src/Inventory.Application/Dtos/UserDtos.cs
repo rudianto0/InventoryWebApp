@@ -32,6 +32,12 @@ public sealed class UserListItem
     public bool IsActive { get; init; }
 }
 
+public sealed class UserOption
+{
+    public int Id { get; init; }
+    public string Text { get; init; } = string.Empty;
+}
+
 public sealed class UserEditData
 {
     public int Id { get; init; }

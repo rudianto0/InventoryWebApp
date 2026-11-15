@@ -31,8 +31,35 @@ yang ditemukan ditindaklanjuti sebagai adjustment setelah approval.
 
 ## 4. Data Model
 
-**StockOpnameHeaders**: Id, DocNo, LocationId, Date, Status + field approval + CreatedById, CreatedAt, Notes.
-**StockOpnameDetails**: Id, HeaderId, ProductId, SystemQuantity, CountedQuantity, Difference, Notes.
+**StockOpnameHeaders** (PK `Guid`, soft delete) + **StockOpnameDetails** (PK `Guid`, soft delete).
+
+### 4.1 Field Dictionary - StockOpnameHeaders
+
+| Field | Type | Required | Constraint / Default | Fungsi |
+|-------|------|----------|----------------------|--------|
+| `Id` | Guid | Ya | PK | Identitas sesi opname |
+| `DocNo` | string(30) | Ya | Unik (aktif), auto | Nomor dokumen `OPN-yyyyMM-####` |
+| `LocationId` | Guid | Ya | FK Locations, aktif | Lokasi yang diopname |
+| `Date` | DateTime | Ya | - | Tanggal sesi |
+| `Status` | enum | Ya | Default Draft | Status approval |
+| `SubmittedAt` / `ApproverId` | DateTime? / int? | Tidak | - | Waktu submit & approver |
+| `ApprovedAt` / `ApprovedById` | DateTime? / int? | Tidak | - | Waktu & user approve |
+| `RejectionReason` | string? | Tidak | - | Alasan reject |
+| `Notes` | string(500) | Tidak | - | Catatan sesi |
+| audit + soft delete | - | - | Otomatis | Jejak create/update/delete |
+
+### 4.2 Field Dictionary - StockOpnameDetails
+
+| Field | Type | Required | Constraint / Default | Fungsi |
+|-------|------|----------|----------------------|--------|
+| `Id` | Guid | Ya | PK | Identitas baris |
+| `StockOpnameHeaderId` | Guid | Ya | FK header | Sesi induk |
+| `ProductId` | Guid | Ya | FK Products, aktif | Produk yang dihitung |
+| `SystemQuantity` | decimal(18,4) | Ya | - | Snapshot stok sistem |
+| `CountedQuantity` | decimal(18,4)? | Tidak | `>= 0` | Hasil hitung fisik |
+| `Difference` | decimal(18,4) | Ya | - | `Counted - System` |
+| `Notes` | string(500) | Tidak | - | Catatan baris |
+| audit + soft delete | - | - | Otomatis | Jejak create/update/delete |
 
 ## 5. Workflow
 
@@ -53,6 +80,7 @@ yang ditemukan ditindaklanjuti sebagai adjustment setelah approval.
 | POST | `/stock-opnames/submit/{id}` | Submit |
 | POST | `/stock-opnames/approve/{id}` | Approve |
 | POST | `/stock-opnames/reject/{id}` | Reject + reason |
+| POST | `/stock-opnames/delete/{id}` | Soft delete (Draft) |
 | GET | `/stock-opnames/details/{id}` | Detail + selisih |
 
 ## 7. Validasi & Business Rules

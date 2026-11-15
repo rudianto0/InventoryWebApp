@@ -12,6 +12,9 @@ laporan yang akurat untuk pengambilan keputusan.
 - Mencatat setiap mutasi stok beserta jejak audit.
 - Mendukung multi-warehouse dan multi-location.
 - Menyediakan laporan stok terkini, kartu stok, dan reorder alert.
+- Menerapkan **audit by default**: setiap create/update/delete menyimpan user pelaku.
+- Menerapkan **soft delete** agar data tidak hilang dari histori.
+- Menggunakan **GUID** untuk ID master data dan transaksi.
 
 ## 3. Non-Goals (Fase Awal)
 

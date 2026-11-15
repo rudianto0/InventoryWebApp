@@ -19,7 +19,7 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     EntityName = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
-                    EntityId = table.Column<int>(type: "integer", nullable: false),
+                    EntityId = table.Column<string>(type: "character varying(64)", maxLength: 64, nullable: false),
                     Action = table.Column<string>(type: "character varying(30)", maxLength: 30, nullable: false),
                     OldValues = table.Column<string>(type: "text", nullable: true),
                     NewValues = table.Column<string>(type: "text", nullable: true),
@@ -36,11 +36,17 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                 name: "Categories",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Name = table.Column<string>(type: "character varying(150)", maxLength: 150, nullable: false),
                     Description = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: true),
-                    IsActive = table.Column<bool>(type: "boolean", nullable: false)
+                    IsActive = table.Column<bool>(type: "boolean", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    CreatedById = table.Column<int>(type: "integer", nullable: true),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    UpdatedById = table.Column<int>(type: "integer", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "boolean", nullable: false),
+                    DeletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    DeletedById = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -67,15 +73,21 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                 name: "Locations",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Code = table.Column<string>(type: "character varying(30)", maxLength: 30, nullable: false),
                     Name = table.Column<string>(type: "character varying(150)", maxLength: 150, nullable: false),
                     Type = table.Column<int>(type: "integer", nullable: false),
-                    ParentLocationId = table.Column<int>(type: "integer", nullable: true),
+                    ParentLocationId = table.Column<Guid>(type: "uuid", nullable: true),
                     BranchCode = table.Column<string>(type: "character varying(30)", maxLength: 30, nullable: true),
                     Address = table.Column<string>(type: "character varying(300)", maxLength: 300, nullable: true),
-                    IsActive = table.Column<bool>(type: "boolean", nullable: false)
+                    IsActive = table.Column<bool>(type: "boolean", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    CreatedById = table.Column<int>(type: "integer", nullable: true),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    UpdatedById = table.Column<int>(type: "integer", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "boolean", nullable: false),
+                    DeletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    DeletedById = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -108,15 +120,21 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                 name: "Suppliers",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Code = table.Column<string>(type: "character varying(30)", maxLength: 30, nullable: false),
                     Name = table.Column<string>(type: "character varying(150)", maxLength: 150, nullable: false),
                     ContactPerson = table.Column<string>(type: "character varying(150)", maxLength: 150, nullable: true),
                     Phone = table.Column<string>(type: "character varying(30)", maxLength: 30, nullable: true),
                     Email = table.Column<string>(type: "character varying(150)", maxLength: 150, nullable: true),
                     Address = table.Column<string>(type: "character varying(300)", maxLength: 300, nullable: true),
-                    IsActive = table.Column<bool>(type: "boolean", nullable: false)
+                    IsActive = table.Column<bool>(type: "boolean", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    CreatedById = table.Column<int>(type: "integer", nullable: true),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    UpdatedById = table.Column<int>(type: "integer", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "boolean", nullable: false),
+                    DeletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    DeletedById = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -127,10 +145,16 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                 name: "Units",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Code = table.Column<string>(type: "character varying(30)", maxLength: 30, nullable: false),
-                    Name = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false)
+                    Name = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    CreatedById = table.Column<int>(type: "integer", nullable: true),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    UpdatedById = table.Column<int>(type: "integer", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "boolean", nullable: false),
+                    DeletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    DeletedById = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -147,6 +171,9 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                     ParentId = table.Column<int>(type: "integer", nullable: true),
                     IsActive = table.Column<bool>(type: "boolean", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    CreatedById = table.Column<int>(type: "integer", nullable: true),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    UpdatedById = table.Column<int>(type: "integer", nullable: true),
                     UserName = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: true),
@@ -177,10 +204,9 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                 name: "StockAdjustmentHeaders",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
                     DocNo = table.Column<string>(type: "character varying(30)", maxLength: 30, nullable: false),
-                    LocationId = table.Column<int>(type: "integer", nullable: false),
+                    LocationId = table.Column<Guid>(type: "uuid", nullable: false),
                     Date = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     Reason = table.Column<string>(type: "character varying(300)", maxLength: 300, nullable: false),
                     Status = table.Column<int>(type: "integer", nullable: false),
@@ -189,8 +215,13 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                     ApprovedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     ApprovedById = table.Column<int>(type: "integer", nullable: true),
                     RejectionReason = table.Column<string>(type: "text", nullable: true),
-                    CreatedById = table.Column<int>(type: "integer", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    CreatedById = table.Column<int>(type: "integer", nullable: true),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    UpdatedById = table.Column<int>(type: "integer", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "boolean", nullable: false),
+                    DeletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    DeletedById = table.Column<int>(type: "integer", nullable: true),
                     Notes = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: true)
                 },
                 constraints: table =>
@@ -208,10 +239,9 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                 name: "StockOpnameHeaders",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
                     DocNo = table.Column<string>(type: "character varying(30)", maxLength: 30, nullable: false),
-                    LocationId = table.Column<int>(type: "integer", nullable: false),
+                    LocationId = table.Column<Guid>(type: "uuid", nullable: false),
                     Date = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     Status = table.Column<int>(type: "integer", nullable: false),
                     SubmittedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
@@ -219,8 +249,13 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                     ApprovedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     ApprovedById = table.Column<int>(type: "integer", nullable: true),
                     RejectionReason = table.Column<string>(type: "text", nullable: true),
-                    CreatedById = table.Column<int>(type: "integer", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    CreatedById = table.Column<int>(type: "integer", nullable: true),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    UpdatedById = table.Column<int>(type: "integer", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "boolean", nullable: false),
+                    DeletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    DeletedById = table.Column<int>(type: "integer", nullable: true),
                     Notes = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: true)
                 },
                 constraints: table =>
@@ -238,10 +273,9 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                 name: "StockOutHeaders",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
                     DocNo = table.Column<string>(type: "character varying(30)", maxLength: 30, nullable: false),
-                    LocationId = table.Column<int>(type: "integer", nullable: false),
+                    LocationId = table.Column<Guid>(type: "uuid", nullable: false),
                     Date = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     Purpose = table.Column<string>(type: "character varying(200)", maxLength: 200, nullable: true),
                     Status = table.Column<int>(type: "integer", nullable: false),
@@ -250,8 +284,13 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                     ApprovedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     ApprovedById = table.Column<int>(type: "integer", nullable: true),
                     RejectionReason = table.Column<string>(type: "text", nullable: true),
-                    CreatedById = table.Column<int>(type: "integer", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    CreatedById = table.Column<int>(type: "integer", nullable: true),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    UpdatedById = table.Column<int>(type: "integer", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "boolean", nullable: false),
+                    DeletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    DeletedById = table.Column<int>(type: "integer", nullable: true),
                     Notes = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: true)
                 },
                 constraints: table =>
@@ -269,11 +308,10 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                 name: "StockTransferHeaders",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
                     DocNo = table.Column<string>(type: "character varying(30)", maxLength: 30, nullable: false),
-                    FromLocationId = table.Column<int>(type: "integer", nullable: false),
-                    ToLocationId = table.Column<int>(type: "integer", nullable: false),
+                    FromLocationId = table.Column<Guid>(type: "uuid", nullable: false),
+                    ToLocationId = table.Column<Guid>(type: "uuid", nullable: false),
                     Date = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     Status = table.Column<int>(type: "integer", nullable: false),
                     SubmittedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
@@ -281,8 +319,13 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                     ApprovedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     ApprovedById = table.Column<int>(type: "integer", nullable: true),
                     RejectionReason = table.Column<string>(type: "text", nullable: true),
-                    CreatedById = table.Column<int>(type: "integer", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    CreatedById = table.Column<int>(type: "integer", nullable: true),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    UpdatedById = table.Column<int>(type: "integer", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "boolean", nullable: false),
+                    DeletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    DeletedById = table.Column<int>(type: "integer", nullable: true),
                     Notes = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: true)
                 },
                 constraints: table =>
@@ -327,11 +370,10 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                 name: "StockInHeaders",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
                     DocNo = table.Column<string>(type: "character varying(30)", maxLength: 30, nullable: false),
-                    SupplierId = table.Column<int>(type: "integer", nullable: false),
-                    LocationId = table.Column<int>(type: "integer", nullable: false),
+                    SupplierId = table.Column<Guid>(type: "uuid", nullable: false),
+                    LocationId = table.Column<Guid>(type: "uuid", nullable: false),
                     Date = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     Status = table.Column<int>(type: "integer", nullable: false),
                     SubmittedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
@@ -339,8 +381,13 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                     ApprovedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     ApprovedById = table.Column<int>(type: "integer", nullable: true),
                     RejectionReason = table.Column<string>(type: "text", nullable: true),
-                    CreatedById = table.Column<int>(type: "integer", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    CreatedById = table.Column<int>(type: "integer", nullable: true),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    UpdatedById = table.Column<int>(type: "integer", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "boolean", nullable: false),
+                    DeletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    DeletedById = table.Column<int>(type: "integer", nullable: true),
                     Notes = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: true)
                 },
                 constraints: table =>
@@ -364,15 +411,20 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                 name: "Products",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Sku = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     Name = table.Column<string>(type: "character varying(200)", maxLength: 200, nullable: false),
-                    CategoryId = table.Column<int>(type: "integer", nullable: false),
-                    UnitId = table.Column<int>(type: "integer", nullable: false),
+                    CategoryId = table.Column<Guid>(type: "uuid", nullable: false),
+                    UnitId = table.Column<Guid>(type: "uuid", nullable: false),
                     ReorderLevel = table.Column<int>(type: "integer", nullable: false),
                     IsActive = table.Column<bool>(type: "boolean", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    CreatedById = table.Column<int>(type: "integer", nullable: true),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    UpdatedById = table.Column<int>(type: "integer", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "boolean", nullable: false),
+                    DeletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    DeletedById = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -480,14 +532,20 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                 name: "StockAdjustmentDetails",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    StockAdjustmentHeaderId = table.Column<int>(type: "integer", nullable: false),
-                    ProductId = table.Column<int>(type: "integer", nullable: false),
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    StockAdjustmentHeaderId = table.Column<Guid>(type: "uuid", nullable: false),
+                    ProductId = table.Column<Guid>(type: "uuid", nullable: false),
                     SystemQuantity = table.Column<decimal>(type: "numeric(18,4)", precision: 18, scale: 4, nullable: false),
                     CountedQuantity = table.Column<decimal>(type: "numeric(18,4)", precision: 18, scale: 4, nullable: false),
                     Difference = table.Column<decimal>(type: "numeric(18,4)", precision: 18, scale: 4, nullable: false),
-                    Notes = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: true)
+                    Notes = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: true),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    CreatedById = table.Column<int>(type: "integer", nullable: true),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    UpdatedById = table.Column<int>(type: "integer", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "boolean", nullable: false),
+                    DeletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    DeletedById = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -510,13 +568,19 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                 name: "StockInDetails",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    StockInHeaderId = table.Column<int>(type: "integer", nullable: false),
-                    ProductId = table.Column<int>(type: "integer", nullable: false),
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    StockInHeaderId = table.Column<Guid>(type: "uuid", nullable: false),
+                    ProductId = table.Column<Guid>(type: "uuid", nullable: false),
                     Quantity = table.Column<decimal>(type: "numeric(18,4)", precision: 18, scale: 4, nullable: false),
                     UnitCost = table.Column<decimal>(type: "numeric(18,4)", precision: 18, scale: 4, nullable: true),
-                    Notes = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: true)
+                    Notes = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: true),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    CreatedById = table.Column<int>(type: "integer", nullable: true),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    UpdatedById = table.Column<int>(type: "integer", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "boolean", nullable: false),
+                    DeletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    DeletedById = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -539,18 +603,19 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                 name: "StockMovements",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
                     MovementNo = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     Type = table.Column<int>(type: "integer", nullable: false),
-                    ProductId = table.Column<int>(type: "integer", nullable: false),
-                    LocationId = table.Column<int>(type: "integer", nullable: false),
+                    ProductId = table.Column<Guid>(type: "uuid", nullable: false),
+                    LocationId = table.Column<Guid>(type: "uuid", nullable: false),
                     Quantity = table.Column<decimal>(type: "numeric(18,4)", precision: 18, scale: 4, nullable: false),
                     ReferenceType = table.Column<int>(type: "integer", nullable: false),
-                    ReferenceId = table.Column<int>(type: "integer", nullable: false),
+                    ReferenceId = table.Column<Guid>(type: "uuid", nullable: false),
                     Notes = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    CreatedById = table.Column<int>(type: "integer", nullable: false)
+                    CreatedById = table.Column<int>(type: "integer", nullable: true),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    UpdatedById = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -573,14 +638,20 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                 name: "StockOpnameDetails",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    StockOpnameHeaderId = table.Column<int>(type: "integer", nullable: false),
-                    ProductId = table.Column<int>(type: "integer", nullable: false),
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    StockOpnameHeaderId = table.Column<Guid>(type: "uuid", nullable: false),
+                    ProductId = table.Column<Guid>(type: "uuid", nullable: false),
                     SystemQuantity = table.Column<decimal>(type: "numeric(18,4)", precision: 18, scale: 4, nullable: false),
                     CountedQuantity = table.Column<decimal>(type: "numeric(18,4)", precision: 18, scale: 4, nullable: true),
                     Difference = table.Column<decimal>(type: "numeric(18,4)", precision: 18, scale: 4, nullable: false),
-                    Notes = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: true)
+                    Notes = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: true),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    CreatedById = table.Column<int>(type: "integer", nullable: true),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    UpdatedById = table.Column<int>(type: "integer", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "boolean", nullable: false),
+                    DeletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    DeletedById = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -603,12 +674,18 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                 name: "StockOutDetails",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    StockOutHeaderId = table.Column<int>(type: "integer", nullable: false),
-                    ProductId = table.Column<int>(type: "integer", nullable: false),
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    StockOutHeaderId = table.Column<Guid>(type: "uuid", nullable: false),
+                    ProductId = table.Column<Guid>(type: "uuid", nullable: false),
                     Quantity = table.Column<decimal>(type: "numeric(18,4)", precision: 18, scale: 4, nullable: false),
-                    Notes = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: true)
+                    Notes = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: true),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    CreatedById = table.Column<int>(type: "integer", nullable: true),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    UpdatedById = table.Column<int>(type: "integer", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "boolean", nullable: false),
+                    DeletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    DeletedById = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -631,13 +708,15 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                 name: "Stocks",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    ProductId = table.Column<int>(type: "integer", nullable: false),
-                    LocationId = table.Column<int>(type: "integer", nullable: false),
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    ProductId = table.Column<Guid>(type: "uuid", nullable: false),
+                    LocationId = table.Column<Guid>(type: "uuid", nullable: false),
                     Quantity = table.Column<decimal>(type: "numeric(18,4)", precision: 18, scale: 4, nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    Version = table.Column<int>(type: "integer", nullable: false)
+                    Version = table.Column<int>(type: "integer", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    CreatedById = table.Column<int>(type: "integer", nullable: true),
+                    UpdatedById = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -660,12 +739,18 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                 name: "StockTransferDetails",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    StockTransferHeaderId = table.Column<int>(type: "integer", nullable: false),
-                    ProductId = table.Column<int>(type: "integer", nullable: false),
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    StockTransferHeaderId = table.Column<Guid>(type: "uuid", nullable: false),
+                    ProductId = table.Column<Guid>(type: "uuid", nullable: false),
                     Quantity = table.Column<decimal>(type: "numeric(18,4)", precision: 18, scale: 4, nullable: false),
-                    Notes = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: true)
+                    Notes = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: true),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    CreatedById = table.Column<int>(type: "integer", nullable: true),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    UpdatedById = table.Column<int>(type: "integer", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "boolean", nullable: false),
+                    DeletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    DeletedById = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -698,7 +783,8 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                 name: "IX_Categories_Name",
                 table: "Categories",
                 column: "Name",
-                unique: true);
+                unique: true,
+                filter: "\"IsDeleted\" = false");
 
             migrationBuilder.CreateIndex(
                 name: "IX_DocumentSequences_Prefix_Year_Month",
@@ -715,7 +801,8 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                 name: "IX_Locations_Code",
                 table: "Locations",
                 column: "Code",
-                unique: true);
+                unique: true,
+                filter: "\"IsDeleted\" = false");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Locations_ParentLocationId",
@@ -731,7 +818,8 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                 name: "IX_Products_Sku",
                 table: "Products",
                 column: "Sku",
-                unique: true);
+                unique: true,
+                filter: "\"IsDeleted\" = false");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Products_UnitId",
@@ -763,7 +851,8 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                 name: "IX_StockAdjustmentHeaders_DocNo",
                 table: "StockAdjustmentHeaders",
                 column: "DocNo",
-                unique: true);
+                unique: true,
+                filter: "\"IsDeleted\" = false");
 
             migrationBuilder.CreateIndex(
                 name: "IX_StockAdjustmentHeaders_LocationId",
@@ -794,7 +883,8 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                 name: "IX_StockInHeaders_DocNo",
                 table: "StockInHeaders",
                 column: "DocNo",
-                unique: true);
+                unique: true,
+                filter: "\"IsDeleted\" = false");
 
             migrationBuilder.CreateIndex(
                 name: "IX_StockInHeaders_LocationId",
@@ -835,7 +925,8 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                 name: "IX_StockOpnameHeaders_DocNo",
                 table: "StockOpnameHeaders",
                 column: "DocNo",
-                unique: true);
+                unique: true,
+                filter: "\"IsDeleted\" = false");
 
             migrationBuilder.CreateIndex(
                 name: "IX_StockOpnameHeaders_LocationId",
@@ -861,7 +952,8 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                 name: "IX_StockOutHeaders_DocNo",
                 table: "StockOutHeaders",
                 column: "DocNo",
-                unique: true);
+                unique: true,
+                filter: "\"IsDeleted\" = false");
 
             migrationBuilder.CreateIndex(
                 name: "IX_StockOutHeaders_LocationId",
@@ -898,7 +990,8 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                 name: "IX_StockTransferHeaders_DocNo",
                 table: "StockTransferHeaders",
                 column: "DocNo",
-                unique: true);
+                unique: true,
+                filter: "\"IsDeleted\" = false");
 
             migrationBuilder.CreateIndex(
                 name: "IX_StockTransferHeaders_FromLocationId",
@@ -919,13 +1012,15 @@ namespace Inventory.Migrations.PostgreSql.Migrations
                 name: "IX_Suppliers_Code",
                 table: "Suppliers",
                 column: "Code",
-                unique: true);
+                unique: true,
+                filter: "\"IsDeleted\" = false");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Units_Code",
                 table: "Units",
                 column: "Code",
-                unique: true);
+                unique: true,
+                filter: "\"IsDeleted\" = false");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserClaims_UserId",

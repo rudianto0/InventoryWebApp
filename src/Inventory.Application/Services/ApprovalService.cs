@@ -82,7 +82,7 @@ public sealed class ApprovalService(
                 "StockAdjustment" => await db.StockAdjustmentHeaders.Where(x => x.Id == item.Id).Select(x => x.CreatedById).FirstOrDefaultAsync(ct),
                 _ => await db.StockOpnameHeaders.Where(x => x.Id == item.Id).Select(x => x.CreatedById).FirstOrDefaultAsync(ct)
             };
-            creators.Add(createdBy);
+            creators.Add(createdBy ?? 0);
         }
 
         var names = await users.GetDisplayNamesAsync(creators, ct);

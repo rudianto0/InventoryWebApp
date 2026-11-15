@@ -30,9 +30,34 @@ dua mutasi: keluar dari lokasi asal dan masuk ke lokasi tujuan.
 
 ## 4. Data Model
 
-**StockTransferHeaders**: Id, DocNo, FromLocationId, ToLocationId, Date, Status + field approval + CreatedById, CreatedAt, Notes.
+**StockTransferHeaders** (PK `Guid`, soft delete) + **StockTransferDetails** (PK `Guid`, soft delete).
 
-**StockTransferDetails**: Id, StockTransferHeaderId, ProductId, Quantity (>0), Notes.
+### 4.1 Field Dictionary - StockTransferHeaders
+
+| Field | Type | Required | Constraint / Default | Fungsi |
+|-------|------|----------|----------------------|--------|
+| `Id` | Guid | Ya | PK | Identitas dokumen transfer |
+| `DocNo` | string(30) | Ya | Unik (aktif), auto | Nomor dokumen `TRF-yyyyMM-####` |
+| `FromLocationId` | Guid | Ya | FK Locations, aktif | Lokasi asal |
+| `ToLocationId` | Guid | Ya | FK Locations, aktif, != From | Lokasi tujuan |
+| `Date` | DateTime | Ya | - | Tanggal transfer |
+| `Status` | enum | Ya | Default Draft | Status approval |
+| `SubmittedAt` / `ApproverId` | DateTime? / int? | Tidak | - | Waktu submit & approver |
+| `ApprovedAt` / `ApprovedById` | DateTime? / int? | Tidak | - | Waktu & user approve |
+| `RejectionReason` | string? | Tidak | - | Alasan reject |
+| `Notes` | string(500) | Tidak | - | Catatan dokumen |
+| audit + soft delete | - | - | Otomatis | Jejak create/update/delete |
+
+### 4.2 Field Dictionary - StockTransferDetails
+
+| Field | Type | Required | Constraint / Default | Fungsi |
+|-------|------|----------|----------------------|--------|
+| `Id` | Guid | Ya | PK | Identitas baris |
+| `StockTransferHeaderId` | Guid | Ya | FK header | Dokumen induk |
+| `ProductId` | Guid | Ya | FK Products, aktif | Produk yang dipindah |
+| `Quantity` | decimal(18,4) | Ya | `> 0` | Jumlah dipindah |
+| `Notes` | string(500) | Tidak | - | Catatan baris |
+| audit + soft delete | - | - | Otomatis | Jejak create/update/delete |
 
 ## 5. Workflow
 
@@ -54,6 +79,7 @@ dua mutasi: keluar dari lokasi asal dan masuk ke lokasi tujuan.
 | POST | `/stock-transfers/submit/{id}` | Submit |
 | POST | `/stock-transfers/approve/{id}` | Approve |
 | POST | `/stock-transfers/reject/{id}` | Reject + reason |
+| POST | `/stock-transfers/delete/{id}` | Soft delete (Draft) |
 | GET | `/stock-transfers/details/{id}` | Detail |
 
 ## 7. Validasi & Business Rules

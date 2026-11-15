@@ -27,7 +27,23 @@ Master pemasok (supplier) yang dipakai pada transaksi Stock In.
 
 ## 4. Data Model
 
-`Suppliers`: Id, Code (unik), Name, ContactPerson, Phone, Email, Address, IsActive.
+`Suppliers` (PK `Guid`, soft delete).
+
+### 4.1 Field Dictionary
+
+| Field | Type | Required | Constraint / Default | Fungsi |
+|-------|------|----------|----------------------|--------|
+| `Id` | Guid | Ya | PK | Identitas unik supplier |
+| `Code` | string(30) | Ya | Unik (aktif), uppercase | Kode supplier |
+| `Name` | string(150) | Ya | - | Nama supplier |
+| `ContactPerson` | string(150) | Tidak | - | Nama narahubung |
+| `Phone` | string(30) | Tidak | - | Nomor telepon |
+| `Email` | string(150) | Tidak | Format email valid | Email narahubung |
+| `Address` | string(300) | Tidak | - | Alamat supplier |
+| `IsActive` | bool | Ya | Default `true` | Status bisnis supplier |
+| `CreatedAt` / `CreatedById` | DateTime / int? | Ya / Tidak | Otomatis | Audit pembuatan |
+| `UpdatedAt` / `UpdatedById` | DateTime? / int? | Tidak | Otomatis | Audit perubahan |
+| `IsDeleted` / `DeletedAt` / `DeletedById` | bool / DateTime? / int? | Ya / Tidak / Tidak | Otomatis | Soft delete & audit hapus |
 
 ## 5. Workflow
 
@@ -43,12 +59,13 @@ Master pemasok (supplier) yang dipakai pada transaksi Stock In.
 | GET/POST | `/suppliers/create` | Create |
 | GET/POST | `/suppliers/edit/{id}` | Update |
 | POST | `/suppliers/deactivate/{id}` | Non-aktifkan |
+| POST | `/suppliers/delete/{id}` | Soft delete (jika belum dipakai) |
 
 ### SupplierFormViewModel
 ```csharp
 public sealed class SupplierFormViewModel
 {
-    public int? Id { get; set; }
+    public Guid? Id { get; set; }
     [Required, StringLength(30)] public string Code { get; set; }
     [Required, StringLength(150)] public string Name { get; set; }
     [StringLength(150)] public string? ContactPerson { get; set; }

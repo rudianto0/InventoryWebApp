@@ -83,13 +83,13 @@ public sealed class UserService(
     public async Task<IReadOnlyList<string>> GetRolesAsync(CancellationToken ct = default) =>
         await roleManager.Roles.AsNoTracking().OrderBy(x => x.Name).Select(x => x.Name!).ToListAsync(ct);
 
-    public async Task<IReadOnlyList<SelectOption>> GetParentCandidatesAsync(CancellationToken ct = default)
+    public async Task<IReadOnlyList<UserOption>> GetParentCandidatesAsync(CancellationToken ct = default)
     {
-        var result = new List<SelectOption>();
+        var result = new List<UserOption>();
         foreach (var role in new[] { "SPV", "Manager" })
         {
             var users = await userManager.GetUsersInRoleAsync(role);
-            result.AddRange(users.Where(x => x.IsActive).Select(x => new SelectOption
+            result.AddRange(users.Where(x => x.IsActive).Select(x => new UserOption
             {
                 Id = x.Id,
                 Text = $"{x.FullName} ({x.UserName})"

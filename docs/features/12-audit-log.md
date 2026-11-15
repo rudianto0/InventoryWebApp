@@ -30,7 +30,27 @@ aksi approval, agar dapat ditelusuri siapa melakukan apa dan kapan.
 
 ## 4. Data Model
 
-`AuditLogs`: Id, EntityName, EntityId, Action (`Create|Update|Delete|Submit|Approve|Reject`), OldValues (JSON string), NewValues (JSON string), UserId, IpAddress, CreatedAt.
+`AuditLogs` (PK `int`, append-only, tanpa soft delete).
+
+### 4.1 Field Dictionary
+
+| Field | Type | Required | Constraint / Default | Fungsi |
+|-------|------|----------|----------------------|--------|
+| `Id` | int | Ya | PK | Identitas unik log |
+| `EntityName` | string(100) | Ya | - | Nama entity yang berubah |
+| `EntityId` | string(64) | Ya | `Guid`/`int` dalam bentuk string | ID record yang berubah |
+| `Action` | string(30) | Ya | Create/Update/Delete/Submit/Approve/Reject | Jenis aksi |
+| `OldValues` | string? | Tidak | JSON | Nilai sebelum perubahan (delta) |
+| `NewValues` | string? | Tidak | JSON | Nilai sesudah perubahan (delta) |
+| `UserId` | int? | Tidak | `Users.Id` | User pelaku aksi |
+| `IpAddress` | string(50) | Tidak | - | Alamat IP pelaku |
+| `CreatedAt` | DateTime (UTC) | Ya | Otomatis | Waktu aksi tercatat |
+
+Catatan:
+- `EntityId` bertipe `string` karena entity bisnis memakai `Guid`, sedangkan
+  `AppUser` memakai `int`.
+- Soft delete tetap dicatat sebagai aksi `Delete` (dengan `IsDeleted = true`),
+  bukan hard delete.
 
 ## 5. Workflow
 

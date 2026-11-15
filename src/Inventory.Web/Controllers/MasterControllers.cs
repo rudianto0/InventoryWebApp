@@ -45,7 +45,7 @@ public sealed class LocationsController(LocationService locations) : AppControll
 
     [Authorize(Roles = "Admin")]
     [HttpGet]
-    public async Task<IActionResult> Edit(int id, CancellationToken ct)
+    public async Task<IActionResult> Edit(Guid id, CancellationToken ct)
     {
         var entity = await locations.GetAsync(id, ct);
         if (entity is null)
@@ -67,7 +67,7 @@ public sealed class LocationsController(LocationService locations) : AppControll
     [Authorize(Roles = "Admin")]
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int id, LocationFormModel model, CancellationToken ct)
+    public async Task<IActionResult> Edit(Guid id, LocationFormModel model, CancellationToken ct)
     {
         try
         {
@@ -86,7 +86,7 @@ public sealed class LocationsController(LocationService locations) : AppControll
     [Authorize(Roles = "Admin")]
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Deactivate(int id, CancellationToken ct)
+    public async Task<IActionResult> Deactivate(Guid id, CancellationToken ct)
     {
         try
         {
@@ -100,7 +100,24 @@ public sealed class LocationsController(LocationService locations) : AppControll
         return RedirectToAction(nameof(Index));
     }
 
-    private async Task<IReadOnlyList<SelectOption>> GetParentsAsync(CancellationToken ct, int? excludeId = null)
+    [Authorize(Roles = "Admin")]
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Delete(Guid id, CancellationToken ct)
+    {
+        try
+        {
+            await locations.DeleteAsync(id, ct);
+            NotifySuccess("Lokasi dihapus.");
+        }
+        catch (Exception ex) when (FormError(ex) is not null)
+        {
+            NotifyError(FormError(ex)!);
+        }
+        return RedirectToAction(nameof(Index));
+    }
+
+    private async Task<IReadOnlyList<SelectOption>> GetParentsAsync(CancellationToken ct, Guid? excludeId = null)
     {
         var all = await locations.GetOptionsAsync(activeOnly: false, ct);
         return excludeId.HasValue ? all.Where(x => x.Id != excludeId.Value).ToList() : all;
@@ -152,7 +169,7 @@ public sealed class SuppliersController(SupplierService suppliers) : AppControll
 
     [Authorize(Roles = "Admin")]
     [HttpGet]
-    public async Task<IActionResult> Edit(int id, CancellationToken ct)
+    public async Task<IActionResult> Edit(Guid id, CancellationToken ct)
     {
         var entity = await suppliers.GetAsync(id, ct);
         if (entity is null)
@@ -173,7 +190,7 @@ public sealed class SuppliersController(SupplierService suppliers) : AppControll
     [Authorize(Roles = "Admin")]
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int id, SupplierFormModel model, CancellationToken ct)
+    public async Task<IActionResult> Edit(Guid id, SupplierFormModel model, CancellationToken ct)
     {
         try
         {
@@ -191,12 +208,29 @@ public sealed class SuppliersController(SupplierService suppliers) : AppControll
     [Authorize(Roles = "Admin")]
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Deactivate(int id, CancellationToken ct)
+    public async Task<IActionResult> Deactivate(Guid id, CancellationToken ct)
     {
         try
         {
             await suppliers.DeactivateAsync(id, ct);
             NotifySuccess("Supplier dinonaktifkan.");
+        }
+        catch (Exception ex) when (FormError(ex) is not null)
+        {
+            NotifyError(FormError(ex)!);
+        }
+        return RedirectToAction(nameof(Index));
+    }
+
+    [Authorize(Roles = "Admin")]
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Delete(Guid id, CancellationToken ct)
+    {
+        try
+        {
+            await suppliers.DeleteAsync(id, ct);
+            NotifySuccess("Supplier dihapus.");
         }
         catch (Exception ex) when (FormError(ex) is not null)
         {

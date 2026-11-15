@@ -30,9 +30,34 @@ single-level. Stok berkurang saat Approved.
 
 ## 4. Data Model
 
-**StockOutHeaders**: Id, DocNo, LocationId, Date, Purpose, Status + field approval + CreatedById, CreatedAt, Notes.
+**StockOutHeaders** (PK `Guid`, soft delete) + **StockOutDetails** (PK `Guid`, soft delete).
 
-**StockOutDetails**: Id, StockOutHeaderId, ProductId, Quantity (>0), Notes.
+### 4.1 Field Dictionary - StockOutHeaders
+
+| Field | Type | Required | Constraint / Default | Fungsi |
+|-------|------|----------|----------------------|--------|
+| `Id` | Guid | Ya | PK | Identitas dokumen Stock Out |
+| `DocNo` | string(30) | Ya | Unik (aktif), auto | Nomor dokumen `OUT-yyyyMM-####` |
+| `LocationId` | Guid | Ya | FK Locations, aktif | Lokasi sumber barang |
+| `Date` | DateTime | Ya | - | Tanggal transaksi |
+| `Purpose` | string(200) | Tidak | - | Tujuan pemakaian |
+| `Status` | enum | Ya | Default Draft | Status approval |
+| `SubmittedAt` / `ApproverId` | DateTime? / int? | Tidak | - | Waktu submit & approver |
+| `ApprovedAt` / `ApprovedById` | DateTime? / int? | Tidak | - | Waktu & user approve |
+| `RejectionReason` | string? | Tidak | - | Alasan reject |
+| `Notes` | string(500) | Tidak | - | Catatan dokumen |
+| audit + soft delete | - | - | Otomatis | Jejak create/update/delete |
+
+### 4.2 Field Dictionary - StockOutDetails
+
+| Field | Type | Required | Constraint / Default | Fungsi |
+|-------|------|----------|----------------------|--------|
+| `Id` | Guid | Ya | PK | Identitas baris |
+| `StockOutHeaderId` | Guid | Ya | FK StockOutHeaders | Dokumen induk |
+| `ProductId` | Guid | Ya | FK Products, aktif | Produk yang keluar |
+| `Quantity` | decimal(18,4) | Ya | `> 0` | Jumlah keluar |
+| `Notes` | string(500) | Tidak | - | Catatan baris |
+| audit + soft delete | - | - | Otomatis | Jejak create/update/delete |
 
 ## 5. Workflow
 
@@ -54,6 +79,7 @@ single-level. Stok berkurang saat Approved.
 | POST | `/stock-outs/submit/{id}` | Submit | Owner |
 | POST | `/stock-outs/approve/{id}` | Approve | SPV/Admin |
 | POST | `/stock-outs/reject/{id}` | Reject + reason | SPV/Admin |
+| POST | `/stock-outs/delete/{id}` | Soft delete (Draft) | Owner/Admin |
 | GET | `/stock-outs/details/{id}` | Detail | Auth |
 
 ## 7. Validasi & Business Rules

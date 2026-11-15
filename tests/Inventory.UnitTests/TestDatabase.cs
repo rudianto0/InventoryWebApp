@@ -42,6 +42,12 @@ internal sealed class TestDatabase : IAsyncDisposable
     private readonly SqliteConnection _connection;
     public AppDbContext Db { get; }
 
+    public Guid CategoryId { get; private set; }
+    public Guid UnitId { get; private set; }
+    public Guid ProductId { get; private set; }
+    public Guid WarehouseId { get; private set; }
+    public Guid SupplierId { get; private set; }
+
     public TestDatabase(ICurrentUserService? currentUser = null)
     {
         _connection = new SqliteConnection("DataSource=:memory:");
@@ -58,11 +64,21 @@ internal sealed class TestDatabase : IAsyncDisposable
         Db.Categories.Add(category);
         Db.Units.Add(unit);
         await Db.SaveChangesAsync();
-        Db.Products.Add(new Product { Sku = "SKU-1", Name = "Product 1", CategoryId = category.Id, UnitId = unit.Id });
+
+        var product = new Product { Sku = "SKU-1", Name = "Product 1", CategoryId = category.Id, UnitId = unit.Id };
+        var warehouse = new Location { Code = "WH1", Name = "WH1", Type = LocationType.Warehouse, IsActive = true };
+        var supplier = new Supplier { Code = "SUP", Name = "Supplier" };
+        Db.Products.Add(product);
         Db.Locations.Add(new Location { Code = "HQ", Name = "HQ", Type = LocationType.Branch, IsActive = true });
-        Db.Locations.Add(new Location { Code = "WH1", Name = "WH1", Type = LocationType.Warehouse, IsActive = true });
-        Db.Suppliers.Add(new Supplier { Code = "SUP", Name = "Supplier" });
+        Db.Locations.Add(warehouse);
+        Db.Suppliers.Add(supplier);
         await Db.SaveChangesAsync();
+
+        CategoryId = category.Id;
+        UnitId = unit.Id;
+        ProductId = product.Id;
+        WarehouseId = warehouse.Id;
+        SupplierId = supplier.Id;
     }
 
     public async ValueTask DisposeAsync()

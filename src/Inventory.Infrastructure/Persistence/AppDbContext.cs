@@ -1,5 +1,7 @@
+using System.Linq.Expressions;
 using System.Text.Json;
 using Inventory.Application.Abstractions;
+using Inventory.Domain.Common;
 using Inventory.Domain.Entities;
 using Inventory.Infrastructure.Identity;
 using Microsoft.AspNetCore.Http;
@@ -52,9 +54,23 @@ public class AppDbContext : IdentityDbContext<AppUser, AppRole, int>, IAppDbCont
         typeof(StockAdjustmentHeader), typeof(StockOpnameHeader), typeof(AppUser)
     ];
 
+    private string ActiveRowFilter
+    {
+        get
+        {
+            var provider = Database.ProviderName ?? string.Empty;
+            if (provider.Contains("Npgsql", StringComparison.OrdinalIgnoreCase))
+                return "\"IsDeleted\" = false";
+            if (provider.Contains("Sqlite", StringComparison.OrdinalIgnoreCase))
+                return "IsDeleted = 0";
+            return "[IsDeleted] = 0";
+        }
+    }
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
+        var activeFilter = ActiveRowFilter;
 
         builder.Entity<AppUser>(b =>
         {
@@ -74,21 +90,21 @@ public class AppDbContext : IdentityDbContext<AppUser, AppRole, int>, IAppDbCont
         {
             b.Property(x => x.Name).HasMaxLength(150).IsRequired();
             b.Property(x => x.Description).HasMaxLength(500);
-            b.HasIndex(x => x.Name).IsUnique();
+            b.HasIndex(x => x.Name).IsUnique().HasFilter(activeFilter);
         });
 
         builder.Entity<Unit>(b =>
         {
             b.Property(x => x.Code).HasMaxLength(30).IsRequired();
             b.Property(x => x.Name).HasMaxLength(100).IsRequired();
-            b.HasIndex(x => x.Code).IsUnique();
+            b.HasIndex(x => x.Code).IsUnique().HasFilter(activeFilter);
         });
 
         builder.Entity<Product>(b =>
         {
             b.Property(x => x.Sku).HasMaxLength(50).IsRequired();
             b.Property(x => x.Name).HasMaxLength(200).IsRequired();
-            b.HasIndex(x => x.Sku).IsUnique();
+            b.HasIndex(x => x.Sku).IsUnique().HasFilter(activeFilter);
             b.HasIndex(x => x.CategoryId);
             b.HasOne(x => x.Category).WithMany(x => x.Products).HasForeignKey(x => x.CategoryId).OnDelete(DeleteBehavior.Restrict);
             b.HasOne(x => x.Unit).WithMany(x => x.Products).HasForeignKey(x => x.UnitId).OnDelete(DeleteBehavior.Restrict);
@@ -102,7 +118,7 @@ public class AppDbContext : IdentityDbContext<AppUser, AppRole, int>, IAppDbCont
             b.Property(x => x.Phone).HasMaxLength(30);
             b.Property(x => x.Email).HasMaxLength(150);
             b.Property(x => x.Address).HasMaxLength(300);
-            b.HasIndex(x => x.Code).IsUnique();
+            b.HasIndex(x => x.Code).IsUnique().HasFilter(activeFilter);
         });
 
         builder.Entity<Location>(b =>
@@ -111,7 +127,7 @@ public class AppDbContext : IdentityDbContext<AppUser, AppRole, int>, IAppDbCont
             b.Property(x => x.Name).HasMaxLength(150).IsRequired();
             b.Property(x => x.BranchCode).HasMaxLength(30);
             b.Property(x => x.Address).HasMaxLength(300);
-            b.HasIndex(x => x.Code).IsUnique();
+            b.HasIndex(x => x.Code).IsUnique().HasFilter(activeFilter);
             b.HasIndex(x => x.ParentLocationId);
             b.HasIndex(x => x.BranchCode);
             b.HasOne(x => x.ParentLocation).WithMany(x => x.Children).HasForeignKey(x => x.ParentLocationId).OnDelete(DeleteBehavior.Restrict);
@@ -124,6 +140,7 @@ public class AppDbContext : IdentityDbContext<AppUser, AppRole, int>, IAppDbCont
             b.HasIndex(x => new { x.ProductId, x.LocationId }).IsUnique();
             b.HasOne(x => x.Product).WithMany().HasForeignKey(x => x.ProductId).OnDelete(DeleteBehavior.Restrict);
             b.HasOne(x => x.Location).WithMany().HasForeignKey(x => x.LocationId).OnDelete(DeleteBehavior.Restrict);
+            b.HasQueryFilter(x => !x.Product!.IsDeleted && !x.Location!.IsDeleted);
         });
 
         builder.Entity<StockMovement>(b =>
@@ -134,11 +151,12 @@ public class AppDbContext : IdentityDbContext<AppUser, AppRole, int>, IAppDbCont
             b.HasIndex(x => new { x.ProductId, x.LocationId, x.CreatedAt });
             b.HasOne(x => x.Product).WithMany().HasForeignKey(x => x.ProductId).OnDelete(DeleteBehavior.Restrict);
             b.HasOne(x => x.Location).WithMany().HasForeignKey(x => x.LocationId).OnDelete(DeleteBehavior.Restrict);
+            b.HasQueryFilter(x => !x.Product!.IsDeleted && !x.Location!.IsDeleted);
         });
 
         builder.Entity<StockInHeader>(b =>
         {
-            ConfigureHeader(b, x => x.DocNo);
+            ConfigureHeader(b, x => x.DocNo, activeFilter);
             b.Property(x => x.Notes).HasMaxLength(500);
             b.HasIndex(x => x.CreatedById);
             b.HasOne(x => x.Supplier).WithMany().HasForeignKey(x => x.SupplierId).OnDelete(DeleteBehavior.Restrict);
@@ -156,7 +174,7 @@ public class AppDbContext : IdentityDbContext<AppUser, AppRole, int>, IAppDbCont
 
         builder.Entity<StockOutHeader>(b =>
         {
-            ConfigureHeader(b, x => x.DocNo);
+            ConfigureHeader(b, x => x.DocNo, activeFilter);
             b.Property(x => x.Purpose).HasMaxLength(200);
             b.Property(x => x.Notes).HasMaxLength(500);
             b.HasOne(x => x.Location).WithMany().HasForeignKey(x => x.LocationId).OnDelete(DeleteBehavior.Restrict);
@@ -172,7 +190,7 @@ public class AppDbContext : IdentityDbContext<AppUser, AppRole, int>, IAppDbCont
 
         builder.Entity<StockTransferHeader>(b =>
         {
-            ConfigureHeader(b, x => x.DocNo);
+            ConfigureHeader(b, x => x.DocNo, activeFilter);
             b.Property(x => x.Notes).HasMaxLength(500);
             b.HasOne(x => x.FromLocation).WithMany().HasForeignKey(x => x.FromLocationId).OnDelete(DeleteBehavior.Restrict);
             b.HasOne(x => x.ToLocation).WithMany().HasForeignKey(x => x.ToLocationId).OnDelete(DeleteBehavior.Restrict);
@@ -188,7 +206,7 @@ public class AppDbContext : IdentityDbContext<AppUser, AppRole, int>, IAppDbCont
 
         builder.Entity<StockAdjustmentHeader>(b =>
         {
-            ConfigureHeader(b, x => x.DocNo);
+            ConfigureHeader(b, x => x.DocNo, activeFilter);
             b.Property(x => x.Reason).HasMaxLength(300).IsRequired();
             b.Property(x => x.Notes).HasMaxLength(500);
             b.HasOne(x => x.Location).WithMany().HasForeignKey(x => x.LocationId).OnDelete(DeleteBehavior.Restrict);
@@ -206,7 +224,7 @@ public class AppDbContext : IdentityDbContext<AppUser, AppRole, int>, IAppDbCont
 
         builder.Entity<StockOpnameHeader>(b =>
         {
-            ConfigureHeader(b, x => x.DocNo);
+            ConfigureHeader(b, x => x.DocNo, activeFilter);
             b.Property(x => x.Notes).HasMaxLength(500);
             b.HasOne(x => x.Location).WithMany().HasForeignKey(x => x.LocationId).OnDelete(DeleteBehavior.Restrict);
             b.HasMany(x => x.Details).WithOne(x => x.Header).HasForeignKey(x => x.StockOpnameHeaderId).OnDelete(DeleteBehavior.Cascade);
@@ -230,18 +248,28 @@ public class AppDbContext : IdentityDbContext<AppUser, AppRole, int>, IAppDbCont
         builder.Entity<AuditLog>(b =>
         {
             b.Property(x => x.EntityName).HasMaxLength(100).IsRequired();
+            b.Property(x => x.EntityId).HasMaxLength(64).IsRequired();
             b.Property(x => x.Action).HasMaxLength(30).IsRequired();
             b.Property(x => x.IpAddress).HasMaxLength(50);
             b.HasIndex(x => new { x.EntityName, x.CreatedAt });
             b.HasIndex(x => x.UserId);
         });
+
+        foreach (var entityType in builder.Model.GetEntityTypes())
+        {
+            if (!typeof(ISoftDeletable).IsAssignableFrom(entityType.ClrType))
+                continue;
+            var parameter = Expression.Parameter(entityType.ClrType, "e");
+            var body = Expression.Not(Expression.Property(parameter, nameof(ISoftDeletable.IsDeleted)));
+            builder.Entity(entityType.ClrType).HasQueryFilter(Expression.Lambda(body, parameter));
+        }
     }
 
     private static void ConfigureHeader<T>(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<T> b,
-        System.Linq.Expressions.Expression<Func<T, object?>> docNo) where T : class
+        Expression<Func<T, object?>> docNo, string activeFilter) where T : class
     {
         b.Property(docNo).HasMaxLength(30).IsRequired();
-        b.HasIndex(docNo).IsUnique();
+        b.HasIndex(docNo).IsUnique().HasFilter(activeFilter);
         b.HasIndex("Status");
     }
 
@@ -251,6 +279,7 @@ public class AppDbContext : IdentityDbContext<AppUser, AppRole, int>, IAppDbCont
             return await base.SaveChangesAsync(cancellationToken);
 
         var snapshots = CaptureAuditSnapshots();
+        ApplyAuditAndSoftDelete();
         var result = await base.SaveChangesAsync(cancellationToken);
 
         if (snapshots.Count > 0)
@@ -281,6 +310,41 @@ public class AppDbContext : IdentityDbContext<AppUser, AppRole, int>, IAppDbCont
             }
         }
         return result;
+    }
+
+    private void ApplyAuditAndSoftDelete()
+    {
+        var userId = _currentUser.UserId;
+        var now = DateTime.UtcNow;
+
+        foreach (var entry in ChangeTracker.Entries().ToList())
+        {
+            if (entry.Entity is IAuditableEntity auditable)
+            {
+                if (entry.State == EntityState.Added)
+                {
+                    auditable.CreatedAt = now;
+                    auditable.CreatedById = userId;
+                }
+                else if (entry.State == EntityState.Modified)
+                {
+                    auditable.UpdatedAt = now;
+                    auditable.UpdatedById = userId;
+                }
+            }
+
+            if (entry.State != EntityState.Deleted || entry.Entity is not ISoftDeletable soft)
+                continue;
+
+            entry.State = EntityState.Modified;
+            soft.IsDeleted = true;
+            soft.DeletedAt = now;
+            soft.DeletedById = userId;
+
+            var isActiveProperty = entry.Metadata.FindProperty("IsActive");
+            if (isActiveProperty is not null)
+                entry.Property("IsActive").CurrentValue = false;
+        }
     }
 
     private List<AuditSnapshot> CaptureAuditSnapshots()
@@ -365,11 +429,16 @@ public class AppDbContext : IdentityDbContext<AppUser, AppRole, int>, IAppDbCont
         return "Update";
     }
 
-    private static int ResolveEntityId(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry entry)
+    private static string ResolveEntityId(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry entry)
     {
         var idProperty = entry.Properties.FirstOrDefault(p => p.Metadata.Name == "Id");
         var value = idProperty?.CurrentValue ?? idProperty?.OriginalValue;
-        return value is null ? 0 : Convert.ToInt32(value);
+        return value switch
+        {
+            null => string.Empty,
+            Guid guid => guid.ToString(),
+            _ => Convert.ToString(value) ?? string.Empty
+        };
     }
 
     private static bool IsSensitive(string propertyName) =>
@@ -385,7 +454,7 @@ public class AppDbContext : IdentityDbContext<AppUser, AppRole, int>, IAppDbCont
         public required string Action { get; init; }
         public string? OldValues { get; init; }
         public string? NewValues { get; init; }
-        public int? EntityId { get; init; }
+        public string? EntityId { get; init; }
     }
 
     public Task<IDbContextTransaction> BeginTransactionAsync(CancellationToken cancellationToken = default) =>

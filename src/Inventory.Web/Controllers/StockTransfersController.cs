@@ -28,7 +28,7 @@ public sealed class StockTransfersController(
     }
 
     [HttpGet]
-    public async Task<IActionResult> Details(int id, CancellationToken ct)
+    public async Task<IActionResult> Details(Guid id, CancellationToken ct)
     {
         var detail = await service.GetDetailAsync(id, ct);
         if (detail is null)
@@ -56,7 +56,7 @@ public sealed class StockTransfersController(
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(TransactionFormModel model, CancellationToken ct)
     {
-        if (model.Lines.All(x => x.ProductId == 0))
+        if (model.Lines.All(x => x.ProductId == Guid.Empty))
             ModelState.AddModelError(string.Empty, "Minimal satu baris produk harus diisi.");
         if (!ModelState.IsValid)
         {
@@ -82,7 +82,7 @@ public sealed class StockTransfersController(
 
     [Authorize(Roles = "Admin,Staff")]
     [HttpGet]
-    public async Task<IActionResult> Edit(int id, CancellationToken ct)
+    public async Task<IActionResult> Edit(Guid id, CancellationToken ct)
     {
         var detail = await service.GetDetailAsync(id, ct);
         if (detail is null)
@@ -111,7 +111,7 @@ public sealed class StockTransfersController(
     [Authorize(Roles = "Admin,Staff")]
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int id, TransactionFormModel model, CancellationToken ct)
+    public async Task<IActionResult> Edit(Guid id, TransactionFormModel model, CancellationToken ct)
     {
         try
         {
@@ -132,7 +132,7 @@ public sealed class StockTransfersController(
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Submit(int id, CancellationToken ct)
+    public async Task<IActionResult> Submit(Guid id, CancellationToken ct)
     {
         try
         {
@@ -148,7 +148,7 @@ public sealed class StockTransfersController(
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Approve(int id, string? notes, CancellationToken ct)
+    public async Task<IActionResult> Approve(Guid id, string? notes, CancellationToken ct)
     {
         try
         {
@@ -164,7 +164,7 @@ public sealed class StockTransfersController(
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Reject(int id, string reason, CancellationToken ct)
+    public async Task<IActionResult> Reject(Guid id, string reason, CancellationToken ct)
     {
         try
         {
@@ -181,7 +181,7 @@ public sealed class StockTransfersController(
     [Authorize(Roles = "Admin,Staff")]
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Delete(int id, CancellationToken ct)
+    public async Task<IActionResult> Delete(Guid id, CancellationToken ct)
     {
         try
         {
@@ -207,11 +207,11 @@ public sealed class StockTransfersController(
 
     private static StockTransferInput Map(TransactionFormModel model) => new()
     {
-        FromLocationId = model.FromLocationId ?? 0,
-        ToLocationId = model.ToLocationId ?? 0,
+        FromLocationId = model.FromLocationId ?? Guid.Empty,
+        ToLocationId = model.ToLocationId ?? Guid.Empty,
         Date = DateTime.SpecifyKind(model.Date, DateTimeKind.Local).ToUniversalTime(),
         Notes = model.Notes,
-        Lines = model.Lines.Where(x => x.ProductId > 0).Select(x => new DocumentLineInput
+        Lines = model.Lines.Where(x => x.ProductId != Guid.Empty).Select(x => new DocumentLineInput
         {
             ProductId = x.ProductId, Quantity = x.Quantity, Notes = x.Notes
         }).ToList()

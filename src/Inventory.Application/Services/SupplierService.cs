@@ -22,7 +22,7 @@ public sealed class SupplierService(IAppDbContext db)
         return await query.OrderBy(x => x.Code).ToListAsync(ct);
     }
 
-    public Task<Supplier?> GetAsync(int id, CancellationToken ct = default) =>
+    public Task<Supplier?> GetAsync(Guid id, CancellationToken ct = default) =>
         db.Suppliers.FirstOrDefaultAsync(x => x.Id == id, ct);
 
     public async Task<Supplier> CreateAsync(SupplierInput input, CancellationToken ct = default)
@@ -49,7 +49,7 @@ public sealed class SupplierService(IAppDbContext db)
         return entity;
     }
 
-    public async Task UpdateAsync(int id, SupplierInput input, CancellationToken ct = default)
+    public async Task UpdateAsync(Guid id, SupplierInput input, CancellationToken ct = default)
     {
         Guard.Required(input.Code, "Kode supplier");
         Guard.Required(input.Name, "Nama supplier");
@@ -70,11 +70,21 @@ public sealed class SupplierService(IAppDbContext db)
         await db.SaveChangesAsync(ct);
     }
 
-    public async Task DeactivateAsync(int id, CancellationToken ct = default)
+    public async Task DeactivateAsync(Guid id, CancellationToken ct = default)
     {
         var entity = await db.Suppliers.FirstOrDefaultAsync(x => x.Id == id, ct)
             ?? throw new ValidationException("Supplier tidak ditemukan.");
         entity.IsActive = false;
+        await db.SaveChangesAsync(ct);
+    }
+
+    public async Task DeleteAsync(Guid id, CancellationToken ct = default)
+    {
+        var entity = await db.Suppliers.FirstOrDefaultAsync(x => x.Id == id, ct)
+            ?? throw new ValidationException("Supplier tidak ditemukan.");
+        if (await db.StockInHeaders.IgnoreQueryFilters().AnyAsync(x => x.SupplierId == id, ct))
+            throw new ValidationException("Supplier tidak dapat dihapus karena sudah dipakai transaksi Stock In. Non-aktifkan supplier ini.");
+        db.Suppliers.Remove(entity);
         await db.SaveChangesAsync(ct);
     }
 

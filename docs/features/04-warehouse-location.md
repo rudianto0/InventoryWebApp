@@ -29,7 +29,25 @@ terikat ke `LocationId`. Cabang ditandai di sini (bukan multi-tenant).
 
 ## 4. Data Model
 
-`Locations`: Id, Code (unik), Name, Type, ParentLocationId, BranchCode, Address, IsActive.
+`Locations` (PK `Guid`, soft delete).
+
+### 4.1 Field Dictionary
+
+| Field | Type | Required | Constraint / Default | Fungsi |
+|-------|------|----------|----------------------|--------|
+| `Id` | Guid | Ya | PK | Identitas unik lokasi |
+| `Code` | string(30) | Ya | Unik (aktif), uppercase | Kode lokasi |
+| `Name` | string(150) | Ya | - | Nama lokasi |
+| `Type` | enum | Ya | Branch/Warehouse/Store | Tipe lokasi |
+| `ParentLocationId` | Guid? | Tidak | Self-FK, bukan diri sendiri, bebas siklus | Induk hierarki (Cabang → Gudang) |
+| `BranchCode` | string(30) | Tidak | - | Kode cabang untuk filter laporan |
+| `Address` | string(300) | Tidak | - | Alamat lokasi |
+| `IsActive` | bool | Ya | Default `true` | Status bisnis lokasi |
+| `CreatedAt` / `CreatedById` | DateTime / int? | Ya / Tidak | Otomatis | Audit pembuatan |
+| `UpdatedAt` / `UpdatedById` | DateTime? / int? | Tidak | Otomatis | Audit perubahan |
+| `IsDeleted` / `DeletedAt` / `DeletedById` | bool / DateTime? / int? | Ya / Tidak / Tidak | Otomatis | Soft delete & audit hapus |
+
+Contoh data:
 
 | Code | Name | Type | Parent | BranchCode |
 |------|------|------|--------|-----------|
@@ -51,16 +69,17 @@ terikat ke `LocationId`. Cabang ditandai di sini (bukan multi-tenant).
 | GET/POST | `/locations/create` | Create |
 | GET/POST | `/locations/edit/{id}` | Update |
 | POST | `/locations/deactivate/{id}` | Non-aktifkan |
+| POST | `/locations/delete/{id}` | Soft delete (jika belum dipakai) |
 
 ### LocationFormViewModel
 ```csharp
 public sealed class LocationFormViewModel
 {
-    public int? Id { get; set; }
+    public Guid? Id { get; set; }
     [Required, StringLength(30)] public string Code { get; set; }
     [Required, StringLength(150)] public string Name { get; set; }
     [Required] public LocationType Type { get; set; }
-    public int? ParentLocationId { get; set; }
+    public Guid? ParentLocationId { get; set; }
     [StringLength(30)] public string? BranchCode { get; set; }
     [StringLength(300)] public string? Address { get; set; }
     public bool IsActive { get; set; } = true;

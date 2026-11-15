@@ -30,11 +30,11 @@ public sealed class StockOutService(
             query = query.Where(x => x.Date < filter.To.Value.Date.AddDays(1));
 
         var total = await query.CountAsync(ct);
-        var headers = await query.OrderByDescending(x => x.Date).ThenByDescending(x => x.Id)
+        var headers = await query.OrderByDescending(x => x.Date).ThenByDescending(x => x.CreatedAt)
             .Skip((Math.Max(filter.Page, 1) - 1) * Math.Clamp(filter.PageSize, 1, 200))
             .Take(Math.Clamp(filter.PageSize, 1, 200)).ToListAsync(ct);
 
-        var names = await users.GetDisplayNamesAsync(headers.SelectMany(x => new[] { x.CreatedById, x.ApproverId ?? 0 }), ct);
+        var names = await users.GetDisplayNamesAsync(headers.SelectMany(x => new[] { x.CreatedById ?? 0, x.ApproverId ?? 0 }), ct);
         return new PagedResult<TransactionListItem>
         {
             Items = headers.Select(x => new TransactionListItem
@@ -45,7 +45,7 @@ public sealed class StockOutService(
                 LocationName = x.Location?.Name ?? string.Empty,
                 PartnerName = x.Purpose,
                 Status = x.Status,
-                CreatedByName = names.GetValueOrDefault(x.CreatedById),
+                CreatedByName = names.GetValueOrDefault(x.CreatedById ?? 0),
                 ApproverName = x.ApproverId.HasValue ? names.GetValueOrDefault(x.ApproverId.Value) : null,
                 CreatedAt = x.CreatedAt,
                 LineCount = x.Details.Count
@@ -56,7 +56,7 @@ public sealed class StockOutService(
         };
     }
 
-    public async Task<TransactionDetailView?> GetDetailAsync(int id, CancellationToken ct = default)
+    public async Task<TransactionDetailView?> GetDetailAsync(Guid id, CancellationToken ct = default)
     {
         var header = await db.StockOutHeaders.AsNoTracking()
             .Include(x => x.Location).Include(x => x.Details).ThenInclude(d => d.Product).ThenInclude(p => p!.Unit)
@@ -92,7 +92,7 @@ public sealed class StockOutService(
         return header;
     }
 
-    public async Task UpdateAsync(int id, StockOutInput input, CancellationToken ct = default)
+    public async Task UpdateAsync(Guid id, StockOutInput input, CancellationToken ct = default)
     {
         var header = await db.StockOutHeaders.Include(x => x.Details).FirstOrDefaultAsync(x => x.Id == id, ct)
             ?? throw new ValidationException("Dokumen Stock Out tidak ditemukan.");
@@ -117,7 +117,7 @@ public sealed class StockOutService(
         await db.SaveChangesAsync(ct);
     }
 
-    public async Task DeleteAsync(int id, CancellationToken ct = default)
+    public async Task DeleteAsync(Guid id, CancellationToken ct = default)
     {
         var header = await db.StockOutHeaders.Include(x => x.Details).FirstOrDefaultAsync(x => x.Id == id, ct)
             ?? throw new ValidationException("Dokumen Stock Out tidak ditemukan.");
@@ -128,7 +128,7 @@ public sealed class StockOutService(
         await db.SaveChangesAsync(ct);
     }
 
-    public async Task SubmitAsync(int id, CancellationToken ct = default)
+    public async Task SubmitAsync(Guid id, CancellationToken ct = default)
     {
         var header = await db.StockOutHeaders.Include(x => x.Details).FirstOrDefaultAsync(x => x.Id == id, ct)
             ?? throw new ValidationException("Dokumen Stock Out tidak ditemukan.");
@@ -139,7 +139,7 @@ public sealed class StockOutService(
         await db.SaveChangesAsync(ct);
     }
 
-    public async Task ApproveAsync(int id, string? notes = null, CancellationToken ct = default)
+    public async Task ApproveAsync(Guid id, string? notes = null, CancellationToken ct = default)
     {
         var header = await db.StockOutHeaders.Include(x => x.Details).FirstOrDefaultAsync(x => x.Id == id, ct)
             ?? throw new ValidationException("Dokumen Stock Out tidak ditemukan.");
@@ -168,7 +168,7 @@ public sealed class StockOutService(
         }
     }
 
-    public async Task RejectAsync(int id, string reason, CancellationToken ct = default)
+    public async Task RejectAsync(Guid id, string reason, CancellationToken ct = default)
     {
         var header = await db.StockOutHeaders.FirstOrDefaultAsync(x => x.Id == id, ct)
             ?? throw new ValidationException("Dokumen Stock Out tidak ditemukan.");
@@ -202,7 +202,7 @@ public sealed class StockOutService(
         await ValidateLinesAsync(lines.Select(x => x.ProductId).ToList(), header.LocationId, checkStock ? lines : null, ct);
     }
 
-    private async Task ValidateLinesAsync(IReadOnlyCollection<int> productIds, int locationId, IReadOnlyCollection<DocumentLineInput>? stockLines, CancellationToken ct)
+    private async Task ValidateLinesAsync(IReadOnlyCollection<Guid> productIds, Guid locationId, IReadOnlyCollection<DocumentLineInput>? stockLines, CancellationToken ct)
     {
         if (productIds.Count != productIds.Distinct().Count())
             throw new ValidationException("Terdapat produk duplikat pada detail.");
@@ -224,7 +224,7 @@ public sealed class StockOutService(
 
     private async Task<TransactionDetailView> MapDetailAsync(StockOutHeader header, CancellationToken ct)
     {
-        var names = await users.GetDisplayNamesAsync(new[] { header.CreatedById, header.ApproverId ?? 0, header.ApprovedById ?? 0 }, ct);
+        var names = await users.GetDisplayNamesAsync(new[] { header.CreatedById ?? 0, header.ApproverId ?? 0, header.ApprovedById ?? 0 }, ct);
         return new TransactionDetailView
         {
             Id = header.Id,
@@ -235,7 +235,7 @@ public sealed class StockOutService(
             LocationName = header.Location?.Name ?? string.Empty,
             Purpose = header.Purpose,
             Notes = header.Notes,
-            CreatedByName = names.GetValueOrDefault(header.CreatedById),
+            CreatedByName = names.GetValueOrDefault(header.CreatedById ?? 0),
             ApproverName = header.ApproverId.HasValue ? names.GetValueOrDefault(header.ApproverId.Value) : null,
             CreatedAt = header.CreatedAt,
             SubmittedAt = header.SubmittedAt,

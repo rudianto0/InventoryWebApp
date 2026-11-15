@@ -31,10 +31,39 @@ submit, dan approval single-level ke SPV. Stok bertambah hanya saat Approved.
 
 ## 4. Data Model
 
-**StockInHeaders**: Id, DocNo, SupplierId, LocationId, Date, Status,
-SubmittedAt, ApproverId, ApprovedAt, ApprovedById, RejectionReason, CreatedById, CreatedAt, Notes.
+**StockInHeaders** (PK `Guid`, soft delete) + **StockInDetails** (PK `Guid`, soft delete).
 
-**StockInDetails**: Id, StockInHeaderId, ProductId, Quantity (>0), UnitCost?, Notes.
+### 4.1 Field Dictionary - StockInHeaders
+
+| Field | Type | Required | Constraint / Default | Fungsi |
+|-------|------|----------|----------------------|--------|
+| `Id` | Guid | Ya | PK | Identitas dokumen Stock In |
+| `DocNo` | string(30) | Ya | Unik (aktif), auto | Nomor dokumen `IN-yyyyMM-####` |
+| `SupplierId` | Guid | Ya | FK Suppliers, aktif | Supplier asal barang |
+| `LocationId` | Guid | Ya | FK Locations, aktif | Lokasi penerima |
+| `Date` | DateTime | Ya | - | Tanggal transaksi |
+| `Status` | enum | Ya | Default Draft | Status approval |
+| `SubmittedAt` | DateTime? | Tidak | - | Waktu submit |
+| `ApproverId` | int? | Tidak | `Users.Id` | SPV yang ditunjuk |
+| `ApprovedAt` | DateTime? | Tidak | - | Waktu approve |
+| `ApprovedById` | int? | Tidak | `Users.Id` | User yang approve |
+| `RejectionReason` | string? | Tidak | - | Alasan reject |
+| `Notes` | string(500) | Tidak | - | Catatan dokumen |
+| `CreatedAt` / `CreatedById` | DateTime / int? | Ya / Tidak | Otomatis | Audit pembuatan |
+| `UpdatedAt` / `UpdatedById` | DateTime? / int? | Tidak | Otomatis | Audit perubahan |
+| `IsDeleted` / `DeletedAt` / `DeletedById` | bool / DateTime? / int? | Ya / Tidak / Tidak | Otomatis | Soft delete & audit hapus |
+
+### 4.2 Field Dictionary - StockInDetails
+
+| Field | Type | Required | Constraint / Default | Fungsi |
+|-------|------|----------|----------------------|--------|
+| `Id` | Guid | Ya | PK | Identitas baris |
+| `StockInHeaderId` | Guid | Ya | FK StockInHeaders | Dokumen induk |
+| `ProductId` | Guid | Ya | FK Products, aktif | Produk yang diterima |
+| `Quantity` | decimal(18,4) | Ya | `> 0` | Jumlah diterima |
+| `UnitCost` | decimal(18,4)? | Tidak | `>= 0` | Harga satuan (valuasi) |
+| `Notes` | string(500) | Tidak | - | Catatan baris |
+| audit + soft delete | - | - | Otomatis | Jejak create/update/delete |
 
 ## 5. Workflow
 
@@ -58,13 +87,14 @@ SubmittedAt, ApproverId, ApprovedAt, ApprovedById, RejectionReason, CreatedById,
 | POST | `/stock-ins/submit/{id}` | Submit | Owner |
 | POST | `/stock-ins/approve/{id}` | Approve | SPV/Admin |
 | POST | `/stock-ins/reject/{id}` | Reject + reason | SPV/Admin |
+| POST | `/stock-ins/delete/{id}` | Soft delete (Draft) | Owner/Admin |
 | GET | `/stock-ins/details/{id}` | Detail | Auth |
 
 ### Detail line (dynamic rows)
 ```csharp
 public sealed class StockInLineViewModel
 {
-    public int ProductId { get; set; }
+    public Guid ProductId { get; set; }
     [Range(0.0001, double.MaxValue)] public decimal Quantity { get; set; }
     [Range(0, double.MaxValue)] public decimal? UnitCost { get; set; }
     public string? Notes { get; set; }

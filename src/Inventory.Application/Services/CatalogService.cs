@@ -20,7 +20,7 @@ public sealed class CatalogService(IAppDbContext db)
         return await query.OrderBy(x => x.Name).ToListAsync(ct);
     }
 
-    public Task<Category?> GetCategoryAsync(int id, CancellationToken ct = default) =>
+    public Task<Category?> GetCategoryAsync(Guid id, CancellationToken ct = default) =>
         db.Categories.FirstOrDefaultAsync(x => x.Id == id, ct);
 
     public async Task<Category> CreateCategoryAsync(CategoryInput input, CancellationToken ct = default)
@@ -36,7 +36,7 @@ public sealed class CatalogService(IAppDbContext db)
         return entity;
     }
 
-    public async Task UpdateCategoryAsync(int id, CategoryInput input, CancellationToken ct = default)
+    public async Task UpdateCategoryAsync(Guid id, CategoryInput input, CancellationToken ct = default)
     {
         Guard.Required(input.Name, "Nama kategori");
         var entity = await db.Categories.FirstOrDefaultAsync(x => x.Id == id, ct)
@@ -51,13 +51,23 @@ public sealed class CatalogService(IAppDbContext db)
         await db.SaveChangesAsync(ct);
     }
 
-    public async Task DeactivateCategoryAsync(int id, CancellationToken ct = default)
+    public async Task DeactivateCategoryAsync(Guid id, CancellationToken ct = default)
     {
         var entity = await db.Categories.FirstOrDefaultAsync(x => x.Id == id, ct)
             ?? throw new ValidationException("Kategori tidak ditemukan.");
         if (await db.Products.AnyAsync(x => x.CategoryId == id && x.IsActive, ct))
             throw new ValidationException("Kategori masih dipakai produk aktif. Non-aktifkan produk terlebih dahulu.");
         entity.IsActive = false;
+        await db.SaveChangesAsync(ct);
+    }
+
+    public async Task DeleteCategoryAsync(Guid id, CancellationToken ct = default)
+    {
+        var entity = await db.Categories.FirstOrDefaultAsync(x => x.Id == id, ct)
+            ?? throw new ValidationException("Kategori tidak ditemukan.");
+        if (await db.Products.IgnoreQueryFilters().AnyAsync(x => x.CategoryId == id, ct))
+            throw new ValidationException("Kategori tidak dapat dihapus karena masih dipakai produk. Non-aktifkan kategori ini.");
+        db.Categories.Remove(entity);
         await db.SaveChangesAsync(ct);
     }
 
@@ -72,7 +82,7 @@ public sealed class CatalogService(IAppDbContext db)
         return await query.OrderBy(x => x.Code).ToListAsync(ct);
     }
 
-    public Task<Unit?> GetUnitAsync(int id, CancellationToken ct = default) =>
+    public Task<Unit?> GetUnitAsync(Guid id, CancellationToken ct = default) =>
         db.Units.FirstOrDefaultAsync(x => x.Id == id, ct);
 
     public async Task<Unit> CreateUnitAsync(UnitInput input, CancellationToken ct = default)
@@ -89,7 +99,7 @@ public sealed class CatalogService(IAppDbContext db)
         return entity;
     }
 
-    public async Task UpdateUnitAsync(int id, UnitInput input, CancellationToken ct = default)
+    public async Task UpdateUnitAsync(Guid id, UnitInput input, CancellationToken ct = default)
     {
         Guard.Required(input.Code, "Kode unit");
         Guard.Required(input.Name, "Nama unit");
@@ -104,7 +114,17 @@ public sealed class CatalogService(IAppDbContext db)
         await db.SaveChangesAsync(ct);
     }
 
-    public async Task<IReadOnlyList<ProductListItem>> GetProductsAsync(string? search = null, int? categoryId = null, bool? activeOnly = null, CancellationToken ct = default)
+    public async Task DeleteUnitAsync(Guid id, CancellationToken ct = default)
+    {
+        var entity = await db.Units.FirstOrDefaultAsync(x => x.Id == id, ct)
+            ?? throw new ValidationException("Unit tidak ditemukan.");
+        if (await db.Products.IgnoreQueryFilters().AnyAsync(x => x.UnitId == id, ct))
+            throw new ValidationException("Unit tidak dapat dihapus karena masih dipakai produk.");
+        db.Units.Remove(entity);
+        await db.SaveChangesAsync(ct);
+    }
+
+    public async Task<IReadOnlyList<ProductListItem>> GetProductsAsync(string? search = null, Guid? categoryId = null, bool? activeOnly = null, CancellationToken ct = default)
     {
         var query = db.Products.AsNoTracking().Include(x => x.Category).Include(x => x.Unit).AsQueryable();
         if (!string.IsNullOrWhiteSpace(search))
@@ -129,7 +149,7 @@ public sealed class CatalogService(IAppDbContext db)
         }).ToListAsync(ct);
     }
 
-    public Task<Product?> GetProductAsync(int id, CancellationToken ct = default) =>
+    public Task<Product?> GetProductAsync(Guid id, CancellationToken ct = default) =>
         db.Products.FirstOrDefaultAsync(x => x.Id == id, ct);
 
     public async Task<Product> CreateProductAsync(ProductInput input, CancellationToken ct = default)
@@ -150,7 +170,7 @@ public sealed class CatalogService(IAppDbContext db)
         return entity;
     }
 
-    public async Task UpdateProductAsync(int id, ProductInput input, CancellationToken ct = default)
+    public async Task UpdateProductAsync(Guid id, ProductInput input, CancellationToken ct = default)
     {
         var entity = await db.Products.FirstOrDefaultAsync(x => x.Id == id, ct)
             ?? throw new ValidationException("Produk tidak ditemukan.");
@@ -165,7 +185,7 @@ public sealed class CatalogService(IAppDbContext db)
         await db.SaveChangesAsync(ct);
     }
 
-    public async Task DeactivateProductAsync(int id, CancellationToken ct = default)
+    public async Task DeactivateProductAsync(Guid id, CancellationToken ct = default)
     {
         var entity = await db.Products.FirstOrDefaultAsync(x => x.Id == id, ct)
             ?? throw new ValidationException("Produk tidak ditemukan.");
@@ -173,7 +193,26 @@ public sealed class CatalogService(IAppDbContext db)
         await db.SaveChangesAsync(ct);
     }
 
-    private async Task ValidateProductInputAsync(ProductInput input, int? id, CancellationToken ct)
+    public async Task DeleteProductAsync(Guid id, CancellationToken ct = default)
+    {
+        var entity = await db.Products.FirstOrDefaultAsync(x => x.Id == id, ct)
+            ?? throw new ValidationException("Produk tidak ditemukan.");
+
+        var used = await db.Stocks.IgnoreQueryFilters().AnyAsync(x => x.ProductId == id, ct)
+            || await db.StockMovements.IgnoreQueryFilters().AnyAsync(x => x.ProductId == id, ct)
+            || await db.StockInDetails.IgnoreQueryFilters().AnyAsync(x => x.ProductId == id, ct)
+            || await db.StockOutDetails.IgnoreQueryFilters().AnyAsync(x => x.ProductId == id, ct)
+            || await db.StockTransferDetails.IgnoreQueryFilters().AnyAsync(x => x.ProductId == id, ct)
+            || await db.StockAdjustmentDetails.IgnoreQueryFilters().AnyAsync(x => x.ProductId == id, ct)
+            || await db.StockOpnameDetails.IgnoreQueryFilters().AnyAsync(x => x.ProductId == id, ct);
+        if (used)
+            throw new ValidationException("Produk tidak dapat dihapus karena sudah memiliki riwayat stok/transaksi. Non-aktifkan produk ini.");
+
+        db.Products.Remove(entity);
+        await db.SaveChangesAsync(ct);
+    }
+
+    private async Task ValidateProductInputAsync(ProductInput input, Guid? id, CancellationToken ct)
     {
         Guard.Required(input.Sku, "SKU");
         Guard.Required(input.Name, "Nama produk");

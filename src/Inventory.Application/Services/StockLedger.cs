@@ -10,9 +10,9 @@ namespace Inventory.Application.Services;
 public sealed record StockChange(
     MovementType Type,
     ReferenceType ReferenceType,
-    int ReferenceId,
-    int ProductId,
-    int LocationId,
+    Guid ReferenceId,
+    Guid ProductId,
+    Guid LocationId,
     decimal Quantity,
     int UserId,
     string? Notes);
@@ -66,7 +66,7 @@ public sealed class StockLedger(IAppDbContext db, IDocumentNumberService documen
 
 internal static class ApprovalGuard
 {
-    public static void EnsureOwner(int createdById, int currentUserId, bool isAdmin, string action)
+    public static void EnsureOwner(int? createdById, int currentUserId, bool isAdmin, string action)
     {
         if (createdById != currentUserId && !isAdmin)
             throw new ValidationException($"Anda tidak berhak {action} dokumen ini.");
@@ -94,7 +94,7 @@ internal static class ApprovalGuard
         header.RejectionReason = null;
     }
 
-    public static void EnsureCanApprove(IApprovable header, int createdById, int currentUserId, bool isAdmin)
+    public static void EnsureCanApprove(IApprovable header, int? createdById, int currentUserId, bool isAdmin)
     {
         if (createdById == currentUserId)
             throw new ValidationException("Anda tidak dapat menyetujui transaksi milik sendiri.");

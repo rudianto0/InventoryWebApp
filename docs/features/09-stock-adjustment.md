@@ -30,8 +30,36 @@ dan approval. Mencatat system quantity vs counted quantity.
 
 ## 4. Data Model
 
-**StockAdjustmentHeaders**: Id, DocNo, LocationId, Date, Reason, Status + field approval + CreatedById, CreatedAt.
-**StockAdjustmentDetails**: Id, HeaderId, ProductId, SystemQuantity, CountedQuantity, Difference, Notes.
+**StockAdjustmentHeaders** (PK `Guid`, soft delete) + **StockAdjustmentDetails** (PK `Guid`, soft delete).
+
+### 4.1 Field Dictionary - StockAdjustmentHeaders
+
+| Field | Type | Required | Constraint / Default | Fungsi |
+|-------|------|----------|----------------------|--------|
+| `Id` | Guid | Ya | PK | Identitas dokumen adjustment |
+| `DocNo` | string(30) | Ya | Unik (aktif), auto | Nomor dokumen `ADJ-yyyyMM-####` |
+| `LocationId` | Guid | Ya | FK Locations, aktif | Lokasi yang disesuaikan |
+| `Date` | DateTime | Ya | - | Tanggal adjustment |
+| `Reason` | string(300) | Ya | - | Alasan koreksi |
+| `Status` | enum | Ya | Default Draft | Status approval |
+| `SubmittedAt` / `ApproverId` | DateTime? / int? | Tidak | - | Waktu submit & approver |
+| `ApprovedAt` / `ApprovedById` | DateTime? / int? | Tidak | - | Waktu & user approve |
+| `RejectionReason` | string? | Tidak | - | Alasan reject |
+| `Notes` | string(500) | Tidak | - | Catatan dokumen |
+| audit + soft delete | - | - | Otomatis | Jejak create/update/delete |
+
+### 4.2 Field Dictionary - StockAdjustmentDetails
+
+| Field | Type | Required | Constraint / Default | Fungsi |
+|-------|------|----------|----------------------|--------|
+| `Id` | Guid | Ya | PK | Identitas baris |
+| `StockAdjustmentHeaderId` | Guid | Ya | FK header | Dokumen induk |
+| `ProductId` | Guid | Ya | FK Products, aktif | Produk yang dikoreksi |
+| `SystemQuantity` | decimal(18,4) | Ya | - | Stok sistem saat snapshot |
+| `CountedQuantity` | decimal(18,4) | Ya | `>= 0` | Hasil hitung/koreksi |
+| `Difference` | decimal(18,4) | Ya | - | `Counted - System` |
+| `Notes` | string(500) | Tidak | - | Catatan baris |
+| audit + soft delete | - | - | Otomatis | Jejak create/update/delete |
 
 ## 5. Workflow
 
@@ -53,6 +81,7 @@ dan approval. Mencatat system quantity vs counted quantity.
 | POST | `/stock-adjustments/submit/{id}` | Submit |
 | POST | `/stock-adjustments/approve/{id}` | Approve |
 | POST | `/stock-adjustments/reject/{id}` | Reject + reason |
+| POST | `/stock-adjustments/delete/{id}` | Soft delete (Draft) |
 | GET | `/stock-adjustments/details/{id}` | Detail |
 
 ## 7. Validasi & Business Rules

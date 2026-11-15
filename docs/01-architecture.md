@@ -71,10 +71,38 @@ Request → Exception Middleware → Auth (Cookie) → Authorization → Control
 | Auth | ASP.NET Core Identity, cookie, role: `Admin, SPV, Staff, Manager, Auditor`. |
 | Authorization | `[Authorize(Roles=...)]` + policy per aksi (approve hanya SPV/Admin). |
 | Validation | DataAnnotations di ViewModel + FluentValidation di Application service. |
-| Audit | `AuditLog` diisi via interceptor/save changes pada entity tertentu. |
+| Audit | `AppDbContext.SaveChangesAsync` mengisi field audit otomatis + menulis `AuditLog`. |
+| Soft delete | `AppDbContext.SaveChangesAsync` mengubah `Deleted` menjadi `IsDeleted = true`; global query filter menyembunyikan data. |
 | Concurrency | Optimistic concurrency pada `Stock` (quantity update atomik). |
 | Time | Semua `DateTime` disimpan UTC, ditampilkan lokal di view. |
 | Logging | Serilog / built-in ILogger. |
+
+### 5.1 Audit & Soft Delete Pipeline
+
+Urutan pada `AppDbContext.SaveChangesAsync`:
+
+1. **Capture snapshot audit** dari `ChangeTracker` (sebelum mutasi tambahan) agar
+   aksi `Delete` tetap tercatat sebagai `Delete`.
+2. **Auto-fill audit**:
+   - `Added` → `CreatedAt = UtcNow`, `CreatedById = currentUser.UserId`.
+   - `Modified` → `UpdatedAt = UtcNow`, `UpdatedById = currentUser.UserId`.
+   - `Deleted` + `ISoftDeletable` → `IsDeleted = true`, `DeletedAt = UtcNow`,
+     `DeletedById = currentUser.UserId`, `IsActive = false` (jika ada), lalu
+     state diubah menjadi `Modified`.
+3. Simpan perubahan entity.
+4. Tulis `AuditLog` (termasuk `EntityId` sebagai string untuk mendukung `int` dan `Guid`).
+
+Global query filter `!IsDeleted` diterapkan otomatis untuk semua entity
+`ISoftDeletable`. Untuk kebutuhan restore/admin, gunakan `IgnoreQueryFilters()`.
+
+### 5.2 GUID & Waktu
+
+- Data bisnis (master, inventory, transaksi) memakai PK `Guid` yang dibuat
+  aplikasi dengan `Guid.CreateVersion7()` (time-ordered).
+- `Users`, `Roles` (Identity), `DocumentSequences`, dan `AuditLogs` tetap `int`.
+- Field referensi user tetap `int?` dan bukan FK fisik lintas layer.
+- Unique index memakai filter `IsDeleted = false` agar nilai bisa dipakai ulang
+  setelah soft delete.
 
 ## 6. Stock Mutation Rule (core invariant)
 
@@ -94,6 +122,6 @@ Request → Exception Middleware → Auth (Cookie) → Authorization → Control
 ## 8. Naming & Conventions
 
 - Tabel: PascalCase plural (`Products`, `StockMovements`).
-- Primary key: `Id` (int identity / serial).
+- Primary key: `Id` (`Guid` untuk data bisnis, `int` untuk Identity/system).
 - Nomor dokumen: `{PREFIX}-{yyyyMM}-{sequence}` (contoh `IN-202611-0001`).
 - Endpoint MVC: `/products`, `/stock-ins`, `/approvals`.

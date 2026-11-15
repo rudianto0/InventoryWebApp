@@ -30,11 +30,11 @@ public sealed class StockTransferService(
             query = query.Where(x => x.Date < filter.To.Value.Date.AddDays(1));
 
         var total = await query.CountAsync(ct);
-        var headers = await query.OrderByDescending(x => x.Date).ThenByDescending(x => x.Id)
+        var headers = await query.OrderByDescending(x => x.Date).ThenByDescending(x => x.CreatedAt)
             .Skip((Math.Max(filter.Page, 1) - 1) * Math.Clamp(filter.PageSize, 1, 200))
             .Take(Math.Clamp(filter.PageSize, 1, 200)).ToListAsync(ct);
 
-        var names = await users.GetDisplayNamesAsync(headers.SelectMany(x => new[] { x.CreatedById, x.ApproverId ?? 0 }), ct);
+        var names = await users.GetDisplayNamesAsync(headers.SelectMany(x => new[] { x.CreatedById ?? 0, x.ApproverId ?? 0 }), ct);
         return new PagedResult<TransactionListItem>
         {
             Items = headers.Select(x => new TransactionListItem
@@ -45,7 +45,7 @@ public sealed class StockTransferService(
                 LocationName = x.FromLocation?.Name ?? string.Empty,
                 SecondaryLocationName = x.ToLocation?.Name,
                 Status = x.Status,
-                CreatedByName = names.GetValueOrDefault(x.CreatedById),
+                CreatedByName = names.GetValueOrDefault(x.CreatedById ?? 0),
                 ApproverName = x.ApproverId.HasValue ? names.GetValueOrDefault(x.ApproverId.Value) : null,
                 CreatedAt = x.CreatedAt,
                 LineCount = x.Details.Count
@@ -56,7 +56,7 @@ public sealed class StockTransferService(
         };
     }
 
-    public async Task<TransactionDetailView?> GetDetailAsync(int id, CancellationToken ct = default)
+    public async Task<TransactionDetailView?> GetDetailAsync(Guid id, CancellationToken ct = default)
     {
         var header = await db.StockTransferHeaders.AsNoTracking()
             .Include(x => x.FromLocation).Include(x => x.ToLocation)
@@ -93,7 +93,7 @@ public sealed class StockTransferService(
         return header;
     }
 
-    public async Task UpdateAsync(int id, StockTransferInput input, CancellationToken ct = default)
+    public async Task UpdateAsync(Guid id, StockTransferInput input, CancellationToken ct = default)
     {
         var header = await db.StockTransferHeaders.Include(x => x.Details).FirstOrDefaultAsync(x => x.Id == id, ct)
             ?? throw new ValidationException("Dokumen Stock Transfer tidak ditemukan.");
@@ -118,7 +118,7 @@ public sealed class StockTransferService(
         await db.SaveChangesAsync(ct);
     }
 
-    public async Task DeleteAsync(int id, CancellationToken ct = default)
+    public async Task DeleteAsync(Guid id, CancellationToken ct = default)
     {
         var header = await db.StockTransferHeaders.Include(x => x.Details).FirstOrDefaultAsync(x => x.Id == id, ct)
             ?? throw new ValidationException("Dokumen Stock Transfer tidak ditemukan.");
@@ -129,7 +129,7 @@ public sealed class StockTransferService(
         await db.SaveChangesAsync(ct);
     }
 
-    public async Task SubmitAsync(int id, CancellationToken ct = default)
+    public async Task SubmitAsync(Guid id, CancellationToken ct = default)
     {
         var header = await db.StockTransferHeaders.Include(x => x.Details).FirstOrDefaultAsync(x => x.Id == id, ct)
             ?? throw new ValidationException("Dokumen Stock Transfer tidak ditemukan.");
@@ -140,7 +140,7 @@ public sealed class StockTransferService(
         await db.SaveChangesAsync(ct);
     }
 
-    public async Task ApproveAsync(int id, string? notes = null, CancellationToken ct = default)
+    public async Task ApproveAsync(Guid id, string? notes = null, CancellationToken ct = default)
     {
         var header = await db.StockTransferHeaders.Include(x => x.Details).FirstOrDefaultAsync(x => x.Id == id, ct)
             ?? throw new ValidationException("Dokumen Stock Transfer tidak ditemukan.");
@@ -175,7 +175,7 @@ public sealed class StockTransferService(
         }
     }
 
-    public async Task RejectAsync(int id, string reason, CancellationToken ct = default)
+    public async Task RejectAsync(Guid id, string reason, CancellationToken ct = default)
     {
         var header = await db.StockTransferHeaders.FirstOrDefaultAsync(x => x.Id == id, ct)
             ?? throw new ValidationException("Dokumen Stock Transfer tidak ditemukan.");
@@ -184,7 +184,7 @@ public sealed class StockTransferService(
         await db.SaveChangesAsync(ct);
     }
 
-    private async Task ValidateInputAsync(int fromId, int toId, IReadOnlyList<DocumentLineInput> lines, bool checkStock, CancellationToken ct)
+    private async Task ValidateInputAsync(Guid fromId, Guid toId, IReadOnlyList<DocumentLineInput> lines, bool checkStock, CancellationToken ct)
     {
         if (lines.Count == 0)
             throw new ValidationException("Minimal satu baris produk harus diisi.");
@@ -227,7 +227,7 @@ public sealed class StockTransferService(
 
     private async Task<TransactionDetailView> MapDetailAsync(StockTransferHeader header, CancellationToken ct)
     {
-        var names = await users.GetDisplayNamesAsync(new[] { header.CreatedById, header.ApproverId ?? 0, header.ApprovedById ?? 0 }, ct);
+        var names = await users.GetDisplayNamesAsync(new[] { header.CreatedById ?? 0, header.ApproverId ?? 0, header.ApprovedById ?? 0 }, ct);
         return new TransactionDetailView
         {
             Id = header.Id,
@@ -240,7 +240,7 @@ public sealed class StockTransferService(
             LocationName = header.FromLocation?.Name ?? string.Empty,
             SecondaryLocationName = header.ToLocation?.Name,
             Notes = header.Notes,
-            CreatedByName = names.GetValueOrDefault(header.CreatedById),
+            CreatedByName = names.GetValueOrDefault(header.CreatedById ?? 0),
             ApproverName = header.ApproverId.HasValue ? names.GetValueOrDefault(header.ApproverId.Value) : null,
             CreatedAt = header.CreatedAt,
             SubmittedAt = header.SubmittedAt,

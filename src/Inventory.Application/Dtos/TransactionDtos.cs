@@ -4,7 +4,7 @@ namespace Inventory.Application.Dtos;
 
 public sealed class DocumentLineInput
 {
-    public int ProductId { get; init; }
+    public Guid ProductId { get; init; }
     public decimal Quantity { get; init; }
     public decimal? UnitCost { get; init; }
     public string? Notes { get; init; }
@@ -12,22 +12,22 @@ public sealed class DocumentLineInput
 
 public sealed class AdjustmentLineInput
 {
-    public int ProductId { get; init; }
+    public Guid ProductId { get; init; }
     public decimal CountedQuantity { get; init; }
     public string? Notes { get; init; }
 }
 
 public sealed class OpnameLineInput
 {
-    public int DetailId { get; init; }
+    public Guid DetailId { get; init; }
     public decimal? CountedQuantity { get; init; }
     public string? Notes { get; init; }
 }
 
 public sealed class StockInInput
 {
-    public int SupplierId { get; init; }
-    public int LocationId { get; init; }
+    public Guid SupplierId { get; init; }
+    public Guid LocationId { get; init; }
     public DateTime Date { get; init; } = DateTime.UtcNow;
     public string? Notes { get; init; }
     public List<DocumentLineInput> Lines { get; init; } = new();
@@ -35,7 +35,7 @@ public sealed class StockInInput
 
 public sealed class StockOutInput
 {
-    public int LocationId { get; init; }
+    public Guid LocationId { get; init; }
     public DateTime Date { get; init; } = DateTime.UtcNow;
     public string? Purpose { get; init; }
     public string? Notes { get; init; }
@@ -44,8 +44,8 @@ public sealed class StockOutInput
 
 public sealed class StockTransferInput
 {
-    public int FromLocationId { get; init; }
-    public int ToLocationId { get; init; }
+    public Guid FromLocationId { get; init; }
+    public Guid ToLocationId { get; init; }
     public DateTime Date { get; init; } = DateTime.UtcNow;
     public string? Notes { get; init; }
     public List<DocumentLineInput> Lines { get; init; } = new();
@@ -53,7 +53,7 @@ public sealed class StockTransferInput
 
 public sealed class StockAdjustmentInput
 {
-    public int LocationId { get; init; }
+    public Guid LocationId { get; init; }
     public DateTime Date { get; init; } = DateTime.UtcNow;
     public string Reason { get; init; } = string.Empty;
     public string? Notes { get; init; }
@@ -62,7 +62,7 @@ public sealed class StockAdjustmentInput
 
 public sealed class StockOpnameInput
 {
-    public int LocationId { get; init; }
+    public Guid LocationId { get; init; }
     public DateTime Date { get; init; } = DateTime.UtcNow;
     public string? Notes { get; init; }
 }
@@ -80,7 +80,7 @@ public sealed class TransactionFilter
 
 public sealed class TransactionListItem
 {
-    public int Id { get; init; }
+    public Guid Id { get; init; }
     public string DocNo { get; init; } = string.Empty;
     public DateTime Date { get; init; }
     public string LocationName { get; init; } = string.Empty;
@@ -95,8 +95,8 @@ public sealed class TransactionListItem
 
 public sealed class DocumentLineView
 {
-    public int DetailId { get; init; }
-    public int ProductId { get; init; }
+    public Guid DetailId { get; init; }
+    public Guid ProductId { get; init; }
     public string Sku { get; init; } = string.Empty;
     public string ProductName { get; init; } = string.Empty;
     public string UnitName { get; init; } = string.Empty;
@@ -110,14 +110,14 @@ public sealed class DocumentLineView
 
 public sealed class TransactionDetailView
 {
-    public int Id { get; init; }
+    public Guid Id { get; init; }
     public string DocNo { get; init; } = string.Empty;
     public DateTime Date { get; init; }
     public ApprovalStatus Status { get; init; }
-    public int? SupplierId { get; init; }
-    public int LocationId { get; init; }
-    public int? FromLocationId { get; init; }
-    public int? ToLocationId { get; init; }
+    public Guid? SupplierId { get; init; }
+    public Guid LocationId { get; init; }
+    public Guid? FromLocationId { get; init; }
+    public Guid? ToLocationId { get; init; }
     public string LocationName { get; init; } = string.Empty;
     public string? SecondaryLocationName { get; init; }
     public string? PartnerName { get; init; }
@@ -135,21 +135,21 @@ public sealed class TransactionDetailView
 
 public sealed class SelectOption
 {
-    public int Id { get; init; }
+    public Guid Id { get; init; }
     public string Text { get; init; } = string.Empty;
     public bool IsActive { get; init; } = true;
 }
 
 public sealed class StockAvailability
 {
-    public int ProductId { get; init; }
-    public int LocationId { get; init; }
+    public Guid ProductId { get; init; }
+    public Guid LocationId { get; init; }
     public decimal Quantity { get; init; }
 }
 
 public sealed class ApprovalItem
 {
-    public int Id { get; init; }
+    public Guid Id { get; init; }
     public string Type { get; init; } = string.Empty;
     public string DocNo { get; init; } = string.Empty;
     public DateTime Date { get; init; }

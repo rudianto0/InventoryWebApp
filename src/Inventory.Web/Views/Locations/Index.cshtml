@@ -39,6 +39,9 @@
                                 <button class="btn btn-sm btn-outline-danger" onclick="return confirm('Non-aktifkan lokasi ini?')">Non-aktifkan</button>
                             </form>
                         }
+                        <form asp-action="Delete" asp-route-id="@item.Id" method="post" class="d-inline">
+                            <button class="btn btn-sm btn-outline-danger" onclick="return confirm('Hapus lokasi ini? Data akan di-soft delete.')">Hapus</button>
+                        </form>
                     }
                 </td>
             </tr>

@@ -17,8 +17,8 @@ public sealed class ProductInput
 {
     public string Sku { get; init; } = string.Empty;
     public string Name { get; init; } = string.Empty;
-    public int CategoryId { get; init; }
-    public int UnitId { get; init; }
+    public Guid CategoryId { get; init; }
+    public Guid UnitId { get; init; }
     public int ReorderLevel { get; init; }
     public bool IsActive { get; init; } = true;
 }
@@ -39,7 +39,7 @@ public sealed class LocationInput
     public string Code { get; init; } = string.Empty;
     public string Name { get; init; } = string.Empty;
     public Domain.Enums.LocationType Type { get; init; }
-    public int? ParentLocationId { get; init; }
+    public Guid? ParentLocationId { get; init; }
     public string? BranchCode { get; init; }
     public string? Address { get; init; }
     public bool IsActive { get; init; } = true;
@@ -47,7 +47,7 @@ public sealed class LocationInput
 
 public sealed class ProductListItem
 {
-    public int Id { get; init; }
+    public Guid Id { get; init; }
     public string Sku { get; init; } = string.Empty;
     public string Name { get; init; } = string.Empty;
     public string CategoryName { get; init; } = string.Empty;
@@ -59,5 +59,5 @@ public sealed class ProductListItem
 public sealed class ProductFormData
 {
     public ProductInput Input { get; init; } = new();
-    public int? Id { get; init; }
+    public Guid? Id { get; init; }
 }

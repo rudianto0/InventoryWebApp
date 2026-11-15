@@ -26,7 +26,7 @@ public sealed class StockOpnamesController(
     }
 
     [HttpGet]
-    public async Task<IActionResult> Details(int id, CancellationToken ct)
+    public async Task<IActionResult> Details(Guid id, CancellationToken ct)
     {
         var detail = await service.GetDetailAsync(id, ct);
         if (detail is null)
@@ -79,7 +79,7 @@ public sealed class StockOpnamesController(
 
     [Authorize(Roles = "Admin,Staff")]
     [HttpGet]
-    public async Task<IActionResult> Edit(int id, CancellationToken ct)
+    public async Task<IActionResult> Edit(Guid id, CancellationToken ct)
     {
         var detail = await service.GetDetailAsync(id, ct);
         if (detail is null)
@@ -109,7 +109,7 @@ public sealed class StockOpnamesController(
     [Authorize(Roles = "Admin,Staff")]
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int id, TransactionFormModel model, CancellationToken ct)
+    public async Task<IActionResult> Edit(Guid id, TransactionFormModel model, CancellationToken ct)
     {
         try
         {
@@ -143,7 +143,7 @@ public sealed class StockOpnamesController(
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Submit(int id, CancellationToken ct)
+    public async Task<IActionResult> Submit(Guid id, CancellationToken ct)
     {
         try
         {
@@ -159,7 +159,7 @@ public sealed class StockOpnamesController(
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Approve(int id, string? notes, CancellationToken ct)
+    public async Task<IActionResult> Approve(Guid id, string? notes, CancellationToken ct)
     {
         try
         {
@@ -175,7 +175,7 @@ public sealed class StockOpnamesController(
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Reject(int id, string reason, CancellationToken ct)
+    public async Task<IActionResult> Reject(Guid id, string reason, CancellationToken ct)
     {
         try
         {
@@ -192,7 +192,7 @@ public sealed class StockOpnamesController(
     [Authorize(Roles = "Admin,Staff")]
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Delete(int id, CancellationToken ct)
+    public async Task<IActionResult> Delete(Guid id, CancellationToken ct)
     {
         try
         {

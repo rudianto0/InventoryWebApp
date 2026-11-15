@@ -9,7 +9,7 @@ namespace Inventory.Application.Services;
 
 public sealed class ReportService(IAppDbContext db)
 {
-    public async Task<DashboardSummary> GetDashboardAsync(int? locationId = null, CancellationToken ct = default)
+    public async Task<DashboardSummary> GetDashboardAsync(Guid? locationId = null, CancellationToken ct = default)
     {
         var stockQuery = db.Stocks.AsNoTracking();
         if (locationId.HasValue)
@@ -160,7 +160,7 @@ public sealed class ReportService(IAppDbContext db)
             query = query.Where(x => x.CreatedAt < filter.To.Value.AddDays(1).ToDateTime(TimeOnly.MinValue));
 
         var total = await query.CountAsync(ct);
-        var items = await query.OrderByDescending(x => x.CreatedAt).ThenByDescending(x => x.Id)
+        var items = await query.OrderByDescending(x => x.CreatedAt).ThenByDescending(x => x.CreatedAt)
             .Skip((Math.Max(filter.Page, 1) - 1) * Math.Clamp(filter.PageSize, 1, 200))
             .Take(Math.Clamp(filter.PageSize, 1, 200))
             .Select(x => new StockMovementItem

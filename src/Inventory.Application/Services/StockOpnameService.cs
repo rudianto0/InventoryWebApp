@@ -29,11 +29,11 @@ public sealed class StockOpnameService(
             query = query.Where(x => x.Date < filter.To.Value.Date.AddDays(1));
 
         var total = await query.CountAsync(ct);
-        var headers = await query.OrderByDescending(x => x.Date).ThenByDescending(x => x.Id)
+        var headers = await query.OrderByDescending(x => x.Date).ThenByDescending(x => x.CreatedAt)
             .Skip((Math.Max(filter.Page, 1) - 1) * Math.Clamp(filter.PageSize, 1, 200))
             .Take(Math.Clamp(filter.PageSize, 1, 200)).ToListAsync(ct);
 
-        var names = await users.GetDisplayNamesAsync(headers.SelectMany(x => new[] { x.CreatedById, x.ApproverId ?? 0 }), ct);
+        var names = await users.GetDisplayNamesAsync(headers.SelectMany(x => new[] { x.CreatedById ?? 0, x.ApproverId ?? 0 }), ct);
         return new PagedResult<TransactionListItem>
         {
             Items = headers.Select(x => new TransactionListItem
@@ -43,7 +43,7 @@ public sealed class StockOpnameService(
                 Date = x.Date,
                 LocationName = x.Location?.Name ?? string.Empty,
                 Status = x.Status,
-                CreatedByName = names.GetValueOrDefault(x.CreatedById),
+                CreatedByName = names.GetValueOrDefault(x.CreatedById ?? 0),
                 ApproverName = x.ApproverId.HasValue ? names.GetValueOrDefault(x.ApproverId.Value) : null,
                 CreatedAt = x.CreatedAt,
                 LineCount = x.Details.Count
@@ -54,7 +54,7 @@ public sealed class StockOpnameService(
         };
     }
 
-    public async Task<TransactionDetailView?> GetDetailAsync(int id, CancellationToken ct = default)
+    public async Task<TransactionDetailView?> GetDetailAsync(Guid id, CancellationToken ct = default)
     {
         var header = await db.StockOpnameHeaders.AsNoTracking()
             .Include(x => x.Location).Include(x => x.Details).ThenInclude(d => d.Product).ThenInclude(p => p!.Unit)
@@ -106,7 +106,7 @@ public sealed class StockOpnameService(
         return header;
     }
 
-    public async Task UpdateAsync(int id, IReadOnlyList<OpnameLineInput> lines, string? notes, CancellationToken ct = default)
+    public async Task UpdateAsync(Guid id, IReadOnlyList<OpnameLineInput> lines, string? notes, CancellationToken ct = default)
     {
         var header = await db.StockOpnameHeaders.Include(x => x.Details).FirstOrDefaultAsync(x => x.Id == id, ct)
             ?? throw new ValidationException("Dokumen Stock Opname tidak ditemukan.");
@@ -132,7 +132,7 @@ public sealed class StockOpnameService(
         await db.SaveChangesAsync(ct);
     }
 
-    public async Task DeleteAsync(int id, CancellationToken ct = default)
+    public async Task DeleteAsync(Guid id, CancellationToken ct = default)
     {
         var header = await db.StockOpnameHeaders.Include(x => x.Details).FirstOrDefaultAsync(x => x.Id == id, ct)
             ?? throw new ValidationException("Dokumen Stock Opname tidak ditemukan.");
@@ -143,7 +143,7 @@ public sealed class StockOpnameService(
         await db.SaveChangesAsync(ct);
     }
 
-    public async Task SubmitAsync(int id, CancellationToken ct = default)
+    public async Task SubmitAsync(Guid id, CancellationToken ct = default)
     {
         var header = await db.StockOpnameHeaders.Include(x => x.Details).FirstOrDefaultAsync(x => x.Id == id, ct)
             ?? throw new ValidationException("Dokumen Stock Opname tidak ditemukan.");
@@ -164,7 +164,7 @@ public sealed class StockOpnameService(
         await db.SaveChangesAsync(ct);
     }
 
-    public async Task ApproveAsync(int id, string? notes = null, CancellationToken ct = default)
+    public async Task ApproveAsync(Guid id, string? notes = null, CancellationToken ct = default)
     {
         var header = await db.StockOpnameHeaders.Include(x => x.Details).FirstOrDefaultAsync(x => x.Id == id, ct)
             ?? throw new ValidationException("Dokumen Stock Opname tidak ditemukan.");
@@ -201,7 +201,7 @@ public sealed class StockOpnameService(
         }
     }
 
-    public async Task RejectAsync(int id, string reason, CancellationToken ct = default)
+    public async Task RejectAsync(Guid id, string reason, CancellationToken ct = default)
     {
         var header = await db.StockOpnameHeaders.FirstOrDefaultAsync(x => x.Id == id, ct)
             ?? throw new ValidationException("Dokumen Stock Opname tidak ditemukan.");
@@ -210,11 +210,11 @@ public sealed class StockOpnameService(
         await db.SaveChangesAsync(ct);
     }
 
-    private Task<decimal> GetSystemQuantityAsync(int locationId, int productId, CancellationToken ct) =>
+    private Task<decimal> GetSystemQuantityAsync(Guid locationId, Guid productId, CancellationToken ct) =>
         db.Stocks.Where(x => x.LocationId == locationId && x.ProductId == productId)
             .Select(x => x.Quantity).FirstOrDefaultAsync(ct);
 
-    private async Task EnsureLocationActiveAsync(int locationId, CancellationToken ct)
+    private async Task EnsureLocationActiveAsync(Guid locationId, CancellationToken ct)
     {
         var location = await db.Locations.FirstOrDefaultAsync(x => x.Id == locationId, ct)
             ?? throw new ValidationException("Lokasi tidak ditemukan.");
@@ -224,7 +224,7 @@ public sealed class StockOpnameService(
 
     private async Task<TransactionDetailView> MapDetailAsync(StockOpnameHeader header, CancellationToken ct)
     {
-        var names = await users.GetDisplayNamesAsync(new[] { header.CreatedById, header.ApproverId ?? 0, header.ApprovedById ?? 0 }, ct);
+        var names = await users.GetDisplayNamesAsync(new[] { header.CreatedById ?? 0, header.ApproverId ?? 0, header.ApprovedById ?? 0 }, ct);
         return new TransactionDetailView
         {
             Id = header.Id,
@@ -234,7 +234,7 @@ public sealed class StockOpnameService(
             LocationId = header.LocationId,
             LocationName = header.Location?.Name ?? string.Empty,
             Notes = header.Notes,
-            CreatedByName = names.GetValueOrDefault(header.CreatedById),
+            CreatedByName = names.GetValueOrDefault(header.CreatedById ?? 0),
             ApproverName = header.ApproverId.HasValue ? names.GetValueOrDefault(header.ApproverId.Value) : null,
             CreatedAt = header.CreatedAt,
             SubmittedAt = header.SubmittedAt,

@@ -32,6 +32,51 @@ dapat difilter per lokasi/branch dan rentang tanggal.
 ## 4. Data Model (read-only)
 
 Sumber: `Stocks`, `StockMovements`, header transaksi, `Products`, `Locations`.
+Data yang sudah soft-deleted otomatis tidak masuk laporan karena global query
+filter `IsDeleted = false`.
+
+### 4.1 Field Dictionary - ReportFilter
+
+| Field | Type | Required | Constraint / Default | Fungsi |
+|-------|------|----------|----------------------|--------|
+| `LocationId` | Guid? | Tidak | FK Locations | Filter satu lokasi |
+| `BranchCode` | string? | Tidak | - | Filter cabang |
+| `ProductId` | Guid? | Tidak | FK Products | Filter satu produk |
+| `From` | DateOnly? | Tidak | `<= To` | Awal rentang laporan |
+| `To` | DateOnly? | Tidak | `>= From` | Akhir rentang laporan |
+| `Page` | int | Ya | Default `1` | Halaman data |
+| `PageSize` | int | Ya | Default `20`, maks `200` | Jumlah baris per halaman |
+
+### 4.2 Field Dictionary - Output Laporan
+
+| Field | Type | Fungsi |
+|-------|------|--------|
+| `ProductId` | Guid | ID produk pada baris laporan |
+| `Sku` | string | Kode produk |
+| `ProductName` | string | Nama produk |
+| `UnitName` | string | Satuan produk |
+| `LocationId` | Guid | ID lokasi baris laporan |
+| `LocationName` | string | Nama lokasi |
+| `BranchCode` | string? | Kode cabang |
+| `Quantity` | decimal | Saldo/mutasi kuantitas |
+| `UpdatedAt` | DateTime | Waktu update saldo (stock balance) |
+| `CreatedAt` | DateTime | Waktu mutasi (stock card/movement) |
+| `MovementNo` | string | Nomor mutasi |
+| `Type` | enum | Jenis mutasi |
+| `RunningBalance` | decimal | Saldo berjalan pada kartu stok |
+| `ReorderLevel` | int | Ambang reorder produk |
+
+### 4.3 Field Dictionary - DashboardSummary
+
+| Field | Type | Fungsi |
+|-------|------|--------|
+| `TotalProducts` | int | Jumlah produk aktif |
+| `TotalStockQuantity` | decimal | Total saldo stok |
+| `BelowReorderCount` | int | Jumlah baris di bawah reorder |
+| `PendingApprovals` | int | Total dokumen Submitted |
+| `TotalLocations` | int | Jumlah lokasi aktif |
+| `ReorderItems` | list | Daftar item reorder alert |
+| `RecentMovements` | list | Mutasi stok terbaru |
 
 ## 5. Workflow
 
@@ -55,9 +100,9 @@ Sumber: `Stocks`, `StockMovements`, header transaksi, `Products`, `Locations`.
 ```csharp
 public sealed class ReportFilter
 {
-    public int? LocationId { get; set; }
+    public Guid? LocationId { get; set; }
     public string? BranchCode { get; set; }
-    public int? ProductId { get; set; }
+    public Guid? ProductId { get; set; }
     public DateOnly? From { get; set; }
     public DateOnly? To { get; set; }
 }

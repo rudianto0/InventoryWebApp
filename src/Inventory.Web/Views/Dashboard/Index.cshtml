@@ -2,7 +2,7 @@
 @{
     ViewData["Title"] = "Dashboard";
     var locations = (IReadOnlyList<SelectOption>)ViewBag.Locations;
-    var locationId = ViewBag.LocationId as int?;
+    var locationId = ViewBag.LocationId as Guid?;
 }
 
 <div class="d-flex justify-content-between align-items-center mb-3">

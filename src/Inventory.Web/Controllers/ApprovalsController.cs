@@ -20,7 +20,7 @@ public sealed class ApprovalsController(
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Approve(int id, string type, string? notes, CancellationToken ct)
+    public async Task<IActionResult> Approve(Guid id, string type, string? notes, CancellationToken ct)
     {
         try
         {
@@ -36,7 +36,7 @@ public sealed class ApprovalsController(
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Reject(int id, string type, string reason, CancellationToken ct)
+    public async Task<IActionResult> Reject(Guid id, string type, string reason, CancellationToken ct)
     {
         try
         {
@@ -50,7 +50,7 @@ public sealed class ApprovalsController(
         return RedirectToAction(nameof(Index));
     }
 
-    private async Task ExecuteApproveAsync(int id, string type, string? notes, CancellationToken ct)
+    private async Task ExecuteApproveAsync(Guid id, string type, string? notes, CancellationToken ct)
     {
         switch (type)
         {
@@ -63,7 +63,7 @@ public sealed class ApprovalsController(
         }
     }
 
-    private async Task ExecuteRejectAsync(int id, string type, string reason, CancellationToken ct)
+    private async Task ExecuteRejectAsync(Guid id, string type, string reason, CancellationToken ct)
     {
         switch (type)
         {

@@ -3,7 +3,7 @@
     ViewData["Title"] = "Products";
     var isAdmin = User.IsInRole("Admin");
     var categories = (IReadOnlyList<SelectOption>)ViewBag.Categories;
-    var categoryId = ViewBag.CategoryId as int?;
+    var categoryId = ViewBag.CategoryId as Guid?;
 }
 <div class="d-flex justify-content-between mb-3">
     <h4>Products</h4>
@@ -41,6 +41,9 @@
                                 <button class="btn btn-sm btn-outline-danger" onclick="return confirm('Non-aktifkan produk ini?')">Non-aktifkan</button>
                             </form>
                         }
+                        <form asp-action="Delete" asp-route-id="@item.Id" method="post" class="d-inline">
+                            <button class="btn btn-sm btn-outline-danger" onclick="return confirm('Hapus produk ini? Data akan di-soft delete.')">Hapus</button>
+                        </form>
                     }
                 </td>
             </tr>

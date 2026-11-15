@@ -12,7 +12,9 @@ untuk data stok dan memastikan setiap perubahan dapat dilacak.
 Prinsip utama:
 
 - **Single source of truth** stok per `(Product, Location)`.
-- **Audit by default** — setiap mutasi stok menghasilkan `StockMovement` + `AuditLog`.
+- **Audit by default** — setiap mutasi stok menghasilkan `StockMovement` + `AuditLog`; create/update/delete menyimpan ID user pelaku.
+- **Soft delete** — master data dan transaksi tidak dihapus permanen.
+- **GUID** — ID master data dan transaksi memakai `Guid` (time-ordered).
 - **Multi-warehouse / multi-location** — cabang ditandai pada `Location`.
 - **Provider-agnostic** — SQL Server atau PostgreSQL dipilih via konfigurasi.
 - **Single-level approval** — Staff submit, SPV/Admin approve.
@@ -183,6 +185,11 @@ Migrasi **berjalan otomatis saat aplikasi start**: `Program.cs` memanggil
 `db.Database.MigrateAsync()` lalu seeding (role, user default, sample master data).
 Cukup pastikan database target dapat diakses, lalu jalankan aplikasi (langkah 5).
 
+> **Catatan schema:** ID master data & transaksi memakai `Guid` dan entity bisnis
+> memakai soft delete. Migration `InitialCreate` sudah merefleksikan schema ini.
+> Jika sebelumnya pernah terbentuk database lama, drop database sekali sebelum
+> menjalankan aplikasi.
+
 Bila ingin membuat/menerapkan migrasi secara manual:
 
 ```powershell
@@ -252,4 +259,4 @@ dotnet test
 - [docs/00-project-overview.md](docs/00-project-overview.md) — visi, aktor, roadmap
 - [docs/01-architecture.md](docs/01-architecture.md) — detail arsitektur
 - [docs/02-data-model.md](docs/02-data-model.md) — ERD & entitas
-- [docs/adr/](docs/adr/) — Architecture Decision Records
+- [docs/adr/](docs/adr/) — Architecture Decision Records\n- [docs/adr/005-guid-soft-delete-audit.md](docs/adr/005-guid-soft-delete-audit.md) — GUID, soft delete, audit user

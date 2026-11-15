@@ -28,6 +28,7 @@ docs/
 | [adr/002-frontend-mvc.md](adr/002-frontend-mvc.md) | MVC + Razor (bukan SPA/Blazor) |
 | [adr/003-single-level-approval.md](adr/003-single-level-approval.md) | Approval 1 level ke SPV |
 | [adr/004-location-branch.md](adr/004-location-branch.md) | Tanpa multi-tenant, cabang di Location |
+| [adr/005-guid-soft-delete-audit.md](adr/005-guid-soft-delete-audit.md) | GUID untuk data bisnis, soft delete, dan audit user |
 
 ## Index Fitur
 
@@ -58,3 +59,4 @@ docs/
 2. Setiap file wajib mengikuti `templates/feature-template.md`.
 3. Perubahan keputusan arsitektur besar dicatat di `adr/` dengan format `NNN-title.md`.
 4. Tidak ada kode implementasi di folder ini (hanya kontrak, skema, dan alur).
+5. Setiap fitur wajib memiliki **Field Dictionary** yang menjelaskan fungsi tiap field, tipe, constraint, dan audit/soft delete.

@@ -29,13 +29,44 @@ transaksi stok.
 
 ## 4. Data Model
 
-| Entity | Fields |
-|--------|--------|
-| Categories | Id, Name, Description, IsActive |
-| Units | Id, Code, Name |
-| Products | Id, Sku, Name, CategoryId, UnitId, ReorderLevel, IsActive |
+Semua PK memakai `Guid` dan mendukung soft delete.
+
+### 4.1 Field Dictionary - Categories
+
+| Field | Type | Required | Constraint / Default | Fungsi |
+|-------|------|----------|----------------------|--------|
+| `Id` | Guid | Ya | PK | Identitas unik kategori |
+| `Name` | string(150) | Ya | Unik (aktif) | Nama kategori |
+| `Description` | string(500) | Tidak | - | Deskripsi kategori |
+| `IsActive` | bool | Ya | Default `true` | Status bisnis kategori |
+| `CreatedAt` / `CreatedById` | DateTime / int? | Ya / Tidak | Otomatis | Audit pembuatan |
+| `UpdatedAt` / `UpdatedById` | DateTime? / int? | Tidak | Otomatis | Audit perubahan |
+| `IsDeleted` / `DeletedAt` / `DeletedById` | bool / DateTime? / int? | Ya / Tidak / Tidak | Otomatis | Soft delete & audit hapus |
+
+### 4.2 Field Dictionary - Units
+
+| Field | Type | Required | Constraint / Default | Fungsi |
+|-------|------|----------|----------------------|--------|
+| `Id` | Guid | Ya | PK | Identitas unik satuan |
+| `Code` | string(30) | Ya | Unik (aktif), uppercase | Kode satuan (PCS, BOX) |
+| `Name` | string(100) | Ya | - | Nama satuan |
+| audit + soft delete | - | - | Otomatis | Jejak create/update/delete |
+
+### 4.3 Field Dictionary - Products
+
+| Field | Type | Required | Constraint / Default | Fungsi |
+|-------|------|----------|----------------------|--------|
+| `Id` | Guid | Ya | PK | Identitas unik produk |
+| `Sku` | string(50) | Ya | Unik (aktif), uppercase, tanpa spasi | Kode stok unik |
+| `Name` | string(200) | Ya | - | Nama produk |
+| `CategoryId` | Guid | Ya | FK Categories | Kategori produk |
+| `UnitId` | Guid | Ya | FK Units | Satuan produk |
+| `ReorderLevel` | int | Ya | `>= 0` | Ambang batas reorder |
+| `IsActive` | bool | Ya | Default `true` | Status bisnis produk |
+| audit + soft delete | - | - | Otomatis | Jejak create/update/delete |
 
 Constraint: `Products.Sku` unik; `Categories.Name` unik; `Units.Code` unik.
+Semua unique index memakai filter `IsDeleted = false`.
 
 ## 5. Workflow
 
@@ -54,16 +85,17 @@ Constraint: `Products.Sku` unik; `Categories.Name` unik; `Units.Code` unik.
 | GET/POST | `/products/create` | Create |
 | GET/POST | `/products/edit/{id}` | Update |
 | POST | `/products/deactivate/{id}` | Non-aktifkan |
+| POST | `/products/delete/{id}` | Soft delete (jika belum dipakai) |
 
 ### ProductFormViewModel
 ```csharp
 public sealed class ProductFormViewModel
 {
-    public int? Id { get; set; }
+    public Guid? Id { get; set; }
     [Required, StringLength(50)] public string Sku { get; set; }
     [Required, StringLength(200)] public string Name { get; set; }
-    [Required] public int CategoryId { get; set; }
-    [Required] public int UnitId { get; set; }
+    [Required] public Guid CategoryId { get; set; }
+    [Required] public Guid UnitId { get; set; }
     [Range(0, int.MaxValue)] public int ReorderLevel { get; set; }
     public bool IsActive { get; set; } = true;
 }

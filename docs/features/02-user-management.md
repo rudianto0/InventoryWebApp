@@ -29,10 +29,29 @@ yang menjadi approver transaksi.
 
 ## 4. Data Model
 
-`Users`: Id, UserName, Email, FullName, RoleId, **ParentId** (SPV), IsActive, CreatedAt.
+`Users` (PK `int`, tanpa soft delete).
+
+### 4.1 Field Dictionary
+
+| Field | Type | Required | Constraint / Default | Fungsi |
+|-------|------|----------|----------------------|--------|
+| `Id` | int | Ya | PK Identity | Identitas unik user |
+| `UserName` | string(50) | Ya | Unik | Nama login |
+| `Email` | string(150) | Ya | Unik, format email | Email user |
+| `FullName` | string(150) | Ya | - | Nama lengkap untuk tampilan |
+| `ParentId` | int? | Tidak | Self-FK, bukan diri sendiri | Atasan/SPV approver |
+| `IsActive` | bool | Ya | Default `true` | Status aktif user |
+| `CreatedAt` | DateTime (UTC) | Ya | Otomatis | Waktu user dibuat |
+| `CreatedById` | int? | Tidak | Otomatis dari sesi | Admin pembuat user |
+| `UpdatedAt` | DateTime? | Tidak | Otomatis saat update | Waktu terakhir diubah |
+| `UpdatedById` | int? | Tidak | Otomatis dari sesi | Admin terakhir yang mengubah |
+| `PasswordHash` | string | Ya | Hash Identity | Password terenkripsi |
+| `LockoutEnd` | DateTimeOffset? | Tidak | Identity | Masa lockout login |
+
+Role disimpan di tabel Identity `UserRoles` (bukan kolom `RoleId`).
 
 Aturan parent: `ParentId != Id`; hanya user ber-role `SPV`/`Manager` yang boleh
-dipilih sebagai parent.
+dipilih sebagai parent dan harus aktif.
 
 ## 5. Workflow
 
@@ -62,7 +81,7 @@ public sealed class UserFormViewModel
     [Required] public string UserName { get; set; }
     [Required, EmailAddress] public string Email { get; set; }
     [Required] public string FullName { get; set; }
-    [Required] public int RoleId { get; set; }
+    [Required] public string RoleName { get; set; }
     public int? ParentId { get; set; }
     public bool IsActive { get; set; } = true;
     public string? Password { get; set; } // wajib saat create

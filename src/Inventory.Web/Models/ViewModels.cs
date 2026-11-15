@@ -6,7 +6,7 @@ namespace Inventory.Web.Models;
 
 public sealed class CategoryFormModel
 {
-    public int? Id { get; set; }
+    public Guid? Id { get; set; }
     public string Name { get; set; } = string.Empty;
     public string? Description { get; set; }
     public bool IsActive { get; set; } = true;
@@ -14,18 +14,18 @@ public sealed class CategoryFormModel
 
 public sealed class UnitFormModel
 {
-    public int? Id { get; set; }
+    public Guid? Id { get; set; }
     public string Code { get; set; } = string.Empty;
     public string Name { get; set; } = string.Empty;
 }
 
 public sealed class ProductFormModel
 {
-    public int? Id { get; set; }
+    public Guid? Id { get; set; }
     public string Sku { get; set; } = string.Empty;
     public string Name { get; set; } = string.Empty;
-    public int CategoryId { get; set; }
-    public int UnitId { get; set; }
+    public Guid CategoryId { get; set; }
+    public Guid UnitId { get; set; }
     public int ReorderLevel { get; set; }
     public bool IsActive { get; set; } = true;
     public IReadOnlyList<SelectOption> Categories { get; set; } = Array.Empty<SelectOption>();
@@ -34,7 +34,7 @@ public sealed class ProductFormModel
 
 public sealed class SupplierFormModel
 {
-    public int? Id { get; set; }
+    public Guid? Id { get; set; }
     public string Code { get; set; } = string.Empty;
     public string Name { get; set; } = string.Empty;
     public string? ContactPerson { get; set; }
@@ -46,11 +46,11 @@ public sealed class SupplierFormModel
 
 public sealed class LocationFormModel
 {
-    public int? Id { get; set; }
+    public Guid? Id { get; set; }
     public string Code { get; set; } = string.Empty;
     public string Name { get; set; } = string.Empty;
     public LocationType Type { get; set; } = LocationType.Branch;
-    public int? ParentLocationId { get; set; }
+    public Guid? ParentLocationId { get; set; }
     public string? BranchCode { get; set; }
     public string? Address { get; set; }
     public bool IsActive { get; set; } = true;
@@ -68,7 +68,7 @@ public sealed class UserFormModel
     public bool IsActive { get; set; } = true;
     public string? Password { get; set; }
     public IReadOnlyList<string> Roles { get; set; } = Array.Empty<string>();
-    public IReadOnlyList<SelectOption> Parents { get; set; } = Array.Empty<SelectOption>();
+    public IReadOnlyList<UserOption> Parents { get; set; } = Array.Empty<UserOption>();
 }
 
 public sealed class ResetPasswordModel
@@ -95,7 +95,7 @@ public sealed class ChangePasswordModel
 
 public sealed class TransactionLineRow
 {
-    public int ProductId { get; set; }
+    public Guid ProductId { get; set; }
     public decimal Quantity { get; set; }
     public decimal? UnitCost { get; set; }
     public string? Notes { get; set; }
@@ -103,14 +103,14 @@ public sealed class TransactionLineRow
 
 public sealed class AdjustmentLineRow
 {
-    public int ProductId { get; set; }
+    public Guid ProductId { get; set; }
     public decimal CountedQuantity { get; set; }
     public string? Notes { get; set; }
 }
 
 public sealed class OpnameLineRow
 {
-    public int DetailId { get; set; }
+    public Guid DetailId { get; set; }
     public string Sku { get; set; } = string.Empty;
     public string ProductName { get; set; } = string.Empty;
     public string UnitName { get; set; } = string.Empty;
@@ -121,7 +121,7 @@ public sealed class OpnameLineRow
 
 public sealed class TransactionFormModel
 {
-    public int? Id { get; set; }
+    public Guid? Id { get; set; }
     public string Title { get; set; } = string.Empty;
     public string ControllerName { get; set; } = string.Empty;
     public string FormAction { get; set; } = "Create";
@@ -133,10 +133,10 @@ public sealed class TransactionFormModel
     public bool ShowFromTo { get; set; }
     public bool ShowUnitCost { get; set; }
     public string? DocNo { get; set; }
-    public int? SupplierId { get; set; }
-    public int LocationId { get; set; }
-    public int? FromLocationId { get; set; }
-    public int? ToLocationId { get; set; }
+    public Guid? SupplierId { get; set; }
+    public Guid LocationId { get; set; }
+    public Guid? FromLocationId { get; set; }
+    public Guid? ToLocationId { get; set; }
     public DateTime Date { get; set; } = DateTime.UtcNow.Date;
     public string? Purpose { get; set; }
     public string? Reason { get; set; }

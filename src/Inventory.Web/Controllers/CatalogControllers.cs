@@ -43,7 +43,7 @@ public sealed class CategoriesController(CatalogService catalog) : AppController
 
     [Authorize(Roles = "Admin")]
     [HttpGet]
-    public async Task<IActionResult> Edit(int id, CancellationToken ct)
+    public async Task<IActionResult> Edit(Guid id, CancellationToken ct)
     {
         var entity = await catalog.GetCategoryAsync(id, ct);
         if (entity is null)
@@ -57,7 +57,7 @@ public sealed class CategoriesController(CatalogService catalog) : AppController
     [Authorize(Roles = "Admin")]
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int id, CategoryFormModel model, CancellationToken ct)
+    public async Task<IActionResult> Edit(Guid id, CategoryFormModel model, CancellationToken ct)
     {
         try
         {
@@ -78,12 +78,29 @@ public sealed class CategoriesController(CatalogService catalog) : AppController
     [Authorize(Roles = "Admin")]
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Deactivate(int id, CancellationToken ct)
+    public async Task<IActionResult> Deactivate(Guid id, CancellationToken ct)
     {
         try
         {
             await catalog.DeactivateCategoryAsync(id, ct);
             NotifySuccess("Kategori dinonaktifkan.");
+        }
+        catch (Exception ex) when (FormError(ex) is not null)
+        {
+            NotifyError(FormError(ex)!);
+        }
+        return RedirectToAction(nameof(Index));
+    }
+
+    [Authorize(Roles = "Admin")]
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Delete(Guid id, CancellationToken ct)
+    {
+        try
+        {
+            await catalog.DeleteCategoryAsync(id, ct);
+            NotifySuccess("Kategori dihapus.");
         }
         catch (Exception ex) when (FormError(ex) is not null)
         {
@@ -127,7 +144,7 @@ public sealed class UnitsController(CatalogService catalog) : AppControllerBase
 
     [Authorize(Roles = "Admin")]
     [HttpGet]
-    public async Task<IActionResult> Edit(int id, CancellationToken ct)
+    public async Task<IActionResult> Edit(Guid id, CancellationToken ct)
     {
         var entity = await catalog.GetUnitAsync(id, ct);
         if (entity is null)
@@ -138,7 +155,7 @@ public sealed class UnitsController(CatalogService catalog) : AppControllerBase
     [Authorize(Roles = "Admin")]
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int id, UnitFormModel model, CancellationToken ct)
+    public async Task<IActionResult> Edit(Guid id, UnitFormModel model, CancellationToken ct)
     {
         try
         {
@@ -152,13 +169,30 @@ public sealed class UnitsController(CatalogService catalog) : AppControllerBase
             return View("Form", model);
         }
     }
+
+    [Authorize(Roles = "Admin")]
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Delete(Guid id, CancellationToken ct)
+    {
+        try
+        {
+            await catalog.DeleteUnitAsync(id, ct);
+            NotifySuccess("Unit dihapus.");
+        }
+        catch (Exception ex) when (FormError(ex) is not null)
+        {
+            NotifyError(FormError(ex)!);
+        }
+        return RedirectToAction(nameof(Index));
+    }
 }
 
 [Authorize]
 public sealed class ProductsController(CatalogService catalog) : AppControllerBase
 {
     [HttpGet]
-    public async Task<IActionResult> Index(string? search, int? categoryId, CancellationToken ct)
+    public async Task<IActionResult> Index(string? search, Guid? categoryId, CancellationToken ct)
     {
         ViewBag.Search = search;
         ViewBag.CategoryId = categoryId;
@@ -197,7 +231,7 @@ public sealed class ProductsController(CatalogService catalog) : AppControllerBa
 
     [Authorize(Roles = "Admin")]
     [HttpGet]
-    public async Task<IActionResult> Edit(int id, CancellationToken ct)
+    public async Task<IActionResult> Edit(Guid id, CancellationToken ct)
     {
         var entity = await catalog.GetProductAsync(id, ct);
         if (entity is null)
@@ -219,7 +253,7 @@ public sealed class ProductsController(CatalogService catalog) : AppControllerBa
     [Authorize(Roles = "Admin")]
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int id, ProductFormModel model, CancellationToken ct)
+    public async Task<IActionResult> Edit(Guid id, ProductFormModel model, CancellationToken ct)
     {
         try
         {
@@ -239,12 +273,29 @@ public sealed class ProductsController(CatalogService catalog) : AppControllerBa
     [Authorize(Roles = "Admin")]
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Deactivate(int id, CancellationToken ct)
+    public async Task<IActionResult> Deactivate(Guid id, CancellationToken ct)
     {
         try
         {
             await catalog.DeactivateProductAsync(id, ct);
             NotifySuccess("Produk dinonaktifkan.");
+        }
+        catch (Exception ex) when (FormError(ex) is not null)
+        {
+            NotifyError(FormError(ex)!);
+        }
+        return RedirectToAction(nameof(Index));
+    }
+
+    [Authorize(Roles = "Admin")]
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Delete(Guid id, CancellationToken ct)
+    {
+        try
+        {
+            await catalog.DeleteProductAsync(id, ct);
+            NotifySuccess("Produk dihapus.");
         }
         catch (Exception ex) when (FormError(ex) is not null)
         {

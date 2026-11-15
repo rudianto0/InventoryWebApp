@@ -26,9 +26,27 @@ Deskripsi singkat tujuan fitur dan nilai bisnisnya.
 
 ## 4. Data Model
 
-| Entity | Field | Type | Constraint | Keterangan |
-|--------|-------|------|------------|------------|
-| ...    | ...   | ...  | ...        | ...        |
+> Wajib: setiap field yang dipakai fitur harus dijelaskan fungsinya, bukan hanya namanya.
+
+### 4.1 Field Dictionary
+
+| Entity | Field | Type | Required | Constraint / Default | Fungsi |
+|--------|-------|------|----------|----------------------|--------|
+| ...    | ...   | ...  | ...      | ...                  | ...    |
+
+### 4.2 Audit & Soft Delete
+
+| Field | Type | Required | Constraint / Default | Fungsi |
+|-------|------|----------|----------------------|--------|
+| `CreatedAt` | DateTime (UTC) | Ya | Otomatis saat insert | Waktu record dibuat |
+| `CreatedById` | int? | Tidak | Otomatis dari sesi | User pembuat record |
+| `UpdatedAt` | DateTime? | Tidak | Otomatis saat update | Waktu terakhir diubah |
+| `UpdatedById` | int? | Tidak | Otomatis dari sesi | User terakhir yang mengubah |
+| `IsDeleted` | bool | Ya | Default `false` | Penanda soft delete |
+| `DeletedAt` | DateTime? | Tidak | Otomatis saat delete | Waktu dihapus |
+| `DeletedById` | int? | Tidak | Otomatis dari sesi | User yang menghapus |
+
+> Jika entity tidak mendukung soft delete, tulis alasannya di bagian ini.
 
 **Relasi**
 - ...

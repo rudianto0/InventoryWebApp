@@ -32,14 +32,27 @@ akun dibuat oleh Admin.
 
 Menggunakan tabel Identity + `Users` (lihat `02-data-model.md`).
 
-| Field | Type | Constraint |
-|-------|------|------------|
-| UserName | string(50) | Required, Unique |
-| Email | string(150) | Required, Unique |
-| FullName | string(150) | Required |
-| RoleId | int | Required, FK Roles |
-| ParentId | int? | FK Users (SPV) |
-| IsActive | bool | Default true |
+### 4.1 Field Dictionary
+
+| Field | Type | Required | Constraint / Default | Fungsi |
+|-------|------|----------|----------------------|--------|
+| `Id` | int | Ya | PK Identity | Identitas unik user |
+| `UserName` | string(50) | Ya | Unik | Nama login |
+| `NormalizedUserName` | string | Ya | Unik, uppercase | Pencarian login case-insensitive |
+| `Email` | string(150) | Ya | Unik, format email | Alamat email |
+| `PasswordHash` | string | Ya | Hash Identity | Password terenkripsi (tidak pernah plaintext) |
+| `FullName` | string(150) | Ya | - | Nama tampilan user |
+| `ParentId` | int? | Tidak | Self-FK `Users` | Atasan/SPV yang menjadi approver |
+| `IsActive` | bool | Ya | Default `true` | Menentukan user boleh login |
+| `CreatedAt` | DateTime (UTC) | Ya | Otomatis | Waktu user dibuat |
+| `CreatedById` | int? | Tidak | Otomatis | User yang membuat akun |
+| `UpdatedAt` | DateTime? | Tidak | Otomatis | Waktu terakhir diubah |
+| `UpdatedById` | int? | Tidak | Otomatis | User terakhir yang mengubah |
+| `LockoutEnd` | DateTimeOffset? | Tidak | Identity | Akhir masa lockout |
+| `AccessFailedCount` | int | Ya | Default `0` | Jumlah percobaan login gagal |
+
+> User **tidak** memakai soft delete. Penghapusan operasional dilakukan dengan
+> `IsActive = false` agar jejak audit dan relasi transaksi tetap utuh.
 
 ## 5. Workflow
 

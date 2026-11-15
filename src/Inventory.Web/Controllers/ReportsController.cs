@@ -10,7 +10,7 @@ namespace Inventory.Web.Controllers;
 public sealed class DashboardController(ReportService reports, LocationService locations) : AppControllerBase
 {
     [HttpGet]
-    public async Task<IActionResult> Index(int? locationId, CancellationToken ct)
+    public async Task<IActionResult> Index(Guid? locationId, CancellationToken ct)
     {
         ViewBag.LocationId = locationId;
         ViewBag.Locations = await locations.GetOptionsAsync(ct: ct);

@@ -20,7 +20,7 @@ public sealed class LocationService(IAppDbContext db)
         return await query.OrderBy(x => x.Code).ToListAsync(ct);
     }
 
-    public Task<Location?> GetAsync(int id, CancellationToken ct = default) =>
+    public Task<Location?> GetAsync(Guid id, CancellationToken ct = default) =>
         db.Locations.FirstOrDefaultAsync(x => x.Id == id, ct);
 
     public async Task<Location> CreateAsync(LocationInput input, CancellationToken ct = default)
@@ -32,7 +32,7 @@ public sealed class LocationService(IAppDbContext db)
         return entity;
     }
 
-    public async Task UpdateAsync(int id, LocationInput input, CancellationToken ct = default)
+    public async Task UpdateAsync(Guid id, LocationInput input, CancellationToken ct = default)
     {
         var entity = await db.Locations.FirstOrDefaultAsync(x => x.Id == id, ct)
             ?? throw new ValidationException("Lokasi tidak ditemukan.");
@@ -41,7 +41,7 @@ public sealed class LocationService(IAppDbContext db)
         await db.SaveChangesAsync(ct);
     }
 
-    public async Task DeactivateAsync(int id, CancellationToken ct = default)
+    public async Task DeactivateAsync(Guid id, CancellationToken ct = default)
     {
         var entity = await db.Locations.FirstOrDefaultAsync(x => x.Id == id, ct)
             ?? throw new ValidationException("Lokasi tidak ditemukan.");
@@ -50,6 +50,23 @@ public sealed class LocationService(IAppDbContext db)
         if (await db.Stocks.AnyAsync(x => x.LocationId == id && x.Quantity != 0, ct))
             throw new ValidationException("Lokasi masih memiliki saldo stok. Pindahkan atau sesuaikan stok terlebih dahulu.");
         entity.IsActive = false;
+        await db.SaveChangesAsync(ct);
+    }
+
+    public async Task DeleteAsync(Guid id, CancellationToken ct = default)
+    {
+        var entity = await db.Locations.FirstOrDefaultAsync(x => x.Id == id, ct)
+            ?? throw new ValidationException("Lokasi tidak ditemukan.");
+        var used = await db.Locations.IgnoreQueryFilters().AnyAsync(x => x.ParentLocationId == id, ct)
+            || await db.Stocks.IgnoreQueryFilters().AnyAsync(x => x.LocationId == id, ct)
+            || await db.StockInHeaders.IgnoreQueryFilters().AnyAsync(x => x.LocationId == id, ct)
+            || await db.StockOutHeaders.IgnoreQueryFilters().AnyAsync(x => x.LocationId == id, ct)
+            || await db.StockTransferHeaders.IgnoreQueryFilters().AnyAsync(x => x.FromLocationId == id || x.ToLocationId == id, ct)
+            || await db.StockAdjustmentHeaders.IgnoreQueryFilters().AnyAsync(x => x.LocationId == id, ct)
+            || await db.StockOpnameHeaders.IgnoreQueryFilters().AnyAsync(x => x.LocationId == id, ct);
+        if (used)
+            throw new ValidationException("Lokasi tidak dapat dihapus karena masih dipakai stok/transaksi atau memiliki sub-lokasi. Non-aktifkan lokasi ini.");
+        db.Locations.Remove(entity);
         await db.SaveChangesAsync(ct);
     }
 
@@ -63,7 +80,7 @@ public sealed class LocationService(IAppDbContext db)
             .ToListAsync(ct);
     }
 
-    private async Task ValidateAsync(LocationInput input, int? id, CancellationToken ct)
+    private async Task ValidateAsync(LocationInput input, Guid? id, CancellationToken ct)
     {
         Guard.Required(input.Code, "Kode lokasi");
         Guard.Required(input.Name, "Nama lokasi");
@@ -88,10 +105,10 @@ public sealed class LocationService(IAppDbContext db)
         }
     }
 
-    private async Task<bool> CreatesCycleAsync(int currentId, int parentId, CancellationToken ct)
+    private async Task<bool> CreatesCycleAsync(Guid currentId, Guid parentId, CancellationToken ct)
     {
-        var visited = new HashSet<int>();
-        var cursor = (int?)parentId;
+        var visited = new HashSet<Guid>();
+        var cursor = (Guid?)parentId;
         while (cursor.HasValue)
         {
             if (cursor.Value == currentId)
