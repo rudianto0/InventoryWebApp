@@ -13,6 +13,8 @@ docs/
 ├─ 02-data-model.md          # ERD & entitas
 ├─ features/                 # 1 fitur = 1 file .md
 ├─ adr/                      # Architecture Decision Records
+├─ scalability/              # Analisis skalabilitas + Word doc
+├─ database/                 # Implementasi database + SQL + Word doc
 └─ templates/
    └─ feature-template.md    # Template standar dokumen fitur
 ```
@@ -30,6 +32,33 @@ docs/
 | [adr/004-location-branch.md](adr/004-location-branch.md) | Tanpa multi-tenant, cabang di Location |
 | [adr/005-guid-soft-delete-audit.md](adr/005-guid-soft-delete-audit.md) | GUID untuk data bisnis, soft delete, dan audit user |
 | [adr/006-api-first-client-server.md](adr/006-api-first-client-server.md) | Boundary API-first: Contracts + Client, target pemisahan API/UI |
+
+## Dokumen Skalabilitas
+
+| File | Isi |
+|------|-----|
+| [scalability/README.md](scalability/README.md) | Index & asumsi analisis skalabilitas |
+| [scalability/01-lingkup-dan-lingkungan-operasi.md](scalability/01-lingkup-dan-lingkungan-operasi.md) | Butir 1.1 dan 1.2 |
+| [scalability/02-analisis-masalah-skalabilitas.md](scalability/02-analisis-masalah-skalabilitas.md) | Butir 2.1 |
+| [scalability/03-kompleksitas-dan-beban-kerja.md](scalability/03-kompleksitas-dan-beban-kerja.md) | Butir 2.2 |
+| [scalability/04-kebutuhan-perangkat-keras.md](scalability/04-kebutuhan-perangkat-keras.md) | Butir 2.3 |
+| [scalability/05-hasil-analisis.md](scalability/05-hasil-analisis.md) | Butir 2.4 |
+| `scalability/Inventory-Scalability-Analysis.docx` | Gabungan dalam format Word |
+
+## Dokumen Database
+
+| File | Isi |
+|------|-----|
+| [database/README.md](database/README.md) | Index implementasi database PostgreSQL |
+| [database/02-migrasi-dan-seed-data.md](database/02-migrasi-dan-seed-data.md) | Migrasi schema + seed |
+| [database/03-indeks-dan-view.md](database/03-indeks-dan-view.md) | Indeks + view |
+| [database/04-operasi-relasional.md](database/04-operasi-relasional.md) | DML antar tabel/view |
+| [database/05-stored-procedure.md](database/05-stored-procedure.md) | Stored procedure |
+| [database/06-function.md](database/06-function.md) | Function |
+| [database/07-trigger.md](database/07-trigger.md) | Trigger |
+| [database/08-transaksi-commit-rollback.md](database/08-transaksi-commit-rollback.md) | Commit/rollback |
+| `database/Inventory-Database-Implementation.docx` | Dokumen Word |
+| `sql/postgresql/` | Script SQL siap eksekusi DBeaver |
 
 ## Index Fitur
 

@@ -282,6 +282,8 @@ dotnet test
 - [docs/00-project-overview.md](docs/00-project-overview.md) — visi, aktor, roadmap
 - [docs/01-architecture.md](docs/01-architecture.md) — detail arsitektur
 - [docs/02-data-model.md](docs/02-data-model.md) — ERD & entitas
+- [docs/scalability/README.md](docs/scalability/README.md) — analisis skalabilitas (Markdown + Word)
+- [docs/database/README.md](docs/database/README.md) — implementasi database PostgreSQL + script SQL (Markdown + Word)
 - [docs/adr/](docs/adr/) — Architecture Decision Records
 - [docs/adr/005-guid-soft-delete-audit.md](docs/adr/005-guid-soft-delete-audit.md) — GUID, soft delete, audit user
 - [docs/adr/006-api-first-client-server.md](docs/adr/006-api-first-client-server.md) — boundary API-first dan roadmap pemisahan BE/FE
