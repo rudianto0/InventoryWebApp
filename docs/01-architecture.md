@@ -32,7 +32,7 @@ Inventory.Web        ──▶ Inventory.Client ──▶ Inventory.Contracts
       │                        │
       │                        └──▶ Inventory.Application ──▶ Inventory.Domain ──▶ Inventory.Contracts
       │
-      └──▶ Inventory.Infrastructure (hanya komposisi startup saat ini)
+      └──▶ Inventory.Infrastructure (komposisi startup + Identity/Account, transisi)
 
 Inventory.Infrastructure ──▶ Inventory.Application / Inventory.Domain
 ```
@@ -47,8 +47,9 @@ Aturan yang dijaga:
 3. `Inventory.Contracts` tidak boleh memakai EF Core atau entity Domain.
 4. `Inventory.Domain` dan `Inventory.Application` tidak boleh memakai namespace
    provider database.
-5. `Inventory.Api` (nanti) adalah satu-satunya host yang memakai Infrastructure
-   secara langsung.
+5. Setelah fase API selesai, `Inventory.Api` menjadi satu-satunya host yang
+   memakai Infrastructure secara langsung; selama transisi, Web masih memakai
+   Infrastructure untuk startup, Identity/Account, dan concurrency handling.
 
 ## 3. Layer Responsibilities
 

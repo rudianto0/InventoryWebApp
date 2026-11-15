@@ -58,6 +58,10 @@ Deskripsi singkat tujuan fitur dan nilai bisnisnya.
 
 ## 6. API Contract
 
+> Target kontrak API (`/api/v1`). Implementasi saat ini masih berupa route MVC
+> (`/{controller}/{action}`) di `Inventory.Web`; endpoint API akan tersedia pada
+> fase `Inventory.Api`.
+
 | Method | Endpoint | Deskripsi | Auth |
 |--------|----------|-----------|------|
 | GET | `/api/v1/...` | ... | ... |
