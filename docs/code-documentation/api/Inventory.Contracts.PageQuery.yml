@@ -1,0 +1,459 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Contracts.PageQuery
+  commentId: T:Inventory.Contracts.PageQuery
+  id: PageQuery
+  parent: Inventory.Contracts
+  children:
+  - Inventory.Contracts.PageQuery.NormalizedPage
+  - Inventory.Contracts.PageQuery.Page
+  - Inventory.Contracts.PageQuery.PageSize
+  - Inventory.Contracts.PageQuery.Skip
+  - Inventory.Contracts.PageQuery.Take
+  langs:
+  - csharp
+  - vb
+  name: PageQuery
+  nameWithType: PageQuery
+  fullName: Inventory.Contracts.PageQuery
+  type: Class
+  source:
+    remote:
+      path: src/Inventory.Contracts/PagedResult.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: PageQuery
+    path: src/Inventory.Contracts/PagedResult.cs
+    startLine: 13
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public sealed class PageQuery
+    content.vb: Public NotInheritable Class PageQuery
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Inventory.Contracts.PageQuery.Page
+  commentId: P:Inventory.Contracts.PageQuery.Page
+  id: Page
+  parent: Inventory.Contracts.PageQuery
+  langs:
+  - csharp
+  - vb
+  name: Page
+  nameWithType: PageQuery.Page
+  fullName: Inventory.Contracts.PageQuery.Page
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/PagedResult.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Page
+    path: src/Inventory.Contracts/PagedResult.cs
+    startLine: 15
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public int Page { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Page As Integer
+  overload: Inventory.Contracts.PageQuery.Page*
+- uid: Inventory.Contracts.PageQuery.PageSize
+  commentId: P:Inventory.Contracts.PageQuery.PageSize
+  id: PageSize
+  parent: Inventory.Contracts.PageQuery
+  langs:
+  - csharp
+  - vb
+  name: PageSize
+  nameWithType: PageQuery.PageSize
+  fullName: Inventory.Contracts.PageQuery.PageSize
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/PagedResult.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: PageSize
+    path: src/Inventory.Contracts/PagedResult.cs
+    startLine: 16
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public int PageSize { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property PageSize As Integer
+  overload: Inventory.Contracts.PageQuery.PageSize*
+- uid: Inventory.Contracts.PageQuery.Skip
+  commentId: P:Inventory.Contracts.PageQuery.Skip
+  id: Skip
+  parent: Inventory.Contracts.PageQuery
+  langs:
+  - csharp
+  - vb
+  name: Skip
+  nameWithType: PageQuery.Skip
+  fullName: Inventory.Contracts.PageQuery.Skip
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/PagedResult.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Skip
+    path: src/Inventory.Contracts/PagedResult.cs
+    startLine: 17
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public int Skip { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Skip As Integer
+  overload: Inventory.Contracts.PageQuery.Skip*
+- uid: Inventory.Contracts.PageQuery.Take
+  commentId: P:Inventory.Contracts.PageQuery.Take
+  id: Take
+  parent: Inventory.Contracts.PageQuery
+  langs:
+  - csharp
+  - vb
+  name: Take
+  nameWithType: PageQuery.Take
+  fullName: Inventory.Contracts.PageQuery.Take
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/PagedResult.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Take
+    path: src/Inventory.Contracts/PagedResult.cs
+    startLine: 18
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public int Take { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Take As Integer
+  overload: Inventory.Contracts.PageQuery.Take*
+- uid: Inventory.Contracts.PageQuery.NormalizedPage
+  commentId: P:Inventory.Contracts.PageQuery.NormalizedPage
+  id: NormalizedPage
+  parent: Inventory.Contracts.PageQuery
+  langs:
+  - csharp
+  - vb
+  name: NormalizedPage
+  nameWithType: PageQuery.NormalizedPage
+  fullName: Inventory.Contracts.PageQuery.NormalizedPage
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/PagedResult.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: NormalizedPage
+    path: src/Inventory.Contracts/PagedResult.cs
+    startLine: 19
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public int NormalizedPage { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property NormalizedPage As Integer
+  overload: Inventory.Contracts.PageQuery.NormalizedPage*
+references:
+- uid: Inventory.Contracts
+  commentId: N:Inventory.Contracts
+  name: Inventory.Contracts
+  nameWithType: Inventory.Contracts
+  fullName: Inventory.Contracts
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Inventory.Contracts.PageQuery.Page*
+  commentId: Overload:Inventory.Contracts.PageQuery.Page
+  href: Inventory.Contracts.PageQuery.html#Inventory_Contracts_PageQuery_Page
+  name: Page
+  nameWithType: PageQuery.Page
+  fullName: Inventory.Contracts.PageQuery.Page
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Inventory.Contracts.PageQuery.PageSize*
+  commentId: Overload:Inventory.Contracts.PageQuery.PageSize
+  href: Inventory.Contracts.PageQuery.html#Inventory_Contracts_PageQuery_PageSize
+  name: PageSize
+  nameWithType: PageQuery.PageSize
+  fullName: Inventory.Contracts.PageQuery.PageSize
+- uid: Inventory.Contracts.PageQuery.Skip*
+  commentId: Overload:Inventory.Contracts.PageQuery.Skip
+  href: Inventory.Contracts.PageQuery.html#Inventory_Contracts_PageQuery_Skip
+  name: Skip
+  nameWithType: PageQuery.Skip
+  fullName: Inventory.Contracts.PageQuery.Skip
+- uid: Inventory.Contracts.PageQuery.Take*
+  commentId: Overload:Inventory.Contracts.PageQuery.Take
+  href: Inventory.Contracts.PageQuery.html#Inventory_Contracts_PageQuery_Take
+  name: Take
+  nameWithType: PageQuery.Take
+  fullName: Inventory.Contracts.PageQuery.Take
+- uid: Inventory.Contracts.PageQuery.NormalizedPage*
+  commentId: Overload:Inventory.Contracts.PageQuery.NormalizedPage
+  href: Inventory.Contracts.PageQuery.html#Inventory_Contracts_PageQuery_NormalizedPage
+  name: NormalizedPage
+  nameWithType: PageQuery.NormalizedPage
+  fullName: Inventory.Contracts.PageQuery.NormalizedPage

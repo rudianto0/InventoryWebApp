@@ -1,0 +1,54 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Infrastructure.Persistence
+  commentId: N:Inventory.Infrastructure.Persistence
+  id: Inventory.Infrastructure.Persistence
+  children:
+  - Inventory.Infrastructure.Persistence.AppDbContext
+  - Inventory.Infrastructure.Persistence.DatabaseBootstrapper
+  langs:
+  - csharp
+  - vb
+  name: Inventory.Infrastructure.Persistence
+  nameWithType: Inventory.Infrastructure.Persistence
+  fullName: Inventory.Infrastructure.Persistence
+  type: Namespace
+  assemblies:
+  - Inventory.Infrastructure
+references:
+- uid: Inventory.Infrastructure.Persistence.AppDbContext
+  commentId: T:Inventory.Infrastructure.Persistence.AppDbContext
+  parent: Inventory.Infrastructure.Persistence
+  href: Inventory.Infrastructure.Persistence.AppDbContext.html
+  name: AppDbContext
+  nameWithType: AppDbContext
+  fullName: Inventory.Infrastructure.Persistence.AppDbContext
+- uid: Inventory.Infrastructure.Persistence.DatabaseBootstrapper
+  commentId: T:Inventory.Infrastructure.Persistence.DatabaseBootstrapper
+  href: Inventory.Infrastructure.Persistence.DatabaseBootstrapper.html
+  name: DatabaseBootstrapper
+  nameWithType: DatabaseBootstrapper
+  fullName: Inventory.Infrastructure.Persistence.DatabaseBootstrapper
+- uid: Inventory.Infrastructure.Persistence
+  commentId: N:Inventory.Infrastructure.Persistence
+  name: Inventory.Infrastructure.Persistence
+  nameWithType: Inventory.Infrastructure.Persistence
+  fullName: Inventory.Infrastructure.Persistence
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Infrastructure
+    name: Infrastructure
+  - name: .
+  - uid: Inventory.Infrastructure.Persistence
+    name: Persistence
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Infrastructure
+    name: Infrastructure
+  - name: .
+  - uid: Inventory.Infrastructure.Persistence
+    name: Persistence

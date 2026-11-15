@@ -1,0 +1,733 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Client.IReportClient
+  commentId: T:Inventory.Client.IReportClient
+  id: IReportClient
+  parent: Inventory.Client
+  children:
+  - Inventory.Client.IReportClient.ExportCsvAsync(System.String,Inventory.Contracts.ReportFilter,System.Threading.CancellationToken)
+  - Inventory.Client.IReportClient.GetDashboardAsync(System.Nullable{System.Guid},System.Threading.CancellationToken)
+  - Inventory.Client.IReportClient.GetMovementsAsync(Inventory.Contracts.ReportFilter,System.Threading.CancellationToken)
+  - Inventory.Client.IReportClient.GetReorderAsync(Inventory.Contracts.ReportFilter,System.Threading.CancellationToken)
+  - Inventory.Client.IReportClient.GetStockBalanceAsync(Inventory.Contracts.ReportFilter,System.Threading.CancellationToken)
+  - Inventory.Client.IReportClient.GetStockCardAsync(Inventory.Contracts.ReportFilter,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: IReportClient
+  nameWithType: IReportClient
+  fullName: Inventory.Client.IReportClient
+  type: Interface
+  source:
+    remote:
+      path: src/Inventory.Client/IInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: IReportClient
+    path: src/Inventory.Client/IInventoryClients.cs
+    startLine: 116
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  syntax:
+    content: public interface IReportClient
+    content.vb: Public Interface IReportClient
+  derivedClasses:
+  - Inventory.Client.InProcessReportClient
+- uid: Inventory.Client.IReportClient.GetDashboardAsync(System.Nullable{System.Guid},System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.IReportClient.GetDashboardAsync(System.Nullable{System.Guid},System.Threading.CancellationToken)
+  id: GetDashboardAsync(System.Nullable{System.Guid},System.Threading.CancellationToken)
+  parent: Inventory.Client.IReportClient
+  langs:
+  - csharp
+  - vb
+  name: GetDashboardAsync(Guid?, CancellationToken)
+  nameWithType: IReportClient.GetDashboardAsync(Guid?, CancellationToken)
+  fullName: Inventory.Client.IReportClient.GetDashboardAsync(System.Guid?, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/IInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: GetDashboardAsync
+    path: src/Inventory.Client/IInventoryClients.cs
+    startLine: 118
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  syntax:
+    content: Task<DashboardSummary> GetDashboardAsync(Guid? locationId = null, CancellationToken ct = default)
+    parameters:
+    - id: locationId
+      type: System.Nullable{System.Guid}
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{Inventory.Contracts.DashboardSummary}
+    content.vb: Function GetDashboardAsync(locationId As Guid? = Nothing, ct As CancellationToken = Nothing) As Task(Of DashboardSummary)
+  overload: Inventory.Client.IReportClient.GetDashboardAsync*
+- uid: Inventory.Client.IReportClient.GetStockBalanceAsync(Inventory.Contracts.ReportFilter,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.IReportClient.GetStockBalanceAsync(Inventory.Contracts.ReportFilter,System.Threading.CancellationToken)
+  id: GetStockBalanceAsync(Inventory.Contracts.ReportFilter,System.Threading.CancellationToken)
+  parent: Inventory.Client.IReportClient
+  langs:
+  - csharp
+  - vb
+  name: GetStockBalanceAsync(ReportFilter, CancellationToken)
+  nameWithType: IReportClient.GetStockBalanceAsync(ReportFilter, CancellationToken)
+  fullName: Inventory.Client.IReportClient.GetStockBalanceAsync(Inventory.Contracts.ReportFilter, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/IInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: GetStockBalanceAsync
+    path: src/Inventory.Client/IInventoryClients.cs
+    startLine: 119
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  syntax:
+    content: Task<PagedResult<StockBalanceItem>> GetStockBalanceAsync(ReportFilter filter, CancellationToken ct = default)
+    parameters:
+    - id: filter
+      type: Inventory.Contracts.ReportFilter
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{Inventory.Contracts.PagedResult{Inventory.Contracts.StockBalanceItem}}
+    content.vb: Function GetStockBalanceAsync(filter As ReportFilter, ct As CancellationToken = Nothing) As Task(Of PagedResult(Of StockBalanceItem))
+  overload: Inventory.Client.IReportClient.GetStockBalanceAsync*
+- uid: Inventory.Client.IReportClient.GetStockCardAsync(Inventory.Contracts.ReportFilter,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.IReportClient.GetStockCardAsync(Inventory.Contracts.ReportFilter,System.Threading.CancellationToken)
+  id: GetStockCardAsync(Inventory.Contracts.ReportFilter,System.Threading.CancellationToken)
+  parent: Inventory.Client.IReportClient
+  langs:
+  - csharp
+  - vb
+  name: GetStockCardAsync(ReportFilter, CancellationToken)
+  nameWithType: IReportClient.GetStockCardAsync(ReportFilter, CancellationToken)
+  fullName: Inventory.Client.IReportClient.GetStockCardAsync(Inventory.Contracts.ReportFilter, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/IInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: GetStockCardAsync
+    path: src/Inventory.Client/IInventoryClients.cs
+    startLine: 120
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  syntax:
+    content: Task<IReadOnlyList<StockCardItem>> GetStockCardAsync(ReportFilter filter, CancellationToken ct = default)
+    parameters:
+    - id: filter
+      type: Inventory.Contracts.ReportFilter
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Inventory.Contracts.StockCardItem}}
+    content.vb: Function GetStockCardAsync(filter As ReportFilter, ct As CancellationToken = Nothing) As Task(Of IReadOnlyList(Of StockCardItem))
+  overload: Inventory.Client.IReportClient.GetStockCardAsync*
+- uid: Inventory.Client.IReportClient.GetMovementsAsync(Inventory.Contracts.ReportFilter,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.IReportClient.GetMovementsAsync(Inventory.Contracts.ReportFilter,System.Threading.CancellationToken)
+  id: GetMovementsAsync(Inventory.Contracts.ReportFilter,System.Threading.CancellationToken)
+  parent: Inventory.Client.IReportClient
+  langs:
+  - csharp
+  - vb
+  name: GetMovementsAsync(ReportFilter, CancellationToken)
+  nameWithType: IReportClient.GetMovementsAsync(ReportFilter, CancellationToken)
+  fullName: Inventory.Client.IReportClient.GetMovementsAsync(Inventory.Contracts.ReportFilter, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/IInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: GetMovementsAsync
+    path: src/Inventory.Client/IInventoryClients.cs
+    startLine: 121
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  syntax:
+    content: Task<PagedResult<StockMovementItem>> GetMovementsAsync(ReportFilter filter, CancellationToken ct = default)
+    parameters:
+    - id: filter
+      type: Inventory.Contracts.ReportFilter
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{Inventory.Contracts.PagedResult{Inventory.Contracts.StockMovementItem}}
+    content.vb: Function GetMovementsAsync(filter As ReportFilter, ct As CancellationToken = Nothing) As Task(Of PagedResult(Of StockMovementItem))
+  overload: Inventory.Client.IReportClient.GetMovementsAsync*
+- uid: Inventory.Client.IReportClient.GetReorderAsync(Inventory.Contracts.ReportFilter,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.IReportClient.GetReorderAsync(Inventory.Contracts.ReportFilter,System.Threading.CancellationToken)
+  id: GetReorderAsync(Inventory.Contracts.ReportFilter,System.Threading.CancellationToken)
+  parent: Inventory.Client.IReportClient
+  langs:
+  - csharp
+  - vb
+  name: GetReorderAsync(ReportFilter, CancellationToken)
+  nameWithType: IReportClient.GetReorderAsync(ReportFilter, CancellationToken)
+  fullName: Inventory.Client.IReportClient.GetReorderAsync(Inventory.Contracts.ReportFilter, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/IInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: GetReorderAsync
+    path: src/Inventory.Client/IInventoryClients.cs
+    startLine: 122
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  syntax:
+    content: Task<PagedResult<ReorderItem>> GetReorderAsync(ReportFilter filter, CancellationToken ct = default)
+    parameters:
+    - id: filter
+      type: Inventory.Contracts.ReportFilter
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{Inventory.Contracts.PagedResult{Inventory.Contracts.ReorderItem}}
+    content.vb: Function GetReorderAsync(filter As ReportFilter, ct As CancellationToken = Nothing) As Task(Of PagedResult(Of ReorderItem))
+  overload: Inventory.Client.IReportClient.GetReorderAsync*
+- uid: Inventory.Client.IReportClient.ExportCsvAsync(System.String,Inventory.Contracts.ReportFilter,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.IReportClient.ExportCsvAsync(System.String,Inventory.Contracts.ReportFilter,System.Threading.CancellationToken)
+  id: ExportCsvAsync(System.String,Inventory.Contracts.ReportFilter,System.Threading.CancellationToken)
+  parent: Inventory.Client.IReportClient
+  langs:
+  - csharp
+  - vb
+  name: ExportCsvAsync(string, ReportFilter, CancellationToken)
+  nameWithType: IReportClient.ExportCsvAsync(string, ReportFilter, CancellationToken)
+  fullName: Inventory.Client.IReportClient.ExportCsvAsync(string, Inventory.Contracts.ReportFilter, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/IInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ExportCsvAsync
+    path: src/Inventory.Client/IInventoryClients.cs
+    startLine: 123
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  syntax:
+    content: Task<string> ExportCsvAsync(string report, ReportFilter filter, CancellationToken ct = default)
+    parameters:
+    - id: report
+      type: System.String
+    - id: filter
+      type: Inventory.Contracts.ReportFilter
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{System.String}
+    content.vb: Function ExportCsvAsync(report As String, filter As ReportFilter, ct As CancellationToken = Nothing) As Task(Of String)
+  overload: Inventory.Client.IReportClient.ExportCsvAsync*
+  nameWithType.vb: IReportClient.ExportCsvAsync(String, ReportFilter, CancellationToken)
+  fullName.vb: Inventory.Client.IReportClient.ExportCsvAsync(String, Inventory.Contracts.ReportFilter, System.Threading.CancellationToken)
+  name.vb: ExportCsvAsync(String, ReportFilter, CancellationToken)
+references:
+- uid: Inventory.Client
+  commentId: N:Inventory.Client
+  name: Inventory.Client
+  nameWithType: Inventory.Client
+  fullName: Inventory.Client
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Client
+    name: Client
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Client
+    name: Client
+- uid: Inventory.Client.IReportClient.GetDashboardAsync*
+  commentId: Overload:Inventory.Client.IReportClient.GetDashboardAsync
+  href: Inventory.Client.IReportClient.html#Inventory_Client_IReportClient_GetDashboardAsync_System_Nullable_System_Guid__System_Threading_CancellationToken_
+  name: GetDashboardAsync
+  nameWithType: IReportClient.GetDashboardAsync
+  fullName: Inventory.Client.IReportClient.GetDashboardAsync
+- uid: System.Nullable{System.Guid}
+  commentId: T:System.Nullable{System.Guid}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid?
+  nameWithType: Guid?
+  fullName: System.Guid?
+  spec.csharp:
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: '?'
+  spec.vb:
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: '?'
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{Inventory.Contracts.DashboardSummary}
+  commentId: T:System.Threading.Tasks.Task{Inventory.Contracts.DashboardSummary}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<DashboardSummary>
+  nameWithType: Task<DashboardSummary>
+  fullName: System.Threading.Tasks.Task<Inventory.Contracts.DashboardSummary>
+  nameWithType.vb: Task(Of DashboardSummary)
+  fullName.vb: System.Threading.Tasks.Task(Of Inventory.Contracts.DashboardSummary)
+  name.vb: Task(Of DashboardSummary)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Inventory.Contracts.DashboardSummary
+    name: DashboardSummary
+    href: Inventory.Contracts.DashboardSummary.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.DashboardSummary
+    name: DashboardSummary
+    href: Inventory.Contracts.DashboardSummary.html
+  - name: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: Inventory.Client.IReportClient.GetStockBalanceAsync*
+  commentId: Overload:Inventory.Client.IReportClient.GetStockBalanceAsync
+  href: Inventory.Client.IReportClient.html#Inventory_Client_IReportClient_GetStockBalanceAsync_Inventory_Contracts_ReportFilter_System_Threading_CancellationToken_
+  name: GetStockBalanceAsync
+  nameWithType: IReportClient.GetStockBalanceAsync
+  fullName: Inventory.Client.IReportClient.GetStockBalanceAsync
+- uid: Inventory.Contracts.ReportFilter
+  commentId: T:Inventory.Contracts.ReportFilter
+  parent: Inventory.Contracts
+  href: Inventory.Contracts.ReportFilter.html
+  name: ReportFilter
+  nameWithType: ReportFilter
+  fullName: Inventory.Contracts.ReportFilter
+- uid: System.Threading.Tasks.Task{Inventory.Contracts.PagedResult{Inventory.Contracts.StockBalanceItem}}
+  commentId: T:System.Threading.Tasks.Task{Inventory.Contracts.PagedResult{Inventory.Contracts.StockBalanceItem}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<PagedResult<StockBalanceItem>>
+  nameWithType: Task<PagedResult<StockBalanceItem>>
+  fullName: System.Threading.Tasks.Task<Inventory.Contracts.PagedResult<Inventory.Contracts.StockBalanceItem>>
+  nameWithType.vb: Task(Of PagedResult(Of StockBalanceItem))
+  fullName.vb: System.Threading.Tasks.Task(Of Inventory.Contracts.PagedResult(Of Inventory.Contracts.StockBalanceItem))
+  name.vb: Task(Of PagedResult(Of StockBalanceItem))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Inventory.Contracts.PagedResult`1
+    name: PagedResult
+    href: Inventory.Contracts.PagedResult-1.html
+  - name: <
+  - uid: Inventory.Contracts.StockBalanceItem
+    name: StockBalanceItem
+    href: Inventory.Contracts.StockBalanceItem.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.PagedResult`1
+    name: PagedResult
+    href: Inventory.Contracts.PagedResult-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.StockBalanceItem
+    name: StockBalanceItem
+    href: Inventory.Contracts.StockBalanceItem.html
+  - name: )
+  - name: )
+- uid: Inventory.Contracts
+  commentId: N:Inventory.Contracts
+  name: Inventory.Contracts
+  nameWithType: Inventory.Contracts
+  fullName: Inventory.Contracts
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+- uid: Inventory.Client.IReportClient.GetStockCardAsync*
+  commentId: Overload:Inventory.Client.IReportClient.GetStockCardAsync
+  href: Inventory.Client.IReportClient.html#Inventory_Client_IReportClient_GetStockCardAsync_Inventory_Contracts_ReportFilter_System_Threading_CancellationToken_
+  name: GetStockCardAsync
+  nameWithType: IReportClient.GetStockCardAsync
+  fullName: Inventory.Client.IReportClient.GetStockCardAsync
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Inventory.Contracts.StockCardItem}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Inventory.Contracts.StockCardItem}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IReadOnlyList<StockCardItem>>
+  nameWithType: Task<IReadOnlyList<StockCardItem>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyList<Inventory.Contracts.StockCardItem>>
+  nameWithType.vb: Task(Of IReadOnlyList(Of StockCardItem))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IReadOnlyList(Of Inventory.Contracts.StockCardItem))
+  name.vb: Task(Of IReadOnlyList(Of StockCardItem))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: Inventory.Contracts.StockCardItem
+    name: StockCardItem
+    href: Inventory.Contracts.StockCardItem.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.StockCardItem
+    name: StockCardItem
+    href: Inventory.Contracts.StockCardItem.html
+  - name: )
+  - name: )
+- uid: Inventory.Client.IReportClient.GetMovementsAsync*
+  commentId: Overload:Inventory.Client.IReportClient.GetMovementsAsync
+  href: Inventory.Client.IReportClient.html#Inventory_Client_IReportClient_GetMovementsAsync_Inventory_Contracts_ReportFilter_System_Threading_CancellationToken_
+  name: GetMovementsAsync
+  nameWithType: IReportClient.GetMovementsAsync
+  fullName: Inventory.Client.IReportClient.GetMovementsAsync
+- uid: System.Threading.Tasks.Task{Inventory.Contracts.PagedResult{Inventory.Contracts.StockMovementItem}}
+  commentId: T:System.Threading.Tasks.Task{Inventory.Contracts.PagedResult{Inventory.Contracts.StockMovementItem}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<PagedResult<StockMovementItem>>
+  nameWithType: Task<PagedResult<StockMovementItem>>
+  fullName: System.Threading.Tasks.Task<Inventory.Contracts.PagedResult<Inventory.Contracts.StockMovementItem>>
+  nameWithType.vb: Task(Of PagedResult(Of StockMovementItem))
+  fullName.vb: System.Threading.Tasks.Task(Of Inventory.Contracts.PagedResult(Of Inventory.Contracts.StockMovementItem))
+  name.vb: Task(Of PagedResult(Of StockMovementItem))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Inventory.Contracts.PagedResult`1
+    name: PagedResult
+    href: Inventory.Contracts.PagedResult-1.html
+  - name: <
+  - uid: Inventory.Contracts.StockMovementItem
+    name: StockMovementItem
+    href: Inventory.Contracts.StockMovementItem.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.PagedResult`1
+    name: PagedResult
+    href: Inventory.Contracts.PagedResult-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.StockMovementItem
+    name: StockMovementItem
+    href: Inventory.Contracts.StockMovementItem.html
+  - name: )
+  - name: )
+- uid: Inventory.Client.IReportClient.GetReorderAsync*
+  commentId: Overload:Inventory.Client.IReportClient.GetReorderAsync
+  href: Inventory.Client.IReportClient.html#Inventory_Client_IReportClient_GetReorderAsync_Inventory_Contracts_ReportFilter_System_Threading_CancellationToken_
+  name: GetReorderAsync
+  nameWithType: IReportClient.GetReorderAsync
+  fullName: Inventory.Client.IReportClient.GetReorderAsync
+- uid: System.Threading.Tasks.Task{Inventory.Contracts.PagedResult{Inventory.Contracts.ReorderItem}}
+  commentId: T:System.Threading.Tasks.Task{Inventory.Contracts.PagedResult{Inventory.Contracts.ReorderItem}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<PagedResult<ReorderItem>>
+  nameWithType: Task<PagedResult<ReorderItem>>
+  fullName: System.Threading.Tasks.Task<Inventory.Contracts.PagedResult<Inventory.Contracts.ReorderItem>>
+  nameWithType.vb: Task(Of PagedResult(Of ReorderItem))
+  fullName.vb: System.Threading.Tasks.Task(Of Inventory.Contracts.PagedResult(Of Inventory.Contracts.ReorderItem))
+  name.vb: Task(Of PagedResult(Of ReorderItem))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Inventory.Contracts.PagedResult`1
+    name: PagedResult
+    href: Inventory.Contracts.PagedResult-1.html
+  - name: <
+  - uid: Inventory.Contracts.ReorderItem
+    name: ReorderItem
+    href: Inventory.Contracts.ReorderItem.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.PagedResult`1
+    name: PagedResult
+    href: Inventory.Contracts.PagedResult-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.ReorderItem
+    name: ReorderItem
+    href: Inventory.Contracts.ReorderItem.html
+  - name: )
+  - name: )
+- uid: Inventory.Client.IReportClient.ExportCsvAsync*
+  commentId: Overload:Inventory.Client.IReportClient.ExportCsvAsync
+  href: Inventory.Client.IReportClient.html#Inventory_Client_IReportClient_ExportCsvAsync_System_String_Inventory_Contracts_ReportFilter_System_Threading_CancellationToken_
+  name: ExportCsvAsync
+  nameWithType: IReportClient.ExportCsvAsync
+  fullName: Inventory.Client.IReportClient.ExportCsvAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.Tasks.Task{System.String}
+  commentId: T:System.Threading.Tasks.Task{System.String}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<string>
+  nameWithType: Task<string>
+  fullName: System.Threading.Tasks.Task<string>
+  nameWithType.vb: Task(Of String)
+  fullName.vb: System.Threading.Tasks.Task(Of String)
+  name.vb: Task(Of String)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )

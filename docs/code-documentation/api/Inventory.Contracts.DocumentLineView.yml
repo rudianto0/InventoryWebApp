@@ -1,0 +1,768 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Contracts.DocumentLineView
+  commentId: T:Inventory.Contracts.DocumentLineView
+  id: DocumentLineView
+  parent: Inventory.Contracts
+  children:
+  - Inventory.Contracts.DocumentLineView.CountedQuantity
+  - Inventory.Contracts.DocumentLineView.DetailId
+  - Inventory.Contracts.DocumentLineView.Difference
+  - Inventory.Contracts.DocumentLineView.Notes
+  - Inventory.Contracts.DocumentLineView.ProductId
+  - Inventory.Contracts.DocumentLineView.ProductName
+  - Inventory.Contracts.DocumentLineView.Quantity
+  - Inventory.Contracts.DocumentLineView.Sku
+  - Inventory.Contracts.DocumentLineView.SystemQuantity
+  - Inventory.Contracts.DocumentLineView.UnitCost
+  - Inventory.Contracts.DocumentLineView.UnitName
+  langs:
+  - csharp
+  - vb
+  name: DocumentLineView
+  nameWithType: DocumentLineView
+  fullName: Inventory.Contracts.DocumentLineView
+  type: Class
+  source:
+    remote:
+      path: src/Inventory.Contracts/TransactionDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: DocumentLineView
+    path: src/Inventory.Contracts/TransactionDtos.cs
+    startLine: 95
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public sealed class DocumentLineView
+    content.vb: Public NotInheritable Class DocumentLineView
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Inventory.Contracts.DocumentLineView.DetailId
+  commentId: P:Inventory.Contracts.DocumentLineView.DetailId
+  id: DetailId
+  parent: Inventory.Contracts.DocumentLineView
+  langs:
+  - csharp
+  - vb
+  name: DetailId
+  nameWithType: DocumentLineView.DetailId
+  fullName: Inventory.Contracts.DocumentLineView.DetailId
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/TransactionDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: DetailId
+    path: src/Inventory.Contracts/TransactionDtos.cs
+    startLine: 97
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public Guid DetailId { get; init; }
+    parameters: []
+    return:
+      type: System.Guid
+    content.vb: Public Property DetailId As Guid
+  overload: Inventory.Contracts.DocumentLineView.DetailId*
+- uid: Inventory.Contracts.DocumentLineView.ProductId
+  commentId: P:Inventory.Contracts.DocumentLineView.ProductId
+  id: ProductId
+  parent: Inventory.Contracts.DocumentLineView
+  langs:
+  - csharp
+  - vb
+  name: ProductId
+  nameWithType: DocumentLineView.ProductId
+  fullName: Inventory.Contracts.DocumentLineView.ProductId
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/TransactionDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ProductId
+    path: src/Inventory.Contracts/TransactionDtos.cs
+    startLine: 98
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public Guid ProductId { get; init; }
+    parameters: []
+    return:
+      type: System.Guid
+    content.vb: Public Property ProductId As Guid
+  overload: Inventory.Contracts.DocumentLineView.ProductId*
+- uid: Inventory.Contracts.DocumentLineView.Sku
+  commentId: P:Inventory.Contracts.DocumentLineView.Sku
+  id: Sku
+  parent: Inventory.Contracts.DocumentLineView
+  langs:
+  - csharp
+  - vb
+  name: Sku
+  nameWithType: DocumentLineView.Sku
+  fullName: Inventory.Contracts.DocumentLineView.Sku
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/TransactionDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Sku
+    path: src/Inventory.Contracts/TransactionDtos.cs
+    startLine: 99
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public string Sku { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Sku As String
+  overload: Inventory.Contracts.DocumentLineView.Sku*
+- uid: Inventory.Contracts.DocumentLineView.ProductName
+  commentId: P:Inventory.Contracts.DocumentLineView.ProductName
+  id: ProductName
+  parent: Inventory.Contracts.DocumentLineView
+  langs:
+  - csharp
+  - vb
+  name: ProductName
+  nameWithType: DocumentLineView.ProductName
+  fullName: Inventory.Contracts.DocumentLineView.ProductName
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/TransactionDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ProductName
+    path: src/Inventory.Contracts/TransactionDtos.cs
+    startLine: 100
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public string ProductName { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ProductName As String
+  overload: Inventory.Contracts.DocumentLineView.ProductName*
+- uid: Inventory.Contracts.DocumentLineView.UnitName
+  commentId: P:Inventory.Contracts.DocumentLineView.UnitName
+  id: UnitName
+  parent: Inventory.Contracts.DocumentLineView
+  langs:
+  - csharp
+  - vb
+  name: UnitName
+  nameWithType: DocumentLineView.UnitName
+  fullName: Inventory.Contracts.DocumentLineView.UnitName
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/TransactionDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: UnitName
+    path: src/Inventory.Contracts/TransactionDtos.cs
+    startLine: 101
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public string UnitName { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property UnitName As String
+  overload: Inventory.Contracts.DocumentLineView.UnitName*
+- uid: Inventory.Contracts.DocumentLineView.Quantity
+  commentId: P:Inventory.Contracts.DocumentLineView.Quantity
+  id: Quantity
+  parent: Inventory.Contracts.DocumentLineView
+  langs:
+  - csharp
+  - vb
+  name: Quantity
+  nameWithType: DocumentLineView.Quantity
+  fullName: Inventory.Contracts.DocumentLineView.Quantity
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/TransactionDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Quantity
+    path: src/Inventory.Contracts/TransactionDtos.cs
+    startLine: 102
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public int Quantity { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Quantity As Integer
+  overload: Inventory.Contracts.DocumentLineView.Quantity*
+- uid: Inventory.Contracts.DocumentLineView.UnitCost
+  commentId: P:Inventory.Contracts.DocumentLineView.UnitCost
+  id: UnitCost
+  parent: Inventory.Contracts.DocumentLineView
+  langs:
+  - csharp
+  - vb
+  name: UnitCost
+  nameWithType: DocumentLineView.UnitCost
+  fullName: Inventory.Contracts.DocumentLineView.UnitCost
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/TransactionDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: UnitCost
+    path: src/Inventory.Contracts/TransactionDtos.cs
+    startLine: 103
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public decimal? UnitCost { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Decimal}
+    content.vb: Public Property UnitCost As Decimal?
+  overload: Inventory.Contracts.DocumentLineView.UnitCost*
+- uid: Inventory.Contracts.DocumentLineView.SystemQuantity
+  commentId: P:Inventory.Contracts.DocumentLineView.SystemQuantity
+  id: SystemQuantity
+  parent: Inventory.Contracts.DocumentLineView
+  langs:
+  - csharp
+  - vb
+  name: SystemQuantity
+  nameWithType: DocumentLineView.SystemQuantity
+  fullName: Inventory.Contracts.DocumentLineView.SystemQuantity
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/TransactionDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: SystemQuantity
+    path: src/Inventory.Contracts/TransactionDtos.cs
+    startLine: 104
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public int? SystemQuantity { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property SystemQuantity As Integer?
+  overload: Inventory.Contracts.DocumentLineView.SystemQuantity*
+- uid: Inventory.Contracts.DocumentLineView.CountedQuantity
+  commentId: P:Inventory.Contracts.DocumentLineView.CountedQuantity
+  id: CountedQuantity
+  parent: Inventory.Contracts.DocumentLineView
+  langs:
+  - csharp
+  - vb
+  name: CountedQuantity
+  nameWithType: DocumentLineView.CountedQuantity
+  fullName: Inventory.Contracts.DocumentLineView.CountedQuantity
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/TransactionDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: CountedQuantity
+    path: src/Inventory.Contracts/TransactionDtos.cs
+    startLine: 105
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public int? CountedQuantity { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property CountedQuantity As Integer?
+  overload: Inventory.Contracts.DocumentLineView.CountedQuantity*
+- uid: Inventory.Contracts.DocumentLineView.Difference
+  commentId: P:Inventory.Contracts.DocumentLineView.Difference
+  id: Difference
+  parent: Inventory.Contracts.DocumentLineView
+  langs:
+  - csharp
+  - vb
+  name: Difference
+  nameWithType: DocumentLineView.Difference
+  fullName: Inventory.Contracts.DocumentLineView.Difference
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/TransactionDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Difference
+    path: src/Inventory.Contracts/TransactionDtos.cs
+    startLine: 106
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public int? Difference { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property Difference As Integer?
+  overload: Inventory.Contracts.DocumentLineView.Difference*
+- uid: Inventory.Contracts.DocumentLineView.Notes
+  commentId: P:Inventory.Contracts.DocumentLineView.Notes
+  id: Notes
+  parent: Inventory.Contracts.DocumentLineView
+  langs:
+  - csharp
+  - vb
+  name: Notes
+  nameWithType: DocumentLineView.Notes
+  fullName: Inventory.Contracts.DocumentLineView.Notes
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/TransactionDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Notes
+    path: src/Inventory.Contracts/TransactionDtos.cs
+    startLine: 107
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public string? Notes { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Notes As String
+  overload: Inventory.Contracts.DocumentLineView.Notes*
+references:
+- uid: Inventory.Contracts
+  commentId: N:Inventory.Contracts
+  name: Inventory.Contracts
+  nameWithType: Inventory.Contracts
+  fullName: Inventory.Contracts
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Inventory.Contracts.DocumentLineView.DetailId*
+  commentId: Overload:Inventory.Contracts.DocumentLineView.DetailId
+  href: Inventory.Contracts.DocumentLineView.html#Inventory_Contracts_DocumentLineView_DetailId
+  name: DetailId
+  nameWithType: DocumentLineView.DetailId
+  fullName: Inventory.Contracts.DocumentLineView.DetailId
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: Inventory.Contracts.DocumentLineView.ProductId*
+  commentId: Overload:Inventory.Contracts.DocumentLineView.ProductId
+  href: Inventory.Contracts.DocumentLineView.html#Inventory_Contracts_DocumentLineView_ProductId
+  name: ProductId
+  nameWithType: DocumentLineView.ProductId
+  fullName: Inventory.Contracts.DocumentLineView.ProductId
+- uid: Inventory.Contracts.DocumentLineView.Sku*
+  commentId: Overload:Inventory.Contracts.DocumentLineView.Sku
+  href: Inventory.Contracts.DocumentLineView.html#Inventory_Contracts_DocumentLineView_Sku
+  name: Sku
+  nameWithType: DocumentLineView.Sku
+  fullName: Inventory.Contracts.DocumentLineView.Sku
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Inventory.Contracts.DocumentLineView.ProductName*
+  commentId: Overload:Inventory.Contracts.DocumentLineView.ProductName
+  href: Inventory.Contracts.DocumentLineView.html#Inventory_Contracts_DocumentLineView_ProductName
+  name: ProductName
+  nameWithType: DocumentLineView.ProductName
+  fullName: Inventory.Contracts.DocumentLineView.ProductName
+- uid: Inventory.Contracts.DocumentLineView.UnitName*
+  commentId: Overload:Inventory.Contracts.DocumentLineView.UnitName
+  href: Inventory.Contracts.DocumentLineView.html#Inventory_Contracts_DocumentLineView_UnitName
+  name: UnitName
+  nameWithType: DocumentLineView.UnitName
+  fullName: Inventory.Contracts.DocumentLineView.UnitName
+- uid: Inventory.Contracts.DocumentLineView.Quantity*
+  commentId: Overload:Inventory.Contracts.DocumentLineView.Quantity
+  href: Inventory.Contracts.DocumentLineView.html#Inventory_Contracts_DocumentLineView_Quantity
+  name: Quantity
+  nameWithType: DocumentLineView.Quantity
+  fullName: Inventory.Contracts.DocumentLineView.Quantity
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Inventory.Contracts.DocumentLineView.UnitCost*
+  commentId: Overload:Inventory.Contracts.DocumentLineView.UnitCost
+  href: Inventory.Contracts.DocumentLineView.html#Inventory_Contracts_DocumentLineView_UnitCost
+  name: UnitCost
+  nameWithType: DocumentLineView.UnitCost
+  fullName: Inventory.Contracts.DocumentLineView.UnitCost
+- uid: System.Nullable{System.Decimal}
+  commentId: T:System.Nullable{System.Decimal}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.decimal
+  name: decimal?
+  nameWithType: decimal?
+  fullName: decimal?
+  nameWithType.vb: Decimal?
+  fullName.vb: Decimal?
+  name.vb: Decimal?
+  spec.csharp:
+  - uid: System.Decimal
+    name: decimal
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.decimal
+  - name: '?'
+  spec.vb:
+  - uid: System.Decimal
+    name: Decimal
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.decimal
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Inventory.Contracts.DocumentLineView.SystemQuantity*
+  commentId: Overload:Inventory.Contracts.DocumentLineView.SystemQuantity
+  href: Inventory.Contracts.DocumentLineView.html#Inventory_Contracts_DocumentLineView_SystemQuantity
+  name: SystemQuantity
+  nameWithType: DocumentLineView.SystemQuantity
+  fullName: Inventory.Contracts.DocumentLineView.SystemQuantity
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: Inventory.Contracts.DocumentLineView.CountedQuantity*
+  commentId: Overload:Inventory.Contracts.DocumentLineView.CountedQuantity
+  href: Inventory.Contracts.DocumentLineView.html#Inventory_Contracts_DocumentLineView_CountedQuantity
+  name: CountedQuantity
+  nameWithType: DocumentLineView.CountedQuantity
+  fullName: Inventory.Contracts.DocumentLineView.CountedQuantity
+- uid: Inventory.Contracts.DocumentLineView.Difference*
+  commentId: Overload:Inventory.Contracts.DocumentLineView.Difference
+  href: Inventory.Contracts.DocumentLineView.html#Inventory_Contracts_DocumentLineView_Difference
+  name: Difference
+  nameWithType: DocumentLineView.Difference
+  fullName: Inventory.Contracts.DocumentLineView.Difference
+- uid: Inventory.Contracts.DocumentLineView.Notes*
+  commentId: Overload:Inventory.Contracts.DocumentLineView.Notes
+  href: Inventory.Contracts.DocumentLineView.html#Inventory_Contracts_DocumentLineView_Notes
+  name: Notes
+  nameWithType: DocumentLineView.Notes
+  fullName: Inventory.Contracts.DocumentLineView.Notes

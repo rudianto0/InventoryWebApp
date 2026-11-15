@@ -1,0 +1,190 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Domain.Entities
+  commentId: N:Inventory.Domain.Entities
+  id: Inventory.Domain.Entities
+  children:
+  - Inventory.Domain.Entities.AuditLog
+  - Inventory.Domain.Entities.Category
+  - Inventory.Domain.Entities.DocumentSequence
+  - Inventory.Domain.Entities.IApprovable
+  - Inventory.Domain.Entities.Location
+  - Inventory.Domain.Entities.Product
+  - Inventory.Domain.Entities.Stock
+  - Inventory.Domain.Entities.StockAdjustmentDetail
+  - Inventory.Domain.Entities.StockAdjustmentHeader
+  - Inventory.Domain.Entities.StockInDetail
+  - Inventory.Domain.Entities.StockInHeader
+  - Inventory.Domain.Entities.StockMovement
+  - Inventory.Domain.Entities.StockOpnameDetail
+  - Inventory.Domain.Entities.StockOpnameHeader
+  - Inventory.Domain.Entities.StockOutDetail
+  - Inventory.Domain.Entities.StockOutHeader
+  - Inventory.Domain.Entities.StockTransferDetail
+  - Inventory.Domain.Entities.StockTransferHeader
+  - Inventory.Domain.Entities.Supplier
+  - Inventory.Domain.Entities.Unit
+  langs:
+  - csharp
+  - vb
+  name: Inventory.Domain.Entities
+  nameWithType: Inventory.Domain.Entities
+  fullName: Inventory.Domain.Entities
+  type: Namespace
+  assemblies:
+  - Inventory.Domain
+references:
+- uid: Inventory.Domain.Entities.Category
+  commentId: T:Inventory.Domain.Entities.Category
+  parent: Inventory.Domain.Entities
+  href: Inventory.Domain.Entities.Category.html
+  name: Category
+  nameWithType: Category
+  fullName: Inventory.Domain.Entities.Category
+- uid: Inventory.Domain.Entities.Unit
+  commentId: T:Inventory.Domain.Entities.Unit
+  parent: Inventory.Domain.Entities
+  href: Inventory.Domain.Entities.Unit.html
+  name: Unit
+  nameWithType: Unit
+  fullName: Inventory.Domain.Entities.Unit
+- uid: Inventory.Domain.Entities.Product
+  commentId: T:Inventory.Domain.Entities.Product
+  parent: Inventory.Domain.Entities
+  href: Inventory.Domain.Entities.Product.html
+  name: Product
+  nameWithType: Product
+  fullName: Inventory.Domain.Entities.Product
+- uid: Inventory.Domain.Entities.Supplier
+  commentId: T:Inventory.Domain.Entities.Supplier
+  parent: Inventory.Domain.Entities
+  href: Inventory.Domain.Entities.Supplier.html
+  name: Supplier
+  nameWithType: Supplier
+  fullName: Inventory.Domain.Entities.Supplier
+- uid: Inventory.Domain.Entities.IApprovable
+  commentId: T:Inventory.Domain.Entities.IApprovable
+  parent: Inventory.Domain.Entities
+  href: Inventory.Domain.Entities.IApprovable.html
+  name: IApprovable
+  nameWithType: IApprovable
+  fullName: Inventory.Domain.Entities.IApprovable
+- uid: Inventory.Domain.Entities.Stock
+  commentId: T:Inventory.Domain.Entities.Stock
+  href: Inventory.Domain.Entities.Stock.html
+  name: Stock
+  nameWithType: Stock
+  fullName: Inventory.Domain.Entities.Stock
+- uid: Inventory.Domain.Entities.StockMovement
+  commentId: T:Inventory.Domain.Entities.StockMovement
+  href: Inventory.Domain.Entities.StockMovement.html
+  name: StockMovement
+  nameWithType: StockMovement
+  fullName: Inventory.Domain.Entities.StockMovement
+- uid: Inventory.Domain.Entities.Location
+  commentId: T:Inventory.Domain.Entities.Location
+  parent: Inventory.Domain.Entities
+  href: Inventory.Domain.Entities.Location.html
+  name: Location
+  nameWithType: Location
+  fullName: Inventory.Domain.Entities.Location
+- uid: Inventory.Domain.Entities.DocumentSequence
+  commentId: T:Inventory.Domain.Entities.DocumentSequence
+  href: Inventory.Domain.Entities.DocumentSequence.html
+  name: DocumentSequence
+  nameWithType: DocumentSequence
+  fullName: Inventory.Domain.Entities.DocumentSequence
+- uid: Inventory.Domain.Entities.AuditLog
+  commentId: T:Inventory.Domain.Entities.AuditLog
+  href: Inventory.Domain.Entities.AuditLog.html
+  name: AuditLog
+  nameWithType: AuditLog
+  fullName: Inventory.Domain.Entities.AuditLog
+- uid: Inventory.Domain.Entities.StockInHeader
+  commentId: T:Inventory.Domain.Entities.StockInHeader
+  parent: Inventory.Domain.Entities
+  href: Inventory.Domain.Entities.StockInHeader.html
+  name: StockInHeader
+  nameWithType: StockInHeader
+  fullName: Inventory.Domain.Entities.StockInHeader
+- uid: Inventory.Domain.Entities.StockInDetail
+  commentId: T:Inventory.Domain.Entities.StockInDetail
+  href: Inventory.Domain.Entities.StockInDetail.html
+  name: StockInDetail
+  nameWithType: StockInDetail
+  fullName: Inventory.Domain.Entities.StockInDetail
+- uid: Inventory.Domain.Entities.StockOutHeader
+  commentId: T:Inventory.Domain.Entities.StockOutHeader
+  parent: Inventory.Domain.Entities
+  href: Inventory.Domain.Entities.StockOutHeader.html
+  name: StockOutHeader
+  nameWithType: StockOutHeader
+  fullName: Inventory.Domain.Entities.StockOutHeader
+- uid: Inventory.Domain.Entities.StockOutDetail
+  commentId: T:Inventory.Domain.Entities.StockOutDetail
+  href: Inventory.Domain.Entities.StockOutDetail.html
+  name: StockOutDetail
+  nameWithType: StockOutDetail
+  fullName: Inventory.Domain.Entities.StockOutDetail
+- uid: Inventory.Domain.Entities.StockTransferHeader
+  commentId: T:Inventory.Domain.Entities.StockTransferHeader
+  parent: Inventory.Domain.Entities
+  href: Inventory.Domain.Entities.StockTransferHeader.html
+  name: StockTransferHeader
+  nameWithType: StockTransferHeader
+  fullName: Inventory.Domain.Entities.StockTransferHeader
+- uid: Inventory.Domain.Entities.StockTransferDetail
+  commentId: T:Inventory.Domain.Entities.StockTransferDetail
+  href: Inventory.Domain.Entities.StockTransferDetail.html
+  name: StockTransferDetail
+  nameWithType: StockTransferDetail
+  fullName: Inventory.Domain.Entities.StockTransferDetail
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader
+  commentId: T:Inventory.Domain.Entities.StockAdjustmentHeader
+  parent: Inventory.Domain.Entities
+  href: Inventory.Domain.Entities.StockAdjustmentHeader.html
+  name: StockAdjustmentHeader
+  nameWithType: StockAdjustmentHeader
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader
+- uid: Inventory.Domain.Entities.StockAdjustmentDetail
+  commentId: T:Inventory.Domain.Entities.StockAdjustmentDetail
+  href: Inventory.Domain.Entities.StockAdjustmentDetail.html
+  name: StockAdjustmentDetail
+  nameWithType: StockAdjustmentDetail
+  fullName: Inventory.Domain.Entities.StockAdjustmentDetail
+- uid: Inventory.Domain.Entities.StockOpnameHeader
+  commentId: T:Inventory.Domain.Entities.StockOpnameHeader
+  parent: Inventory.Domain.Entities
+  href: Inventory.Domain.Entities.StockOpnameHeader.html
+  name: StockOpnameHeader
+  nameWithType: StockOpnameHeader
+  fullName: Inventory.Domain.Entities.StockOpnameHeader
+- uid: Inventory.Domain.Entities.StockOpnameDetail
+  commentId: T:Inventory.Domain.Entities.StockOpnameDetail
+  href: Inventory.Domain.Entities.StockOpnameDetail.html
+  name: StockOpnameDetail
+  nameWithType: StockOpnameDetail
+  fullName: Inventory.Domain.Entities.StockOpnameDetail
+- uid: Inventory.Domain.Entities
+  commentId: N:Inventory.Domain.Entities
+  name: Inventory.Domain.Entities
+  nameWithType: Inventory.Domain.Entities
+  fullName: Inventory.Domain.Entities
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Domain
+    name: Domain
+  - name: .
+  - uid: Inventory.Domain.Entities
+    name: Entities
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Domain
+    name: Domain
+  - name: .
+  - uid: Inventory.Domain.Entities
+    name: Entities

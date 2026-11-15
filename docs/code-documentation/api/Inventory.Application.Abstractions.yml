@@ -1,0 +1,79 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Application.Abstractions
+  commentId: N:Inventory.Application.Abstractions
+  id: Inventory.Application.Abstractions
+  children:
+  - Inventory.Application.Abstractions.IAppDbContext
+  - Inventory.Application.Abstractions.ICurrentUserService
+  - Inventory.Application.Abstractions.IDocumentNumberService
+  - Inventory.Application.Abstractions.IUserDirectory
+  - Inventory.Application.Abstractions.IUserService
+  langs:
+  - csharp
+  - vb
+  name: Inventory.Application.Abstractions
+  nameWithType: Inventory.Application.Abstractions
+  fullName: Inventory.Application.Abstractions
+  type: Namespace
+  assemblies:
+  - Inventory.Application
+references:
+- uid: Inventory.Application.Abstractions.IAppDbContext
+  commentId: T:Inventory.Application.Abstractions.IAppDbContext
+  parent: Inventory.Application.Abstractions
+  href: Inventory.Application.Abstractions.IAppDbContext.html
+  name: IAppDbContext
+  nameWithType: IAppDbContext
+  fullName: Inventory.Application.Abstractions.IAppDbContext
+- uid: Inventory.Application.Abstractions.IUserService
+  commentId: T:Inventory.Application.Abstractions.IUserService
+  parent: Inventory.Application.Abstractions
+  href: Inventory.Application.Abstractions.IUserService.html
+  name: IUserService
+  nameWithType: IUserService
+  fullName: Inventory.Application.Abstractions.IUserService
+- uid: Inventory.Application.Abstractions.ICurrentUserService
+  commentId: T:Inventory.Application.Abstractions.ICurrentUserService
+  parent: Inventory.Application.Abstractions
+  href: Inventory.Application.Abstractions.ICurrentUserService.html
+  name: ICurrentUserService
+  nameWithType: ICurrentUserService
+  fullName: Inventory.Application.Abstractions.ICurrentUserService
+- uid: Inventory.Application.Abstractions.IUserDirectory
+  commentId: T:Inventory.Application.Abstractions.IUserDirectory
+  parent: Inventory.Application.Abstractions
+  href: Inventory.Application.Abstractions.IUserDirectory.html
+  name: IUserDirectory
+  nameWithType: IUserDirectory
+  fullName: Inventory.Application.Abstractions.IUserDirectory
+- uid: Inventory.Application.Abstractions.IDocumentNumberService
+  commentId: T:Inventory.Application.Abstractions.IDocumentNumberService
+  parent: Inventory.Application.Abstractions
+  href: Inventory.Application.Abstractions.IDocumentNumberService.html
+  name: IDocumentNumberService
+  nameWithType: IDocumentNumberService
+  fullName: Inventory.Application.Abstractions.IDocumentNumberService
+- uid: Inventory.Application.Abstractions
+  commentId: N:Inventory.Application.Abstractions
+  name: Inventory.Application.Abstractions
+  nameWithType: Inventory.Application.Abstractions
+  fullName: Inventory.Application.Abstractions
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Application
+    name: Application
+  - name: .
+  - uid: Inventory.Application.Abstractions
+    name: Abstractions
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Application
+    name: Application
+  - name: .
+  - uid: Inventory.Application.Abstractions
+    name: Abstractions

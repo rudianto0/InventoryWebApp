@@ -1,0 +1,55 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Domain.Common
+  commentId: N:Inventory.Domain.Common
+  id: Inventory.Domain.Common
+  children:
+  - Inventory.Domain.Common.IAuditableEntity
+  - Inventory.Domain.Common.ISoftDeletable
+  langs:
+  - csharp
+  - vb
+  name: Inventory.Domain.Common
+  nameWithType: Inventory.Domain.Common
+  fullName: Inventory.Domain.Common
+  type: Namespace
+  assemblies:
+  - Inventory.Domain
+references:
+- uid: Inventory.Domain.Common.IAuditableEntity
+  commentId: T:Inventory.Domain.Common.IAuditableEntity
+  parent: Inventory.Domain.Common
+  href: Inventory.Domain.Common.IAuditableEntity.html
+  name: IAuditableEntity
+  nameWithType: IAuditableEntity
+  fullName: Inventory.Domain.Common.IAuditableEntity
+- uid: Inventory.Domain.Common.ISoftDeletable
+  commentId: T:Inventory.Domain.Common.ISoftDeletable
+  parent: Inventory.Domain.Common
+  href: Inventory.Domain.Common.ISoftDeletable.html
+  name: ISoftDeletable
+  nameWithType: ISoftDeletable
+  fullName: Inventory.Domain.Common.ISoftDeletable
+- uid: Inventory.Domain.Common
+  commentId: N:Inventory.Domain.Common
+  name: Inventory.Domain.Common
+  nameWithType: Inventory.Domain.Common
+  fullName: Inventory.Domain.Common
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Domain
+    name: Domain
+  - name: .
+  - uid: Inventory.Domain.Common
+    name: Common
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Domain
+    name: Domain
+  - name: .
+  - uid: Inventory.Domain.Common
+    name: Common

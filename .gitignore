@@ -33,3 +33,6 @@ _ReSharper*/
 ## OS
 .DS_Store
 Thumbs.db
+
+## Generated API docs (DocFX static site)
+docs/code-documentation/api/_site/

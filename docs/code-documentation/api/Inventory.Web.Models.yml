@@ -1,0 +1,201 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Web.Models
+  commentId: N:Inventory.Web.Models
+  id: Inventory.Web.Models
+  children:
+  - Inventory.Web.Models.AdjustmentLineRow
+  - Inventory.Web.Models.CategoryFormModel
+  - Inventory.Web.Models.ChangePasswordModel
+  - Inventory.Web.Models.ErrorViewModel
+  - Inventory.Web.Models.LocationFormModel
+  - Inventory.Web.Models.LoginModel
+  - Inventory.Web.Models.OpnameLineRow
+  - Inventory.Web.Models.PagedReportModel`1
+  - Inventory.Web.Models.ProductFormModel
+  - Inventory.Web.Models.ReportsIndexModel
+  - Inventory.Web.Models.ResetPasswordModel
+  - Inventory.Web.Models.StockCardPageModel
+  - Inventory.Web.Models.SupplierFormModel
+  - Inventory.Web.Models.TransactionDetailsModel
+  - Inventory.Web.Models.TransactionFormModel
+  - Inventory.Web.Models.TransactionIndexModel
+  - Inventory.Web.Models.TransactionLineRow
+  - Inventory.Web.Models.UnitFormModel
+  - Inventory.Web.Models.UserFormModel
+  langs:
+  - csharp
+  - vb
+  name: Inventory.Web.Models
+  nameWithType: Inventory.Web.Models
+  fullName: Inventory.Web.Models
+  type: Namespace
+  assemblies:
+  - Inventory.Web
+references:
+- uid: Inventory.Web.Models.ErrorViewModel
+  commentId: T:Inventory.Web.Models.ErrorViewModel
+  href: Inventory.Web.Models.ErrorViewModel.html
+  name: ErrorViewModel
+  nameWithType: ErrorViewModel
+  fullName: Inventory.Web.Models.ErrorViewModel
+- uid: Inventory.Web.Models.CategoryFormModel
+  commentId: T:Inventory.Web.Models.CategoryFormModel
+  parent: Inventory.Web.Models
+  href: Inventory.Web.Models.CategoryFormModel.html
+  name: CategoryFormModel
+  nameWithType: CategoryFormModel
+  fullName: Inventory.Web.Models.CategoryFormModel
+- uid: Inventory.Web.Models.UnitFormModel
+  commentId: T:Inventory.Web.Models.UnitFormModel
+  parent: Inventory.Web.Models
+  href: Inventory.Web.Models.UnitFormModel.html
+  name: UnitFormModel
+  nameWithType: UnitFormModel
+  fullName: Inventory.Web.Models.UnitFormModel
+- uid: Inventory.Web.Models.ProductFormModel
+  commentId: T:Inventory.Web.Models.ProductFormModel
+  parent: Inventory.Web.Models
+  href: Inventory.Web.Models.ProductFormModel.html
+  name: ProductFormModel
+  nameWithType: ProductFormModel
+  fullName: Inventory.Web.Models.ProductFormModel
+- uid: Inventory.Web.Models.SupplierFormModel
+  commentId: T:Inventory.Web.Models.SupplierFormModel
+  parent: Inventory.Web.Models
+  href: Inventory.Web.Models.SupplierFormModel.html
+  name: SupplierFormModel
+  nameWithType: SupplierFormModel
+  fullName: Inventory.Web.Models.SupplierFormModel
+- uid: Inventory.Web.Models.LocationFormModel
+  commentId: T:Inventory.Web.Models.LocationFormModel
+  parent: Inventory.Web.Models
+  href: Inventory.Web.Models.LocationFormModel.html
+  name: LocationFormModel
+  nameWithType: LocationFormModel
+  fullName: Inventory.Web.Models.LocationFormModel
+- uid: Inventory.Web.Models.UserFormModel
+  commentId: T:Inventory.Web.Models.UserFormModel
+  parent: Inventory.Web.Models
+  href: Inventory.Web.Models.UserFormModel.html
+  name: UserFormModel
+  nameWithType: UserFormModel
+  fullName: Inventory.Web.Models.UserFormModel
+- uid: Inventory.Web.Models.ResetPasswordModel
+  commentId: T:Inventory.Web.Models.ResetPasswordModel
+  parent: Inventory.Web.Models
+  href: Inventory.Web.Models.ResetPasswordModel.html
+  name: ResetPasswordModel
+  nameWithType: ResetPasswordModel
+  fullName: Inventory.Web.Models.ResetPasswordModel
+- uid: Inventory.Web.Models.LoginModel
+  commentId: T:Inventory.Web.Models.LoginModel
+  parent: Inventory.Web.Models
+  href: Inventory.Web.Models.LoginModel.html
+  name: LoginModel
+  nameWithType: LoginModel
+  fullName: Inventory.Web.Models.LoginModel
+- uid: Inventory.Web.Models.ChangePasswordModel
+  commentId: T:Inventory.Web.Models.ChangePasswordModel
+  parent: Inventory.Web.Models
+  href: Inventory.Web.Models.ChangePasswordModel.html
+  name: ChangePasswordModel
+  nameWithType: ChangePasswordModel
+  fullName: Inventory.Web.Models.ChangePasswordModel
+- uid: Inventory.Web.Models.TransactionLineRow
+  commentId: T:Inventory.Web.Models.TransactionLineRow
+  href: Inventory.Web.Models.TransactionLineRow.html
+  name: TransactionLineRow
+  nameWithType: TransactionLineRow
+  fullName: Inventory.Web.Models.TransactionLineRow
+- uid: Inventory.Web.Models.AdjustmentLineRow
+  commentId: T:Inventory.Web.Models.AdjustmentLineRow
+  href: Inventory.Web.Models.AdjustmentLineRow.html
+  name: AdjustmentLineRow
+  nameWithType: AdjustmentLineRow
+  fullName: Inventory.Web.Models.AdjustmentLineRow
+- uid: Inventory.Web.Models.OpnameLineRow
+  commentId: T:Inventory.Web.Models.OpnameLineRow
+  href: Inventory.Web.Models.OpnameLineRow.html
+  name: OpnameLineRow
+  nameWithType: OpnameLineRow
+  fullName: Inventory.Web.Models.OpnameLineRow
+- uid: Inventory.Web.Models.TransactionFormModel
+  commentId: T:Inventory.Web.Models.TransactionFormModel
+  parent: Inventory.Web.Models
+  href: Inventory.Web.Models.TransactionFormModel.html
+  name: TransactionFormModel
+  nameWithType: TransactionFormModel
+  fullName: Inventory.Web.Models.TransactionFormModel
+- uid: Inventory.Web.Models.TransactionIndexModel
+  commentId: T:Inventory.Web.Models.TransactionIndexModel
+  href: Inventory.Web.Models.TransactionIndexModel.html
+  name: TransactionIndexModel
+  nameWithType: TransactionIndexModel
+  fullName: Inventory.Web.Models.TransactionIndexModel
+- uid: Inventory.Web.Models.TransactionDetailsModel
+  commentId: T:Inventory.Web.Models.TransactionDetailsModel
+  href: Inventory.Web.Models.TransactionDetailsModel.html
+  name: TransactionDetailsModel
+  nameWithType: TransactionDetailsModel
+  fullName: Inventory.Web.Models.TransactionDetailsModel
+- uid: Inventory.Web.Models.PagedReportModel`1
+  commentId: T:Inventory.Web.Models.PagedReportModel`1
+  href: Inventory.Web.Models.PagedReportModel-1.html
+  name: PagedReportModel<T>
+  nameWithType: PagedReportModel<T>
+  fullName: Inventory.Web.Models.PagedReportModel<T>
+  nameWithType.vb: PagedReportModel(Of T)
+  fullName.vb: Inventory.Web.Models.PagedReportModel(Of T)
+  name.vb: PagedReportModel(Of T)
+  spec.csharp:
+  - uid: Inventory.Web.Models.PagedReportModel`1
+    name: PagedReportModel
+    href: Inventory.Web.Models.PagedReportModel-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: Inventory.Web.Models.PagedReportModel`1
+    name: PagedReportModel
+    href: Inventory.Web.Models.PagedReportModel-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Inventory.Web.Models.ReportsIndexModel
+  commentId: T:Inventory.Web.Models.ReportsIndexModel
+  href: Inventory.Web.Models.ReportsIndexModel.html
+  name: ReportsIndexModel
+  nameWithType: ReportsIndexModel
+  fullName: Inventory.Web.Models.ReportsIndexModel
+- uid: Inventory.Web.Models.StockCardPageModel
+  commentId: T:Inventory.Web.Models.StockCardPageModel
+  href: Inventory.Web.Models.StockCardPageModel.html
+  name: StockCardPageModel
+  nameWithType: StockCardPageModel
+  fullName: Inventory.Web.Models.StockCardPageModel
+- uid: Inventory.Web.Models
+  commentId: N:Inventory.Web.Models
+  name: Inventory.Web.Models
+  nameWithType: Inventory.Web.Models
+  fullName: Inventory.Web.Models
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Web
+    name: Web
+  - name: .
+  - uid: Inventory.Web.Models
+    name: Models
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Web
+    name: Web
+  - name: .
+  - uid: Inventory.Web.Models
+    name: Models

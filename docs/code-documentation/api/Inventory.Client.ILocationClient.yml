@@ -1,0 +1,692 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Client.ILocationClient
+  commentId: T:Inventory.Client.ILocationClient
+  id: ILocationClient
+  parent: Inventory.Client
+  children:
+  - Inventory.Client.ILocationClient.CreateAsync(Inventory.Contracts.LocationInput,System.Threading.CancellationToken)
+  - Inventory.Client.ILocationClient.DeactivateAsync(System.Guid,System.Threading.CancellationToken)
+  - Inventory.Client.ILocationClient.DeleteAsync(System.Guid,System.Threading.CancellationToken)
+  - Inventory.Client.ILocationClient.GetAsync(System.Guid,System.Threading.CancellationToken)
+  - Inventory.Client.ILocationClient.GetOptionsAsync(System.Boolean,System.Threading.CancellationToken)
+  - Inventory.Client.ILocationClient.ListAsync(System.Nullable{Inventory.Contracts.Enums.LocationType},System.Nullable{System.Boolean},System.Threading.CancellationToken)
+  - Inventory.Client.ILocationClient.UpdateAsync(System.Guid,Inventory.Contracts.LocationInput,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: ILocationClient
+  nameWithType: ILocationClient
+  fullName: Inventory.Client.ILocationClient
+  type: Interface
+  source:
+    remote:
+      path: src/Inventory.Client/IInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ILocationClient
+    path: src/Inventory.Client/IInventoryClients.cs
+    startLine: 40
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  syntax:
+    content: public interface ILocationClient
+    content.vb: Public Interface ILocationClient
+  derivedClasses:
+  - Inventory.Client.InProcessLocationClient
+- uid: Inventory.Client.ILocationClient.ListAsync(System.Nullable{Inventory.Contracts.Enums.LocationType},System.Nullable{System.Boolean},System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.ILocationClient.ListAsync(System.Nullable{Inventory.Contracts.Enums.LocationType},System.Nullable{System.Boolean},System.Threading.CancellationToken)
+  id: ListAsync(System.Nullable{Inventory.Contracts.Enums.LocationType},System.Nullable{System.Boolean},System.Threading.CancellationToken)
+  parent: Inventory.Client.ILocationClient
+  langs:
+  - csharp
+  - vb
+  name: ListAsync(LocationType?, bool?, CancellationToken)
+  nameWithType: ILocationClient.ListAsync(LocationType?, bool?, CancellationToken)
+  fullName: Inventory.Client.ILocationClient.ListAsync(Inventory.Contracts.Enums.LocationType?, bool?, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/IInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ListAsync
+    path: src/Inventory.Client/IInventoryClients.cs
+    startLine: 42
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  syntax:
+    content: Task<IReadOnlyList<LocationResponse>> ListAsync(LocationType? type = null, bool? activeOnly = null, CancellationToken ct = default)
+    parameters:
+    - id: type
+      type: System.Nullable{Inventory.Contracts.Enums.LocationType}
+    - id: activeOnly
+      type: System.Nullable{System.Boolean}
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Inventory.Contracts.LocationResponse}}
+    content.vb: Function ListAsync(type As LocationType? = Nothing, activeOnly As Boolean? = Nothing, ct As CancellationToken = Nothing) As Task(Of IReadOnlyList(Of LocationResponse))
+  overload: Inventory.Client.ILocationClient.ListAsync*
+  nameWithType.vb: ILocationClient.ListAsync(LocationType?, Boolean?, CancellationToken)
+  fullName.vb: Inventory.Client.ILocationClient.ListAsync(Inventory.Contracts.Enums.LocationType?, Boolean?, System.Threading.CancellationToken)
+  name.vb: ListAsync(LocationType?, Boolean?, CancellationToken)
+- uid: Inventory.Client.ILocationClient.GetAsync(System.Guid,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.ILocationClient.GetAsync(System.Guid,System.Threading.CancellationToken)
+  id: GetAsync(System.Guid,System.Threading.CancellationToken)
+  parent: Inventory.Client.ILocationClient
+  langs:
+  - csharp
+  - vb
+  name: GetAsync(Guid, CancellationToken)
+  nameWithType: ILocationClient.GetAsync(Guid, CancellationToken)
+  fullName: Inventory.Client.ILocationClient.GetAsync(System.Guid, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/IInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: GetAsync
+    path: src/Inventory.Client/IInventoryClients.cs
+    startLine: 43
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  syntax:
+    content: Task<LocationResponse?> GetAsync(Guid id, CancellationToken ct = default)
+    parameters:
+    - id: id
+      type: System.Guid
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{Inventory.Contracts.LocationResponse}
+    content.vb: Function GetAsync(id As Guid, ct As CancellationToken = Nothing) As Task(Of LocationResponse)
+  overload: Inventory.Client.ILocationClient.GetAsync*
+- uid: Inventory.Client.ILocationClient.CreateAsync(Inventory.Contracts.LocationInput,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.ILocationClient.CreateAsync(Inventory.Contracts.LocationInput,System.Threading.CancellationToken)
+  id: CreateAsync(Inventory.Contracts.LocationInput,System.Threading.CancellationToken)
+  parent: Inventory.Client.ILocationClient
+  langs:
+  - csharp
+  - vb
+  name: CreateAsync(LocationInput, CancellationToken)
+  nameWithType: ILocationClient.CreateAsync(LocationInput, CancellationToken)
+  fullName: Inventory.Client.ILocationClient.CreateAsync(Inventory.Contracts.LocationInput, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/IInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: CreateAsync
+    path: src/Inventory.Client/IInventoryClients.cs
+    startLine: 44
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  syntax:
+    content: Task<LocationResponse> CreateAsync(LocationInput input, CancellationToken ct = default)
+    parameters:
+    - id: input
+      type: Inventory.Contracts.LocationInput
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{Inventory.Contracts.LocationResponse}
+    content.vb: Function CreateAsync(input As LocationInput, ct As CancellationToken = Nothing) As Task(Of LocationResponse)
+  overload: Inventory.Client.ILocationClient.CreateAsync*
+- uid: Inventory.Client.ILocationClient.UpdateAsync(System.Guid,Inventory.Contracts.LocationInput,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.ILocationClient.UpdateAsync(System.Guid,Inventory.Contracts.LocationInput,System.Threading.CancellationToken)
+  id: UpdateAsync(System.Guid,Inventory.Contracts.LocationInput,System.Threading.CancellationToken)
+  parent: Inventory.Client.ILocationClient
+  langs:
+  - csharp
+  - vb
+  name: UpdateAsync(Guid, LocationInput, CancellationToken)
+  nameWithType: ILocationClient.UpdateAsync(Guid, LocationInput, CancellationToken)
+  fullName: Inventory.Client.ILocationClient.UpdateAsync(System.Guid, Inventory.Contracts.LocationInput, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/IInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: UpdateAsync
+    path: src/Inventory.Client/IInventoryClients.cs
+    startLine: 45
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  syntax:
+    content: Task UpdateAsync(Guid id, LocationInput input, CancellationToken ct = default)
+    parameters:
+    - id: id
+      type: System.Guid
+    - id: input
+      type: Inventory.Contracts.LocationInput
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function UpdateAsync(id As Guid, input As LocationInput, ct As CancellationToken = Nothing) As Task
+  overload: Inventory.Client.ILocationClient.UpdateAsync*
+- uid: Inventory.Client.ILocationClient.DeactivateAsync(System.Guid,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.ILocationClient.DeactivateAsync(System.Guid,System.Threading.CancellationToken)
+  id: DeactivateAsync(System.Guid,System.Threading.CancellationToken)
+  parent: Inventory.Client.ILocationClient
+  langs:
+  - csharp
+  - vb
+  name: DeactivateAsync(Guid, CancellationToken)
+  nameWithType: ILocationClient.DeactivateAsync(Guid, CancellationToken)
+  fullName: Inventory.Client.ILocationClient.DeactivateAsync(System.Guid, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/IInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: DeactivateAsync
+    path: src/Inventory.Client/IInventoryClients.cs
+    startLine: 46
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  syntax:
+    content: Task DeactivateAsync(Guid id, CancellationToken ct = default)
+    parameters:
+    - id: id
+      type: System.Guid
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function DeactivateAsync(id As Guid, ct As CancellationToken = Nothing) As Task
+  overload: Inventory.Client.ILocationClient.DeactivateAsync*
+- uid: Inventory.Client.ILocationClient.DeleteAsync(System.Guid,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.ILocationClient.DeleteAsync(System.Guid,System.Threading.CancellationToken)
+  id: DeleteAsync(System.Guid,System.Threading.CancellationToken)
+  parent: Inventory.Client.ILocationClient
+  langs:
+  - csharp
+  - vb
+  name: DeleteAsync(Guid, CancellationToken)
+  nameWithType: ILocationClient.DeleteAsync(Guid, CancellationToken)
+  fullName: Inventory.Client.ILocationClient.DeleteAsync(System.Guid, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/IInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: DeleteAsync
+    path: src/Inventory.Client/IInventoryClients.cs
+    startLine: 47
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  syntax:
+    content: Task DeleteAsync(Guid id, CancellationToken ct = default)
+    parameters:
+    - id: id
+      type: System.Guid
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function DeleteAsync(id As Guid, ct As CancellationToken = Nothing) As Task
+  overload: Inventory.Client.ILocationClient.DeleteAsync*
+- uid: Inventory.Client.ILocationClient.GetOptionsAsync(System.Boolean,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.ILocationClient.GetOptionsAsync(System.Boolean,System.Threading.CancellationToken)
+  id: GetOptionsAsync(System.Boolean,System.Threading.CancellationToken)
+  parent: Inventory.Client.ILocationClient
+  langs:
+  - csharp
+  - vb
+  name: GetOptionsAsync(bool, CancellationToken)
+  nameWithType: ILocationClient.GetOptionsAsync(bool, CancellationToken)
+  fullName: Inventory.Client.ILocationClient.GetOptionsAsync(bool, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/IInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: GetOptionsAsync
+    path: src/Inventory.Client/IInventoryClients.cs
+    startLine: 48
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  syntax:
+    content: Task<IReadOnlyList<SelectOption>> GetOptionsAsync(bool activeOnly = true, CancellationToken ct = default)
+    parameters:
+    - id: activeOnly
+      type: System.Boolean
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Inventory.Contracts.SelectOption}}
+    content.vb: Function GetOptionsAsync(activeOnly As Boolean = True, ct As CancellationToken = Nothing) As Task(Of IReadOnlyList(Of SelectOption))
+  overload: Inventory.Client.ILocationClient.GetOptionsAsync*
+  nameWithType.vb: ILocationClient.GetOptionsAsync(Boolean, CancellationToken)
+  fullName.vb: Inventory.Client.ILocationClient.GetOptionsAsync(Boolean, System.Threading.CancellationToken)
+  name.vb: GetOptionsAsync(Boolean, CancellationToken)
+references:
+- uid: Inventory.Client
+  commentId: N:Inventory.Client
+  name: Inventory.Client
+  nameWithType: Inventory.Client
+  fullName: Inventory.Client
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Client
+    name: Client
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Client
+    name: Client
+- uid: Inventory.Client.ILocationClient.ListAsync*
+  commentId: Overload:Inventory.Client.ILocationClient.ListAsync
+  href: Inventory.Client.ILocationClient.html#Inventory_Client_ILocationClient_ListAsync_System_Nullable_Inventory_Contracts_Enums_LocationType__System_Nullable_System_Boolean__System_Threading_CancellationToken_
+  name: ListAsync
+  nameWithType: ILocationClient.ListAsync
+  fullName: Inventory.Client.ILocationClient.ListAsync
+- uid: System.Nullable{Inventory.Contracts.Enums.LocationType}
+  commentId: T:System.Nullable{Inventory.Contracts.Enums.LocationType}
+  parent: System
+  definition: System.Nullable`1
+  href: Inventory.Contracts.Enums.LocationType.html
+  name: LocationType?
+  nameWithType: LocationType?
+  fullName: Inventory.Contracts.Enums.LocationType?
+  spec.csharp:
+  - uid: Inventory.Contracts.Enums.LocationType
+    name: LocationType
+    href: Inventory.Contracts.Enums.LocationType.html
+  - name: '?'
+  spec.vb:
+  - uid: Inventory.Contracts.Enums.LocationType
+    name: LocationType
+    href: Inventory.Contracts.Enums.LocationType.html
+  - name: '?'
+- uid: System.Nullable{System.Boolean}
+  commentId: T:System.Nullable{System.Boolean}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool?
+  nameWithType: bool?
+  fullName: bool?
+  nameWithType.vb: Boolean?
+  fullName.vb: Boolean?
+  name.vb: Boolean?
+  spec.csharp:
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '?'
+  spec.vb:
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '?'
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Inventory.Contracts.LocationResponse}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Inventory.Contracts.LocationResponse}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IReadOnlyList<LocationResponse>>
+  nameWithType: Task<IReadOnlyList<LocationResponse>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyList<Inventory.Contracts.LocationResponse>>
+  nameWithType.vb: Task(Of IReadOnlyList(Of LocationResponse))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IReadOnlyList(Of Inventory.Contracts.LocationResponse))
+  name.vb: Task(Of IReadOnlyList(Of LocationResponse))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: Inventory.Contracts.LocationResponse
+    name: LocationResponse
+    href: Inventory.Contracts.LocationResponse.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.LocationResponse
+    name: LocationResponse
+    href: Inventory.Contracts.LocationResponse.html
+  - name: )
+  - name: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: Inventory.Client.ILocationClient.GetAsync*
+  commentId: Overload:Inventory.Client.ILocationClient.GetAsync
+  href: Inventory.Client.ILocationClient.html#Inventory_Client_ILocationClient_GetAsync_System_Guid_System_Threading_CancellationToken_
+  name: GetAsync
+  nameWithType: ILocationClient.GetAsync
+  fullName: Inventory.Client.ILocationClient.GetAsync
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: System.Threading.Tasks.Task{Inventory.Contracts.LocationResponse}
+  commentId: T:System.Threading.Tasks.Task{Inventory.Contracts.LocationResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<LocationResponse>
+  nameWithType: Task<LocationResponse>
+  fullName: System.Threading.Tasks.Task<Inventory.Contracts.LocationResponse>
+  nameWithType.vb: Task(Of LocationResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Inventory.Contracts.LocationResponse)
+  name.vb: Task(Of LocationResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Inventory.Contracts.LocationResponse
+    name: LocationResponse
+    href: Inventory.Contracts.LocationResponse.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.LocationResponse
+    name: LocationResponse
+    href: Inventory.Contracts.LocationResponse.html
+  - name: )
+- uid: Inventory.Client.ILocationClient.CreateAsync*
+  commentId: Overload:Inventory.Client.ILocationClient.CreateAsync
+  href: Inventory.Client.ILocationClient.html#Inventory_Client_ILocationClient_CreateAsync_Inventory_Contracts_LocationInput_System_Threading_CancellationToken_
+  name: CreateAsync
+  nameWithType: ILocationClient.CreateAsync
+  fullName: Inventory.Client.ILocationClient.CreateAsync
+- uid: Inventory.Contracts.LocationInput
+  commentId: T:Inventory.Contracts.LocationInput
+  parent: Inventory.Contracts
+  href: Inventory.Contracts.LocationInput.html
+  name: LocationInput
+  nameWithType: LocationInput
+  fullName: Inventory.Contracts.LocationInput
+- uid: Inventory.Contracts
+  commentId: N:Inventory.Contracts
+  name: Inventory.Contracts
+  nameWithType: Inventory.Contracts
+  fullName: Inventory.Contracts
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+- uid: Inventory.Client.ILocationClient.UpdateAsync*
+  commentId: Overload:Inventory.Client.ILocationClient.UpdateAsync
+  href: Inventory.Client.ILocationClient.html#Inventory_Client_ILocationClient_UpdateAsync_System_Guid_Inventory_Contracts_LocationInput_System_Threading_CancellationToken_
+  name: UpdateAsync
+  nameWithType: ILocationClient.UpdateAsync
+  fullName: Inventory.Client.ILocationClient.UpdateAsync
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: Inventory.Client.ILocationClient.DeactivateAsync*
+  commentId: Overload:Inventory.Client.ILocationClient.DeactivateAsync
+  href: Inventory.Client.ILocationClient.html#Inventory_Client_ILocationClient_DeactivateAsync_System_Guid_System_Threading_CancellationToken_
+  name: DeactivateAsync
+  nameWithType: ILocationClient.DeactivateAsync
+  fullName: Inventory.Client.ILocationClient.DeactivateAsync
+- uid: Inventory.Client.ILocationClient.DeleteAsync*
+  commentId: Overload:Inventory.Client.ILocationClient.DeleteAsync
+  href: Inventory.Client.ILocationClient.html#Inventory_Client_ILocationClient_DeleteAsync_System_Guid_System_Threading_CancellationToken_
+  name: DeleteAsync
+  nameWithType: ILocationClient.DeleteAsync
+  fullName: Inventory.Client.ILocationClient.DeleteAsync
+- uid: Inventory.Client.ILocationClient.GetOptionsAsync*
+  commentId: Overload:Inventory.Client.ILocationClient.GetOptionsAsync
+  href: Inventory.Client.ILocationClient.html#Inventory_Client_ILocationClient_GetOptionsAsync_System_Boolean_System_Threading_CancellationToken_
+  name: GetOptionsAsync
+  nameWithType: ILocationClient.GetOptionsAsync
+  fullName: Inventory.Client.ILocationClient.GetOptionsAsync
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Inventory.Contracts.SelectOption}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Inventory.Contracts.SelectOption}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IReadOnlyList<SelectOption>>
+  nameWithType: Task<IReadOnlyList<SelectOption>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyList<Inventory.Contracts.SelectOption>>
+  nameWithType.vb: Task(Of IReadOnlyList(Of SelectOption))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IReadOnlyList(Of Inventory.Contracts.SelectOption))
+  name.vb: Task(Of IReadOnlyList(Of SelectOption))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: Inventory.Contracts.SelectOption
+    name: SelectOption
+    href: Inventory.Contracts.SelectOption.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.SelectOption
+    name: SelectOption
+    href: Inventory.Contracts.SelectOption.html
+  - name: )
+  - name: )

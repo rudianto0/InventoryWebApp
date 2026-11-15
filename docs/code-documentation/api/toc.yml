@@ -1,0 +1,577 @@
+### YamlMime:TableOfContent
+items:
+- uid: Inventory.Application
+  name: Inventory.Application
+  type: Namespace
+  items:
+  - uid: Inventory.Application.Class1
+    name: Class1
+    type: Class
+- uid: Inventory.Application.Abstractions
+  name: Inventory.Application.Abstractions
+  type: Namespace
+  items:
+  - uid: Inventory.Application.Abstractions.IAppDbContext
+    name: IAppDbContext
+    type: Interface
+  - uid: Inventory.Application.Abstractions.ICurrentUserService
+    name: ICurrentUserService
+    type: Interface
+  - uid: Inventory.Application.Abstractions.IDocumentNumberService
+    name: IDocumentNumberService
+    type: Interface
+  - uid: Inventory.Application.Abstractions.IUserDirectory
+    name: IUserDirectory
+    type: Interface
+  - uid: Inventory.Application.Abstractions.IUserService
+    name: IUserService
+    type: Interface
+- uid: Inventory.Application.Common
+  name: Inventory.Application.Common
+  type: Namespace
+  items:
+  - uid: Inventory.Application.Common.Guard
+    name: Guard
+    type: Class
+- uid: Inventory.Application.Services
+  name: Inventory.Application.Services
+  type: Namespace
+  items:
+  - uid: Inventory.Application.Services.ApprovalService
+    name: ApprovalService
+    type: Class
+  - uid: Inventory.Application.Services.AuditQueryService
+    name: AuditQueryService
+    type: Class
+  - uid: Inventory.Application.Services.CatalogService
+    name: CatalogService
+    type: Class
+  - uid: Inventory.Application.Services.LocationService
+    name: LocationService
+    type: Class
+  - uid: Inventory.Application.Services.ReportService
+    name: ReportService
+    type: Class
+  - uid: Inventory.Application.Services.StockAdjustmentService
+    name: StockAdjustmentService
+    type: Class
+  - uid: Inventory.Application.Services.StockChange
+    name: StockChange
+    type: Class
+  - uid: Inventory.Application.Services.StockInService
+    name: StockInService
+    type: Class
+  - uid: Inventory.Application.Services.StockLedger
+    name: StockLedger
+    type: Class
+  - uid: Inventory.Application.Services.StockOpnameService
+    name: StockOpnameService
+    type: Class
+  - uid: Inventory.Application.Services.StockOutService
+    name: StockOutService
+    type: Class
+  - uid: Inventory.Application.Services.StockTransferService
+    name: StockTransferService
+    type: Class
+  - uid: Inventory.Application.Services.SupplierService
+    name: SupplierService
+    type: Class
+- uid: Inventory.Client
+  name: Inventory.Client
+  type: Namespace
+  items:
+  - uid: Inventory.Client.DependencyInjection
+    name: DependencyInjection
+    type: Class
+  - uid: Inventory.Client.IApprovalClient
+    name: IApprovalClient
+    type: Interface
+  - uid: Inventory.Client.IAuditClient
+    name: IAuditClient
+    type: Interface
+  - uid: Inventory.Client.ICatalogClient
+    name: ICatalogClient
+    type: Interface
+  - uid: Inventory.Client.ILocationClient
+    name: ILocationClient
+    type: Interface
+  - uid: Inventory.Client.IReportClient
+    name: IReportClient
+    type: Interface
+  - uid: Inventory.Client.IStockAdjustmentClient
+    name: IStockAdjustmentClient
+    type: Interface
+  - uid: Inventory.Client.IStockInClient
+    name: IStockInClient
+    type: Interface
+  - uid: Inventory.Client.IStockOpnameClient
+    name: IStockOpnameClient
+    type: Interface
+  - uid: Inventory.Client.IStockOutClient
+    name: IStockOutClient
+    type: Interface
+  - uid: Inventory.Client.IStockTransferClient
+    name: IStockTransferClient
+    type: Interface
+  - uid: Inventory.Client.ISupplierClient
+    name: ISupplierClient
+    type: Interface
+  - uid: Inventory.Client.IUserClient
+    name: IUserClient
+    type: Interface
+  - uid: Inventory.Client.InProcessApprovalClient
+    name: InProcessApprovalClient
+    type: Class
+  - uid: Inventory.Client.InProcessAuditClient
+    name: InProcessAuditClient
+    type: Class
+  - uid: Inventory.Client.InProcessCatalogClient
+    name: InProcessCatalogClient
+    type: Class
+  - uid: Inventory.Client.InProcessLocationClient
+    name: InProcessLocationClient
+    type: Class
+  - uid: Inventory.Client.InProcessReportClient
+    name: InProcessReportClient
+    type: Class
+  - uid: Inventory.Client.InProcessStockAdjustmentClient
+    name: InProcessStockAdjustmentClient
+    type: Class
+  - uid: Inventory.Client.InProcessStockInClient
+    name: InProcessStockInClient
+    type: Class
+  - uid: Inventory.Client.InProcessStockOpnameClient
+    name: InProcessStockOpnameClient
+    type: Class
+  - uid: Inventory.Client.InProcessStockOutClient
+    name: InProcessStockOutClient
+    type: Class
+  - uid: Inventory.Client.InProcessStockTransferClient
+    name: InProcessStockTransferClient
+    type: Class
+  - uid: Inventory.Client.InProcessSupplierClient
+    name: InProcessSupplierClient
+    type: Class
+  - uid: Inventory.Client.InProcessUserClient
+    name: InProcessUserClient
+    type: Class
+- uid: Inventory.Contracts
+  name: Inventory.Contracts
+  type: Namespace
+  items:
+  - uid: Inventory.Contracts.AdjustmentLineInput
+    name: AdjustmentLineInput
+    type: Class
+  - uid: Inventory.Contracts.ApprovalItem
+    name: ApprovalItem
+    type: Class
+  - uid: Inventory.Contracts.AuditDetailItem
+    name: AuditDetailItem
+    type: Class
+  - uid: Inventory.Contracts.AuditFilter
+    name: AuditFilter
+    type: Class
+  - uid: Inventory.Contracts.AuditListItem
+    name: AuditListItem
+    type: Class
+  - uid: Inventory.Contracts.CategoryInput
+    name: CategoryInput
+    type: Class
+  - uid: Inventory.Contracts.CategoryResponse
+    name: CategoryResponse
+    type: Class
+  - uid: Inventory.Contracts.DashboardSummary
+    name: DashboardSummary
+    type: Class
+  - uid: Inventory.Contracts.DocumentLineInput
+    name: DocumentLineInput
+    type: Class
+  - uid: Inventory.Contracts.DocumentLineView
+    name: DocumentLineView
+    type: Class
+  - uid: Inventory.Contracts.LocationInput
+    name: LocationInput
+    type: Class
+  - uid: Inventory.Contracts.LocationResponse
+    name: LocationResponse
+    type: Class
+  - uid: Inventory.Contracts.OpnameLineInput
+    name: OpnameLineInput
+    type: Class
+  - uid: Inventory.Contracts.PageQuery
+    name: PageQuery
+    type: Class
+  - uid: Inventory.Contracts.PagedResult`1
+    name: PagedResult<T>
+    type: Class
+  - uid: Inventory.Contracts.ProductFormData
+    name: ProductFormData
+    type: Class
+  - uid: Inventory.Contracts.ProductInput
+    name: ProductInput
+    type: Class
+  - uid: Inventory.Contracts.ProductListItem
+    name: ProductListItem
+    type: Class
+  - uid: Inventory.Contracts.ProductResponse
+    name: ProductResponse
+    type: Class
+  - uid: Inventory.Contracts.ReorderItem
+    name: ReorderItem
+    type: Class
+  - uid: Inventory.Contracts.ReportFilter
+    name: ReportFilter
+    type: Class
+  - uid: Inventory.Contracts.SelectOption
+    name: SelectOption
+    type: Class
+  - uid: Inventory.Contracts.StockAdjustmentInput
+    name: StockAdjustmentInput
+    type: Class
+  - uid: Inventory.Contracts.StockAvailability
+    name: StockAvailability
+    type: Class
+  - uid: Inventory.Contracts.StockBalanceItem
+    name: StockBalanceItem
+    type: Class
+  - uid: Inventory.Contracts.StockCardItem
+    name: StockCardItem
+    type: Class
+  - uid: Inventory.Contracts.StockInInput
+    name: StockInInput
+    type: Class
+  - uid: Inventory.Contracts.StockMovementItem
+    name: StockMovementItem
+    type: Class
+  - uid: Inventory.Contracts.StockOpnameInput
+    name: StockOpnameInput
+    type: Class
+  - uid: Inventory.Contracts.StockOutInput
+    name: StockOutInput
+    type: Class
+  - uid: Inventory.Contracts.StockTransferInput
+    name: StockTransferInput
+    type: Class
+  - uid: Inventory.Contracts.SupplierInput
+    name: SupplierInput
+    type: Class
+  - uid: Inventory.Contracts.SupplierResponse
+    name: SupplierResponse
+    type: Class
+  - uid: Inventory.Contracts.TransactionCreatedResponse
+    name: TransactionCreatedResponse
+    type: Class
+  - uid: Inventory.Contracts.TransactionDetailView
+    name: TransactionDetailView
+    type: Class
+  - uid: Inventory.Contracts.TransactionFilter
+    name: TransactionFilter
+    type: Class
+  - uid: Inventory.Contracts.TransactionListItem
+    name: TransactionListItem
+    type: Class
+  - uid: Inventory.Contracts.UnitInput
+    name: UnitInput
+    type: Class
+  - uid: Inventory.Contracts.UnitResponse
+    name: UnitResponse
+    type: Class
+  - uid: Inventory.Contracts.UserEditData
+    name: UserEditData
+    type: Class
+  - uid: Inventory.Contracts.UserFilter
+    name: UserFilter
+    type: Class
+  - uid: Inventory.Contracts.UserInput
+    name: UserInput
+    type: Class
+  - uid: Inventory.Contracts.UserListItem
+    name: UserListItem
+    type: Class
+  - uid: Inventory.Contracts.UserOption
+    name: UserOption
+    type: Class
+- uid: Inventory.Contracts.Enums
+  name: Inventory.Contracts.Enums
+  type: Namespace
+  items:
+  - uid: Inventory.Contracts.Enums.ApprovalStatus
+    name: ApprovalStatus
+    type: Enum
+  - uid: Inventory.Contracts.Enums.AuditActionType
+    name: AuditActionType
+    type: Enum
+  - uid: Inventory.Contracts.Enums.LocationType
+    name: LocationType
+    type: Enum
+  - uid: Inventory.Contracts.Enums.MovementType
+    name: MovementType
+    type: Enum
+  - uid: Inventory.Contracts.Enums.ReferenceType
+    name: ReferenceType
+    type: Enum
+- uid: Inventory.Domain
+  name: Inventory.Domain
+  type: Namespace
+  items:
+  - uid: Inventory.Domain.Class1
+    name: Class1
+    type: Class
+- uid: Inventory.Domain.Common
+  name: Inventory.Domain.Common
+  type: Namespace
+  items:
+  - uid: Inventory.Domain.Common.IAuditableEntity
+    name: IAuditableEntity
+    type: Interface
+  - uid: Inventory.Domain.Common.ISoftDeletable
+    name: ISoftDeletable
+    type: Interface
+- uid: Inventory.Domain.Entities
+  name: Inventory.Domain.Entities
+  type: Namespace
+  items:
+  - uid: Inventory.Domain.Entities.AuditLog
+    name: AuditLog
+    type: Class
+  - uid: Inventory.Domain.Entities.Category
+    name: Category
+    type: Class
+  - uid: Inventory.Domain.Entities.DocumentSequence
+    name: DocumentSequence
+    type: Class
+  - uid: Inventory.Domain.Entities.IApprovable
+    name: IApprovable
+    type: Interface
+  - uid: Inventory.Domain.Entities.Location
+    name: Location
+    type: Class
+  - uid: Inventory.Domain.Entities.Product
+    name: Product
+    type: Class
+  - uid: Inventory.Domain.Entities.Stock
+    name: Stock
+    type: Class
+  - uid: Inventory.Domain.Entities.StockAdjustmentDetail
+    name: StockAdjustmentDetail
+    type: Class
+  - uid: Inventory.Domain.Entities.StockAdjustmentHeader
+    name: StockAdjustmentHeader
+    type: Class
+  - uid: Inventory.Domain.Entities.StockInDetail
+    name: StockInDetail
+    type: Class
+  - uid: Inventory.Domain.Entities.StockInHeader
+    name: StockInHeader
+    type: Class
+  - uid: Inventory.Domain.Entities.StockMovement
+    name: StockMovement
+    type: Class
+  - uid: Inventory.Domain.Entities.StockOpnameDetail
+    name: StockOpnameDetail
+    type: Class
+  - uid: Inventory.Domain.Entities.StockOpnameHeader
+    name: StockOpnameHeader
+    type: Class
+  - uid: Inventory.Domain.Entities.StockOutDetail
+    name: StockOutDetail
+    type: Class
+  - uid: Inventory.Domain.Entities.StockOutHeader
+    name: StockOutHeader
+    type: Class
+  - uid: Inventory.Domain.Entities.StockTransferDetail
+    name: StockTransferDetail
+    type: Class
+  - uid: Inventory.Domain.Entities.StockTransferHeader
+    name: StockTransferHeader
+    type: Class
+  - uid: Inventory.Domain.Entities.Supplier
+    name: Supplier
+    type: Class
+  - uid: Inventory.Domain.Entities.Unit
+    name: Unit
+    type: Class
+- uid: Inventory.Infrastructure
+  name: Inventory.Infrastructure
+  type: Namespace
+  items:
+  - uid: Inventory.Infrastructure.Class1
+    name: Class1
+    type: Class
+  - uid: Inventory.Infrastructure.DependencyInjection
+    name: DependencyInjection
+    type: Class
+- uid: Inventory.Infrastructure.Identity
+  name: Inventory.Infrastructure.Identity
+  type: Namespace
+  items:
+  - uid: Inventory.Infrastructure.Identity.AppRole
+    name: AppRole
+    type: Class
+  - uid: Inventory.Infrastructure.Identity.AppUser
+    name: AppUser
+    type: Class
+- uid: Inventory.Infrastructure.Persistence
+  name: Inventory.Infrastructure.Persistence
+  type: Namespace
+  items:
+  - uid: Inventory.Infrastructure.Persistence.AppDbContext
+    name: AppDbContext
+    type: Class
+  - uid: Inventory.Infrastructure.Persistence.DatabaseBootstrapper
+    name: DatabaseBootstrapper
+    type: Class
+- uid: Inventory.Infrastructure.Services
+  name: Inventory.Infrastructure.Services
+  type: Namespace
+  items:
+  - uid: Inventory.Infrastructure.Services.DocumentNumberService
+    name: DocumentNumberService
+    type: Class
+  - uid: Inventory.Infrastructure.Services.UserDirectory
+    name: UserDirectory
+    type: Class
+  - uid: Inventory.Infrastructure.Services.UserService
+    name: UserService
+    type: Class
+- uid: Inventory.Migrations.PostgreSql.Migrations
+  name: Inventory.Migrations.PostgreSql.Migrations
+  type: Namespace
+  items:
+  - uid: Inventory.Migrations.PostgreSql.Migrations.InitialCreate
+    name: InitialCreate
+    type: Class
+- uid: Inventory.Migrations.SqlServer.Migrations
+  name: Inventory.Migrations.SqlServer.Migrations
+  type: Namespace
+  items:
+  - uid: Inventory.Migrations.SqlServer.Migrations.InitialCreate
+    name: InitialCreate
+    type: Class
+- uid: Inventory.Web.Controllers
+  name: Inventory.Web.Controllers
+  type: Namespace
+  items:
+  - uid: Inventory.Web.Controllers.AccountController
+    name: AccountController
+    type: Class
+  - uid: Inventory.Web.Controllers.AppControllerBase
+    name: AppControllerBase
+    type: Class
+  - uid: Inventory.Web.Controllers.ApprovalsController
+    name: ApprovalsController
+    type: Class
+  - uid: Inventory.Web.Controllers.AuditLogsController
+    name: AuditLogsController
+    type: Class
+  - uid: Inventory.Web.Controllers.CategoriesController
+    name: CategoriesController
+    type: Class
+  - uid: Inventory.Web.Controllers.DashboardController
+    name: DashboardController
+    type: Class
+  - uid: Inventory.Web.Controllers.ErrorController
+    name: ErrorController
+    type: Class
+  - uid: Inventory.Web.Controllers.LocationsController
+    name: LocationsController
+    type: Class
+  - uid: Inventory.Web.Controllers.ProductsController
+    name: ProductsController
+    type: Class
+  - uid: Inventory.Web.Controllers.ReportsController
+    name: ReportsController
+    type: Class
+  - uid: Inventory.Web.Controllers.StockAdjustmentsController
+    name: StockAdjustmentsController
+    type: Class
+  - uid: Inventory.Web.Controllers.StockInsController
+    name: StockInsController
+    type: Class
+  - uid: Inventory.Web.Controllers.StockOpnamesController
+    name: StockOpnamesController
+    type: Class
+  - uid: Inventory.Web.Controllers.StockOutsController
+    name: StockOutsController
+    type: Class
+  - uid: Inventory.Web.Controllers.StockTransfersController
+    name: StockTransfersController
+    type: Class
+  - uid: Inventory.Web.Controllers.SuppliersController
+    name: SuppliersController
+    type: Class
+  - uid: Inventory.Web.Controllers.UnitsController
+    name: UnitsController
+    type: Class
+  - uid: Inventory.Web.Controllers.UsersController
+    name: UsersController
+    type: Class
+- uid: Inventory.Web.Models
+  name: Inventory.Web.Models
+  type: Namespace
+  items:
+  - uid: Inventory.Web.Models.AdjustmentLineRow
+    name: AdjustmentLineRow
+    type: Class
+  - uid: Inventory.Web.Models.CategoryFormModel
+    name: CategoryFormModel
+    type: Class
+  - uid: Inventory.Web.Models.ChangePasswordModel
+    name: ChangePasswordModel
+    type: Class
+  - uid: Inventory.Web.Models.ErrorViewModel
+    name: ErrorViewModel
+    type: Class
+  - uid: Inventory.Web.Models.LocationFormModel
+    name: LocationFormModel
+    type: Class
+  - uid: Inventory.Web.Models.LoginModel
+    name: LoginModel
+    type: Class
+  - uid: Inventory.Web.Models.OpnameLineRow
+    name: OpnameLineRow
+    type: Class
+  - uid: Inventory.Web.Models.PagedReportModel`1
+    name: PagedReportModel<T>
+    type: Class
+  - uid: Inventory.Web.Models.ProductFormModel
+    name: ProductFormModel
+    type: Class
+  - uid: Inventory.Web.Models.ReportsIndexModel
+    name: ReportsIndexModel
+    type: Class
+  - uid: Inventory.Web.Models.ResetPasswordModel
+    name: ResetPasswordModel
+    type: Class
+  - uid: Inventory.Web.Models.StockCardPageModel
+    name: StockCardPageModel
+    type: Class
+  - uid: Inventory.Web.Models.SupplierFormModel
+    name: SupplierFormModel
+    type: Class
+  - uid: Inventory.Web.Models.TransactionDetailsModel
+    name: TransactionDetailsModel
+    type: Class
+  - uid: Inventory.Web.Models.TransactionFormModel
+    name: TransactionFormModel
+    type: Class
+  - uid: Inventory.Web.Models.TransactionIndexModel
+    name: TransactionIndexModel
+    type: Class
+  - uid: Inventory.Web.Models.TransactionLineRow
+    name: TransactionLineRow
+    type: Class
+  - uid: Inventory.Web.Models.UnitFormModel
+    name: UnitFormModel
+    type: Class
+  - uid: Inventory.Web.Models.UserFormModel
+    name: UserFormModel
+    type: Class
+- uid: Inventory.Web.Services
+  name: Inventory.Web.Services
+  type: Namespace
+  items:
+  - uid: Inventory.Web.Services.HttpCurrentUserService
+    name: HttpCurrentUserService
+    type: Class
+memberLayout: SamePage

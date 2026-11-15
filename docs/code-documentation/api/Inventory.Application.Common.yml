@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Application.Common
+  commentId: N:Inventory.Application.Common
+  id: Inventory.Application.Common
+  children:
+  - Inventory.Application.Common.Guard
+  langs:
+  - csharp
+  - vb
+  name: Inventory.Application.Common
+  nameWithType: Inventory.Application.Common
+  fullName: Inventory.Application.Common
+  type: Namespace
+  assemblies:
+  - Inventory.Application
+references:
+- uid: Inventory.Application.Common.Guard
+  commentId: T:Inventory.Application.Common.Guard
+  href: Inventory.Application.Common.Guard.html
+  name: Guard
+  nameWithType: Guard
+  fullName: Inventory.Application.Common.Guard

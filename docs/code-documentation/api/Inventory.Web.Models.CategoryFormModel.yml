@@ -1,0 +1,488 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Web.Models.CategoryFormModel
+  commentId: T:Inventory.Web.Models.CategoryFormModel
+  id: CategoryFormModel
+  parent: Inventory.Web.Models
+  children:
+  - Inventory.Web.Models.CategoryFormModel.Description
+  - Inventory.Web.Models.CategoryFormModel.Id
+  - Inventory.Web.Models.CategoryFormModel.IsActive
+  - Inventory.Web.Models.CategoryFormModel.Name
+  langs:
+  - csharp
+  - vb
+  name: CategoryFormModel
+  nameWithType: CategoryFormModel
+  fullName: Inventory.Web.Models.CategoryFormModel
+  type: Class
+  source:
+    remote:
+      path: src/Inventory.Web/Models/ViewModels.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: CategoryFormModel
+    path: src/Inventory.Web/Models/ViewModels.cs
+    startLine: 6
+  assemblies:
+  - Inventory.Web
+  namespace: Inventory.Web.Models
+  syntax:
+    content: public sealed class CategoryFormModel
+    content.vb: Public NotInheritable Class CategoryFormModel
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Inventory.Web.Models.CategoryFormModel.Id
+  commentId: P:Inventory.Web.Models.CategoryFormModel.Id
+  id: Id
+  parent: Inventory.Web.Models.CategoryFormModel
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: CategoryFormModel.Id
+  fullName: Inventory.Web.Models.CategoryFormModel.Id
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Web/Models/ViewModels.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Id
+    path: src/Inventory.Web/Models/ViewModels.cs
+    startLine: 8
+  assemblies:
+  - Inventory.Web
+  namespace: Inventory.Web.Models
+  syntax:
+    content: public Guid? Id { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Guid}
+    content.vb: Public Property Id As Guid?
+  overload: Inventory.Web.Models.CategoryFormModel.Id*
+- uid: Inventory.Web.Models.CategoryFormModel.Name
+  commentId: P:Inventory.Web.Models.CategoryFormModel.Name
+  id: Name
+  parent: Inventory.Web.Models.CategoryFormModel
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: CategoryFormModel.Name
+  fullName: Inventory.Web.Models.CategoryFormModel.Name
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Web/Models/ViewModels.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Name
+    path: src/Inventory.Web/Models/ViewModels.cs
+    startLine: 9
+  assemblies:
+  - Inventory.Web
+  namespace: Inventory.Web.Models
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: Inventory.Web.Models.CategoryFormModel.Name*
+- uid: Inventory.Web.Models.CategoryFormModel.Description
+  commentId: P:Inventory.Web.Models.CategoryFormModel.Description
+  id: Description
+  parent: Inventory.Web.Models.CategoryFormModel
+  langs:
+  - csharp
+  - vb
+  name: Description
+  nameWithType: CategoryFormModel.Description
+  fullName: Inventory.Web.Models.CategoryFormModel.Description
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Web/Models/ViewModels.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Description
+    path: src/Inventory.Web/Models/ViewModels.cs
+    startLine: 10
+  assemblies:
+  - Inventory.Web
+  namespace: Inventory.Web.Models
+  syntax:
+    content: public string? Description { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Description As String
+  overload: Inventory.Web.Models.CategoryFormModel.Description*
+- uid: Inventory.Web.Models.CategoryFormModel.IsActive
+  commentId: P:Inventory.Web.Models.CategoryFormModel.IsActive
+  id: IsActive
+  parent: Inventory.Web.Models.CategoryFormModel
+  langs:
+  - csharp
+  - vb
+  name: IsActive
+  nameWithType: CategoryFormModel.IsActive
+  fullName: Inventory.Web.Models.CategoryFormModel.IsActive
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Web/Models/ViewModels.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: IsActive
+    path: src/Inventory.Web/Models/ViewModels.cs
+    startLine: 11
+  assemblies:
+  - Inventory.Web
+  namespace: Inventory.Web.Models
+  syntax:
+    content: public bool IsActive { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsActive As Boolean
+  overload: Inventory.Web.Models.CategoryFormModel.IsActive*
+references:
+- uid: Inventory.Web.Models
+  commentId: N:Inventory.Web.Models
+  name: Inventory.Web.Models
+  nameWithType: Inventory.Web.Models
+  fullName: Inventory.Web.Models
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Web
+    name: Web
+  - name: .
+  - uid: Inventory.Web.Models
+    name: Models
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Web
+    name: Web
+  - name: .
+  - uid: Inventory.Web.Models
+    name: Models
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Inventory.Web.Models.CategoryFormModel.Id*
+  commentId: Overload:Inventory.Web.Models.CategoryFormModel.Id
+  href: Inventory.Web.Models.CategoryFormModel.html#Inventory_Web_Models_CategoryFormModel_Id
+  name: Id
+  nameWithType: CategoryFormModel.Id
+  fullName: Inventory.Web.Models.CategoryFormModel.Id
+- uid: System.Nullable{System.Guid}
+  commentId: T:System.Nullable{System.Guid}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid?
+  nameWithType: Guid?
+  fullName: System.Guid?
+  spec.csharp:
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: '?'
+  spec.vb:
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Inventory.Web.Models.CategoryFormModel.Name*
+  commentId: Overload:Inventory.Web.Models.CategoryFormModel.Name
+  href: Inventory.Web.Models.CategoryFormModel.html#Inventory_Web_Models_CategoryFormModel_Name
+  name: Name
+  nameWithType: CategoryFormModel.Name
+  fullName: Inventory.Web.Models.CategoryFormModel.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Inventory.Web.Models.CategoryFormModel.Description*
+  commentId: Overload:Inventory.Web.Models.CategoryFormModel.Description
+  href: Inventory.Web.Models.CategoryFormModel.html#Inventory_Web_Models_CategoryFormModel_Description
+  name: Description
+  nameWithType: CategoryFormModel.Description
+  fullName: Inventory.Web.Models.CategoryFormModel.Description
+- uid: Inventory.Web.Models.CategoryFormModel.IsActive*
+  commentId: Overload:Inventory.Web.Models.CategoryFormModel.IsActive
+  href: Inventory.Web.Models.CategoryFormModel.html#Inventory_Web_Models_CategoryFormModel_IsActive
+  name: IsActive
+  nameWithType: CategoryFormModel.IsActive
+  fullName: Inventory.Web.Models.CategoryFormModel.IsActive
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean

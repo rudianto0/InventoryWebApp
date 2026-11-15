@@ -1,0 +1,263 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Application.Abstractions.IDocumentNumberService
+  commentId: T:Inventory.Application.Abstractions.IDocumentNumberService
+  id: IDocumentNumberService
+  parent: Inventory.Application.Abstractions
+  children:
+  - Inventory.Application.Abstractions.IDocumentNumberService.NextAsync(System.String,System.DateTime,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: IDocumentNumberService
+  nameWithType: IDocumentNumberService
+  fullName: Inventory.Application.Abstractions.IDocumentNumberService
+  type: Interface
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/Services.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: IDocumentNumberService
+    path: src/Inventory.Application/Abstractions/Services.cs
+    startLine: 17
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: public interface IDocumentNumberService
+    content.vb: Public Interface IDocumentNumberService
+  derivedClasses:
+  - Inventory.Infrastructure.Services.DocumentNumberService
+- uid: Inventory.Application.Abstractions.IDocumentNumberService.NextAsync(System.String,System.DateTime,System.Threading.CancellationToken)
+  commentId: M:Inventory.Application.Abstractions.IDocumentNumberService.NextAsync(System.String,System.DateTime,System.Threading.CancellationToken)
+  id: NextAsync(System.String,System.DateTime,System.Threading.CancellationToken)
+  parent: Inventory.Application.Abstractions.IDocumentNumberService
+  langs:
+  - csharp
+  - vb
+  name: NextAsync(string, DateTime, CancellationToken)
+  nameWithType: IDocumentNumberService.NextAsync(string, DateTime, CancellationToken)
+  fullName: Inventory.Application.Abstractions.IDocumentNumberService.NextAsync(string, System.DateTime, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/Services.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: NextAsync
+    path: src/Inventory.Application/Abstractions/Services.cs
+    startLine: 19
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: Task<string> NextAsync(string prefix, DateTime date, CancellationToken ct = default)
+    parameters:
+    - id: prefix
+      type: System.String
+    - id: date
+      type: System.DateTime
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{System.String}
+    content.vb: Function NextAsync(prefix As String, [date] As Date, ct As CancellationToken = Nothing) As Task(Of String)
+  overload: Inventory.Application.Abstractions.IDocumentNumberService.NextAsync*
+  nameWithType.vb: IDocumentNumberService.NextAsync(String, Date, CancellationToken)
+  fullName.vb: Inventory.Application.Abstractions.IDocumentNumberService.NextAsync(String, Date, System.Threading.CancellationToken)
+  name.vb: NextAsync(String, Date, CancellationToken)
+references:
+- uid: Inventory.Application.Abstractions
+  commentId: N:Inventory.Application.Abstractions
+  name: Inventory.Application.Abstractions
+  nameWithType: Inventory.Application.Abstractions
+  fullName: Inventory.Application.Abstractions
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Application
+    name: Application
+  - name: .
+  - uid: Inventory.Application.Abstractions
+    name: Abstractions
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Application
+    name: Application
+  - name: .
+  - uid: Inventory.Application.Abstractions
+    name: Abstractions
+- uid: Inventory.Application.Abstractions.IDocumentNumberService.NextAsync*
+  commentId: Overload:Inventory.Application.Abstractions.IDocumentNumberService.NextAsync
+  href: Inventory.Application.Abstractions.IDocumentNumberService.html#Inventory_Application_Abstractions_IDocumentNumberService_NextAsync_System_String_System_DateTime_System_Threading_CancellationToken_
+  name: NextAsync
+  nameWithType: IDocumentNumberService.NextAsync
+  fullName: Inventory.Application.Abstractions.IDocumentNumberService.NextAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.String}
+  commentId: T:System.Threading.Tasks.Task{System.String}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<string>
+  nameWithType: Task<string>
+  fullName: System.Threading.Tasks.Task<string>
+  nameWithType.vb: Task(Of String)
+  fullName.vb: System.Threading.Tasks.Task(Of String)
+  name.vb: Task(Of String)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

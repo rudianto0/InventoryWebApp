@@ -1,0 +1,629 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Contracts.UserInput
+  commentId: T:Inventory.Contracts.UserInput
+  id: UserInput
+  parent: Inventory.Contracts
+  children:
+  - Inventory.Contracts.UserInput.Email
+  - Inventory.Contracts.UserInput.FullName
+  - Inventory.Contracts.UserInput.Id
+  - Inventory.Contracts.UserInput.IsActive
+  - Inventory.Contracts.UserInput.ParentId
+  - Inventory.Contracts.UserInput.Password
+  - Inventory.Contracts.UserInput.RoleName
+  - Inventory.Contracts.UserInput.UserName
+  langs:
+  - csharp
+  - vb
+  name: UserInput
+  nameWithType: UserInput
+  fullName: Inventory.Contracts.UserInput
+  type: Class
+  source:
+    remote:
+      path: src/Inventory.Contracts/UserDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: UserInput
+    path: src/Inventory.Contracts/UserDtos.cs
+    startLine: 2
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public sealed class UserInput
+    content.vb: Public NotInheritable Class UserInput
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Inventory.Contracts.UserInput.Id
+  commentId: P:Inventory.Contracts.UserInput.Id
+  id: Id
+  parent: Inventory.Contracts.UserInput
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: UserInput.Id
+  fullName: Inventory.Contracts.UserInput.Id
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/UserDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Id
+    path: src/Inventory.Contracts/UserDtos.cs
+    startLine: 4
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public int? Id { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property Id As Integer?
+  overload: Inventory.Contracts.UserInput.Id*
+- uid: Inventory.Contracts.UserInput.UserName
+  commentId: P:Inventory.Contracts.UserInput.UserName
+  id: UserName
+  parent: Inventory.Contracts.UserInput
+  langs:
+  - csharp
+  - vb
+  name: UserName
+  nameWithType: UserInput.UserName
+  fullName: Inventory.Contracts.UserInput.UserName
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/UserDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: UserName
+    path: src/Inventory.Contracts/UserDtos.cs
+    startLine: 5
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public string UserName { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property UserName As String
+  overload: Inventory.Contracts.UserInput.UserName*
+- uid: Inventory.Contracts.UserInput.Email
+  commentId: P:Inventory.Contracts.UserInput.Email
+  id: Email
+  parent: Inventory.Contracts.UserInput
+  langs:
+  - csharp
+  - vb
+  name: Email
+  nameWithType: UserInput.Email
+  fullName: Inventory.Contracts.UserInput.Email
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/UserDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Email
+    path: src/Inventory.Contracts/UserDtos.cs
+    startLine: 6
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public string Email { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Email As String
+  overload: Inventory.Contracts.UserInput.Email*
+- uid: Inventory.Contracts.UserInput.FullName
+  commentId: P:Inventory.Contracts.UserInput.FullName
+  id: FullName
+  parent: Inventory.Contracts.UserInput
+  langs:
+  - csharp
+  - vb
+  name: FullName
+  nameWithType: UserInput.FullName
+  fullName: Inventory.Contracts.UserInput.FullName
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/UserDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: FullName
+    path: src/Inventory.Contracts/UserDtos.cs
+    startLine: 7
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public string FullName { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property FullName As String
+  overload: Inventory.Contracts.UserInput.FullName*
+- uid: Inventory.Contracts.UserInput.RoleName
+  commentId: P:Inventory.Contracts.UserInput.RoleName
+  id: RoleName
+  parent: Inventory.Contracts.UserInput
+  langs:
+  - csharp
+  - vb
+  name: RoleName
+  nameWithType: UserInput.RoleName
+  fullName: Inventory.Contracts.UserInput.RoleName
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/UserDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: RoleName
+    path: src/Inventory.Contracts/UserDtos.cs
+    startLine: 8
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public string RoleName { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property RoleName As String
+  overload: Inventory.Contracts.UserInput.RoleName*
+- uid: Inventory.Contracts.UserInput.ParentId
+  commentId: P:Inventory.Contracts.UserInput.ParentId
+  id: ParentId
+  parent: Inventory.Contracts.UserInput
+  langs:
+  - csharp
+  - vb
+  name: ParentId
+  nameWithType: UserInput.ParentId
+  fullName: Inventory.Contracts.UserInput.ParentId
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/UserDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ParentId
+    path: src/Inventory.Contracts/UserDtos.cs
+    startLine: 9
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public int? ParentId { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property ParentId As Integer?
+  overload: Inventory.Contracts.UserInput.ParentId*
+- uid: Inventory.Contracts.UserInput.IsActive
+  commentId: P:Inventory.Contracts.UserInput.IsActive
+  id: IsActive
+  parent: Inventory.Contracts.UserInput
+  langs:
+  - csharp
+  - vb
+  name: IsActive
+  nameWithType: UserInput.IsActive
+  fullName: Inventory.Contracts.UserInput.IsActive
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/UserDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: IsActive
+    path: src/Inventory.Contracts/UserDtos.cs
+    startLine: 10
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public bool IsActive { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsActive As Boolean
+  overload: Inventory.Contracts.UserInput.IsActive*
+- uid: Inventory.Contracts.UserInput.Password
+  commentId: P:Inventory.Contracts.UserInput.Password
+  id: Password
+  parent: Inventory.Contracts.UserInput
+  langs:
+  - csharp
+  - vb
+  name: Password
+  nameWithType: UserInput.Password
+  fullName: Inventory.Contracts.UserInput.Password
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/UserDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Password
+    path: src/Inventory.Contracts/UserDtos.cs
+    startLine: 11
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public string? Password { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Password As String
+  overload: Inventory.Contracts.UserInput.Password*
+references:
+- uid: Inventory.Contracts
+  commentId: N:Inventory.Contracts
+  name: Inventory.Contracts
+  nameWithType: Inventory.Contracts
+  fullName: Inventory.Contracts
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Inventory.Contracts.UserInput.Id*
+  commentId: Overload:Inventory.Contracts.UserInput.Id
+  href: Inventory.Contracts.UserInput.html#Inventory_Contracts_UserInput_Id
+  name: Id
+  nameWithType: UserInput.Id
+  fullName: Inventory.Contracts.UserInput.Id
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Inventory.Contracts.UserInput.UserName*
+  commentId: Overload:Inventory.Contracts.UserInput.UserName
+  href: Inventory.Contracts.UserInput.html#Inventory_Contracts_UserInput_UserName
+  name: UserName
+  nameWithType: UserInput.UserName
+  fullName: Inventory.Contracts.UserInput.UserName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Inventory.Contracts.UserInput.Email*
+  commentId: Overload:Inventory.Contracts.UserInput.Email
+  href: Inventory.Contracts.UserInput.html#Inventory_Contracts_UserInput_Email
+  name: Email
+  nameWithType: UserInput.Email
+  fullName: Inventory.Contracts.UserInput.Email
+- uid: Inventory.Contracts.UserInput.FullName*
+  commentId: Overload:Inventory.Contracts.UserInput.FullName
+  href: Inventory.Contracts.UserInput.html#Inventory_Contracts_UserInput_FullName
+  name: FullName
+  nameWithType: UserInput.FullName
+  fullName: Inventory.Contracts.UserInput.FullName
+- uid: Inventory.Contracts.UserInput.RoleName*
+  commentId: Overload:Inventory.Contracts.UserInput.RoleName
+  href: Inventory.Contracts.UserInput.html#Inventory_Contracts_UserInput_RoleName
+  name: RoleName
+  nameWithType: UserInput.RoleName
+  fullName: Inventory.Contracts.UserInput.RoleName
+- uid: Inventory.Contracts.UserInput.ParentId*
+  commentId: Overload:Inventory.Contracts.UserInput.ParentId
+  href: Inventory.Contracts.UserInput.html#Inventory_Contracts_UserInput_ParentId
+  name: ParentId
+  nameWithType: UserInput.ParentId
+  fullName: Inventory.Contracts.UserInput.ParentId
+- uid: Inventory.Contracts.UserInput.IsActive*
+  commentId: Overload:Inventory.Contracts.UserInput.IsActive
+  href: Inventory.Contracts.UserInput.html#Inventory_Contracts_UserInput_IsActive
+  name: IsActive
+  nameWithType: UserInput.IsActive
+  fullName: Inventory.Contracts.UserInput.IsActive
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Inventory.Contracts.UserInput.Password*
+  commentId: Overload:Inventory.Contracts.UserInput.Password
+  href: Inventory.Contracts.UserInput.html#Inventory_Contracts_UserInput_Password
+  name: Password
+  nameWithType: UserInput.Password
+  fullName: Inventory.Contracts.UserInput.Password

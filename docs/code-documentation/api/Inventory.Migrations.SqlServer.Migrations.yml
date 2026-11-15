@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Migrations.SqlServer.Migrations
+  commentId: N:Inventory.Migrations.SqlServer.Migrations
+  id: Inventory.Migrations.SqlServer.Migrations
+  children:
+  - Inventory.Migrations.SqlServer.Migrations.InitialCreate
+  langs:
+  - csharp
+  - vb
+  name: Inventory.Migrations.SqlServer.Migrations
+  nameWithType: Inventory.Migrations.SqlServer.Migrations
+  fullName: Inventory.Migrations.SqlServer.Migrations
+  type: Namespace
+  assemblies:
+  - Inventory.Migrations.SqlServer
+references:
+- uid: Inventory.Migrations.SqlServer.Migrations.InitialCreate
+  commentId: T:Inventory.Migrations.SqlServer.Migrations.InitialCreate
+  href: Inventory.Migrations.SqlServer.Migrations.InitialCreate.html
+  name: InitialCreate
+  nameWithType: InitialCreate
+  fullName: Inventory.Migrations.SqlServer.Migrations.InitialCreate

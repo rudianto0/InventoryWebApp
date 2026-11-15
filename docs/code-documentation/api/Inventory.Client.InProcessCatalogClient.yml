@@ -1,0 +1,2558 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Client.InProcessCatalogClient
+  commentId: T:Inventory.Client.InProcessCatalogClient
+  id: InProcessCatalogClient
+  parent: Inventory.Client
+  children:
+  - Inventory.Client.InProcessCatalogClient.#ctor(Inventory.Application.Services.CatalogService)
+  - Inventory.Client.InProcessCatalogClient.CreateCategoryAsync(Inventory.Contracts.CategoryInput,System.Threading.CancellationToken)
+  - Inventory.Client.InProcessCatalogClient.CreateProductAsync(Inventory.Contracts.ProductInput,System.Threading.CancellationToken)
+  - Inventory.Client.InProcessCatalogClient.CreateUnitAsync(Inventory.Contracts.UnitInput,System.Threading.CancellationToken)
+  - Inventory.Client.InProcessCatalogClient.DeactivateCategoryAsync(System.Guid,System.Threading.CancellationToken)
+  - Inventory.Client.InProcessCatalogClient.DeactivateProductAsync(System.Guid,System.Threading.CancellationToken)
+  - Inventory.Client.InProcessCatalogClient.DeleteCategoryAsync(System.Guid,System.Threading.CancellationToken)
+  - Inventory.Client.InProcessCatalogClient.DeleteProductAsync(System.Guid,System.Threading.CancellationToken)
+  - Inventory.Client.InProcessCatalogClient.DeleteUnitAsync(System.Guid,System.Threading.CancellationToken)
+  - Inventory.Client.InProcessCatalogClient.GetCategoriesAsync(System.String,System.Threading.CancellationToken)
+  - Inventory.Client.InProcessCatalogClient.GetCategoryAsync(System.Guid,System.Threading.CancellationToken)
+  - Inventory.Client.InProcessCatalogClient.GetCategoryOptionsAsync(System.Threading.CancellationToken)
+  - Inventory.Client.InProcessCatalogClient.GetProductAsync(System.Guid,System.Threading.CancellationToken)
+  - Inventory.Client.InProcessCatalogClient.GetProductOptionsAsync(System.Threading.CancellationToken)
+  - Inventory.Client.InProcessCatalogClient.GetProductsAsync(System.String,System.Nullable{System.Guid},System.Nullable{System.Boolean},System.Threading.CancellationToken)
+  - Inventory.Client.InProcessCatalogClient.GetUnitAsync(System.Guid,System.Threading.CancellationToken)
+  - Inventory.Client.InProcessCatalogClient.GetUnitOptionsAsync(System.Threading.CancellationToken)
+  - Inventory.Client.InProcessCatalogClient.GetUnitsAsync(System.String,System.Threading.CancellationToken)
+  - Inventory.Client.InProcessCatalogClient.UpdateCategoryAsync(System.Guid,Inventory.Contracts.CategoryInput,System.Threading.CancellationToken)
+  - Inventory.Client.InProcessCatalogClient.UpdateProductAsync(System.Guid,Inventory.Contracts.ProductInput,System.Threading.CancellationToken)
+  - Inventory.Client.InProcessCatalogClient.UpdateUnitAsync(System.Guid,Inventory.Contracts.UnitInput,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: InProcessCatalogClient
+  nameWithType: InProcessCatalogClient
+  fullName: Inventory.Client.InProcessCatalogClient
+  type: Class
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: InProcessCatalogClient
+    path: src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 7
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  syntax:
+    content: 'public sealed class InProcessCatalogClient : ICatalogClient'
+    content.vb: Public NotInheritable Class InProcessCatalogClient Implements ICatalogClient
+  inheritance:
+  - System.Object
+  implements:
+  - Inventory.Client.ICatalogClient
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Inventory.Client.InProcessCatalogClient.#ctor(Inventory.Application.Services.CatalogService)
+  commentId: M:Inventory.Client.InProcessCatalogClient.#ctor(Inventory.Application.Services.CatalogService)
+  id: '#ctor(Inventory.Application.Services.CatalogService)'
+  parent: Inventory.Client.InProcessCatalogClient
+  langs:
+  - csharp
+  - vb
+  name: InProcessCatalogClient(CatalogService)
+  nameWithType: InProcessCatalogClient.InProcessCatalogClient(CatalogService)
+  fullName: Inventory.Client.InProcessCatalogClient.InProcessCatalogClient(Inventory.Application.Services.CatalogService)
+  type: Constructor
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: .ctor
+    path: src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 7
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  syntax:
+    content: public InProcessCatalogClient(CatalogService service)
+    parameters:
+    - id: service
+      type: Inventory.Application.Services.CatalogService
+    content.vb: Public Sub New(service As CatalogService)
+  overload: Inventory.Client.InProcessCatalogClient.#ctor*
+  nameWithType.vb: InProcessCatalogClient.New(CatalogService)
+  fullName.vb: Inventory.Client.InProcessCatalogClient.New(Inventory.Application.Services.CatalogService)
+  name.vb: New(CatalogService)
+- uid: Inventory.Client.InProcessCatalogClient.GetCategoriesAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.InProcessCatalogClient.GetCategoriesAsync(System.String,System.Threading.CancellationToken)
+  id: GetCategoriesAsync(System.String,System.Threading.CancellationToken)
+  parent: Inventory.Client.InProcessCatalogClient
+  langs:
+  - csharp
+  - vb
+  name: GetCategoriesAsync(string?, CancellationToken)
+  nameWithType: InProcessCatalogClient.GetCategoriesAsync(string?, CancellationToken)
+  fullName: Inventory.Client.InProcessCatalogClient.GetCategoriesAsync(string?, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: GetCategoriesAsync
+    path: src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 9
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  example: []
+  syntax:
+    content: public Task<IReadOnlyList<CategoryResponse>> GetCategoriesAsync(string? search = null, CancellationToken ct = default)
+    parameters:
+    - id: search
+      type: System.String
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Inventory.Contracts.CategoryResponse}}
+    content.vb: Public Function GetCategoriesAsync(search As String = Nothing, ct As CancellationToken = Nothing) As Task(Of IReadOnlyList(Of CategoryResponse))
+  overload: Inventory.Client.InProcessCatalogClient.GetCategoriesAsync*
+  implements:
+  - Inventory.Client.ICatalogClient.GetCategoriesAsync(System.String,System.Threading.CancellationToken)
+  nameWithType.vb: InProcessCatalogClient.GetCategoriesAsync(String, CancellationToken)
+  fullName.vb: Inventory.Client.InProcessCatalogClient.GetCategoriesAsync(String, System.Threading.CancellationToken)
+  name.vb: GetCategoriesAsync(String, CancellationToken)
+- uid: Inventory.Client.InProcessCatalogClient.GetCategoryAsync(System.Guid,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.InProcessCatalogClient.GetCategoryAsync(System.Guid,System.Threading.CancellationToken)
+  id: GetCategoryAsync(System.Guid,System.Threading.CancellationToken)
+  parent: Inventory.Client.InProcessCatalogClient
+  langs:
+  - csharp
+  - vb
+  name: GetCategoryAsync(Guid, CancellationToken)
+  nameWithType: InProcessCatalogClient.GetCategoryAsync(Guid, CancellationToken)
+  fullName: Inventory.Client.InProcessCatalogClient.GetCategoryAsync(System.Guid, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: GetCategoryAsync
+    path: src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 10
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  example: []
+  syntax:
+    content: public Task<CategoryResponse?> GetCategoryAsync(Guid id, CancellationToken ct = default)
+    parameters:
+    - id: id
+      type: System.Guid
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{Inventory.Contracts.CategoryResponse}
+    content.vb: Public Function GetCategoryAsync(id As Guid, ct As CancellationToken = Nothing) As Task(Of CategoryResponse)
+  overload: Inventory.Client.InProcessCatalogClient.GetCategoryAsync*
+  implements:
+  - Inventory.Client.ICatalogClient.GetCategoryAsync(System.Guid,System.Threading.CancellationToken)
+- uid: Inventory.Client.InProcessCatalogClient.CreateCategoryAsync(Inventory.Contracts.CategoryInput,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.InProcessCatalogClient.CreateCategoryAsync(Inventory.Contracts.CategoryInput,System.Threading.CancellationToken)
+  id: CreateCategoryAsync(Inventory.Contracts.CategoryInput,System.Threading.CancellationToken)
+  parent: Inventory.Client.InProcessCatalogClient
+  langs:
+  - csharp
+  - vb
+  name: CreateCategoryAsync(CategoryInput, CancellationToken)
+  nameWithType: InProcessCatalogClient.CreateCategoryAsync(CategoryInput, CancellationToken)
+  fullName: Inventory.Client.InProcessCatalogClient.CreateCategoryAsync(Inventory.Contracts.CategoryInput, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: CreateCategoryAsync
+    path: src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 11
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  example: []
+  syntax:
+    content: public Task<CategoryResponse> CreateCategoryAsync(CategoryInput input, CancellationToken ct = default)
+    parameters:
+    - id: input
+      type: Inventory.Contracts.CategoryInput
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{Inventory.Contracts.CategoryResponse}
+    content.vb: Public Function CreateCategoryAsync(input As CategoryInput, ct As CancellationToken = Nothing) As Task(Of CategoryResponse)
+  overload: Inventory.Client.InProcessCatalogClient.CreateCategoryAsync*
+  implements:
+  - Inventory.Client.ICatalogClient.CreateCategoryAsync(Inventory.Contracts.CategoryInput,System.Threading.CancellationToken)
+- uid: Inventory.Client.InProcessCatalogClient.UpdateCategoryAsync(System.Guid,Inventory.Contracts.CategoryInput,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.InProcessCatalogClient.UpdateCategoryAsync(System.Guid,Inventory.Contracts.CategoryInput,System.Threading.CancellationToken)
+  id: UpdateCategoryAsync(System.Guid,Inventory.Contracts.CategoryInput,System.Threading.CancellationToken)
+  parent: Inventory.Client.InProcessCatalogClient
+  langs:
+  - csharp
+  - vb
+  name: UpdateCategoryAsync(Guid, CategoryInput, CancellationToken)
+  nameWithType: InProcessCatalogClient.UpdateCategoryAsync(Guid, CategoryInput, CancellationToken)
+  fullName: Inventory.Client.InProcessCatalogClient.UpdateCategoryAsync(System.Guid, Inventory.Contracts.CategoryInput, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: UpdateCategoryAsync
+    path: src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 12
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  example: []
+  syntax:
+    content: public Task UpdateCategoryAsync(Guid id, CategoryInput input, CancellationToken ct = default)
+    parameters:
+    - id: id
+      type: System.Guid
+    - id: input
+      type: Inventory.Contracts.CategoryInput
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function UpdateCategoryAsync(id As Guid, input As CategoryInput, ct As CancellationToken = Nothing) As Task
+  overload: Inventory.Client.InProcessCatalogClient.UpdateCategoryAsync*
+  implements:
+  - Inventory.Client.ICatalogClient.UpdateCategoryAsync(System.Guid,Inventory.Contracts.CategoryInput,System.Threading.CancellationToken)
+- uid: Inventory.Client.InProcessCatalogClient.DeactivateCategoryAsync(System.Guid,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.InProcessCatalogClient.DeactivateCategoryAsync(System.Guid,System.Threading.CancellationToken)
+  id: DeactivateCategoryAsync(System.Guid,System.Threading.CancellationToken)
+  parent: Inventory.Client.InProcessCatalogClient
+  langs:
+  - csharp
+  - vb
+  name: DeactivateCategoryAsync(Guid, CancellationToken)
+  nameWithType: InProcessCatalogClient.DeactivateCategoryAsync(Guid, CancellationToken)
+  fullName: Inventory.Client.InProcessCatalogClient.DeactivateCategoryAsync(System.Guid, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: DeactivateCategoryAsync
+    path: src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 13
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  example: []
+  syntax:
+    content: public Task DeactivateCategoryAsync(Guid id, CancellationToken ct = default)
+    parameters:
+    - id: id
+      type: System.Guid
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function DeactivateCategoryAsync(id As Guid, ct As CancellationToken = Nothing) As Task
+  overload: Inventory.Client.InProcessCatalogClient.DeactivateCategoryAsync*
+  implements:
+  - Inventory.Client.ICatalogClient.DeactivateCategoryAsync(System.Guid,System.Threading.CancellationToken)
+- uid: Inventory.Client.InProcessCatalogClient.DeleteCategoryAsync(System.Guid,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.InProcessCatalogClient.DeleteCategoryAsync(System.Guid,System.Threading.CancellationToken)
+  id: DeleteCategoryAsync(System.Guid,System.Threading.CancellationToken)
+  parent: Inventory.Client.InProcessCatalogClient
+  langs:
+  - csharp
+  - vb
+  name: DeleteCategoryAsync(Guid, CancellationToken)
+  nameWithType: InProcessCatalogClient.DeleteCategoryAsync(Guid, CancellationToken)
+  fullName: Inventory.Client.InProcessCatalogClient.DeleteCategoryAsync(System.Guid, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: DeleteCategoryAsync
+    path: src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 14
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  example: []
+  syntax:
+    content: public Task DeleteCategoryAsync(Guid id, CancellationToken ct = default)
+    parameters:
+    - id: id
+      type: System.Guid
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function DeleteCategoryAsync(id As Guid, ct As CancellationToken = Nothing) As Task
+  overload: Inventory.Client.InProcessCatalogClient.DeleteCategoryAsync*
+  implements:
+  - Inventory.Client.ICatalogClient.DeleteCategoryAsync(System.Guid,System.Threading.CancellationToken)
+- uid: Inventory.Client.InProcessCatalogClient.GetUnitsAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.InProcessCatalogClient.GetUnitsAsync(System.String,System.Threading.CancellationToken)
+  id: GetUnitsAsync(System.String,System.Threading.CancellationToken)
+  parent: Inventory.Client.InProcessCatalogClient
+  langs:
+  - csharp
+  - vb
+  name: GetUnitsAsync(string?, CancellationToken)
+  nameWithType: InProcessCatalogClient.GetUnitsAsync(string?, CancellationToken)
+  fullName: Inventory.Client.InProcessCatalogClient.GetUnitsAsync(string?, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: GetUnitsAsync
+    path: src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 15
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  example: []
+  syntax:
+    content: public Task<IReadOnlyList<UnitResponse>> GetUnitsAsync(string? search = null, CancellationToken ct = default)
+    parameters:
+    - id: search
+      type: System.String
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Inventory.Contracts.UnitResponse}}
+    content.vb: Public Function GetUnitsAsync(search As String = Nothing, ct As CancellationToken = Nothing) As Task(Of IReadOnlyList(Of UnitResponse))
+  overload: Inventory.Client.InProcessCatalogClient.GetUnitsAsync*
+  implements:
+  - Inventory.Client.ICatalogClient.GetUnitsAsync(System.String,System.Threading.CancellationToken)
+  nameWithType.vb: InProcessCatalogClient.GetUnitsAsync(String, CancellationToken)
+  fullName.vb: Inventory.Client.InProcessCatalogClient.GetUnitsAsync(String, System.Threading.CancellationToken)
+  name.vb: GetUnitsAsync(String, CancellationToken)
+- uid: Inventory.Client.InProcessCatalogClient.GetUnitAsync(System.Guid,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.InProcessCatalogClient.GetUnitAsync(System.Guid,System.Threading.CancellationToken)
+  id: GetUnitAsync(System.Guid,System.Threading.CancellationToken)
+  parent: Inventory.Client.InProcessCatalogClient
+  langs:
+  - csharp
+  - vb
+  name: GetUnitAsync(Guid, CancellationToken)
+  nameWithType: InProcessCatalogClient.GetUnitAsync(Guid, CancellationToken)
+  fullName: Inventory.Client.InProcessCatalogClient.GetUnitAsync(System.Guid, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: GetUnitAsync
+    path: src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 16
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  example: []
+  syntax:
+    content: public Task<UnitResponse?> GetUnitAsync(Guid id, CancellationToken ct = default)
+    parameters:
+    - id: id
+      type: System.Guid
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{Inventory.Contracts.UnitResponse}
+    content.vb: Public Function GetUnitAsync(id As Guid, ct As CancellationToken = Nothing) As Task(Of UnitResponse)
+  overload: Inventory.Client.InProcessCatalogClient.GetUnitAsync*
+  implements:
+  - Inventory.Client.ICatalogClient.GetUnitAsync(System.Guid,System.Threading.CancellationToken)
+- uid: Inventory.Client.InProcessCatalogClient.CreateUnitAsync(Inventory.Contracts.UnitInput,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.InProcessCatalogClient.CreateUnitAsync(Inventory.Contracts.UnitInput,System.Threading.CancellationToken)
+  id: CreateUnitAsync(Inventory.Contracts.UnitInput,System.Threading.CancellationToken)
+  parent: Inventory.Client.InProcessCatalogClient
+  langs:
+  - csharp
+  - vb
+  name: CreateUnitAsync(UnitInput, CancellationToken)
+  nameWithType: InProcessCatalogClient.CreateUnitAsync(UnitInput, CancellationToken)
+  fullName: Inventory.Client.InProcessCatalogClient.CreateUnitAsync(Inventory.Contracts.UnitInput, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: CreateUnitAsync
+    path: src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 17
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  example: []
+  syntax:
+    content: public Task<UnitResponse> CreateUnitAsync(UnitInput input, CancellationToken ct = default)
+    parameters:
+    - id: input
+      type: Inventory.Contracts.UnitInput
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{Inventory.Contracts.UnitResponse}
+    content.vb: Public Function CreateUnitAsync(input As UnitInput, ct As CancellationToken = Nothing) As Task(Of UnitResponse)
+  overload: Inventory.Client.InProcessCatalogClient.CreateUnitAsync*
+  implements:
+  - Inventory.Client.ICatalogClient.CreateUnitAsync(Inventory.Contracts.UnitInput,System.Threading.CancellationToken)
+- uid: Inventory.Client.InProcessCatalogClient.UpdateUnitAsync(System.Guid,Inventory.Contracts.UnitInput,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.InProcessCatalogClient.UpdateUnitAsync(System.Guid,Inventory.Contracts.UnitInput,System.Threading.CancellationToken)
+  id: UpdateUnitAsync(System.Guid,Inventory.Contracts.UnitInput,System.Threading.CancellationToken)
+  parent: Inventory.Client.InProcessCatalogClient
+  langs:
+  - csharp
+  - vb
+  name: UpdateUnitAsync(Guid, UnitInput, CancellationToken)
+  nameWithType: InProcessCatalogClient.UpdateUnitAsync(Guid, UnitInput, CancellationToken)
+  fullName: Inventory.Client.InProcessCatalogClient.UpdateUnitAsync(System.Guid, Inventory.Contracts.UnitInput, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: UpdateUnitAsync
+    path: src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 18
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  example: []
+  syntax:
+    content: public Task UpdateUnitAsync(Guid id, UnitInput input, CancellationToken ct = default)
+    parameters:
+    - id: id
+      type: System.Guid
+    - id: input
+      type: Inventory.Contracts.UnitInput
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function UpdateUnitAsync(id As Guid, input As UnitInput, ct As CancellationToken = Nothing) As Task
+  overload: Inventory.Client.InProcessCatalogClient.UpdateUnitAsync*
+  implements:
+  - Inventory.Client.ICatalogClient.UpdateUnitAsync(System.Guid,Inventory.Contracts.UnitInput,System.Threading.CancellationToken)
+- uid: Inventory.Client.InProcessCatalogClient.DeleteUnitAsync(System.Guid,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.InProcessCatalogClient.DeleteUnitAsync(System.Guid,System.Threading.CancellationToken)
+  id: DeleteUnitAsync(System.Guid,System.Threading.CancellationToken)
+  parent: Inventory.Client.InProcessCatalogClient
+  langs:
+  - csharp
+  - vb
+  name: DeleteUnitAsync(Guid, CancellationToken)
+  nameWithType: InProcessCatalogClient.DeleteUnitAsync(Guid, CancellationToken)
+  fullName: Inventory.Client.InProcessCatalogClient.DeleteUnitAsync(System.Guid, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: DeleteUnitAsync
+    path: src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 19
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  example: []
+  syntax:
+    content: public Task DeleteUnitAsync(Guid id, CancellationToken ct = default)
+    parameters:
+    - id: id
+      type: System.Guid
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function DeleteUnitAsync(id As Guid, ct As CancellationToken = Nothing) As Task
+  overload: Inventory.Client.InProcessCatalogClient.DeleteUnitAsync*
+  implements:
+  - Inventory.Client.ICatalogClient.DeleteUnitAsync(System.Guid,System.Threading.CancellationToken)
+- uid: Inventory.Client.InProcessCatalogClient.GetProductsAsync(System.String,System.Nullable{System.Guid},System.Nullable{System.Boolean},System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.InProcessCatalogClient.GetProductsAsync(System.String,System.Nullable{System.Guid},System.Nullable{System.Boolean},System.Threading.CancellationToken)
+  id: GetProductsAsync(System.String,System.Nullable{System.Guid},System.Nullable{System.Boolean},System.Threading.CancellationToken)
+  parent: Inventory.Client.InProcessCatalogClient
+  langs:
+  - csharp
+  - vb
+  name: GetProductsAsync(string?, Guid?, bool?, CancellationToken)
+  nameWithType: InProcessCatalogClient.GetProductsAsync(string?, Guid?, bool?, CancellationToken)
+  fullName: Inventory.Client.InProcessCatalogClient.GetProductsAsync(string?, System.Guid?, bool?, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: GetProductsAsync
+    path: src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 20
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  example: []
+  syntax:
+    content: public Task<IReadOnlyList<ProductListItem>> GetProductsAsync(string? search = null, Guid? categoryId = null, bool? activeOnly = null, CancellationToken ct = default)
+    parameters:
+    - id: search
+      type: System.String
+    - id: categoryId
+      type: System.Nullable{System.Guid}
+    - id: activeOnly
+      type: System.Nullable{System.Boolean}
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Inventory.Contracts.ProductListItem}}
+    content.vb: Public Function GetProductsAsync(search As String = Nothing, categoryId As Guid? = Nothing, activeOnly As Boolean? = Nothing, ct As CancellationToken = Nothing) As Task(Of IReadOnlyList(Of ProductListItem))
+  overload: Inventory.Client.InProcessCatalogClient.GetProductsAsync*
+  implements:
+  - Inventory.Client.ICatalogClient.GetProductsAsync(System.String,System.Nullable{System.Guid},System.Nullable{System.Boolean},System.Threading.CancellationToken)
+  nameWithType.vb: InProcessCatalogClient.GetProductsAsync(String, Guid?, Boolean?, CancellationToken)
+  fullName.vb: Inventory.Client.InProcessCatalogClient.GetProductsAsync(String, System.Guid?, Boolean?, System.Threading.CancellationToken)
+  name.vb: GetProductsAsync(String, Guid?, Boolean?, CancellationToken)
+- uid: Inventory.Client.InProcessCatalogClient.GetProductAsync(System.Guid,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.InProcessCatalogClient.GetProductAsync(System.Guid,System.Threading.CancellationToken)
+  id: GetProductAsync(System.Guid,System.Threading.CancellationToken)
+  parent: Inventory.Client.InProcessCatalogClient
+  langs:
+  - csharp
+  - vb
+  name: GetProductAsync(Guid, CancellationToken)
+  nameWithType: InProcessCatalogClient.GetProductAsync(Guid, CancellationToken)
+  fullName: Inventory.Client.InProcessCatalogClient.GetProductAsync(System.Guid, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: GetProductAsync
+    path: src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 21
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  example: []
+  syntax:
+    content: public Task<ProductResponse?> GetProductAsync(Guid id, CancellationToken ct = default)
+    parameters:
+    - id: id
+      type: System.Guid
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{Inventory.Contracts.ProductResponse}
+    content.vb: Public Function GetProductAsync(id As Guid, ct As CancellationToken = Nothing) As Task(Of ProductResponse)
+  overload: Inventory.Client.InProcessCatalogClient.GetProductAsync*
+  implements:
+  - Inventory.Client.ICatalogClient.GetProductAsync(System.Guid,System.Threading.CancellationToken)
+- uid: Inventory.Client.InProcessCatalogClient.CreateProductAsync(Inventory.Contracts.ProductInput,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.InProcessCatalogClient.CreateProductAsync(Inventory.Contracts.ProductInput,System.Threading.CancellationToken)
+  id: CreateProductAsync(Inventory.Contracts.ProductInput,System.Threading.CancellationToken)
+  parent: Inventory.Client.InProcessCatalogClient
+  langs:
+  - csharp
+  - vb
+  name: CreateProductAsync(ProductInput, CancellationToken)
+  nameWithType: InProcessCatalogClient.CreateProductAsync(ProductInput, CancellationToken)
+  fullName: Inventory.Client.InProcessCatalogClient.CreateProductAsync(Inventory.Contracts.ProductInput, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: CreateProductAsync
+    path: src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 22
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  example: []
+  syntax:
+    content: public Task<ProductResponse> CreateProductAsync(ProductInput input, CancellationToken ct = default)
+    parameters:
+    - id: input
+      type: Inventory.Contracts.ProductInput
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{Inventory.Contracts.ProductResponse}
+    content.vb: Public Function CreateProductAsync(input As ProductInput, ct As CancellationToken = Nothing) As Task(Of ProductResponse)
+  overload: Inventory.Client.InProcessCatalogClient.CreateProductAsync*
+  implements:
+  - Inventory.Client.ICatalogClient.CreateProductAsync(Inventory.Contracts.ProductInput,System.Threading.CancellationToken)
+- uid: Inventory.Client.InProcessCatalogClient.UpdateProductAsync(System.Guid,Inventory.Contracts.ProductInput,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.InProcessCatalogClient.UpdateProductAsync(System.Guid,Inventory.Contracts.ProductInput,System.Threading.CancellationToken)
+  id: UpdateProductAsync(System.Guid,Inventory.Contracts.ProductInput,System.Threading.CancellationToken)
+  parent: Inventory.Client.InProcessCatalogClient
+  langs:
+  - csharp
+  - vb
+  name: UpdateProductAsync(Guid, ProductInput, CancellationToken)
+  nameWithType: InProcessCatalogClient.UpdateProductAsync(Guid, ProductInput, CancellationToken)
+  fullName: Inventory.Client.InProcessCatalogClient.UpdateProductAsync(System.Guid, Inventory.Contracts.ProductInput, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: UpdateProductAsync
+    path: src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 23
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  example: []
+  syntax:
+    content: public Task UpdateProductAsync(Guid id, ProductInput input, CancellationToken ct = default)
+    parameters:
+    - id: id
+      type: System.Guid
+    - id: input
+      type: Inventory.Contracts.ProductInput
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function UpdateProductAsync(id As Guid, input As ProductInput, ct As CancellationToken = Nothing) As Task
+  overload: Inventory.Client.InProcessCatalogClient.UpdateProductAsync*
+  implements:
+  - Inventory.Client.ICatalogClient.UpdateProductAsync(System.Guid,Inventory.Contracts.ProductInput,System.Threading.CancellationToken)
+- uid: Inventory.Client.InProcessCatalogClient.DeactivateProductAsync(System.Guid,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.InProcessCatalogClient.DeactivateProductAsync(System.Guid,System.Threading.CancellationToken)
+  id: DeactivateProductAsync(System.Guid,System.Threading.CancellationToken)
+  parent: Inventory.Client.InProcessCatalogClient
+  langs:
+  - csharp
+  - vb
+  name: DeactivateProductAsync(Guid, CancellationToken)
+  nameWithType: InProcessCatalogClient.DeactivateProductAsync(Guid, CancellationToken)
+  fullName: Inventory.Client.InProcessCatalogClient.DeactivateProductAsync(System.Guid, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: DeactivateProductAsync
+    path: src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 24
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  example: []
+  syntax:
+    content: public Task DeactivateProductAsync(Guid id, CancellationToken ct = default)
+    parameters:
+    - id: id
+      type: System.Guid
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function DeactivateProductAsync(id As Guid, ct As CancellationToken = Nothing) As Task
+  overload: Inventory.Client.InProcessCatalogClient.DeactivateProductAsync*
+  implements:
+  - Inventory.Client.ICatalogClient.DeactivateProductAsync(System.Guid,System.Threading.CancellationToken)
+- uid: Inventory.Client.InProcessCatalogClient.DeleteProductAsync(System.Guid,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.InProcessCatalogClient.DeleteProductAsync(System.Guid,System.Threading.CancellationToken)
+  id: DeleteProductAsync(System.Guid,System.Threading.CancellationToken)
+  parent: Inventory.Client.InProcessCatalogClient
+  langs:
+  - csharp
+  - vb
+  name: DeleteProductAsync(Guid, CancellationToken)
+  nameWithType: InProcessCatalogClient.DeleteProductAsync(Guid, CancellationToken)
+  fullName: Inventory.Client.InProcessCatalogClient.DeleteProductAsync(System.Guid, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: DeleteProductAsync
+    path: src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 25
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  example: []
+  syntax:
+    content: public Task DeleteProductAsync(Guid id, CancellationToken ct = default)
+    parameters:
+    - id: id
+      type: System.Guid
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function DeleteProductAsync(id As Guid, ct As CancellationToken = Nothing) As Task
+  overload: Inventory.Client.InProcessCatalogClient.DeleteProductAsync*
+  implements:
+  - Inventory.Client.ICatalogClient.DeleteProductAsync(System.Guid,System.Threading.CancellationToken)
+- uid: Inventory.Client.InProcessCatalogClient.GetCategoryOptionsAsync(System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.InProcessCatalogClient.GetCategoryOptionsAsync(System.Threading.CancellationToken)
+  id: GetCategoryOptionsAsync(System.Threading.CancellationToken)
+  parent: Inventory.Client.InProcessCatalogClient
+  langs:
+  - csharp
+  - vb
+  name: GetCategoryOptionsAsync(CancellationToken)
+  nameWithType: InProcessCatalogClient.GetCategoryOptionsAsync(CancellationToken)
+  fullName: Inventory.Client.InProcessCatalogClient.GetCategoryOptionsAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: GetCategoryOptionsAsync
+    path: src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 26
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  example: []
+  syntax:
+    content: public Task<IReadOnlyList<SelectOption>> GetCategoryOptionsAsync(CancellationToken ct = default)
+    parameters:
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Inventory.Contracts.SelectOption}}
+    content.vb: Public Function GetCategoryOptionsAsync(ct As CancellationToken = Nothing) As Task(Of IReadOnlyList(Of SelectOption))
+  overload: Inventory.Client.InProcessCatalogClient.GetCategoryOptionsAsync*
+  implements:
+  - Inventory.Client.ICatalogClient.GetCategoryOptionsAsync(System.Threading.CancellationToken)
+- uid: Inventory.Client.InProcessCatalogClient.GetUnitOptionsAsync(System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.InProcessCatalogClient.GetUnitOptionsAsync(System.Threading.CancellationToken)
+  id: GetUnitOptionsAsync(System.Threading.CancellationToken)
+  parent: Inventory.Client.InProcessCatalogClient
+  langs:
+  - csharp
+  - vb
+  name: GetUnitOptionsAsync(CancellationToken)
+  nameWithType: InProcessCatalogClient.GetUnitOptionsAsync(CancellationToken)
+  fullName: Inventory.Client.InProcessCatalogClient.GetUnitOptionsAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: GetUnitOptionsAsync
+    path: src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 27
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  example: []
+  syntax:
+    content: public Task<IReadOnlyList<SelectOption>> GetUnitOptionsAsync(CancellationToken ct = default)
+    parameters:
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Inventory.Contracts.SelectOption}}
+    content.vb: Public Function GetUnitOptionsAsync(ct As CancellationToken = Nothing) As Task(Of IReadOnlyList(Of SelectOption))
+  overload: Inventory.Client.InProcessCatalogClient.GetUnitOptionsAsync*
+  implements:
+  - Inventory.Client.ICatalogClient.GetUnitOptionsAsync(System.Threading.CancellationToken)
+- uid: Inventory.Client.InProcessCatalogClient.GetProductOptionsAsync(System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.InProcessCatalogClient.GetProductOptionsAsync(System.Threading.CancellationToken)
+  id: GetProductOptionsAsync(System.Threading.CancellationToken)
+  parent: Inventory.Client.InProcessCatalogClient
+  langs:
+  - csharp
+  - vb
+  name: GetProductOptionsAsync(CancellationToken)
+  nameWithType: InProcessCatalogClient.GetProductOptionsAsync(CancellationToken)
+  fullName: Inventory.Client.InProcessCatalogClient.GetProductOptionsAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: GetProductOptionsAsync
+    path: src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 28
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  example: []
+  syntax:
+    content: public Task<IReadOnlyList<SelectOption>> GetProductOptionsAsync(CancellationToken ct = default)
+    parameters:
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Inventory.Contracts.SelectOption}}
+    content.vb: Public Function GetProductOptionsAsync(ct As CancellationToken = Nothing) As Task(Of IReadOnlyList(Of SelectOption))
+  overload: Inventory.Client.InProcessCatalogClient.GetProductOptionsAsync*
+  implements:
+  - Inventory.Client.ICatalogClient.GetProductOptionsAsync(System.Threading.CancellationToken)
+references:
+- uid: Inventory.Client
+  commentId: N:Inventory.Client
+  name: Inventory.Client
+  nameWithType: Inventory.Client
+  fullName: Inventory.Client
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Client
+    name: Client
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Client
+    name: Client
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Inventory.Client.ICatalogClient
+  commentId: T:Inventory.Client.ICatalogClient
+  parent: Inventory.Client
+  href: Inventory.Client.ICatalogClient.html
+  name: ICatalogClient
+  nameWithType: ICatalogClient
+  fullName: Inventory.Client.ICatalogClient
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Inventory.Client.InProcessCatalogClient.#ctor*
+  commentId: Overload:Inventory.Client.InProcessCatalogClient.#ctor
+  href: Inventory.Client.InProcessCatalogClient.html#Inventory_Client_InProcessCatalogClient__ctor_Inventory_Application_Services_CatalogService_
+  name: InProcessCatalogClient
+  nameWithType: InProcessCatalogClient.InProcessCatalogClient
+  fullName: Inventory.Client.InProcessCatalogClient.InProcessCatalogClient
+  nameWithType.vb: InProcessCatalogClient.New
+  fullName.vb: Inventory.Client.InProcessCatalogClient.New
+  name.vb: New
+- uid: Inventory.Application.Services.CatalogService
+  commentId: T:Inventory.Application.Services.CatalogService
+  parent: Inventory.Application.Services
+  href: Inventory.Application.Services.CatalogService.html
+  name: CatalogService
+  nameWithType: CatalogService
+  fullName: Inventory.Application.Services.CatalogService
+- uid: Inventory.Application.Services
+  commentId: N:Inventory.Application.Services
+  name: Inventory.Application.Services
+  nameWithType: Inventory.Application.Services
+  fullName: Inventory.Application.Services
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Application
+    name: Application
+  - name: .
+  - uid: Inventory.Application.Services
+    name: Services
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Application
+    name: Application
+  - name: .
+  - uid: Inventory.Application.Services
+    name: Services
+- uid: Inventory.Client.InProcessCatalogClient.GetCategoriesAsync*
+  commentId: Overload:Inventory.Client.InProcessCatalogClient.GetCategoriesAsync
+  href: Inventory.Client.InProcessCatalogClient.html#Inventory_Client_InProcessCatalogClient_GetCategoriesAsync_System_String_System_Threading_CancellationToken_
+  name: GetCategoriesAsync
+  nameWithType: InProcessCatalogClient.GetCategoriesAsync
+  fullName: Inventory.Client.InProcessCatalogClient.GetCategoriesAsync
+- uid: Inventory.Client.ICatalogClient.GetCategoriesAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.ICatalogClient.GetCategoriesAsync(System.String,System.Threading.CancellationToken)
+  parent: Inventory.Client.ICatalogClient
+  isExternal: true
+  href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_GetCategoriesAsync_System_String_System_Threading_CancellationToken_
+  name: GetCategoriesAsync(string, CancellationToken)
+  nameWithType: ICatalogClient.GetCategoriesAsync(string, CancellationToken)
+  fullName: Inventory.Client.ICatalogClient.GetCategoriesAsync(string, System.Threading.CancellationToken)
+  nameWithType.vb: ICatalogClient.GetCategoriesAsync(String, CancellationToken)
+  fullName.vb: Inventory.Client.ICatalogClient.GetCategoriesAsync(String, System.Threading.CancellationToken)
+  name.vb: GetCategoriesAsync(String, CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Client.ICatalogClient.GetCategoriesAsync(System.String,System.Threading.CancellationToken)
+    name: GetCategoriesAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_GetCategoriesAsync_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Client.ICatalogClient.GetCategoriesAsync(System.String,System.Threading.CancellationToken)
+    name: GetCategoriesAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_GetCategoriesAsync_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Inventory.Contracts.CategoryResponse}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Inventory.Contracts.CategoryResponse}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IReadOnlyList<CategoryResponse>>
+  nameWithType: Task<IReadOnlyList<CategoryResponse>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyList<Inventory.Contracts.CategoryResponse>>
+  nameWithType.vb: Task(Of IReadOnlyList(Of CategoryResponse))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IReadOnlyList(Of Inventory.Contracts.CategoryResponse))
+  name.vb: Task(Of IReadOnlyList(Of CategoryResponse))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: Inventory.Contracts.CategoryResponse
+    name: CategoryResponse
+    href: Inventory.Contracts.CategoryResponse.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.CategoryResponse
+    name: CategoryResponse
+    href: Inventory.Contracts.CategoryResponse.html
+  - name: )
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: Inventory.Client.InProcessCatalogClient.GetCategoryAsync*
+  commentId: Overload:Inventory.Client.InProcessCatalogClient.GetCategoryAsync
+  href: Inventory.Client.InProcessCatalogClient.html#Inventory_Client_InProcessCatalogClient_GetCategoryAsync_System_Guid_System_Threading_CancellationToken_
+  name: GetCategoryAsync
+  nameWithType: InProcessCatalogClient.GetCategoryAsync
+  fullName: Inventory.Client.InProcessCatalogClient.GetCategoryAsync
+- uid: Inventory.Client.ICatalogClient.GetCategoryAsync(System.Guid,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.ICatalogClient.GetCategoryAsync(System.Guid,System.Threading.CancellationToken)
+  parent: Inventory.Client.ICatalogClient
+  isExternal: true
+  href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_GetCategoryAsync_System_Guid_System_Threading_CancellationToken_
+  name: GetCategoryAsync(Guid, CancellationToken)
+  nameWithType: ICatalogClient.GetCategoryAsync(Guid, CancellationToken)
+  fullName: Inventory.Client.ICatalogClient.GetCategoryAsync(System.Guid, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Client.ICatalogClient.GetCategoryAsync(System.Guid,System.Threading.CancellationToken)
+    name: GetCategoryAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_GetCategoryAsync_System_Guid_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Client.ICatalogClient.GetCategoryAsync(System.Guid,System.Threading.CancellationToken)
+    name: GetCategoryAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_GetCategoryAsync_System_Guid_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: System.Threading.Tasks.Task{Inventory.Contracts.CategoryResponse}
+  commentId: T:System.Threading.Tasks.Task{Inventory.Contracts.CategoryResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<CategoryResponse>
+  nameWithType: Task<CategoryResponse>
+  fullName: System.Threading.Tasks.Task<Inventory.Contracts.CategoryResponse>
+  nameWithType.vb: Task(Of CategoryResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Inventory.Contracts.CategoryResponse)
+  name.vb: Task(Of CategoryResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Inventory.Contracts.CategoryResponse
+    name: CategoryResponse
+    href: Inventory.Contracts.CategoryResponse.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.CategoryResponse
+    name: CategoryResponse
+    href: Inventory.Contracts.CategoryResponse.html
+  - name: )
+- uid: Inventory.Client.InProcessCatalogClient.CreateCategoryAsync*
+  commentId: Overload:Inventory.Client.InProcessCatalogClient.CreateCategoryAsync
+  href: Inventory.Client.InProcessCatalogClient.html#Inventory_Client_InProcessCatalogClient_CreateCategoryAsync_Inventory_Contracts_CategoryInput_System_Threading_CancellationToken_
+  name: CreateCategoryAsync
+  nameWithType: InProcessCatalogClient.CreateCategoryAsync
+  fullName: Inventory.Client.InProcessCatalogClient.CreateCategoryAsync
+- uid: Inventory.Client.ICatalogClient.CreateCategoryAsync(Inventory.Contracts.CategoryInput,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.ICatalogClient.CreateCategoryAsync(Inventory.Contracts.CategoryInput,System.Threading.CancellationToken)
+  parent: Inventory.Client.ICatalogClient
+  isExternal: true
+  href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_CreateCategoryAsync_Inventory_Contracts_CategoryInput_System_Threading_CancellationToken_
+  name: CreateCategoryAsync(CategoryInput, CancellationToken)
+  nameWithType: ICatalogClient.CreateCategoryAsync(CategoryInput, CancellationToken)
+  fullName: Inventory.Client.ICatalogClient.CreateCategoryAsync(Inventory.Contracts.CategoryInput, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Client.ICatalogClient.CreateCategoryAsync(Inventory.Contracts.CategoryInput,System.Threading.CancellationToken)
+    name: CreateCategoryAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_CreateCategoryAsync_Inventory_Contracts_CategoryInput_System_Threading_CancellationToken_
+  - name: (
+  - uid: Inventory.Contracts.CategoryInput
+    name: CategoryInput
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Client.ICatalogClient.CreateCategoryAsync(Inventory.Contracts.CategoryInput,System.Threading.CancellationToken)
+    name: CreateCategoryAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_CreateCategoryAsync_Inventory_Contracts_CategoryInput_System_Threading_CancellationToken_
+  - name: (
+  - uid: Inventory.Contracts.CategoryInput
+    name: CategoryInput
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Inventory.Contracts.CategoryInput
+  commentId: T:Inventory.Contracts.CategoryInput
+  parent: Inventory.Contracts
+  href: Inventory.Contracts.CategoryInput.html
+  name: CategoryInput
+  nameWithType: CategoryInput
+  fullName: Inventory.Contracts.CategoryInput
+- uid: Inventory.Contracts
+  commentId: N:Inventory.Contracts
+  name: Inventory.Contracts
+  nameWithType: Inventory.Contracts
+  fullName: Inventory.Contracts
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+- uid: Inventory.Client.InProcessCatalogClient.UpdateCategoryAsync*
+  commentId: Overload:Inventory.Client.InProcessCatalogClient.UpdateCategoryAsync
+  href: Inventory.Client.InProcessCatalogClient.html#Inventory_Client_InProcessCatalogClient_UpdateCategoryAsync_System_Guid_Inventory_Contracts_CategoryInput_System_Threading_CancellationToken_
+  name: UpdateCategoryAsync
+  nameWithType: InProcessCatalogClient.UpdateCategoryAsync
+  fullName: Inventory.Client.InProcessCatalogClient.UpdateCategoryAsync
+- uid: Inventory.Client.ICatalogClient.UpdateCategoryAsync(System.Guid,Inventory.Contracts.CategoryInput,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.ICatalogClient.UpdateCategoryAsync(System.Guid,Inventory.Contracts.CategoryInput,System.Threading.CancellationToken)
+  parent: Inventory.Client.ICatalogClient
+  isExternal: true
+  href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_UpdateCategoryAsync_System_Guid_Inventory_Contracts_CategoryInput_System_Threading_CancellationToken_
+  name: UpdateCategoryAsync(Guid, CategoryInput, CancellationToken)
+  nameWithType: ICatalogClient.UpdateCategoryAsync(Guid, CategoryInput, CancellationToken)
+  fullName: Inventory.Client.ICatalogClient.UpdateCategoryAsync(System.Guid, Inventory.Contracts.CategoryInput, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Client.ICatalogClient.UpdateCategoryAsync(System.Guid,Inventory.Contracts.CategoryInput,System.Threading.CancellationToken)
+    name: UpdateCategoryAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_UpdateCategoryAsync_System_Guid_Inventory_Contracts_CategoryInput_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: Inventory.Contracts.CategoryInput
+    name: CategoryInput
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Client.ICatalogClient.UpdateCategoryAsync(System.Guid,Inventory.Contracts.CategoryInput,System.Threading.CancellationToken)
+    name: UpdateCategoryAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_UpdateCategoryAsync_System_Guid_Inventory_Contracts_CategoryInput_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: Inventory.Contracts.CategoryInput
+    name: CategoryInput
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: Inventory.Client.InProcessCatalogClient.DeactivateCategoryAsync*
+  commentId: Overload:Inventory.Client.InProcessCatalogClient.DeactivateCategoryAsync
+  href: Inventory.Client.InProcessCatalogClient.html#Inventory_Client_InProcessCatalogClient_DeactivateCategoryAsync_System_Guid_System_Threading_CancellationToken_
+  name: DeactivateCategoryAsync
+  nameWithType: InProcessCatalogClient.DeactivateCategoryAsync
+  fullName: Inventory.Client.InProcessCatalogClient.DeactivateCategoryAsync
+- uid: Inventory.Client.ICatalogClient.DeactivateCategoryAsync(System.Guid,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.ICatalogClient.DeactivateCategoryAsync(System.Guid,System.Threading.CancellationToken)
+  parent: Inventory.Client.ICatalogClient
+  isExternal: true
+  href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_DeactivateCategoryAsync_System_Guid_System_Threading_CancellationToken_
+  name: DeactivateCategoryAsync(Guid, CancellationToken)
+  nameWithType: ICatalogClient.DeactivateCategoryAsync(Guid, CancellationToken)
+  fullName: Inventory.Client.ICatalogClient.DeactivateCategoryAsync(System.Guid, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Client.ICatalogClient.DeactivateCategoryAsync(System.Guid,System.Threading.CancellationToken)
+    name: DeactivateCategoryAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_DeactivateCategoryAsync_System_Guid_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Client.ICatalogClient.DeactivateCategoryAsync(System.Guid,System.Threading.CancellationToken)
+    name: DeactivateCategoryAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_DeactivateCategoryAsync_System_Guid_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Inventory.Client.InProcessCatalogClient.DeleteCategoryAsync*
+  commentId: Overload:Inventory.Client.InProcessCatalogClient.DeleteCategoryAsync
+  href: Inventory.Client.InProcessCatalogClient.html#Inventory_Client_InProcessCatalogClient_DeleteCategoryAsync_System_Guid_System_Threading_CancellationToken_
+  name: DeleteCategoryAsync
+  nameWithType: InProcessCatalogClient.DeleteCategoryAsync
+  fullName: Inventory.Client.InProcessCatalogClient.DeleteCategoryAsync
+- uid: Inventory.Client.ICatalogClient.DeleteCategoryAsync(System.Guid,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.ICatalogClient.DeleteCategoryAsync(System.Guid,System.Threading.CancellationToken)
+  parent: Inventory.Client.ICatalogClient
+  isExternal: true
+  href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_DeleteCategoryAsync_System_Guid_System_Threading_CancellationToken_
+  name: DeleteCategoryAsync(Guid, CancellationToken)
+  nameWithType: ICatalogClient.DeleteCategoryAsync(Guid, CancellationToken)
+  fullName: Inventory.Client.ICatalogClient.DeleteCategoryAsync(System.Guid, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Client.ICatalogClient.DeleteCategoryAsync(System.Guid,System.Threading.CancellationToken)
+    name: DeleteCategoryAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_DeleteCategoryAsync_System_Guid_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Client.ICatalogClient.DeleteCategoryAsync(System.Guid,System.Threading.CancellationToken)
+    name: DeleteCategoryAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_DeleteCategoryAsync_System_Guid_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Inventory.Client.InProcessCatalogClient.GetUnitsAsync*
+  commentId: Overload:Inventory.Client.InProcessCatalogClient.GetUnitsAsync
+  href: Inventory.Client.InProcessCatalogClient.html#Inventory_Client_InProcessCatalogClient_GetUnitsAsync_System_String_System_Threading_CancellationToken_
+  name: GetUnitsAsync
+  nameWithType: InProcessCatalogClient.GetUnitsAsync
+  fullName: Inventory.Client.InProcessCatalogClient.GetUnitsAsync
+- uid: Inventory.Client.ICatalogClient.GetUnitsAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.ICatalogClient.GetUnitsAsync(System.String,System.Threading.CancellationToken)
+  parent: Inventory.Client.ICatalogClient
+  isExternal: true
+  href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_GetUnitsAsync_System_String_System_Threading_CancellationToken_
+  name: GetUnitsAsync(string, CancellationToken)
+  nameWithType: ICatalogClient.GetUnitsAsync(string, CancellationToken)
+  fullName: Inventory.Client.ICatalogClient.GetUnitsAsync(string, System.Threading.CancellationToken)
+  nameWithType.vb: ICatalogClient.GetUnitsAsync(String, CancellationToken)
+  fullName.vb: Inventory.Client.ICatalogClient.GetUnitsAsync(String, System.Threading.CancellationToken)
+  name.vb: GetUnitsAsync(String, CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Client.ICatalogClient.GetUnitsAsync(System.String,System.Threading.CancellationToken)
+    name: GetUnitsAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_GetUnitsAsync_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Client.ICatalogClient.GetUnitsAsync(System.String,System.Threading.CancellationToken)
+    name: GetUnitsAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_GetUnitsAsync_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Inventory.Contracts.UnitResponse}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Inventory.Contracts.UnitResponse}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IReadOnlyList<UnitResponse>>
+  nameWithType: Task<IReadOnlyList<UnitResponse>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyList<Inventory.Contracts.UnitResponse>>
+  nameWithType.vb: Task(Of IReadOnlyList(Of UnitResponse))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IReadOnlyList(Of Inventory.Contracts.UnitResponse))
+  name.vb: Task(Of IReadOnlyList(Of UnitResponse))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: Inventory.Contracts.UnitResponse
+    name: UnitResponse
+    href: Inventory.Contracts.UnitResponse.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.UnitResponse
+    name: UnitResponse
+    href: Inventory.Contracts.UnitResponse.html
+  - name: )
+  - name: )
+- uid: Inventory.Client.InProcessCatalogClient.GetUnitAsync*
+  commentId: Overload:Inventory.Client.InProcessCatalogClient.GetUnitAsync
+  href: Inventory.Client.InProcessCatalogClient.html#Inventory_Client_InProcessCatalogClient_GetUnitAsync_System_Guid_System_Threading_CancellationToken_
+  name: GetUnitAsync
+  nameWithType: InProcessCatalogClient.GetUnitAsync
+  fullName: Inventory.Client.InProcessCatalogClient.GetUnitAsync
+- uid: Inventory.Client.ICatalogClient.GetUnitAsync(System.Guid,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.ICatalogClient.GetUnitAsync(System.Guid,System.Threading.CancellationToken)
+  parent: Inventory.Client.ICatalogClient
+  isExternal: true
+  href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_GetUnitAsync_System_Guid_System_Threading_CancellationToken_
+  name: GetUnitAsync(Guid, CancellationToken)
+  nameWithType: ICatalogClient.GetUnitAsync(Guid, CancellationToken)
+  fullName: Inventory.Client.ICatalogClient.GetUnitAsync(System.Guid, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Client.ICatalogClient.GetUnitAsync(System.Guid,System.Threading.CancellationToken)
+    name: GetUnitAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_GetUnitAsync_System_Guid_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Client.ICatalogClient.GetUnitAsync(System.Guid,System.Threading.CancellationToken)
+    name: GetUnitAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_GetUnitAsync_System_Guid_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Threading.Tasks.Task{Inventory.Contracts.UnitResponse}
+  commentId: T:System.Threading.Tasks.Task{Inventory.Contracts.UnitResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<UnitResponse>
+  nameWithType: Task<UnitResponse>
+  fullName: System.Threading.Tasks.Task<Inventory.Contracts.UnitResponse>
+  nameWithType.vb: Task(Of UnitResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Inventory.Contracts.UnitResponse)
+  name.vb: Task(Of UnitResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Inventory.Contracts.UnitResponse
+    name: UnitResponse
+    href: Inventory.Contracts.UnitResponse.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.UnitResponse
+    name: UnitResponse
+    href: Inventory.Contracts.UnitResponse.html
+  - name: )
+- uid: Inventory.Client.InProcessCatalogClient.CreateUnitAsync*
+  commentId: Overload:Inventory.Client.InProcessCatalogClient.CreateUnitAsync
+  href: Inventory.Client.InProcessCatalogClient.html#Inventory_Client_InProcessCatalogClient_CreateUnitAsync_Inventory_Contracts_UnitInput_System_Threading_CancellationToken_
+  name: CreateUnitAsync
+  nameWithType: InProcessCatalogClient.CreateUnitAsync
+  fullName: Inventory.Client.InProcessCatalogClient.CreateUnitAsync
+- uid: Inventory.Client.ICatalogClient.CreateUnitAsync(Inventory.Contracts.UnitInput,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.ICatalogClient.CreateUnitAsync(Inventory.Contracts.UnitInput,System.Threading.CancellationToken)
+  parent: Inventory.Client.ICatalogClient
+  isExternal: true
+  href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_CreateUnitAsync_Inventory_Contracts_UnitInput_System_Threading_CancellationToken_
+  name: CreateUnitAsync(UnitInput, CancellationToken)
+  nameWithType: ICatalogClient.CreateUnitAsync(UnitInput, CancellationToken)
+  fullName: Inventory.Client.ICatalogClient.CreateUnitAsync(Inventory.Contracts.UnitInput, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Client.ICatalogClient.CreateUnitAsync(Inventory.Contracts.UnitInput,System.Threading.CancellationToken)
+    name: CreateUnitAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_CreateUnitAsync_Inventory_Contracts_UnitInput_System_Threading_CancellationToken_
+  - name: (
+  - uid: Inventory.Contracts.UnitInput
+    name: UnitInput
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Client.ICatalogClient.CreateUnitAsync(Inventory.Contracts.UnitInput,System.Threading.CancellationToken)
+    name: CreateUnitAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_CreateUnitAsync_Inventory_Contracts_UnitInput_System_Threading_CancellationToken_
+  - name: (
+  - uid: Inventory.Contracts.UnitInput
+    name: UnitInput
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Inventory.Contracts.UnitInput
+  commentId: T:Inventory.Contracts.UnitInput
+  parent: Inventory.Contracts
+  href: Inventory.Contracts.UnitInput.html
+  name: UnitInput
+  nameWithType: UnitInput
+  fullName: Inventory.Contracts.UnitInput
+- uid: Inventory.Client.InProcessCatalogClient.UpdateUnitAsync*
+  commentId: Overload:Inventory.Client.InProcessCatalogClient.UpdateUnitAsync
+  href: Inventory.Client.InProcessCatalogClient.html#Inventory_Client_InProcessCatalogClient_UpdateUnitAsync_System_Guid_Inventory_Contracts_UnitInput_System_Threading_CancellationToken_
+  name: UpdateUnitAsync
+  nameWithType: InProcessCatalogClient.UpdateUnitAsync
+  fullName: Inventory.Client.InProcessCatalogClient.UpdateUnitAsync
+- uid: Inventory.Client.ICatalogClient.UpdateUnitAsync(System.Guid,Inventory.Contracts.UnitInput,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.ICatalogClient.UpdateUnitAsync(System.Guid,Inventory.Contracts.UnitInput,System.Threading.CancellationToken)
+  parent: Inventory.Client.ICatalogClient
+  isExternal: true
+  href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_UpdateUnitAsync_System_Guid_Inventory_Contracts_UnitInput_System_Threading_CancellationToken_
+  name: UpdateUnitAsync(Guid, UnitInput, CancellationToken)
+  nameWithType: ICatalogClient.UpdateUnitAsync(Guid, UnitInput, CancellationToken)
+  fullName: Inventory.Client.ICatalogClient.UpdateUnitAsync(System.Guid, Inventory.Contracts.UnitInput, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Client.ICatalogClient.UpdateUnitAsync(System.Guid,Inventory.Contracts.UnitInput,System.Threading.CancellationToken)
+    name: UpdateUnitAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_UpdateUnitAsync_System_Guid_Inventory_Contracts_UnitInput_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: Inventory.Contracts.UnitInput
+    name: UnitInput
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Client.ICatalogClient.UpdateUnitAsync(System.Guid,Inventory.Contracts.UnitInput,System.Threading.CancellationToken)
+    name: UpdateUnitAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_UpdateUnitAsync_System_Guid_Inventory_Contracts_UnitInput_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: Inventory.Contracts.UnitInput
+    name: UnitInput
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Inventory.Client.InProcessCatalogClient.DeleteUnitAsync*
+  commentId: Overload:Inventory.Client.InProcessCatalogClient.DeleteUnitAsync
+  href: Inventory.Client.InProcessCatalogClient.html#Inventory_Client_InProcessCatalogClient_DeleteUnitAsync_System_Guid_System_Threading_CancellationToken_
+  name: DeleteUnitAsync
+  nameWithType: InProcessCatalogClient.DeleteUnitAsync
+  fullName: Inventory.Client.InProcessCatalogClient.DeleteUnitAsync
+- uid: Inventory.Client.ICatalogClient.DeleteUnitAsync(System.Guid,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.ICatalogClient.DeleteUnitAsync(System.Guid,System.Threading.CancellationToken)
+  parent: Inventory.Client.ICatalogClient
+  isExternal: true
+  href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_DeleteUnitAsync_System_Guid_System_Threading_CancellationToken_
+  name: DeleteUnitAsync(Guid, CancellationToken)
+  nameWithType: ICatalogClient.DeleteUnitAsync(Guid, CancellationToken)
+  fullName: Inventory.Client.ICatalogClient.DeleteUnitAsync(System.Guid, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Client.ICatalogClient.DeleteUnitAsync(System.Guid,System.Threading.CancellationToken)
+    name: DeleteUnitAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_DeleteUnitAsync_System_Guid_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Client.ICatalogClient.DeleteUnitAsync(System.Guid,System.Threading.CancellationToken)
+    name: DeleteUnitAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_DeleteUnitAsync_System_Guid_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Inventory.Client.InProcessCatalogClient.GetProductsAsync*
+  commentId: Overload:Inventory.Client.InProcessCatalogClient.GetProductsAsync
+  href: Inventory.Client.InProcessCatalogClient.html#Inventory_Client_InProcessCatalogClient_GetProductsAsync_System_String_System_Nullable_System_Guid__System_Nullable_System_Boolean__System_Threading_CancellationToken_
+  name: GetProductsAsync
+  nameWithType: InProcessCatalogClient.GetProductsAsync
+  fullName: Inventory.Client.InProcessCatalogClient.GetProductsAsync
+- uid: Inventory.Client.ICatalogClient.GetProductsAsync(System.String,System.Nullable{System.Guid},System.Nullable{System.Boolean},System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.ICatalogClient.GetProductsAsync(System.String,System.Nullable{System.Guid},System.Nullable{System.Boolean},System.Threading.CancellationToken)
+  parent: Inventory.Client.ICatalogClient
+  isExternal: true
+  href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_GetProductsAsync_System_String_System_Nullable_System_Guid__System_Nullable_System_Boolean__System_Threading_CancellationToken_
+  name: GetProductsAsync(string, Guid?, bool?, CancellationToken)
+  nameWithType: ICatalogClient.GetProductsAsync(string, Guid?, bool?, CancellationToken)
+  fullName: Inventory.Client.ICatalogClient.GetProductsAsync(string, System.Guid?, bool?, System.Threading.CancellationToken)
+  nameWithType.vb: ICatalogClient.GetProductsAsync(String, Guid?, Boolean?, CancellationToken)
+  fullName.vb: Inventory.Client.ICatalogClient.GetProductsAsync(String, System.Guid?, Boolean?, System.Threading.CancellationToken)
+  name.vb: GetProductsAsync(String, Guid?, Boolean?, CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Client.ICatalogClient.GetProductsAsync(System.String,System.Nullable{System.Guid},System.Nullable{System.Boolean},System.Threading.CancellationToken)
+    name: GetProductsAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_GetProductsAsync_System_String_System_Nullable_System_Guid__System_Nullable_System_Boolean__System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Client.ICatalogClient.GetProductsAsync(System.String,System.Nullable{System.Guid},System.Nullable{System.Boolean},System.Threading.CancellationToken)
+    name: GetProductsAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_GetProductsAsync_System_String_System_Nullable_System_Guid__System_Nullable_System_Boolean__System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Nullable{System.Guid}
+  commentId: T:System.Nullable{System.Guid}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid?
+  nameWithType: Guid?
+  fullName: System.Guid?
+  spec.csharp:
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: '?'
+  spec.vb:
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: '?'
+- uid: System.Nullable{System.Boolean}
+  commentId: T:System.Nullable{System.Boolean}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool?
+  nameWithType: bool?
+  fullName: bool?
+  nameWithType.vb: Boolean?
+  fullName.vb: Boolean?
+  name.vb: Boolean?
+  spec.csharp:
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '?'
+  spec.vb:
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '?'
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Inventory.Contracts.ProductListItem}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Inventory.Contracts.ProductListItem}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IReadOnlyList<ProductListItem>>
+  nameWithType: Task<IReadOnlyList<ProductListItem>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyList<Inventory.Contracts.ProductListItem>>
+  nameWithType.vb: Task(Of IReadOnlyList(Of ProductListItem))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IReadOnlyList(Of Inventory.Contracts.ProductListItem))
+  name.vb: Task(Of IReadOnlyList(Of ProductListItem))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: Inventory.Contracts.ProductListItem
+    name: ProductListItem
+    href: Inventory.Contracts.ProductListItem.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.ProductListItem
+    name: ProductListItem
+    href: Inventory.Contracts.ProductListItem.html
+  - name: )
+  - name: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Inventory.Client.InProcessCatalogClient.GetProductAsync*
+  commentId: Overload:Inventory.Client.InProcessCatalogClient.GetProductAsync
+  href: Inventory.Client.InProcessCatalogClient.html#Inventory_Client_InProcessCatalogClient_GetProductAsync_System_Guid_System_Threading_CancellationToken_
+  name: GetProductAsync
+  nameWithType: InProcessCatalogClient.GetProductAsync
+  fullName: Inventory.Client.InProcessCatalogClient.GetProductAsync
+- uid: Inventory.Client.ICatalogClient.GetProductAsync(System.Guid,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.ICatalogClient.GetProductAsync(System.Guid,System.Threading.CancellationToken)
+  parent: Inventory.Client.ICatalogClient
+  isExternal: true
+  href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_GetProductAsync_System_Guid_System_Threading_CancellationToken_
+  name: GetProductAsync(Guid, CancellationToken)
+  nameWithType: ICatalogClient.GetProductAsync(Guid, CancellationToken)
+  fullName: Inventory.Client.ICatalogClient.GetProductAsync(System.Guid, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Client.ICatalogClient.GetProductAsync(System.Guid,System.Threading.CancellationToken)
+    name: GetProductAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_GetProductAsync_System_Guid_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Client.ICatalogClient.GetProductAsync(System.Guid,System.Threading.CancellationToken)
+    name: GetProductAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_GetProductAsync_System_Guid_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Threading.Tasks.Task{Inventory.Contracts.ProductResponse}
+  commentId: T:System.Threading.Tasks.Task{Inventory.Contracts.ProductResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<ProductResponse>
+  nameWithType: Task<ProductResponse>
+  fullName: System.Threading.Tasks.Task<Inventory.Contracts.ProductResponse>
+  nameWithType.vb: Task(Of ProductResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Inventory.Contracts.ProductResponse)
+  name.vb: Task(Of ProductResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Inventory.Contracts.ProductResponse
+    name: ProductResponse
+    href: Inventory.Contracts.ProductResponse.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.ProductResponse
+    name: ProductResponse
+    href: Inventory.Contracts.ProductResponse.html
+  - name: )
+- uid: Inventory.Client.InProcessCatalogClient.CreateProductAsync*
+  commentId: Overload:Inventory.Client.InProcessCatalogClient.CreateProductAsync
+  href: Inventory.Client.InProcessCatalogClient.html#Inventory_Client_InProcessCatalogClient_CreateProductAsync_Inventory_Contracts_ProductInput_System_Threading_CancellationToken_
+  name: CreateProductAsync
+  nameWithType: InProcessCatalogClient.CreateProductAsync
+  fullName: Inventory.Client.InProcessCatalogClient.CreateProductAsync
+- uid: Inventory.Client.ICatalogClient.CreateProductAsync(Inventory.Contracts.ProductInput,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.ICatalogClient.CreateProductAsync(Inventory.Contracts.ProductInput,System.Threading.CancellationToken)
+  parent: Inventory.Client.ICatalogClient
+  isExternal: true
+  href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_CreateProductAsync_Inventory_Contracts_ProductInput_System_Threading_CancellationToken_
+  name: CreateProductAsync(ProductInput, CancellationToken)
+  nameWithType: ICatalogClient.CreateProductAsync(ProductInput, CancellationToken)
+  fullName: Inventory.Client.ICatalogClient.CreateProductAsync(Inventory.Contracts.ProductInput, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Client.ICatalogClient.CreateProductAsync(Inventory.Contracts.ProductInput,System.Threading.CancellationToken)
+    name: CreateProductAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_CreateProductAsync_Inventory_Contracts_ProductInput_System_Threading_CancellationToken_
+  - name: (
+  - uid: Inventory.Contracts.ProductInput
+    name: ProductInput
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Client.ICatalogClient.CreateProductAsync(Inventory.Contracts.ProductInput,System.Threading.CancellationToken)
+    name: CreateProductAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_CreateProductAsync_Inventory_Contracts_ProductInput_System_Threading_CancellationToken_
+  - name: (
+  - uid: Inventory.Contracts.ProductInput
+    name: ProductInput
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Inventory.Contracts.ProductInput
+  commentId: T:Inventory.Contracts.ProductInput
+  parent: Inventory.Contracts
+  href: Inventory.Contracts.ProductInput.html
+  name: ProductInput
+  nameWithType: ProductInput
+  fullName: Inventory.Contracts.ProductInput
+- uid: Inventory.Client.InProcessCatalogClient.UpdateProductAsync*
+  commentId: Overload:Inventory.Client.InProcessCatalogClient.UpdateProductAsync
+  href: Inventory.Client.InProcessCatalogClient.html#Inventory_Client_InProcessCatalogClient_UpdateProductAsync_System_Guid_Inventory_Contracts_ProductInput_System_Threading_CancellationToken_
+  name: UpdateProductAsync
+  nameWithType: InProcessCatalogClient.UpdateProductAsync
+  fullName: Inventory.Client.InProcessCatalogClient.UpdateProductAsync
+- uid: Inventory.Client.ICatalogClient.UpdateProductAsync(System.Guid,Inventory.Contracts.ProductInput,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.ICatalogClient.UpdateProductAsync(System.Guid,Inventory.Contracts.ProductInput,System.Threading.CancellationToken)
+  parent: Inventory.Client.ICatalogClient
+  isExternal: true
+  href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_UpdateProductAsync_System_Guid_Inventory_Contracts_ProductInput_System_Threading_CancellationToken_
+  name: UpdateProductAsync(Guid, ProductInput, CancellationToken)
+  nameWithType: ICatalogClient.UpdateProductAsync(Guid, ProductInput, CancellationToken)
+  fullName: Inventory.Client.ICatalogClient.UpdateProductAsync(System.Guid, Inventory.Contracts.ProductInput, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Client.ICatalogClient.UpdateProductAsync(System.Guid,Inventory.Contracts.ProductInput,System.Threading.CancellationToken)
+    name: UpdateProductAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_UpdateProductAsync_System_Guid_Inventory_Contracts_ProductInput_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: Inventory.Contracts.ProductInput
+    name: ProductInput
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Client.ICatalogClient.UpdateProductAsync(System.Guid,Inventory.Contracts.ProductInput,System.Threading.CancellationToken)
+    name: UpdateProductAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_UpdateProductAsync_System_Guid_Inventory_Contracts_ProductInput_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: Inventory.Contracts.ProductInput
+    name: ProductInput
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Inventory.Client.InProcessCatalogClient.DeactivateProductAsync*
+  commentId: Overload:Inventory.Client.InProcessCatalogClient.DeactivateProductAsync
+  href: Inventory.Client.InProcessCatalogClient.html#Inventory_Client_InProcessCatalogClient_DeactivateProductAsync_System_Guid_System_Threading_CancellationToken_
+  name: DeactivateProductAsync
+  nameWithType: InProcessCatalogClient.DeactivateProductAsync
+  fullName: Inventory.Client.InProcessCatalogClient.DeactivateProductAsync
+- uid: Inventory.Client.ICatalogClient.DeactivateProductAsync(System.Guid,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.ICatalogClient.DeactivateProductAsync(System.Guid,System.Threading.CancellationToken)
+  parent: Inventory.Client.ICatalogClient
+  isExternal: true
+  href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_DeactivateProductAsync_System_Guid_System_Threading_CancellationToken_
+  name: DeactivateProductAsync(Guid, CancellationToken)
+  nameWithType: ICatalogClient.DeactivateProductAsync(Guid, CancellationToken)
+  fullName: Inventory.Client.ICatalogClient.DeactivateProductAsync(System.Guid, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Client.ICatalogClient.DeactivateProductAsync(System.Guid,System.Threading.CancellationToken)
+    name: DeactivateProductAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_DeactivateProductAsync_System_Guid_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Client.ICatalogClient.DeactivateProductAsync(System.Guid,System.Threading.CancellationToken)
+    name: DeactivateProductAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_DeactivateProductAsync_System_Guid_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Inventory.Client.InProcessCatalogClient.DeleteProductAsync*
+  commentId: Overload:Inventory.Client.InProcessCatalogClient.DeleteProductAsync
+  href: Inventory.Client.InProcessCatalogClient.html#Inventory_Client_InProcessCatalogClient_DeleteProductAsync_System_Guid_System_Threading_CancellationToken_
+  name: DeleteProductAsync
+  nameWithType: InProcessCatalogClient.DeleteProductAsync
+  fullName: Inventory.Client.InProcessCatalogClient.DeleteProductAsync
+- uid: Inventory.Client.ICatalogClient.DeleteProductAsync(System.Guid,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.ICatalogClient.DeleteProductAsync(System.Guid,System.Threading.CancellationToken)
+  parent: Inventory.Client.ICatalogClient
+  isExternal: true
+  href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_DeleteProductAsync_System_Guid_System_Threading_CancellationToken_
+  name: DeleteProductAsync(Guid, CancellationToken)
+  nameWithType: ICatalogClient.DeleteProductAsync(Guid, CancellationToken)
+  fullName: Inventory.Client.ICatalogClient.DeleteProductAsync(System.Guid, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Client.ICatalogClient.DeleteProductAsync(System.Guid,System.Threading.CancellationToken)
+    name: DeleteProductAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_DeleteProductAsync_System_Guid_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Client.ICatalogClient.DeleteProductAsync(System.Guid,System.Threading.CancellationToken)
+    name: DeleteProductAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_DeleteProductAsync_System_Guid_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Inventory.Client.InProcessCatalogClient.GetCategoryOptionsAsync*
+  commentId: Overload:Inventory.Client.InProcessCatalogClient.GetCategoryOptionsAsync
+  href: Inventory.Client.InProcessCatalogClient.html#Inventory_Client_InProcessCatalogClient_GetCategoryOptionsAsync_System_Threading_CancellationToken_
+  name: GetCategoryOptionsAsync
+  nameWithType: InProcessCatalogClient.GetCategoryOptionsAsync
+  fullName: Inventory.Client.InProcessCatalogClient.GetCategoryOptionsAsync
+- uid: Inventory.Client.ICatalogClient.GetCategoryOptionsAsync(System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.ICatalogClient.GetCategoryOptionsAsync(System.Threading.CancellationToken)
+  parent: Inventory.Client.ICatalogClient
+  isExternal: true
+  href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_GetCategoryOptionsAsync_System_Threading_CancellationToken_
+  name: GetCategoryOptionsAsync(CancellationToken)
+  nameWithType: ICatalogClient.GetCategoryOptionsAsync(CancellationToken)
+  fullName: Inventory.Client.ICatalogClient.GetCategoryOptionsAsync(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Client.ICatalogClient.GetCategoryOptionsAsync(System.Threading.CancellationToken)
+    name: GetCategoryOptionsAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_GetCategoryOptionsAsync_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Client.ICatalogClient.GetCategoryOptionsAsync(System.Threading.CancellationToken)
+    name: GetCategoryOptionsAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_GetCategoryOptionsAsync_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Inventory.Contracts.SelectOption}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Inventory.Contracts.SelectOption}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IReadOnlyList<SelectOption>>
+  nameWithType: Task<IReadOnlyList<SelectOption>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyList<Inventory.Contracts.SelectOption>>
+  nameWithType.vb: Task(Of IReadOnlyList(Of SelectOption))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IReadOnlyList(Of Inventory.Contracts.SelectOption))
+  name.vb: Task(Of IReadOnlyList(Of SelectOption))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: Inventory.Contracts.SelectOption
+    name: SelectOption
+    href: Inventory.Contracts.SelectOption.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.SelectOption
+    name: SelectOption
+    href: Inventory.Contracts.SelectOption.html
+  - name: )
+  - name: )
+- uid: Inventory.Client.InProcessCatalogClient.GetUnitOptionsAsync*
+  commentId: Overload:Inventory.Client.InProcessCatalogClient.GetUnitOptionsAsync
+  href: Inventory.Client.InProcessCatalogClient.html#Inventory_Client_InProcessCatalogClient_GetUnitOptionsAsync_System_Threading_CancellationToken_
+  name: GetUnitOptionsAsync
+  nameWithType: InProcessCatalogClient.GetUnitOptionsAsync
+  fullName: Inventory.Client.InProcessCatalogClient.GetUnitOptionsAsync
+- uid: Inventory.Client.ICatalogClient.GetUnitOptionsAsync(System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.ICatalogClient.GetUnitOptionsAsync(System.Threading.CancellationToken)
+  parent: Inventory.Client.ICatalogClient
+  isExternal: true
+  href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_GetUnitOptionsAsync_System_Threading_CancellationToken_
+  name: GetUnitOptionsAsync(CancellationToken)
+  nameWithType: ICatalogClient.GetUnitOptionsAsync(CancellationToken)
+  fullName: Inventory.Client.ICatalogClient.GetUnitOptionsAsync(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Client.ICatalogClient.GetUnitOptionsAsync(System.Threading.CancellationToken)
+    name: GetUnitOptionsAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_GetUnitOptionsAsync_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Client.ICatalogClient.GetUnitOptionsAsync(System.Threading.CancellationToken)
+    name: GetUnitOptionsAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_GetUnitOptionsAsync_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Inventory.Client.InProcessCatalogClient.GetProductOptionsAsync*
+  commentId: Overload:Inventory.Client.InProcessCatalogClient.GetProductOptionsAsync
+  href: Inventory.Client.InProcessCatalogClient.html#Inventory_Client_InProcessCatalogClient_GetProductOptionsAsync_System_Threading_CancellationToken_
+  name: GetProductOptionsAsync
+  nameWithType: InProcessCatalogClient.GetProductOptionsAsync
+  fullName: Inventory.Client.InProcessCatalogClient.GetProductOptionsAsync
+- uid: Inventory.Client.ICatalogClient.GetProductOptionsAsync(System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.ICatalogClient.GetProductOptionsAsync(System.Threading.CancellationToken)
+  parent: Inventory.Client.ICatalogClient
+  isExternal: true
+  href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_GetProductOptionsAsync_System_Threading_CancellationToken_
+  name: GetProductOptionsAsync(CancellationToken)
+  nameWithType: ICatalogClient.GetProductOptionsAsync(CancellationToken)
+  fullName: Inventory.Client.ICatalogClient.GetProductOptionsAsync(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Client.ICatalogClient.GetProductOptionsAsync(System.Threading.CancellationToken)
+    name: GetProductOptionsAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_GetProductOptionsAsync_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Client.ICatalogClient.GetProductOptionsAsync(System.Threading.CancellationToken)
+    name: GetProductOptionsAsync
+    href: Inventory.Client.ICatalogClient.html#Inventory_Client_ICatalogClient_GetProductOptionsAsync_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )

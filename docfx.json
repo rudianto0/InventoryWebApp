@@ -1,0 +1,36 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "src": "src",
+          "files": [
+            "**/*.csproj"
+          ]
+        }
+      ],
+      "dest": "docs/code-documentation/api"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "docs/code-documentation/*.md",
+          "docs/code-documentation/*.yml",
+          "docs/code-documentation/04-annotated-code/*.md",
+          "docs/code-documentation/04-annotated-code/*.yml",
+          "docs/code-documentation/api/toc.yml"
+        ],
+        "exclude": [
+          "docs/code-documentation/api/**"
+        ]
+      }
+    ],
+    "dest": "docs/code-documentation/api/_site",
+    "globalMetadata": {
+      "_appTitle": "Inventory Code Documentation",
+      "_appFooter": "Inventory App"
+    }
+  }
+}

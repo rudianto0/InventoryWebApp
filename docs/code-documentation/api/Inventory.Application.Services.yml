@@ -1,0 +1,142 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Application.Services
+  commentId: N:Inventory.Application.Services
+  id: Inventory.Application.Services
+  children:
+  - Inventory.Application.Services.ApprovalService
+  - Inventory.Application.Services.AuditQueryService
+  - Inventory.Application.Services.CatalogService
+  - Inventory.Application.Services.LocationService
+  - Inventory.Application.Services.ReportService
+  - Inventory.Application.Services.StockAdjustmentService
+  - Inventory.Application.Services.StockChange
+  - Inventory.Application.Services.StockInService
+  - Inventory.Application.Services.StockLedger
+  - Inventory.Application.Services.StockOpnameService
+  - Inventory.Application.Services.StockOutService
+  - Inventory.Application.Services.StockTransferService
+  - Inventory.Application.Services.SupplierService
+  langs:
+  - csharp
+  - vb
+  name: Inventory.Application.Services
+  nameWithType: Inventory.Application.Services
+  fullName: Inventory.Application.Services
+  type: Namespace
+  assemblies:
+  - Inventory.Application
+references:
+- uid: Inventory.Application.Services.ApprovalService
+  commentId: T:Inventory.Application.Services.ApprovalService
+  parent: Inventory.Application.Services
+  href: Inventory.Application.Services.ApprovalService.html
+  name: ApprovalService
+  nameWithType: ApprovalService
+  fullName: Inventory.Application.Services.ApprovalService
+- uid: Inventory.Application.Services.AuditQueryService
+  commentId: T:Inventory.Application.Services.AuditQueryService
+  parent: Inventory.Application.Services
+  href: Inventory.Application.Services.AuditQueryService.html
+  name: AuditQueryService
+  nameWithType: AuditQueryService
+  fullName: Inventory.Application.Services.AuditQueryService
+- uid: Inventory.Application.Services.CatalogService
+  commentId: T:Inventory.Application.Services.CatalogService
+  parent: Inventory.Application.Services
+  href: Inventory.Application.Services.CatalogService.html
+  name: CatalogService
+  nameWithType: CatalogService
+  fullName: Inventory.Application.Services.CatalogService
+- uid: Inventory.Application.Services.LocationService
+  commentId: T:Inventory.Application.Services.LocationService
+  parent: Inventory.Application.Services
+  href: Inventory.Application.Services.LocationService.html
+  name: LocationService
+  nameWithType: LocationService
+  fullName: Inventory.Application.Services.LocationService
+- uid: Inventory.Application.Services.ReportService
+  commentId: T:Inventory.Application.Services.ReportService
+  parent: Inventory.Application.Services
+  href: Inventory.Application.Services.ReportService.html
+  name: ReportService
+  nameWithType: ReportService
+  fullName: Inventory.Application.Services.ReportService
+- uid: Inventory.Application.Services.StockAdjustmentService
+  commentId: T:Inventory.Application.Services.StockAdjustmentService
+  parent: Inventory.Application.Services
+  href: Inventory.Application.Services.StockAdjustmentService.html
+  name: StockAdjustmentService
+  nameWithType: StockAdjustmentService
+  fullName: Inventory.Application.Services.StockAdjustmentService
+- uid: Inventory.Application.Services.StockInService
+  commentId: T:Inventory.Application.Services.StockInService
+  parent: Inventory.Application.Services
+  href: Inventory.Application.Services.StockInService.html
+  name: StockInService
+  nameWithType: StockInService
+  fullName: Inventory.Application.Services.StockInService
+- uid: Inventory.Application.Services.StockChange
+  commentId: T:Inventory.Application.Services.StockChange
+  href: Inventory.Application.Services.StockChange.html
+  name: StockChange
+  nameWithType: StockChange
+  fullName: Inventory.Application.Services.StockChange
+- uid: Inventory.Application.Services.StockLedger
+  commentId: T:Inventory.Application.Services.StockLedger
+  parent: Inventory.Application.Services
+  href: Inventory.Application.Services.StockLedger.html
+  name: StockLedger
+  nameWithType: StockLedger
+  fullName: Inventory.Application.Services.StockLedger
+- uid: Inventory.Application.Services.StockOpnameService
+  commentId: T:Inventory.Application.Services.StockOpnameService
+  parent: Inventory.Application.Services
+  href: Inventory.Application.Services.StockOpnameService.html
+  name: StockOpnameService
+  nameWithType: StockOpnameService
+  fullName: Inventory.Application.Services.StockOpnameService
+- uid: Inventory.Application.Services.StockOutService
+  commentId: T:Inventory.Application.Services.StockOutService
+  parent: Inventory.Application.Services
+  href: Inventory.Application.Services.StockOutService.html
+  name: StockOutService
+  nameWithType: StockOutService
+  fullName: Inventory.Application.Services.StockOutService
+- uid: Inventory.Application.Services.StockTransferService
+  commentId: T:Inventory.Application.Services.StockTransferService
+  parent: Inventory.Application.Services
+  href: Inventory.Application.Services.StockTransferService.html
+  name: StockTransferService
+  nameWithType: StockTransferService
+  fullName: Inventory.Application.Services.StockTransferService
+- uid: Inventory.Application.Services.SupplierService
+  commentId: T:Inventory.Application.Services.SupplierService
+  parent: Inventory.Application.Services
+  href: Inventory.Application.Services.SupplierService.html
+  name: SupplierService
+  nameWithType: SupplierService
+  fullName: Inventory.Application.Services.SupplierService
+- uid: Inventory.Application.Services
+  commentId: N:Inventory.Application.Services
+  name: Inventory.Application.Services
+  nameWithType: Inventory.Application.Services
+  fullName: Inventory.Application.Services
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Application
+    name: Application
+  - name: .
+  - uid: Inventory.Application.Services
+    name: Services
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Application
+    name: Application
+  - name: .
+  - uid: Inventory.Application.Services
+    name: Services

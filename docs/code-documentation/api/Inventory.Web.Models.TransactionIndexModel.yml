@@ -1,0 +1,587 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Web.Models.TransactionIndexModel
+  commentId: T:Inventory.Web.Models.TransactionIndexModel
+  id: TransactionIndexModel
+  parent: Inventory.Web.Models
+  children:
+  - Inventory.Web.Models.TransactionIndexModel.ControllerName
+  - Inventory.Web.Models.TransactionIndexModel.Filter
+  - Inventory.Web.Models.TransactionIndexModel.Result
+  - Inventory.Web.Models.TransactionIndexModel.ShowPartner
+  - Inventory.Web.Models.TransactionIndexModel.ShowSecondaryLocation
+  - Inventory.Web.Models.TransactionIndexModel.Title
+  langs:
+  - csharp
+  - vb
+  name: TransactionIndexModel
+  nameWithType: TransactionIndexModel
+  fullName: Inventory.Web.Models.TransactionIndexModel
+  type: Class
+  source:
+    remote:
+      path: src/Inventory.Web/Models/ViewModels.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: TransactionIndexModel
+    path: src/Inventory.Web/Models/ViewModels.cs
+    startLine: 151
+  assemblies:
+  - Inventory.Web
+  namespace: Inventory.Web.Models
+  syntax:
+    content: public sealed class TransactionIndexModel
+    content.vb: Public NotInheritable Class TransactionIndexModel
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Inventory.Web.Models.TransactionIndexModel.Title
+  commentId: P:Inventory.Web.Models.TransactionIndexModel.Title
+  id: Title
+  parent: Inventory.Web.Models.TransactionIndexModel
+  langs:
+  - csharp
+  - vb
+  name: Title
+  nameWithType: TransactionIndexModel.Title
+  fullName: Inventory.Web.Models.TransactionIndexModel.Title
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Web/Models/ViewModels.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Title
+    path: src/Inventory.Web/Models/ViewModels.cs
+    startLine: 153
+  assemblies:
+  - Inventory.Web
+  namespace: Inventory.Web.Models
+  syntax:
+    content: public string Title { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Title As String
+  overload: Inventory.Web.Models.TransactionIndexModel.Title*
+- uid: Inventory.Web.Models.TransactionIndexModel.ControllerName
+  commentId: P:Inventory.Web.Models.TransactionIndexModel.ControllerName
+  id: ControllerName
+  parent: Inventory.Web.Models.TransactionIndexModel
+  langs:
+  - csharp
+  - vb
+  name: ControllerName
+  nameWithType: TransactionIndexModel.ControllerName
+  fullName: Inventory.Web.Models.TransactionIndexModel.ControllerName
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Web/Models/ViewModels.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ControllerName
+    path: src/Inventory.Web/Models/ViewModels.cs
+    startLine: 154
+  assemblies:
+  - Inventory.Web
+  namespace: Inventory.Web.Models
+  syntax:
+    content: public string ControllerName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ControllerName As String
+  overload: Inventory.Web.Models.TransactionIndexModel.ControllerName*
+- uid: Inventory.Web.Models.TransactionIndexModel.Result
+  commentId: P:Inventory.Web.Models.TransactionIndexModel.Result
+  id: Result
+  parent: Inventory.Web.Models.TransactionIndexModel
+  langs:
+  - csharp
+  - vb
+  name: Result
+  nameWithType: TransactionIndexModel.Result
+  fullName: Inventory.Web.Models.TransactionIndexModel.Result
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Web/Models/ViewModels.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Result
+    path: src/Inventory.Web/Models/ViewModels.cs
+    startLine: 155
+  assemblies:
+  - Inventory.Web
+  namespace: Inventory.Web.Models
+  syntax:
+    content: public PagedResult<TransactionListItem> Result { get; set; }
+    parameters: []
+    return:
+      type: Inventory.Contracts.PagedResult{Inventory.Contracts.TransactionListItem}
+    content.vb: Public Property Result As PagedResult(Of TransactionListItem)
+  overload: Inventory.Web.Models.TransactionIndexModel.Result*
+- uid: Inventory.Web.Models.TransactionIndexModel.Filter
+  commentId: P:Inventory.Web.Models.TransactionIndexModel.Filter
+  id: Filter
+  parent: Inventory.Web.Models.TransactionIndexModel
+  langs:
+  - csharp
+  - vb
+  name: Filter
+  nameWithType: TransactionIndexModel.Filter
+  fullName: Inventory.Web.Models.TransactionIndexModel.Filter
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Web/Models/ViewModels.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Filter
+    path: src/Inventory.Web/Models/ViewModels.cs
+    startLine: 156
+  assemblies:
+  - Inventory.Web
+  namespace: Inventory.Web.Models
+  syntax:
+    content: public TransactionFilter Filter { get; set; }
+    parameters: []
+    return:
+      type: Inventory.Contracts.TransactionFilter
+    content.vb: Public Property Filter As TransactionFilter
+  overload: Inventory.Web.Models.TransactionIndexModel.Filter*
+- uid: Inventory.Web.Models.TransactionIndexModel.ShowSecondaryLocation
+  commentId: P:Inventory.Web.Models.TransactionIndexModel.ShowSecondaryLocation
+  id: ShowSecondaryLocation
+  parent: Inventory.Web.Models.TransactionIndexModel
+  langs:
+  - csharp
+  - vb
+  name: ShowSecondaryLocation
+  nameWithType: TransactionIndexModel.ShowSecondaryLocation
+  fullName: Inventory.Web.Models.TransactionIndexModel.ShowSecondaryLocation
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Web/Models/ViewModels.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ShowSecondaryLocation
+    path: src/Inventory.Web/Models/ViewModels.cs
+    startLine: 157
+  assemblies:
+  - Inventory.Web
+  namespace: Inventory.Web.Models
+  syntax:
+    content: public bool ShowSecondaryLocation { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property ShowSecondaryLocation As Boolean
+  overload: Inventory.Web.Models.TransactionIndexModel.ShowSecondaryLocation*
+- uid: Inventory.Web.Models.TransactionIndexModel.ShowPartner
+  commentId: P:Inventory.Web.Models.TransactionIndexModel.ShowPartner
+  id: ShowPartner
+  parent: Inventory.Web.Models.TransactionIndexModel
+  langs:
+  - csharp
+  - vb
+  name: ShowPartner
+  nameWithType: TransactionIndexModel.ShowPartner
+  fullName: Inventory.Web.Models.TransactionIndexModel.ShowPartner
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Web/Models/ViewModels.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ShowPartner
+    path: src/Inventory.Web/Models/ViewModels.cs
+    startLine: 158
+  assemblies:
+  - Inventory.Web
+  namespace: Inventory.Web.Models
+  syntax:
+    content: public bool ShowPartner { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property ShowPartner As Boolean
+  overload: Inventory.Web.Models.TransactionIndexModel.ShowPartner*
+references:
+- uid: Inventory.Web.Models
+  commentId: N:Inventory.Web.Models
+  name: Inventory.Web.Models
+  nameWithType: Inventory.Web.Models
+  fullName: Inventory.Web.Models
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Web
+    name: Web
+  - name: .
+  - uid: Inventory.Web.Models
+    name: Models
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Web
+    name: Web
+  - name: .
+  - uid: Inventory.Web.Models
+    name: Models
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Inventory.Web.Models.TransactionIndexModel.Title*
+  commentId: Overload:Inventory.Web.Models.TransactionIndexModel.Title
+  href: Inventory.Web.Models.TransactionIndexModel.html#Inventory_Web_Models_TransactionIndexModel_Title
+  name: Title
+  nameWithType: TransactionIndexModel.Title
+  fullName: Inventory.Web.Models.TransactionIndexModel.Title
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Inventory.Web.Models.TransactionIndexModel.ControllerName*
+  commentId: Overload:Inventory.Web.Models.TransactionIndexModel.ControllerName
+  href: Inventory.Web.Models.TransactionIndexModel.html#Inventory_Web_Models_TransactionIndexModel_ControllerName
+  name: ControllerName
+  nameWithType: TransactionIndexModel.ControllerName
+  fullName: Inventory.Web.Models.TransactionIndexModel.ControllerName
+- uid: Inventory.Web.Models.TransactionIndexModel.Result*
+  commentId: Overload:Inventory.Web.Models.TransactionIndexModel.Result
+  href: Inventory.Web.Models.TransactionIndexModel.html#Inventory_Web_Models_TransactionIndexModel_Result
+  name: Result
+  nameWithType: TransactionIndexModel.Result
+  fullName: Inventory.Web.Models.TransactionIndexModel.Result
+- uid: Inventory.Contracts.PagedResult{Inventory.Contracts.TransactionListItem}
+  commentId: T:Inventory.Contracts.PagedResult{Inventory.Contracts.TransactionListItem}
+  parent: Inventory.Contracts
+  definition: Inventory.Contracts.PagedResult`1
+  name: PagedResult<TransactionListItem>
+  nameWithType: PagedResult<TransactionListItem>
+  fullName: Inventory.Contracts.PagedResult<Inventory.Contracts.TransactionListItem>
+  nameWithType.vb: PagedResult(Of TransactionListItem)
+  fullName.vb: Inventory.Contracts.PagedResult(Of Inventory.Contracts.TransactionListItem)
+  name.vb: PagedResult(Of TransactionListItem)
+  spec.csharp:
+  - uid: Inventory.Contracts.PagedResult`1
+    name: PagedResult
+  - name: <
+  - uid: Inventory.Contracts.TransactionListItem
+    name: TransactionListItem
+  - name: '>'
+  spec.vb:
+  - uid: Inventory.Contracts.PagedResult`1
+    name: PagedResult
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.TransactionListItem
+    name: TransactionListItem
+  - name: )
+- uid: Inventory.Contracts.PagedResult`1
+  commentId: T:Inventory.Contracts.PagedResult`1
+  href: Inventory.Contracts.PagedResult-1.html
+  name: PagedResult<T>
+  nameWithType: PagedResult<T>
+  fullName: Inventory.Contracts.PagedResult<T>
+  nameWithType.vb: PagedResult(Of T)
+  fullName.vb: Inventory.Contracts.PagedResult(Of T)
+  name.vb: PagedResult(Of T)
+  spec.csharp:
+  - uid: Inventory.Contracts.PagedResult`1
+    name: PagedResult
+    href: Inventory.Contracts.PagedResult-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: Inventory.Contracts.PagedResult`1
+    name: PagedResult
+    href: Inventory.Contracts.PagedResult-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Inventory.Contracts
+  commentId: N:Inventory.Contracts
+  name: Inventory.Contracts
+  nameWithType: Inventory.Contracts
+  fullName: Inventory.Contracts
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+- uid: Inventory.Web.Models.TransactionIndexModel.Filter*
+  commentId: Overload:Inventory.Web.Models.TransactionIndexModel.Filter
+  href: Inventory.Web.Models.TransactionIndexModel.html#Inventory_Web_Models_TransactionIndexModel_Filter
+  name: Filter
+  nameWithType: TransactionIndexModel.Filter
+  fullName: Inventory.Web.Models.TransactionIndexModel.Filter
+- uid: Inventory.Contracts.TransactionFilter
+  commentId: T:Inventory.Contracts.TransactionFilter
+  parent: Inventory.Contracts
+  href: Inventory.Contracts.TransactionFilter.html
+  name: TransactionFilter
+  nameWithType: TransactionFilter
+  fullName: Inventory.Contracts.TransactionFilter
+- uid: Inventory.Web.Models.TransactionIndexModel.ShowSecondaryLocation*
+  commentId: Overload:Inventory.Web.Models.TransactionIndexModel.ShowSecondaryLocation
+  href: Inventory.Web.Models.TransactionIndexModel.html#Inventory_Web_Models_TransactionIndexModel_ShowSecondaryLocation
+  name: ShowSecondaryLocation
+  nameWithType: TransactionIndexModel.ShowSecondaryLocation
+  fullName: Inventory.Web.Models.TransactionIndexModel.ShowSecondaryLocation
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Inventory.Web.Models.TransactionIndexModel.ShowPartner*
+  commentId: Overload:Inventory.Web.Models.TransactionIndexModel.ShowPartner
+  href: Inventory.Web.Models.TransactionIndexModel.html#Inventory_Web_Models_TransactionIndexModel_ShowPartner
+  name: ShowPartner
+  nameWithType: TransactionIndexModel.ShowPartner
+  fullName: Inventory.Web.Models.TransactionIndexModel.ShowPartner

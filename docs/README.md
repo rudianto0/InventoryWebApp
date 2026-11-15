@@ -15,6 +15,9 @@ docs/
 ├─ adr/                      # Architecture Decision Records
 ├─ scalability/              # Analisis skalabilitas + Word doc
 ├─ database/                 # Implementasi database + SQL + Word doc
+├─ database-access/          # Operasi, akses, koneksi, pengujian DB + Word doc
+├─ programming-fundamentals/ # Varian, flowchart, algoritma, kompleksitas + Word doc
+├─ code-documentation/       # Dokumentasi kode, method, API docs + Word doc
 └─ templates/
    └─ feature-template.md    # Template standar dokumen fitur
 ```
@@ -59,6 +62,46 @@ docs/
 | [database/08-transaksi-commit-rollback.md](database/08-transaksi-commit-rollback.md) | Commit/rollback |
 | `database/Inventory-Database-Implementation.docx` | Dokumen Word |
 | `sql/postgresql/` | Script SQL siap eksekusi DBeaver |
+
+## Dokumen Akses Basis Data
+
+| File | Isi |
+|------|-----|
+| [database-access/README.md](database-access/README.md) | Index operasi & akses basis data |
+| [database-access/04-operasi-basis-data.md](database-access/04-operasi-basis-data.md) | Simpan/ubah, query, index |
+| [database-access/05-prosedur-akses-basis-data.md](database-access/05-prosedur-akses-basis-data.md) | Library & perintah akses |
+| [database-access/06-koneksi-basis-data.md](database-access/06-koneksi-basis-data.md) | Koneksi, keamanan, hak akses |
+| [database-access/07-pengujian-program-basis-data.md](database-access/07-pengujian-program-basis-data.md) | Skenario & uji performa |
+| `database-access/Inventory-Database-Access.docx` | Dokumen Word |
+| `sql/postgresql/10-roles-and-grants.sql` | Role & grant PostgreSQL |
+| `sql/postgresql/11-performance-tests.sql` | Query EXPLAIN & statistik |
+
+## Dokumen Dasar Pemrograman
+
+| File | Isi |
+|------|-----|
+| [programming-fundamentals/README.md](programming-fundamentals/README.md) | Index materi |
+| [programming-fundamentals/01-varian-dan-invarian.md](programming-fundamentals/01-varian-dan-invarian.md) | Tipe data, variabel, konstanta, invarian |
+| [programming-fundamentals/02-alur-logika-flowchart.md](programming-fundamentals/02-alur-logika-flowchart.md) | Flowchart + Mermaid + PNG |
+| [programming-fundamentals/03-algoritma-sorting-searching.md](programming-fundamentals/03-algoritma-sorting-searching.md) | Sorting, searching, pseudocode, C#, SQL |
+| [programming-fundamentals/04-prosedur-dan-fungsi.md](programming-fundamentals/04-prosedur-dan-fungsi.md) | Reuse, prosedur, fungsi |
+| [programming-fundamentals/05-kompleksitas-algoritma.md](programming-fundamentals/05-kompleksitas-algoritma.md) | Kompleksitas waktu & memori |
+| `programming-fundamentals/Inventory-Programming-Fundamentals.docx` | Dokumen Word + flowchart |
+
+## Dokumentasi Kode
+
+| File | Isi |
+|------|-----|
+| [code-documentation/README.md](code-documentation/README.md) | Index dokumentasi kode |
+| [code-documentation/01-identifikasi-modul.md](code-documentation/01-identifikasi-modul.md) | Modul + ID |
+| [code-documentation/02-parameter-dan-kontrak.md](code-documentation/02-parameter-dan-kontrak.md) | Parameter & DTO |
+| [code-documentation/03-algoritma-dan-definisi-masalah.md](code-documentation/03-algoritma-dan-definisi-masalah.md) | Algoritma |
+| [code-documentation/05-dokumentasi-modul.md](code-documentation/05-dokumentasi-modul.md) | Dokumentasi modul |
+| [code-documentation/06-dokumentasi-method.md](code-documentation/06-dokumentasi-method.md) | Dokumentasi method |
+| [code-documentation/07-katalog-eksepsi.md](code-documentation/07-katalog-eksepsi.md) | Katalog eksepsi |
+| [code-documentation/08-generate-dokumentasi.md](code-documentation/08-generate-dokumentasi.md) | DocFX & fallback |
+| `code-documentation/Inventory-Code-Documentation.docx` | Dokumen Word |
+| `code-documentation/api/_site/` | HTML API docs (DocFX) |
 
 ## Index Fitur
 

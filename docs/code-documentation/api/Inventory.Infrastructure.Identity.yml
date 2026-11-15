@@ -1,0 +1,54 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Infrastructure.Identity
+  commentId: N:Inventory.Infrastructure.Identity
+  id: Inventory.Infrastructure.Identity
+  children:
+  - Inventory.Infrastructure.Identity.AppRole
+  - Inventory.Infrastructure.Identity.AppUser
+  langs:
+  - csharp
+  - vb
+  name: Inventory.Infrastructure.Identity
+  nameWithType: Inventory.Infrastructure.Identity
+  fullName: Inventory.Infrastructure.Identity
+  type: Namespace
+  assemblies:
+  - Inventory.Infrastructure
+references:
+- uid: Inventory.Infrastructure.Identity.AppUser
+  commentId: T:Inventory.Infrastructure.Identity.AppUser
+  parent: Inventory.Infrastructure.Identity
+  href: Inventory.Infrastructure.Identity.AppUser.html
+  name: AppUser
+  nameWithType: AppUser
+  fullName: Inventory.Infrastructure.Identity.AppUser
+- uid: Inventory.Infrastructure.Identity.AppRole
+  commentId: T:Inventory.Infrastructure.Identity.AppRole
+  href: Inventory.Infrastructure.Identity.AppRole.html
+  name: AppRole
+  nameWithType: AppRole
+  fullName: Inventory.Infrastructure.Identity.AppRole
+- uid: Inventory.Infrastructure.Identity
+  commentId: N:Inventory.Infrastructure.Identity
+  name: Inventory.Infrastructure.Identity
+  nameWithType: Inventory.Infrastructure.Identity
+  fullName: Inventory.Infrastructure.Identity
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Infrastructure
+    name: Infrastructure
+  - name: .
+  - uid: Inventory.Infrastructure.Identity
+    name: Identity
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Infrastructure
+    name: Infrastructure
+  - name: .
+  - uid: Inventory.Infrastructure.Identity
+    name: Identity

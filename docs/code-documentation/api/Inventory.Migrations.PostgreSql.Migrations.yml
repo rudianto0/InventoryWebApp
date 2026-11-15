@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Migrations.PostgreSql.Migrations
+  commentId: N:Inventory.Migrations.PostgreSql.Migrations
+  id: Inventory.Migrations.PostgreSql.Migrations
+  children:
+  - Inventory.Migrations.PostgreSql.Migrations.InitialCreate
+  langs:
+  - csharp
+  - vb
+  name: Inventory.Migrations.PostgreSql.Migrations
+  nameWithType: Inventory.Migrations.PostgreSql.Migrations
+  fullName: Inventory.Migrations.PostgreSql.Migrations
+  type: Namespace
+  assemblies:
+  - Inventory.Migrations.PostgreSql
+references:
+- uid: Inventory.Migrations.PostgreSql.Migrations.InitialCreate
+  commentId: T:Inventory.Migrations.PostgreSql.Migrations.InitialCreate
+  href: Inventory.Migrations.PostgreSql.Migrations.InitialCreate.html
+  name: InitialCreate
+  nameWithType: InitialCreate
+  fullName: Inventory.Migrations.PostgreSql.Migrations.InitialCreate

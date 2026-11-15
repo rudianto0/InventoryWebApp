@@ -1,0 +1,838 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Web.Models.UserFormModel
+  commentId: T:Inventory.Web.Models.UserFormModel
+  id: UserFormModel
+  parent: Inventory.Web.Models
+  children:
+  - Inventory.Web.Models.UserFormModel.Email
+  - Inventory.Web.Models.UserFormModel.FullName
+  - Inventory.Web.Models.UserFormModel.Id
+  - Inventory.Web.Models.UserFormModel.IsActive
+  - Inventory.Web.Models.UserFormModel.ParentId
+  - Inventory.Web.Models.UserFormModel.Parents
+  - Inventory.Web.Models.UserFormModel.Password
+  - Inventory.Web.Models.UserFormModel.RoleName
+  - Inventory.Web.Models.UserFormModel.Roles
+  - Inventory.Web.Models.UserFormModel.UserName
+  langs:
+  - csharp
+  - vb
+  name: UserFormModel
+  nameWithType: UserFormModel
+  fullName: Inventory.Web.Models.UserFormModel
+  type: Class
+  source:
+    remote:
+      path: src/Inventory.Web/Models/ViewModels.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: UserFormModel
+    path: src/Inventory.Web/Models/ViewModels.cs
+    startLine: 59
+  assemblies:
+  - Inventory.Web
+  namespace: Inventory.Web.Models
+  syntax:
+    content: public sealed class UserFormModel
+    content.vb: Public NotInheritable Class UserFormModel
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Inventory.Web.Models.UserFormModel.Id
+  commentId: P:Inventory.Web.Models.UserFormModel.Id
+  id: Id
+  parent: Inventory.Web.Models.UserFormModel
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: UserFormModel.Id
+  fullName: Inventory.Web.Models.UserFormModel.Id
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Web/Models/ViewModels.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Id
+    path: src/Inventory.Web/Models/ViewModels.cs
+    startLine: 61
+  assemblies:
+  - Inventory.Web
+  namespace: Inventory.Web.Models
+  syntax:
+    content: public int? Id { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property Id As Integer?
+  overload: Inventory.Web.Models.UserFormModel.Id*
+- uid: Inventory.Web.Models.UserFormModel.UserName
+  commentId: P:Inventory.Web.Models.UserFormModel.UserName
+  id: UserName
+  parent: Inventory.Web.Models.UserFormModel
+  langs:
+  - csharp
+  - vb
+  name: UserName
+  nameWithType: UserFormModel.UserName
+  fullName: Inventory.Web.Models.UserFormModel.UserName
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Web/Models/ViewModels.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: UserName
+    path: src/Inventory.Web/Models/ViewModels.cs
+    startLine: 62
+  assemblies:
+  - Inventory.Web
+  namespace: Inventory.Web.Models
+  syntax:
+    content: public string UserName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property UserName As String
+  overload: Inventory.Web.Models.UserFormModel.UserName*
+- uid: Inventory.Web.Models.UserFormModel.Email
+  commentId: P:Inventory.Web.Models.UserFormModel.Email
+  id: Email
+  parent: Inventory.Web.Models.UserFormModel
+  langs:
+  - csharp
+  - vb
+  name: Email
+  nameWithType: UserFormModel.Email
+  fullName: Inventory.Web.Models.UserFormModel.Email
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Web/Models/ViewModels.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Email
+    path: src/Inventory.Web/Models/ViewModels.cs
+    startLine: 63
+  assemblies:
+  - Inventory.Web
+  namespace: Inventory.Web.Models
+  syntax:
+    content: public string Email { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Email As String
+  overload: Inventory.Web.Models.UserFormModel.Email*
+- uid: Inventory.Web.Models.UserFormModel.FullName
+  commentId: P:Inventory.Web.Models.UserFormModel.FullName
+  id: FullName
+  parent: Inventory.Web.Models.UserFormModel
+  langs:
+  - csharp
+  - vb
+  name: FullName
+  nameWithType: UserFormModel.FullName
+  fullName: Inventory.Web.Models.UserFormModel.FullName
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Web/Models/ViewModels.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: FullName
+    path: src/Inventory.Web/Models/ViewModels.cs
+    startLine: 64
+  assemblies:
+  - Inventory.Web
+  namespace: Inventory.Web.Models
+  syntax:
+    content: public string FullName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property FullName As String
+  overload: Inventory.Web.Models.UserFormModel.FullName*
+- uid: Inventory.Web.Models.UserFormModel.RoleName
+  commentId: P:Inventory.Web.Models.UserFormModel.RoleName
+  id: RoleName
+  parent: Inventory.Web.Models.UserFormModel
+  langs:
+  - csharp
+  - vb
+  name: RoleName
+  nameWithType: UserFormModel.RoleName
+  fullName: Inventory.Web.Models.UserFormModel.RoleName
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Web/Models/ViewModels.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: RoleName
+    path: src/Inventory.Web/Models/ViewModels.cs
+    startLine: 65
+  assemblies:
+  - Inventory.Web
+  namespace: Inventory.Web.Models
+  syntax:
+    content: public string RoleName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property RoleName As String
+  overload: Inventory.Web.Models.UserFormModel.RoleName*
+- uid: Inventory.Web.Models.UserFormModel.ParentId
+  commentId: P:Inventory.Web.Models.UserFormModel.ParentId
+  id: ParentId
+  parent: Inventory.Web.Models.UserFormModel
+  langs:
+  - csharp
+  - vb
+  name: ParentId
+  nameWithType: UserFormModel.ParentId
+  fullName: Inventory.Web.Models.UserFormModel.ParentId
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Web/Models/ViewModels.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ParentId
+    path: src/Inventory.Web/Models/ViewModels.cs
+    startLine: 66
+  assemblies:
+  - Inventory.Web
+  namespace: Inventory.Web.Models
+  syntax:
+    content: public int? ParentId { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property ParentId As Integer?
+  overload: Inventory.Web.Models.UserFormModel.ParentId*
+- uid: Inventory.Web.Models.UserFormModel.IsActive
+  commentId: P:Inventory.Web.Models.UserFormModel.IsActive
+  id: IsActive
+  parent: Inventory.Web.Models.UserFormModel
+  langs:
+  - csharp
+  - vb
+  name: IsActive
+  nameWithType: UserFormModel.IsActive
+  fullName: Inventory.Web.Models.UserFormModel.IsActive
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Web/Models/ViewModels.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: IsActive
+    path: src/Inventory.Web/Models/ViewModels.cs
+    startLine: 67
+  assemblies:
+  - Inventory.Web
+  namespace: Inventory.Web.Models
+  syntax:
+    content: public bool IsActive { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsActive As Boolean
+  overload: Inventory.Web.Models.UserFormModel.IsActive*
+- uid: Inventory.Web.Models.UserFormModel.Password
+  commentId: P:Inventory.Web.Models.UserFormModel.Password
+  id: Password
+  parent: Inventory.Web.Models.UserFormModel
+  langs:
+  - csharp
+  - vb
+  name: Password
+  nameWithType: UserFormModel.Password
+  fullName: Inventory.Web.Models.UserFormModel.Password
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Web/Models/ViewModels.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Password
+    path: src/Inventory.Web/Models/ViewModels.cs
+    startLine: 68
+  assemblies:
+  - Inventory.Web
+  namespace: Inventory.Web.Models
+  syntax:
+    content: public string? Password { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Password As String
+  overload: Inventory.Web.Models.UserFormModel.Password*
+- uid: Inventory.Web.Models.UserFormModel.Roles
+  commentId: P:Inventory.Web.Models.UserFormModel.Roles
+  id: Roles
+  parent: Inventory.Web.Models.UserFormModel
+  langs:
+  - csharp
+  - vb
+  name: Roles
+  nameWithType: UserFormModel.Roles
+  fullName: Inventory.Web.Models.UserFormModel.Roles
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Web/Models/ViewModels.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Roles
+    path: src/Inventory.Web/Models/ViewModels.cs
+    startLine: 69
+  assemblies:
+  - Inventory.Web
+  namespace: Inventory.Web.Models
+  syntax:
+    content: public IReadOnlyList<string> Roles { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyList{System.String}
+    content.vb: Public Property Roles As IReadOnlyList(Of String)
+  overload: Inventory.Web.Models.UserFormModel.Roles*
+- uid: Inventory.Web.Models.UserFormModel.Parents
+  commentId: P:Inventory.Web.Models.UserFormModel.Parents
+  id: Parents
+  parent: Inventory.Web.Models.UserFormModel
+  langs:
+  - csharp
+  - vb
+  name: Parents
+  nameWithType: UserFormModel.Parents
+  fullName: Inventory.Web.Models.UserFormModel.Parents
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Web/Models/ViewModels.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Parents
+    path: src/Inventory.Web/Models/ViewModels.cs
+    startLine: 70
+  assemblies:
+  - Inventory.Web
+  namespace: Inventory.Web.Models
+  syntax:
+    content: public IReadOnlyList<UserOption> Parents { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyList{Inventory.Contracts.UserOption}
+    content.vb: Public Property Parents As IReadOnlyList(Of UserOption)
+  overload: Inventory.Web.Models.UserFormModel.Parents*
+references:
+- uid: Inventory.Web.Models
+  commentId: N:Inventory.Web.Models
+  name: Inventory.Web.Models
+  nameWithType: Inventory.Web.Models
+  fullName: Inventory.Web.Models
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Web
+    name: Web
+  - name: .
+  - uid: Inventory.Web.Models
+    name: Models
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Web
+    name: Web
+  - name: .
+  - uid: Inventory.Web.Models
+    name: Models
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Inventory.Web.Models.UserFormModel.Id*
+  commentId: Overload:Inventory.Web.Models.UserFormModel.Id
+  href: Inventory.Web.Models.UserFormModel.html#Inventory_Web_Models_UserFormModel_Id
+  name: Id
+  nameWithType: UserFormModel.Id
+  fullName: Inventory.Web.Models.UserFormModel.Id
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Inventory.Web.Models.UserFormModel.UserName*
+  commentId: Overload:Inventory.Web.Models.UserFormModel.UserName
+  href: Inventory.Web.Models.UserFormModel.html#Inventory_Web_Models_UserFormModel_UserName
+  name: UserName
+  nameWithType: UserFormModel.UserName
+  fullName: Inventory.Web.Models.UserFormModel.UserName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Inventory.Web.Models.UserFormModel.Email*
+  commentId: Overload:Inventory.Web.Models.UserFormModel.Email
+  href: Inventory.Web.Models.UserFormModel.html#Inventory_Web_Models_UserFormModel_Email
+  name: Email
+  nameWithType: UserFormModel.Email
+  fullName: Inventory.Web.Models.UserFormModel.Email
+- uid: Inventory.Web.Models.UserFormModel.FullName*
+  commentId: Overload:Inventory.Web.Models.UserFormModel.FullName
+  href: Inventory.Web.Models.UserFormModel.html#Inventory_Web_Models_UserFormModel_FullName
+  name: FullName
+  nameWithType: UserFormModel.FullName
+  fullName: Inventory.Web.Models.UserFormModel.FullName
+- uid: Inventory.Web.Models.UserFormModel.RoleName*
+  commentId: Overload:Inventory.Web.Models.UserFormModel.RoleName
+  href: Inventory.Web.Models.UserFormModel.html#Inventory_Web_Models_UserFormModel_RoleName
+  name: RoleName
+  nameWithType: UserFormModel.RoleName
+  fullName: Inventory.Web.Models.UserFormModel.RoleName
+- uid: Inventory.Web.Models.UserFormModel.ParentId*
+  commentId: Overload:Inventory.Web.Models.UserFormModel.ParentId
+  href: Inventory.Web.Models.UserFormModel.html#Inventory_Web_Models_UserFormModel_ParentId
+  name: ParentId
+  nameWithType: UserFormModel.ParentId
+  fullName: Inventory.Web.Models.UserFormModel.ParentId
+- uid: Inventory.Web.Models.UserFormModel.IsActive*
+  commentId: Overload:Inventory.Web.Models.UserFormModel.IsActive
+  href: Inventory.Web.Models.UserFormModel.html#Inventory_Web_Models_UserFormModel_IsActive
+  name: IsActive
+  nameWithType: UserFormModel.IsActive
+  fullName: Inventory.Web.Models.UserFormModel.IsActive
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Inventory.Web.Models.UserFormModel.Password*
+  commentId: Overload:Inventory.Web.Models.UserFormModel.Password
+  href: Inventory.Web.Models.UserFormModel.html#Inventory_Web_Models_UserFormModel_Password
+  name: Password
+  nameWithType: UserFormModel.Password
+  fullName: Inventory.Web.Models.UserFormModel.Password
+- uid: Inventory.Web.Models.UserFormModel.Roles*
+  commentId: Overload:Inventory.Web.Models.UserFormModel.Roles
+  href: Inventory.Web.Models.UserFormModel.html#Inventory_Web_Models_UserFormModel_Roles
+  name: Roles
+  nameWithType: UserFormModel.Roles
+  fullName: Inventory.Web.Models.UserFormModel.Roles
+- uid: System.Collections.Generic.IReadOnlyList{System.String}
+  commentId: T:System.Collections.Generic.IReadOnlyList{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<string>
+  nameWithType: IReadOnlyList<string>
+  fullName: System.Collections.Generic.IReadOnlyList<string>
+  nameWithType.vb: IReadOnlyList(Of String)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of String)
+  name.vb: IReadOnlyList(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyList`1
+  commentId: T:System.Collections.Generic.IReadOnlyList`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<T>
+  nameWithType: IReadOnlyList<T>
+  fullName: System.Collections.Generic.IReadOnlyList<T>
+  nameWithType.vb: IReadOnlyList(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
+  name.vb: IReadOnlyList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Inventory.Web.Models.UserFormModel.Parents*
+  commentId: Overload:Inventory.Web.Models.UserFormModel.Parents
+  href: Inventory.Web.Models.UserFormModel.html#Inventory_Web_Models_UserFormModel_Parents
+  name: Parents
+  nameWithType: UserFormModel.Parents
+  fullName: Inventory.Web.Models.UserFormModel.Parents
+- uid: System.Collections.Generic.IReadOnlyList{Inventory.Contracts.UserOption}
+  commentId: T:System.Collections.Generic.IReadOnlyList{Inventory.Contracts.UserOption}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<UserOption>
+  nameWithType: IReadOnlyList<UserOption>
+  fullName: System.Collections.Generic.IReadOnlyList<Inventory.Contracts.UserOption>
+  nameWithType.vb: IReadOnlyList(Of UserOption)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of Inventory.Contracts.UserOption)
+  name.vb: IReadOnlyList(Of UserOption)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: Inventory.Contracts.UserOption
+    name: UserOption
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.UserOption
+    name: UserOption
+  - name: )

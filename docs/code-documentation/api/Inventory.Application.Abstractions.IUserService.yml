@@ -1,0 +1,763 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Application.Abstractions.IUserService
+  commentId: T:Inventory.Application.Abstractions.IUserService
+  id: IUserService
+  parent: Inventory.Application.Abstractions
+  children:
+  - Inventory.Application.Abstractions.IUserService.CreateAsync(Inventory.Contracts.UserInput,System.Threading.CancellationToken)
+  - Inventory.Application.Abstractions.IUserService.DeactivateAsync(System.Int32,System.Threading.CancellationToken)
+  - Inventory.Application.Abstractions.IUserService.GetAsync(System.Int32,System.Threading.CancellationToken)
+  - Inventory.Application.Abstractions.IUserService.GetParentCandidatesAsync(System.Threading.CancellationToken)
+  - Inventory.Application.Abstractions.IUserService.GetRolesAsync(System.Threading.CancellationToken)
+  - Inventory.Application.Abstractions.IUserService.ListAsync(Inventory.Contracts.UserFilter,System.Threading.CancellationToken)
+  - Inventory.Application.Abstractions.IUserService.ResetPasswordAsync(System.Int32,System.String,System.Threading.CancellationToken)
+  - Inventory.Application.Abstractions.IUserService.UpdateAsync(System.Int32,Inventory.Contracts.UserInput,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: IUserService
+  nameWithType: IUserService
+  fullName: Inventory.Application.Abstractions.IUserService
+  type: Interface
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/IUserService.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: IUserService
+    path: src/Inventory.Application/Abstractions/IUserService.cs
+    startLine: 5
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: public interface IUserService
+    content.vb: Public Interface IUserService
+  derivedClasses:
+  - Inventory.Infrastructure.Services.UserService
+- uid: Inventory.Application.Abstractions.IUserService.ListAsync(Inventory.Contracts.UserFilter,System.Threading.CancellationToken)
+  commentId: M:Inventory.Application.Abstractions.IUserService.ListAsync(Inventory.Contracts.UserFilter,System.Threading.CancellationToken)
+  id: ListAsync(Inventory.Contracts.UserFilter,System.Threading.CancellationToken)
+  parent: Inventory.Application.Abstractions.IUserService
+  langs:
+  - csharp
+  - vb
+  name: ListAsync(UserFilter, CancellationToken)
+  nameWithType: IUserService.ListAsync(UserFilter, CancellationToken)
+  fullName: Inventory.Application.Abstractions.IUserService.ListAsync(Inventory.Contracts.UserFilter, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/IUserService.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ListAsync
+    path: src/Inventory.Application/Abstractions/IUserService.cs
+    startLine: 7
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: Task<PagedResult<UserListItem>> ListAsync(UserFilter filter, CancellationToken ct = default)
+    parameters:
+    - id: filter
+      type: Inventory.Contracts.UserFilter
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{Inventory.Contracts.PagedResult{Inventory.Contracts.UserListItem}}
+    content.vb: Function ListAsync(filter As UserFilter, ct As CancellationToken = Nothing) As Task(Of PagedResult(Of UserListItem))
+  overload: Inventory.Application.Abstractions.IUserService.ListAsync*
+- uid: Inventory.Application.Abstractions.IUserService.GetAsync(System.Int32,System.Threading.CancellationToken)
+  commentId: M:Inventory.Application.Abstractions.IUserService.GetAsync(System.Int32,System.Threading.CancellationToken)
+  id: GetAsync(System.Int32,System.Threading.CancellationToken)
+  parent: Inventory.Application.Abstractions.IUserService
+  langs:
+  - csharp
+  - vb
+  name: GetAsync(int, CancellationToken)
+  nameWithType: IUserService.GetAsync(int, CancellationToken)
+  fullName: Inventory.Application.Abstractions.IUserService.GetAsync(int, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/IUserService.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: GetAsync
+    path: src/Inventory.Application/Abstractions/IUserService.cs
+    startLine: 8
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: Task<UserEditData?> GetAsync(int id, CancellationToken ct = default)
+    parameters:
+    - id: id
+      type: System.Int32
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{Inventory.Contracts.UserEditData}
+    content.vb: Function GetAsync(id As Integer, ct As CancellationToken = Nothing) As Task(Of UserEditData)
+  overload: Inventory.Application.Abstractions.IUserService.GetAsync*
+  nameWithType.vb: IUserService.GetAsync(Integer, CancellationToken)
+  fullName.vb: Inventory.Application.Abstractions.IUserService.GetAsync(Integer, System.Threading.CancellationToken)
+  name.vb: GetAsync(Integer, CancellationToken)
+- uid: Inventory.Application.Abstractions.IUserService.GetRolesAsync(System.Threading.CancellationToken)
+  commentId: M:Inventory.Application.Abstractions.IUserService.GetRolesAsync(System.Threading.CancellationToken)
+  id: GetRolesAsync(System.Threading.CancellationToken)
+  parent: Inventory.Application.Abstractions.IUserService
+  langs:
+  - csharp
+  - vb
+  name: GetRolesAsync(CancellationToken)
+  nameWithType: IUserService.GetRolesAsync(CancellationToken)
+  fullName: Inventory.Application.Abstractions.IUserService.GetRolesAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/IUserService.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: GetRolesAsync
+    path: src/Inventory.Application/Abstractions/IUserService.cs
+    startLine: 9
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: Task<IReadOnlyList<string>> GetRolesAsync(CancellationToken ct = default)
+    parameters:
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{System.String}}
+    content.vb: Function GetRolesAsync(ct As CancellationToken = Nothing) As Task(Of IReadOnlyList(Of String))
+  overload: Inventory.Application.Abstractions.IUserService.GetRolesAsync*
+- uid: Inventory.Application.Abstractions.IUserService.GetParentCandidatesAsync(System.Threading.CancellationToken)
+  commentId: M:Inventory.Application.Abstractions.IUserService.GetParentCandidatesAsync(System.Threading.CancellationToken)
+  id: GetParentCandidatesAsync(System.Threading.CancellationToken)
+  parent: Inventory.Application.Abstractions.IUserService
+  langs:
+  - csharp
+  - vb
+  name: GetParentCandidatesAsync(CancellationToken)
+  nameWithType: IUserService.GetParentCandidatesAsync(CancellationToken)
+  fullName: Inventory.Application.Abstractions.IUserService.GetParentCandidatesAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/IUserService.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: GetParentCandidatesAsync
+    path: src/Inventory.Application/Abstractions/IUserService.cs
+    startLine: 10
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: Task<IReadOnlyList<UserOption>> GetParentCandidatesAsync(CancellationToken ct = default)
+    parameters:
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Inventory.Contracts.UserOption}}
+    content.vb: Function GetParentCandidatesAsync(ct As CancellationToken = Nothing) As Task(Of IReadOnlyList(Of UserOption))
+  overload: Inventory.Application.Abstractions.IUserService.GetParentCandidatesAsync*
+- uid: Inventory.Application.Abstractions.IUserService.CreateAsync(Inventory.Contracts.UserInput,System.Threading.CancellationToken)
+  commentId: M:Inventory.Application.Abstractions.IUserService.CreateAsync(Inventory.Contracts.UserInput,System.Threading.CancellationToken)
+  id: CreateAsync(Inventory.Contracts.UserInput,System.Threading.CancellationToken)
+  parent: Inventory.Application.Abstractions.IUserService
+  langs:
+  - csharp
+  - vb
+  name: CreateAsync(UserInput, CancellationToken)
+  nameWithType: IUserService.CreateAsync(UserInput, CancellationToken)
+  fullName: Inventory.Application.Abstractions.IUserService.CreateAsync(Inventory.Contracts.UserInput, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/IUserService.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: CreateAsync
+    path: src/Inventory.Application/Abstractions/IUserService.cs
+    startLine: 11
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: Task<int> CreateAsync(UserInput input, CancellationToken ct = default)
+    parameters:
+    - id: input
+      type: Inventory.Contracts.UserInput
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{System.Int32}
+    content.vb: Function CreateAsync(input As UserInput, ct As CancellationToken = Nothing) As Task(Of Integer)
+  overload: Inventory.Application.Abstractions.IUserService.CreateAsync*
+- uid: Inventory.Application.Abstractions.IUserService.UpdateAsync(System.Int32,Inventory.Contracts.UserInput,System.Threading.CancellationToken)
+  commentId: M:Inventory.Application.Abstractions.IUserService.UpdateAsync(System.Int32,Inventory.Contracts.UserInput,System.Threading.CancellationToken)
+  id: UpdateAsync(System.Int32,Inventory.Contracts.UserInput,System.Threading.CancellationToken)
+  parent: Inventory.Application.Abstractions.IUserService
+  langs:
+  - csharp
+  - vb
+  name: UpdateAsync(int, UserInput, CancellationToken)
+  nameWithType: IUserService.UpdateAsync(int, UserInput, CancellationToken)
+  fullName: Inventory.Application.Abstractions.IUserService.UpdateAsync(int, Inventory.Contracts.UserInput, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/IUserService.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: UpdateAsync
+    path: src/Inventory.Application/Abstractions/IUserService.cs
+    startLine: 12
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: Task UpdateAsync(int id, UserInput input, CancellationToken ct = default)
+    parameters:
+    - id: id
+      type: System.Int32
+    - id: input
+      type: Inventory.Contracts.UserInput
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function UpdateAsync(id As Integer, input As UserInput, ct As CancellationToken = Nothing) As Task
+  overload: Inventory.Application.Abstractions.IUserService.UpdateAsync*
+  nameWithType.vb: IUserService.UpdateAsync(Integer, UserInput, CancellationToken)
+  fullName.vb: Inventory.Application.Abstractions.IUserService.UpdateAsync(Integer, Inventory.Contracts.UserInput, System.Threading.CancellationToken)
+  name.vb: UpdateAsync(Integer, UserInput, CancellationToken)
+- uid: Inventory.Application.Abstractions.IUserService.DeactivateAsync(System.Int32,System.Threading.CancellationToken)
+  commentId: M:Inventory.Application.Abstractions.IUserService.DeactivateAsync(System.Int32,System.Threading.CancellationToken)
+  id: DeactivateAsync(System.Int32,System.Threading.CancellationToken)
+  parent: Inventory.Application.Abstractions.IUserService
+  langs:
+  - csharp
+  - vb
+  name: DeactivateAsync(int, CancellationToken)
+  nameWithType: IUserService.DeactivateAsync(int, CancellationToken)
+  fullName: Inventory.Application.Abstractions.IUserService.DeactivateAsync(int, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/IUserService.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: DeactivateAsync
+    path: src/Inventory.Application/Abstractions/IUserService.cs
+    startLine: 13
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: Task DeactivateAsync(int id, CancellationToken ct = default)
+    parameters:
+    - id: id
+      type: System.Int32
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function DeactivateAsync(id As Integer, ct As CancellationToken = Nothing) As Task
+  overload: Inventory.Application.Abstractions.IUserService.DeactivateAsync*
+  nameWithType.vb: IUserService.DeactivateAsync(Integer, CancellationToken)
+  fullName.vb: Inventory.Application.Abstractions.IUserService.DeactivateAsync(Integer, System.Threading.CancellationToken)
+  name.vb: DeactivateAsync(Integer, CancellationToken)
+- uid: Inventory.Application.Abstractions.IUserService.ResetPasswordAsync(System.Int32,System.String,System.Threading.CancellationToken)
+  commentId: M:Inventory.Application.Abstractions.IUserService.ResetPasswordAsync(System.Int32,System.String,System.Threading.CancellationToken)
+  id: ResetPasswordAsync(System.Int32,System.String,System.Threading.CancellationToken)
+  parent: Inventory.Application.Abstractions.IUserService
+  langs:
+  - csharp
+  - vb
+  name: ResetPasswordAsync(int, string, CancellationToken)
+  nameWithType: IUserService.ResetPasswordAsync(int, string, CancellationToken)
+  fullName: Inventory.Application.Abstractions.IUserService.ResetPasswordAsync(int, string, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/IUserService.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ResetPasswordAsync
+    path: src/Inventory.Application/Abstractions/IUserService.cs
+    startLine: 14
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: Task ResetPasswordAsync(int id, string newPassword, CancellationToken ct = default)
+    parameters:
+    - id: id
+      type: System.Int32
+    - id: newPassword
+      type: System.String
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function ResetPasswordAsync(id As Integer, newPassword As String, ct As CancellationToken = Nothing) As Task
+  overload: Inventory.Application.Abstractions.IUserService.ResetPasswordAsync*
+  nameWithType.vb: IUserService.ResetPasswordAsync(Integer, String, CancellationToken)
+  fullName.vb: Inventory.Application.Abstractions.IUserService.ResetPasswordAsync(Integer, String, System.Threading.CancellationToken)
+  name.vb: ResetPasswordAsync(Integer, String, CancellationToken)
+references:
+- uid: Inventory.Application.Abstractions
+  commentId: N:Inventory.Application.Abstractions
+  name: Inventory.Application.Abstractions
+  nameWithType: Inventory.Application.Abstractions
+  fullName: Inventory.Application.Abstractions
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Application
+    name: Application
+  - name: .
+  - uid: Inventory.Application.Abstractions
+    name: Abstractions
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Application
+    name: Application
+  - name: .
+  - uid: Inventory.Application.Abstractions
+    name: Abstractions
+- uid: Inventory.Application.Abstractions.IUserService.ListAsync*
+  commentId: Overload:Inventory.Application.Abstractions.IUserService.ListAsync
+  href: Inventory.Application.Abstractions.IUserService.html#Inventory_Application_Abstractions_IUserService_ListAsync_Inventory_Contracts_UserFilter_System_Threading_CancellationToken_
+  name: ListAsync
+  nameWithType: IUserService.ListAsync
+  fullName: Inventory.Application.Abstractions.IUserService.ListAsync
+- uid: Inventory.Contracts.UserFilter
+  commentId: T:Inventory.Contracts.UserFilter
+  parent: Inventory.Contracts
+  href: Inventory.Contracts.UserFilter.html
+  name: UserFilter
+  nameWithType: UserFilter
+  fullName: Inventory.Contracts.UserFilter
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{Inventory.Contracts.PagedResult{Inventory.Contracts.UserListItem}}
+  commentId: T:System.Threading.Tasks.Task{Inventory.Contracts.PagedResult{Inventory.Contracts.UserListItem}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<PagedResult<UserListItem>>
+  nameWithType: Task<PagedResult<UserListItem>>
+  fullName: System.Threading.Tasks.Task<Inventory.Contracts.PagedResult<Inventory.Contracts.UserListItem>>
+  nameWithType.vb: Task(Of PagedResult(Of UserListItem))
+  fullName.vb: System.Threading.Tasks.Task(Of Inventory.Contracts.PagedResult(Of Inventory.Contracts.UserListItem))
+  name.vb: Task(Of PagedResult(Of UserListItem))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Inventory.Contracts.PagedResult`1
+    name: PagedResult
+    href: Inventory.Contracts.PagedResult-1.html
+  - name: <
+  - uid: Inventory.Contracts.UserListItem
+    name: UserListItem
+    href: Inventory.Contracts.UserListItem.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.PagedResult`1
+    name: PagedResult
+    href: Inventory.Contracts.PagedResult-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.UserListItem
+    name: UserListItem
+    href: Inventory.Contracts.UserListItem.html
+  - name: )
+  - name: )
+- uid: Inventory.Contracts
+  commentId: N:Inventory.Contracts
+  name: Inventory.Contracts
+  nameWithType: Inventory.Contracts
+  fullName: Inventory.Contracts
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: Inventory.Application.Abstractions.IUserService.GetAsync*
+  commentId: Overload:Inventory.Application.Abstractions.IUserService.GetAsync
+  href: Inventory.Application.Abstractions.IUserService.html#Inventory_Application_Abstractions_IUserService_GetAsync_System_Int32_System_Threading_CancellationToken_
+  name: GetAsync
+  nameWithType: IUserService.GetAsync
+  fullName: Inventory.Application.Abstractions.IUserService.GetAsync
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Threading.Tasks.Task{Inventory.Contracts.UserEditData}
+  commentId: T:System.Threading.Tasks.Task{Inventory.Contracts.UserEditData}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<UserEditData>
+  nameWithType: Task<UserEditData>
+  fullName: System.Threading.Tasks.Task<Inventory.Contracts.UserEditData>
+  nameWithType.vb: Task(Of UserEditData)
+  fullName.vb: System.Threading.Tasks.Task(Of Inventory.Contracts.UserEditData)
+  name.vb: Task(Of UserEditData)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Inventory.Contracts.UserEditData
+    name: UserEditData
+    href: Inventory.Contracts.UserEditData.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.UserEditData
+    name: UserEditData
+    href: Inventory.Contracts.UserEditData.html
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Inventory.Application.Abstractions.IUserService.GetRolesAsync*
+  commentId: Overload:Inventory.Application.Abstractions.IUserService.GetRolesAsync
+  href: Inventory.Application.Abstractions.IUserService.html#Inventory_Application_Abstractions_IUserService_GetRolesAsync_System_Threading_CancellationToken_
+  name: GetRolesAsync
+  nameWithType: IUserService.GetRolesAsync
+  fullName: Inventory.Application.Abstractions.IUserService.GetRolesAsync
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{System.String}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{System.String}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IReadOnlyList<string>>
+  nameWithType: Task<IReadOnlyList<string>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyList<string>>
+  nameWithType.vb: Task(Of IReadOnlyList(Of String))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IReadOnlyList(Of String))
+  name.vb: Task(Of IReadOnlyList(Of String))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  - name: )
+- uid: Inventory.Application.Abstractions.IUserService.GetParentCandidatesAsync*
+  commentId: Overload:Inventory.Application.Abstractions.IUserService.GetParentCandidatesAsync
+  href: Inventory.Application.Abstractions.IUserService.html#Inventory_Application_Abstractions_IUserService_GetParentCandidatesAsync_System_Threading_CancellationToken_
+  name: GetParentCandidatesAsync
+  nameWithType: IUserService.GetParentCandidatesAsync
+  fullName: Inventory.Application.Abstractions.IUserService.GetParentCandidatesAsync
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Inventory.Contracts.UserOption}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Inventory.Contracts.UserOption}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IReadOnlyList<UserOption>>
+  nameWithType: Task<IReadOnlyList<UserOption>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyList<Inventory.Contracts.UserOption>>
+  nameWithType.vb: Task(Of IReadOnlyList(Of UserOption))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IReadOnlyList(Of Inventory.Contracts.UserOption))
+  name.vb: Task(Of IReadOnlyList(Of UserOption))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: Inventory.Contracts.UserOption
+    name: UserOption
+    href: Inventory.Contracts.UserOption.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.UserOption
+    name: UserOption
+    href: Inventory.Contracts.UserOption.html
+  - name: )
+  - name: )
+- uid: Inventory.Application.Abstractions.IUserService.CreateAsync*
+  commentId: Overload:Inventory.Application.Abstractions.IUserService.CreateAsync
+  href: Inventory.Application.Abstractions.IUserService.html#Inventory_Application_Abstractions_IUserService_CreateAsync_Inventory_Contracts_UserInput_System_Threading_CancellationToken_
+  name: CreateAsync
+  nameWithType: IUserService.CreateAsync
+  fullName: Inventory.Application.Abstractions.IUserService.CreateAsync
+- uid: Inventory.Contracts.UserInput
+  commentId: T:Inventory.Contracts.UserInput
+  parent: Inventory.Contracts
+  href: Inventory.Contracts.UserInput.html
+  name: UserInput
+  nameWithType: UserInput
+  fullName: Inventory.Contracts.UserInput
+- uid: System.Threading.Tasks.Task{System.Int32}
+  commentId: T:System.Threading.Tasks.Task{System.Int32}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<int>
+  nameWithType: Task<int>
+  fullName: System.Threading.Tasks.Task<int>
+  nameWithType.vb: Task(Of Integer)
+  fullName.vb: System.Threading.Tasks.Task(Of Integer)
+  name.vb: Task(Of Integer)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: Inventory.Application.Abstractions.IUserService.UpdateAsync*
+  commentId: Overload:Inventory.Application.Abstractions.IUserService.UpdateAsync
+  href: Inventory.Application.Abstractions.IUserService.html#Inventory_Application_Abstractions_IUserService_UpdateAsync_System_Int32_Inventory_Contracts_UserInput_System_Threading_CancellationToken_
+  name: UpdateAsync
+  nameWithType: IUserService.UpdateAsync
+  fullName: Inventory.Application.Abstractions.IUserService.UpdateAsync
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: Inventory.Application.Abstractions.IUserService.DeactivateAsync*
+  commentId: Overload:Inventory.Application.Abstractions.IUserService.DeactivateAsync
+  href: Inventory.Application.Abstractions.IUserService.html#Inventory_Application_Abstractions_IUserService_DeactivateAsync_System_Int32_System_Threading_CancellationToken_
+  name: DeactivateAsync
+  nameWithType: IUserService.DeactivateAsync
+  fullName: Inventory.Application.Abstractions.IUserService.DeactivateAsync
+- uid: Inventory.Application.Abstractions.IUserService.ResetPasswordAsync*
+  commentId: Overload:Inventory.Application.Abstractions.IUserService.ResetPasswordAsync
+  href: Inventory.Application.Abstractions.IUserService.html#Inventory_Application_Abstractions_IUserService_ResetPasswordAsync_System_Int32_System_String_System_Threading_CancellationToken_
+  name: ResetPasswordAsync
+  nameWithType: IUserService.ResetPasswordAsync
+  fullName: Inventory.Application.Abstractions.IUserService.ResetPasswordAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

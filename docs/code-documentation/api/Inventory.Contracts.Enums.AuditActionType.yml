@@ -1,0 +1,221 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Contracts.Enums.AuditActionType
+  commentId: T:Inventory.Contracts.Enums.AuditActionType
+  id: AuditActionType
+  parent: Inventory.Contracts.Enums
+  children:
+  - Inventory.Contracts.Enums.AuditActionType.Approve
+  - Inventory.Contracts.Enums.AuditActionType.Create
+  - Inventory.Contracts.Enums.AuditActionType.Delete
+  - Inventory.Contracts.Enums.AuditActionType.Reject
+  - Inventory.Contracts.Enums.AuditActionType.Submit
+  - Inventory.Contracts.Enums.AuditActionType.Update
+  langs:
+  - csharp
+  - vb
+  name: AuditActionType
+  nameWithType: AuditActionType
+  fullName: Inventory.Contracts.Enums.AuditActionType
+  type: Enum
+  source:
+    remote:
+      path: src/Inventory.Contracts/Enums.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: AuditActionType
+    path: src/Inventory.Contracts/Enums.cs
+    startLine: 37
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts.Enums
+  syntax:
+    content: public enum AuditActionType
+    content.vb: Public Enum AuditActionType
+- uid: Inventory.Contracts.Enums.AuditActionType.Create
+  commentId: F:Inventory.Contracts.Enums.AuditActionType.Create
+  id: Create
+  parent: Inventory.Contracts.Enums.AuditActionType
+  langs:
+  - csharp
+  - vb
+  name: Create
+  nameWithType: AuditActionType.Create
+  fullName: Inventory.Contracts.Enums.AuditActionType.Create
+  type: Field
+  source:
+    remote:
+      path: src/Inventory.Contracts/Enums.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Create
+    path: src/Inventory.Contracts/Enums.cs
+    startLine: 39
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts.Enums
+  syntax:
+    content: Create = 0
+    return:
+      type: Inventory.Contracts.Enums.AuditActionType
+- uid: Inventory.Contracts.Enums.AuditActionType.Update
+  commentId: F:Inventory.Contracts.Enums.AuditActionType.Update
+  id: Update
+  parent: Inventory.Contracts.Enums.AuditActionType
+  langs:
+  - csharp
+  - vb
+  name: Update
+  nameWithType: AuditActionType.Update
+  fullName: Inventory.Contracts.Enums.AuditActionType.Update
+  type: Field
+  source:
+    remote:
+      path: src/Inventory.Contracts/Enums.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Update
+    path: src/Inventory.Contracts/Enums.cs
+    startLine: 40
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts.Enums
+  syntax:
+    content: Update = 1
+    return:
+      type: Inventory.Contracts.Enums.AuditActionType
+- uid: Inventory.Contracts.Enums.AuditActionType.Delete
+  commentId: F:Inventory.Contracts.Enums.AuditActionType.Delete
+  id: Delete
+  parent: Inventory.Contracts.Enums.AuditActionType
+  langs:
+  - csharp
+  - vb
+  name: Delete
+  nameWithType: AuditActionType.Delete
+  fullName: Inventory.Contracts.Enums.AuditActionType.Delete
+  type: Field
+  source:
+    remote:
+      path: src/Inventory.Contracts/Enums.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Delete
+    path: src/Inventory.Contracts/Enums.cs
+    startLine: 41
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts.Enums
+  syntax:
+    content: Delete = 2
+    return:
+      type: Inventory.Contracts.Enums.AuditActionType
+- uid: Inventory.Contracts.Enums.AuditActionType.Submit
+  commentId: F:Inventory.Contracts.Enums.AuditActionType.Submit
+  id: Submit
+  parent: Inventory.Contracts.Enums.AuditActionType
+  langs:
+  - csharp
+  - vb
+  name: Submit
+  nameWithType: AuditActionType.Submit
+  fullName: Inventory.Contracts.Enums.AuditActionType.Submit
+  type: Field
+  source:
+    remote:
+      path: src/Inventory.Contracts/Enums.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Submit
+    path: src/Inventory.Contracts/Enums.cs
+    startLine: 42
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts.Enums
+  syntax:
+    content: Submit = 3
+    return:
+      type: Inventory.Contracts.Enums.AuditActionType
+- uid: Inventory.Contracts.Enums.AuditActionType.Approve
+  commentId: F:Inventory.Contracts.Enums.AuditActionType.Approve
+  id: Approve
+  parent: Inventory.Contracts.Enums.AuditActionType
+  langs:
+  - csharp
+  - vb
+  name: Approve
+  nameWithType: AuditActionType.Approve
+  fullName: Inventory.Contracts.Enums.AuditActionType.Approve
+  type: Field
+  source:
+    remote:
+      path: src/Inventory.Contracts/Enums.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Approve
+    path: src/Inventory.Contracts/Enums.cs
+    startLine: 43
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts.Enums
+  syntax:
+    content: Approve = 4
+    return:
+      type: Inventory.Contracts.Enums.AuditActionType
+- uid: Inventory.Contracts.Enums.AuditActionType.Reject
+  commentId: F:Inventory.Contracts.Enums.AuditActionType.Reject
+  id: Reject
+  parent: Inventory.Contracts.Enums.AuditActionType
+  langs:
+  - csharp
+  - vb
+  name: Reject
+  nameWithType: AuditActionType.Reject
+  fullName: Inventory.Contracts.Enums.AuditActionType.Reject
+  type: Field
+  source:
+    remote:
+      path: src/Inventory.Contracts/Enums.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Reject
+    path: src/Inventory.Contracts/Enums.cs
+    startLine: 44
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts.Enums
+  syntax:
+    content: Reject = 5
+    return:
+      type: Inventory.Contracts.Enums.AuditActionType
+references:
+- uid: Inventory.Contracts.Enums
+  commentId: N:Inventory.Contracts.Enums
+  name: Inventory.Contracts.Enums
+  nameWithType: Inventory.Contracts.Enums
+  fullName: Inventory.Contracts.Enums
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+  - name: .
+  - uid: Inventory.Contracts.Enums
+    name: Enums
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+  - name: .
+  - uid: Inventory.Contracts.Enums
+    name: Enums
+- uid: Inventory.Contracts.Enums.AuditActionType
+  commentId: T:Inventory.Contracts.Enums.AuditActionType
+  parent: Inventory.Contracts.Enums
+  href: Inventory.Contracts.Enums.AuditActionType.html
+  name: AuditActionType
+  nameWithType: AuditActionType
+  fullName: Inventory.Contracts.Enums.AuditActionType

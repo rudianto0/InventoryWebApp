@@ -1,0 +1,1197 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Infrastructure.Identity.AppUser
+  commentId: T:Inventory.Infrastructure.Identity.AppUser
+  id: AppUser
+  parent: Inventory.Infrastructure.Identity
+  children:
+  - Inventory.Infrastructure.Identity.AppUser.CreatedAt
+  - Inventory.Infrastructure.Identity.AppUser.CreatedById
+  - Inventory.Infrastructure.Identity.AppUser.FullName
+  - Inventory.Infrastructure.Identity.AppUser.IsActive
+  - Inventory.Infrastructure.Identity.AppUser.Parent
+  - Inventory.Infrastructure.Identity.AppUser.ParentId
+  - Inventory.Infrastructure.Identity.AppUser.UpdatedAt
+  - Inventory.Infrastructure.Identity.AppUser.UpdatedById
+  langs:
+  - csharp
+  - vb
+  name: AppUser
+  nameWithType: AppUser
+  fullName: Inventory.Infrastructure.Identity.AppUser
+  type: Class
+  source:
+    remote:
+      path: src/Inventory.Infrastructure/Identity/AppUser.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: AppUser
+    path: src/Inventory.Infrastructure/Identity/AppUser.cs
+    startLine: 5
+  assemblies:
+  - Inventory.Infrastructure
+  namespace: Inventory.Infrastructure.Identity
+  syntax:
+    content: 'public class AppUser : IdentityUser<int>, IAuditableEntity'
+    content.vb: Public Class AppUser Inherits IdentityUser(Of Integer) Implements IAuditableEntity
+  inheritance:
+  - System.Object
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}
+  implements:
+  - Inventory.Domain.Common.IAuditableEntity
+  inheritedMembers:
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.ToString
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.Id
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.UserName
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.NormalizedUserName
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.Email
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.NormalizedEmail
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.EmailConfirmed
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.PasswordHash
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.SecurityStamp
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.ConcurrencyStamp
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.PhoneNumber
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.PhoneNumberConfirmed
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.TwoFactorEnabled
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.LockoutEnd
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.LockoutEnabled
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.AccessFailedCount
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: Inventory.Infrastructure.Identity.AppUser.FullName
+  commentId: P:Inventory.Infrastructure.Identity.AppUser.FullName
+  id: FullName
+  parent: Inventory.Infrastructure.Identity.AppUser
+  langs:
+  - csharp
+  - vb
+  name: FullName
+  nameWithType: AppUser.FullName
+  fullName: Inventory.Infrastructure.Identity.AppUser.FullName
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Infrastructure/Identity/AppUser.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: FullName
+    path: src/Inventory.Infrastructure/Identity/AppUser.cs
+    startLine: 7
+  assemblies:
+  - Inventory.Infrastructure
+  namespace: Inventory.Infrastructure.Identity
+  syntax:
+    content: public string FullName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property FullName As String
+  overload: Inventory.Infrastructure.Identity.AppUser.FullName*
+- uid: Inventory.Infrastructure.Identity.AppUser.ParentId
+  commentId: P:Inventory.Infrastructure.Identity.AppUser.ParentId
+  id: ParentId
+  parent: Inventory.Infrastructure.Identity.AppUser
+  langs:
+  - csharp
+  - vb
+  name: ParentId
+  nameWithType: AppUser.ParentId
+  fullName: Inventory.Infrastructure.Identity.AppUser.ParentId
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Infrastructure/Identity/AppUser.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ParentId
+    path: src/Inventory.Infrastructure/Identity/AppUser.cs
+    startLine: 8
+  assemblies:
+  - Inventory.Infrastructure
+  namespace: Inventory.Infrastructure.Identity
+  syntax:
+    content: public int? ParentId { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property ParentId As Integer?
+  overload: Inventory.Infrastructure.Identity.AppUser.ParentId*
+- uid: Inventory.Infrastructure.Identity.AppUser.Parent
+  commentId: P:Inventory.Infrastructure.Identity.AppUser.Parent
+  id: Parent
+  parent: Inventory.Infrastructure.Identity.AppUser
+  langs:
+  - csharp
+  - vb
+  name: Parent
+  nameWithType: AppUser.Parent
+  fullName: Inventory.Infrastructure.Identity.AppUser.Parent
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Infrastructure/Identity/AppUser.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Parent
+    path: src/Inventory.Infrastructure/Identity/AppUser.cs
+    startLine: 9
+  assemblies:
+  - Inventory.Infrastructure
+  namespace: Inventory.Infrastructure.Identity
+  syntax:
+    content: public AppUser? Parent { get; set; }
+    parameters: []
+    return:
+      type: Inventory.Infrastructure.Identity.AppUser
+    content.vb: Public Property Parent As AppUser
+  overload: Inventory.Infrastructure.Identity.AppUser.Parent*
+- uid: Inventory.Infrastructure.Identity.AppUser.IsActive
+  commentId: P:Inventory.Infrastructure.Identity.AppUser.IsActive
+  id: IsActive
+  parent: Inventory.Infrastructure.Identity.AppUser
+  langs:
+  - csharp
+  - vb
+  name: IsActive
+  nameWithType: AppUser.IsActive
+  fullName: Inventory.Infrastructure.Identity.AppUser.IsActive
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Infrastructure/Identity/AppUser.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: IsActive
+    path: src/Inventory.Infrastructure/Identity/AppUser.cs
+    startLine: 10
+  assemblies:
+  - Inventory.Infrastructure
+  namespace: Inventory.Infrastructure.Identity
+  syntax:
+    content: public bool IsActive { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsActive As Boolean
+  overload: Inventory.Infrastructure.Identity.AppUser.IsActive*
+- uid: Inventory.Infrastructure.Identity.AppUser.CreatedAt
+  commentId: P:Inventory.Infrastructure.Identity.AppUser.CreatedAt
+  id: CreatedAt
+  parent: Inventory.Infrastructure.Identity.AppUser
+  langs:
+  - csharp
+  - vb
+  name: CreatedAt
+  nameWithType: AppUser.CreatedAt
+  fullName: Inventory.Infrastructure.Identity.AppUser.CreatedAt
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Infrastructure/Identity/AppUser.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: CreatedAt
+    path: src/Inventory.Infrastructure/Identity/AppUser.cs
+    startLine: 11
+  assemblies:
+  - Inventory.Infrastructure
+  namespace: Inventory.Infrastructure.Identity
+  example: []
+  syntax:
+    content: public DateTime CreatedAt { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property CreatedAt As Date
+  overload: Inventory.Infrastructure.Identity.AppUser.CreatedAt*
+  implements:
+  - Inventory.Domain.Common.IAuditableEntity.CreatedAt
+- uid: Inventory.Infrastructure.Identity.AppUser.CreatedById
+  commentId: P:Inventory.Infrastructure.Identity.AppUser.CreatedById
+  id: CreatedById
+  parent: Inventory.Infrastructure.Identity.AppUser
+  langs:
+  - csharp
+  - vb
+  name: CreatedById
+  nameWithType: AppUser.CreatedById
+  fullName: Inventory.Infrastructure.Identity.AppUser.CreatedById
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Infrastructure/Identity/AppUser.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: CreatedById
+    path: src/Inventory.Infrastructure/Identity/AppUser.cs
+    startLine: 12
+  assemblies:
+  - Inventory.Infrastructure
+  namespace: Inventory.Infrastructure.Identity
+  example: []
+  syntax:
+    content: public int? CreatedById { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property CreatedById As Integer?
+  overload: Inventory.Infrastructure.Identity.AppUser.CreatedById*
+  implements:
+  - Inventory.Domain.Common.IAuditableEntity.CreatedById
+- uid: Inventory.Infrastructure.Identity.AppUser.UpdatedAt
+  commentId: P:Inventory.Infrastructure.Identity.AppUser.UpdatedAt
+  id: UpdatedAt
+  parent: Inventory.Infrastructure.Identity.AppUser
+  langs:
+  - csharp
+  - vb
+  name: UpdatedAt
+  nameWithType: AppUser.UpdatedAt
+  fullName: Inventory.Infrastructure.Identity.AppUser.UpdatedAt
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Infrastructure/Identity/AppUser.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: UpdatedAt
+    path: src/Inventory.Infrastructure/Identity/AppUser.cs
+    startLine: 13
+  assemblies:
+  - Inventory.Infrastructure
+  namespace: Inventory.Infrastructure.Identity
+  example: []
+  syntax:
+    content: public DateTime? UpdatedAt { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: Public Property UpdatedAt As Date?
+  overload: Inventory.Infrastructure.Identity.AppUser.UpdatedAt*
+  implements:
+  - Inventory.Domain.Common.IAuditableEntity.UpdatedAt
+- uid: Inventory.Infrastructure.Identity.AppUser.UpdatedById
+  commentId: P:Inventory.Infrastructure.Identity.AppUser.UpdatedById
+  id: UpdatedById
+  parent: Inventory.Infrastructure.Identity.AppUser
+  langs:
+  - csharp
+  - vb
+  name: UpdatedById
+  nameWithType: AppUser.UpdatedById
+  fullName: Inventory.Infrastructure.Identity.AppUser.UpdatedById
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Infrastructure/Identity/AppUser.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: UpdatedById
+    path: src/Inventory.Infrastructure/Identity/AppUser.cs
+    startLine: 14
+  assemblies:
+  - Inventory.Infrastructure
+  namespace: Inventory.Infrastructure.Identity
+  example: []
+  syntax:
+    content: public int? UpdatedById { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property UpdatedById As Integer?
+  overload: Inventory.Infrastructure.Identity.AppUser.UpdatedById*
+  implements:
+  - Inventory.Domain.Common.IAuditableEntity.UpdatedById
+references:
+- uid: Inventory.Infrastructure.Identity
+  commentId: N:Inventory.Infrastructure.Identity
+  name: Inventory.Infrastructure.Identity
+  nameWithType: Inventory.Infrastructure.Identity
+  fullName: Inventory.Infrastructure.Identity
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Infrastructure
+    name: Infrastructure
+  - name: .
+  - uid: Inventory.Infrastructure.Identity
+    name: Identity
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Infrastructure
+    name: Infrastructure
+  - name: .
+  - uid: Inventory.Infrastructure.Identity
+    name: Identity
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}
+  commentId: T:Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}
+  parent: Microsoft.AspNetCore.Identity
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1
+  name: IdentityUser<int>
+  nameWithType: IdentityUser<int>
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<int>
+  nameWithType.vb: IdentityUser(Of Integer)
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of Integer)
+  name.vb: IdentityUser(Of Integer)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Identity.IdentityUser`1
+    name: IdentityUser
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Identity.IdentityUser`1
+    name: IdentityUser
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: Inventory.Domain.Common.IAuditableEntity
+  commentId: T:Inventory.Domain.Common.IAuditableEntity
+  parent: Inventory.Domain.Common
+  href: Inventory.Domain.Common.IAuditableEntity.html
+  name: IAuditableEntity
+  nameWithType: IAuditableEntity
+  fullName: Inventory.Domain.Common.IAuditableEntity
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.ToString
+  commentId: M:Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.ToString
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.ToString
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.tostring
+  name: ToString()
+  nameWithType: IdentityUser<int>.ToString()
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<int>.ToString()
+  nameWithType.vb: IdentityUser(Of Integer).ToString()
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of Integer).ToString()
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.tostring
+  - name: (
+  - name: )
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.Id
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.Id
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.Id
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.id
+  name: Id
+  nameWithType: IdentityUser<int>.Id
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<int>.Id
+  nameWithType.vb: IdentityUser(Of Integer).Id
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of Integer).Id
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.UserName
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.UserName
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.UserName
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.username
+  name: UserName
+  nameWithType: IdentityUser<int>.UserName
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<int>.UserName
+  nameWithType.vb: IdentityUser(Of Integer).UserName
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of Integer).UserName
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.NormalizedUserName
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.NormalizedUserName
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.NormalizedUserName
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.normalizedusername
+  name: NormalizedUserName
+  nameWithType: IdentityUser<int>.NormalizedUserName
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<int>.NormalizedUserName
+  nameWithType.vb: IdentityUser(Of Integer).NormalizedUserName
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of Integer).NormalizedUserName
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.Email
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.Email
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.Email
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.email
+  name: Email
+  nameWithType: IdentityUser<int>.Email
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<int>.Email
+  nameWithType.vb: IdentityUser(Of Integer).Email
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of Integer).Email
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.NormalizedEmail
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.NormalizedEmail
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.NormalizedEmail
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.normalizedemail
+  name: NormalizedEmail
+  nameWithType: IdentityUser<int>.NormalizedEmail
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<int>.NormalizedEmail
+  nameWithType.vb: IdentityUser(Of Integer).NormalizedEmail
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of Integer).NormalizedEmail
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.EmailConfirmed
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.EmailConfirmed
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.EmailConfirmed
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.emailconfirmed
+  name: EmailConfirmed
+  nameWithType: IdentityUser<int>.EmailConfirmed
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<int>.EmailConfirmed
+  nameWithType.vb: IdentityUser(Of Integer).EmailConfirmed
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of Integer).EmailConfirmed
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.PasswordHash
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.PasswordHash
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.PasswordHash
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.passwordhash
+  name: PasswordHash
+  nameWithType: IdentityUser<int>.PasswordHash
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<int>.PasswordHash
+  nameWithType.vb: IdentityUser(Of Integer).PasswordHash
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of Integer).PasswordHash
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.SecurityStamp
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.SecurityStamp
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.SecurityStamp
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.securitystamp
+  name: SecurityStamp
+  nameWithType: IdentityUser<int>.SecurityStamp
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<int>.SecurityStamp
+  nameWithType.vb: IdentityUser(Of Integer).SecurityStamp
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of Integer).SecurityStamp
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.ConcurrencyStamp
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.ConcurrencyStamp
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.ConcurrencyStamp
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.concurrencystamp
+  name: ConcurrencyStamp
+  nameWithType: IdentityUser<int>.ConcurrencyStamp
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<int>.ConcurrencyStamp
+  nameWithType.vb: IdentityUser(Of Integer).ConcurrencyStamp
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of Integer).ConcurrencyStamp
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.PhoneNumber
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.PhoneNumber
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.PhoneNumber
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.phonenumber
+  name: PhoneNumber
+  nameWithType: IdentityUser<int>.PhoneNumber
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<int>.PhoneNumber
+  nameWithType.vb: IdentityUser(Of Integer).PhoneNumber
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of Integer).PhoneNumber
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.PhoneNumberConfirmed
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.PhoneNumberConfirmed
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.PhoneNumberConfirmed
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.phonenumberconfirmed
+  name: PhoneNumberConfirmed
+  nameWithType: IdentityUser<int>.PhoneNumberConfirmed
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<int>.PhoneNumberConfirmed
+  nameWithType.vb: IdentityUser(Of Integer).PhoneNumberConfirmed
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of Integer).PhoneNumberConfirmed
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.TwoFactorEnabled
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.TwoFactorEnabled
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.TwoFactorEnabled
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.twofactorenabled
+  name: TwoFactorEnabled
+  nameWithType: IdentityUser<int>.TwoFactorEnabled
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<int>.TwoFactorEnabled
+  nameWithType.vb: IdentityUser(Of Integer).TwoFactorEnabled
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of Integer).TwoFactorEnabled
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.LockoutEnd
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.LockoutEnd
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.LockoutEnd
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.lockoutend
+  name: LockoutEnd
+  nameWithType: IdentityUser<int>.LockoutEnd
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<int>.LockoutEnd
+  nameWithType.vb: IdentityUser(Of Integer).LockoutEnd
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of Integer).LockoutEnd
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.LockoutEnabled
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.LockoutEnabled
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.LockoutEnabled
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.lockoutenabled
+  name: LockoutEnabled
+  nameWithType: IdentityUser<int>.LockoutEnabled
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<int>.LockoutEnabled
+  nameWithType.vb: IdentityUser(Of Integer).LockoutEnabled
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of Integer).LockoutEnabled
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.AccessFailedCount
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}.AccessFailedCount
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Int32}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.AccessFailedCount
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.accessfailedcount
+  name: AccessFailedCount
+  nameWithType: IdentityUser<int>.AccessFailedCount
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<int>.AccessFailedCount
+  nameWithType.vb: IdentityUser(Of Integer).AccessFailedCount
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of Integer).AccessFailedCount
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1
+  commentId: T:Microsoft.AspNetCore.Identity.IdentityUser`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1
+  name: IdentityUser<TKey>
+  nameWithType: IdentityUser<TKey>
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>
+  nameWithType.vb: IdentityUser(Of TKey)
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey)
+  name.vb: IdentityUser(Of TKey)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Identity.IdentityUser`1
+    name: IdentityUser
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1
+  - name: <
+  - name: TKey
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Identity.IdentityUser`1
+    name: IdentityUser
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: )
+- uid: Microsoft.AspNetCore.Identity
+  commentId: N:Microsoft.AspNetCore.Identity
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.AspNetCore.Identity
+  nameWithType: Microsoft.AspNetCore.Identity
+  fullName: Microsoft.AspNetCore.Identity
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Identity
+    name: Identity
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Identity
+    name: Identity
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity
+- uid: Inventory.Domain.Common
+  commentId: N:Inventory.Domain.Common
+  name: Inventory.Domain.Common
+  nameWithType: Inventory.Domain.Common
+  fullName: Inventory.Domain.Common
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Domain
+    name: Domain
+  - name: .
+  - uid: Inventory.Domain.Common
+    name: Common
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Domain
+    name: Domain
+  - name: .
+  - uid: Inventory.Domain.Common
+    name: Common
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.ToString
+  commentId: M:Microsoft.AspNetCore.Identity.IdentityUser`1.ToString
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.tostring
+  name: ToString()
+  nameWithType: IdentityUser<TKey>.ToString()
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.ToString()
+  nameWithType.vb: IdentityUser(Of TKey).ToString()
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).ToString()
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Identity.IdentityUser`1.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Identity.IdentityUser`1.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.tostring
+  - name: (
+  - name: )
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.Id
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.Id
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.id
+  name: Id
+  nameWithType: IdentityUser<TKey>.Id
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.Id
+  nameWithType.vb: IdentityUser(Of TKey).Id
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).Id
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.UserName
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.UserName
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.username
+  name: UserName
+  nameWithType: IdentityUser<TKey>.UserName
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.UserName
+  nameWithType.vb: IdentityUser(Of TKey).UserName
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).UserName
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.NormalizedUserName
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.NormalizedUserName
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.normalizedusername
+  name: NormalizedUserName
+  nameWithType: IdentityUser<TKey>.NormalizedUserName
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.NormalizedUserName
+  nameWithType.vb: IdentityUser(Of TKey).NormalizedUserName
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).NormalizedUserName
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.Email
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.Email
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.email
+  name: Email
+  nameWithType: IdentityUser<TKey>.Email
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.Email
+  nameWithType.vb: IdentityUser(Of TKey).Email
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).Email
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.NormalizedEmail
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.NormalizedEmail
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.normalizedemail
+  name: NormalizedEmail
+  nameWithType: IdentityUser<TKey>.NormalizedEmail
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.NormalizedEmail
+  nameWithType.vb: IdentityUser(Of TKey).NormalizedEmail
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).NormalizedEmail
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.EmailConfirmed
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.EmailConfirmed
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.emailconfirmed
+  name: EmailConfirmed
+  nameWithType: IdentityUser<TKey>.EmailConfirmed
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.EmailConfirmed
+  nameWithType.vb: IdentityUser(Of TKey).EmailConfirmed
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).EmailConfirmed
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.PasswordHash
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.PasswordHash
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.passwordhash
+  name: PasswordHash
+  nameWithType: IdentityUser<TKey>.PasswordHash
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.PasswordHash
+  nameWithType.vb: IdentityUser(Of TKey).PasswordHash
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).PasswordHash
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.SecurityStamp
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.SecurityStamp
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.securitystamp
+  name: SecurityStamp
+  nameWithType: IdentityUser<TKey>.SecurityStamp
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.SecurityStamp
+  nameWithType.vb: IdentityUser(Of TKey).SecurityStamp
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).SecurityStamp
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.ConcurrencyStamp
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.ConcurrencyStamp
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.concurrencystamp
+  name: ConcurrencyStamp
+  nameWithType: IdentityUser<TKey>.ConcurrencyStamp
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.ConcurrencyStamp
+  nameWithType.vb: IdentityUser(Of TKey).ConcurrencyStamp
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).ConcurrencyStamp
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.PhoneNumber
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.PhoneNumber
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.phonenumber
+  name: PhoneNumber
+  nameWithType: IdentityUser<TKey>.PhoneNumber
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.PhoneNumber
+  nameWithType.vb: IdentityUser(Of TKey).PhoneNumber
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).PhoneNumber
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.PhoneNumberConfirmed
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.PhoneNumberConfirmed
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.phonenumberconfirmed
+  name: PhoneNumberConfirmed
+  nameWithType: IdentityUser<TKey>.PhoneNumberConfirmed
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.PhoneNumberConfirmed
+  nameWithType.vb: IdentityUser(Of TKey).PhoneNumberConfirmed
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).PhoneNumberConfirmed
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.TwoFactorEnabled
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.TwoFactorEnabled
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.twofactorenabled
+  name: TwoFactorEnabled
+  nameWithType: IdentityUser<TKey>.TwoFactorEnabled
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.TwoFactorEnabled
+  nameWithType.vb: IdentityUser(Of TKey).TwoFactorEnabled
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).TwoFactorEnabled
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.LockoutEnd
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.LockoutEnd
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.lockoutend
+  name: LockoutEnd
+  nameWithType: IdentityUser<TKey>.LockoutEnd
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.LockoutEnd
+  nameWithType.vb: IdentityUser(Of TKey).LockoutEnd
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).LockoutEnd
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.LockoutEnabled
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.LockoutEnabled
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.lockoutenabled
+  name: LockoutEnabled
+  nameWithType: IdentityUser<TKey>.LockoutEnabled
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.LockoutEnabled
+  nameWithType.vb: IdentityUser(Of TKey).LockoutEnabled
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).LockoutEnabled
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.AccessFailedCount
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.AccessFailedCount
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.accessfailedcount
+  name: AccessFailedCount
+  nameWithType: IdentityUser<TKey>.AccessFailedCount
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.AccessFailedCount
+  nameWithType.vb: IdentityUser(Of TKey).AccessFailedCount
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).AccessFailedCount
+- uid: Inventory.Infrastructure.Identity.AppUser.FullName*
+  commentId: Overload:Inventory.Infrastructure.Identity.AppUser.FullName
+  href: Inventory.Infrastructure.Identity.AppUser.html#Inventory_Infrastructure_Identity_AppUser_FullName
+  name: FullName
+  nameWithType: AppUser.FullName
+  fullName: Inventory.Infrastructure.Identity.AppUser.FullName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Inventory.Infrastructure.Identity.AppUser.ParentId*
+  commentId: Overload:Inventory.Infrastructure.Identity.AppUser.ParentId
+  href: Inventory.Infrastructure.Identity.AppUser.html#Inventory_Infrastructure_Identity_AppUser_ParentId
+  name: ParentId
+  nameWithType: AppUser.ParentId
+  fullName: Inventory.Infrastructure.Identity.AppUser.ParentId
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Inventory.Infrastructure.Identity.AppUser.Parent*
+  commentId: Overload:Inventory.Infrastructure.Identity.AppUser.Parent
+  href: Inventory.Infrastructure.Identity.AppUser.html#Inventory_Infrastructure_Identity_AppUser_Parent
+  name: Parent
+  nameWithType: AppUser.Parent
+  fullName: Inventory.Infrastructure.Identity.AppUser.Parent
+- uid: Inventory.Infrastructure.Identity.AppUser
+  commentId: T:Inventory.Infrastructure.Identity.AppUser
+  parent: Inventory.Infrastructure.Identity
+  href: Inventory.Infrastructure.Identity.AppUser.html
+  name: AppUser
+  nameWithType: AppUser
+  fullName: Inventory.Infrastructure.Identity.AppUser
+- uid: Inventory.Infrastructure.Identity.AppUser.IsActive*
+  commentId: Overload:Inventory.Infrastructure.Identity.AppUser.IsActive
+  href: Inventory.Infrastructure.Identity.AppUser.html#Inventory_Infrastructure_Identity_AppUser_IsActive
+  name: IsActive
+  nameWithType: AppUser.IsActive
+  fullName: Inventory.Infrastructure.Identity.AppUser.IsActive
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Inventory.Infrastructure.Identity.AppUser.CreatedAt*
+  commentId: Overload:Inventory.Infrastructure.Identity.AppUser.CreatedAt
+  href: Inventory.Infrastructure.Identity.AppUser.html#Inventory_Infrastructure_Identity_AppUser_CreatedAt
+  name: CreatedAt
+  nameWithType: AppUser.CreatedAt
+  fullName: Inventory.Infrastructure.Identity.AppUser.CreatedAt
+- uid: Inventory.Domain.Common.IAuditableEntity.CreatedAt
+  commentId: P:Inventory.Domain.Common.IAuditableEntity.CreatedAt
+  parent: Inventory.Domain.Common.IAuditableEntity
+  href: Inventory.Domain.Common.IAuditableEntity.html#Inventory_Domain_Common_IAuditableEntity_CreatedAt
+  name: CreatedAt
+  nameWithType: IAuditableEntity.CreatedAt
+  fullName: Inventory.Domain.Common.IAuditableEntity.CreatedAt
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: Inventory.Infrastructure.Identity.AppUser.CreatedById*
+  commentId: Overload:Inventory.Infrastructure.Identity.AppUser.CreatedById
+  href: Inventory.Infrastructure.Identity.AppUser.html#Inventory_Infrastructure_Identity_AppUser_CreatedById
+  name: CreatedById
+  nameWithType: AppUser.CreatedById
+  fullName: Inventory.Infrastructure.Identity.AppUser.CreatedById
+- uid: Inventory.Domain.Common.IAuditableEntity.CreatedById
+  commentId: P:Inventory.Domain.Common.IAuditableEntity.CreatedById
+  parent: Inventory.Domain.Common.IAuditableEntity
+  href: Inventory.Domain.Common.IAuditableEntity.html#Inventory_Domain_Common_IAuditableEntity_CreatedById
+  name: CreatedById
+  nameWithType: IAuditableEntity.CreatedById
+  fullName: Inventory.Domain.Common.IAuditableEntity.CreatedById
+- uid: Inventory.Infrastructure.Identity.AppUser.UpdatedAt*
+  commentId: Overload:Inventory.Infrastructure.Identity.AppUser.UpdatedAt
+  href: Inventory.Infrastructure.Identity.AppUser.html#Inventory_Infrastructure_Identity_AppUser_UpdatedAt
+  name: UpdatedAt
+  nameWithType: AppUser.UpdatedAt
+  fullName: Inventory.Infrastructure.Identity.AppUser.UpdatedAt
+- uid: Inventory.Domain.Common.IAuditableEntity.UpdatedAt
+  commentId: P:Inventory.Domain.Common.IAuditableEntity.UpdatedAt
+  parent: Inventory.Domain.Common.IAuditableEntity
+  href: Inventory.Domain.Common.IAuditableEntity.html#Inventory_Domain_Common_IAuditableEntity_UpdatedAt
+  name: UpdatedAt
+  nameWithType: IAuditableEntity.UpdatedAt
+  fullName: Inventory.Domain.Common.IAuditableEntity.UpdatedAt
+- uid: System.Nullable{System.DateTime}
+  commentId: T:System.Nullable{System.DateTime}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime?
+  nameWithType: DateTime?
+  fullName: System.DateTime?
+  nameWithType.vb: Date?
+  fullName.vb: Date?
+  name.vb: Date?
+  spec.csharp:
+  - uid: System.DateTime
+    name: DateTime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: '?'
+  spec.vb:
+  - uid: System.DateTime
+    name: Date
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: '?'
+- uid: Inventory.Infrastructure.Identity.AppUser.UpdatedById*
+  commentId: Overload:Inventory.Infrastructure.Identity.AppUser.UpdatedById
+  href: Inventory.Infrastructure.Identity.AppUser.html#Inventory_Infrastructure_Identity_AppUser_UpdatedById
+  name: UpdatedById
+  nameWithType: AppUser.UpdatedById
+  fullName: Inventory.Infrastructure.Identity.AppUser.UpdatedById
+- uid: Inventory.Domain.Common.IAuditableEntity.UpdatedById
+  commentId: P:Inventory.Domain.Common.IAuditableEntity.UpdatedById
+  parent: Inventory.Domain.Common.IAuditableEntity
+  href: Inventory.Domain.Common.IAuditableEntity.html#Inventory_Domain_Common_IAuditableEntity_UpdatedById
+  name: UpdatedById
+  nameWithType: IAuditableEntity.UpdatedById
+  fullName: Inventory.Domain.Common.IAuditableEntity.UpdatedById

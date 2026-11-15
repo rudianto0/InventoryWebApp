@@ -1,0 +1,79 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Contracts.Enums
+  commentId: N:Inventory.Contracts.Enums
+  id: Inventory.Contracts.Enums
+  children:
+  - Inventory.Contracts.Enums.ApprovalStatus
+  - Inventory.Contracts.Enums.AuditActionType
+  - Inventory.Contracts.Enums.LocationType
+  - Inventory.Contracts.Enums.MovementType
+  - Inventory.Contracts.Enums.ReferenceType
+  langs:
+  - csharp
+  - vb
+  name: Inventory.Contracts.Enums
+  nameWithType: Inventory.Contracts.Enums
+  fullName: Inventory.Contracts.Enums
+  type: Namespace
+  assemblies:
+  - Inventory.Contracts
+references:
+- uid: Inventory.Contracts.Enums.LocationType
+  commentId: T:Inventory.Contracts.Enums.LocationType
+  parent: Inventory.Contracts.Enums
+  href: Inventory.Contracts.Enums.LocationType.html
+  name: LocationType
+  nameWithType: LocationType
+  fullName: Inventory.Contracts.Enums.LocationType
+- uid: Inventory.Contracts.Enums.ApprovalStatus
+  commentId: T:Inventory.Contracts.Enums.ApprovalStatus
+  parent: Inventory.Contracts.Enums
+  href: Inventory.Contracts.Enums.ApprovalStatus.html
+  name: ApprovalStatus
+  nameWithType: ApprovalStatus
+  fullName: Inventory.Contracts.Enums.ApprovalStatus
+- uid: Inventory.Contracts.Enums.MovementType
+  commentId: T:Inventory.Contracts.Enums.MovementType
+  parent: Inventory.Contracts.Enums
+  href: Inventory.Contracts.Enums.MovementType.html
+  name: MovementType
+  nameWithType: MovementType
+  fullName: Inventory.Contracts.Enums.MovementType
+- uid: Inventory.Contracts.Enums.ReferenceType
+  commentId: T:Inventory.Contracts.Enums.ReferenceType
+  parent: Inventory.Contracts.Enums
+  href: Inventory.Contracts.Enums.ReferenceType.html
+  name: ReferenceType
+  nameWithType: ReferenceType
+  fullName: Inventory.Contracts.Enums.ReferenceType
+- uid: Inventory.Contracts.Enums.AuditActionType
+  commentId: T:Inventory.Contracts.Enums.AuditActionType
+  parent: Inventory.Contracts.Enums
+  href: Inventory.Contracts.Enums.AuditActionType.html
+  name: AuditActionType
+  nameWithType: AuditActionType
+  fullName: Inventory.Contracts.Enums.AuditActionType
+- uid: Inventory.Contracts.Enums
+  commentId: N:Inventory.Contracts.Enums
+  name: Inventory.Contracts.Enums
+  nameWithType: Inventory.Contracts.Enums
+  fullName: Inventory.Contracts.Enums
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+  - name: .
+  - uid: Inventory.Contracts.Enums
+    name: Enums
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+  - name: .
+  - uid: Inventory.Contracts.Enums
+    name: Enums

@@ -1,0 +1,1666 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Application.Abstractions.IAppDbContext
+  commentId: T:Inventory.Application.Abstractions.IAppDbContext
+  id: IAppDbContext
+  parent: Inventory.Application.Abstractions
+  children:
+  - Inventory.Application.Abstractions.IAppDbContext.AuditLogs
+  - Inventory.Application.Abstractions.IAppDbContext.BeginTransactionAsync(System.Threading.CancellationToken)
+  - Inventory.Application.Abstractions.IAppDbContext.Categories
+  - Inventory.Application.Abstractions.IAppDbContext.DocumentSequences
+  - Inventory.Application.Abstractions.IAppDbContext.Locations
+  - Inventory.Application.Abstractions.IAppDbContext.Products
+  - Inventory.Application.Abstractions.IAppDbContext.SaveChangesAsync(System.Threading.CancellationToken)
+  - Inventory.Application.Abstractions.IAppDbContext.StockAdjustmentDetails
+  - Inventory.Application.Abstractions.IAppDbContext.StockAdjustmentHeaders
+  - Inventory.Application.Abstractions.IAppDbContext.StockInDetails
+  - Inventory.Application.Abstractions.IAppDbContext.StockInHeaders
+  - Inventory.Application.Abstractions.IAppDbContext.StockMovements
+  - Inventory.Application.Abstractions.IAppDbContext.StockOpnameDetails
+  - Inventory.Application.Abstractions.IAppDbContext.StockOpnameHeaders
+  - Inventory.Application.Abstractions.IAppDbContext.StockOutDetails
+  - Inventory.Application.Abstractions.IAppDbContext.StockOutHeaders
+  - Inventory.Application.Abstractions.IAppDbContext.StockTransferDetails
+  - Inventory.Application.Abstractions.IAppDbContext.StockTransferHeaders
+  - Inventory.Application.Abstractions.IAppDbContext.Stocks
+  - Inventory.Application.Abstractions.IAppDbContext.Suppliers
+  - Inventory.Application.Abstractions.IAppDbContext.Units
+  langs:
+  - csharp
+  - vb
+  name: IAppDbContext
+  nameWithType: IAppDbContext
+  fullName: Inventory.Application.Abstractions.IAppDbContext
+  type: Interface
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: IAppDbContext
+    path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+    startLine: 5
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: public interface IAppDbContext
+    content.vb: Public Interface IAppDbContext
+  derivedClasses:
+  - Inventory.Infrastructure.Persistence.AppDbContext
+- uid: Inventory.Application.Abstractions.IAppDbContext.Categories
+  commentId: P:Inventory.Application.Abstractions.IAppDbContext.Categories
+  id: Categories
+  parent: Inventory.Application.Abstractions.IAppDbContext
+  langs:
+  - csharp
+  - vb
+  name: Categories
+  nameWithType: IAppDbContext.Categories
+  fullName: Inventory.Application.Abstractions.IAppDbContext.Categories
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Categories
+    path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+    startLine: 7
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: DbSet<Category> Categories { get; }
+    parameters: []
+    return:
+      type: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.Category}
+    content.vb: ReadOnly Property Categories As DbSet(Of Category)
+  overload: Inventory.Application.Abstractions.IAppDbContext.Categories*
+- uid: Inventory.Application.Abstractions.IAppDbContext.Units
+  commentId: P:Inventory.Application.Abstractions.IAppDbContext.Units
+  id: Units
+  parent: Inventory.Application.Abstractions.IAppDbContext
+  langs:
+  - csharp
+  - vb
+  name: Units
+  nameWithType: IAppDbContext.Units
+  fullName: Inventory.Application.Abstractions.IAppDbContext.Units
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Units
+    path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+    startLine: 8
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: DbSet<Unit> Units { get; }
+    parameters: []
+    return:
+      type: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.Unit}
+    content.vb: ReadOnly Property Units As DbSet(Of Unit)
+  overload: Inventory.Application.Abstractions.IAppDbContext.Units*
+- uid: Inventory.Application.Abstractions.IAppDbContext.Products
+  commentId: P:Inventory.Application.Abstractions.IAppDbContext.Products
+  id: Products
+  parent: Inventory.Application.Abstractions.IAppDbContext
+  langs:
+  - csharp
+  - vb
+  name: Products
+  nameWithType: IAppDbContext.Products
+  fullName: Inventory.Application.Abstractions.IAppDbContext.Products
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Products
+    path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+    startLine: 9
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: DbSet<Product> Products { get; }
+    parameters: []
+    return:
+      type: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.Product}
+    content.vb: ReadOnly Property Products As DbSet(Of Product)
+  overload: Inventory.Application.Abstractions.IAppDbContext.Products*
+- uid: Inventory.Application.Abstractions.IAppDbContext.Suppliers
+  commentId: P:Inventory.Application.Abstractions.IAppDbContext.Suppliers
+  id: Suppliers
+  parent: Inventory.Application.Abstractions.IAppDbContext
+  langs:
+  - csharp
+  - vb
+  name: Suppliers
+  nameWithType: IAppDbContext.Suppliers
+  fullName: Inventory.Application.Abstractions.IAppDbContext.Suppliers
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Suppliers
+    path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+    startLine: 10
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: DbSet<Supplier> Suppliers { get; }
+    parameters: []
+    return:
+      type: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.Supplier}
+    content.vb: ReadOnly Property Suppliers As DbSet(Of Supplier)
+  overload: Inventory.Application.Abstractions.IAppDbContext.Suppliers*
+- uid: Inventory.Application.Abstractions.IAppDbContext.Locations
+  commentId: P:Inventory.Application.Abstractions.IAppDbContext.Locations
+  id: Locations
+  parent: Inventory.Application.Abstractions.IAppDbContext
+  langs:
+  - csharp
+  - vb
+  name: Locations
+  nameWithType: IAppDbContext.Locations
+  fullName: Inventory.Application.Abstractions.IAppDbContext.Locations
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Locations
+    path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+    startLine: 11
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: DbSet<Location> Locations { get; }
+    parameters: []
+    return:
+      type: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.Location}
+    content.vb: ReadOnly Property Locations As DbSet(Of Location)
+  overload: Inventory.Application.Abstractions.IAppDbContext.Locations*
+- uid: Inventory.Application.Abstractions.IAppDbContext.Stocks
+  commentId: P:Inventory.Application.Abstractions.IAppDbContext.Stocks
+  id: Stocks
+  parent: Inventory.Application.Abstractions.IAppDbContext
+  langs:
+  - csharp
+  - vb
+  name: Stocks
+  nameWithType: IAppDbContext.Stocks
+  fullName: Inventory.Application.Abstractions.IAppDbContext.Stocks
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Stocks
+    path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+    startLine: 12
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: DbSet<Stock> Stocks { get; }
+    parameters: []
+    return:
+      type: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.Stock}
+    content.vb: ReadOnly Property Stocks As DbSet(Of Stock)
+  overload: Inventory.Application.Abstractions.IAppDbContext.Stocks*
+- uid: Inventory.Application.Abstractions.IAppDbContext.StockMovements
+  commentId: P:Inventory.Application.Abstractions.IAppDbContext.StockMovements
+  id: StockMovements
+  parent: Inventory.Application.Abstractions.IAppDbContext
+  langs:
+  - csharp
+  - vb
+  name: StockMovements
+  nameWithType: IAppDbContext.StockMovements
+  fullName: Inventory.Application.Abstractions.IAppDbContext.StockMovements
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: StockMovements
+    path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+    startLine: 13
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: DbSet<StockMovement> StockMovements { get; }
+    parameters: []
+    return:
+      type: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockMovement}
+    content.vb: ReadOnly Property StockMovements As DbSet(Of StockMovement)
+  overload: Inventory.Application.Abstractions.IAppDbContext.StockMovements*
+- uid: Inventory.Application.Abstractions.IAppDbContext.StockInHeaders
+  commentId: P:Inventory.Application.Abstractions.IAppDbContext.StockInHeaders
+  id: StockInHeaders
+  parent: Inventory.Application.Abstractions.IAppDbContext
+  langs:
+  - csharp
+  - vb
+  name: StockInHeaders
+  nameWithType: IAppDbContext.StockInHeaders
+  fullName: Inventory.Application.Abstractions.IAppDbContext.StockInHeaders
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: StockInHeaders
+    path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+    startLine: 14
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: DbSet<StockInHeader> StockInHeaders { get; }
+    parameters: []
+    return:
+      type: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockInHeader}
+    content.vb: ReadOnly Property StockInHeaders As DbSet(Of StockInHeader)
+  overload: Inventory.Application.Abstractions.IAppDbContext.StockInHeaders*
+- uid: Inventory.Application.Abstractions.IAppDbContext.StockInDetails
+  commentId: P:Inventory.Application.Abstractions.IAppDbContext.StockInDetails
+  id: StockInDetails
+  parent: Inventory.Application.Abstractions.IAppDbContext
+  langs:
+  - csharp
+  - vb
+  name: StockInDetails
+  nameWithType: IAppDbContext.StockInDetails
+  fullName: Inventory.Application.Abstractions.IAppDbContext.StockInDetails
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: StockInDetails
+    path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+    startLine: 15
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: DbSet<StockInDetail> StockInDetails { get; }
+    parameters: []
+    return:
+      type: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockInDetail}
+    content.vb: ReadOnly Property StockInDetails As DbSet(Of StockInDetail)
+  overload: Inventory.Application.Abstractions.IAppDbContext.StockInDetails*
+- uid: Inventory.Application.Abstractions.IAppDbContext.StockOutHeaders
+  commentId: P:Inventory.Application.Abstractions.IAppDbContext.StockOutHeaders
+  id: StockOutHeaders
+  parent: Inventory.Application.Abstractions.IAppDbContext
+  langs:
+  - csharp
+  - vb
+  name: StockOutHeaders
+  nameWithType: IAppDbContext.StockOutHeaders
+  fullName: Inventory.Application.Abstractions.IAppDbContext.StockOutHeaders
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: StockOutHeaders
+    path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+    startLine: 16
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: DbSet<StockOutHeader> StockOutHeaders { get; }
+    parameters: []
+    return:
+      type: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockOutHeader}
+    content.vb: ReadOnly Property StockOutHeaders As DbSet(Of StockOutHeader)
+  overload: Inventory.Application.Abstractions.IAppDbContext.StockOutHeaders*
+- uid: Inventory.Application.Abstractions.IAppDbContext.StockOutDetails
+  commentId: P:Inventory.Application.Abstractions.IAppDbContext.StockOutDetails
+  id: StockOutDetails
+  parent: Inventory.Application.Abstractions.IAppDbContext
+  langs:
+  - csharp
+  - vb
+  name: StockOutDetails
+  nameWithType: IAppDbContext.StockOutDetails
+  fullName: Inventory.Application.Abstractions.IAppDbContext.StockOutDetails
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: StockOutDetails
+    path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+    startLine: 17
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: DbSet<StockOutDetail> StockOutDetails { get; }
+    parameters: []
+    return:
+      type: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockOutDetail}
+    content.vb: ReadOnly Property StockOutDetails As DbSet(Of StockOutDetail)
+  overload: Inventory.Application.Abstractions.IAppDbContext.StockOutDetails*
+- uid: Inventory.Application.Abstractions.IAppDbContext.StockTransferHeaders
+  commentId: P:Inventory.Application.Abstractions.IAppDbContext.StockTransferHeaders
+  id: StockTransferHeaders
+  parent: Inventory.Application.Abstractions.IAppDbContext
+  langs:
+  - csharp
+  - vb
+  name: StockTransferHeaders
+  nameWithType: IAppDbContext.StockTransferHeaders
+  fullName: Inventory.Application.Abstractions.IAppDbContext.StockTransferHeaders
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: StockTransferHeaders
+    path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+    startLine: 18
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: DbSet<StockTransferHeader> StockTransferHeaders { get; }
+    parameters: []
+    return:
+      type: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockTransferHeader}
+    content.vb: ReadOnly Property StockTransferHeaders As DbSet(Of StockTransferHeader)
+  overload: Inventory.Application.Abstractions.IAppDbContext.StockTransferHeaders*
+- uid: Inventory.Application.Abstractions.IAppDbContext.StockTransferDetails
+  commentId: P:Inventory.Application.Abstractions.IAppDbContext.StockTransferDetails
+  id: StockTransferDetails
+  parent: Inventory.Application.Abstractions.IAppDbContext
+  langs:
+  - csharp
+  - vb
+  name: StockTransferDetails
+  nameWithType: IAppDbContext.StockTransferDetails
+  fullName: Inventory.Application.Abstractions.IAppDbContext.StockTransferDetails
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: StockTransferDetails
+    path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+    startLine: 19
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: DbSet<StockTransferDetail> StockTransferDetails { get; }
+    parameters: []
+    return:
+      type: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockTransferDetail}
+    content.vb: ReadOnly Property StockTransferDetails As DbSet(Of StockTransferDetail)
+  overload: Inventory.Application.Abstractions.IAppDbContext.StockTransferDetails*
+- uid: Inventory.Application.Abstractions.IAppDbContext.StockAdjustmentHeaders
+  commentId: P:Inventory.Application.Abstractions.IAppDbContext.StockAdjustmentHeaders
+  id: StockAdjustmentHeaders
+  parent: Inventory.Application.Abstractions.IAppDbContext
+  langs:
+  - csharp
+  - vb
+  name: StockAdjustmentHeaders
+  nameWithType: IAppDbContext.StockAdjustmentHeaders
+  fullName: Inventory.Application.Abstractions.IAppDbContext.StockAdjustmentHeaders
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: StockAdjustmentHeaders
+    path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+    startLine: 20
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: DbSet<StockAdjustmentHeader> StockAdjustmentHeaders { get; }
+    parameters: []
+    return:
+      type: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockAdjustmentHeader}
+    content.vb: ReadOnly Property StockAdjustmentHeaders As DbSet(Of StockAdjustmentHeader)
+  overload: Inventory.Application.Abstractions.IAppDbContext.StockAdjustmentHeaders*
+- uid: Inventory.Application.Abstractions.IAppDbContext.StockAdjustmentDetails
+  commentId: P:Inventory.Application.Abstractions.IAppDbContext.StockAdjustmentDetails
+  id: StockAdjustmentDetails
+  parent: Inventory.Application.Abstractions.IAppDbContext
+  langs:
+  - csharp
+  - vb
+  name: StockAdjustmentDetails
+  nameWithType: IAppDbContext.StockAdjustmentDetails
+  fullName: Inventory.Application.Abstractions.IAppDbContext.StockAdjustmentDetails
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: StockAdjustmentDetails
+    path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+    startLine: 21
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: DbSet<StockAdjustmentDetail> StockAdjustmentDetails { get; }
+    parameters: []
+    return:
+      type: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockAdjustmentDetail}
+    content.vb: ReadOnly Property StockAdjustmentDetails As DbSet(Of StockAdjustmentDetail)
+  overload: Inventory.Application.Abstractions.IAppDbContext.StockAdjustmentDetails*
+- uid: Inventory.Application.Abstractions.IAppDbContext.StockOpnameHeaders
+  commentId: P:Inventory.Application.Abstractions.IAppDbContext.StockOpnameHeaders
+  id: StockOpnameHeaders
+  parent: Inventory.Application.Abstractions.IAppDbContext
+  langs:
+  - csharp
+  - vb
+  name: StockOpnameHeaders
+  nameWithType: IAppDbContext.StockOpnameHeaders
+  fullName: Inventory.Application.Abstractions.IAppDbContext.StockOpnameHeaders
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: StockOpnameHeaders
+    path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+    startLine: 22
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: DbSet<StockOpnameHeader> StockOpnameHeaders { get; }
+    parameters: []
+    return:
+      type: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockOpnameHeader}
+    content.vb: ReadOnly Property StockOpnameHeaders As DbSet(Of StockOpnameHeader)
+  overload: Inventory.Application.Abstractions.IAppDbContext.StockOpnameHeaders*
+- uid: Inventory.Application.Abstractions.IAppDbContext.StockOpnameDetails
+  commentId: P:Inventory.Application.Abstractions.IAppDbContext.StockOpnameDetails
+  id: StockOpnameDetails
+  parent: Inventory.Application.Abstractions.IAppDbContext
+  langs:
+  - csharp
+  - vb
+  name: StockOpnameDetails
+  nameWithType: IAppDbContext.StockOpnameDetails
+  fullName: Inventory.Application.Abstractions.IAppDbContext.StockOpnameDetails
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: StockOpnameDetails
+    path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+    startLine: 23
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: DbSet<StockOpnameDetail> StockOpnameDetails { get; }
+    parameters: []
+    return:
+      type: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockOpnameDetail}
+    content.vb: ReadOnly Property StockOpnameDetails As DbSet(Of StockOpnameDetail)
+  overload: Inventory.Application.Abstractions.IAppDbContext.StockOpnameDetails*
+- uid: Inventory.Application.Abstractions.IAppDbContext.DocumentSequences
+  commentId: P:Inventory.Application.Abstractions.IAppDbContext.DocumentSequences
+  id: DocumentSequences
+  parent: Inventory.Application.Abstractions.IAppDbContext
+  langs:
+  - csharp
+  - vb
+  name: DocumentSequences
+  nameWithType: IAppDbContext.DocumentSequences
+  fullName: Inventory.Application.Abstractions.IAppDbContext.DocumentSequences
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: DocumentSequences
+    path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+    startLine: 24
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: DbSet<DocumentSequence> DocumentSequences { get; }
+    parameters: []
+    return:
+      type: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.DocumentSequence}
+    content.vb: ReadOnly Property DocumentSequences As DbSet(Of DocumentSequence)
+  overload: Inventory.Application.Abstractions.IAppDbContext.DocumentSequences*
+- uid: Inventory.Application.Abstractions.IAppDbContext.AuditLogs
+  commentId: P:Inventory.Application.Abstractions.IAppDbContext.AuditLogs
+  id: AuditLogs
+  parent: Inventory.Application.Abstractions.IAppDbContext
+  langs:
+  - csharp
+  - vb
+  name: AuditLogs
+  nameWithType: IAppDbContext.AuditLogs
+  fullName: Inventory.Application.Abstractions.IAppDbContext.AuditLogs
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: AuditLogs
+    path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+    startLine: 25
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: DbSet<AuditLog> AuditLogs { get; }
+    parameters: []
+    return:
+      type: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.AuditLog}
+    content.vb: ReadOnly Property AuditLogs As DbSet(Of AuditLog)
+  overload: Inventory.Application.Abstractions.IAppDbContext.AuditLogs*
+- uid: Inventory.Application.Abstractions.IAppDbContext.SaveChangesAsync(System.Threading.CancellationToken)
+  commentId: M:Inventory.Application.Abstractions.IAppDbContext.SaveChangesAsync(System.Threading.CancellationToken)
+  id: SaveChangesAsync(System.Threading.CancellationToken)
+  parent: Inventory.Application.Abstractions.IAppDbContext
+  langs:
+  - csharp
+  - vb
+  name: SaveChangesAsync(CancellationToken)
+  nameWithType: IAppDbContext.SaveChangesAsync(CancellationToken)
+  fullName: Inventory.Application.Abstractions.IAppDbContext.SaveChangesAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: SaveChangesAsync
+    path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+    startLine: 27
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{System.Int32}
+    content.vb: Function SaveChangesAsync(cancellationToken As CancellationToken = Nothing) As Task(Of Integer)
+  overload: Inventory.Application.Abstractions.IAppDbContext.SaveChangesAsync*
+- uid: Inventory.Application.Abstractions.IAppDbContext.BeginTransactionAsync(System.Threading.CancellationToken)
+  commentId: M:Inventory.Application.Abstractions.IAppDbContext.BeginTransactionAsync(System.Threading.CancellationToken)
+  id: BeginTransactionAsync(System.Threading.CancellationToken)
+  parent: Inventory.Application.Abstractions.IAppDbContext
+  langs:
+  - csharp
+  - vb
+  name: BeginTransactionAsync(CancellationToken)
+  nameWithType: IAppDbContext.BeginTransactionAsync(CancellationToken)
+  fullName: Inventory.Application.Abstractions.IAppDbContext.BeginTransactionAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: BeginTransactionAsync
+    path: src/Inventory.Application/Abstractions/IAppDbContext.cs
+    startLine: 28
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: Task<IDbContextTransaction> BeginTransactionAsync(CancellationToken cancellationToken = default)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction}
+    content.vb: Function BeginTransactionAsync(cancellationToken As CancellationToken = Nothing) As Task(Of IDbContextTransaction)
+  overload: Inventory.Application.Abstractions.IAppDbContext.BeginTransactionAsync*
+references:
+- uid: Inventory.Application.Abstractions
+  commentId: N:Inventory.Application.Abstractions
+  name: Inventory.Application.Abstractions
+  nameWithType: Inventory.Application.Abstractions
+  fullName: Inventory.Application.Abstractions
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Application
+    name: Application
+  - name: .
+  - uid: Inventory.Application.Abstractions
+    name: Abstractions
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Application
+    name: Application
+  - name: .
+  - uid: Inventory.Application.Abstractions
+    name: Abstractions
+- uid: Inventory.Application.Abstractions.IAppDbContext.Categories*
+  commentId: Overload:Inventory.Application.Abstractions.IAppDbContext.Categories
+  href: Inventory.Application.Abstractions.IAppDbContext.html#Inventory_Application_Abstractions_IAppDbContext_Categories
+  name: Categories
+  nameWithType: IAppDbContext.Categories
+  fullName: Inventory.Application.Abstractions.IAppDbContext.Categories
+- uid: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.Category}
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.Category}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbSet`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<Category>
+  nameWithType: DbSet<Category>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<Inventory.Domain.Entities.Category>
+  nameWithType.vb: DbSet(Of Category)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of Inventory.Domain.Entities.Category)
+  name.vb: DbSet(Of Category)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - uid: Inventory.Domain.Entities.Category
+    name: Category
+    href: Inventory.Domain.Entities.Category.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Domain.Entities.Category
+    name: Category
+    href: Inventory.Domain.Entities.Category.html
+  - name: )
+- uid: Microsoft.EntityFrameworkCore.DbSet`1
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<TEntity>
+  nameWithType: DbSet<TEntity>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<TEntity>
+  nameWithType.vb: DbSet(Of TEntity)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of TEntity)
+  name.vb: DbSet(Of TEntity)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - name: TEntity
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TEntity
+  - name: )
+- uid: Microsoft.EntityFrameworkCore
+  commentId: N:Microsoft.EntityFrameworkCore
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.EntityFrameworkCore
+  nameWithType: Microsoft.EntityFrameworkCore
+  fullName: Microsoft.EntityFrameworkCore
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
+- uid: Inventory.Application.Abstractions.IAppDbContext.Units*
+  commentId: Overload:Inventory.Application.Abstractions.IAppDbContext.Units
+  href: Inventory.Application.Abstractions.IAppDbContext.html#Inventory_Application_Abstractions_IAppDbContext_Units
+  name: Units
+  nameWithType: IAppDbContext.Units
+  fullName: Inventory.Application.Abstractions.IAppDbContext.Units
+- uid: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.Unit}
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.Unit}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbSet`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<Unit>
+  nameWithType: DbSet<Unit>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<Inventory.Domain.Entities.Unit>
+  nameWithType.vb: DbSet(Of Unit)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of Inventory.Domain.Entities.Unit)
+  name.vb: DbSet(Of Unit)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - uid: Inventory.Domain.Entities.Unit
+    name: Unit
+    href: Inventory.Domain.Entities.Unit.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Domain.Entities.Unit
+    name: Unit
+    href: Inventory.Domain.Entities.Unit.html
+  - name: )
+- uid: Inventory.Application.Abstractions.IAppDbContext.Products*
+  commentId: Overload:Inventory.Application.Abstractions.IAppDbContext.Products
+  href: Inventory.Application.Abstractions.IAppDbContext.html#Inventory_Application_Abstractions_IAppDbContext_Products
+  name: Products
+  nameWithType: IAppDbContext.Products
+  fullName: Inventory.Application.Abstractions.IAppDbContext.Products
+- uid: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.Product}
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.Product}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbSet`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<Product>
+  nameWithType: DbSet<Product>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<Inventory.Domain.Entities.Product>
+  nameWithType.vb: DbSet(Of Product)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of Inventory.Domain.Entities.Product)
+  name.vb: DbSet(Of Product)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - uid: Inventory.Domain.Entities.Product
+    name: Product
+    href: Inventory.Domain.Entities.Product.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Domain.Entities.Product
+    name: Product
+    href: Inventory.Domain.Entities.Product.html
+  - name: )
+- uid: Inventory.Application.Abstractions.IAppDbContext.Suppliers*
+  commentId: Overload:Inventory.Application.Abstractions.IAppDbContext.Suppliers
+  href: Inventory.Application.Abstractions.IAppDbContext.html#Inventory_Application_Abstractions_IAppDbContext_Suppliers
+  name: Suppliers
+  nameWithType: IAppDbContext.Suppliers
+  fullName: Inventory.Application.Abstractions.IAppDbContext.Suppliers
+- uid: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.Supplier}
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.Supplier}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbSet`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<Supplier>
+  nameWithType: DbSet<Supplier>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<Inventory.Domain.Entities.Supplier>
+  nameWithType.vb: DbSet(Of Supplier)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of Inventory.Domain.Entities.Supplier)
+  name.vb: DbSet(Of Supplier)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - uid: Inventory.Domain.Entities.Supplier
+    name: Supplier
+    href: Inventory.Domain.Entities.Supplier.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Domain.Entities.Supplier
+    name: Supplier
+    href: Inventory.Domain.Entities.Supplier.html
+  - name: )
+- uid: Inventory.Application.Abstractions.IAppDbContext.Locations*
+  commentId: Overload:Inventory.Application.Abstractions.IAppDbContext.Locations
+  href: Inventory.Application.Abstractions.IAppDbContext.html#Inventory_Application_Abstractions_IAppDbContext_Locations
+  name: Locations
+  nameWithType: IAppDbContext.Locations
+  fullName: Inventory.Application.Abstractions.IAppDbContext.Locations
+- uid: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.Location}
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.Location}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbSet`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<Location>
+  nameWithType: DbSet<Location>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<Inventory.Domain.Entities.Location>
+  nameWithType.vb: DbSet(Of Location)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of Inventory.Domain.Entities.Location)
+  name.vb: DbSet(Of Location)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - uid: Inventory.Domain.Entities.Location
+    name: Location
+    href: Inventory.Domain.Entities.Location.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Domain.Entities.Location
+    name: Location
+    href: Inventory.Domain.Entities.Location.html
+  - name: )
+- uid: Inventory.Application.Abstractions.IAppDbContext.Stocks*
+  commentId: Overload:Inventory.Application.Abstractions.IAppDbContext.Stocks
+  href: Inventory.Application.Abstractions.IAppDbContext.html#Inventory_Application_Abstractions_IAppDbContext_Stocks
+  name: Stocks
+  nameWithType: IAppDbContext.Stocks
+  fullName: Inventory.Application.Abstractions.IAppDbContext.Stocks
+- uid: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.Stock}
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.Stock}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbSet`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<Stock>
+  nameWithType: DbSet<Stock>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<Inventory.Domain.Entities.Stock>
+  nameWithType.vb: DbSet(Of Stock)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of Inventory.Domain.Entities.Stock)
+  name.vb: DbSet(Of Stock)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - uid: Inventory.Domain.Entities.Stock
+    name: Stock
+    href: Inventory.Domain.Entities.Stock.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Domain.Entities.Stock
+    name: Stock
+    href: Inventory.Domain.Entities.Stock.html
+  - name: )
+- uid: Inventory.Application.Abstractions.IAppDbContext.StockMovements*
+  commentId: Overload:Inventory.Application.Abstractions.IAppDbContext.StockMovements
+  href: Inventory.Application.Abstractions.IAppDbContext.html#Inventory_Application_Abstractions_IAppDbContext_StockMovements
+  name: StockMovements
+  nameWithType: IAppDbContext.StockMovements
+  fullName: Inventory.Application.Abstractions.IAppDbContext.StockMovements
+- uid: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockMovement}
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockMovement}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbSet`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<StockMovement>
+  nameWithType: DbSet<StockMovement>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<Inventory.Domain.Entities.StockMovement>
+  nameWithType.vb: DbSet(Of StockMovement)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of Inventory.Domain.Entities.StockMovement)
+  name.vb: DbSet(Of StockMovement)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - uid: Inventory.Domain.Entities.StockMovement
+    name: StockMovement
+    href: Inventory.Domain.Entities.StockMovement.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Domain.Entities.StockMovement
+    name: StockMovement
+    href: Inventory.Domain.Entities.StockMovement.html
+  - name: )
+- uid: Inventory.Application.Abstractions.IAppDbContext.StockInHeaders*
+  commentId: Overload:Inventory.Application.Abstractions.IAppDbContext.StockInHeaders
+  href: Inventory.Application.Abstractions.IAppDbContext.html#Inventory_Application_Abstractions_IAppDbContext_StockInHeaders
+  name: StockInHeaders
+  nameWithType: IAppDbContext.StockInHeaders
+  fullName: Inventory.Application.Abstractions.IAppDbContext.StockInHeaders
+- uid: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockInHeader}
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockInHeader}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbSet`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<StockInHeader>
+  nameWithType: DbSet<StockInHeader>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<Inventory.Domain.Entities.StockInHeader>
+  nameWithType.vb: DbSet(Of StockInHeader)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of Inventory.Domain.Entities.StockInHeader)
+  name.vb: DbSet(Of StockInHeader)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - uid: Inventory.Domain.Entities.StockInHeader
+    name: StockInHeader
+    href: Inventory.Domain.Entities.StockInHeader.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Domain.Entities.StockInHeader
+    name: StockInHeader
+    href: Inventory.Domain.Entities.StockInHeader.html
+  - name: )
+- uid: Inventory.Application.Abstractions.IAppDbContext.StockInDetails*
+  commentId: Overload:Inventory.Application.Abstractions.IAppDbContext.StockInDetails
+  href: Inventory.Application.Abstractions.IAppDbContext.html#Inventory_Application_Abstractions_IAppDbContext_StockInDetails
+  name: StockInDetails
+  nameWithType: IAppDbContext.StockInDetails
+  fullName: Inventory.Application.Abstractions.IAppDbContext.StockInDetails
+- uid: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockInDetail}
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockInDetail}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbSet`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<StockInDetail>
+  nameWithType: DbSet<StockInDetail>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<Inventory.Domain.Entities.StockInDetail>
+  nameWithType.vb: DbSet(Of StockInDetail)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of Inventory.Domain.Entities.StockInDetail)
+  name.vb: DbSet(Of StockInDetail)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - uid: Inventory.Domain.Entities.StockInDetail
+    name: StockInDetail
+    href: Inventory.Domain.Entities.StockInDetail.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Domain.Entities.StockInDetail
+    name: StockInDetail
+    href: Inventory.Domain.Entities.StockInDetail.html
+  - name: )
+- uid: Inventory.Application.Abstractions.IAppDbContext.StockOutHeaders*
+  commentId: Overload:Inventory.Application.Abstractions.IAppDbContext.StockOutHeaders
+  href: Inventory.Application.Abstractions.IAppDbContext.html#Inventory_Application_Abstractions_IAppDbContext_StockOutHeaders
+  name: StockOutHeaders
+  nameWithType: IAppDbContext.StockOutHeaders
+  fullName: Inventory.Application.Abstractions.IAppDbContext.StockOutHeaders
+- uid: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockOutHeader}
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockOutHeader}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbSet`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<StockOutHeader>
+  nameWithType: DbSet<StockOutHeader>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<Inventory.Domain.Entities.StockOutHeader>
+  nameWithType.vb: DbSet(Of StockOutHeader)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of Inventory.Domain.Entities.StockOutHeader)
+  name.vb: DbSet(Of StockOutHeader)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - uid: Inventory.Domain.Entities.StockOutHeader
+    name: StockOutHeader
+    href: Inventory.Domain.Entities.StockOutHeader.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Domain.Entities.StockOutHeader
+    name: StockOutHeader
+    href: Inventory.Domain.Entities.StockOutHeader.html
+  - name: )
+- uid: Inventory.Application.Abstractions.IAppDbContext.StockOutDetails*
+  commentId: Overload:Inventory.Application.Abstractions.IAppDbContext.StockOutDetails
+  href: Inventory.Application.Abstractions.IAppDbContext.html#Inventory_Application_Abstractions_IAppDbContext_StockOutDetails
+  name: StockOutDetails
+  nameWithType: IAppDbContext.StockOutDetails
+  fullName: Inventory.Application.Abstractions.IAppDbContext.StockOutDetails
+- uid: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockOutDetail}
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockOutDetail}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbSet`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<StockOutDetail>
+  nameWithType: DbSet<StockOutDetail>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<Inventory.Domain.Entities.StockOutDetail>
+  nameWithType.vb: DbSet(Of StockOutDetail)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of Inventory.Domain.Entities.StockOutDetail)
+  name.vb: DbSet(Of StockOutDetail)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - uid: Inventory.Domain.Entities.StockOutDetail
+    name: StockOutDetail
+    href: Inventory.Domain.Entities.StockOutDetail.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Domain.Entities.StockOutDetail
+    name: StockOutDetail
+    href: Inventory.Domain.Entities.StockOutDetail.html
+  - name: )
+- uid: Inventory.Application.Abstractions.IAppDbContext.StockTransferHeaders*
+  commentId: Overload:Inventory.Application.Abstractions.IAppDbContext.StockTransferHeaders
+  href: Inventory.Application.Abstractions.IAppDbContext.html#Inventory_Application_Abstractions_IAppDbContext_StockTransferHeaders
+  name: StockTransferHeaders
+  nameWithType: IAppDbContext.StockTransferHeaders
+  fullName: Inventory.Application.Abstractions.IAppDbContext.StockTransferHeaders
+- uid: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockTransferHeader}
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockTransferHeader}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbSet`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<StockTransferHeader>
+  nameWithType: DbSet<StockTransferHeader>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<Inventory.Domain.Entities.StockTransferHeader>
+  nameWithType.vb: DbSet(Of StockTransferHeader)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of Inventory.Domain.Entities.StockTransferHeader)
+  name.vb: DbSet(Of StockTransferHeader)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - uid: Inventory.Domain.Entities.StockTransferHeader
+    name: StockTransferHeader
+    href: Inventory.Domain.Entities.StockTransferHeader.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Domain.Entities.StockTransferHeader
+    name: StockTransferHeader
+    href: Inventory.Domain.Entities.StockTransferHeader.html
+  - name: )
+- uid: Inventory.Application.Abstractions.IAppDbContext.StockTransferDetails*
+  commentId: Overload:Inventory.Application.Abstractions.IAppDbContext.StockTransferDetails
+  href: Inventory.Application.Abstractions.IAppDbContext.html#Inventory_Application_Abstractions_IAppDbContext_StockTransferDetails
+  name: StockTransferDetails
+  nameWithType: IAppDbContext.StockTransferDetails
+  fullName: Inventory.Application.Abstractions.IAppDbContext.StockTransferDetails
+- uid: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockTransferDetail}
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockTransferDetail}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbSet`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<StockTransferDetail>
+  nameWithType: DbSet<StockTransferDetail>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<Inventory.Domain.Entities.StockTransferDetail>
+  nameWithType.vb: DbSet(Of StockTransferDetail)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of Inventory.Domain.Entities.StockTransferDetail)
+  name.vb: DbSet(Of StockTransferDetail)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - uid: Inventory.Domain.Entities.StockTransferDetail
+    name: StockTransferDetail
+    href: Inventory.Domain.Entities.StockTransferDetail.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Domain.Entities.StockTransferDetail
+    name: StockTransferDetail
+    href: Inventory.Domain.Entities.StockTransferDetail.html
+  - name: )
+- uid: Inventory.Application.Abstractions.IAppDbContext.StockAdjustmentHeaders*
+  commentId: Overload:Inventory.Application.Abstractions.IAppDbContext.StockAdjustmentHeaders
+  href: Inventory.Application.Abstractions.IAppDbContext.html#Inventory_Application_Abstractions_IAppDbContext_StockAdjustmentHeaders
+  name: StockAdjustmentHeaders
+  nameWithType: IAppDbContext.StockAdjustmentHeaders
+  fullName: Inventory.Application.Abstractions.IAppDbContext.StockAdjustmentHeaders
+- uid: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockAdjustmentHeader}
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockAdjustmentHeader}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbSet`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<StockAdjustmentHeader>
+  nameWithType: DbSet<StockAdjustmentHeader>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<Inventory.Domain.Entities.StockAdjustmentHeader>
+  nameWithType.vb: DbSet(Of StockAdjustmentHeader)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of Inventory.Domain.Entities.StockAdjustmentHeader)
+  name.vb: DbSet(Of StockAdjustmentHeader)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - uid: Inventory.Domain.Entities.StockAdjustmentHeader
+    name: StockAdjustmentHeader
+    href: Inventory.Domain.Entities.StockAdjustmentHeader.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Domain.Entities.StockAdjustmentHeader
+    name: StockAdjustmentHeader
+    href: Inventory.Domain.Entities.StockAdjustmentHeader.html
+  - name: )
+- uid: Inventory.Application.Abstractions.IAppDbContext.StockAdjustmentDetails*
+  commentId: Overload:Inventory.Application.Abstractions.IAppDbContext.StockAdjustmentDetails
+  href: Inventory.Application.Abstractions.IAppDbContext.html#Inventory_Application_Abstractions_IAppDbContext_StockAdjustmentDetails
+  name: StockAdjustmentDetails
+  nameWithType: IAppDbContext.StockAdjustmentDetails
+  fullName: Inventory.Application.Abstractions.IAppDbContext.StockAdjustmentDetails
+- uid: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockAdjustmentDetail}
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockAdjustmentDetail}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbSet`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<StockAdjustmentDetail>
+  nameWithType: DbSet<StockAdjustmentDetail>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<Inventory.Domain.Entities.StockAdjustmentDetail>
+  nameWithType.vb: DbSet(Of StockAdjustmentDetail)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of Inventory.Domain.Entities.StockAdjustmentDetail)
+  name.vb: DbSet(Of StockAdjustmentDetail)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - uid: Inventory.Domain.Entities.StockAdjustmentDetail
+    name: StockAdjustmentDetail
+    href: Inventory.Domain.Entities.StockAdjustmentDetail.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Domain.Entities.StockAdjustmentDetail
+    name: StockAdjustmentDetail
+    href: Inventory.Domain.Entities.StockAdjustmentDetail.html
+  - name: )
+- uid: Inventory.Application.Abstractions.IAppDbContext.StockOpnameHeaders*
+  commentId: Overload:Inventory.Application.Abstractions.IAppDbContext.StockOpnameHeaders
+  href: Inventory.Application.Abstractions.IAppDbContext.html#Inventory_Application_Abstractions_IAppDbContext_StockOpnameHeaders
+  name: StockOpnameHeaders
+  nameWithType: IAppDbContext.StockOpnameHeaders
+  fullName: Inventory.Application.Abstractions.IAppDbContext.StockOpnameHeaders
+- uid: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockOpnameHeader}
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockOpnameHeader}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbSet`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<StockOpnameHeader>
+  nameWithType: DbSet<StockOpnameHeader>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<Inventory.Domain.Entities.StockOpnameHeader>
+  nameWithType.vb: DbSet(Of StockOpnameHeader)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of Inventory.Domain.Entities.StockOpnameHeader)
+  name.vb: DbSet(Of StockOpnameHeader)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - uid: Inventory.Domain.Entities.StockOpnameHeader
+    name: StockOpnameHeader
+    href: Inventory.Domain.Entities.StockOpnameHeader.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Domain.Entities.StockOpnameHeader
+    name: StockOpnameHeader
+    href: Inventory.Domain.Entities.StockOpnameHeader.html
+  - name: )
+- uid: Inventory.Application.Abstractions.IAppDbContext.StockOpnameDetails*
+  commentId: Overload:Inventory.Application.Abstractions.IAppDbContext.StockOpnameDetails
+  href: Inventory.Application.Abstractions.IAppDbContext.html#Inventory_Application_Abstractions_IAppDbContext_StockOpnameDetails
+  name: StockOpnameDetails
+  nameWithType: IAppDbContext.StockOpnameDetails
+  fullName: Inventory.Application.Abstractions.IAppDbContext.StockOpnameDetails
+- uid: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockOpnameDetail}
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.StockOpnameDetail}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbSet`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<StockOpnameDetail>
+  nameWithType: DbSet<StockOpnameDetail>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<Inventory.Domain.Entities.StockOpnameDetail>
+  nameWithType.vb: DbSet(Of StockOpnameDetail)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of Inventory.Domain.Entities.StockOpnameDetail)
+  name.vb: DbSet(Of StockOpnameDetail)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - uid: Inventory.Domain.Entities.StockOpnameDetail
+    name: StockOpnameDetail
+    href: Inventory.Domain.Entities.StockOpnameDetail.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Domain.Entities.StockOpnameDetail
+    name: StockOpnameDetail
+    href: Inventory.Domain.Entities.StockOpnameDetail.html
+  - name: )
+- uid: Inventory.Application.Abstractions.IAppDbContext.DocumentSequences*
+  commentId: Overload:Inventory.Application.Abstractions.IAppDbContext.DocumentSequences
+  href: Inventory.Application.Abstractions.IAppDbContext.html#Inventory_Application_Abstractions_IAppDbContext_DocumentSequences
+  name: DocumentSequences
+  nameWithType: IAppDbContext.DocumentSequences
+  fullName: Inventory.Application.Abstractions.IAppDbContext.DocumentSequences
+- uid: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.DocumentSequence}
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.DocumentSequence}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbSet`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<DocumentSequence>
+  nameWithType: DbSet<DocumentSequence>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<Inventory.Domain.Entities.DocumentSequence>
+  nameWithType.vb: DbSet(Of DocumentSequence)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of Inventory.Domain.Entities.DocumentSequence)
+  name.vb: DbSet(Of DocumentSequence)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - uid: Inventory.Domain.Entities.DocumentSequence
+    name: DocumentSequence
+    href: Inventory.Domain.Entities.DocumentSequence.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Domain.Entities.DocumentSequence
+    name: DocumentSequence
+    href: Inventory.Domain.Entities.DocumentSequence.html
+  - name: )
+- uid: Inventory.Application.Abstractions.IAppDbContext.AuditLogs*
+  commentId: Overload:Inventory.Application.Abstractions.IAppDbContext.AuditLogs
+  href: Inventory.Application.Abstractions.IAppDbContext.html#Inventory_Application_Abstractions_IAppDbContext_AuditLogs
+  name: AuditLogs
+  nameWithType: IAppDbContext.AuditLogs
+  fullName: Inventory.Application.Abstractions.IAppDbContext.AuditLogs
+- uid: Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.AuditLog}
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet{Inventory.Domain.Entities.AuditLog}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbSet`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<AuditLog>
+  nameWithType: DbSet<AuditLog>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<Inventory.Domain.Entities.AuditLog>
+  nameWithType.vb: DbSet(Of AuditLog)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of Inventory.Domain.Entities.AuditLog)
+  name.vb: DbSet(Of AuditLog)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - uid: Inventory.Domain.Entities.AuditLog
+    name: AuditLog
+    href: Inventory.Domain.Entities.AuditLog.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Domain.Entities.AuditLog
+    name: AuditLog
+    href: Inventory.Domain.Entities.AuditLog.html
+  - name: )
+- uid: Inventory.Application.Abstractions.IAppDbContext.SaveChangesAsync*
+  commentId: Overload:Inventory.Application.Abstractions.IAppDbContext.SaveChangesAsync
+  href: Inventory.Application.Abstractions.IAppDbContext.html#Inventory_Application_Abstractions_IAppDbContext_SaveChangesAsync_System_Threading_CancellationToken_
+  name: SaveChangesAsync
+  nameWithType: IAppDbContext.SaveChangesAsync
+  fullName: Inventory.Application.Abstractions.IAppDbContext.SaveChangesAsync
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.Int32}
+  commentId: T:System.Threading.Tasks.Task{System.Int32}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<int>
+  nameWithType: Task<int>
+  fullName: System.Threading.Tasks.Task<int>
+  nameWithType.vb: Task(Of Integer)
+  fullName.vb: System.Threading.Tasks.Task(Of Integer)
+  name.vb: Task(Of Integer)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: Inventory.Application.Abstractions.IAppDbContext.BeginTransactionAsync*
+  commentId: Overload:Inventory.Application.Abstractions.IAppDbContext.BeginTransactionAsync
+  href: Inventory.Application.Abstractions.IAppDbContext.html#Inventory_Application_Abstractions_IAppDbContext_BeginTransactionAsync_System_Threading_CancellationToken_
+  name: BeginTransactionAsync
+  nameWithType: IAppDbContext.BeginTransactionAsync
+  fullName: Inventory.Application.Abstractions.IAppDbContext.BeginTransactionAsync
+- uid: System.Threading.Tasks.Task{Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction}
+  commentId: T:System.Threading.Tasks.Task{Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IDbContextTransaction>
+  nameWithType: Task<IDbContextTransaction>
+  fullName: System.Threading.Tasks.Task<Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction>
+  nameWithType.vb: Task(Of IDbContextTransaction)
+  fullName.vb: System.Threading.Tasks.Task(Of Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction)
+  name.vb: Task(Of IDbContextTransaction)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction
+    name: IDbContextTransaction
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.storage.idbcontexttransaction
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction
+    name: IDbContextTransaction
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.storage.idbcontexttransaction
+  - name: )

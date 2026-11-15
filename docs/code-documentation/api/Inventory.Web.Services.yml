@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Web.Services
+  commentId: N:Inventory.Web.Services
+  id: Inventory.Web.Services
+  children:
+  - Inventory.Web.Services.HttpCurrentUserService
+  langs:
+  - csharp
+  - vb
+  name: Inventory.Web.Services
+  nameWithType: Inventory.Web.Services
+  fullName: Inventory.Web.Services
+  type: Namespace
+  assemblies:
+  - Inventory.Web
+references:
+- uid: Inventory.Web.Services.HttpCurrentUserService
+  commentId: T:Inventory.Web.Services.HttpCurrentUserService
+  href: Inventory.Web.Services.HttpCurrentUserService.html
+  name: HttpCurrentUserService
+  nameWithType: HttpCurrentUserService
+  fullName: Inventory.Web.Services.HttpCurrentUserService

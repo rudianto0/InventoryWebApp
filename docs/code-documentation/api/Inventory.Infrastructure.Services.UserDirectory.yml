@@ -1,0 +1,1187 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Infrastructure.Services.UserDirectory
+  commentId: T:Inventory.Infrastructure.Services.UserDirectory
+  id: UserDirectory
+  parent: Inventory.Infrastructure.Services
+  children:
+  - Inventory.Infrastructure.Services.UserDirectory.#ctor(Microsoft.AspNetCore.Identity.UserManager{Inventory.Infrastructure.Identity.AppUser})
+  - Inventory.Infrastructure.Services.UserDirectory.GetDisplayNameAsync(System.Int32,System.Threading.CancellationToken)
+  - Inventory.Infrastructure.Services.UserDirectory.GetDisplayNamesAsync(System.Collections.Generic.IEnumerable{System.Int32},System.Threading.CancellationToken)
+  - Inventory.Infrastructure.Services.UserDirectory.GetParentIdAsync(System.Int32,System.Threading.CancellationToken)
+  - Inventory.Infrastructure.Services.UserDirectory.IsActiveAsync(System.Int32,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: UserDirectory
+  nameWithType: UserDirectory
+  fullName: Inventory.Infrastructure.Services.UserDirectory
+  type: Class
+  source:
+    remote:
+      path: src/Inventory.Infrastructure/Services/UserDirectory.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: UserDirectory
+    path: src/Inventory.Infrastructure/Services/UserDirectory.cs
+    startLine: 7
+  assemblies:
+  - Inventory.Infrastructure
+  namespace: Inventory.Infrastructure.Services
+  syntax:
+    content: 'public sealed class UserDirectory : IUserDirectory'
+    content.vb: Public NotInheritable Class UserDirectory Implements IUserDirectory
+  inheritance:
+  - System.Object
+  implements:
+  - Inventory.Application.Abstractions.IUserDirectory
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Inventory.Infrastructure.Services.UserDirectory.#ctor(Microsoft.AspNetCore.Identity.UserManager{Inventory.Infrastructure.Identity.AppUser})
+  commentId: M:Inventory.Infrastructure.Services.UserDirectory.#ctor(Microsoft.AspNetCore.Identity.UserManager{Inventory.Infrastructure.Identity.AppUser})
+  id: '#ctor(Microsoft.AspNetCore.Identity.UserManager{Inventory.Infrastructure.Identity.AppUser})'
+  parent: Inventory.Infrastructure.Services.UserDirectory
+  langs:
+  - csharp
+  - vb
+  name: UserDirectory(UserManager<AppUser>)
+  nameWithType: UserDirectory.UserDirectory(UserManager<AppUser>)
+  fullName: Inventory.Infrastructure.Services.UserDirectory.UserDirectory(Microsoft.AspNetCore.Identity.UserManager<Inventory.Infrastructure.Identity.AppUser>)
+  type: Constructor
+  source:
+    remote:
+      path: src/Inventory.Infrastructure/Services/UserDirectory.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: .ctor
+    path: src/Inventory.Infrastructure/Services/UserDirectory.cs
+    startLine: 7
+  assemblies:
+  - Inventory.Infrastructure
+  namespace: Inventory.Infrastructure.Services
+  syntax:
+    content: public UserDirectory(UserManager<AppUser> userManager)
+    parameters:
+    - id: userManager
+      type: Microsoft.AspNetCore.Identity.UserManager{Inventory.Infrastructure.Identity.AppUser}
+    content.vb: Public Sub New(userManager As UserManager(Of AppUser))
+  overload: Inventory.Infrastructure.Services.UserDirectory.#ctor*
+  nameWithType.vb: UserDirectory.New(UserManager(Of AppUser))
+  fullName.vb: Inventory.Infrastructure.Services.UserDirectory.New(Microsoft.AspNetCore.Identity.UserManager(Of Inventory.Infrastructure.Identity.AppUser))
+  name.vb: New(UserManager(Of AppUser))
+- uid: Inventory.Infrastructure.Services.UserDirectory.GetParentIdAsync(System.Int32,System.Threading.CancellationToken)
+  commentId: M:Inventory.Infrastructure.Services.UserDirectory.GetParentIdAsync(System.Int32,System.Threading.CancellationToken)
+  id: GetParentIdAsync(System.Int32,System.Threading.CancellationToken)
+  parent: Inventory.Infrastructure.Services.UserDirectory
+  langs:
+  - csharp
+  - vb
+  name: GetParentIdAsync(int, CancellationToken)
+  nameWithType: UserDirectory.GetParentIdAsync(int, CancellationToken)
+  fullName: Inventory.Infrastructure.Services.UserDirectory.GetParentIdAsync(int, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Infrastructure/Services/UserDirectory.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: GetParentIdAsync
+    path: src/Inventory.Infrastructure/Services/UserDirectory.cs
+    startLine: 9
+  assemblies:
+  - Inventory.Infrastructure
+  namespace: Inventory.Infrastructure.Services
+  example: []
+  syntax:
+    content: public Task<int?> GetParentIdAsync(int userId, CancellationToken ct = default)
+    parameters:
+    - id: userId
+      type: System.Int32
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{System.Nullable{System.Int32}}
+    content.vb: Public Function GetParentIdAsync(userId As Integer, ct As CancellationToken = Nothing) As Task(Of Integer?)
+  overload: Inventory.Infrastructure.Services.UserDirectory.GetParentIdAsync*
+  implements:
+  - Inventory.Application.Abstractions.IUserDirectory.GetParentIdAsync(System.Int32,System.Threading.CancellationToken)
+  nameWithType.vb: UserDirectory.GetParentIdAsync(Integer, CancellationToken)
+  fullName.vb: Inventory.Infrastructure.Services.UserDirectory.GetParentIdAsync(Integer, System.Threading.CancellationToken)
+  name.vb: GetParentIdAsync(Integer, CancellationToken)
+- uid: Inventory.Infrastructure.Services.UserDirectory.IsActiveAsync(System.Int32,System.Threading.CancellationToken)
+  commentId: M:Inventory.Infrastructure.Services.UserDirectory.IsActiveAsync(System.Int32,System.Threading.CancellationToken)
+  id: IsActiveAsync(System.Int32,System.Threading.CancellationToken)
+  parent: Inventory.Infrastructure.Services.UserDirectory
+  langs:
+  - csharp
+  - vb
+  name: IsActiveAsync(int, CancellationToken)
+  nameWithType: UserDirectory.IsActiveAsync(int, CancellationToken)
+  fullName: Inventory.Infrastructure.Services.UserDirectory.IsActiveAsync(int, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Infrastructure/Services/UserDirectory.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: IsActiveAsync
+    path: src/Inventory.Infrastructure/Services/UserDirectory.cs
+    startLine: 12
+  assemblies:
+  - Inventory.Infrastructure
+  namespace: Inventory.Infrastructure.Services
+  example: []
+  syntax:
+    content: public Task<bool> IsActiveAsync(int userId, CancellationToken ct = default)
+    parameters:
+    - id: userId
+      type: System.Int32
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+    content.vb: Public Function IsActiveAsync(userId As Integer, ct As CancellationToken = Nothing) As Task(Of Boolean)
+  overload: Inventory.Infrastructure.Services.UserDirectory.IsActiveAsync*
+  implements:
+  - Inventory.Application.Abstractions.IUserDirectory.IsActiveAsync(System.Int32,System.Threading.CancellationToken)
+  nameWithType.vb: UserDirectory.IsActiveAsync(Integer, CancellationToken)
+  fullName.vb: Inventory.Infrastructure.Services.UserDirectory.IsActiveAsync(Integer, System.Threading.CancellationToken)
+  name.vb: IsActiveAsync(Integer, CancellationToken)
+- uid: Inventory.Infrastructure.Services.UserDirectory.GetDisplayNameAsync(System.Int32,System.Threading.CancellationToken)
+  commentId: M:Inventory.Infrastructure.Services.UserDirectory.GetDisplayNameAsync(System.Int32,System.Threading.CancellationToken)
+  id: GetDisplayNameAsync(System.Int32,System.Threading.CancellationToken)
+  parent: Inventory.Infrastructure.Services.UserDirectory
+  langs:
+  - csharp
+  - vb
+  name: GetDisplayNameAsync(int, CancellationToken)
+  nameWithType: UserDirectory.GetDisplayNameAsync(int, CancellationToken)
+  fullName: Inventory.Infrastructure.Services.UserDirectory.GetDisplayNameAsync(int, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Infrastructure/Services/UserDirectory.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: GetDisplayNameAsync
+    path: src/Inventory.Infrastructure/Services/UserDirectory.cs
+    startLine: 15
+  assemblies:
+  - Inventory.Infrastructure
+  namespace: Inventory.Infrastructure.Services
+  example: []
+  syntax:
+    content: public Task<string?> GetDisplayNameAsync(int userId, CancellationToken ct = default)
+    parameters:
+    - id: userId
+      type: System.Int32
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{System.String}
+    content.vb: Public Function GetDisplayNameAsync(userId As Integer, ct As CancellationToken = Nothing) As Task(Of String)
+  overload: Inventory.Infrastructure.Services.UserDirectory.GetDisplayNameAsync*
+  implements:
+  - Inventory.Application.Abstractions.IUserDirectory.GetDisplayNameAsync(System.Int32,System.Threading.CancellationToken)
+  nameWithType.vb: UserDirectory.GetDisplayNameAsync(Integer, CancellationToken)
+  fullName.vb: Inventory.Infrastructure.Services.UserDirectory.GetDisplayNameAsync(Integer, System.Threading.CancellationToken)
+  name.vb: GetDisplayNameAsync(Integer, CancellationToken)
+- uid: Inventory.Infrastructure.Services.UserDirectory.GetDisplayNamesAsync(System.Collections.Generic.IEnumerable{System.Int32},System.Threading.CancellationToken)
+  commentId: M:Inventory.Infrastructure.Services.UserDirectory.GetDisplayNamesAsync(System.Collections.Generic.IEnumerable{System.Int32},System.Threading.CancellationToken)
+  id: GetDisplayNamesAsync(System.Collections.Generic.IEnumerable{System.Int32},System.Threading.CancellationToken)
+  parent: Inventory.Infrastructure.Services.UserDirectory
+  langs:
+  - csharp
+  - vb
+  name: GetDisplayNamesAsync(IEnumerable<int>, CancellationToken)
+  nameWithType: UserDirectory.GetDisplayNamesAsync(IEnumerable<int>, CancellationToken)
+  fullName: Inventory.Infrastructure.Services.UserDirectory.GetDisplayNamesAsync(System.Collections.Generic.IEnumerable<int>, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Infrastructure/Services/UserDirectory.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: GetDisplayNamesAsync
+    path: src/Inventory.Infrastructure/Services/UserDirectory.cs
+    startLine: 18
+  assemblies:
+  - Inventory.Infrastructure
+  namespace: Inventory.Infrastructure.Services
+  example: []
+  syntax:
+    content: public Task<IReadOnlyDictionary<int, string>> GetDisplayNamesAsync(IEnumerable<int> userIds, CancellationToken ct = default)
+    parameters:
+    - id: userIds
+      type: System.Collections.Generic.IEnumerable{System.Int32}
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyDictionary{System.Int32,System.String}}
+    content.vb: Public Function GetDisplayNamesAsync(userIds As IEnumerable(Of Integer), ct As CancellationToken = Nothing) As Task(Of IReadOnlyDictionary(Of Integer, String))
+  overload: Inventory.Infrastructure.Services.UserDirectory.GetDisplayNamesAsync*
+  implements:
+  - Inventory.Application.Abstractions.IUserDirectory.GetDisplayNamesAsync(System.Collections.Generic.IEnumerable{System.Int32},System.Threading.CancellationToken)
+  nameWithType.vb: UserDirectory.GetDisplayNamesAsync(IEnumerable(Of Integer), CancellationToken)
+  fullName.vb: Inventory.Infrastructure.Services.UserDirectory.GetDisplayNamesAsync(System.Collections.Generic.IEnumerable(Of Integer), System.Threading.CancellationToken)
+  name.vb: GetDisplayNamesAsync(IEnumerable(Of Integer), CancellationToken)
+references:
+- uid: Inventory.Infrastructure.Services
+  commentId: N:Inventory.Infrastructure.Services
+  name: Inventory.Infrastructure.Services
+  nameWithType: Inventory.Infrastructure.Services
+  fullName: Inventory.Infrastructure.Services
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Infrastructure
+    name: Infrastructure
+  - name: .
+  - uid: Inventory.Infrastructure.Services
+    name: Services
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Infrastructure
+    name: Infrastructure
+  - name: .
+  - uid: Inventory.Infrastructure.Services
+    name: Services
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Inventory.Application.Abstractions.IUserDirectory
+  commentId: T:Inventory.Application.Abstractions.IUserDirectory
+  parent: Inventory.Application.Abstractions
+  href: Inventory.Application.Abstractions.IUserDirectory.html
+  name: IUserDirectory
+  nameWithType: IUserDirectory
+  fullName: Inventory.Application.Abstractions.IUserDirectory
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Inventory.Application.Abstractions
+  commentId: N:Inventory.Application.Abstractions
+  name: Inventory.Application.Abstractions
+  nameWithType: Inventory.Application.Abstractions
+  fullName: Inventory.Application.Abstractions
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Application
+    name: Application
+  - name: .
+  - uid: Inventory.Application.Abstractions
+    name: Abstractions
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Application
+    name: Application
+  - name: .
+  - uid: Inventory.Application.Abstractions
+    name: Abstractions
+- uid: Inventory.Infrastructure.Services.UserDirectory.#ctor*
+  commentId: Overload:Inventory.Infrastructure.Services.UserDirectory.#ctor
+  href: Inventory.Infrastructure.Services.UserDirectory.html#Inventory_Infrastructure_Services_UserDirectory__ctor_Microsoft_AspNetCore_Identity_UserManager_Inventory_Infrastructure_Identity_AppUser__
+  name: UserDirectory
+  nameWithType: UserDirectory.UserDirectory
+  fullName: Inventory.Infrastructure.Services.UserDirectory.UserDirectory
+  nameWithType.vb: UserDirectory.New
+  fullName.vb: Inventory.Infrastructure.Services.UserDirectory.New
+  name.vb: New
+- uid: Microsoft.AspNetCore.Identity.UserManager{Inventory.Infrastructure.Identity.AppUser}
+  commentId: T:Microsoft.AspNetCore.Identity.UserManager{Inventory.Infrastructure.Identity.AppUser}
+  parent: Microsoft.AspNetCore.Identity
+  definition: Microsoft.AspNetCore.Identity.UserManager`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.usermanager-1
+  name: UserManager<AppUser>
+  nameWithType: UserManager<AppUser>
+  fullName: Microsoft.AspNetCore.Identity.UserManager<Inventory.Infrastructure.Identity.AppUser>
+  nameWithType.vb: UserManager(Of AppUser)
+  fullName.vb: Microsoft.AspNetCore.Identity.UserManager(Of Inventory.Infrastructure.Identity.AppUser)
+  name.vb: UserManager(Of AppUser)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Identity.UserManager`1
+    name: UserManager
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.usermanager-1
+  - name: <
+  - uid: Inventory.Infrastructure.Identity.AppUser
+    name: AppUser
+    href: Inventory.Infrastructure.Identity.AppUser.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Identity.UserManager`1
+    name: UserManager
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.usermanager-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Infrastructure.Identity.AppUser
+    name: AppUser
+    href: Inventory.Infrastructure.Identity.AppUser.html
+  - name: )
+- uid: Microsoft.AspNetCore.Identity.UserManager`1
+  commentId: T:Microsoft.AspNetCore.Identity.UserManager`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.usermanager-1
+  name: UserManager<TUser>
+  nameWithType: UserManager<TUser>
+  fullName: Microsoft.AspNetCore.Identity.UserManager<TUser>
+  nameWithType.vb: UserManager(Of TUser)
+  fullName.vb: Microsoft.AspNetCore.Identity.UserManager(Of TUser)
+  name.vb: UserManager(Of TUser)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Identity.UserManager`1
+    name: UserManager
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.usermanager-1
+  - name: <
+  - name: TUser
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Identity.UserManager`1
+    name: UserManager
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.usermanager-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TUser
+  - name: )
+- uid: Microsoft.AspNetCore.Identity
+  commentId: N:Microsoft.AspNetCore.Identity
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.AspNetCore.Identity
+  nameWithType: Microsoft.AspNetCore.Identity
+  fullName: Microsoft.AspNetCore.Identity
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Identity
+    name: Identity
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Identity
+    name: Identity
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity
+- uid: Inventory.Infrastructure.Services.UserDirectory.GetParentIdAsync*
+  commentId: Overload:Inventory.Infrastructure.Services.UserDirectory.GetParentIdAsync
+  href: Inventory.Infrastructure.Services.UserDirectory.html#Inventory_Infrastructure_Services_UserDirectory_GetParentIdAsync_System_Int32_System_Threading_CancellationToken_
+  name: GetParentIdAsync
+  nameWithType: UserDirectory.GetParentIdAsync
+  fullName: Inventory.Infrastructure.Services.UserDirectory.GetParentIdAsync
+- uid: Inventory.Application.Abstractions.IUserDirectory.GetParentIdAsync(System.Int32,System.Threading.CancellationToken)
+  commentId: M:Inventory.Application.Abstractions.IUserDirectory.GetParentIdAsync(System.Int32,System.Threading.CancellationToken)
+  parent: Inventory.Application.Abstractions.IUserDirectory
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: GetParentIdAsync(int, CancellationToken)
+  nameWithType: IUserDirectory.GetParentIdAsync(int, CancellationToken)
+  fullName: Inventory.Application.Abstractions.IUserDirectory.GetParentIdAsync(int, System.Threading.CancellationToken)
+  nameWithType.vb: IUserDirectory.GetParentIdAsync(Integer, CancellationToken)
+  fullName.vb: Inventory.Application.Abstractions.IUserDirectory.GetParentIdAsync(Integer, System.Threading.CancellationToken)
+  name.vb: GetParentIdAsync(Integer, CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Application.Abstractions.IUserDirectory.GetParentIdAsync(System.Int32,System.Threading.CancellationToken)
+    name: GetParentIdAsync
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Application.Abstractions.IUserDirectory.GetParentIdAsync(System.Int32,System.Threading.CancellationToken)
+    name: GetParentIdAsync
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.Nullable{System.Int32}}
+  commentId: T:System.Threading.Tasks.Task{System.Nullable{System.Int32}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<int?>
+  nameWithType: Task<int?>
+  fullName: System.Threading.Tasks.Task<int?>
+  nameWithType.vb: Task(Of Integer?)
+  fullName.vb: System.Threading.Tasks.Task(Of Integer?)
+  name.vb: Task(Of Integer?)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: Inventory.Infrastructure.Services.UserDirectory.IsActiveAsync*
+  commentId: Overload:Inventory.Infrastructure.Services.UserDirectory.IsActiveAsync
+  href: Inventory.Infrastructure.Services.UserDirectory.html#Inventory_Infrastructure_Services_UserDirectory_IsActiveAsync_System_Int32_System_Threading_CancellationToken_
+  name: IsActiveAsync
+  nameWithType: UserDirectory.IsActiveAsync
+  fullName: Inventory.Infrastructure.Services.UserDirectory.IsActiveAsync
+- uid: Inventory.Application.Abstractions.IUserDirectory.IsActiveAsync(System.Int32,System.Threading.CancellationToken)
+  commentId: M:Inventory.Application.Abstractions.IUserDirectory.IsActiveAsync(System.Int32,System.Threading.CancellationToken)
+  parent: Inventory.Application.Abstractions.IUserDirectory
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: IsActiveAsync(int, CancellationToken)
+  nameWithType: IUserDirectory.IsActiveAsync(int, CancellationToken)
+  fullName: Inventory.Application.Abstractions.IUserDirectory.IsActiveAsync(int, System.Threading.CancellationToken)
+  nameWithType.vb: IUserDirectory.IsActiveAsync(Integer, CancellationToken)
+  fullName.vb: Inventory.Application.Abstractions.IUserDirectory.IsActiveAsync(Integer, System.Threading.CancellationToken)
+  name.vb: IsActiveAsync(Integer, CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Application.Abstractions.IUserDirectory.IsActiveAsync(System.Int32,System.Threading.CancellationToken)
+    name: IsActiveAsync
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Application.Abstractions.IUserDirectory.IsActiveAsync(System.Int32,System.Threading.CancellationToken)
+    name: IsActiveAsync
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Threading.Tasks.Task{System.Boolean}
+  commentId: T:System.Threading.Tasks.Task{System.Boolean}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<bool>
+  nameWithType: Task<bool>
+  fullName: System.Threading.Tasks.Task<bool>
+  nameWithType.vb: Task(Of Boolean)
+  fullName.vb: System.Threading.Tasks.Task(Of Boolean)
+  name.vb: Task(Of Boolean)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: Inventory.Infrastructure.Services.UserDirectory.GetDisplayNameAsync*
+  commentId: Overload:Inventory.Infrastructure.Services.UserDirectory.GetDisplayNameAsync
+  href: Inventory.Infrastructure.Services.UserDirectory.html#Inventory_Infrastructure_Services_UserDirectory_GetDisplayNameAsync_System_Int32_System_Threading_CancellationToken_
+  name: GetDisplayNameAsync
+  nameWithType: UserDirectory.GetDisplayNameAsync
+  fullName: Inventory.Infrastructure.Services.UserDirectory.GetDisplayNameAsync
+- uid: Inventory.Application.Abstractions.IUserDirectory.GetDisplayNameAsync(System.Int32,System.Threading.CancellationToken)
+  commentId: M:Inventory.Application.Abstractions.IUserDirectory.GetDisplayNameAsync(System.Int32,System.Threading.CancellationToken)
+  parent: Inventory.Application.Abstractions.IUserDirectory
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: GetDisplayNameAsync(int, CancellationToken)
+  nameWithType: IUserDirectory.GetDisplayNameAsync(int, CancellationToken)
+  fullName: Inventory.Application.Abstractions.IUserDirectory.GetDisplayNameAsync(int, System.Threading.CancellationToken)
+  nameWithType.vb: IUserDirectory.GetDisplayNameAsync(Integer, CancellationToken)
+  fullName.vb: Inventory.Application.Abstractions.IUserDirectory.GetDisplayNameAsync(Integer, System.Threading.CancellationToken)
+  name.vb: GetDisplayNameAsync(Integer, CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Application.Abstractions.IUserDirectory.GetDisplayNameAsync(System.Int32,System.Threading.CancellationToken)
+    name: GetDisplayNameAsync
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Application.Abstractions.IUserDirectory.GetDisplayNameAsync(System.Int32,System.Threading.CancellationToken)
+    name: GetDisplayNameAsync
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Threading.Tasks.Task{System.String}
+  commentId: T:System.Threading.Tasks.Task{System.String}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<string>
+  nameWithType: Task<string>
+  fullName: System.Threading.Tasks.Task<string>
+  nameWithType.vb: Task(Of String)
+  fullName.vb: System.Threading.Tasks.Task(Of String)
+  name.vb: Task(Of String)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: Inventory.Infrastructure.Services.UserDirectory.GetDisplayNamesAsync*
+  commentId: Overload:Inventory.Infrastructure.Services.UserDirectory.GetDisplayNamesAsync
+  href: Inventory.Infrastructure.Services.UserDirectory.html#Inventory_Infrastructure_Services_UserDirectory_GetDisplayNamesAsync_System_Collections_Generic_IEnumerable_System_Int32__System_Threading_CancellationToken_
+  name: GetDisplayNamesAsync
+  nameWithType: UserDirectory.GetDisplayNamesAsync
+  fullName: Inventory.Infrastructure.Services.UserDirectory.GetDisplayNamesAsync
+- uid: Inventory.Application.Abstractions.IUserDirectory.GetDisplayNamesAsync(System.Collections.Generic.IEnumerable{System.Int32},System.Threading.CancellationToken)
+  commentId: M:Inventory.Application.Abstractions.IUserDirectory.GetDisplayNamesAsync(System.Collections.Generic.IEnumerable{System.Int32},System.Threading.CancellationToken)
+  parent: Inventory.Application.Abstractions.IUserDirectory
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: GetDisplayNamesAsync(IEnumerable<int>, CancellationToken)
+  nameWithType: IUserDirectory.GetDisplayNamesAsync(IEnumerable<int>, CancellationToken)
+  fullName: Inventory.Application.Abstractions.IUserDirectory.GetDisplayNamesAsync(System.Collections.Generic.IEnumerable<int>, System.Threading.CancellationToken)
+  nameWithType.vb: IUserDirectory.GetDisplayNamesAsync(IEnumerable(Of Integer), CancellationToken)
+  fullName.vb: Inventory.Application.Abstractions.IUserDirectory.GetDisplayNamesAsync(System.Collections.Generic.IEnumerable(Of Integer), System.Threading.CancellationToken)
+  name.vb: GetDisplayNamesAsync(IEnumerable(Of Integer), CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Application.Abstractions.IUserDirectory.GetDisplayNamesAsync(System.Collections.Generic.IEnumerable{System.Int32},System.Threading.CancellationToken)
+    name: GetDisplayNamesAsync
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Application.Abstractions.IUserDirectory.GetDisplayNamesAsync(System.Collections.Generic.IEnumerable{System.Int32},System.Threading.CancellationToken)
+    name: GetDisplayNamesAsync
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Collections.Generic.IEnumerable{System.Int32}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Int32}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<int>
+  nameWithType: IEnumerable<int>
+  fullName: System.Collections.Generic.IEnumerable<int>
+  nameWithType.vb: IEnumerable(Of Integer)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of Integer)
+  name.vb: IEnumerable(Of Integer)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyDictionary{System.Int32,System.String}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyDictionary{System.Int32,System.String}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IReadOnlyDictionary<int, string>>
+  nameWithType: Task<IReadOnlyDictionary<int, string>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyDictionary<int, string>>
+  nameWithType.vb: Task(Of IReadOnlyDictionary(Of Integer, String))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IReadOnlyDictionary(Of Integer, String))
+  name.vb: Task(Of IReadOnlyDictionary(Of Integer, String))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic

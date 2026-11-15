@@ -284,6 +284,9 @@ dotnet test
 - [docs/02-data-model.md](docs/02-data-model.md) — ERD & entitas
 - [docs/scalability/README.md](docs/scalability/README.md) — analisis skalabilitas (Markdown + Word)
 - [docs/database/README.md](docs/database/README.md) — implementasi database PostgreSQL + script SQL (Markdown + Word)
+- [docs/database-access/README.md](docs/database-access/README.md) — operasi, akses, koneksi, dan pengujian database (Markdown + Word)
+- [docs/programming-fundamentals/README.md](docs/programming-fundamentals/README.md) — tipe data, flowchart, algoritma, prosedur/fungsi, kompleksitas (Markdown + Word)
+- [docs/code-documentation/README.md](docs/code-documentation/README.md) — dokumentasi modul, method, eksepsi, API docs DocFX (Markdown + Word)
 - [docs/adr/](docs/adr/) — Architecture Decision Records
 - [docs/adr/005-guid-soft-delete-audit.md](docs/adr/005-guid-soft-delete-audit.md) — GUID, soft delete, audit user
 - [docs/adr/006-api-first-client-server.md](docs/adr/006-api-first-client-server.md) — boundary API-first dan roadmap pemisahan BE/FE

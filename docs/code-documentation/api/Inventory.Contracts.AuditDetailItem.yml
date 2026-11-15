@@ -1,0 +1,625 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Contracts.AuditDetailItem
+  commentId: T:Inventory.Contracts.AuditDetailItem
+  id: AuditDetailItem
+  parent: Inventory.Contracts
+  children:
+  - Inventory.Contracts.AuditDetailItem.Action
+  - Inventory.Contracts.AuditDetailItem.CreatedAt
+  - Inventory.Contracts.AuditDetailItem.EntityId
+  - Inventory.Contracts.AuditDetailItem.EntityName
+  - Inventory.Contracts.AuditDetailItem.Id
+  - Inventory.Contracts.AuditDetailItem.IpAddress
+  - Inventory.Contracts.AuditDetailItem.NewValues
+  - Inventory.Contracts.AuditDetailItem.OldValues
+  - Inventory.Contracts.AuditDetailItem.UserName
+  langs:
+  - csharp
+  - vb
+  name: AuditDetailItem
+  nameWithType: AuditDetailItem
+  fullName: Inventory.Contracts.AuditDetailItem
+  type: Class
+  source:
+    remote:
+      path: src/Inventory.Contracts/ReportDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: AuditDetailItem
+    path: src/Inventory.Contracts/ReportDtos.cs
+    startLine: 97
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public sealed class AuditDetailItem
+    content.vb: Public NotInheritable Class AuditDetailItem
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Inventory.Contracts.AuditDetailItem.Id
+  commentId: P:Inventory.Contracts.AuditDetailItem.Id
+  id: Id
+  parent: Inventory.Contracts.AuditDetailItem
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: AuditDetailItem.Id
+  fullName: Inventory.Contracts.AuditDetailItem.Id
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/ReportDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Id
+    path: src/Inventory.Contracts/ReportDtos.cs
+    startLine: 99
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public int Id { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Id As Integer
+  overload: Inventory.Contracts.AuditDetailItem.Id*
+- uid: Inventory.Contracts.AuditDetailItem.EntityName
+  commentId: P:Inventory.Contracts.AuditDetailItem.EntityName
+  id: EntityName
+  parent: Inventory.Contracts.AuditDetailItem
+  langs:
+  - csharp
+  - vb
+  name: EntityName
+  nameWithType: AuditDetailItem.EntityName
+  fullName: Inventory.Contracts.AuditDetailItem.EntityName
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/ReportDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: EntityName
+    path: src/Inventory.Contracts/ReportDtos.cs
+    startLine: 100
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public string EntityName { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property EntityName As String
+  overload: Inventory.Contracts.AuditDetailItem.EntityName*
+- uid: Inventory.Contracts.AuditDetailItem.EntityId
+  commentId: P:Inventory.Contracts.AuditDetailItem.EntityId
+  id: EntityId
+  parent: Inventory.Contracts.AuditDetailItem
+  langs:
+  - csharp
+  - vb
+  name: EntityId
+  nameWithType: AuditDetailItem.EntityId
+  fullName: Inventory.Contracts.AuditDetailItem.EntityId
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/ReportDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: EntityId
+    path: src/Inventory.Contracts/ReportDtos.cs
+    startLine: 101
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public string EntityId { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property EntityId As String
+  overload: Inventory.Contracts.AuditDetailItem.EntityId*
+- uid: Inventory.Contracts.AuditDetailItem.Action
+  commentId: P:Inventory.Contracts.AuditDetailItem.Action
+  id: Action
+  parent: Inventory.Contracts.AuditDetailItem
+  langs:
+  - csharp
+  - vb
+  name: Action
+  nameWithType: AuditDetailItem.Action
+  fullName: Inventory.Contracts.AuditDetailItem.Action
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/ReportDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Action
+    path: src/Inventory.Contracts/ReportDtos.cs
+    startLine: 102
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public string Action { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Action As String
+  overload: Inventory.Contracts.AuditDetailItem.Action*
+- uid: Inventory.Contracts.AuditDetailItem.OldValues
+  commentId: P:Inventory.Contracts.AuditDetailItem.OldValues
+  id: OldValues
+  parent: Inventory.Contracts.AuditDetailItem
+  langs:
+  - csharp
+  - vb
+  name: OldValues
+  nameWithType: AuditDetailItem.OldValues
+  fullName: Inventory.Contracts.AuditDetailItem.OldValues
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/ReportDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: OldValues
+    path: src/Inventory.Contracts/ReportDtos.cs
+    startLine: 103
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public string? OldValues { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property OldValues As String
+  overload: Inventory.Contracts.AuditDetailItem.OldValues*
+- uid: Inventory.Contracts.AuditDetailItem.NewValues
+  commentId: P:Inventory.Contracts.AuditDetailItem.NewValues
+  id: NewValues
+  parent: Inventory.Contracts.AuditDetailItem
+  langs:
+  - csharp
+  - vb
+  name: NewValues
+  nameWithType: AuditDetailItem.NewValues
+  fullName: Inventory.Contracts.AuditDetailItem.NewValues
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/ReportDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: NewValues
+    path: src/Inventory.Contracts/ReportDtos.cs
+    startLine: 104
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public string? NewValues { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property NewValues As String
+  overload: Inventory.Contracts.AuditDetailItem.NewValues*
+- uid: Inventory.Contracts.AuditDetailItem.UserName
+  commentId: P:Inventory.Contracts.AuditDetailItem.UserName
+  id: UserName
+  parent: Inventory.Contracts.AuditDetailItem
+  langs:
+  - csharp
+  - vb
+  name: UserName
+  nameWithType: AuditDetailItem.UserName
+  fullName: Inventory.Contracts.AuditDetailItem.UserName
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/ReportDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: UserName
+    path: src/Inventory.Contracts/ReportDtos.cs
+    startLine: 105
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public string? UserName { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property UserName As String
+  overload: Inventory.Contracts.AuditDetailItem.UserName*
+- uid: Inventory.Contracts.AuditDetailItem.IpAddress
+  commentId: P:Inventory.Contracts.AuditDetailItem.IpAddress
+  id: IpAddress
+  parent: Inventory.Contracts.AuditDetailItem
+  langs:
+  - csharp
+  - vb
+  name: IpAddress
+  nameWithType: AuditDetailItem.IpAddress
+  fullName: Inventory.Contracts.AuditDetailItem.IpAddress
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/ReportDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: IpAddress
+    path: src/Inventory.Contracts/ReportDtos.cs
+    startLine: 106
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public string? IpAddress { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property IpAddress As String
+  overload: Inventory.Contracts.AuditDetailItem.IpAddress*
+- uid: Inventory.Contracts.AuditDetailItem.CreatedAt
+  commentId: P:Inventory.Contracts.AuditDetailItem.CreatedAt
+  id: CreatedAt
+  parent: Inventory.Contracts.AuditDetailItem
+  langs:
+  - csharp
+  - vb
+  name: CreatedAt
+  nameWithType: AuditDetailItem.CreatedAt
+  fullName: Inventory.Contracts.AuditDetailItem.CreatedAt
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/ReportDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: CreatedAt
+    path: src/Inventory.Contracts/ReportDtos.cs
+    startLine: 107
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public DateTime CreatedAt { get; init; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property CreatedAt As Date
+  overload: Inventory.Contracts.AuditDetailItem.CreatedAt*
+references:
+- uid: Inventory.Contracts
+  commentId: N:Inventory.Contracts
+  name: Inventory.Contracts
+  nameWithType: Inventory.Contracts
+  fullName: Inventory.Contracts
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Inventory.Contracts.AuditDetailItem.Id*
+  commentId: Overload:Inventory.Contracts.AuditDetailItem.Id
+  href: Inventory.Contracts.AuditDetailItem.html#Inventory_Contracts_AuditDetailItem_Id
+  name: Id
+  nameWithType: AuditDetailItem.Id
+  fullName: Inventory.Contracts.AuditDetailItem.Id
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Inventory.Contracts.AuditDetailItem.EntityName*
+  commentId: Overload:Inventory.Contracts.AuditDetailItem.EntityName
+  href: Inventory.Contracts.AuditDetailItem.html#Inventory_Contracts_AuditDetailItem_EntityName
+  name: EntityName
+  nameWithType: AuditDetailItem.EntityName
+  fullName: Inventory.Contracts.AuditDetailItem.EntityName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Inventory.Contracts.AuditDetailItem.EntityId*
+  commentId: Overload:Inventory.Contracts.AuditDetailItem.EntityId
+  href: Inventory.Contracts.AuditDetailItem.html#Inventory_Contracts_AuditDetailItem_EntityId
+  name: EntityId
+  nameWithType: AuditDetailItem.EntityId
+  fullName: Inventory.Contracts.AuditDetailItem.EntityId
+- uid: Inventory.Contracts.AuditDetailItem.Action*
+  commentId: Overload:Inventory.Contracts.AuditDetailItem.Action
+  href: Inventory.Contracts.AuditDetailItem.html#Inventory_Contracts_AuditDetailItem_Action
+  name: Action
+  nameWithType: AuditDetailItem.Action
+  fullName: Inventory.Contracts.AuditDetailItem.Action
+- uid: Inventory.Contracts.AuditDetailItem.OldValues*
+  commentId: Overload:Inventory.Contracts.AuditDetailItem.OldValues
+  href: Inventory.Contracts.AuditDetailItem.html#Inventory_Contracts_AuditDetailItem_OldValues
+  name: OldValues
+  nameWithType: AuditDetailItem.OldValues
+  fullName: Inventory.Contracts.AuditDetailItem.OldValues
+- uid: Inventory.Contracts.AuditDetailItem.NewValues*
+  commentId: Overload:Inventory.Contracts.AuditDetailItem.NewValues
+  href: Inventory.Contracts.AuditDetailItem.html#Inventory_Contracts_AuditDetailItem_NewValues
+  name: NewValues
+  nameWithType: AuditDetailItem.NewValues
+  fullName: Inventory.Contracts.AuditDetailItem.NewValues
+- uid: Inventory.Contracts.AuditDetailItem.UserName*
+  commentId: Overload:Inventory.Contracts.AuditDetailItem.UserName
+  href: Inventory.Contracts.AuditDetailItem.html#Inventory_Contracts_AuditDetailItem_UserName
+  name: UserName
+  nameWithType: AuditDetailItem.UserName
+  fullName: Inventory.Contracts.AuditDetailItem.UserName
+- uid: Inventory.Contracts.AuditDetailItem.IpAddress*
+  commentId: Overload:Inventory.Contracts.AuditDetailItem.IpAddress
+  href: Inventory.Contracts.AuditDetailItem.html#Inventory_Contracts_AuditDetailItem_IpAddress
+  name: IpAddress
+  nameWithType: AuditDetailItem.IpAddress
+  fullName: Inventory.Contracts.AuditDetailItem.IpAddress
+- uid: Inventory.Contracts.AuditDetailItem.CreatedAt*
+  commentId: Overload:Inventory.Contracts.AuditDetailItem.CreatedAt
+  href: Inventory.Contracts.AuditDetailItem.html#Inventory_Contracts_AuditDetailItem_CreatedAt
+  name: CreatedAt
+  nameWithType: AuditDetailItem.CreatedAt
+  fullName: Inventory.Contracts.AuditDetailItem.CreatedAt
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date

@@ -1,0 +1,166 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Web.Controllers
+  commentId: N:Inventory.Web.Controllers
+  id: Inventory.Web.Controllers
+  children:
+  - Inventory.Web.Controllers.AccountController
+  - Inventory.Web.Controllers.AppControllerBase
+  - Inventory.Web.Controllers.ApprovalsController
+  - Inventory.Web.Controllers.AuditLogsController
+  - Inventory.Web.Controllers.CategoriesController
+  - Inventory.Web.Controllers.DashboardController
+  - Inventory.Web.Controllers.ErrorController
+  - Inventory.Web.Controllers.LocationsController
+  - Inventory.Web.Controllers.ProductsController
+  - Inventory.Web.Controllers.ReportsController
+  - Inventory.Web.Controllers.StockAdjustmentsController
+  - Inventory.Web.Controllers.StockInsController
+  - Inventory.Web.Controllers.StockOpnamesController
+  - Inventory.Web.Controllers.StockOutsController
+  - Inventory.Web.Controllers.StockTransfersController
+  - Inventory.Web.Controllers.SuppliersController
+  - Inventory.Web.Controllers.UnitsController
+  - Inventory.Web.Controllers.UsersController
+  langs:
+  - csharp
+  - vb
+  name: Inventory.Web.Controllers
+  nameWithType: Inventory.Web.Controllers
+  fullName: Inventory.Web.Controllers
+  type: Namespace
+  assemblies:
+  - Inventory.Web
+references:
+- uid: Inventory.Web.Controllers.AccountController
+  commentId: T:Inventory.Web.Controllers.AccountController
+  href: Inventory.Web.Controllers.AccountController.html
+  name: AccountController
+  nameWithType: AccountController
+  fullName: Inventory.Web.Controllers.AccountController
+- uid: Inventory.Web.Controllers.AppControllerBase
+  commentId: T:Inventory.Web.Controllers.AppControllerBase
+  parent: Inventory.Web.Controllers
+  href: Inventory.Web.Controllers.AppControllerBase.html
+  name: AppControllerBase
+  nameWithType: AppControllerBase
+  fullName: Inventory.Web.Controllers.AppControllerBase
+- uid: Inventory.Web.Controllers.ApprovalsController
+  commentId: T:Inventory.Web.Controllers.ApprovalsController
+  href: Inventory.Web.Controllers.ApprovalsController.html
+  name: ApprovalsController
+  nameWithType: ApprovalsController
+  fullName: Inventory.Web.Controllers.ApprovalsController
+- uid: Inventory.Web.Controllers.AuditLogsController
+  commentId: T:Inventory.Web.Controllers.AuditLogsController
+  href: Inventory.Web.Controllers.AuditLogsController.html
+  name: AuditLogsController
+  nameWithType: AuditLogsController
+  fullName: Inventory.Web.Controllers.AuditLogsController
+- uid: Inventory.Web.Controllers.CategoriesController
+  commentId: T:Inventory.Web.Controllers.CategoriesController
+  href: Inventory.Web.Controllers.CategoriesController.html
+  name: CategoriesController
+  nameWithType: CategoriesController
+  fullName: Inventory.Web.Controllers.CategoriesController
+- uid: Inventory.Web.Controllers.UnitsController
+  commentId: T:Inventory.Web.Controllers.UnitsController
+  href: Inventory.Web.Controllers.UnitsController.html
+  name: UnitsController
+  nameWithType: UnitsController
+  fullName: Inventory.Web.Controllers.UnitsController
+- uid: Inventory.Web.Controllers.ProductsController
+  commentId: T:Inventory.Web.Controllers.ProductsController
+  href: Inventory.Web.Controllers.ProductsController.html
+  name: ProductsController
+  nameWithType: ProductsController
+  fullName: Inventory.Web.Controllers.ProductsController
+- uid: Inventory.Web.Controllers.ErrorController
+  commentId: T:Inventory.Web.Controllers.ErrorController
+  href: Inventory.Web.Controllers.ErrorController.html
+  name: ErrorController
+  nameWithType: ErrorController
+  fullName: Inventory.Web.Controllers.ErrorController
+- uid: Inventory.Web.Controllers.LocationsController
+  commentId: T:Inventory.Web.Controllers.LocationsController
+  href: Inventory.Web.Controllers.LocationsController.html
+  name: LocationsController
+  nameWithType: LocationsController
+  fullName: Inventory.Web.Controllers.LocationsController
+- uid: Inventory.Web.Controllers.SuppliersController
+  commentId: T:Inventory.Web.Controllers.SuppliersController
+  href: Inventory.Web.Controllers.SuppliersController.html
+  name: SuppliersController
+  nameWithType: SuppliersController
+  fullName: Inventory.Web.Controllers.SuppliersController
+- uid: Inventory.Web.Controllers.DashboardController
+  commentId: T:Inventory.Web.Controllers.DashboardController
+  href: Inventory.Web.Controllers.DashboardController.html
+  name: DashboardController
+  nameWithType: DashboardController
+  fullName: Inventory.Web.Controllers.DashboardController
+- uid: Inventory.Web.Controllers.ReportsController
+  commentId: T:Inventory.Web.Controllers.ReportsController
+  href: Inventory.Web.Controllers.ReportsController.html
+  name: ReportsController
+  nameWithType: ReportsController
+  fullName: Inventory.Web.Controllers.ReportsController
+- uid: Inventory.Web.Controllers.StockAdjustmentsController
+  commentId: T:Inventory.Web.Controllers.StockAdjustmentsController
+  href: Inventory.Web.Controllers.StockAdjustmentsController.html
+  name: StockAdjustmentsController
+  nameWithType: StockAdjustmentsController
+  fullName: Inventory.Web.Controllers.StockAdjustmentsController
+- uid: Inventory.Web.Controllers.StockInsController
+  commentId: T:Inventory.Web.Controllers.StockInsController
+  href: Inventory.Web.Controllers.StockInsController.html
+  name: StockInsController
+  nameWithType: StockInsController
+  fullName: Inventory.Web.Controllers.StockInsController
+- uid: Inventory.Web.Controllers.StockOpnamesController
+  commentId: T:Inventory.Web.Controllers.StockOpnamesController
+  href: Inventory.Web.Controllers.StockOpnamesController.html
+  name: StockOpnamesController
+  nameWithType: StockOpnamesController
+  fullName: Inventory.Web.Controllers.StockOpnamesController
+- uid: Inventory.Web.Controllers.StockOutsController
+  commentId: T:Inventory.Web.Controllers.StockOutsController
+  href: Inventory.Web.Controllers.StockOutsController.html
+  name: StockOutsController
+  nameWithType: StockOutsController
+  fullName: Inventory.Web.Controllers.StockOutsController
+- uid: Inventory.Web.Controllers.StockTransfersController
+  commentId: T:Inventory.Web.Controllers.StockTransfersController
+  href: Inventory.Web.Controllers.StockTransfersController.html
+  name: StockTransfersController
+  nameWithType: StockTransfersController
+  fullName: Inventory.Web.Controllers.StockTransfersController
+- uid: Inventory.Web.Controllers.UsersController
+  commentId: T:Inventory.Web.Controllers.UsersController
+  href: Inventory.Web.Controllers.UsersController.html
+  name: UsersController
+  nameWithType: UsersController
+  fullName: Inventory.Web.Controllers.UsersController
+- uid: Inventory.Web.Controllers
+  commentId: N:Inventory.Web.Controllers
+  name: Inventory.Web.Controllers
+  nameWithType: Inventory.Web.Controllers
+  fullName: Inventory.Web.Controllers
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Web
+    name: Web
+  - name: .
+  - uid: Inventory.Web.Controllers
+    name: Controllers
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Web
+    name: Web
+  - name: .
+  - uid: Inventory.Web.Controllers
+    name: Controllers

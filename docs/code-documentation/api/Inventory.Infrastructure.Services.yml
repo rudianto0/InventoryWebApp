@@ -1,0 +1,37 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Infrastructure.Services
+  commentId: N:Inventory.Infrastructure.Services
+  id: Inventory.Infrastructure.Services
+  children:
+  - Inventory.Infrastructure.Services.DocumentNumberService
+  - Inventory.Infrastructure.Services.UserDirectory
+  - Inventory.Infrastructure.Services.UserService
+  langs:
+  - csharp
+  - vb
+  name: Inventory.Infrastructure.Services
+  nameWithType: Inventory.Infrastructure.Services
+  fullName: Inventory.Infrastructure.Services
+  type: Namespace
+  assemblies:
+  - Inventory.Infrastructure
+references:
+- uid: Inventory.Infrastructure.Services.DocumentNumberService
+  commentId: T:Inventory.Infrastructure.Services.DocumentNumberService
+  href: Inventory.Infrastructure.Services.DocumentNumberService.html
+  name: DocumentNumberService
+  nameWithType: DocumentNumberService
+  fullName: Inventory.Infrastructure.Services.DocumentNumberService
+- uid: Inventory.Infrastructure.Services.UserDirectory
+  commentId: T:Inventory.Infrastructure.Services.UserDirectory
+  href: Inventory.Infrastructure.Services.UserDirectory.html
+  name: UserDirectory
+  nameWithType: UserDirectory
+  fullName: Inventory.Infrastructure.Services.UserDirectory
+- uid: Inventory.Infrastructure.Services.UserService
+  commentId: T:Inventory.Infrastructure.Services.UserService
+  href: Inventory.Infrastructure.Services.UserService.html
+  name: UserService
+  nameWithType: UserService
+  fullName: Inventory.Infrastructure.Services.UserService

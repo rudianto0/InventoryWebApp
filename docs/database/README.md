@@ -40,6 +40,8 @@ sql/postgresql/
 ├─ 07-functions.sql
 ├─ 08-triggers.sql
 ├─ 09-transactions.sql
+├─ 10-roles-and-grants.sql      # lihat docs/database-access
+├─ 11-performance-tests.sql     # lihat docs/database-access
 └─ 99-run-all.sql
 ```
 

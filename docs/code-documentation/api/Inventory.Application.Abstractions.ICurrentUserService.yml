@@ -1,0 +1,247 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Application.Abstractions.ICurrentUserService
+  commentId: T:Inventory.Application.Abstractions.ICurrentUserService
+  id: ICurrentUserService
+  parent: Inventory.Application.Abstractions
+  children:
+  - Inventory.Application.Abstractions.ICurrentUserService.IsInRole(System.String)
+  - Inventory.Application.Abstractions.ICurrentUserService.UserId
+  - Inventory.Application.Abstractions.ICurrentUserService.UserName
+  langs:
+  - csharp
+  - vb
+  name: ICurrentUserService
+  nameWithType: ICurrentUserService
+  fullName: Inventory.Application.Abstractions.ICurrentUserService
+  type: Interface
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/Services.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ICurrentUserService
+    path: src/Inventory.Application/Abstractions/Services.cs
+    startLine: 2
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: public interface ICurrentUserService
+    content.vb: Public Interface ICurrentUserService
+  derivedClasses:
+  - Inventory.Web.Services.HttpCurrentUserService
+- uid: Inventory.Application.Abstractions.ICurrentUserService.UserId
+  commentId: P:Inventory.Application.Abstractions.ICurrentUserService.UserId
+  id: UserId
+  parent: Inventory.Application.Abstractions.ICurrentUserService
+  langs:
+  - csharp
+  - vb
+  name: UserId
+  nameWithType: ICurrentUserService.UserId
+  fullName: Inventory.Application.Abstractions.ICurrentUserService.UserId
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/Services.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: UserId
+    path: src/Inventory.Application/Abstractions/Services.cs
+    startLine: 4
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: int? UserId { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: ReadOnly Property UserId As Integer?
+  overload: Inventory.Application.Abstractions.ICurrentUserService.UserId*
+- uid: Inventory.Application.Abstractions.ICurrentUserService.UserName
+  commentId: P:Inventory.Application.Abstractions.ICurrentUserService.UserName
+  id: UserName
+  parent: Inventory.Application.Abstractions.ICurrentUserService
+  langs:
+  - csharp
+  - vb
+  name: UserName
+  nameWithType: ICurrentUserService.UserName
+  fullName: Inventory.Application.Abstractions.ICurrentUserService.UserName
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/Services.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: UserName
+    path: src/Inventory.Application/Abstractions/Services.cs
+    startLine: 5
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: string? UserName { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property UserName As String
+  overload: Inventory.Application.Abstractions.ICurrentUserService.UserName*
+- uid: Inventory.Application.Abstractions.ICurrentUserService.IsInRole(System.String)
+  commentId: M:Inventory.Application.Abstractions.ICurrentUserService.IsInRole(System.String)
+  id: IsInRole(System.String)
+  parent: Inventory.Application.Abstractions.ICurrentUserService
+  langs:
+  - csharp
+  - vb
+  name: IsInRole(string)
+  nameWithType: ICurrentUserService.IsInRole(string)
+  fullName: Inventory.Application.Abstractions.ICurrentUserService.IsInRole(string)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Application/Abstractions/Services.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: IsInRole
+    path: src/Inventory.Application/Abstractions/Services.cs
+    startLine: 6
+  assemblies:
+  - Inventory.Application
+  namespace: Inventory.Application.Abstractions
+  syntax:
+    content: bool IsInRole(string role)
+    parameters:
+    - id: role
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Function IsInRole(role As String) As Boolean
+  overload: Inventory.Application.Abstractions.ICurrentUserService.IsInRole*
+  nameWithType.vb: ICurrentUserService.IsInRole(String)
+  fullName.vb: Inventory.Application.Abstractions.ICurrentUserService.IsInRole(String)
+  name.vb: IsInRole(String)
+references:
+- uid: Inventory.Application.Abstractions
+  commentId: N:Inventory.Application.Abstractions
+  name: Inventory.Application.Abstractions
+  nameWithType: Inventory.Application.Abstractions
+  fullName: Inventory.Application.Abstractions
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Application
+    name: Application
+  - name: .
+  - uid: Inventory.Application.Abstractions
+    name: Abstractions
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Application
+    name: Application
+  - name: .
+  - uid: Inventory.Application.Abstractions
+    name: Abstractions
+- uid: Inventory.Application.Abstractions.ICurrentUserService.UserId*
+  commentId: Overload:Inventory.Application.Abstractions.ICurrentUserService.UserId
+  href: Inventory.Application.Abstractions.ICurrentUserService.html#Inventory_Application_Abstractions_ICurrentUserService_UserId
+  name: UserId
+  nameWithType: ICurrentUserService.UserId
+  fullName: Inventory.Application.Abstractions.ICurrentUserService.UserId
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Inventory.Application.Abstractions.ICurrentUserService.UserName*
+  commentId: Overload:Inventory.Application.Abstractions.ICurrentUserService.UserName
+  href: Inventory.Application.Abstractions.ICurrentUserService.html#Inventory_Application_Abstractions_ICurrentUserService_UserName
+  name: UserName
+  nameWithType: ICurrentUserService.UserName
+  fullName: Inventory.Application.Abstractions.ICurrentUserService.UserName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Inventory.Application.Abstractions.ICurrentUserService.IsInRole*
+  commentId: Overload:Inventory.Application.Abstractions.ICurrentUserService.IsInRole
+  href: Inventory.Application.Abstractions.ICurrentUserService.html#Inventory_Application_Abstractions_ICurrentUserService_IsInRole_System_String_
+  name: IsInRole
+  nameWithType: ICurrentUserService.IsInRole
+  fullName: Inventory.Application.Abstractions.ICurrentUserService.IsInRole
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean

@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Infrastructure
+  commentId: N:Inventory.Infrastructure
+  id: Inventory.Infrastructure
+  children:
+  - Inventory.Infrastructure.Class1
+  - Inventory.Infrastructure.DependencyInjection
+  langs:
+  - csharp
+  - vb
+  name: Inventory.Infrastructure
+  nameWithType: Inventory.Infrastructure
+  fullName: Inventory.Infrastructure
+  type: Namespace
+  assemblies:
+  - Inventory.Infrastructure
+references:
+- uid: Inventory.Infrastructure.Class1
+  commentId: T:Inventory.Infrastructure.Class1
+  href: Inventory.Infrastructure.Class1.html
+  name: Class1
+  nameWithType: Class1
+  fullName: Inventory.Infrastructure.Class1
+- uid: Inventory.Infrastructure.DependencyInjection
+  commentId: T:Inventory.Infrastructure.DependencyInjection
+  href: Inventory.Infrastructure.DependencyInjection.html
+  name: DependencyInjection
+  nameWithType: DependencyInjection
+  fullName: Inventory.Infrastructure.DependencyInjection
