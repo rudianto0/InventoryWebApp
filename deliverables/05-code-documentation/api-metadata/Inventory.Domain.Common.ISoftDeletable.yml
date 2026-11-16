@@ -1,0 +1,268 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Domain.Common.ISoftDeletable
+  commentId: T:Inventory.Domain.Common.ISoftDeletable
+  id: ISoftDeletable
+  parent: Inventory.Domain.Common
+  children:
+  - Inventory.Domain.Common.ISoftDeletable.DeletedAt
+  - Inventory.Domain.Common.ISoftDeletable.DeletedById
+  - Inventory.Domain.Common.ISoftDeletable.IsDeleted
+  langs:
+  - csharp
+  - vb
+  name: ISoftDeletable
+  nameWithType: ISoftDeletable
+  fullName: Inventory.Domain.Common.ISoftDeletable
+  type: Interface
+  source:
+    remote:
+      path: src/Inventory.Domain/Common/AuditContracts.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ISoftDeletable
+    path: ../../src/Inventory.Domain/Common/AuditContracts.cs
+    startLine: 10
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Common
+  syntax:
+    content: public interface ISoftDeletable
+    content.vb: Public Interface ISoftDeletable
+  derivedClasses:
+  - Inventory.Domain.Entities.Category
+  - Inventory.Domain.Entities.Location
+  - Inventory.Domain.Entities.Product
+  - Inventory.Domain.Entities.StockAdjustmentDetail
+  - Inventory.Domain.Entities.StockAdjustmentHeader
+  - Inventory.Domain.Entities.StockInDetail
+  - Inventory.Domain.Entities.StockInHeader
+  - Inventory.Domain.Entities.StockOpnameDetail
+  - Inventory.Domain.Entities.StockOpnameHeader
+  - Inventory.Domain.Entities.StockOutDetail
+  - Inventory.Domain.Entities.StockOutHeader
+  - Inventory.Domain.Entities.StockTransferDetail
+  - Inventory.Domain.Entities.StockTransferHeader
+  - Inventory.Domain.Entities.Supplier
+  - Inventory.Domain.Entities.Unit
+- uid: Inventory.Domain.Common.ISoftDeletable.IsDeleted
+  commentId: P:Inventory.Domain.Common.ISoftDeletable.IsDeleted
+  id: IsDeleted
+  parent: Inventory.Domain.Common.ISoftDeletable
+  langs:
+  - csharp
+  - vb
+  name: IsDeleted
+  nameWithType: ISoftDeletable.IsDeleted
+  fullName: Inventory.Domain.Common.ISoftDeletable.IsDeleted
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Common/AuditContracts.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: IsDeleted
+    path: ../../src/Inventory.Domain/Common/AuditContracts.cs
+    startLine: 12
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Common
+  syntax:
+    content: bool IsDeleted { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Property IsDeleted As Boolean
+  overload: Inventory.Domain.Common.ISoftDeletable.IsDeleted*
+- uid: Inventory.Domain.Common.ISoftDeletable.DeletedAt
+  commentId: P:Inventory.Domain.Common.ISoftDeletable.DeletedAt
+  id: DeletedAt
+  parent: Inventory.Domain.Common.ISoftDeletable
+  langs:
+  - csharp
+  - vb
+  name: DeletedAt
+  nameWithType: ISoftDeletable.DeletedAt
+  fullName: Inventory.Domain.Common.ISoftDeletable.DeletedAt
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Common/AuditContracts.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: DeletedAt
+    path: ../../src/Inventory.Domain/Common/AuditContracts.cs
+    startLine: 13
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Common
+  syntax:
+    content: DateTime? DeletedAt { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: Property DeletedAt As Date?
+  overload: Inventory.Domain.Common.ISoftDeletable.DeletedAt*
+- uid: Inventory.Domain.Common.ISoftDeletable.DeletedById
+  commentId: P:Inventory.Domain.Common.ISoftDeletable.DeletedById
+  id: DeletedById
+  parent: Inventory.Domain.Common.ISoftDeletable
+  langs:
+  - csharp
+  - vb
+  name: DeletedById
+  nameWithType: ISoftDeletable.DeletedById
+  fullName: Inventory.Domain.Common.ISoftDeletable.DeletedById
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Common/AuditContracts.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: DeletedById
+    path: ../../src/Inventory.Domain/Common/AuditContracts.cs
+    startLine: 14
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Common
+  syntax:
+    content: int? DeletedById { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Property DeletedById As Integer?
+  overload: Inventory.Domain.Common.ISoftDeletable.DeletedById*
+references:
+- uid: Inventory.Domain.Common
+  commentId: N:Inventory.Domain.Common
+  name: Inventory.Domain.Common
+  nameWithType: Inventory.Domain.Common
+  fullName: Inventory.Domain.Common
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Domain
+    name: Domain
+  - name: .
+  - uid: Inventory.Domain.Common
+    name: Common
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Domain
+    name: Domain
+  - name: .
+  - uid: Inventory.Domain.Common
+    name: Common
+- uid: Inventory.Domain.Common.ISoftDeletable.IsDeleted*
+  commentId: Overload:Inventory.Domain.Common.ISoftDeletable.IsDeleted
+  href: Inventory.Domain.Common.ISoftDeletable.html#Inventory_Domain_Common_ISoftDeletable_IsDeleted
+  name: IsDeleted
+  nameWithType: ISoftDeletable.IsDeleted
+  fullName: Inventory.Domain.Common.ISoftDeletable.IsDeleted
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Inventory.Domain.Common.ISoftDeletable.DeletedAt*
+  commentId: Overload:Inventory.Domain.Common.ISoftDeletable.DeletedAt
+  href: Inventory.Domain.Common.ISoftDeletable.html#Inventory_Domain_Common_ISoftDeletable_DeletedAt
+  name: DeletedAt
+  nameWithType: ISoftDeletable.DeletedAt
+  fullName: Inventory.Domain.Common.ISoftDeletable.DeletedAt
+- uid: System.Nullable{System.DateTime}
+  commentId: T:System.Nullable{System.DateTime}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime?
+  nameWithType: DateTime?
+  fullName: System.DateTime?
+  nameWithType.vb: Date?
+  fullName.vb: Date?
+  name.vb: Date?
+  spec.csharp:
+  - uid: System.DateTime
+    name: DateTime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: '?'
+  spec.vb:
+  - uid: System.DateTime
+    name: Date
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Inventory.Domain.Common.ISoftDeletable.DeletedById*
+  commentId: Overload:Inventory.Domain.Common.ISoftDeletable.DeletedById
+  href: Inventory.Domain.Common.ISoftDeletable.html#Inventory_Domain_Common_ISoftDeletable_DeletedById
+  name: DeletedById
+  nameWithType: ISoftDeletable.DeletedById
+  fullName: Inventory.Domain.Common.ISoftDeletable.DeletedById
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'

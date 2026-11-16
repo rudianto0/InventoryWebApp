@@ -1,0 +1,396 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Domain.Entities.IApprovable
+  commentId: T:Inventory.Domain.Entities.IApprovable
+  id: IApprovable
+  parent: Inventory.Domain.Entities
+  children:
+  - Inventory.Domain.Entities.IApprovable.ApprovedAt
+  - Inventory.Domain.Entities.IApprovable.ApprovedById
+  - Inventory.Domain.Entities.IApprovable.ApproverId
+  - Inventory.Domain.Entities.IApprovable.RejectionReason
+  - Inventory.Domain.Entities.IApprovable.Status
+  - Inventory.Domain.Entities.IApprovable.SubmittedAt
+  langs:
+  - csharp
+  - vb
+  name: IApprovable
+  nameWithType: IApprovable
+  fullName: Inventory.Domain.Entities.IApprovable
+  type: Interface
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/IApprovable.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: IApprovable
+    path: ../../src/Inventory.Domain/Entities/IApprovable.cs
+    startLine: 4
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  syntax:
+    content: public interface IApprovable
+    content.vb: Public Interface IApprovable
+  derivedClasses:
+  - Inventory.Domain.Entities.StockAdjustmentHeader
+  - Inventory.Domain.Entities.StockInHeader
+  - Inventory.Domain.Entities.StockOpnameHeader
+  - Inventory.Domain.Entities.StockOutHeader
+  - Inventory.Domain.Entities.StockTransferHeader
+- uid: Inventory.Domain.Entities.IApprovable.Status
+  commentId: P:Inventory.Domain.Entities.IApprovable.Status
+  id: Status
+  parent: Inventory.Domain.Entities.IApprovable
+  langs:
+  - csharp
+  - vb
+  name: Status
+  nameWithType: IApprovable.Status
+  fullName: Inventory.Domain.Entities.IApprovable.Status
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/IApprovable.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Status
+    path: ../../src/Inventory.Domain/Entities/IApprovable.cs
+    startLine: 6
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  syntax:
+    content: ApprovalStatus Status { get; set; }
+    parameters: []
+    return:
+      type: Inventory.Contracts.Enums.ApprovalStatus
+    content.vb: Property Status As ApprovalStatus
+  overload: Inventory.Domain.Entities.IApprovable.Status*
+- uid: Inventory.Domain.Entities.IApprovable.ApproverId
+  commentId: P:Inventory.Domain.Entities.IApprovable.ApproverId
+  id: ApproverId
+  parent: Inventory.Domain.Entities.IApprovable
+  langs:
+  - csharp
+  - vb
+  name: ApproverId
+  nameWithType: IApprovable.ApproverId
+  fullName: Inventory.Domain.Entities.IApprovable.ApproverId
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/IApprovable.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ApproverId
+    path: ../../src/Inventory.Domain/Entities/IApprovable.cs
+    startLine: 7
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  syntax:
+    content: int? ApproverId { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Property ApproverId As Integer?
+  overload: Inventory.Domain.Entities.IApprovable.ApproverId*
+- uid: Inventory.Domain.Entities.IApprovable.SubmittedAt
+  commentId: P:Inventory.Domain.Entities.IApprovable.SubmittedAt
+  id: SubmittedAt
+  parent: Inventory.Domain.Entities.IApprovable
+  langs:
+  - csharp
+  - vb
+  name: SubmittedAt
+  nameWithType: IApprovable.SubmittedAt
+  fullName: Inventory.Domain.Entities.IApprovable.SubmittedAt
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/IApprovable.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: SubmittedAt
+    path: ../../src/Inventory.Domain/Entities/IApprovable.cs
+    startLine: 8
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  syntax:
+    content: DateTime? SubmittedAt { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: Property SubmittedAt As Date?
+  overload: Inventory.Domain.Entities.IApprovable.SubmittedAt*
+- uid: Inventory.Domain.Entities.IApprovable.ApprovedAt
+  commentId: P:Inventory.Domain.Entities.IApprovable.ApprovedAt
+  id: ApprovedAt
+  parent: Inventory.Domain.Entities.IApprovable
+  langs:
+  - csharp
+  - vb
+  name: ApprovedAt
+  nameWithType: IApprovable.ApprovedAt
+  fullName: Inventory.Domain.Entities.IApprovable.ApprovedAt
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/IApprovable.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ApprovedAt
+    path: ../../src/Inventory.Domain/Entities/IApprovable.cs
+    startLine: 9
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  syntax:
+    content: DateTime? ApprovedAt { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: Property ApprovedAt As Date?
+  overload: Inventory.Domain.Entities.IApprovable.ApprovedAt*
+- uid: Inventory.Domain.Entities.IApprovable.ApprovedById
+  commentId: P:Inventory.Domain.Entities.IApprovable.ApprovedById
+  id: ApprovedById
+  parent: Inventory.Domain.Entities.IApprovable
+  langs:
+  - csharp
+  - vb
+  name: ApprovedById
+  nameWithType: IApprovable.ApprovedById
+  fullName: Inventory.Domain.Entities.IApprovable.ApprovedById
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/IApprovable.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ApprovedById
+    path: ../../src/Inventory.Domain/Entities/IApprovable.cs
+    startLine: 10
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  syntax:
+    content: int? ApprovedById { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Property ApprovedById As Integer?
+  overload: Inventory.Domain.Entities.IApprovable.ApprovedById*
+- uid: Inventory.Domain.Entities.IApprovable.RejectionReason
+  commentId: P:Inventory.Domain.Entities.IApprovable.RejectionReason
+  id: RejectionReason
+  parent: Inventory.Domain.Entities.IApprovable
+  langs:
+  - csharp
+  - vb
+  name: RejectionReason
+  nameWithType: IApprovable.RejectionReason
+  fullName: Inventory.Domain.Entities.IApprovable.RejectionReason
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/IApprovable.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: RejectionReason
+    path: ../../src/Inventory.Domain/Entities/IApprovable.cs
+    startLine: 11
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  syntax:
+    content: string? RejectionReason { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Property RejectionReason As String
+  overload: Inventory.Domain.Entities.IApprovable.RejectionReason*
+references:
+- uid: Inventory.Domain.Entities
+  commentId: N:Inventory.Domain.Entities
+  name: Inventory.Domain.Entities
+  nameWithType: Inventory.Domain.Entities
+  fullName: Inventory.Domain.Entities
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Domain
+    name: Domain
+  - name: .
+  - uid: Inventory.Domain.Entities
+    name: Entities
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Domain
+    name: Domain
+  - name: .
+  - uid: Inventory.Domain.Entities
+    name: Entities
+- uid: Inventory.Domain.Entities.IApprovable.Status*
+  commentId: Overload:Inventory.Domain.Entities.IApprovable.Status
+  href: Inventory.Domain.Entities.IApprovable.html#Inventory_Domain_Entities_IApprovable_Status
+  name: Status
+  nameWithType: IApprovable.Status
+  fullName: Inventory.Domain.Entities.IApprovable.Status
+- uid: Inventory.Contracts.Enums.ApprovalStatus
+  commentId: T:Inventory.Contracts.Enums.ApprovalStatus
+  parent: Inventory.Contracts.Enums
+  href: Inventory.Contracts.Enums.ApprovalStatus.html
+  name: ApprovalStatus
+  nameWithType: ApprovalStatus
+  fullName: Inventory.Contracts.Enums.ApprovalStatus
+- uid: Inventory.Contracts.Enums
+  commentId: N:Inventory.Contracts.Enums
+  name: Inventory.Contracts.Enums
+  nameWithType: Inventory.Contracts.Enums
+  fullName: Inventory.Contracts.Enums
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+  - name: .
+  - uid: Inventory.Contracts.Enums
+    name: Enums
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+  - name: .
+  - uid: Inventory.Contracts.Enums
+    name: Enums
+- uid: Inventory.Domain.Entities.IApprovable.ApproverId*
+  commentId: Overload:Inventory.Domain.Entities.IApprovable.ApproverId
+  href: Inventory.Domain.Entities.IApprovable.html#Inventory_Domain_Entities_IApprovable_ApproverId
+  name: ApproverId
+  nameWithType: IApprovable.ApproverId
+  fullName: Inventory.Domain.Entities.IApprovable.ApproverId
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Inventory.Domain.Entities.IApprovable.SubmittedAt*
+  commentId: Overload:Inventory.Domain.Entities.IApprovable.SubmittedAt
+  href: Inventory.Domain.Entities.IApprovable.html#Inventory_Domain_Entities_IApprovable_SubmittedAt
+  name: SubmittedAt
+  nameWithType: IApprovable.SubmittedAt
+  fullName: Inventory.Domain.Entities.IApprovable.SubmittedAt
+- uid: System.Nullable{System.DateTime}
+  commentId: T:System.Nullable{System.DateTime}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime?
+  nameWithType: DateTime?
+  fullName: System.DateTime?
+  nameWithType.vb: Date?
+  fullName.vb: Date?
+  name.vb: Date?
+  spec.csharp:
+  - uid: System.DateTime
+    name: DateTime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: '?'
+  spec.vb:
+  - uid: System.DateTime
+    name: Date
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: '?'
+- uid: Inventory.Domain.Entities.IApprovable.ApprovedAt*
+  commentId: Overload:Inventory.Domain.Entities.IApprovable.ApprovedAt
+  href: Inventory.Domain.Entities.IApprovable.html#Inventory_Domain_Entities_IApprovable_ApprovedAt
+  name: ApprovedAt
+  nameWithType: IApprovable.ApprovedAt
+  fullName: Inventory.Domain.Entities.IApprovable.ApprovedAt
+- uid: Inventory.Domain.Entities.IApprovable.ApprovedById*
+  commentId: Overload:Inventory.Domain.Entities.IApprovable.ApprovedById
+  href: Inventory.Domain.Entities.IApprovable.html#Inventory_Domain_Entities_IApprovable_ApprovedById
+  name: ApprovedById
+  nameWithType: IApprovable.ApprovedById
+  fullName: Inventory.Domain.Entities.IApprovable.ApprovedById
+- uid: Inventory.Domain.Entities.IApprovable.RejectionReason*
+  commentId: Overload:Inventory.Domain.Entities.IApprovable.RejectionReason
+  href: Inventory.Domain.Entities.IApprovable.html#Inventory_Domain_Entities_IApprovable_RejectionReason
+  name: RejectionReason
+  nameWithType: IApprovable.RejectionReason
+  fullName: Inventory.Domain.Entities.IApprovable.RejectionReason
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

@@ -1,0 +1,620 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Contracts.LocationInput
+  commentId: T:Inventory.Contracts.LocationInput
+  id: LocationInput
+  parent: Inventory.Contracts
+  children:
+  - Inventory.Contracts.LocationInput.Address
+  - Inventory.Contracts.LocationInput.BranchCode
+  - Inventory.Contracts.LocationInput.Code
+  - Inventory.Contracts.LocationInput.IsActive
+  - Inventory.Contracts.LocationInput.Name
+  - Inventory.Contracts.LocationInput.ParentLocationId
+  - Inventory.Contracts.LocationInput.Type
+  langs:
+  - csharp
+  - vb
+  name: LocationInput
+  nameWithType: LocationInput
+  fullName: Inventory.Contracts.LocationInput
+  type: Class
+  source:
+    remote:
+      path: src/Inventory.Contracts/MasterDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: LocationInput
+    path: ../../src/Inventory.Contracts/MasterDtos.cs
+    startLine: 38
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public sealed class LocationInput
+    content.vb: Public NotInheritable Class LocationInput
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Inventory.Contracts.LocationInput.Code
+  commentId: P:Inventory.Contracts.LocationInput.Code
+  id: Code
+  parent: Inventory.Contracts.LocationInput
+  langs:
+  - csharp
+  - vb
+  name: Code
+  nameWithType: LocationInput.Code
+  fullName: Inventory.Contracts.LocationInput.Code
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/MasterDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Code
+    path: ../../src/Inventory.Contracts/MasterDtos.cs
+    startLine: 40
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public string Code { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Code As String
+  overload: Inventory.Contracts.LocationInput.Code*
+- uid: Inventory.Contracts.LocationInput.Name
+  commentId: P:Inventory.Contracts.LocationInput.Name
+  id: Name
+  parent: Inventory.Contracts.LocationInput
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: LocationInput.Name
+  fullName: Inventory.Contracts.LocationInput.Name
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/MasterDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Name
+    path: ../../src/Inventory.Contracts/MasterDtos.cs
+    startLine: 41
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public string Name { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: Inventory.Contracts.LocationInput.Name*
+- uid: Inventory.Contracts.LocationInput.Type
+  commentId: P:Inventory.Contracts.LocationInput.Type
+  id: Type
+  parent: Inventory.Contracts.LocationInput
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: LocationInput.Type
+  fullName: Inventory.Contracts.LocationInput.Type
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/MasterDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Type
+    path: ../../src/Inventory.Contracts/MasterDtos.cs
+    startLine: 42
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public LocationType Type { get; init; }
+    parameters: []
+    return:
+      type: Inventory.Contracts.Enums.LocationType
+    content.vb: Public Property Type As LocationType
+  overload: Inventory.Contracts.LocationInput.Type*
+- uid: Inventory.Contracts.LocationInput.ParentLocationId
+  commentId: P:Inventory.Contracts.LocationInput.ParentLocationId
+  id: ParentLocationId
+  parent: Inventory.Contracts.LocationInput
+  langs:
+  - csharp
+  - vb
+  name: ParentLocationId
+  nameWithType: LocationInput.ParentLocationId
+  fullName: Inventory.Contracts.LocationInput.ParentLocationId
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/MasterDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ParentLocationId
+    path: ../../src/Inventory.Contracts/MasterDtos.cs
+    startLine: 43
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public Guid? ParentLocationId { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Guid}
+    content.vb: Public Property ParentLocationId As Guid?
+  overload: Inventory.Contracts.LocationInput.ParentLocationId*
+- uid: Inventory.Contracts.LocationInput.BranchCode
+  commentId: P:Inventory.Contracts.LocationInput.BranchCode
+  id: BranchCode
+  parent: Inventory.Contracts.LocationInput
+  langs:
+  - csharp
+  - vb
+  name: BranchCode
+  nameWithType: LocationInput.BranchCode
+  fullName: Inventory.Contracts.LocationInput.BranchCode
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/MasterDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: BranchCode
+    path: ../../src/Inventory.Contracts/MasterDtos.cs
+    startLine: 44
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public string? BranchCode { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property BranchCode As String
+  overload: Inventory.Contracts.LocationInput.BranchCode*
+- uid: Inventory.Contracts.LocationInput.Address
+  commentId: P:Inventory.Contracts.LocationInput.Address
+  id: Address
+  parent: Inventory.Contracts.LocationInput
+  langs:
+  - csharp
+  - vb
+  name: Address
+  nameWithType: LocationInput.Address
+  fullName: Inventory.Contracts.LocationInput.Address
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/MasterDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Address
+    path: ../../src/Inventory.Contracts/MasterDtos.cs
+    startLine: 45
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public string? Address { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Address As String
+  overload: Inventory.Contracts.LocationInput.Address*
+- uid: Inventory.Contracts.LocationInput.IsActive
+  commentId: P:Inventory.Contracts.LocationInput.IsActive
+  id: IsActive
+  parent: Inventory.Contracts.LocationInput
+  langs:
+  - csharp
+  - vb
+  name: IsActive
+  nameWithType: LocationInput.IsActive
+  fullName: Inventory.Contracts.LocationInput.IsActive
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/MasterDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: IsActive
+    path: ../../src/Inventory.Contracts/MasterDtos.cs
+    startLine: 46
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public bool IsActive { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsActive As Boolean
+  overload: Inventory.Contracts.LocationInput.IsActive*
+references:
+- uid: Inventory.Contracts
+  commentId: N:Inventory.Contracts
+  name: Inventory.Contracts
+  nameWithType: Inventory.Contracts
+  fullName: Inventory.Contracts
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Inventory.Contracts.LocationInput.Code*
+  commentId: Overload:Inventory.Contracts.LocationInput.Code
+  href: Inventory.Contracts.LocationInput.html#Inventory_Contracts_LocationInput_Code
+  name: Code
+  nameWithType: LocationInput.Code
+  fullName: Inventory.Contracts.LocationInput.Code
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Inventory.Contracts.LocationInput.Name*
+  commentId: Overload:Inventory.Contracts.LocationInput.Name
+  href: Inventory.Contracts.LocationInput.html#Inventory_Contracts_LocationInput_Name
+  name: Name
+  nameWithType: LocationInput.Name
+  fullName: Inventory.Contracts.LocationInput.Name
+- uid: Inventory.Contracts.LocationInput.Type*
+  commentId: Overload:Inventory.Contracts.LocationInput.Type
+  href: Inventory.Contracts.LocationInput.html#Inventory_Contracts_LocationInput_Type
+  name: Type
+  nameWithType: LocationInput.Type
+  fullName: Inventory.Contracts.LocationInput.Type
+- uid: Inventory.Contracts.Enums.LocationType
+  commentId: T:Inventory.Contracts.Enums.LocationType
+  parent: Inventory.Contracts.Enums
+  href: Inventory.Contracts.Enums.LocationType.html
+  name: LocationType
+  nameWithType: LocationType
+  fullName: Inventory.Contracts.Enums.LocationType
+- uid: Inventory.Contracts.Enums
+  commentId: N:Inventory.Contracts.Enums
+  name: Inventory.Contracts.Enums
+  nameWithType: Inventory.Contracts.Enums
+  fullName: Inventory.Contracts.Enums
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+  - name: .
+  - uid: Inventory.Contracts.Enums
+    name: Enums
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+  - name: .
+  - uid: Inventory.Contracts.Enums
+    name: Enums
+- uid: Inventory.Contracts.LocationInput.ParentLocationId*
+  commentId: Overload:Inventory.Contracts.LocationInput.ParentLocationId
+  href: Inventory.Contracts.LocationInput.html#Inventory_Contracts_LocationInput_ParentLocationId
+  name: ParentLocationId
+  nameWithType: LocationInput.ParentLocationId
+  fullName: Inventory.Contracts.LocationInput.ParentLocationId
+- uid: System.Nullable{System.Guid}
+  commentId: T:System.Nullable{System.Guid}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid?
+  nameWithType: Guid?
+  fullName: System.Guid?
+  spec.csharp:
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: '?'
+  spec.vb:
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Inventory.Contracts.LocationInput.BranchCode*
+  commentId: Overload:Inventory.Contracts.LocationInput.BranchCode
+  href: Inventory.Contracts.LocationInput.html#Inventory_Contracts_LocationInput_BranchCode
+  name: BranchCode
+  nameWithType: LocationInput.BranchCode
+  fullName: Inventory.Contracts.LocationInput.BranchCode
+- uid: Inventory.Contracts.LocationInput.Address*
+  commentId: Overload:Inventory.Contracts.LocationInput.Address
+  href: Inventory.Contracts.LocationInput.html#Inventory_Contracts_LocationInput_Address
+  name: Address
+  nameWithType: LocationInput.Address
+  fullName: Inventory.Contracts.LocationInput.Address
+- uid: Inventory.Contracts.LocationInput.IsActive*
+  commentId: Overload:Inventory.Contracts.LocationInput.IsActive
+  href: Inventory.Contracts.LocationInput.html#Inventory_Contracts_LocationInput_IsActive
+  name: IsActive
+  nameWithType: LocationInput.IsActive
+  fullName: Inventory.Contracts.LocationInput.IsActive
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean

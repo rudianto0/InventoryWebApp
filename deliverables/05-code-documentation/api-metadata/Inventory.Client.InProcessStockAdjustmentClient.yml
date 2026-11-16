@@ -1,0 +1,1324 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Client.InProcessStockAdjustmentClient
+  commentId: T:Inventory.Client.InProcessStockAdjustmentClient
+  id: InProcessStockAdjustmentClient
+  parent: Inventory.Client
+  children:
+  - Inventory.Client.InProcessStockAdjustmentClient.#ctor(Inventory.Application.Services.StockAdjustmentService)
+  - Inventory.Client.InProcessStockAdjustmentClient.ApproveAsync(System.Guid,System.String,System.Threading.CancellationToken)
+  - Inventory.Client.InProcessStockAdjustmentClient.CreateAsync(Inventory.Contracts.StockAdjustmentInput,System.Threading.CancellationToken)
+  - Inventory.Client.InProcessStockAdjustmentClient.DeleteAsync(System.Guid,System.Threading.CancellationToken)
+  - Inventory.Client.InProcessStockAdjustmentClient.GetDetailAsync(System.Guid,System.Threading.CancellationToken)
+  - Inventory.Client.InProcessStockAdjustmentClient.ListAsync(Inventory.Contracts.TransactionFilter,System.Threading.CancellationToken)
+  - Inventory.Client.InProcessStockAdjustmentClient.RejectAsync(System.Guid,System.String,System.Threading.CancellationToken)
+  - Inventory.Client.InProcessStockAdjustmentClient.SubmitAsync(System.Guid,System.Threading.CancellationToken)
+  - Inventory.Client.InProcessStockAdjustmentClient.UpdateAsync(System.Guid,Inventory.Contracts.StockAdjustmentInput,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: InProcessStockAdjustmentClient
+  nameWithType: InProcessStockAdjustmentClient
+  fullName: Inventory.Client.InProcessStockAdjustmentClient
+  type: Class
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: InProcessStockAdjustmentClient
+    path: ../../src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 89
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  syntax:
+    content: 'public sealed class InProcessStockAdjustmentClient : IStockAdjustmentClient'
+    content.vb: Public NotInheritable Class InProcessStockAdjustmentClient Implements IStockAdjustmentClient
+  inheritance:
+  - System.Object
+  implements:
+  - Inventory.Client.IStockAdjustmentClient
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Inventory.Client.InProcessStockAdjustmentClient.#ctor(Inventory.Application.Services.StockAdjustmentService)
+  commentId: M:Inventory.Client.InProcessStockAdjustmentClient.#ctor(Inventory.Application.Services.StockAdjustmentService)
+  id: '#ctor(Inventory.Application.Services.StockAdjustmentService)'
+  parent: Inventory.Client.InProcessStockAdjustmentClient
+  langs:
+  - csharp
+  - vb
+  name: InProcessStockAdjustmentClient(StockAdjustmentService)
+  nameWithType: InProcessStockAdjustmentClient.InProcessStockAdjustmentClient(StockAdjustmentService)
+  fullName: Inventory.Client.InProcessStockAdjustmentClient.InProcessStockAdjustmentClient(Inventory.Application.Services.StockAdjustmentService)
+  type: Constructor
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: .ctor
+    path: ../../src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 89
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  syntax:
+    content: public InProcessStockAdjustmentClient(StockAdjustmentService service)
+    parameters:
+    - id: service
+      type: Inventory.Application.Services.StockAdjustmentService
+    content.vb: Public Sub New(service As StockAdjustmentService)
+  overload: Inventory.Client.InProcessStockAdjustmentClient.#ctor*
+  nameWithType.vb: InProcessStockAdjustmentClient.New(StockAdjustmentService)
+  fullName.vb: Inventory.Client.InProcessStockAdjustmentClient.New(Inventory.Application.Services.StockAdjustmentService)
+  name.vb: New(StockAdjustmentService)
+- uid: Inventory.Client.InProcessStockAdjustmentClient.ListAsync(Inventory.Contracts.TransactionFilter,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.InProcessStockAdjustmentClient.ListAsync(Inventory.Contracts.TransactionFilter,System.Threading.CancellationToken)
+  id: ListAsync(Inventory.Contracts.TransactionFilter,System.Threading.CancellationToken)
+  parent: Inventory.Client.InProcessStockAdjustmentClient
+  langs:
+  - csharp
+  - vb
+  name: ListAsync(TransactionFilter, CancellationToken)
+  nameWithType: InProcessStockAdjustmentClient.ListAsync(TransactionFilter, CancellationToken)
+  fullName: Inventory.Client.InProcessStockAdjustmentClient.ListAsync(Inventory.Contracts.TransactionFilter, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ListAsync
+    path: ../../src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 91
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  example: []
+  syntax:
+    content: public Task<PagedResult<TransactionListItem>> ListAsync(TransactionFilter filter, CancellationToken ct = default)
+    parameters:
+    - id: filter
+      type: Inventory.Contracts.TransactionFilter
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{Inventory.Contracts.PagedResult{Inventory.Contracts.TransactionListItem}}
+    content.vb: Public Function ListAsync(filter As TransactionFilter, ct As CancellationToken = Nothing) As Task(Of PagedResult(Of TransactionListItem))
+  overload: Inventory.Client.InProcessStockAdjustmentClient.ListAsync*
+  implements:
+  - Inventory.Client.IStockAdjustmentClient.ListAsync(Inventory.Contracts.TransactionFilter,System.Threading.CancellationToken)
+- uid: Inventory.Client.InProcessStockAdjustmentClient.GetDetailAsync(System.Guid,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.InProcessStockAdjustmentClient.GetDetailAsync(System.Guid,System.Threading.CancellationToken)
+  id: GetDetailAsync(System.Guid,System.Threading.CancellationToken)
+  parent: Inventory.Client.InProcessStockAdjustmentClient
+  langs:
+  - csharp
+  - vb
+  name: GetDetailAsync(Guid, CancellationToken)
+  nameWithType: InProcessStockAdjustmentClient.GetDetailAsync(Guid, CancellationToken)
+  fullName: Inventory.Client.InProcessStockAdjustmentClient.GetDetailAsync(System.Guid, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: GetDetailAsync
+    path: ../../src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 92
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  example: []
+  syntax:
+    content: public Task<TransactionDetailView?> GetDetailAsync(Guid id, CancellationToken ct = default)
+    parameters:
+    - id: id
+      type: System.Guid
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{Inventory.Contracts.TransactionDetailView}
+    content.vb: Public Function GetDetailAsync(id As Guid, ct As CancellationToken = Nothing) As Task(Of TransactionDetailView)
+  overload: Inventory.Client.InProcessStockAdjustmentClient.GetDetailAsync*
+  implements:
+  - Inventory.Client.IStockAdjustmentClient.GetDetailAsync(System.Guid,System.Threading.CancellationToken)
+- uid: Inventory.Client.InProcessStockAdjustmentClient.CreateAsync(Inventory.Contracts.StockAdjustmentInput,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.InProcessStockAdjustmentClient.CreateAsync(Inventory.Contracts.StockAdjustmentInput,System.Threading.CancellationToken)
+  id: CreateAsync(Inventory.Contracts.StockAdjustmentInput,System.Threading.CancellationToken)
+  parent: Inventory.Client.InProcessStockAdjustmentClient
+  langs:
+  - csharp
+  - vb
+  name: CreateAsync(StockAdjustmentInput, CancellationToken)
+  nameWithType: InProcessStockAdjustmentClient.CreateAsync(StockAdjustmentInput, CancellationToken)
+  fullName: Inventory.Client.InProcessStockAdjustmentClient.CreateAsync(Inventory.Contracts.StockAdjustmentInput, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: CreateAsync
+    path: ../../src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 93
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  example: []
+  syntax:
+    content: public Task<TransactionCreatedResponse> CreateAsync(StockAdjustmentInput input, CancellationToken ct = default)
+    parameters:
+    - id: input
+      type: Inventory.Contracts.StockAdjustmentInput
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{Inventory.Contracts.TransactionCreatedResponse}
+    content.vb: Public Function CreateAsync(input As StockAdjustmentInput, ct As CancellationToken = Nothing) As Task(Of TransactionCreatedResponse)
+  overload: Inventory.Client.InProcessStockAdjustmentClient.CreateAsync*
+  implements:
+  - Inventory.Client.IStockAdjustmentClient.CreateAsync(Inventory.Contracts.StockAdjustmentInput,System.Threading.CancellationToken)
+- uid: Inventory.Client.InProcessStockAdjustmentClient.UpdateAsync(System.Guid,Inventory.Contracts.StockAdjustmentInput,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.InProcessStockAdjustmentClient.UpdateAsync(System.Guid,Inventory.Contracts.StockAdjustmentInput,System.Threading.CancellationToken)
+  id: UpdateAsync(System.Guid,Inventory.Contracts.StockAdjustmentInput,System.Threading.CancellationToken)
+  parent: Inventory.Client.InProcessStockAdjustmentClient
+  langs:
+  - csharp
+  - vb
+  name: UpdateAsync(Guid, StockAdjustmentInput, CancellationToken)
+  nameWithType: InProcessStockAdjustmentClient.UpdateAsync(Guid, StockAdjustmentInput, CancellationToken)
+  fullName: Inventory.Client.InProcessStockAdjustmentClient.UpdateAsync(System.Guid, Inventory.Contracts.StockAdjustmentInput, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: UpdateAsync
+    path: ../../src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 94
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  example: []
+  syntax:
+    content: public Task UpdateAsync(Guid id, StockAdjustmentInput input, CancellationToken ct = default)
+    parameters:
+    - id: id
+      type: System.Guid
+    - id: input
+      type: Inventory.Contracts.StockAdjustmentInput
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function UpdateAsync(id As Guid, input As StockAdjustmentInput, ct As CancellationToken = Nothing) As Task
+  overload: Inventory.Client.InProcessStockAdjustmentClient.UpdateAsync*
+  implements:
+  - Inventory.Client.IStockAdjustmentClient.UpdateAsync(System.Guid,Inventory.Contracts.StockAdjustmentInput,System.Threading.CancellationToken)
+- uid: Inventory.Client.InProcessStockAdjustmentClient.DeleteAsync(System.Guid,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.InProcessStockAdjustmentClient.DeleteAsync(System.Guid,System.Threading.CancellationToken)
+  id: DeleteAsync(System.Guid,System.Threading.CancellationToken)
+  parent: Inventory.Client.InProcessStockAdjustmentClient
+  langs:
+  - csharp
+  - vb
+  name: DeleteAsync(Guid, CancellationToken)
+  nameWithType: InProcessStockAdjustmentClient.DeleteAsync(Guid, CancellationToken)
+  fullName: Inventory.Client.InProcessStockAdjustmentClient.DeleteAsync(System.Guid, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: DeleteAsync
+    path: ../../src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 95
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  example: []
+  syntax:
+    content: public Task DeleteAsync(Guid id, CancellationToken ct = default)
+    parameters:
+    - id: id
+      type: System.Guid
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function DeleteAsync(id As Guid, ct As CancellationToken = Nothing) As Task
+  overload: Inventory.Client.InProcessStockAdjustmentClient.DeleteAsync*
+  implements:
+  - Inventory.Client.IStockAdjustmentClient.DeleteAsync(System.Guid,System.Threading.CancellationToken)
+- uid: Inventory.Client.InProcessStockAdjustmentClient.SubmitAsync(System.Guid,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.InProcessStockAdjustmentClient.SubmitAsync(System.Guid,System.Threading.CancellationToken)
+  id: SubmitAsync(System.Guid,System.Threading.CancellationToken)
+  parent: Inventory.Client.InProcessStockAdjustmentClient
+  langs:
+  - csharp
+  - vb
+  name: SubmitAsync(Guid, CancellationToken)
+  nameWithType: InProcessStockAdjustmentClient.SubmitAsync(Guid, CancellationToken)
+  fullName: Inventory.Client.InProcessStockAdjustmentClient.SubmitAsync(System.Guid, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: SubmitAsync
+    path: ../../src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 96
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  example: []
+  syntax:
+    content: public Task SubmitAsync(Guid id, CancellationToken ct = default)
+    parameters:
+    - id: id
+      type: System.Guid
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function SubmitAsync(id As Guid, ct As CancellationToken = Nothing) As Task
+  overload: Inventory.Client.InProcessStockAdjustmentClient.SubmitAsync*
+  implements:
+  - Inventory.Client.IStockAdjustmentClient.SubmitAsync(System.Guid,System.Threading.CancellationToken)
+- uid: Inventory.Client.InProcessStockAdjustmentClient.ApproveAsync(System.Guid,System.String,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.InProcessStockAdjustmentClient.ApproveAsync(System.Guid,System.String,System.Threading.CancellationToken)
+  id: ApproveAsync(System.Guid,System.String,System.Threading.CancellationToken)
+  parent: Inventory.Client.InProcessStockAdjustmentClient
+  langs:
+  - csharp
+  - vb
+  name: ApproveAsync(Guid, string?, CancellationToken)
+  nameWithType: InProcessStockAdjustmentClient.ApproveAsync(Guid, string?, CancellationToken)
+  fullName: Inventory.Client.InProcessStockAdjustmentClient.ApproveAsync(System.Guid, string?, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ApproveAsync
+    path: ../../src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 97
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  example: []
+  syntax:
+    content: public Task ApproveAsync(Guid id, string? notes = null, CancellationToken ct = default)
+    parameters:
+    - id: id
+      type: System.Guid
+    - id: notes
+      type: System.String
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function ApproveAsync(id As Guid, notes As String = Nothing, ct As CancellationToken = Nothing) As Task
+  overload: Inventory.Client.InProcessStockAdjustmentClient.ApproveAsync*
+  implements:
+  - Inventory.Client.IStockAdjustmentClient.ApproveAsync(System.Guid,System.String,System.Threading.CancellationToken)
+  nameWithType.vb: InProcessStockAdjustmentClient.ApproveAsync(Guid, String, CancellationToken)
+  fullName.vb: Inventory.Client.InProcessStockAdjustmentClient.ApproveAsync(System.Guid, String, System.Threading.CancellationToken)
+  name.vb: ApproveAsync(Guid, String, CancellationToken)
+- uid: Inventory.Client.InProcessStockAdjustmentClient.RejectAsync(System.Guid,System.String,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.InProcessStockAdjustmentClient.RejectAsync(System.Guid,System.String,System.Threading.CancellationToken)
+  id: RejectAsync(System.Guid,System.String,System.Threading.CancellationToken)
+  parent: Inventory.Client.InProcessStockAdjustmentClient
+  langs:
+  - csharp
+  - vb
+  name: RejectAsync(Guid, string, CancellationToken)
+  nameWithType: InProcessStockAdjustmentClient.RejectAsync(Guid, string, CancellationToken)
+  fullName: Inventory.Client.InProcessStockAdjustmentClient.RejectAsync(System.Guid, string, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: RejectAsync
+    path: ../../src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 98
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  example: []
+  syntax:
+    content: public Task RejectAsync(Guid id, string reason, CancellationToken ct = default)
+    parameters:
+    - id: id
+      type: System.Guid
+    - id: reason
+      type: System.String
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function RejectAsync(id As Guid, reason As String, ct As CancellationToken = Nothing) As Task
+  overload: Inventory.Client.InProcessStockAdjustmentClient.RejectAsync*
+  implements:
+  - Inventory.Client.IStockAdjustmentClient.RejectAsync(System.Guid,System.String,System.Threading.CancellationToken)
+  nameWithType.vb: InProcessStockAdjustmentClient.RejectAsync(Guid, String, CancellationToken)
+  fullName.vb: Inventory.Client.InProcessStockAdjustmentClient.RejectAsync(System.Guid, String, System.Threading.CancellationToken)
+  name.vb: RejectAsync(Guid, String, CancellationToken)
+references:
+- uid: Inventory.Client
+  commentId: N:Inventory.Client
+  name: Inventory.Client
+  nameWithType: Inventory.Client
+  fullName: Inventory.Client
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Client
+    name: Client
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Client
+    name: Client
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Inventory.Client.IStockAdjustmentClient
+  commentId: T:Inventory.Client.IStockAdjustmentClient
+  parent: Inventory.Client
+  href: Inventory.Client.IStockAdjustmentClient.html
+  name: IStockAdjustmentClient
+  nameWithType: IStockAdjustmentClient
+  fullName: Inventory.Client.IStockAdjustmentClient
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Inventory.Client.InProcessStockAdjustmentClient.#ctor*
+  commentId: Overload:Inventory.Client.InProcessStockAdjustmentClient.#ctor
+  href: Inventory.Client.InProcessStockAdjustmentClient.html#Inventory_Client_InProcessStockAdjustmentClient__ctor_Inventory_Application_Services_StockAdjustmentService_
+  name: InProcessStockAdjustmentClient
+  nameWithType: InProcessStockAdjustmentClient.InProcessStockAdjustmentClient
+  fullName: Inventory.Client.InProcessStockAdjustmentClient.InProcessStockAdjustmentClient
+  nameWithType.vb: InProcessStockAdjustmentClient.New
+  fullName.vb: Inventory.Client.InProcessStockAdjustmentClient.New
+  name.vb: New
+- uid: Inventory.Application.Services.StockAdjustmentService
+  commentId: T:Inventory.Application.Services.StockAdjustmentService
+  parent: Inventory.Application.Services
+  href: Inventory.Application.Services.StockAdjustmentService.html
+  name: StockAdjustmentService
+  nameWithType: StockAdjustmentService
+  fullName: Inventory.Application.Services.StockAdjustmentService
+- uid: Inventory.Application.Services
+  commentId: N:Inventory.Application.Services
+  name: Inventory.Application.Services
+  nameWithType: Inventory.Application.Services
+  fullName: Inventory.Application.Services
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Application
+    name: Application
+  - name: .
+  - uid: Inventory.Application.Services
+    name: Services
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Application
+    name: Application
+  - name: .
+  - uid: Inventory.Application.Services
+    name: Services
+- uid: Inventory.Client.InProcessStockAdjustmentClient.ListAsync*
+  commentId: Overload:Inventory.Client.InProcessStockAdjustmentClient.ListAsync
+  href: Inventory.Client.InProcessStockAdjustmentClient.html#Inventory_Client_InProcessStockAdjustmentClient_ListAsync_Inventory_Contracts_TransactionFilter_System_Threading_CancellationToken_
+  name: ListAsync
+  nameWithType: InProcessStockAdjustmentClient.ListAsync
+  fullName: Inventory.Client.InProcessStockAdjustmentClient.ListAsync
+- uid: Inventory.Client.IStockAdjustmentClient.ListAsync(Inventory.Contracts.TransactionFilter,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.IStockAdjustmentClient.ListAsync(Inventory.Contracts.TransactionFilter,System.Threading.CancellationToken)
+  parent: Inventory.Client.IStockAdjustmentClient
+  isExternal: true
+  href: Inventory.Client.IStockAdjustmentClient.html#Inventory_Client_IStockAdjustmentClient_ListAsync_Inventory_Contracts_TransactionFilter_System_Threading_CancellationToken_
+  name: ListAsync(TransactionFilter, CancellationToken)
+  nameWithType: IStockAdjustmentClient.ListAsync(TransactionFilter, CancellationToken)
+  fullName: Inventory.Client.IStockAdjustmentClient.ListAsync(Inventory.Contracts.TransactionFilter, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Client.IStockAdjustmentClient.ListAsync(Inventory.Contracts.TransactionFilter,System.Threading.CancellationToken)
+    name: ListAsync
+    href: Inventory.Client.IStockAdjustmentClient.html#Inventory_Client_IStockAdjustmentClient_ListAsync_Inventory_Contracts_TransactionFilter_System_Threading_CancellationToken_
+  - name: (
+  - uid: Inventory.Contracts.TransactionFilter
+    name: TransactionFilter
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Client.IStockAdjustmentClient.ListAsync(Inventory.Contracts.TransactionFilter,System.Threading.CancellationToken)
+    name: ListAsync
+    href: Inventory.Client.IStockAdjustmentClient.html#Inventory_Client_IStockAdjustmentClient_ListAsync_Inventory_Contracts_TransactionFilter_System_Threading_CancellationToken_
+  - name: (
+  - uid: Inventory.Contracts.TransactionFilter
+    name: TransactionFilter
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Inventory.Contracts.TransactionFilter
+  commentId: T:Inventory.Contracts.TransactionFilter
+  parent: Inventory.Contracts
+  href: Inventory.Contracts.TransactionFilter.html
+  name: TransactionFilter
+  nameWithType: TransactionFilter
+  fullName: Inventory.Contracts.TransactionFilter
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{Inventory.Contracts.PagedResult{Inventory.Contracts.TransactionListItem}}
+  commentId: T:System.Threading.Tasks.Task{Inventory.Contracts.PagedResult{Inventory.Contracts.TransactionListItem}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<PagedResult<TransactionListItem>>
+  nameWithType: Task<PagedResult<TransactionListItem>>
+  fullName: System.Threading.Tasks.Task<Inventory.Contracts.PagedResult<Inventory.Contracts.TransactionListItem>>
+  nameWithType.vb: Task(Of PagedResult(Of TransactionListItem))
+  fullName.vb: System.Threading.Tasks.Task(Of Inventory.Contracts.PagedResult(Of Inventory.Contracts.TransactionListItem))
+  name.vb: Task(Of PagedResult(Of TransactionListItem))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Inventory.Contracts.PagedResult`1
+    name: PagedResult
+    href: Inventory.Contracts.PagedResult-1.html
+  - name: <
+  - uid: Inventory.Contracts.TransactionListItem
+    name: TransactionListItem
+    href: Inventory.Contracts.TransactionListItem.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.PagedResult`1
+    name: PagedResult
+    href: Inventory.Contracts.PagedResult-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.TransactionListItem
+    name: TransactionListItem
+    href: Inventory.Contracts.TransactionListItem.html
+  - name: )
+  - name: )
+- uid: Inventory.Contracts
+  commentId: N:Inventory.Contracts
+  name: Inventory.Contracts
+  nameWithType: Inventory.Contracts
+  fullName: Inventory.Contracts
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: Inventory.Client.InProcessStockAdjustmentClient.GetDetailAsync*
+  commentId: Overload:Inventory.Client.InProcessStockAdjustmentClient.GetDetailAsync
+  href: Inventory.Client.InProcessStockAdjustmentClient.html#Inventory_Client_InProcessStockAdjustmentClient_GetDetailAsync_System_Guid_System_Threading_CancellationToken_
+  name: GetDetailAsync
+  nameWithType: InProcessStockAdjustmentClient.GetDetailAsync
+  fullName: Inventory.Client.InProcessStockAdjustmentClient.GetDetailAsync
+- uid: Inventory.Client.IStockAdjustmentClient.GetDetailAsync(System.Guid,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.IStockAdjustmentClient.GetDetailAsync(System.Guid,System.Threading.CancellationToken)
+  parent: Inventory.Client.IStockAdjustmentClient
+  isExternal: true
+  href: Inventory.Client.IStockAdjustmentClient.html#Inventory_Client_IStockAdjustmentClient_GetDetailAsync_System_Guid_System_Threading_CancellationToken_
+  name: GetDetailAsync(Guid, CancellationToken)
+  nameWithType: IStockAdjustmentClient.GetDetailAsync(Guid, CancellationToken)
+  fullName: Inventory.Client.IStockAdjustmentClient.GetDetailAsync(System.Guid, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Client.IStockAdjustmentClient.GetDetailAsync(System.Guid,System.Threading.CancellationToken)
+    name: GetDetailAsync
+    href: Inventory.Client.IStockAdjustmentClient.html#Inventory_Client_IStockAdjustmentClient_GetDetailAsync_System_Guid_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Client.IStockAdjustmentClient.GetDetailAsync(System.Guid,System.Threading.CancellationToken)
+    name: GetDetailAsync
+    href: Inventory.Client.IStockAdjustmentClient.html#Inventory_Client_IStockAdjustmentClient_GetDetailAsync_System_Guid_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: System.Threading.Tasks.Task{Inventory.Contracts.TransactionDetailView}
+  commentId: T:System.Threading.Tasks.Task{Inventory.Contracts.TransactionDetailView}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TransactionDetailView>
+  nameWithType: Task<TransactionDetailView>
+  fullName: System.Threading.Tasks.Task<Inventory.Contracts.TransactionDetailView>
+  nameWithType.vb: Task(Of TransactionDetailView)
+  fullName.vb: System.Threading.Tasks.Task(Of Inventory.Contracts.TransactionDetailView)
+  name.vb: Task(Of TransactionDetailView)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Inventory.Contracts.TransactionDetailView
+    name: TransactionDetailView
+    href: Inventory.Contracts.TransactionDetailView.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.TransactionDetailView
+    name: TransactionDetailView
+    href: Inventory.Contracts.TransactionDetailView.html
+  - name: )
+- uid: Inventory.Client.InProcessStockAdjustmentClient.CreateAsync*
+  commentId: Overload:Inventory.Client.InProcessStockAdjustmentClient.CreateAsync
+  href: Inventory.Client.InProcessStockAdjustmentClient.html#Inventory_Client_InProcessStockAdjustmentClient_CreateAsync_Inventory_Contracts_StockAdjustmentInput_System_Threading_CancellationToken_
+  name: CreateAsync
+  nameWithType: InProcessStockAdjustmentClient.CreateAsync
+  fullName: Inventory.Client.InProcessStockAdjustmentClient.CreateAsync
+- uid: Inventory.Client.IStockAdjustmentClient.CreateAsync(Inventory.Contracts.StockAdjustmentInput,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.IStockAdjustmentClient.CreateAsync(Inventory.Contracts.StockAdjustmentInput,System.Threading.CancellationToken)
+  parent: Inventory.Client.IStockAdjustmentClient
+  isExternal: true
+  href: Inventory.Client.IStockAdjustmentClient.html#Inventory_Client_IStockAdjustmentClient_CreateAsync_Inventory_Contracts_StockAdjustmentInput_System_Threading_CancellationToken_
+  name: CreateAsync(StockAdjustmentInput, CancellationToken)
+  nameWithType: IStockAdjustmentClient.CreateAsync(StockAdjustmentInput, CancellationToken)
+  fullName: Inventory.Client.IStockAdjustmentClient.CreateAsync(Inventory.Contracts.StockAdjustmentInput, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Client.IStockAdjustmentClient.CreateAsync(Inventory.Contracts.StockAdjustmentInput,System.Threading.CancellationToken)
+    name: CreateAsync
+    href: Inventory.Client.IStockAdjustmentClient.html#Inventory_Client_IStockAdjustmentClient_CreateAsync_Inventory_Contracts_StockAdjustmentInput_System_Threading_CancellationToken_
+  - name: (
+  - uid: Inventory.Contracts.StockAdjustmentInput
+    name: StockAdjustmentInput
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Client.IStockAdjustmentClient.CreateAsync(Inventory.Contracts.StockAdjustmentInput,System.Threading.CancellationToken)
+    name: CreateAsync
+    href: Inventory.Client.IStockAdjustmentClient.html#Inventory_Client_IStockAdjustmentClient_CreateAsync_Inventory_Contracts_StockAdjustmentInput_System_Threading_CancellationToken_
+  - name: (
+  - uid: Inventory.Contracts.StockAdjustmentInput
+    name: StockAdjustmentInput
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Inventory.Contracts.StockAdjustmentInput
+  commentId: T:Inventory.Contracts.StockAdjustmentInput
+  parent: Inventory.Contracts
+  href: Inventory.Contracts.StockAdjustmentInput.html
+  name: StockAdjustmentInput
+  nameWithType: StockAdjustmentInput
+  fullName: Inventory.Contracts.StockAdjustmentInput
+- uid: System.Threading.Tasks.Task{Inventory.Contracts.TransactionCreatedResponse}
+  commentId: T:System.Threading.Tasks.Task{Inventory.Contracts.TransactionCreatedResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TransactionCreatedResponse>
+  nameWithType: Task<TransactionCreatedResponse>
+  fullName: System.Threading.Tasks.Task<Inventory.Contracts.TransactionCreatedResponse>
+  nameWithType.vb: Task(Of TransactionCreatedResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Inventory.Contracts.TransactionCreatedResponse)
+  name.vb: Task(Of TransactionCreatedResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Inventory.Contracts.TransactionCreatedResponse
+    name: TransactionCreatedResponse
+    href: Inventory.Contracts.TransactionCreatedResponse.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.TransactionCreatedResponse
+    name: TransactionCreatedResponse
+    href: Inventory.Contracts.TransactionCreatedResponse.html
+  - name: )
+- uid: Inventory.Client.InProcessStockAdjustmentClient.UpdateAsync*
+  commentId: Overload:Inventory.Client.InProcessStockAdjustmentClient.UpdateAsync
+  href: Inventory.Client.InProcessStockAdjustmentClient.html#Inventory_Client_InProcessStockAdjustmentClient_UpdateAsync_System_Guid_Inventory_Contracts_StockAdjustmentInput_System_Threading_CancellationToken_
+  name: UpdateAsync
+  nameWithType: InProcessStockAdjustmentClient.UpdateAsync
+  fullName: Inventory.Client.InProcessStockAdjustmentClient.UpdateAsync
+- uid: Inventory.Client.IStockAdjustmentClient.UpdateAsync(System.Guid,Inventory.Contracts.StockAdjustmentInput,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.IStockAdjustmentClient.UpdateAsync(System.Guid,Inventory.Contracts.StockAdjustmentInput,System.Threading.CancellationToken)
+  parent: Inventory.Client.IStockAdjustmentClient
+  isExternal: true
+  href: Inventory.Client.IStockAdjustmentClient.html#Inventory_Client_IStockAdjustmentClient_UpdateAsync_System_Guid_Inventory_Contracts_StockAdjustmentInput_System_Threading_CancellationToken_
+  name: UpdateAsync(Guid, StockAdjustmentInput, CancellationToken)
+  nameWithType: IStockAdjustmentClient.UpdateAsync(Guid, StockAdjustmentInput, CancellationToken)
+  fullName: Inventory.Client.IStockAdjustmentClient.UpdateAsync(System.Guid, Inventory.Contracts.StockAdjustmentInput, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Client.IStockAdjustmentClient.UpdateAsync(System.Guid,Inventory.Contracts.StockAdjustmentInput,System.Threading.CancellationToken)
+    name: UpdateAsync
+    href: Inventory.Client.IStockAdjustmentClient.html#Inventory_Client_IStockAdjustmentClient_UpdateAsync_System_Guid_Inventory_Contracts_StockAdjustmentInput_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: Inventory.Contracts.StockAdjustmentInput
+    name: StockAdjustmentInput
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Client.IStockAdjustmentClient.UpdateAsync(System.Guid,Inventory.Contracts.StockAdjustmentInput,System.Threading.CancellationToken)
+    name: UpdateAsync
+    href: Inventory.Client.IStockAdjustmentClient.html#Inventory_Client_IStockAdjustmentClient_UpdateAsync_System_Guid_Inventory_Contracts_StockAdjustmentInput_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: Inventory.Contracts.StockAdjustmentInput
+    name: StockAdjustmentInput
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: Inventory.Client.InProcessStockAdjustmentClient.DeleteAsync*
+  commentId: Overload:Inventory.Client.InProcessStockAdjustmentClient.DeleteAsync
+  href: Inventory.Client.InProcessStockAdjustmentClient.html#Inventory_Client_InProcessStockAdjustmentClient_DeleteAsync_System_Guid_System_Threading_CancellationToken_
+  name: DeleteAsync
+  nameWithType: InProcessStockAdjustmentClient.DeleteAsync
+  fullName: Inventory.Client.InProcessStockAdjustmentClient.DeleteAsync
+- uid: Inventory.Client.IStockAdjustmentClient.DeleteAsync(System.Guid,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.IStockAdjustmentClient.DeleteAsync(System.Guid,System.Threading.CancellationToken)
+  parent: Inventory.Client.IStockAdjustmentClient
+  isExternal: true
+  href: Inventory.Client.IStockAdjustmentClient.html#Inventory_Client_IStockAdjustmentClient_DeleteAsync_System_Guid_System_Threading_CancellationToken_
+  name: DeleteAsync(Guid, CancellationToken)
+  nameWithType: IStockAdjustmentClient.DeleteAsync(Guid, CancellationToken)
+  fullName: Inventory.Client.IStockAdjustmentClient.DeleteAsync(System.Guid, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Client.IStockAdjustmentClient.DeleteAsync(System.Guid,System.Threading.CancellationToken)
+    name: DeleteAsync
+    href: Inventory.Client.IStockAdjustmentClient.html#Inventory_Client_IStockAdjustmentClient_DeleteAsync_System_Guid_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Client.IStockAdjustmentClient.DeleteAsync(System.Guid,System.Threading.CancellationToken)
+    name: DeleteAsync
+    href: Inventory.Client.IStockAdjustmentClient.html#Inventory_Client_IStockAdjustmentClient_DeleteAsync_System_Guid_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Inventory.Client.InProcessStockAdjustmentClient.SubmitAsync*
+  commentId: Overload:Inventory.Client.InProcessStockAdjustmentClient.SubmitAsync
+  href: Inventory.Client.InProcessStockAdjustmentClient.html#Inventory_Client_InProcessStockAdjustmentClient_SubmitAsync_System_Guid_System_Threading_CancellationToken_
+  name: SubmitAsync
+  nameWithType: InProcessStockAdjustmentClient.SubmitAsync
+  fullName: Inventory.Client.InProcessStockAdjustmentClient.SubmitAsync
+- uid: Inventory.Client.IStockAdjustmentClient.SubmitAsync(System.Guid,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.IStockAdjustmentClient.SubmitAsync(System.Guid,System.Threading.CancellationToken)
+  parent: Inventory.Client.IStockAdjustmentClient
+  isExternal: true
+  href: Inventory.Client.IStockAdjustmentClient.html#Inventory_Client_IStockAdjustmentClient_SubmitAsync_System_Guid_System_Threading_CancellationToken_
+  name: SubmitAsync(Guid, CancellationToken)
+  nameWithType: IStockAdjustmentClient.SubmitAsync(Guid, CancellationToken)
+  fullName: Inventory.Client.IStockAdjustmentClient.SubmitAsync(System.Guid, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Client.IStockAdjustmentClient.SubmitAsync(System.Guid,System.Threading.CancellationToken)
+    name: SubmitAsync
+    href: Inventory.Client.IStockAdjustmentClient.html#Inventory_Client_IStockAdjustmentClient_SubmitAsync_System_Guid_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Client.IStockAdjustmentClient.SubmitAsync(System.Guid,System.Threading.CancellationToken)
+    name: SubmitAsync
+    href: Inventory.Client.IStockAdjustmentClient.html#Inventory_Client_IStockAdjustmentClient_SubmitAsync_System_Guid_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Inventory.Client.InProcessStockAdjustmentClient.ApproveAsync*
+  commentId: Overload:Inventory.Client.InProcessStockAdjustmentClient.ApproveAsync
+  href: Inventory.Client.InProcessStockAdjustmentClient.html#Inventory_Client_InProcessStockAdjustmentClient_ApproveAsync_System_Guid_System_String_System_Threading_CancellationToken_
+  name: ApproveAsync
+  nameWithType: InProcessStockAdjustmentClient.ApproveAsync
+  fullName: Inventory.Client.InProcessStockAdjustmentClient.ApproveAsync
+- uid: Inventory.Client.IStockAdjustmentClient.ApproveAsync(System.Guid,System.String,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.IStockAdjustmentClient.ApproveAsync(System.Guid,System.String,System.Threading.CancellationToken)
+  parent: Inventory.Client.IStockAdjustmentClient
+  isExternal: true
+  href: Inventory.Client.IStockAdjustmentClient.html#Inventory_Client_IStockAdjustmentClient_ApproveAsync_System_Guid_System_String_System_Threading_CancellationToken_
+  name: ApproveAsync(Guid, string, CancellationToken)
+  nameWithType: IStockAdjustmentClient.ApproveAsync(Guid, string, CancellationToken)
+  fullName: Inventory.Client.IStockAdjustmentClient.ApproveAsync(System.Guid, string, System.Threading.CancellationToken)
+  nameWithType.vb: IStockAdjustmentClient.ApproveAsync(Guid, String, CancellationToken)
+  fullName.vb: Inventory.Client.IStockAdjustmentClient.ApproveAsync(System.Guid, String, System.Threading.CancellationToken)
+  name.vb: ApproveAsync(Guid, String, CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Client.IStockAdjustmentClient.ApproveAsync(System.Guid,System.String,System.Threading.CancellationToken)
+    name: ApproveAsync
+    href: Inventory.Client.IStockAdjustmentClient.html#Inventory_Client_IStockAdjustmentClient_ApproveAsync_System_Guid_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Client.IStockAdjustmentClient.ApproveAsync(System.Guid,System.String,System.Threading.CancellationToken)
+    name: ApproveAsync
+    href: Inventory.Client.IStockAdjustmentClient.html#Inventory_Client_IStockAdjustmentClient_ApproveAsync_System_Guid_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Inventory.Client.InProcessStockAdjustmentClient.RejectAsync*
+  commentId: Overload:Inventory.Client.InProcessStockAdjustmentClient.RejectAsync
+  href: Inventory.Client.InProcessStockAdjustmentClient.html#Inventory_Client_InProcessStockAdjustmentClient_RejectAsync_System_Guid_System_String_System_Threading_CancellationToken_
+  name: RejectAsync
+  nameWithType: InProcessStockAdjustmentClient.RejectAsync
+  fullName: Inventory.Client.InProcessStockAdjustmentClient.RejectAsync
+- uid: Inventory.Client.IStockAdjustmentClient.RejectAsync(System.Guid,System.String,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.IStockAdjustmentClient.RejectAsync(System.Guid,System.String,System.Threading.CancellationToken)
+  parent: Inventory.Client.IStockAdjustmentClient
+  isExternal: true
+  href: Inventory.Client.IStockAdjustmentClient.html#Inventory_Client_IStockAdjustmentClient_RejectAsync_System_Guid_System_String_System_Threading_CancellationToken_
+  name: RejectAsync(Guid, string, CancellationToken)
+  nameWithType: IStockAdjustmentClient.RejectAsync(Guid, string, CancellationToken)
+  fullName: Inventory.Client.IStockAdjustmentClient.RejectAsync(System.Guid, string, System.Threading.CancellationToken)
+  nameWithType.vb: IStockAdjustmentClient.RejectAsync(Guid, String, CancellationToken)
+  fullName.vb: Inventory.Client.IStockAdjustmentClient.RejectAsync(System.Guid, String, System.Threading.CancellationToken)
+  name.vb: RejectAsync(Guid, String, CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Client.IStockAdjustmentClient.RejectAsync(System.Guid,System.String,System.Threading.CancellationToken)
+    name: RejectAsync
+    href: Inventory.Client.IStockAdjustmentClient.html#Inventory_Client_IStockAdjustmentClient_RejectAsync_System_Guid_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Client.IStockAdjustmentClient.RejectAsync(System.Guid,System.String,System.Threading.CancellationToken)
+    name: RejectAsync
+    href: Inventory.Client.IStockAdjustmentClient.html#Inventory_Client_IStockAdjustmentClient_RejectAsync_System_Guid_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )

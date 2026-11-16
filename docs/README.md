@@ -13,13 +13,11 @@ docs/
 ├─ 02-data-model.md          # ERD & entitas
 ├─ features/                 # 1 fitur = 1 file .md
 ├─ adr/                      # Architecture Decision Records
-├─ scalability/              # Analisis skalabilitas + Word doc
-├─ database/                 # Implementasi database + SQL + Word doc
-├─ database-access/          # Operasi, akses, koneksi, pengujian DB + Word doc
-├─ programming-fundamentals/ # Varian, flowchart, algoritma, kompleksitas + Word doc
-├─ code-documentation/       # Dokumentasi kode, method, API docs + Word doc
 └─ templates/
    └─ feature-template.md    # Template standar dokumen fitur
+
+deliverables/                # Dokumen hasil generate (skalabilitas, database, akses DB,
+                             # programming fundamentals, code documentation, manifest)
 ```
 
 ## Dokumen Fondasi
@@ -36,72 +34,21 @@ docs/
 | [adr/005-guid-soft-delete-audit.md](adr/005-guid-soft-delete-audit.md) | GUID untuk data bisnis, soft delete, dan audit user |
 | [adr/006-api-first-client-server.md](adr/006-api-first-client-server.md) | Boundary API-first: Contracts + Client, target pemisahan API/UI |
 
-## Dokumen Skalabilitas
+## Deliverables
 
-| File | Isi |
-|------|-----|
-| [scalability/README.md](scalability/README.md) | Index & asumsi analisis skalabilitas |
-| [scalability/01-lingkup-dan-lingkungan-operasi.md](scalability/01-lingkup-dan-lingkungan-operasi.md) | Butir 1.1 dan 1.2 |
-| [scalability/02-analisis-masalah-skalabilitas.md](scalability/02-analisis-masalah-skalabilitas.md) | Butir 2.1 |
-| [scalability/03-kompleksitas-dan-beban-kerja.md](scalability/03-kompleksitas-dan-beban-kerja.md) | Butir 2.2 |
-| [scalability/04-kebutuhan-perangkat-keras.md](scalability/04-kebutuhan-perangkat-keras.md) | Butir 2.3 |
-| [scalability/05-hasil-analisis.md](scalability/05-hasil-analisis.md) | Butir 2.4 |
-| `scalability/Inventory-Scalability-Analysis.docx` | Gabungan dalam format Word |
+Seluruh dokumen hasil generate (skalabilitas, implementasi database, akses basis data,
+dasar pemrograman, dan dokumentasi kode) dipindahkan ke folder deliverable:
 
-## Dokumen Database
+**[deliverables/README.md](../deliverables/README.md)**
 
-| File | Isi |
-|------|-----|
-| [database/README.md](database/README.md) | Index implementasi database PostgreSQL |
-| [database/02-migrasi-dan-seed-data.md](database/02-migrasi-dan-seed-data.md) | Migrasi schema + seed |
-| [database/03-indeks-dan-view.md](database/03-indeks-dan-view.md) | Indeks + view |
-| [database/04-operasi-relasional.md](database/04-operasi-relasional.md) | DML antar tabel/view |
-| [database/05-stored-procedure.md](database/05-stored-procedure.md) | Stored procedure |
-| [database/06-function.md](database/06-function.md) | Function |
-| [database/07-trigger.md](database/07-trigger.md) | Trigger |
-| [database/08-transaksi-commit-rollback.md](database/08-transaksi-commit-rollback.md) | Commit/rollback |
-| `database/Inventory-Database-Implementation.docx` | Dokumen Word |
-| `sql/postgresql/` | Script SQL siap eksekusi DBeaver |
-
-## Dokumen Akses Basis Data
-
-| File | Isi |
-|------|-----|
-| [database-access/README.md](database-access/README.md) | Index operasi & akses basis data |
-| [database-access/04-operasi-basis-data.md](database-access/04-operasi-basis-data.md) | Simpan/ubah, query, index |
-| [database-access/05-prosedur-akses-basis-data.md](database-access/05-prosedur-akses-basis-data.md) | Library & perintah akses |
-| [database-access/06-koneksi-basis-data.md](database-access/06-koneksi-basis-data.md) | Koneksi, keamanan, hak akses |
-| [database-access/07-pengujian-program-basis-data.md](database-access/07-pengujian-program-basis-data.md) | Skenario & uji performa |
-| `database-access/Inventory-Database-Access.docx` | Dokumen Word |
-| `sql/postgresql/10-roles-and-grants.sql` | Role & grant PostgreSQL |
-| `sql/postgresql/11-performance-tests.sql` | Query EXPLAIN & statistik |
-
-## Dokumen Dasar Pemrograman
-
-| File | Isi |
-|------|-----|
-| [programming-fundamentals/README.md](programming-fundamentals/README.md) | Index materi |
-| [programming-fundamentals/01-varian-dan-invarian.md](programming-fundamentals/01-varian-dan-invarian.md) | Tipe data, variabel, konstanta, invarian |
-| [programming-fundamentals/02-alur-logika-flowchart.md](programming-fundamentals/02-alur-logika-flowchart.md) | Flowchart + Mermaid + PNG |
-| [programming-fundamentals/03-algoritma-sorting-searching.md](programming-fundamentals/03-algoritma-sorting-searching.md) | Sorting, searching, pseudocode, C#, SQL |
-| [programming-fundamentals/04-prosedur-dan-fungsi.md](programming-fundamentals/04-prosedur-dan-fungsi.md) | Reuse, prosedur, fungsi |
-| [programming-fundamentals/05-kompleksitas-algoritma.md](programming-fundamentals/05-kompleksitas-algoritma.md) | Kompleksitas waktu & memori |
-| `programming-fundamentals/Inventory-Programming-Fundamentals.docx` | Dokumen Word + flowchart |
-
-## Dokumentasi Kode
-
-| File | Isi |
-|------|-----|
-| [code-documentation/README.md](code-documentation/README.md) | Index dokumentasi kode |
-| [code-documentation/01-identifikasi-modul.md](code-documentation/01-identifikasi-modul.md) | Modul + ID |
-| [code-documentation/02-parameter-dan-kontrak.md](code-documentation/02-parameter-dan-kontrak.md) | Parameter & DTO |
-| [code-documentation/03-algoritma-dan-definisi-masalah.md](code-documentation/03-algoritma-dan-definisi-masalah.md) | Algoritma |
-| [code-documentation/05-dokumentasi-modul.md](code-documentation/05-dokumentasi-modul.md) | Dokumentasi modul |
-| [code-documentation/06-dokumentasi-method.md](code-documentation/06-dokumentasi-method.md) | Dokumentasi method |
-| [code-documentation/07-katalog-eksepsi.md](code-documentation/07-katalog-eksepsi.md) | Katalog eksepsi |
-| [code-documentation/08-generate-dokumentasi.md](code-documentation/08-generate-dokumentasi.md) | DocFX & fallback |
-| `code-documentation/Inventory-Code-Documentation.docx` | Dokumen Word |
-| `code-documentation/api/_site/` | HTML API docs (DocFX) |
+| Section | Isi |
+|---|---|
+| [01-scalability-analysis](../deliverables/01-scalability-analysis/README.md) | Analisis skalabilitas + Word |
+| [02-database-implementation](../deliverables/02-database-implementation/README.md) | Migrasi, seed, index, view, procedure, function, trigger, transaksi + SQL per konteks |
+| [03-database-access-and-security](../deliverables/03-database-access-and-security/README.md) | Akses DB, koneksi, keamanan, role, performa |
+| [04-programming-fundamentals](../deliverables/04-programming-fundamentals/README.md) | Tipe data, flowchart, algoritma, kompleksitas |
+| [05-code-documentation](../deliverables/05-code-documentation/README.md) | Dokumentasi modul/method/eksepsi + DocFX |
+| [99-source-map](../deliverables/99-source-map/README.md) | Manifest & source commit |
 
 ## Index Fitur
 

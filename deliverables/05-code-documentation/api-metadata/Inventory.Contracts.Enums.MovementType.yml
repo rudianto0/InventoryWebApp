@@ -1,0 +1,221 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Contracts.Enums.MovementType
+  commentId: T:Inventory.Contracts.Enums.MovementType
+  id: MovementType
+  parent: Inventory.Contracts.Enums
+  children:
+  - Inventory.Contracts.Enums.MovementType.Adjustment
+  - Inventory.Contracts.Enums.MovementType.In
+  - Inventory.Contracts.Enums.MovementType.Opname
+  - Inventory.Contracts.Enums.MovementType.Out
+  - Inventory.Contracts.Enums.MovementType.TransferIn
+  - Inventory.Contracts.Enums.MovementType.TransferOut
+  langs:
+  - csharp
+  - vb
+  name: MovementType
+  nameWithType: MovementType
+  fullName: Inventory.Contracts.Enums.MovementType
+  type: Enum
+  source:
+    remote:
+      path: src/Inventory.Contracts/Enums.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: MovementType
+    path: ../../src/Inventory.Contracts/Enums.cs
+    startLine: 18
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts.Enums
+  syntax:
+    content: public enum MovementType
+    content.vb: Public Enum MovementType
+- uid: Inventory.Contracts.Enums.MovementType.In
+  commentId: F:Inventory.Contracts.Enums.MovementType.In
+  id: In
+  parent: Inventory.Contracts.Enums.MovementType
+  langs:
+  - csharp
+  - vb
+  name: In
+  nameWithType: MovementType.In
+  fullName: Inventory.Contracts.Enums.MovementType.In
+  type: Field
+  source:
+    remote:
+      path: src/Inventory.Contracts/Enums.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: In
+    path: ../../src/Inventory.Contracts/Enums.cs
+    startLine: 20
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts.Enums
+  syntax:
+    content: In = 0
+    return:
+      type: Inventory.Contracts.Enums.MovementType
+- uid: Inventory.Contracts.Enums.MovementType.Out
+  commentId: F:Inventory.Contracts.Enums.MovementType.Out
+  id: Out
+  parent: Inventory.Contracts.Enums.MovementType
+  langs:
+  - csharp
+  - vb
+  name: Out
+  nameWithType: MovementType.Out
+  fullName: Inventory.Contracts.Enums.MovementType.Out
+  type: Field
+  source:
+    remote:
+      path: src/Inventory.Contracts/Enums.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Out
+    path: ../../src/Inventory.Contracts/Enums.cs
+    startLine: 21
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts.Enums
+  syntax:
+    content: Out = 1
+    return:
+      type: Inventory.Contracts.Enums.MovementType
+- uid: Inventory.Contracts.Enums.MovementType.TransferOut
+  commentId: F:Inventory.Contracts.Enums.MovementType.TransferOut
+  id: TransferOut
+  parent: Inventory.Contracts.Enums.MovementType
+  langs:
+  - csharp
+  - vb
+  name: TransferOut
+  nameWithType: MovementType.TransferOut
+  fullName: Inventory.Contracts.Enums.MovementType.TransferOut
+  type: Field
+  source:
+    remote:
+      path: src/Inventory.Contracts/Enums.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: TransferOut
+    path: ../../src/Inventory.Contracts/Enums.cs
+    startLine: 22
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts.Enums
+  syntax:
+    content: TransferOut = 2
+    return:
+      type: Inventory.Contracts.Enums.MovementType
+- uid: Inventory.Contracts.Enums.MovementType.TransferIn
+  commentId: F:Inventory.Contracts.Enums.MovementType.TransferIn
+  id: TransferIn
+  parent: Inventory.Contracts.Enums.MovementType
+  langs:
+  - csharp
+  - vb
+  name: TransferIn
+  nameWithType: MovementType.TransferIn
+  fullName: Inventory.Contracts.Enums.MovementType.TransferIn
+  type: Field
+  source:
+    remote:
+      path: src/Inventory.Contracts/Enums.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: TransferIn
+    path: ../../src/Inventory.Contracts/Enums.cs
+    startLine: 23
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts.Enums
+  syntax:
+    content: TransferIn = 3
+    return:
+      type: Inventory.Contracts.Enums.MovementType
+- uid: Inventory.Contracts.Enums.MovementType.Adjustment
+  commentId: F:Inventory.Contracts.Enums.MovementType.Adjustment
+  id: Adjustment
+  parent: Inventory.Contracts.Enums.MovementType
+  langs:
+  - csharp
+  - vb
+  name: Adjustment
+  nameWithType: MovementType.Adjustment
+  fullName: Inventory.Contracts.Enums.MovementType.Adjustment
+  type: Field
+  source:
+    remote:
+      path: src/Inventory.Contracts/Enums.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Adjustment
+    path: ../../src/Inventory.Contracts/Enums.cs
+    startLine: 24
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts.Enums
+  syntax:
+    content: Adjustment = 4
+    return:
+      type: Inventory.Contracts.Enums.MovementType
+- uid: Inventory.Contracts.Enums.MovementType.Opname
+  commentId: F:Inventory.Contracts.Enums.MovementType.Opname
+  id: Opname
+  parent: Inventory.Contracts.Enums.MovementType
+  langs:
+  - csharp
+  - vb
+  name: Opname
+  nameWithType: MovementType.Opname
+  fullName: Inventory.Contracts.Enums.MovementType.Opname
+  type: Field
+  source:
+    remote:
+      path: src/Inventory.Contracts/Enums.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Opname
+    path: ../../src/Inventory.Contracts/Enums.cs
+    startLine: 25
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts.Enums
+  syntax:
+    content: Opname = 5
+    return:
+      type: Inventory.Contracts.Enums.MovementType
+references:
+- uid: Inventory.Contracts.Enums
+  commentId: N:Inventory.Contracts.Enums
+  name: Inventory.Contracts.Enums
+  nameWithType: Inventory.Contracts.Enums
+  fullName: Inventory.Contracts.Enums
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+  - name: .
+  - uid: Inventory.Contracts.Enums
+    name: Enums
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+  - name: .
+  - uid: Inventory.Contracts.Enums
+    name: Enums
+- uid: Inventory.Contracts.Enums.MovementType
+  commentId: T:Inventory.Contracts.Enums.MovementType
+  parent: Inventory.Contracts.Enums
+  href: Inventory.Contracts.Enums.MovementType.html
+  name: MovementType
+  nameWithType: MovementType
+  fullName: Inventory.Contracts.Enums.MovementType

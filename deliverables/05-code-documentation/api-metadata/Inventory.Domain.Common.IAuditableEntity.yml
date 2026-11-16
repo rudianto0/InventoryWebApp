@@ -1,0 +1,307 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Domain.Common.IAuditableEntity
+  commentId: T:Inventory.Domain.Common.IAuditableEntity
+  id: IAuditableEntity
+  parent: Inventory.Domain.Common
+  children:
+  - Inventory.Domain.Common.IAuditableEntity.CreatedAt
+  - Inventory.Domain.Common.IAuditableEntity.CreatedById
+  - Inventory.Domain.Common.IAuditableEntity.UpdatedAt
+  - Inventory.Domain.Common.IAuditableEntity.UpdatedById
+  langs:
+  - csharp
+  - vb
+  name: IAuditableEntity
+  nameWithType: IAuditableEntity
+  fullName: Inventory.Domain.Common.IAuditableEntity
+  type: Interface
+  source:
+    remote:
+      path: src/Inventory.Domain/Common/AuditContracts.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: IAuditableEntity
+    path: ../../src/Inventory.Domain/Common/AuditContracts.cs
+    startLine: 2
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Common
+  syntax:
+    content: public interface IAuditableEntity
+    content.vb: Public Interface IAuditableEntity
+  derivedClasses:
+  - Inventory.Domain.Entities.Category
+  - Inventory.Domain.Entities.Location
+  - Inventory.Domain.Entities.Product
+  - Inventory.Domain.Entities.Stock
+  - Inventory.Domain.Entities.StockAdjustmentDetail
+  - Inventory.Domain.Entities.StockAdjustmentHeader
+  - Inventory.Domain.Entities.StockInDetail
+  - Inventory.Domain.Entities.StockInHeader
+  - Inventory.Domain.Entities.StockMovement
+  - Inventory.Domain.Entities.StockOpnameDetail
+  - Inventory.Domain.Entities.StockOpnameHeader
+  - Inventory.Domain.Entities.StockOutDetail
+  - Inventory.Domain.Entities.StockOutHeader
+  - Inventory.Domain.Entities.StockTransferDetail
+  - Inventory.Domain.Entities.StockTransferHeader
+  - Inventory.Domain.Entities.Supplier
+  - Inventory.Domain.Entities.Unit
+  - Inventory.Infrastructure.Identity.AppUser
+- uid: Inventory.Domain.Common.IAuditableEntity.CreatedAt
+  commentId: P:Inventory.Domain.Common.IAuditableEntity.CreatedAt
+  id: CreatedAt
+  parent: Inventory.Domain.Common.IAuditableEntity
+  langs:
+  - csharp
+  - vb
+  name: CreatedAt
+  nameWithType: IAuditableEntity.CreatedAt
+  fullName: Inventory.Domain.Common.IAuditableEntity.CreatedAt
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Common/AuditContracts.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: CreatedAt
+    path: ../../src/Inventory.Domain/Common/AuditContracts.cs
+    startLine: 4
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Common
+  syntax:
+    content: DateTime CreatedAt { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Property CreatedAt As Date
+  overload: Inventory.Domain.Common.IAuditableEntity.CreatedAt*
+- uid: Inventory.Domain.Common.IAuditableEntity.CreatedById
+  commentId: P:Inventory.Domain.Common.IAuditableEntity.CreatedById
+  id: CreatedById
+  parent: Inventory.Domain.Common.IAuditableEntity
+  langs:
+  - csharp
+  - vb
+  name: CreatedById
+  nameWithType: IAuditableEntity.CreatedById
+  fullName: Inventory.Domain.Common.IAuditableEntity.CreatedById
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Common/AuditContracts.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: CreatedById
+    path: ../../src/Inventory.Domain/Common/AuditContracts.cs
+    startLine: 5
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Common
+  syntax:
+    content: int? CreatedById { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Property CreatedById As Integer?
+  overload: Inventory.Domain.Common.IAuditableEntity.CreatedById*
+- uid: Inventory.Domain.Common.IAuditableEntity.UpdatedAt
+  commentId: P:Inventory.Domain.Common.IAuditableEntity.UpdatedAt
+  id: UpdatedAt
+  parent: Inventory.Domain.Common.IAuditableEntity
+  langs:
+  - csharp
+  - vb
+  name: UpdatedAt
+  nameWithType: IAuditableEntity.UpdatedAt
+  fullName: Inventory.Domain.Common.IAuditableEntity.UpdatedAt
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Common/AuditContracts.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: UpdatedAt
+    path: ../../src/Inventory.Domain/Common/AuditContracts.cs
+    startLine: 6
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Common
+  syntax:
+    content: DateTime? UpdatedAt { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: Property UpdatedAt As Date?
+  overload: Inventory.Domain.Common.IAuditableEntity.UpdatedAt*
+- uid: Inventory.Domain.Common.IAuditableEntity.UpdatedById
+  commentId: P:Inventory.Domain.Common.IAuditableEntity.UpdatedById
+  id: UpdatedById
+  parent: Inventory.Domain.Common.IAuditableEntity
+  langs:
+  - csharp
+  - vb
+  name: UpdatedById
+  nameWithType: IAuditableEntity.UpdatedById
+  fullName: Inventory.Domain.Common.IAuditableEntity.UpdatedById
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Common/AuditContracts.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: UpdatedById
+    path: ../../src/Inventory.Domain/Common/AuditContracts.cs
+    startLine: 7
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Common
+  syntax:
+    content: int? UpdatedById { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Property UpdatedById As Integer?
+  overload: Inventory.Domain.Common.IAuditableEntity.UpdatedById*
+references:
+- uid: Inventory.Domain.Common
+  commentId: N:Inventory.Domain.Common
+  name: Inventory.Domain.Common
+  nameWithType: Inventory.Domain.Common
+  fullName: Inventory.Domain.Common
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Domain
+    name: Domain
+  - name: .
+  - uid: Inventory.Domain.Common
+    name: Common
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Domain
+    name: Domain
+  - name: .
+  - uid: Inventory.Domain.Common
+    name: Common
+- uid: Inventory.Domain.Common.IAuditableEntity.CreatedAt*
+  commentId: Overload:Inventory.Domain.Common.IAuditableEntity.CreatedAt
+  href: Inventory.Domain.Common.IAuditableEntity.html#Inventory_Domain_Common_IAuditableEntity_CreatedAt
+  name: CreatedAt
+  nameWithType: IAuditableEntity.CreatedAt
+  fullName: Inventory.Domain.Common.IAuditableEntity.CreatedAt
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Inventory.Domain.Common.IAuditableEntity.CreatedById*
+  commentId: Overload:Inventory.Domain.Common.IAuditableEntity.CreatedById
+  href: Inventory.Domain.Common.IAuditableEntity.html#Inventory_Domain_Common_IAuditableEntity_CreatedById
+  name: CreatedById
+  nameWithType: IAuditableEntity.CreatedById
+  fullName: Inventory.Domain.Common.IAuditableEntity.CreatedById
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Inventory.Domain.Common.IAuditableEntity.UpdatedAt*
+  commentId: Overload:Inventory.Domain.Common.IAuditableEntity.UpdatedAt
+  href: Inventory.Domain.Common.IAuditableEntity.html#Inventory_Domain_Common_IAuditableEntity_UpdatedAt
+  name: UpdatedAt
+  nameWithType: IAuditableEntity.UpdatedAt
+  fullName: Inventory.Domain.Common.IAuditableEntity.UpdatedAt
+- uid: System.Nullable{System.DateTime}
+  commentId: T:System.Nullable{System.DateTime}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime?
+  nameWithType: DateTime?
+  fullName: System.DateTime?
+  nameWithType.vb: Date?
+  fullName.vb: Date?
+  name.vb: Date?
+  spec.csharp:
+  - uid: System.DateTime
+    name: DateTime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: '?'
+  spec.vb:
+  - uid: System.DateTime
+    name: Date
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: '?'
+- uid: Inventory.Domain.Common.IAuditableEntity.UpdatedById*
+  commentId: Overload:Inventory.Domain.Common.IAuditableEntity.UpdatedById
+  href: Inventory.Domain.Common.IAuditableEntity.html#Inventory_Domain_Common_IAuditableEntity_UpdatedById
+  name: UpdatedById
+  nameWithType: IAuditableEntity.UpdatedById
+  fullName: Inventory.Domain.Common.IAuditableEntity.UpdatedById

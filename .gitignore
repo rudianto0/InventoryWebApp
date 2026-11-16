@@ -34,5 +34,5 @@ _ReSharper*/
 .DS_Store
 Thumbs.db
 
-## Generated API docs (DocFX static site)
-docs/code-documentation/api/_site/
+## Deliverables generated DocFX site
+deliverables/05-code-documentation/api-site/

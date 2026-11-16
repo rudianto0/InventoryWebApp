@@ -1,0 +1,412 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Web.Models.AdjustmentLineRow
+  commentId: T:Inventory.Web.Models.AdjustmentLineRow
+  id: AdjustmentLineRow
+  parent: Inventory.Web.Models
+  children:
+  - Inventory.Web.Models.AdjustmentLineRow.CountedQuantity
+  - Inventory.Web.Models.AdjustmentLineRow.Notes
+  - Inventory.Web.Models.AdjustmentLineRow.ProductId
+  langs:
+  - csharp
+  - vb
+  name: AdjustmentLineRow
+  nameWithType: AdjustmentLineRow
+  fullName: Inventory.Web.Models.AdjustmentLineRow
+  type: Class
+  source:
+    remote:
+      path: src/Inventory.Web/Models/ViewModels.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: AdjustmentLineRow
+    path: ../../src/Inventory.Web/Models/ViewModels.cs
+    startLine: 103
+  assemblies:
+  - Inventory.Web
+  namespace: Inventory.Web.Models
+  syntax:
+    content: public sealed class AdjustmentLineRow
+    content.vb: Public NotInheritable Class AdjustmentLineRow
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Inventory.Web.Models.AdjustmentLineRow.ProductId
+  commentId: P:Inventory.Web.Models.AdjustmentLineRow.ProductId
+  id: ProductId
+  parent: Inventory.Web.Models.AdjustmentLineRow
+  langs:
+  - csharp
+  - vb
+  name: ProductId
+  nameWithType: AdjustmentLineRow.ProductId
+  fullName: Inventory.Web.Models.AdjustmentLineRow.ProductId
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Web/Models/ViewModels.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ProductId
+    path: ../../src/Inventory.Web/Models/ViewModels.cs
+    startLine: 105
+  assemblies:
+  - Inventory.Web
+  namespace: Inventory.Web.Models
+  syntax:
+    content: public Guid ProductId { get; set; }
+    parameters: []
+    return:
+      type: System.Guid
+    content.vb: Public Property ProductId As Guid
+  overload: Inventory.Web.Models.AdjustmentLineRow.ProductId*
+- uid: Inventory.Web.Models.AdjustmentLineRow.CountedQuantity
+  commentId: P:Inventory.Web.Models.AdjustmentLineRow.CountedQuantity
+  id: CountedQuantity
+  parent: Inventory.Web.Models.AdjustmentLineRow
+  langs:
+  - csharp
+  - vb
+  name: CountedQuantity
+  nameWithType: AdjustmentLineRow.CountedQuantity
+  fullName: Inventory.Web.Models.AdjustmentLineRow.CountedQuantity
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Web/Models/ViewModels.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: CountedQuantity
+    path: ../../src/Inventory.Web/Models/ViewModels.cs
+    startLine: 106
+  assemblies:
+  - Inventory.Web
+  namespace: Inventory.Web.Models
+  syntax:
+    content: public int CountedQuantity { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property CountedQuantity As Integer
+  overload: Inventory.Web.Models.AdjustmentLineRow.CountedQuantity*
+- uid: Inventory.Web.Models.AdjustmentLineRow.Notes
+  commentId: P:Inventory.Web.Models.AdjustmentLineRow.Notes
+  id: Notes
+  parent: Inventory.Web.Models.AdjustmentLineRow
+  langs:
+  - csharp
+  - vb
+  name: Notes
+  nameWithType: AdjustmentLineRow.Notes
+  fullName: Inventory.Web.Models.AdjustmentLineRow.Notes
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Web/Models/ViewModels.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Notes
+    path: ../../src/Inventory.Web/Models/ViewModels.cs
+    startLine: 107
+  assemblies:
+  - Inventory.Web
+  namespace: Inventory.Web.Models
+  syntax:
+    content: public string? Notes { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Notes As String
+  overload: Inventory.Web.Models.AdjustmentLineRow.Notes*
+references:
+- uid: Inventory.Web.Models
+  commentId: N:Inventory.Web.Models
+  name: Inventory.Web.Models
+  nameWithType: Inventory.Web.Models
+  fullName: Inventory.Web.Models
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Web
+    name: Web
+  - name: .
+  - uid: Inventory.Web.Models
+    name: Models
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Web
+    name: Web
+  - name: .
+  - uid: Inventory.Web.Models
+    name: Models
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Inventory.Web.Models.AdjustmentLineRow.ProductId*
+  commentId: Overload:Inventory.Web.Models.AdjustmentLineRow.ProductId
+  href: Inventory.Web.Models.AdjustmentLineRow.html#Inventory_Web_Models_AdjustmentLineRow_ProductId
+  name: ProductId
+  nameWithType: AdjustmentLineRow.ProductId
+  fullName: Inventory.Web.Models.AdjustmentLineRow.ProductId
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: Inventory.Web.Models.AdjustmentLineRow.CountedQuantity*
+  commentId: Overload:Inventory.Web.Models.AdjustmentLineRow.CountedQuantity
+  href: Inventory.Web.Models.AdjustmentLineRow.html#Inventory_Web_Models_AdjustmentLineRow_CountedQuantity
+  name: CountedQuantity
+  nameWithType: AdjustmentLineRow.CountedQuantity
+  fullName: Inventory.Web.Models.AdjustmentLineRow.CountedQuantity
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Inventory.Web.Models.AdjustmentLineRow.Notes*
+  commentId: Overload:Inventory.Web.Models.AdjustmentLineRow.Notes
+  href: Inventory.Web.Models.AdjustmentLineRow.html#Inventory_Web_Models_AdjustmentLineRow_Notes
+  name: Notes
+  nameWithType: AdjustmentLineRow.Notes
+  fullName: Inventory.Web.Models.AdjustmentLineRow.Notes
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

@@ -1,0 +1,1447 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Domain.Entities.StockOpnameHeader
+  commentId: T:Inventory.Domain.Entities.StockOpnameHeader
+  id: StockOpnameHeader
+  parent: Inventory.Domain.Entities
+  children:
+  - Inventory.Domain.Entities.StockOpnameHeader.ApprovedAt
+  - Inventory.Domain.Entities.StockOpnameHeader.ApprovedById
+  - Inventory.Domain.Entities.StockOpnameHeader.ApproverId
+  - Inventory.Domain.Entities.StockOpnameHeader.CreatedAt
+  - Inventory.Domain.Entities.StockOpnameHeader.CreatedById
+  - Inventory.Domain.Entities.StockOpnameHeader.Date
+  - Inventory.Domain.Entities.StockOpnameHeader.DeletedAt
+  - Inventory.Domain.Entities.StockOpnameHeader.DeletedById
+  - Inventory.Domain.Entities.StockOpnameHeader.Details
+  - Inventory.Domain.Entities.StockOpnameHeader.DocNo
+  - Inventory.Domain.Entities.StockOpnameHeader.Id
+  - Inventory.Domain.Entities.StockOpnameHeader.IsDeleted
+  - Inventory.Domain.Entities.StockOpnameHeader.Location
+  - Inventory.Domain.Entities.StockOpnameHeader.LocationId
+  - Inventory.Domain.Entities.StockOpnameHeader.Notes
+  - Inventory.Domain.Entities.StockOpnameHeader.RejectionReason
+  - Inventory.Domain.Entities.StockOpnameHeader.Status
+  - Inventory.Domain.Entities.StockOpnameHeader.SubmittedAt
+  - Inventory.Domain.Entities.StockOpnameHeader.UpdatedAt
+  - Inventory.Domain.Entities.StockOpnameHeader.UpdatedById
+  langs:
+  - csharp
+  - vb
+  name: StockOpnameHeader
+  nameWithType: StockOpnameHeader
+  fullName: Inventory.Domain.Entities.StockOpnameHeader
+  type: Class
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: StockOpnameHeader
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 182
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  syntax:
+    content: 'public class StockOpnameHeader : IApprovable, IAuditableEntity, ISoftDeletable'
+    content.vb: Public Class StockOpnameHeader Implements IApprovable, IAuditableEntity, ISoftDeletable
+  inheritance:
+  - System.Object
+  implements:
+  - Inventory.Domain.Entities.IApprovable
+  - Inventory.Domain.Common.IAuditableEntity
+  - Inventory.Domain.Common.ISoftDeletable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Inventory.Domain.Entities.StockOpnameHeader.Id
+  commentId: P:Inventory.Domain.Entities.StockOpnameHeader.Id
+  id: Id
+  parent: Inventory.Domain.Entities.StockOpnameHeader
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: StockOpnameHeader.Id
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.Id
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Id
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 184
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  syntax:
+    content: public Guid Id { get; set; }
+    parameters: []
+    return:
+      type: System.Guid
+    content.vb: Public Property Id As Guid
+  overload: Inventory.Domain.Entities.StockOpnameHeader.Id*
+- uid: Inventory.Domain.Entities.StockOpnameHeader.DocNo
+  commentId: P:Inventory.Domain.Entities.StockOpnameHeader.DocNo
+  id: DocNo
+  parent: Inventory.Domain.Entities.StockOpnameHeader
+  langs:
+  - csharp
+  - vb
+  name: DocNo
+  nameWithType: StockOpnameHeader.DocNo
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.DocNo
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: DocNo
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 185
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  syntax:
+    content: public string DocNo { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property DocNo As String
+  overload: Inventory.Domain.Entities.StockOpnameHeader.DocNo*
+- uid: Inventory.Domain.Entities.StockOpnameHeader.LocationId
+  commentId: P:Inventory.Domain.Entities.StockOpnameHeader.LocationId
+  id: LocationId
+  parent: Inventory.Domain.Entities.StockOpnameHeader
+  langs:
+  - csharp
+  - vb
+  name: LocationId
+  nameWithType: StockOpnameHeader.LocationId
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.LocationId
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: LocationId
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 186
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  syntax:
+    content: public Guid LocationId { get; set; }
+    parameters: []
+    return:
+      type: System.Guid
+    content.vb: Public Property LocationId As Guid
+  overload: Inventory.Domain.Entities.StockOpnameHeader.LocationId*
+- uid: Inventory.Domain.Entities.StockOpnameHeader.Location
+  commentId: P:Inventory.Domain.Entities.StockOpnameHeader.Location
+  id: Location
+  parent: Inventory.Domain.Entities.StockOpnameHeader
+  langs:
+  - csharp
+  - vb
+  name: Location
+  nameWithType: StockOpnameHeader.Location
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.Location
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Location
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 187
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  syntax:
+    content: public Location? Location { get; set; }
+    parameters: []
+    return:
+      type: Inventory.Domain.Entities.Location
+    content.vb: Public Property Location As Location
+  overload: Inventory.Domain.Entities.StockOpnameHeader.Location*
+- uid: Inventory.Domain.Entities.StockOpnameHeader.Date
+  commentId: P:Inventory.Domain.Entities.StockOpnameHeader.Date
+  id: Date
+  parent: Inventory.Domain.Entities.StockOpnameHeader
+  langs:
+  - csharp
+  - vb
+  name: Date
+  nameWithType: StockOpnameHeader.Date
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.Date
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Date
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 188
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  syntax:
+    content: public DateTime Date { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property [Date] As Date
+  overload: Inventory.Domain.Entities.StockOpnameHeader.Date*
+- uid: Inventory.Domain.Entities.StockOpnameHeader.Status
+  commentId: P:Inventory.Domain.Entities.StockOpnameHeader.Status
+  id: Status
+  parent: Inventory.Domain.Entities.StockOpnameHeader
+  langs:
+  - csharp
+  - vb
+  name: Status
+  nameWithType: StockOpnameHeader.Status
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.Status
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Status
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 189
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  example: []
+  syntax:
+    content: public ApprovalStatus Status { get; set; }
+    parameters: []
+    return:
+      type: Inventory.Contracts.Enums.ApprovalStatus
+    content.vb: Public Property Status As ApprovalStatus
+  overload: Inventory.Domain.Entities.StockOpnameHeader.Status*
+  implements:
+  - Inventory.Domain.Entities.IApprovable.Status
+- uid: Inventory.Domain.Entities.StockOpnameHeader.SubmittedAt
+  commentId: P:Inventory.Domain.Entities.StockOpnameHeader.SubmittedAt
+  id: SubmittedAt
+  parent: Inventory.Domain.Entities.StockOpnameHeader
+  langs:
+  - csharp
+  - vb
+  name: SubmittedAt
+  nameWithType: StockOpnameHeader.SubmittedAt
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.SubmittedAt
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: SubmittedAt
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 190
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  example: []
+  syntax:
+    content: public DateTime? SubmittedAt { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: Public Property SubmittedAt As Date?
+  overload: Inventory.Domain.Entities.StockOpnameHeader.SubmittedAt*
+  implements:
+  - Inventory.Domain.Entities.IApprovable.SubmittedAt
+- uid: Inventory.Domain.Entities.StockOpnameHeader.ApproverId
+  commentId: P:Inventory.Domain.Entities.StockOpnameHeader.ApproverId
+  id: ApproverId
+  parent: Inventory.Domain.Entities.StockOpnameHeader
+  langs:
+  - csharp
+  - vb
+  name: ApproverId
+  nameWithType: StockOpnameHeader.ApproverId
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.ApproverId
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ApproverId
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 191
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  example: []
+  syntax:
+    content: public int? ApproverId { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property ApproverId As Integer?
+  overload: Inventory.Domain.Entities.StockOpnameHeader.ApproverId*
+  implements:
+  - Inventory.Domain.Entities.IApprovable.ApproverId
+- uid: Inventory.Domain.Entities.StockOpnameHeader.ApprovedAt
+  commentId: P:Inventory.Domain.Entities.StockOpnameHeader.ApprovedAt
+  id: ApprovedAt
+  parent: Inventory.Domain.Entities.StockOpnameHeader
+  langs:
+  - csharp
+  - vb
+  name: ApprovedAt
+  nameWithType: StockOpnameHeader.ApprovedAt
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.ApprovedAt
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ApprovedAt
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 192
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  example: []
+  syntax:
+    content: public DateTime? ApprovedAt { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: Public Property ApprovedAt As Date?
+  overload: Inventory.Domain.Entities.StockOpnameHeader.ApprovedAt*
+  implements:
+  - Inventory.Domain.Entities.IApprovable.ApprovedAt
+- uid: Inventory.Domain.Entities.StockOpnameHeader.ApprovedById
+  commentId: P:Inventory.Domain.Entities.StockOpnameHeader.ApprovedById
+  id: ApprovedById
+  parent: Inventory.Domain.Entities.StockOpnameHeader
+  langs:
+  - csharp
+  - vb
+  name: ApprovedById
+  nameWithType: StockOpnameHeader.ApprovedById
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.ApprovedById
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ApprovedById
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 193
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  example: []
+  syntax:
+    content: public int? ApprovedById { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property ApprovedById As Integer?
+  overload: Inventory.Domain.Entities.StockOpnameHeader.ApprovedById*
+  implements:
+  - Inventory.Domain.Entities.IApprovable.ApprovedById
+- uid: Inventory.Domain.Entities.StockOpnameHeader.RejectionReason
+  commentId: P:Inventory.Domain.Entities.StockOpnameHeader.RejectionReason
+  id: RejectionReason
+  parent: Inventory.Domain.Entities.StockOpnameHeader
+  langs:
+  - csharp
+  - vb
+  name: RejectionReason
+  nameWithType: StockOpnameHeader.RejectionReason
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.RejectionReason
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: RejectionReason
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 194
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  example: []
+  syntax:
+    content: public string? RejectionReason { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property RejectionReason As String
+  overload: Inventory.Domain.Entities.StockOpnameHeader.RejectionReason*
+  implements:
+  - Inventory.Domain.Entities.IApprovable.RejectionReason
+- uid: Inventory.Domain.Entities.StockOpnameHeader.CreatedAt
+  commentId: P:Inventory.Domain.Entities.StockOpnameHeader.CreatedAt
+  id: CreatedAt
+  parent: Inventory.Domain.Entities.StockOpnameHeader
+  langs:
+  - csharp
+  - vb
+  name: CreatedAt
+  nameWithType: StockOpnameHeader.CreatedAt
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.CreatedAt
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: CreatedAt
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 195
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  example: []
+  syntax:
+    content: public DateTime CreatedAt { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property CreatedAt As Date
+  overload: Inventory.Domain.Entities.StockOpnameHeader.CreatedAt*
+  implements:
+  - Inventory.Domain.Common.IAuditableEntity.CreatedAt
+- uid: Inventory.Domain.Entities.StockOpnameHeader.CreatedById
+  commentId: P:Inventory.Domain.Entities.StockOpnameHeader.CreatedById
+  id: CreatedById
+  parent: Inventory.Domain.Entities.StockOpnameHeader
+  langs:
+  - csharp
+  - vb
+  name: CreatedById
+  nameWithType: StockOpnameHeader.CreatedById
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.CreatedById
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: CreatedById
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 196
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  example: []
+  syntax:
+    content: public int? CreatedById { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property CreatedById As Integer?
+  overload: Inventory.Domain.Entities.StockOpnameHeader.CreatedById*
+  implements:
+  - Inventory.Domain.Common.IAuditableEntity.CreatedById
+- uid: Inventory.Domain.Entities.StockOpnameHeader.UpdatedAt
+  commentId: P:Inventory.Domain.Entities.StockOpnameHeader.UpdatedAt
+  id: UpdatedAt
+  parent: Inventory.Domain.Entities.StockOpnameHeader
+  langs:
+  - csharp
+  - vb
+  name: UpdatedAt
+  nameWithType: StockOpnameHeader.UpdatedAt
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.UpdatedAt
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: UpdatedAt
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 197
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  example: []
+  syntax:
+    content: public DateTime? UpdatedAt { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: Public Property UpdatedAt As Date?
+  overload: Inventory.Domain.Entities.StockOpnameHeader.UpdatedAt*
+  implements:
+  - Inventory.Domain.Common.IAuditableEntity.UpdatedAt
+- uid: Inventory.Domain.Entities.StockOpnameHeader.UpdatedById
+  commentId: P:Inventory.Domain.Entities.StockOpnameHeader.UpdatedById
+  id: UpdatedById
+  parent: Inventory.Domain.Entities.StockOpnameHeader
+  langs:
+  - csharp
+  - vb
+  name: UpdatedById
+  nameWithType: StockOpnameHeader.UpdatedById
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.UpdatedById
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: UpdatedById
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 198
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  example: []
+  syntax:
+    content: public int? UpdatedById { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property UpdatedById As Integer?
+  overload: Inventory.Domain.Entities.StockOpnameHeader.UpdatedById*
+  implements:
+  - Inventory.Domain.Common.IAuditableEntity.UpdatedById
+- uid: Inventory.Domain.Entities.StockOpnameHeader.IsDeleted
+  commentId: P:Inventory.Domain.Entities.StockOpnameHeader.IsDeleted
+  id: IsDeleted
+  parent: Inventory.Domain.Entities.StockOpnameHeader
+  langs:
+  - csharp
+  - vb
+  name: IsDeleted
+  nameWithType: StockOpnameHeader.IsDeleted
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.IsDeleted
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: IsDeleted
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 199
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  example: []
+  syntax:
+    content: public bool IsDeleted { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsDeleted As Boolean
+  overload: Inventory.Domain.Entities.StockOpnameHeader.IsDeleted*
+  implements:
+  - Inventory.Domain.Common.ISoftDeletable.IsDeleted
+- uid: Inventory.Domain.Entities.StockOpnameHeader.DeletedAt
+  commentId: P:Inventory.Domain.Entities.StockOpnameHeader.DeletedAt
+  id: DeletedAt
+  parent: Inventory.Domain.Entities.StockOpnameHeader
+  langs:
+  - csharp
+  - vb
+  name: DeletedAt
+  nameWithType: StockOpnameHeader.DeletedAt
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.DeletedAt
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: DeletedAt
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 200
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  example: []
+  syntax:
+    content: public DateTime? DeletedAt { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: Public Property DeletedAt As Date?
+  overload: Inventory.Domain.Entities.StockOpnameHeader.DeletedAt*
+  implements:
+  - Inventory.Domain.Common.ISoftDeletable.DeletedAt
+- uid: Inventory.Domain.Entities.StockOpnameHeader.DeletedById
+  commentId: P:Inventory.Domain.Entities.StockOpnameHeader.DeletedById
+  id: DeletedById
+  parent: Inventory.Domain.Entities.StockOpnameHeader
+  langs:
+  - csharp
+  - vb
+  name: DeletedById
+  nameWithType: StockOpnameHeader.DeletedById
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.DeletedById
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: DeletedById
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 201
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  example: []
+  syntax:
+    content: public int? DeletedById { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property DeletedById As Integer?
+  overload: Inventory.Domain.Entities.StockOpnameHeader.DeletedById*
+  implements:
+  - Inventory.Domain.Common.ISoftDeletable.DeletedById
+- uid: Inventory.Domain.Entities.StockOpnameHeader.Notes
+  commentId: P:Inventory.Domain.Entities.StockOpnameHeader.Notes
+  id: Notes
+  parent: Inventory.Domain.Entities.StockOpnameHeader
+  langs:
+  - csharp
+  - vb
+  name: Notes
+  nameWithType: StockOpnameHeader.Notes
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.Notes
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Notes
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 202
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  syntax:
+    content: public string? Notes { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Notes As String
+  overload: Inventory.Domain.Entities.StockOpnameHeader.Notes*
+- uid: Inventory.Domain.Entities.StockOpnameHeader.Details
+  commentId: P:Inventory.Domain.Entities.StockOpnameHeader.Details
+  id: Details
+  parent: Inventory.Domain.Entities.StockOpnameHeader
+  langs:
+  - csharp
+  - vb
+  name: Details
+  nameWithType: StockOpnameHeader.Details
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.Details
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Details
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 203
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  syntax:
+    content: public ICollection<StockOpnameDetail> Details { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.ICollection{Inventory.Domain.Entities.StockOpnameDetail}
+    content.vb: Public Property Details As ICollection(Of StockOpnameDetail)
+  overload: Inventory.Domain.Entities.StockOpnameHeader.Details*
+references:
+- uid: Inventory.Domain.Entities
+  commentId: N:Inventory.Domain.Entities
+  name: Inventory.Domain.Entities
+  nameWithType: Inventory.Domain.Entities
+  fullName: Inventory.Domain.Entities
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Domain
+    name: Domain
+  - name: .
+  - uid: Inventory.Domain.Entities
+    name: Entities
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Domain
+    name: Domain
+  - name: .
+  - uid: Inventory.Domain.Entities
+    name: Entities
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Inventory.Domain.Entities.IApprovable
+  commentId: T:Inventory.Domain.Entities.IApprovable
+  parent: Inventory.Domain.Entities
+  href: Inventory.Domain.Entities.IApprovable.html
+  name: IApprovable
+  nameWithType: IApprovable
+  fullName: Inventory.Domain.Entities.IApprovable
+- uid: Inventory.Domain.Common.IAuditableEntity
+  commentId: T:Inventory.Domain.Common.IAuditableEntity
+  parent: Inventory.Domain.Common
+  href: Inventory.Domain.Common.IAuditableEntity.html
+  name: IAuditableEntity
+  nameWithType: IAuditableEntity
+  fullName: Inventory.Domain.Common.IAuditableEntity
+- uid: Inventory.Domain.Common.ISoftDeletable
+  commentId: T:Inventory.Domain.Common.ISoftDeletable
+  parent: Inventory.Domain.Common
+  href: Inventory.Domain.Common.ISoftDeletable.html
+  name: ISoftDeletable
+  nameWithType: ISoftDeletable
+  fullName: Inventory.Domain.Common.ISoftDeletable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Inventory.Domain.Common
+  commentId: N:Inventory.Domain.Common
+  name: Inventory.Domain.Common
+  nameWithType: Inventory.Domain.Common
+  fullName: Inventory.Domain.Common
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Domain
+    name: Domain
+  - name: .
+  - uid: Inventory.Domain.Common
+    name: Common
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Domain
+    name: Domain
+  - name: .
+  - uid: Inventory.Domain.Common
+    name: Common
+- uid: Inventory.Domain.Entities.StockOpnameHeader.Id*
+  commentId: Overload:Inventory.Domain.Entities.StockOpnameHeader.Id
+  href: Inventory.Domain.Entities.StockOpnameHeader.html#Inventory_Domain_Entities_StockOpnameHeader_Id
+  name: Id
+  nameWithType: StockOpnameHeader.Id
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.Id
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: Inventory.Domain.Entities.StockOpnameHeader.DocNo*
+  commentId: Overload:Inventory.Domain.Entities.StockOpnameHeader.DocNo
+  href: Inventory.Domain.Entities.StockOpnameHeader.html#Inventory_Domain_Entities_StockOpnameHeader_DocNo
+  name: DocNo
+  nameWithType: StockOpnameHeader.DocNo
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.DocNo
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Inventory.Domain.Entities.StockOpnameHeader.LocationId*
+  commentId: Overload:Inventory.Domain.Entities.StockOpnameHeader.LocationId
+  href: Inventory.Domain.Entities.StockOpnameHeader.html#Inventory_Domain_Entities_StockOpnameHeader_LocationId
+  name: LocationId
+  nameWithType: StockOpnameHeader.LocationId
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.LocationId
+- uid: Inventory.Domain.Entities.StockOpnameHeader.Location*
+  commentId: Overload:Inventory.Domain.Entities.StockOpnameHeader.Location
+  href: Inventory.Domain.Entities.StockOpnameHeader.html#Inventory_Domain_Entities_StockOpnameHeader_Location
+  name: Location
+  nameWithType: StockOpnameHeader.Location
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.Location
+- uid: Inventory.Domain.Entities.Location
+  commentId: T:Inventory.Domain.Entities.Location
+  parent: Inventory.Domain.Entities
+  href: Inventory.Domain.Entities.Location.html
+  name: Location
+  nameWithType: Location
+  fullName: Inventory.Domain.Entities.Location
+- uid: Inventory.Domain.Entities.StockOpnameHeader.Date*
+  commentId: Overload:Inventory.Domain.Entities.StockOpnameHeader.Date
+  href: Inventory.Domain.Entities.StockOpnameHeader.html#Inventory_Domain_Entities_StockOpnameHeader_Date
+  name: Date
+  nameWithType: StockOpnameHeader.Date
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.Date
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: Inventory.Domain.Entities.StockOpnameHeader.Status*
+  commentId: Overload:Inventory.Domain.Entities.StockOpnameHeader.Status
+  href: Inventory.Domain.Entities.StockOpnameHeader.html#Inventory_Domain_Entities_StockOpnameHeader_Status
+  name: Status
+  nameWithType: StockOpnameHeader.Status
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.Status
+- uid: Inventory.Domain.Entities.IApprovable.Status
+  commentId: P:Inventory.Domain.Entities.IApprovable.Status
+  parent: Inventory.Domain.Entities.IApprovable
+  href: Inventory.Domain.Entities.IApprovable.html#Inventory_Domain_Entities_IApprovable_Status
+  name: Status
+  nameWithType: IApprovable.Status
+  fullName: Inventory.Domain.Entities.IApprovable.Status
+- uid: Inventory.Contracts.Enums.ApprovalStatus
+  commentId: T:Inventory.Contracts.Enums.ApprovalStatus
+  parent: Inventory.Contracts.Enums
+  href: Inventory.Contracts.Enums.ApprovalStatus.html
+  name: ApprovalStatus
+  nameWithType: ApprovalStatus
+  fullName: Inventory.Contracts.Enums.ApprovalStatus
+- uid: Inventory.Contracts.Enums
+  commentId: N:Inventory.Contracts.Enums
+  name: Inventory.Contracts.Enums
+  nameWithType: Inventory.Contracts.Enums
+  fullName: Inventory.Contracts.Enums
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+  - name: .
+  - uid: Inventory.Contracts.Enums
+    name: Enums
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+  - name: .
+  - uid: Inventory.Contracts.Enums
+    name: Enums
+- uid: Inventory.Domain.Entities.StockOpnameHeader.SubmittedAt*
+  commentId: Overload:Inventory.Domain.Entities.StockOpnameHeader.SubmittedAt
+  href: Inventory.Domain.Entities.StockOpnameHeader.html#Inventory_Domain_Entities_StockOpnameHeader_SubmittedAt
+  name: SubmittedAt
+  nameWithType: StockOpnameHeader.SubmittedAt
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.SubmittedAt
+- uid: Inventory.Domain.Entities.IApprovable.SubmittedAt
+  commentId: P:Inventory.Domain.Entities.IApprovable.SubmittedAt
+  parent: Inventory.Domain.Entities.IApprovable
+  href: Inventory.Domain.Entities.IApprovable.html#Inventory_Domain_Entities_IApprovable_SubmittedAt
+  name: SubmittedAt
+  nameWithType: IApprovable.SubmittedAt
+  fullName: Inventory.Domain.Entities.IApprovable.SubmittedAt
+- uid: System.Nullable{System.DateTime}
+  commentId: T:System.Nullable{System.DateTime}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime?
+  nameWithType: DateTime?
+  fullName: System.DateTime?
+  nameWithType.vb: Date?
+  fullName.vb: Date?
+  name.vb: Date?
+  spec.csharp:
+  - uid: System.DateTime
+    name: DateTime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: '?'
+  spec.vb:
+  - uid: System.DateTime
+    name: Date
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Inventory.Domain.Entities.StockOpnameHeader.ApproverId*
+  commentId: Overload:Inventory.Domain.Entities.StockOpnameHeader.ApproverId
+  href: Inventory.Domain.Entities.StockOpnameHeader.html#Inventory_Domain_Entities_StockOpnameHeader_ApproverId
+  name: ApproverId
+  nameWithType: StockOpnameHeader.ApproverId
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.ApproverId
+- uid: Inventory.Domain.Entities.IApprovable.ApproverId
+  commentId: P:Inventory.Domain.Entities.IApprovable.ApproverId
+  parent: Inventory.Domain.Entities.IApprovable
+  href: Inventory.Domain.Entities.IApprovable.html#Inventory_Domain_Entities_IApprovable_ApproverId
+  name: ApproverId
+  nameWithType: IApprovable.ApproverId
+  fullName: Inventory.Domain.Entities.IApprovable.ApproverId
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: Inventory.Domain.Entities.StockOpnameHeader.ApprovedAt*
+  commentId: Overload:Inventory.Domain.Entities.StockOpnameHeader.ApprovedAt
+  href: Inventory.Domain.Entities.StockOpnameHeader.html#Inventory_Domain_Entities_StockOpnameHeader_ApprovedAt
+  name: ApprovedAt
+  nameWithType: StockOpnameHeader.ApprovedAt
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.ApprovedAt
+- uid: Inventory.Domain.Entities.IApprovable.ApprovedAt
+  commentId: P:Inventory.Domain.Entities.IApprovable.ApprovedAt
+  parent: Inventory.Domain.Entities.IApprovable
+  href: Inventory.Domain.Entities.IApprovable.html#Inventory_Domain_Entities_IApprovable_ApprovedAt
+  name: ApprovedAt
+  nameWithType: IApprovable.ApprovedAt
+  fullName: Inventory.Domain.Entities.IApprovable.ApprovedAt
+- uid: Inventory.Domain.Entities.StockOpnameHeader.ApprovedById*
+  commentId: Overload:Inventory.Domain.Entities.StockOpnameHeader.ApprovedById
+  href: Inventory.Domain.Entities.StockOpnameHeader.html#Inventory_Domain_Entities_StockOpnameHeader_ApprovedById
+  name: ApprovedById
+  nameWithType: StockOpnameHeader.ApprovedById
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.ApprovedById
+- uid: Inventory.Domain.Entities.IApprovable.ApprovedById
+  commentId: P:Inventory.Domain.Entities.IApprovable.ApprovedById
+  parent: Inventory.Domain.Entities.IApprovable
+  href: Inventory.Domain.Entities.IApprovable.html#Inventory_Domain_Entities_IApprovable_ApprovedById
+  name: ApprovedById
+  nameWithType: IApprovable.ApprovedById
+  fullName: Inventory.Domain.Entities.IApprovable.ApprovedById
+- uid: Inventory.Domain.Entities.StockOpnameHeader.RejectionReason*
+  commentId: Overload:Inventory.Domain.Entities.StockOpnameHeader.RejectionReason
+  href: Inventory.Domain.Entities.StockOpnameHeader.html#Inventory_Domain_Entities_StockOpnameHeader_RejectionReason
+  name: RejectionReason
+  nameWithType: StockOpnameHeader.RejectionReason
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.RejectionReason
+- uid: Inventory.Domain.Entities.IApprovable.RejectionReason
+  commentId: P:Inventory.Domain.Entities.IApprovable.RejectionReason
+  parent: Inventory.Domain.Entities.IApprovable
+  href: Inventory.Domain.Entities.IApprovable.html#Inventory_Domain_Entities_IApprovable_RejectionReason
+  name: RejectionReason
+  nameWithType: IApprovable.RejectionReason
+  fullName: Inventory.Domain.Entities.IApprovable.RejectionReason
+- uid: Inventory.Domain.Entities.StockOpnameHeader.CreatedAt*
+  commentId: Overload:Inventory.Domain.Entities.StockOpnameHeader.CreatedAt
+  href: Inventory.Domain.Entities.StockOpnameHeader.html#Inventory_Domain_Entities_StockOpnameHeader_CreatedAt
+  name: CreatedAt
+  nameWithType: StockOpnameHeader.CreatedAt
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.CreatedAt
+- uid: Inventory.Domain.Common.IAuditableEntity.CreatedAt
+  commentId: P:Inventory.Domain.Common.IAuditableEntity.CreatedAt
+  parent: Inventory.Domain.Common.IAuditableEntity
+  href: Inventory.Domain.Common.IAuditableEntity.html#Inventory_Domain_Common_IAuditableEntity_CreatedAt
+  name: CreatedAt
+  nameWithType: IAuditableEntity.CreatedAt
+  fullName: Inventory.Domain.Common.IAuditableEntity.CreatedAt
+- uid: Inventory.Domain.Entities.StockOpnameHeader.CreatedById*
+  commentId: Overload:Inventory.Domain.Entities.StockOpnameHeader.CreatedById
+  href: Inventory.Domain.Entities.StockOpnameHeader.html#Inventory_Domain_Entities_StockOpnameHeader_CreatedById
+  name: CreatedById
+  nameWithType: StockOpnameHeader.CreatedById
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.CreatedById
+- uid: Inventory.Domain.Common.IAuditableEntity.CreatedById
+  commentId: P:Inventory.Domain.Common.IAuditableEntity.CreatedById
+  parent: Inventory.Domain.Common.IAuditableEntity
+  href: Inventory.Domain.Common.IAuditableEntity.html#Inventory_Domain_Common_IAuditableEntity_CreatedById
+  name: CreatedById
+  nameWithType: IAuditableEntity.CreatedById
+  fullName: Inventory.Domain.Common.IAuditableEntity.CreatedById
+- uid: Inventory.Domain.Entities.StockOpnameHeader.UpdatedAt*
+  commentId: Overload:Inventory.Domain.Entities.StockOpnameHeader.UpdatedAt
+  href: Inventory.Domain.Entities.StockOpnameHeader.html#Inventory_Domain_Entities_StockOpnameHeader_UpdatedAt
+  name: UpdatedAt
+  nameWithType: StockOpnameHeader.UpdatedAt
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.UpdatedAt
+- uid: Inventory.Domain.Common.IAuditableEntity.UpdatedAt
+  commentId: P:Inventory.Domain.Common.IAuditableEntity.UpdatedAt
+  parent: Inventory.Domain.Common.IAuditableEntity
+  href: Inventory.Domain.Common.IAuditableEntity.html#Inventory_Domain_Common_IAuditableEntity_UpdatedAt
+  name: UpdatedAt
+  nameWithType: IAuditableEntity.UpdatedAt
+  fullName: Inventory.Domain.Common.IAuditableEntity.UpdatedAt
+- uid: Inventory.Domain.Entities.StockOpnameHeader.UpdatedById*
+  commentId: Overload:Inventory.Domain.Entities.StockOpnameHeader.UpdatedById
+  href: Inventory.Domain.Entities.StockOpnameHeader.html#Inventory_Domain_Entities_StockOpnameHeader_UpdatedById
+  name: UpdatedById
+  nameWithType: StockOpnameHeader.UpdatedById
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.UpdatedById
+- uid: Inventory.Domain.Common.IAuditableEntity.UpdatedById
+  commentId: P:Inventory.Domain.Common.IAuditableEntity.UpdatedById
+  parent: Inventory.Domain.Common.IAuditableEntity
+  href: Inventory.Domain.Common.IAuditableEntity.html#Inventory_Domain_Common_IAuditableEntity_UpdatedById
+  name: UpdatedById
+  nameWithType: IAuditableEntity.UpdatedById
+  fullName: Inventory.Domain.Common.IAuditableEntity.UpdatedById
+- uid: Inventory.Domain.Entities.StockOpnameHeader.IsDeleted*
+  commentId: Overload:Inventory.Domain.Entities.StockOpnameHeader.IsDeleted
+  href: Inventory.Domain.Entities.StockOpnameHeader.html#Inventory_Domain_Entities_StockOpnameHeader_IsDeleted
+  name: IsDeleted
+  nameWithType: StockOpnameHeader.IsDeleted
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.IsDeleted
+- uid: Inventory.Domain.Common.ISoftDeletable.IsDeleted
+  commentId: P:Inventory.Domain.Common.ISoftDeletable.IsDeleted
+  parent: Inventory.Domain.Common.ISoftDeletable
+  href: Inventory.Domain.Common.ISoftDeletable.html#Inventory_Domain_Common_ISoftDeletable_IsDeleted
+  name: IsDeleted
+  nameWithType: ISoftDeletable.IsDeleted
+  fullName: Inventory.Domain.Common.ISoftDeletable.IsDeleted
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Inventory.Domain.Entities.StockOpnameHeader.DeletedAt*
+  commentId: Overload:Inventory.Domain.Entities.StockOpnameHeader.DeletedAt
+  href: Inventory.Domain.Entities.StockOpnameHeader.html#Inventory_Domain_Entities_StockOpnameHeader_DeletedAt
+  name: DeletedAt
+  nameWithType: StockOpnameHeader.DeletedAt
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.DeletedAt
+- uid: Inventory.Domain.Common.ISoftDeletable.DeletedAt
+  commentId: P:Inventory.Domain.Common.ISoftDeletable.DeletedAt
+  parent: Inventory.Domain.Common.ISoftDeletable
+  href: Inventory.Domain.Common.ISoftDeletable.html#Inventory_Domain_Common_ISoftDeletable_DeletedAt
+  name: DeletedAt
+  nameWithType: ISoftDeletable.DeletedAt
+  fullName: Inventory.Domain.Common.ISoftDeletable.DeletedAt
+- uid: Inventory.Domain.Entities.StockOpnameHeader.DeletedById*
+  commentId: Overload:Inventory.Domain.Entities.StockOpnameHeader.DeletedById
+  href: Inventory.Domain.Entities.StockOpnameHeader.html#Inventory_Domain_Entities_StockOpnameHeader_DeletedById
+  name: DeletedById
+  nameWithType: StockOpnameHeader.DeletedById
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.DeletedById
+- uid: Inventory.Domain.Common.ISoftDeletable.DeletedById
+  commentId: P:Inventory.Domain.Common.ISoftDeletable.DeletedById
+  parent: Inventory.Domain.Common.ISoftDeletable
+  href: Inventory.Domain.Common.ISoftDeletable.html#Inventory_Domain_Common_ISoftDeletable_DeletedById
+  name: DeletedById
+  nameWithType: ISoftDeletable.DeletedById
+  fullName: Inventory.Domain.Common.ISoftDeletable.DeletedById
+- uid: Inventory.Domain.Entities.StockOpnameHeader.Notes*
+  commentId: Overload:Inventory.Domain.Entities.StockOpnameHeader.Notes
+  href: Inventory.Domain.Entities.StockOpnameHeader.html#Inventory_Domain_Entities_StockOpnameHeader_Notes
+  name: Notes
+  nameWithType: StockOpnameHeader.Notes
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.Notes
+- uid: Inventory.Domain.Entities.StockOpnameHeader.Details*
+  commentId: Overload:Inventory.Domain.Entities.StockOpnameHeader.Details
+  href: Inventory.Domain.Entities.StockOpnameHeader.html#Inventory_Domain_Entities_StockOpnameHeader_Details
+  name: Details
+  nameWithType: StockOpnameHeader.Details
+  fullName: Inventory.Domain.Entities.StockOpnameHeader.Details
+- uid: System.Collections.Generic.ICollection{Inventory.Domain.Entities.StockOpnameDetail}
+  commentId: T:System.Collections.Generic.ICollection{Inventory.Domain.Entities.StockOpnameDetail}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.ICollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<StockOpnameDetail>
+  nameWithType: ICollection<StockOpnameDetail>
+  fullName: System.Collections.Generic.ICollection<Inventory.Domain.Entities.StockOpnameDetail>
+  nameWithType.vb: ICollection(Of StockOpnameDetail)
+  fullName.vb: System.Collections.Generic.ICollection(Of Inventory.Domain.Entities.StockOpnameDetail)
+  name.vb: ICollection(Of StockOpnameDetail)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - uid: Inventory.Domain.Entities.StockOpnameDetail
+    name: StockOpnameDetail
+    href: Inventory.Domain.Entities.StockOpnameDetail.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Domain.Entities.StockOpnameDetail
+    name: StockOpnameDetail
+    href: Inventory.Domain.Entities.StockOpnameDetail.html
+  - name: )
+- uid: System.Collections.Generic.ICollection`1
+  commentId: T:System.Collections.Generic.ICollection`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<T>
+  nameWithType: ICollection<T>
+  fullName: System.Collections.Generic.ICollection<T>
+  nameWithType.vb: ICollection(Of T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T)
+  name.vb: ICollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic

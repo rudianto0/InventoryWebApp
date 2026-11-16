@@ -1,0 +1,32 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "src": "../../src",
+          "files": [
+            "**/*.csproj"
+          ]
+        }
+      ],
+      "dest": "api-metadata"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "docs/*.md",
+          "docs/*.yml",
+          "docs/04-annotated-code/*.md",
+          "docs/04-annotated-code/*.yml"
+        ]
+      }
+    ],
+    "dest": "api-site",
+    "globalMetadata": {
+      "_appTitle": "Inventory Code Documentation",
+      "_appFooter": "Inventory App"
+    }
+  }
+}

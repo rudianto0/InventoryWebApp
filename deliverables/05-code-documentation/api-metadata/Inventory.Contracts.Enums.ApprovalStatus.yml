@@ -1,0 +1,194 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Contracts.Enums.ApprovalStatus
+  commentId: T:Inventory.Contracts.Enums.ApprovalStatus
+  id: ApprovalStatus
+  parent: Inventory.Contracts.Enums
+  children:
+  - Inventory.Contracts.Enums.ApprovalStatus.Approved
+  - Inventory.Contracts.Enums.ApprovalStatus.Cancelled
+  - Inventory.Contracts.Enums.ApprovalStatus.Draft
+  - Inventory.Contracts.Enums.ApprovalStatus.Rejected
+  - Inventory.Contracts.Enums.ApprovalStatus.Submitted
+  langs:
+  - csharp
+  - vb
+  name: ApprovalStatus
+  nameWithType: ApprovalStatus
+  fullName: Inventory.Contracts.Enums.ApprovalStatus
+  type: Enum
+  source:
+    remote:
+      path: src/Inventory.Contracts/Enums.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ApprovalStatus
+    path: ../../src/Inventory.Contracts/Enums.cs
+    startLine: 9
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts.Enums
+  syntax:
+    content: public enum ApprovalStatus
+    content.vb: Public Enum ApprovalStatus
+- uid: Inventory.Contracts.Enums.ApprovalStatus.Draft
+  commentId: F:Inventory.Contracts.Enums.ApprovalStatus.Draft
+  id: Draft
+  parent: Inventory.Contracts.Enums.ApprovalStatus
+  langs:
+  - csharp
+  - vb
+  name: Draft
+  nameWithType: ApprovalStatus.Draft
+  fullName: Inventory.Contracts.Enums.ApprovalStatus.Draft
+  type: Field
+  source:
+    remote:
+      path: src/Inventory.Contracts/Enums.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Draft
+    path: ../../src/Inventory.Contracts/Enums.cs
+    startLine: 11
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts.Enums
+  syntax:
+    content: Draft = 0
+    return:
+      type: Inventory.Contracts.Enums.ApprovalStatus
+- uid: Inventory.Contracts.Enums.ApprovalStatus.Submitted
+  commentId: F:Inventory.Contracts.Enums.ApprovalStatus.Submitted
+  id: Submitted
+  parent: Inventory.Contracts.Enums.ApprovalStatus
+  langs:
+  - csharp
+  - vb
+  name: Submitted
+  nameWithType: ApprovalStatus.Submitted
+  fullName: Inventory.Contracts.Enums.ApprovalStatus.Submitted
+  type: Field
+  source:
+    remote:
+      path: src/Inventory.Contracts/Enums.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Submitted
+    path: ../../src/Inventory.Contracts/Enums.cs
+    startLine: 12
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts.Enums
+  syntax:
+    content: Submitted = 1
+    return:
+      type: Inventory.Contracts.Enums.ApprovalStatus
+- uid: Inventory.Contracts.Enums.ApprovalStatus.Approved
+  commentId: F:Inventory.Contracts.Enums.ApprovalStatus.Approved
+  id: Approved
+  parent: Inventory.Contracts.Enums.ApprovalStatus
+  langs:
+  - csharp
+  - vb
+  name: Approved
+  nameWithType: ApprovalStatus.Approved
+  fullName: Inventory.Contracts.Enums.ApprovalStatus.Approved
+  type: Field
+  source:
+    remote:
+      path: src/Inventory.Contracts/Enums.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Approved
+    path: ../../src/Inventory.Contracts/Enums.cs
+    startLine: 13
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts.Enums
+  syntax:
+    content: Approved = 2
+    return:
+      type: Inventory.Contracts.Enums.ApprovalStatus
+- uid: Inventory.Contracts.Enums.ApprovalStatus.Rejected
+  commentId: F:Inventory.Contracts.Enums.ApprovalStatus.Rejected
+  id: Rejected
+  parent: Inventory.Contracts.Enums.ApprovalStatus
+  langs:
+  - csharp
+  - vb
+  name: Rejected
+  nameWithType: ApprovalStatus.Rejected
+  fullName: Inventory.Contracts.Enums.ApprovalStatus.Rejected
+  type: Field
+  source:
+    remote:
+      path: src/Inventory.Contracts/Enums.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Rejected
+    path: ../../src/Inventory.Contracts/Enums.cs
+    startLine: 14
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts.Enums
+  syntax:
+    content: Rejected = 3
+    return:
+      type: Inventory.Contracts.Enums.ApprovalStatus
+- uid: Inventory.Contracts.Enums.ApprovalStatus.Cancelled
+  commentId: F:Inventory.Contracts.Enums.ApprovalStatus.Cancelled
+  id: Cancelled
+  parent: Inventory.Contracts.Enums.ApprovalStatus
+  langs:
+  - csharp
+  - vb
+  name: Cancelled
+  nameWithType: ApprovalStatus.Cancelled
+  fullName: Inventory.Contracts.Enums.ApprovalStatus.Cancelled
+  type: Field
+  source:
+    remote:
+      path: src/Inventory.Contracts/Enums.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Cancelled
+    path: ../../src/Inventory.Contracts/Enums.cs
+    startLine: 15
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts.Enums
+  syntax:
+    content: Cancelled = 4
+    return:
+      type: Inventory.Contracts.Enums.ApprovalStatus
+references:
+- uid: Inventory.Contracts.Enums
+  commentId: N:Inventory.Contracts.Enums
+  name: Inventory.Contracts.Enums
+  nameWithType: Inventory.Contracts.Enums
+  fullName: Inventory.Contracts.Enums
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+  - name: .
+  - uid: Inventory.Contracts.Enums
+    name: Enums
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+  - name: .
+  - uid: Inventory.Contracts.Enums
+    name: Enums
+- uid: Inventory.Contracts.Enums.ApprovalStatus
+  commentId: T:Inventory.Contracts.Enums.ApprovalStatus
+  parent: Inventory.Contracts.Enums
+  href: Inventory.Contracts.Enums.ApprovalStatus.html
+  name: ApprovalStatus
+  nameWithType: ApprovalStatus
+  fullName: Inventory.Contracts.Enums.ApprovalStatus

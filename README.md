@@ -282,11 +282,12 @@ dotnet test
 - [docs/00-project-overview.md](docs/00-project-overview.md) — visi, aktor, roadmap
 - [docs/01-architecture.md](docs/01-architecture.md) — detail arsitektur
 - [docs/02-data-model.md](docs/02-data-model.md) — ERD & entitas
-- [docs/scalability/README.md](docs/scalability/README.md) — analisis skalabilitas (Markdown + Word)
-- [docs/database/README.md](docs/database/README.md) — implementasi database PostgreSQL + script SQL (Markdown + Word)
-- [docs/database-access/README.md](docs/database-access/README.md) — operasi, akses, koneksi, dan pengujian database (Markdown + Word)
-- [docs/programming-fundamentals/README.md](docs/programming-fundamentals/README.md) — tipe data, flowchart, algoritma, prosedur/fungsi, kompleksitas (Markdown + Word)
-- [docs/code-documentation/README.md](docs/code-documentation/README.md) — dokumentasi modul, method, eksepsi, API docs DocFX (Markdown + Word)
+- [deliverables/README.md](deliverables/README.md) — kumpulan deliverable per section
+- [deliverables/01-scalability-analysis/README.md](deliverables/01-scalability-analysis/README.md) — analisis skalabilitas (Markdown + Word)
+- [deliverables/02-database-implementation/README.md](deliverables/02-database-implementation/README.md) — implementasi database PostgreSQL + SQL per konteks
+- [deliverables/03-database-access-and-security/README.md](deliverables/03-database-access-and-security/README.md) — akses, koneksi, keamanan, pengujian database
+- [deliverables/04-programming-fundamentals/README.md](deliverables/04-programming-fundamentals/README.md) — tipe data, flowchart, algoritma, kompleksitas
+- [deliverables/05-code-documentation/README.md](deliverables/05-code-documentation/README.md) — dokumentasi modul, method, eksepsi, DocFX
 - [docs/adr/](docs/adr/) — Architecture Decision Records
 - [docs/adr/005-guid-soft-delete-audit.md](docs/adr/005-guid-soft-delete-audit.md) — GUID, soft delete, audit user
 - [docs/adr/006-api-first-client-server.md](docs/adr/006-api-first-client-server.md) — boundary API-first dan roadmap pemisahan BE/FE

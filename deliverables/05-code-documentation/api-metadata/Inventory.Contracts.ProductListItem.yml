@@ -1,0 +1,561 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Contracts.ProductListItem
+  commentId: T:Inventory.Contracts.ProductListItem
+  id: ProductListItem
+  parent: Inventory.Contracts
+  children:
+  - Inventory.Contracts.ProductListItem.CategoryName
+  - Inventory.Contracts.ProductListItem.Id
+  - Inventory.Contracts.ProductListItem.IsActive
+  - Inventory.Contracts.ProductListItem.Name
+  - Inventory.Contracts.ProductListItem.ReorderLevel
+  - Inventory.Contracts.ProductListItem.Sku
+  - Inventory.Contracts.ProductListItem.UnitName
+  langs:
+  - csharp
+  - vb
+  name: ProductListItem
+  nameWithType: ProductListItem
+  fullName: Inventory.Contracts.ProductListItem
+  type: Class
+  source:
+    remote:
+      path: src/Inventory.Contracts/MasterDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ProductListItem
+    path: ../../src/Inventory.Contracts/MasterDtos.cs
+    startLine: 49
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public sealed class ProductListItem
+    content.vb: Public NotInheritable Class ProductListItem
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Inventory.Contracts.ProductListItem.Id
+  commentId: P:Inventory.Contracts.ProductListItem.Id
+  id: Id
+  parent: Inventory.Contracts.ProductListItem
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: ProductListItem.Id
+  fullName: Inventory.Contracts.ProductListItem.Id
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/MasterDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Id
+    path: ../../src/Inventory.Contracts/MasterDtos.cs
+    startLine: 51
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public Guid Id { get; init; }
+    parameters: []
+    return:
+      type: System.Guid
+    content.vb: Public Property Id As Guid
+  overload: Inventory.Contracts.ProductListItem.Id*
+- uid: Inventory.Contracts.ProductListItem.Sku
+  commentId: P:Inventory.Contracts.ProductListItem.Sku
+  id: Sku
+  parent: Inventory.Contracts.ProductListItem
+  langs:
+  - csharp
+  - vb
+  name: Sku
+  nameWithType: ProductListItem.Sku
+  fullName: Inventory.Contracts.ProductListItem.Sku
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/MasterDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Sku
+    path: ../../src/Inventory.Contracts/MasterDtos.cs
+    startLine: 52
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public string Sku { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Sku As String
+  overload: Inventory.Contracts.ProductListItem.Sku*
+- uid: Inventory.Contracts.ProductListItem.Name
+  commentId: P:Inventory.Contracts.ProductListItem.Name
+  id: Name
+  parent: Inventory.Contracts.ProductListItem
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: ProductListItem.Name
+  fullName: Inventory.Contracts.ProductListItem.Name
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/MasterDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Name
+    path: ../../src/Inventory.Contracts/MasterDtos.cs
+    startLine: 53
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public string Name { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: Inventory.Contracts.ProductListItem.Name*
+- uid: Inventory.Contracts.ProductListItem.CategoryName
+  commentId: P:Inventory.Contracts.ProductListItem.CategoryName
+  id: CategoryName
+  parent: Inventory.Contracts.ProductListItem
+  langs:
+  - csharp
+  - vb
+  name: CategoryName
+  nameWithType: ProductListItem.CategoryName
+  fullName: Inventory.Contracts.ProductListItem.CategoryName
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/MasterDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: CategoryName
+    path: ../../src/Inventory.Contracts/MasterDtos.cs
+    startLine: 54
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public string CategoryName { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property CategoryName As String
+  overload: Inventory.Contracts.ProductListItem.CategoryName*
+- uid: Inventory.Contracts.ProductListItem.UnitName
+  commentId: P:Inventory.Contracts.ProductListItem.UnitName
+  id: UnitName
+  parent: Inventory.Contracts.ProductListItem
+  langs:
+  - csharp
+  - vb
+  name: UnitName
+  nameWithType: ProductListItem.UnitName
+  fullName: Inventory.Contracts.ProductListItem.UnitName
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/MasterDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: UnitName
+    path: ../../src/Inventory.Contracts/MasterDtos.cs
+    startLine: 55
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public string UnitName { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property UnitName As String
+  overload: Inventory.Contracts.ProductListItem.UnitName*
+- uid: Inventory.Contracts.ProductListItem.ReorderLevel
+  commentId: P:Inventory.Contracts.ProductListItem.ReorderLevel
+  id: ReorderLevel
+  parent: Inventory.Contracts.ProductListItem
+  langs:
+  - csharp
+  - vb
+  name: ReorderLevel
+  nameWithType: ProductListItem.ReorderLevel
+  fullName: Inventory.Contracts.ProductListItem.ReorderLevel
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/MasterDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ReorderLevel
+    path: ../../src/Inventory.Contracts/MasterDtos.cs
+    startLine: 56
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public int ReorderLevel { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property ReorderLevel As Integer
+  overload: Inventory.Contracts.ProductListItem.ReorderLevel*
+- uid: Inventory.Contracts.ProductListItem.IsActive
+  commentId: P:Inventory.Contracts.ProductListItem.IsActive
+  id: IsActive
+  parent: Inventory.Contracts.ProductListItem
+  langs:
+  - csharp
+  - vb
+  name: IsActive
+  nameWithType: ProductListItem.IsActive
+  fullName: Inventory.Contracts.ProductListItem.IsActive
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Contracts/MasterDtos.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: IsActive
+    path: ../../src/Inventory.Contracts/MasterDtos.cs
+    startLine: 57
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts
+  syntax:
+    content: public bool IsActive { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsActive As Boolean
+  overload: Inventory.Contracts.ProductListItem.IsActive*
+references:
+- uid: Inventory.Contracts
+  commentId: N:Inventory.Contracts
+  name: Inventory.Contracts
+  nameWithType: Inventory.Contracts
+  fullName: Inventory.Contracts
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Inventory.Contracts.ProductListItem.Id*
+  commentId: Overload:Inventory.Contracts.ProductListItem.Id
+  href: Inventory.Contracts.ProductListItem.html#Inventory_Contracts_ProductListItem_Id
+  name: Id
+  nameWithType: ProductListItem.Id
+  fullName: Inventory.Contracts.ProductListItem.Id
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: Inventory.Contracts.ProductListItem.Sku*
+  commentId: Overload:Inventory.Contracts.ProductListItem.Sku
+  href: Inventory.Contracts.ProductListItem.html#Inventory_Contracts_ProductListItem_Sku
+  name: Sku
+  nameWithType: ProductListItem.Sku
+  fullName: Inventory.Contracts.ProductListItem.Sku
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Inventory.Contracts.ProductListItem.Name*
+  commentId: Overload:Inventory.Contracts.ProductListItem.Name
+  href: Inventory.Contracts.ProductListItem.html#Inventory_Contracts_ProductListItem_Name
+  name: Name
+  nameWithType: ProductListItem.Name
+  fullName: Inventory.Contracts.ProductListItem.Name
+- uid: Inventory.Contracts.ProductListItem.CategoryName*
+  commentId: Overload:Inventory.Contracts.ProductListItem.CategoryName
+  href: Inventory.Contracts.ProductListItem.html#Inventory_Contracts_ProductListItem_CategoryName
+  name: CategoryName
+  nameWithType: ProductListItem.CategoryName
+  fullName: Inventory.Contracts.ProductListItem.CategoryName
+- uid: Inventory.Contracts.ProductListItem.UnitName*
+  commentId: Overload:Inventory.Contracts.ProductListItem.UnitName
+  href: Inventory.Contracts.ProductListItem.html#Inventory_Contracts_ProductListItem_UnitName
+  name: UnitName
+  nameWithType: ProductListItem.UnitName
+  fullName: Inventory.Contracts.ProductListItem.UnitName
+- uid: Inventory.Contracts.ProductListItem.ReorderLevel*
+  commentId: Overload:Inventory.Contracts.ProductListItem.ReorderLevel
+  href: Inventory.Contracts.ProductListItem.html#Inventory_Contracts_ProductListItem_ReorderLevel
+  name: ReorderLevel
+  nameWithType: ProductListItem.ReorderLevel
+  fullName: Inventory.Contracts.ProductListItem.ReorderLevel
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Inventory.Contracts.ProductListItem.IsActive*
+  commentId: Overload:Inventory.Contracts.ProductListItem.IsActive
+  href: Inventory.Contracts.ProductListItem.html#Inventory_Contracts_ProductListItem_IsActive
+  name: IsActive
+  nameWithType: ProductListItem.IsActive
+  fullName: Inventory.Contracts.ProductListItem.IsActive
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean

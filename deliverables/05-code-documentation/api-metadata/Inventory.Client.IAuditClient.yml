@@ -1,0 +1,438 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Client.IAuditClient
+  commentId: T:Inventory.Client.IAuditClient
+  id: IAuditClient
+  parent: Inventory.Client
+  children:
+  - Inventory.Client.IAuditClient.GetAsync(System.Int32,System.Threading.CancellationToken)
+  - Inventory.Client.IAuditClient.GetEntityNamesAsync(System.Threading.CancellationToken)
+  - Inventory.Client.IAuditClient.ListAsync(Inventory.Contracts.AuditFilter,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: IAuditClient
+  nameWithType: IAuditClient
+  fullName: Inventory.Client.IAuditClient
+  type: Interface
+  source:
+    remote:
+      path: src/Inventory.Client/IInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: IAuditClient
+    path: ../../src/Inventory.Client/IInventoryClients.cs
+    startLine: 126
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  syntax:
+    content: public interface IAuditClient
+    content.vb: Public Interface IAuditClient
+  derivedClasses:
+  - Inventory.Client.InProcessAuditClient
+- uid: Inventory.Client.IAuditClient.ListAsync(Inventory.Contracts.AuditFilter,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.IAuditClient.ListAsync(Inventory.Contracts.AuditFilter,System.Threading.CancellationToken)
+  id: ListAsync(Inventory.Contracts.AuditFilter,System.Threading.CancellationToken)
+  parent: Inventory.Client.IAuditClient
+  langs:
+  - csharp
+  - vb
+  name: ListAsync(AuditFilter, CancellationToken)
+  nameWithType: IAuditClient.ListAsync(AuditFilter, CancellationToken)
+  fullName: Inventory.Client.IAuditClient.ListAsync(Inventory.Contracts.AuditFilter, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/IInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ListAsync
+    path: ../../src/Inventory.Client/IInventoryClients.cs
+    startLine: 128
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  syntax:
+    content: Task<PagedResult<AuditListItem>> ListAsync(AuditFilter filter, CancellationToken ct = default)
+    parameters:
+    - id: filter
+      type: Inventory.Contracts.AuditFilter
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{Inventory.Contracts.PagedResult{Inventory.Contracts.AuditListItem}}
+    content.vb: Function ListAsync(filter As AuditFilter, ct As CancellationToken = Nothing) As Task(Of PagedResult(Of AuditListItem))
+  overload: Inventory.Client.IAuditClient.ListAsync*
+- uid: Inventory.Client.IAuditClient.GetAsync(System.Int32,System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.IAuditClient.GetAsync(System.Int32,System.Threading.CancellationToken)
+  id: GetAsync(System.Int32,System.Threading.CancellationToken)
+  parent: Inventory.Client.IAuditClient
+  langs:
+  - csharp
+  - vb
+  name: GetAsync(int, CancellationToken)
+  nameWithType: IAuditClient.GetAsync(int, CancellationToken)
+  fullName: Inventory.Client.IAuditClient.GetAsync(int, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/IInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: GetAsync
+    path: ../../src/Inventory.Client/IInventoryClients.cs
+    startLine: 129
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  syntax:
+    content: Task<AuditDetailItem?> GetAsync(int id, CancellationToken ct = default)
+    parameters:
+    - id: id
+      type: System.Int32
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{Inventory.Contracts.AuditDetailItem}
+    content.vb: Function GetAsync(id As Integer, ct As CancellationToken = Nothing) As Task(Of AuditDetailItem)
+  overload: Inventory.Client.IAuditClient.GetAsync*
+  nameWithType.vb: IAuditClient.GetAsync(Integer, CancellationToken)
+  fullName.vb: Inventory.Client.IAuditClient.GetAsync(Integer, System.Threading.CancellationToken)
+  name.vb: GetAsync(Integer, CancellationToken)
+- uid: Inventory.Client.IAuditClient.GetEntityNamesAsync(System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.IAuditClient.GetEntityNamesAsync(System.Threading.CancellationToken)
+  id: GetEntityNamesAsync(System.Threading.CancellationToken)
+  parent: Inventory.Client.IAuditClient
+  langs:
+  - csharp
+  - vb
+  name: GetEntityNamesAsync(CancellationToken)
+  nameWithType: IAuditClient.GetEntityNamesAsync(CancellationToken)
+  fullName: Inventory.Client.IAuditClient.GetEntityNamesAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/IInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: GetEntityNamesAsync
+    path: ../../src/Inventory.Client/IInventoryClients.cs
+    startLine: 130
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  syntax:
+    content: Task<IReadOnlyList<string>> GetEntityNamesAsync(CancellationToken ct = default)
+    parameters:
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{System.String}}
+    content.vb: Function GetEntityNamesAsync(ct As CancellationToken = Nothing) As Task(Of IReadOnlyList(Of String))
+  overload: Inventory.Client.IAuditClient.GetEntityNamesAsync*
+references:
+- uid: Inventory.Client
+  commentId: N:Inventory.Client
+  name: Inventory.Client
+  nameWithType: Inventory.Client
+  fullName: Inventory.Client
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Client
+    name: Client
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Client
+    name: Client
+- uid: Inventory.Client.IAuditClient.ListAsync*
+  commentId: Overload:Inventory.Client.IAuditClient.ListAsync
+  href: Inventory.Client.IAuditClient.html#Inventory_Client_IAuditClient_ListAsync_Inventory_Contracts_AuditFilter_System_Threading_CancellationToken_
+  name: ListAsync
+  nameWithType: IAuditClient.ListAsync
+  fullName: Inventory.Client.IAuditClient.ListAsync
+- uid: Inventory.Contracts.AuditFilter
+  commentId: T:Inventory.Contracts.AuditFilter
+  parent: Inventory.Contracts
+  href: Inventory.Contracts.AuditFilter.html
+  name: AuditFilter
+  nameWithType: AuditFilter
+  fullName: Inventory.Contracts.AuditFilter
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{Inventory.Contracts.PagedResult{Inventory.Contracts.AuditListItem}}
+  commentId: T:System.Threading.Tasks.Task{Inventory.Contracts.PagedResult{Inventory.Contracts.AuditListItem}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<PagedResult<AuditListItem>>
+  nameWithType: Task<PagedResult<AuditListItem>>
+  fullName: System.Threading.Tasks.Task<Inventory.Contracts.PagedResult<Inventory.Contracts.AuditListItem>>
+  nameWithType.vb: Task(Of PagedResult(Of AuditListItem))
+  fullName.vb: System.Threading.Tasks.Task(Of Inventory.Contracts.PagedResult(Of Inventory.Contracts.AuditListItem))
+  name.vb: Task(Of PagedResult(Of AuditListItem))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Inventory.Contracts.PagedResult`1
+    name: PagedResult
+    href: Inventory.Contracts.PagedResult-1.html
+  - name: <
+  - uid: Inventory.Contracts.AuditListItem
+    name: AuditListItem
+    href: Inventory.Contracts.AuditListItem.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.PagedResult`1
+    name: PagedResult
+    href: Inventory.Contracts.PagedResult-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.AuditListItem
+    name: AuditListItem
+    href: Inventory.Contracts.AuditListItem.html
+  - name: )
+  - name: )
+- uid: Inventory.Contracts
+  commentId: N:Inventory.Contracts
+  name: Inventory.Contracts
+  nameWithType: Inventory.Contracts
+  fullName: Inventory.Contracts
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: Inventory.Client.IAuditClient.GetAsync*
+  commentId: Overload:Inventory.Client.IAuditClient.GetAsync
+  href: Inventory.Client.IAuditClient.html#Inventory_Client_IAuditClient_GetAsync_System_Int32_System_Threading_CancellationToken_
+  name: GetAsync
+  nameWithType: IAuditClient.GetAsync
+  fullName: Inventory.Client.IAuditClient.GetAsync
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Threading.Tasks.Task{Inventory.Contracts.AuditDetailItem}
+  commentId: T:System.Threading.Tasks.Task{Inventory.Contracts.AuditDetailItem}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<AuditDetailItem>
+  nameWithType: Task<AuditDetailItem>
+  fullName: System.Threading.Tasks.Task<Inventory.Contracts.AuditDetailItem>
+  nameWithType.vb: Task(Of AuditDetailItem)
+  fullName.vb: System.Threading.Tasks.Task(Of Inventory.Contracts.AuditDetailItem)
+  name.vb: Task(Of AuditDetailItem)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Inventory.Contracts.AuditDetailItem
+    name: AuditDetailItem
+    href: Inventory.Contracts.AuditDetailItem.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.AuditDetailItem
+    name: AuditDetailItem
+    href: Inventory.Contracts.AuditDetailItem.html
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Inventory.Client.IAuditClient.GetEntityNamesAsync*
+  commentId: Overload:Inventory.Client.IAuditClient.GetEntityNamesAsync
+  href: Inventory.Client.IAuditClient.html#Inventory_Client_IAuditClient_GetEntityNamesAsync_System_Threading_CancellationToken_
+  name: GetEntityNamesAsync
+  nameWithType: IAuditClient.GetEntityNamesAsync
+  fullName: Inventory.Client.IAuditClient.GetEntityNamesAsync
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{System.String}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{System.String}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IReadOnlyList<string>>
+  nameWithType: Task<IReadOnlyList<string>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyList<string>>
+  nameWithType.vb: Task(Of IReadOnlyList(Of String))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IReadOnlyList(Of String))
+  name.vb: Task(Of IReadOnlyList(Of String))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  - name: )

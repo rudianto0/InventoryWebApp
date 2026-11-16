@@ -1,0 +1,565 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Client.InProcessApprovalClient
+  commentId: T:Inventory.Client.InProcessApprovalClient
+  id: InProcessApprovalClient
+  parent: Inventory.Client
+  children:
+  - Inventory.Client.InProcessApprovalClient.#ctor(Inventory.Application.Services.ApprovalService)
+  - Inventory.Client.InProcessApprovalClient.GetPendingAsync(System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: InProcessApprovalClient
+  nameWithType: InProcessApprovalClient
+  fullName: Inventory.Client.InProcessApprovalClient
+  type: Class
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: InProcessApprovalClient
+    path: ../../src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 113
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  syntax:
+    content: 'public sealed class InProcessApprovalClient : IApprovalClient'
+    content.vb: Public NotInheritable Class InProcessApprovalClient Implements IApprovalClient
+  inheritance:
+  - System.Object
+  implements:
+  - Inventory.Client.IApprovalClient
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Inventory.Client.InProcessApprovalClient.#ctor(Inventory.Application.Services.ApprovalService)
+  commentId: M:Inventory.Client.InProcessApprovalClient.#ctor(Inventory.Application.Services.ApprovalService)
+  id: '#ctor(Inventory.Application.Services.ApprovalService)'
+  parent: Inventory.Client.InProcessApprovalClient
+  langs:
+  - csharp
+  - vb
+  name: InProcessApprovalClient(ApprovalService)
+  nameWithType: InProcessApprovalClient.InProcessApprovalClient(ApprovalService)
+  fullName: Inventory.Client.InProcessApprovalClient.InProcessApprovalClient(Inventory.Application.Services.ApprovalService)
+  type: Constructor
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: .ctor
+    path: ../../src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 113
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  syntax:
+    content: public InProcessApprovalClient(ApprovalService service)
+    parameters:
+    - id: service
+      type: Inventory.Application.Services.ApprovalService
+    content.vb: Public Sub New(service As ApprovalService)
+  overload: Inventory.Client.InProcessApprovalClient.#ctor*
+  nameWithType.vb: InProcessApprovalClient.New(ApprovalService)
+  fullName.vb: Inventory.Client.InProcessApprovalClient.New(Inventory.Application.Services.ApprovalService)
+  name.vb: New(ApprovalService)
+- uid: Inventory.Client.InProcessApprovalClient.GetPendingAsync(System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.InProcessApprovalClient.GetPendingAsync(System.Threading.CancellationToken)
+  id: GetPendingAsync(System.Threading.CancellationToken)
+  parent: Inventory.Client.InProcessApprovalClient
+  langs:
+  - csharp
+  - vb
+  name: GetPendingAsync(CancellationToken)
+  nameWithType: InProcessApprovalClient.GetPendingAsync(CancellationToken)
+  fullName: Inventory.Client.InProcessApprovalClient.GetPendingAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Inventory.Client/InProcessInventoryClients.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: GetPendingAsync
+    path: ../../src/Inventory.Client/InProcessInventoryClients.cs
+    startLine: 115
+  assemblies:
+  - Inventory.Client
+  namespace: Inventory.Client
+  example: []
+  syntax:
+    content: public Task<IReadOnlyList<ApprovalItem>> GetPendingAsync(CancellationToken ct = default)
+    parameters:
+    - id: ct
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Inventory.Contracts.ApprovalItem}}
+    content.vb: Public Function GetPendingAsync(ct As CancellationToken = Nothing) As Task(Of IReadOnlyList(Of ApprovalItem))
+  overload: Inventory.Client.InProcessApprovalClient.GetPendingAsync*
+  implements:
+  - Inventory.Client.IApprovalClient.GetPendingAsync(System.Threading.CancellationToken)
+references:
+- uid: Inventory.Client
+  commentId: N:Inventory.Client
+  name: Inventory.Client
+  nameWithType: Inventory.Client
+  fullName: Inventory.Client
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Client
+    name: Client
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Client
+    name: Client
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Inventory.Client.IApprovalClient
+  commentId: T:Inventory.Client.IApprovalClient
+  parent: Inventory.Client
+  href: Inventory.Client.IApprovalClient.html
+  name: IApprovalClient
+  nameWithType: IApprovalClient
+  fullName: Inventory.Client.IApprovalClient
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Inventory.Client.InProcessApprovalClient.#ctor*
+  commentId: Overload:Inventory.Client.InProcessApprovalClient.#ctor
+  href: Inventory.Client.InProcessApprovalClient.html#Inventory_Client_InProcessApprovalClient__ctor_Inventory_Application_Services_ApprovalService_
+  name: InProcessApprovalClient
+  nameWithType: InProcessApprovalClient.InProcessApprovalClient
+  fullName: Inventory.Client.InProcessApprovalClient.InProcessApprovalClient
+  nameWithType.vb: InProcessApprovalClient.New
+  fullName.vb: Inventory.Client.InProcessApprovalClient.New
+  name.vb: New
+- uid: Inventory.Application.Services.ApprovalService
+  commentId: T:Inventory.Application.Services.ApprovalService
+  parent: Inventory.Application.Services
+  href: Inventory.Application.Services.ApprovalService.html
+  name: ApprovalService
+  nameWithType: ApprovalService
+  fullName: Inventory.Application.Services.ApprovalService
+- uid: Inventory.Application.Services
+  commentId: N:Inventory.Application.Services
+  name: Inventory.Application.Services
+  nameWithType: Inventory.Application.Services
+  fullName: Inventory.Application.Services
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Application
+    name: Application
+  - name: .
+  - uid: Inventory.Application.Services
+    name: Services
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Application
+    name: Application
+  - name: .
+  - uid: Inventory.Application.Services
+    name: Services
+- uid: Inventory.Client.InProcessApprovalClient.GetPendingAsync*
+  commentId: Overload:Inventory.Client.InProcessApprovalClient.GetPendingAsync
+  href: Inventory.Client.InProcessApprovalClient.html#Inventory_Client_InProcessApprovalClient_GetPendingAsync_System_Threading_CancellationToken_
+  name: GetPendingAsync
+  nameWithType: InProcessApprovalClient.GetPendingAsync
+  fullName: Inventory.Client.InProcessApprovalClient.GetPendingAsync
+- uid: Inventory.Client.IApprovalClient.GetPendingAsync(System.Threading.CancellationToken)
+  commentId: M:Inventory.Client.IApprovalClient.GetPendingAsync(System.Threading.CancellationToken)
+  parent: Inventory.Client.IApprovalClient
+  isExternal: true
+  href: Inventory.Client.IApprovalClient.html#Inventory_Client_IApprovalClient_GetPendingAsync_System_Threading_CancellationToken_
+  name: GetPendingAsync(CancellationToken)
+  nameWithType: IApprovalClient.GetPendingAsync(CancellationToken)
+  fullName: Inventory.Client.IApprovalClient.GetPendingAsync(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Inventory.Client.IApprovalClient.GetPendingAsync(System.Threading.CancellationToken)
+    name: GetPendingAsync
+    href: Inventory.Client.IApprovalClient.html#Inventory_Client_IApprovalClient_GetPendingAsync_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Inventory.Client.IApprovalClient.GetPendingAsync(System.Threading.CancellationToken)
+    name: GetPendingAsync
+    href: Inventory.Client.IApprovalClient.html#Inventory_Client_IApprovalClient_GetPendingAsync_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Inventory.Contracts.ApprovalItem}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Inventory.Contracts.ApprovalItem}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IReadOnlyList<ApprovalItem>>
+  nameWithType: Task<IReadOnlyList<ApprovalItem>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyList<Inventory.Contracts.ApprovalItem>>
+  nameWithType.vb: Task(Of IReadOnlyList(Of ApprovalItem))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IReadOnlyList(Of Inventory.Contracts.ApprovalItem))
+  name.vb: Task(Of IReadOnlyList(Of ApprovalItem))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: Inventory.Contracts.ApprovalItem
+    name: ApprovalItem
+    href: Inventory.Contracts.ApprovalItem.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Contracts.ApprovalItem
+    name: ApprovalItem
+    href: Inventory.Contracts.ApprovalItem.html
+  - name: )
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

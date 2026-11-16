@@ -1,0 +1,140 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Contracts.Enums.LocationType
+  commentId: T:Inventory.Contracts.Enums.LocationType
+  id: LocationType
+  parent: Inventory.Contracts.Enums
+  children:
+  - Inventory.Contracts.Enums.LocationType.Branch
+  - Inventory.Contracts.Enums.LocationType.Store
+  - Inventory.Contracts.Enums.LocationType.Warehouse
+  langs:
+  - csharp
+  - vb
+  name: LocationType
+  nameWithType: LocationType
+  fullName: Inventory.Contracts.Enums.LocationType
+  type: Enum
+  source:
+    remote:
+      path: src/Inventory.Contracts/Enums.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: LocationType
+    path: ../../src/Inventory.Contracts/Enums.cs
+    startLine: 2
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts.Enums
+  syntax:
+    content: public enum LocationType
+    content.vb: Public Enum LocationType
+- uid: Inventory.Contracts.Enums.LocationType.Branch
+  commentId: F:Inventory.Contracts.Enums.LocationType.Branch
+  id: Branch
+  parent: Inventory.Contracts.Enums.LocationType
+  langs:
+  - csharp
+  - vb
+  name: Branch
+  nameWithType: LocationType.Branch
+  fullName: Inventory.Contracts.Enums.LocationType.Branch
+  type: Field
+  source:
+    remote:
+      path: src/Inventory.Contracts/Enums.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Branch
+    path: ../../src/Inventory.Contracts/Enums.cs
+    startLine: 4
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts.Enums
+  syntax:
+    content: Branch = 0
+    return:
+      type: Inventory.Contracts.Enums.LocationType
+- uid: Inventory.Contracts.Enums.LocationType.Warehouse
+  commentId: F:Inventory.Contracts.Enums.LocationType.Warehouse
+  id: Warehouse
+  parent: Inventory.Contracts.Enums.LocationType
+  langs:
+  - csharp
+  - vb
+  name: Warehouse
+  nameWithType: LocationType.Warehouse
+  fullName: Inventory.Contracts.Enums.LocationType.Warehouse
+  type: Field
+  source:
+    remote:
+      path: src/Inventory.Contracts/Enums.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Warehouse
+    path: ../../src/Inventory.Contracts/Enums.cs
+    startLine: 5
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts.Enums
+  syntax:
+    content: Warehouse = 1
+    return:
+      type: Inventory.Contracts.Enums.LocationType
+- uid: Inventory.Contracts.Enums.LocationType.Store
+  commentId: F:Inventory.Contracts.Enums.LocationType.Store
+  id: Store
+  parent: Inventory.Contracts.Enums.LocationType
+  langs:
+  - csharp
+  - vb
+  name: Store
+  nameWithType: LocationType.Store
+  fullName: Inventory.Contracts.Enums.LocationType.Store
+  type: Field
+  source:
+    remote:
+      path: src/Inventory.Contracts/Enums.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Store
+    path: ../../src/Inventory.Contracts/Enums.cs
+    startLine: 6
+  assemblies:
+  - Inventory.Contracts
+  namespace: Inventory.Contracts.Enums
+  syntax:
+    content: Store = 2
+    return:
+      type: Inventory.Contracts.Enums.LocationType
+references:
+- uid: Inventory.Contracts.Enums
+  commentId: N:Inventory.Contracts.Enums
+  name: Inventory.Contracts.Enums
+  nameWithType: Inventory.Contracts.Enums
+  fullName: Inventory.Contracts.Enums
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+  - name: .
+  - uid: Inventory.Contracts.Enums
+    name: Enums
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+  - name: .
+  - uid: Inventory.Contracts.Enums
+    name: Enums
+- uid: Inventory.Contracts.Enums.LocationType
+  commentId: T:Inventory.Contracts.Enums.LocationType
+  parent: Inventory.Contracts.Enums
+  href: Inventory.Contracts.Enums.LocationType.html
+  name: LocationType
+  nameWithType: LocationType
+  fullName: Inventory.Contracts.Enums.LocationType

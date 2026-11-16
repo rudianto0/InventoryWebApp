@@ -1,0 +1,1483 @@
+### YamlMime:ManagedReference
+items:
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader
+  commentId: T:Inventory.Domain.Entities.StockAdjustmentHeader
+  id: StockAdjustmentHeader
+  parent: Inventory.Domain.Entities
+  children:
+  - Inventory.Domain.Entities.StockAdjustmentHeader.ApprovedAt
+  - Inventory.Domain.Entities.StockAdjustmentHeader.ApprovedById
+  - Inventory.Domain.Entities.StockAdjustmentHeader.ApproverId
+  - Inventory.Domain.Entities.StockAdjustmentHeader.CreatedAt
+  - Inventory.Domain.Entities.StockAdjustmentHeader.CreatedById
+  - Inventory.Domain.Entities.StockAdjustmentHeader.Date
+  - Inventory.Domain.Entities.StockAdjustmentHeader.DeletedAt
+  - Inventory.Domain.Entities.StockAdjustmentHeader.DeletedById
+  - Inventory.Domain.Entities.StockAdjustmentHeader.Details
+  - Inventory.Domain.Entities.StockAdjustmentHeader.DocNo
+  - Inventory.Domain.Entities.StockAdjustmentHeader.Id
+  - Inventory.Domain.Entities.StockAdjustmentHeader.IsDeleted
+  - Inventory.Domain.Entities.StockAdjustmentHeader.Location
+  - Inventory.Domain.Entities.StockAdjustmentHeader.LocationId
+  - Inventory.Domain.Entities.StockAdjustmentHeader.Notes
+  - Inventory.Domain.Entities.StockAdjustmentHeader.Reason
+  - Inventory.Domain.Entities.StockAdjustmentHeader.RejectionReason
+  - Inventory.Domain.Entities.StockAdjustmentHeader.Status
+  - Inventory.Domain.Entities.StockAdjustmentHeader.SubmittedAt
+  - Inventory.Domain.Entities.StockAdjustmentHeader.UpdatedAt
+  - Inventory.Domain.Entities.StockAdjustmentHeader.UpdatedById
+  langs:
+  - csharp
+  - vb
+  name: StockAdjustmentHeader
+  nameWithType: StockAdjustmentHeader
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader
+  type: Class
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: StockAdjustmentHeader
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 137
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  syntax:
+    content: 'public class StockAdjustmentHeader : IApprovable, IAuditableEntity, ISoftDeletable'
+    content.vb: Public Class StockAdjustmentHeader Implements IApprovable, IAuditableEntity, ISoftDeletable
+  inheritance:
+  - System.Object
+  implements:
+  - Inventory.Domain.Entities.IApprovable
+  - Inventory.Domain.Common.IAuditableEntity
+  - Inventory.Domain.Common.ISoftDeletable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.Id
+  commentId: P:Inventory.Domain.Entities.StockAdjustmentHeader.Id
+  id: Id
+  parent: Inventory.Domain.Entities.StockAdjustmentHeader
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: StockAdjustmentHeader.Id
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.Id
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Id
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 139
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  syntax:
+    content: public Guid Id { get; set; }
+    parameters: []
+    return:
+      type: System.Guid
+    content.vb: Public Property Id As Guid
+  overload: Inventory.Domain.Entities.StockAdjustmentHeader.Id*
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.DocNo
+  commentId: P:Inventory.Domain.Entities.StockAdjustmentHeader.DocNo
+  id: DocNo
+  parent: Inventory.Domain.Entities.StockAdjustmentHeader
+  langs:
+  - csharp
+  - vb
+  name: DocNo
+  nameWithType: StockAdjustmentHeader.DocNo
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.DocNo
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: DocNo
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 140
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  syntax:
+    content: public string DocNo { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property DocNo As String
+  overload: Inventory.Domain.Entities.StockAdjustmentHeader.DocNo*
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.LocationId
+  commentId: P:Inventory.Domain.Entities.StockAdjustmentHeader.LocationId
+  id: LocationId
+  parent: Inventory.Domain.Entities.StockAdjustmentHeader
+  langs:
+  - csharp
+  - vb
+  name: LocationId
+  nameWithType: StockAdjustmentHeader.LocationId
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.LocationId
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: LocationId
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 141
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  syntax:
+    content: public Guid LocationId { get; set; }
+    parameters: []
+    return:
+      type: System.Guid
+    content.vb: Public Property LocationId As Guid
+  overload: Inventory.Domain.Entities.StockAdjustmentHeader.LocationId*
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.Location
+  commentId: P:Inventory.Domain.Entities.StockAdjustmentHeader.Location
+  id: Location
+  parent: Inventory.Domain.Entities.StockAdjustmentHeader
+  langs:
+  - csharp
+  - vb
+  name: Location
+  nameWithType: StockAdjustmentHeader.Location
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.Location
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Location
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 142
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  syntax:
+    content: public Location? Location { get; set; }
+    parameters: []
+    return:
+      type: Inventory.Domain.Entities.Location
+    content.vb: Public Property Location As Location
+  overload: Inventory.Domain.Entities.StockAdjustmentHeader.Location*
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.Date
+  commentId: P:Inventory.Domain.Entities.StockAdjustmentHeader.Date
+  id: Date
+  parent: Inventory.Domain.Entities.StockAdjustmentHeader
+  langs:
+  - csharp
+  - vb
+  name: Date
+  nameWithType: StockAdjustmentHeader.Date
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.Date
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Date
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 143
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  syntax:
+    content: public DateTime Date { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property [Date] As Date
+  overload: Inventory.Domain.Entities.StockAdjustmentHeader.Date*
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.Reason
+  commentId: P:Inventory.Domain.Entities.StockAdjustmentHeader.Reason
+  id: Reason
+  parent: Inventory.Domain.Entities.StockAdjustmentHeader
+  langs:
+  - csharp
+  - vb
+  name: Reason
+  nameWithType: StockAdjustmentHeader.Reason
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.Reason
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Reason
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 144
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  syntax:
+    content: public string Reason { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Reason As String
+  overload: Inventory.Domain.Entities.StockAdjustmentHeader.Reason*
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.Status
+  commentId: P:Inventory.Domain.Entities.StockAdjustmentHeader.Status
+  id: Status
+  parent: Inventory.Domain.Entities.StockAdjustmentHeader
+  langs:
+  - csharp
+  - vb
+  name: Status
+  nameWithType: StockAdjustmentHeader.Status
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.Status
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Status
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 145
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  example: []
+  syntax:
+    content: public ApprovalStatus Status { get; set; }
+    parameters: []
+    return:
+      type: Inventory.Contracts.Enums.ApprovalStatus
+    content.vb: Public Property Status As ApprovalStatus
+  overload: Inventory.Domain.Entities.StockAdjustmentHeader.Status*
+  implements:
+  - Inventory.Domain.Entities.IApprovable.Status
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.SubmittedAt
+  commentId: P:Inventory.Domain.Entities.StockAdjustmentHeader.SubmittedAt
+  id: SubmittedAt
+  parent: Inventory.Domain.Entities.StockAdjustmentHeader
+  langs:
+  - csharp
+  - vb
+  name: SubmittedAt
+  nameWithType: StockAdjustmentHeader.SubmittedAt
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.SubmittedAt
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: SubmittedAt
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 146
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  example: []
+  syntax:
+    content: public DateTime? SubmittedAt { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: Public Property SubmittedAt As Date?
+  overload: Inventory.Domain.Entities.StockAdjustmentHeader.SubmittedAt*
+  implements:
+  - Inventory.Domain.Entities.IApprovable.SubmittedAt
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.ApproverId
+  commentId: P:Inventory.Domain.Entities.StockAdjustmentHeader.ApproverId
+  id: ApproverId
+  parent: Inventory.Domain.Entities.StockAdjustmentHeader
+  langs:
+  - csharp
+  - vb
+  name: ApproverId
+  nameWithType: StockAdjustmentHeader.ApproverId
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.ApproverId
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ApproverId
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 147
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  example: []
+  syntax:
+    content: public int? ApproverId { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property ApproverId As Integer?
+  overload: Inventory.Domain.Entities.StockAdjustmentHeader.ApproverId*
+  implements:
+  - Inventory.Domain.Entities.IApprovable.ApproverId
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.ApprovedAt
+  commentId: P:Inventory.Domain.Entities.StockAdjustmentHeader.ApprovedAt
+  id: ApprovedAt
+  parent: Inventory.Domain.Entities.StockAdjustmentHeader
+  langs:
+  - csharp
+  - vb
+  name: ApprovedAt
+  nameWithType: StockAdjustmentHeader.ApprovedAt
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.ApprovedAt
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ApprovedAt
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 148
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  example: []
+  syntax:
+    content: public DateTime? ApprovedAt { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: Public Property ApprovedAt As Date?
+  overload: Inventory.Domain.Entities.StockAdjustmentHeader.ApprovedAt*
+  implements:
+  - Inventory.Domain.Entities.IApprovable.ApprovedAt
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.ApprovedById
+  commentId: P:Inventory.Domain.Entities.StockAdjustmentHeader.ApprovedById
+  id: ApprovedById
+  parent: Inventory.Domain.Entities.StockAdjustmentHeader
+  langs:
+  - csharp
+  - vb
+  name: ApprovedById
+  nameWithType: StockAdjustmentHeader.ApprovedById
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.ApprovedById
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: ApprovedById
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 149
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  example: []
+  syntax:
+    content: public int? ApprovedById { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property ApprovedById As Integer?
+  overload: Inventory.Domain.Entities.StockAdjustmentHeader.ApprovedById*
+  implements:
+  - Inventory.Domain.Entities.IApprovable.ApprovedById
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.RejectionReason
+  commentId: P:Inventory.Domain.Entities.StockAdjustmentHeader.RejectionReason
+  id: RejectionReason
+  parent: Inventory.Domain.Entities.StockAdjustmentHeader
+  langs:
+  - csharp
+  - vb
+  name: RejectionReason
+  nameWithType: StockAdjustmentHeader.RejectionReason
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.RejectionReason
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: RejectionReason
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 150
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  example: []
+  syntax:
+    content: public string? RejectionReason { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property RejectionReason As String
+  overload: Inventory.Domain.Entities.StockAdjustmentHeader.RejectionReason*
+  implements:
+  - Inventory.Domain.Entities.IApprovable.RejectionReason
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.CreatedAt
+  commentId: P:Inventory.Domain.Entities.StockAdjustmentHeader.CreatedAt
+  id: CreatedAt
+  parent: Inventory.Domain.Entities.StockAdjustmentHeader
+  langs:
+  - csharp
+  - vb
+  name: CreatedAt
+  nameWithType: StockAdjustmentHeader.CreatedAt
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.CreatedAt
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: CreatedAt
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 151
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  example: []
+  syntax:
+    content: public DateTime CreatedAt { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property CreatedAt As Date
+  overload: Inventory.Domain.Entities.StockAdjustmentHeader.CreatedAt*
+  implements:
+  - Inventory.Domain.Common.IAuditableEntity.CreatedAt
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.CreatedById
+  commentId: P:Inventory.Domain.Entities.StockAdjustmentHeader.CreatedById
+  id: CreatedById
+  parent: Inventory.Domain.Entities.StockAdjustmentHeader
+  langs:
+  - csharp
+  - vb
+  name: CreatedById
+  nameWithType: StockAdjustmentHeader.CreatedById
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.CreatedById
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: CreatedById
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 152
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  example: []
+  syntax:
+    content: public int? CreatedById { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property CreatedById As Integer?
+  overload: Inventory.Domain.Entities.StockAdjustmentHeader.CreatedById*
+  implements:
+  - Inventory.Domain.Common.IAuditableEntity.CreatedById
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.UpdatedAt
+  commentId: P:Inventory.Domain.Entities.StockAdjustmentHeader.UpdatedAt
+  id: UpdatedAt
+  parent: Inventory.Domain.Entities.StockAdjustmentHeader
+  langs:
+  - csharp
+  - vb
+  name: UpdatedAt
+  nameWithType: StockAdjustmentHeader.UpdatedAt
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.UpdatedAt
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: UpdatedAt
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 153
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  example: []
+  syntax:
+    content: public DateTime? UpdatedAt { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: Public Property UpdatedAt As Date?
+  overload: Inventory.Domain.Entities.StockAdjustmentHeader.UpdatedAt*
+  implements:
+  - Inventory.Domain.Common.IAuditableEntity.UpdatedAt
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.UpdatedById
+  commentId: P:Inventory.Domain.Entities.StockAdjustmentHeader.UpdatedById
+  id: UpdatedById
+  parent: Inventory.Domain.Entities.StockAdjustmentHeader
+  langs:
+  - csharp
+  - vb
+  name: UpdatedById
+  nameWithType: StockAdjustmentHeader.UpdatedById
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.UpdatedById
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: UpdatedById
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 154
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  example: []
+  syntax:
+    content: public int? UpdatedById { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property UpdatedById As Integer?
+  overload: Inventory.Domain.Entities.StockAdjustmentHeader.UpdatedById*
+  implements:
+  - Inventory.Domain.Common.IAuditableEntity.UpdatedById
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.IsDeleted
+  commentId: P:Inventory.Domain.Entities.StockAdjustmentHeader.IsDeleted
+  id: IsDeleted
+  parent: Inventory.Domain.Entities.StockAdjustmentHeader
+  langs:
+  - csharp
+  - vb
+  name: IsDeleted
+  nameWithType: StockAdjustmentHeader.IsDeleted
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.IsDeleted
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: IsDeleted
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 155
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  example: []
+  syntax:
+    content: public bool IsDeleted { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsDeleted As Boolean
+  overload: Inventory.Domain.Entities.StockAdjustmentHeader.IsDeleted*
+  implements:
+  - Inventory.Domain.Common.ISoftDeletable.IsDeleted
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.DeletedAt
+  commentId: P:Inventory.Domain.Entities.StockAdjustmentHeader.DeletedAt
+  id: DeletedAt
+  parent: Inventory.Domain.Entities.StockAdjustmentHeader
+  langs:
+  - csharp
+  - vb
+  name: DeletedAt
+  nameWithType: StockAdjustmentHeader.DeletedAt
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.DeletedAt
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: DeletedAt
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 156
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  example: []
+  syntax:
+    content: public DateTime? DeletedAt { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: Public Property DeletedAt As Date?
+  overload: Inventory.Domain.Entities.StockAdjustmentHeader.DeletedAt*
+  implements:
+  - Inventory.Domain.Common.ISoftDeletable.DeletedAt
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.DeletedById
+  commentId: P:Inventory.Domain.Entities.StockAdjustmentHeader.DeletedById
+  id: DeletedById
+  parent: Inventory.Domain.Entities.StockAdjustmentHeader
+  langs:
+  - csharp
+  - vb
+  name: DeletedById
+  nameWithType: StockAdjustmentHeader.DeletedById
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.DeletedById
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: DeletedById
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 157
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  example: []
+  syntax:
+    content: public int? DeletedById { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property DeletedById As Integer?
+  overload: Inventory.Domain.Entities.StockAdjustmentHeader.DeletedById*
+  implements:
+  - Inventory.Domain.Common.ISoftDeletable.DeletedById
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.Notes
+  commentId: P:Inventory.Domain.Entities.StockAdjustmentHeader.Notes
+  id: Notes
+  parent: Inventory.Domain.Entities.StockAdjustmentHeader
+  langs:
+  - csharp
+  - vb
+  name: Notes
+  nameWithType: StockAdjustmentHeader.Notes
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.Notes
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Notes
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 158
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  syntax:
+    content: public string? Notes { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Notes As String
+  overload: Inventory.Domain.Entities.StockAdjustmentHeader.Notes*
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.Details
+  commentId: P:Inventory.Domain.Entities.StockAdjustmentHeader.Details
+  id: Details
+  parent: Inventory.Domain.Entities.StockAdjustmentHeader
+  langs:
+  - csharp
+  - vb
+  name: Details
+  nameWithType: StockAdjustmentHeader.Details
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.Details
+  type: Property
+  source:
+    remote:
+      path: src/Inventory.Domain/Entities/Transactions.cs
+      branch: main
+      repo: https://github.com/rudianto0/InventoryWebApp.git
+    id: Details
+    path: ../../src/Inventory.Domain/Entities/Transactions.cs
+    startLine: 159
+  assemblies:
+  - Inventory.Domain
+  namespace: Inventory.Domain.Entities
+  syntax:
+    content: public ICollection<StockAdjustmentDetail> Details { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.ICollection{Inventory.Domain.Entities.StockAdjustmentDetail}
+    content.vb: Public Property Details As ICollection(Of StockAdjustmentDetail)
+  overload: Inventory.Domain.Entities.StockAdjustmentHeader.Details*
+references:
+- uid: Inventory.Domain.Entities
+  commentId: N:Inventory.Domain.Entities
+  name: Inventory.Domain.Entities
+  nameWithType: Inventory.Domain.Entities
+  fullName: Inventory.Domain.Entities
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Domain
+    name: Domain
+  - name: .
+  - uid: Inventory.Domain.Entities
+    name: Entities
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Domain
+    name: Domain
+  - name: .
+  - uid: Inventory.Domain.Entities
+    name: Entities
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Inventory.Domain.Entities.IApprovable
+  commentId: T:Inventory.Domain.Entities.IApprovable
+  parent: Inventory.Domain.Entities
+  href: Inventory.Domain.Entities.IApprovable.html
+  name: IApprovable
+  nameWithType: IApprovable
+  fullName: Inventory.Domain.Entities.IApprovable
+- uid: Inventory.Domain.Common.IAuditableEntity
+  commentId: T:Inventory.Domain.Common.IAuditableEntity
+  parent: Inventory.Domain.Common
+  href: Inventory.Domain.Common.IAuditableEntity.html
+  name: IAuditableEntity
+  nameWithType: IAuditableEntity
+  fullName: Inventory.Domain.Common.IAuditableEntity
+- uid: Inventory.Domain.Common.ISoftDeletable
+  commentId: T:Inventory.Domain.Common.ISoftDeletable
+  parent: Inventory.Domain.Common
+  href: Inventory.Domain.Common.ISoftDeletable.html
+  name: ISoftDeletable
+  nameWithType: ISoftDeletable
+  fullName: Inventory.Domain.Common.ISoftDeletable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Inventory.Domain.Common
+  commentId: N:Inventory.Domain.Common
+  name: Inventory.Domain.Common
+  nameWithType: Inventory.Domain.Common
+  fullName: Inventory.Domain.Common
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Domain
+    name: Domain
+  - name: .
+  - uid: Inventory.Domain.Common
+    name: Common
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Domain
+    name: Domain
+  - name: .
+  - uid: Inventory.Domain.Common
+    name: Common
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.Id*
+  commentId: Overload:Inventory.Domain.Entities.StockAdjustmentHeader.Id
+  href: Inventory.Domain.Entities.StockAdjustmentHeader.html#Inventory_Domain_Entities_StockAdjustmentHeader_Id
+  name: Id
+  nameWithType: StockAdjustmentHeader.Id
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.Id
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.DocNo*
+  commentId: Overload:Inventory.Domain.Entities.StockAdjustmentHeader.DocNo
+  href: Inventory.Domain.Entities.StockAdjustmentHeader.html#Inventory_Domain_Entities_StockAdjustmentHeader_DocNo
+  name: DocNo
+  nameWithType: StockAdjustmentHeader.DocNo
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.DocNo
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.LocationId*
+  commentId: Overload:Inventory.Domain.Entities.StockAdjustmentHeader.LocationId
+  href: Inventory.Domain.Entities.StockAdjustmentHeader.html#Inventory_Domain_Entities_StockAdjustmentHeader_LocationId
+  name: LocationId
+  nameWithType: StockAdjustmentHeader.LocationId
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.LocationId
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.Location*
+  commentId: Overload:Inventory.Domain.Entities.StockAdjustmentHeader.Location
+  href: Inventory.Domain.Entities.StockAdjustmentHeader.html#Inventory_Domain_Entities_StockAdjustmentHeader_Location
+  name: Location
+  nameWithType: StockAdjustmentHeader.Location
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.Location
+- uid: Inventory.Domain.Entities.Location
+  commentId: T:Inventory.Domain.Entities.Location
+  parent: Inventory.Domain.Entities
+  href: Inventory.Domain.Entities.Location.html
+  name: Location
+  nameWithType: Location
+  fullName: Inventory.Domain.Entities.Location
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.Date*
+  commentId: Overload:Inventory.Domain.Entities.StockAdjustmentHeader.Date
+  href: Inventory.Domain.Entities.StockAdjustmentHeader.html#Inventory_Domain_Entities_StockAdjustmentHeader_Date
+  name: Date
+  nameWithType: StockAdjustmentHeader.Date
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.Date
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.Reason*
+  commentId: Overload:Inventory.Domain.Entities.StockAdjustmentHeader.Reason
+  href: Inventory.Domain.Entities.StockAdjustmentHeader.html#Inventory_Domain_Entities_StockAdjustmentHeader_Reason
+  name: Reason
+  nameWithType: StockAdjustmentHeader.Reason
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.Reason
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.Status*
+  commentId: Overload:Inventory.Domain.Entities.StockAdjustmentHeader.Status
+  href: Inventory.Domain.Entities.StockAdjustmentHeader.html#Inventory_Domain_Entities_StockAdjustmentHeader_Status
+  name: Status
+  nameWithType: StockAdjustmentHeader.Status
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.Status
+- uid: Inventory.Domain.Entities.IApprovable.Status
+  commentId: P:Inventory.Domain.Entities.IApprovable.Status
+  parent: Inventory.Domain.Entities.IApprovable
+  href: Inventory.Domain.Entities.IApprovable.html#Inventory_Domain_Entities_IApprovable_Status
+  name: Status
+  nameWithType: IApprovable.Status
+  fullName: Inventory.Domain.Entities.IApprovable.Status
+- uid: Inventory.Contracts.Enums.ApprovalStatus
+  commentId: T:Inventory.Contracts.Enums.ApprovalStatus
+  parent: Inventory.Contracts.Enums
+  href: Inventory.Contracts.Enums.ApprovalStatus.html
+  name: ApprovalStatus
+  nameWithType: ApprovalStatus
+  fullName: Inventory.Contracts.Enums.ApprovalStatus
+- uid: Inventory.Contracts.Enums
+  commentId: N:Inventory.Contracts.Enums
+  name: Inventory.Contracts.Enums
+  nameWithType: Inventory.Contracts.Enums
+  fullName: Inventory.Contracts.Enums
+  spec.csharp:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+  - name: .
+  - uid: Inventory.Contracts.Enums
+    name: Enums
+  spec.vb:
+  - uid: Inventory
+    name: Inventory
+  - name: .
+  - uid: Inventory.Contracts
+    name: Contracts
+  - name: .
+  - uid: Inventory.Contracts.Enums
+    name: Enums
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.SubmittedAt*
+  commentId: Overload:Inventory.Domain.Entities.StockAdjustmentHeader.SubmittedAt
+  href: Inventory.Domain.Entities.StockAdjustmentHeader.html#Inventory_Domain_Entities_StockAdjustmentHeader_SubmittedAt
+  name: SubmittedAt
+  nameWithType: StockAdjustmentHeader.SubmittedAt
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.SubmittedAt
+- uid: Inventory.Domain.Entities.IApprovable.SubmittedAt
+  commentId: P:Inventory.Domain.Entities.IApprovable.SubmittedAt
+  parent: Inventory.Domain.Entities.IApprovable
+  href: Inventory.Domain.Entities.IApprovable.html#Inventory_Domain_Entities_IApprovable_SubmittedAt
+  name: SubmittedAt
+  nameWithType: IApprovable.SubmittedAt
+  fullName: Inventory.Domain.Entities.IApprovable.SubmittedAt
+- uid: System.Nullable{System.DateTime}
+  commentId: T:System.Nullable{System.DateTime}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime?
+  nameWithType: DateTime?
+  fullName: System.DateTime?
+  nameWithType.vb: Date?
+  fullName.vb: Date?
+  name.vb: Date?
+  spec.csharp:
+  - uid: System.DateTime
+    name: DateTime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: '?'
+  spec.vb:
+  - uid: System.DateTime
+    name: Date
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.ApproverId*
+  commentId: Overload:Inventory.Domain.Entities.StockAdjustmentHeader.ApproverId
+  href: Inventory.Domain.Entities.StockAdjustmentHeader.html#Inventory_Domain_Entities_StockAdjustmentHeader_ApproverId
+  name: ApproverId
+  nameWithType: StockAdjustmentHeader.ApproverId
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.ApproverId
+- uid: Inventory.Domain.Entities.IApprovable.ApproverId
+  commentId: P:Inventory.Domain.Entities.IApprovable.ApproverId
+  parent: Inventory.Domain.Entities.IApprovable
+  href: Inventory.Domain.Entities.IApprovable.html#Inventory_Domain_Entities_IApprovable_ApproverId
+  name: ApproverId
+  nameWithType: IApprovable.ApproverId
+  fullName: Inventory.Domain.Entities.IApprovable.ApproverId
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.ApprovedAt*
+  commentId: Overload:Inventory.Domain.Entities.StockAdjustmentHeader.ApprovedAt
+  href: Inventory.Domain.Entities.StockAdjustmentHeader.html#Inventory_Domain_Entities_StockAdjustmentHeader_ApprovedAt
+  name: ApprovedAt
+  nameWithType: StockAdjustmentHeader.ApprovedAt
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.ApprovedAt
+- uid: Inventory.Domain.Entities.IApprovable.ApprovedAt
+  commentId: P:Inventory.Domain.Entities.IApprovable.ApprovedAt
+  parent: Inventory.Domain.Entities.IApprovable
+  href: Inventory.Domain.Entities.IApprovable.html#Inventory_Domain_Entities_IApprovable_ApprovedAt
+  name: ApprovedAt
+  nameWithType: IApprovable.ApprovedAt
+  fullName: Inventory.Domain.Entities.IApprovable.ApprovedAt
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.ApprovedById*
+  commentId: Overload:Inventory.Domain.Entities.StockAdjustmentHeader.ApprovedById
+  href: Inventory.Domain.Entities.StockAdjustmentHeader.html#Inventory_Domain_Entities_StockAdjustmentHeader_ApprovedById
+  name: ApprovedById
+  nameWithType: StockAdjustmentHeader.ApprovedById
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.ApprovedById
+- uid: Inventory.Domain.Entities.IApprovable.ApprovedById
+  commentId: P:Inventory.Domain.Entities.IApprovable.ApprovedById
+  parent: Inventory.Domain.Entities.IApprovable
+  href: Inventory.Domain.Entities.IApprovable.html#Inventory_Domain_Entities_IApprovable_ApprovedById
+  name: ApprovedById
+  nameWithType: IApprovable.ApprovedById
+  fullName: Inventory.Domain.Entities.IApprovable.ApprovedById
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.RejectionReason*
+  commentId: Overload:Inventory.Domain.Entities.StockAdjustmentHeader.RejectionReason
+  href: Inventory.Domain.Entities.StockAdjustmentHeader.html#Inventory_Domain_Entities_StockAdjustmentHeader_RejectionReason
+  name: RejectionReason
+  nameWithType: StockAdjustmentHeader.RejectionReason
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.RejectionReason
+- uid: Inventory.Domain.Entities.IApprovable.RejectionReason
+  commentId: P:Inventory.Domain.Entities.IApprovable.RejectionReason
+  parent: Inventory.Domain.Entities.IApprovable
+  href: Inventory.Domain.Entities.IApprovable.html#Inventory_Domain_Entities_IApprovable_RejectionReason
+  name: RejectionReason
+  nameWithType: IApprovable.RejectionReason
+  fullName: Inventory.Domain.Entities.IApprovable.RejectionReason
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.CreatedAt*
+  commentId: Overload:Inventory.Domain.Entities.StockAdjustmentHeader.CreatedAt
+  href: Inventory.Domain.Entities.StockAdjustmentHeader.html#Inventory_Domain_Entities_StockAdjustmentHeader_CreatedAt
+  name: CreatedAt
+  nameWithType: StockAdjustmentHeader.CreatedAt
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.CreatedAt
+- uid: Inventory.Domain.Common.IAuditableEntity.CreatedAt
+  commentId: P:Inventory.Domain.Common.IAuditableEntity.CreatedAt
+  parent: Inventory.Domain.Common.IAuditableEntity
+  href: Inventory.Domain.Common.IAuditableEntity.html#Inventory_Domain_Common_IAuditableEntity_CreatedAt
+  name: CreatedAt
+  nameWithType: IAuditableEntity.CreatedAt
+  fullName: Inventory.Domain.Common.IAuditableEntity.CreatedAt
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.CreatedById*
+  commentId: Overload:Inventory.Domain.Entities.StockAdjustmentHeader.CreatedById
+  href: Inventory.Domain.Entities.StockAdjustmentHeader.html#Inventory_Domain_Entities_StockAdjustmentHeader_CreatedById
+  name: CreatedById
+  nameWithType: StockAdjustmentHeader.CreatedById
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.CreatedById
+- uid: Inventory.Domain.Common.IAuditableEntity.CreatedById
+  commentId: P:Inventory.Domain.Common.IAuditableEntity.CreatedById
+  parent: Inventory.Domain.Common.IAuditableEntity
+  href: Inventory.Domain.Common.IAuditableEntity.html#Inventory_Domain_Common_IAuditableEntity_CreatedById
+  name: CreatedById
+  nameWithType: IAuditableEntity.CreatedById
+  fullName: Inventory.Domain.Common.IAuditableEntity.CreatedById
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.UpdatedAt*
+  commentId: Overload:Inventory.Domain.Entities.StockAdjustmentHeader.UpdatedAt
+  href: Inventory.Domain.Entities.StockAdjustmentHeader.html#Inventory_Domain_Entities_StockAdjustmentHeader_UpdatedAt
+  name: UpdatedAt
+  nameWithType: StockAdjustmentHeader.UpdatedAt
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.UpdatedAt
+- uid: Inventory.Domain.Common.IAuditableEntity.UpdatedAt
+  commentId: P:Inventory.Domain.Common.IAuditableEntity.UpdatedAt
+  parent: Inventory.Domain.Common.IAuditableEntity
+  href: Inventory.Domain.Common.IAuditableEntity.html#Inventory_Domain_Common_IAuditableEntity_UpdatedAt
+  name: UpdatedAt
+  nameWithType: IAuditableEntity.UpdatedAt
+  fullName: Inventory.Domain.Common.IAuditableEntity.UpdatedAt
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.UpdatedById*
+  commentId: Overload:Inventory.Domain.Entities.StockAdjustmentHeader.UpdatedById
+  href: Inventory.Domain.Entities.StockAdjustmentHeader.html#Inventory_Domain_Entities_StockAdjustmentHeader_UpdatedById
+  name: UpdatedById
+  nameWithType: StockAdjustmentHeader.UpdatedById
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.UpdatedById
+- uid: Inventory.Domain.Common.IAuditableEntity.UpdatedById
+  commentId: P:Inventory.Domain.Common.IAuditableEntity.UpdatedById
+  parent: Inventory.Domain.Common.IAuditableEntity
+  href: Inventory.Domain.Common.IAuditableEntity.html#Inventory_Domain_Common_IAuditableEntity_UpdatedById
+  name: UpdatedById
+  nameWithType: IAuditableEntity.UpdatedById
+  fullName: Inventory.Domain.Common.IAuditableEntity.UpdatedById
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.IsDeleted*
+  commentId: Overload:Inventory.Domain.Entities.StockAdjustmentHeader.IsDeleted
+  href: Inventory.Domain.Entities.StockAdjustmentHeader.html#Inventory_Domain_Entities_StockAdjustmentHeader_IsDeleted
+  name: IsDeleted
+  nameWithType: StockAdjustmentHeader.IsDeleted
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.IsDeleted
+- uid: Inventory.Domain.Common.ISoftDeletable.IsDeleted
+  commentId: P:Inventory.Domain.Common.ISoftDeletable.IsDeleted
+  parent: Inventory.Domain.Common.ISoftDeletable
+  href: Inventory.Domain.Common.ISoftDeletable.html#Inventory_Domain_Common_ISoftDeletable_IsDeleted
+  name: IsDeleted
+  nameWithType: ISoftDeletable.IsDeleted
+  fullName: Inventory.Domain.Common.ISoftDeletable.IsDeleted
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.DeletedAt*
+  commentId: Overload:Inventory.Domain.Entities.StockAdjustmentHeader.DeletedAt
+  href: Inventory.Domain.Entities.StockAdjustmentHeader.html#Inventory_Domain_Entities_StockAdjustmentHeader_DeletedAt
+  name: DeletedAt
+  nameWithType: StockAdjustmentHeader.DeletedAt
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.DeletedAt
+- uid: Inventory.Domain.Common.ISoftDeletable.DeletedAt
+  commentId: P:Inventory.Domain.Common.ISoftDeletable.DeletedAt
+  parent: Inventory.Domain.Common.ISoftDeletable
+  href: Inventory.Domain.Common.ISoftDeletable.html#Inventory_Domain_Common_ISoftDeletable_DeletedAt
+  name: DeletedAt
+  nameWithType: ISoftDeletable.DeletedAt
+  fullName: Inventory.Domain.Common.ISoftDeletable.DeletedAt
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.DeletedById*
+  commentId: Overload:Inventory.Domain.Entities.StockAdjustmentHeader.DeletedById
+  href: Inventory.Domain.Entities.StockAdjustmentHeader.html#Inventory_Domain_Entities_StockAdjustmentHeader_DeletedById
+  name: DeletedById
+  nameWithType: StockAdjustmentHeader.DeletedById
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.DeletedById
+- uid: Inventory.Domain.Common.ISoftDeletable.DeletedById
+  commentId: P:Inventory.Domain.Common.ISoftDeletable.DeletedById
+  parent: Inventory.Domain.Common.ISoftDeletable
+  href: Inventory.Domain.Common.ISoftDeletable.html#Inventory_Domain_Common_ISoftDeletable_DeletedById
+  name: DeletedById
+  nameWithType: ISoftDeletable.DeletedById
+  fullName: Inventory.Domain.Common.ISoftDeletable.DeletedById
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.Notes*
+  commentId: Overload:Inventory.Domain.Entities.StockAdjustmentHeader.Notes
+  href: Inventory.Domain.Entities.StockAdjustmentHeader.html#Inventory_Domain_Entities_StockAdjustmentHeader_Notes
+  name: Notes
+  nameWithType: StockAdjustmentHeader.Notes
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.Notes
+- uid: Inventory.Domain.Entities.StockAdjustmentHeader.Details*
+  commentId: Overload:Inventory.Domain.Entities.StockAdjustmentHeader.Details
+  href: Inventory.Domain.Entities.StockAdjustmentHeader.html#Inventory_Domain_Entities_StockAdjustmentHeader_Details
+  name: Details
+  nameWithType: StockAdjustmentHeader.Details
+  fullName: Inventory.Domain.Entities.StockAdjustmentHeader.Details
+- uid: System.Collections.Generic.ICollection{Inventory.Domain.Entities.StockAdjustmentDetail}
+  commentId: T:System.Collections.Generic.ICollection{Inventory.Domain.Entities.StockAdjustmentDetail}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.ICollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<StockAdjustmentDetail>
+  nameWithType: ICollection<StockAdjustmentDetail>
+  fullName: System.Collections.Generic.ICollection<Inventory.Domain.Entities.StockAdjustmentDetail>
+  nameWithType.vb: ICollection(Of StockAdjustmentDetail)
+  fullName.vb: System.Collections.Generic.ICollection(Of Inventory.Domain.Entities.StockAdjustmentDetail)
+  name.vb: ICollection(Of StockAdjustmentDetail)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - uid: Inventory.Domain.Entities.StockAdjustmentDetail
+    name: StockAdjustmentDetail
+    href: Inventory.Domain.Entities.StockAdjustmentDetail.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Inventory.Domain.Entities.StockAdjustmentDetail
+    name: StockAdjustmentDetail
+    href: Inventory.Domain.Entities.StockAdjustmentDetail.html
+  - name: )
+- uid: System.Collections.Generic.ICollection`1
+  commentId: T:System.Collections.Generic.ICollection`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<T>
+  nameWithType: ICollection<T>
+  fullName: System.Collections.Generic.ICollection<T>
+  nameWithType.vb: ICollection(Of T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T)
+  name.vb: ICollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
