@@ -52,6 +52,7 @@ dasar pemrograman, dan dokumentasi kode) dipindahkan ke folder deliverable:
 | [07-performance-profiling](../deliverables/07-performance-profiling/README.md) | Waktu/memori, bottleneck, solusi, kompleksitas |
 | [08-code-guidelines-compliance](../deliverables/08-code-guidelines-compliance/README.md) | Kesesuaian kode, perbaikan, pengecualian |
 | [09-software-testing](../deliverables/09-software-testing/README.md) | Kebutuhan, data, skenario, hasil, coverage |
+| [10-integration-testing](../deliverables/10-integration-testing/README.md) | Peralatan, data integrasi, pelaksanaan, analisis, arsip |
 | [99-source-map](../deliverables/99-source-map/README.md) | Manifest & source commit |
 
 ## Index Fitur

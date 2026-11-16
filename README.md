@@ -292,6 +292,7 @@ dotnet test
 - [deliverables/07-performance-profiling/README.md](deliverables/07-performance-profiling/README.md) — pengukuran performa, bottleneck, solusi, kompleksitas
 - [deliverables/08-code-guidelines-compliance/README.md](deliverables/08-code-guidelines-compliance/README.md) — kesesuaian kode, perbaikan, pengecualian
 - [deliverables/09-software-testing/README.md](deliverables/09-software-testing/README.md) — kebutuhan, data, skenario, hasil, coverage
+- [deliverables/10-integration-testing/README.md](deliverables/10-integration-testing/README.md) — peralatan, data integrasi, pelaksanaan, analisis, arsip
 - [docs/adr/](docs/adr/) — Architecture Decision Records
 - [docs/adr/005-guid-soft-delete-audit.md](docs/adr/005-guid-soft-delete-audit.md) — GUID, soft delete, audit user
 - [docs/adr/006-api-first-client-server.md](docs/adr/006-api-first-client-server.md) — boundary API-first dan roadmap pemisahan BE/FE

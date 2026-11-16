@@ -19,6 +19,7 @@ Folder ini adalah **salinan terorganisir** dari commit:
 | `07-performance-profiling` | Pengukuran waktu/memori, bottleneck, solusi, kompleksitas | working tree |
 | `08-code-guidelines-compliance` | Kesesuaian kode, perbaikan, pengecualian | working tree |
 | `09-software-testing` | Kebutuhan, data, skenario, hasil, coverage | working tree |
+| `10-integration-testing` | Peralatan, data integrasi, pelaksanaan, analisis, arsip | working tree |
 | `99-source-map` | Peta file, commit, dan manifest | keduanya |
 
 ## Urutan Membaca
@@ -32,6 +33,7 @@ Folder ini adalah **salinan terorganisir** dari commit:
 7. `07-performance-profiling/README.md`
 8. `08-code-guidelines-compliance/README.md`
 9. `09-software-testing/README.md`
+10. `10-integration-testing/README.md`
 
 ## SQL
 

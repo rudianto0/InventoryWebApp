@@ -1,0 +1,11 @@
+TestID,Module,Scenario,Precondition,Input,Expected,Status
+INT-01,MOD-APP-STOCKIN,Stock In submit and approve,Supplier/location/product active; creator 10; approver 20,Quantity 7,Status Approved; stock +7; movement In,Pass
+INT-02,MOD-APP-STOCKOUT,Stock Out with sufficient stock,Stock WH1=10,Quantity 4,Stock 6; movement Out -4,Pass
+INT-03,MOD-APP-STOCKOUT,Stock Out with insufficient stock,Stock WH1=2,Quantity 5,ValidationException; stock unchanged,Pass
+INT-04,MOD-APP-TRANSFER,Transfer WH1 to WH2,Stock WH1=10,Quantity 4,WH1=6; WH2=4; 2 movements,Pass
+INT-05,MOD-APP-ADJUSTMENT,Adjustment negative difference,System stock=10,Counted=7,Difference=-3; stock=7,Pass
+INT-06,MOD-APP-OPNAME,Opname counted greater than system,System stock=10,Counted=12,Stock=12; movement Opname,Pass
+INT-07,MOD-APP-APPROVAL,Approve by non-approver,Submitted doc approver=20,Actor=99,ValidationException; stock unchanged,Pass
+INT-08,MOD-APP-STOCKIN,Admin submit auto-approve,Admin user,Quantity 7,Status Approved; stock +7,Pass
+INT-09,MOD-INF-DBCONTEXT,Soft delete product,Product with stock,Remove product,Product hidden from queries; IsDeleted=true,Pass
+INT-10,MOD-INF-DBCONTEXT,Audit create-update-delete,Category entity,Create/update/delete,AuditLogs contains action and user,Pass

@@ -1,0 +1,4 @@
+DefectID,TestID,Description,Expected,Actual,RootCause,FixStatus
+DEF-INT-01,INT-ALL,No real PostgreSQL integration test,Module integration on PostgreSQL,Mocked by SQLite in-memory,Test scope limitation,Open
+DEF-INT-02,INT-ALL,No API/controller integration test,HTTP endpoint tested end-to-end,Not executed,Test scope limitation,Open
+DEF-INT-03,INT-ALL,No UI integration test,Razor flow tested,Not executed,Test scope limitation,Open

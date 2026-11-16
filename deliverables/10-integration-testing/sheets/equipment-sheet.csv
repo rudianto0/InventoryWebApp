@@ -1,0 +1,11 @@
+No,Equipment,Version,Function,Status
+1,Windows 11,-,Operating system,Available
+2,.NET SDK,10.0.404,Build and test runner,Available
+3,.NET Runtime,10.0.15,Application execution,Available
+4,xUnit,2.9.3,Test framework,Available
+5,FluentAssertions,8.11.0,Assertion library,Available
+6,EF Core SQLite,10.0.15,In-memory integration database,Available
+7,coverlet.collector,10.1.0,Code coverage,Available
+8,JetBrains Rider / Visual Studio,latest,Debug and test explorer,Available
+9,DBeaver,latest,Database verification,Available
+10,BenchmarkDotNet,0.14.0,Performance benchmark (section 07),Available
