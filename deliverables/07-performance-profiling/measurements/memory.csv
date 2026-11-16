@@ -1,0 +1,8 @@
+Method,AllocatedKB,Gen0Per1000,Gen1Per1000,Gen2Per1000,Note
+Ledger_Apply_100,40348.92,17000,1000,0,High allocation from entity tracking + 100 movements
+Approval_Pending_100,1278.94,625,0,0,Dominated by item list + creator queries
+StockCard_10000,5221.27,906.25,437.5,93.75,All 10000 movements materialized
+StockCheck_Naive_100,1158.14,562.5,0,0,100 separate queries
+StockCheck_Batch_100,172.78,83.9844,0,0,Single query
+CreatorLookup_Naive_100,8.59,4.2076,0,0,Linear scan
+CreatorLookup_Batch_100,3.05,1.4935,0,0,Dictionary

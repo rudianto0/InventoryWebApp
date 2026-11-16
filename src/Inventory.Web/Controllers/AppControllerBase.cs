@@ -14,6 +14,9 @@ public abstract class AppControllerBase : Controller
     {
         if (ex is ValidationException or InvalidOperationException)
             return ex.Message;
+
+        // EX-06: Temporary Web -> EF dependency until Inventory.Api owns
+        // transaction/concurrency handling (see ADR 006).
         if (ex is Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException)
             return "Data telah berubah oleh pengguna lain. Muat ulang halaman dan coba lagi.";
         return null;

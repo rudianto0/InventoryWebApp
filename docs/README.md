@@ -48,6 +48,10 @@ dasar pemrograman, dan dokumentasi kode) dipindahkan ke folder deliverable:
 | [03-database-access-and-security](../deliverables/03-database-access-and-security/README.md) | Akses DB, koneksi, keamanan, role, performa |
 | [04-programming-fundamentals](../deliverables/04-programming-fundamentals/README.md) | Tipe data, flowchart, algoritma, kompleksitas |
 | [05-code-documentation](../deliverables/05-code-documentation/README.md) | Dokumentasi modul/method/eksepsi + DocFX |
+| [06-code-preparation-and-debugging](../deliverables/06-code-preparation-and-debugging/README.md) | Persiapan kode, build, debugging, perbaikan |
+| [07-performance-profiling](../deliverables/07-performance-profiling/README.md) | Waktu/memori, bottleneck, solusi, kompleksitas |
+| [08-code-guidelines-compliance](../deliverables/08-code-guidelines-compliance/README.md) | Kesesuaian kode, perbaikan, pengecualian |
+| [09-software-testing](../deliverables/09-software-testing/README.md) | Kebutuhan, data, skenario, hasil, coverage |
 | [99-source-map](../deliverables/99-source-map/README.md) | Manifest & source commit |
 
 ## Index Fitur

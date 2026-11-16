@@ -1,0 +1,8 @@
+Method,Scenario,MeanMs,AllocatedKB,Gen0Per1000,Gen1Per1000,Gen2Per1000,Environment,Note
+Ledger_Apply_100,100 stock changes,237.416,40348.92,17000,1000,0,SQLite in-memory,Baseline
+Approval_Pending_100,100 pending approvals,15.2859,1278.94,625,0,0,SQLite in-memory,Baseline
+StockCard_10000,10000 movements,30.7145,5221.27,906.25,437.5,93.75,SQLite in-memory,Baseline
+StockCheck_Naive_100,100 products per-line query,7.5252,1158.14,562.5,0,0,SQLite in-memory,Baseline
+StockCheck_Batch_100,100 products single query,0.6370,172.78,83.9844,0,0,SQLite in-memory,Prototype
+CreatorLookup_Naive_100,100 headers linear lookup,0.003887,8.59,4.2076,0,0,SQLite in-memory,Baseline
+CreatorLookup_Batch_100,100 headers dictionary lookup,0.001266,3.05,1.4935,0,0,SQLite in-memory,Prototype

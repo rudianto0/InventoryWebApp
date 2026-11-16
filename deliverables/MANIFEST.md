@@ -5,8 +5,8 @@
   - `1d5f316` — scalability + database implementation
   - `169a891` — code documentation + database access + programming fundamentals
 - **Tools:** .NET SDK 10.0.404, DocFX 2.81.0, PostgreSQL SQL (DBeaver-compatible)
-- **Total files:** 284 (termasuk `README.md` dan `MANIFEST.md` di root)
-- **Total size:** ±14.19 MB
+- **Total files:** 344 (termasuk `README.md` dan `MANIFEST.md` di root)
+- **Total size:** ±15.38 MB
 
 ## Ringkasan per Section
 
@@ -16,8 +16,12 @@
 | `02-database-implementation` | 32 | 0.21 MB |
 | `03-database-access-and-security` | 15 | 0.05 MB |
 | `04-programming-fundamentals` | 12 | 0.20 MB |
-| `05-code-documentation` | 211 | 13.66 MB |
-| `99-source-map` | 3 | 0.03 MB |
+| `05-code-documentation` | 211 | 13.67 MB |
+| `06-code-preparation-and-debugging` | 12 | 0.08 MB |
+| `07-performance-profiling` | 19 | 0.06 MB |
+| `08-code-guidelines-compliance` | 12 | 0.05 MB |
+| `09-software-testing` | 17 | 1.02 MB |
+| `99-source-map` | 3 | 0.04 MB |
 | Root (`README.md`, `MANIFEST.md`) | 2 | 0.01 MB |
 
 ## Catatan

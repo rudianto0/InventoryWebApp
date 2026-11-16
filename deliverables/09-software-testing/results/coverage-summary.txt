@@ -1,0 +1,7 @@
+Coverage Summary
+Generated: 2026-11-16
+Tool: coverlet.collector (XPlat Code Coverage)
+Line rate: 74.69%
+Branch rate: 60.17%
+Lines covered: 2530 / 3387
+Branches covered: 550 / 914

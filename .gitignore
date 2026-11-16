@@ -36,3 +36,5 @@ Thumbs.db
 
 ## Deliverables generated DocFX site
 deliverables/05-code-documentation/api-site/
+## BenchmarkDotNet artifacts
+BenchmarkDotNet.Artifacts/

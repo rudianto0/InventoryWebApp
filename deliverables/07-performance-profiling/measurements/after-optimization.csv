@@ -1,0 +1,6 @@
+Method,Scenario,MeanMs,AllocatedKB,Type,Improvement,Note
+StockCheck_Batch_100,100 products single query,0.6370,172.78,Measured,11.8x faster; 6.7x lower allocation,Prototype benchmark
+CreatorLookup_Batch_100,100 headers dictionary lookup,0.001266,3.05,Measured,3.1x faster; 2.8x lower allocation,Prototype benchmark
+Ledger_Apply_100_Optimized,100 stock changes batch fetch,50.0,10240,Estimated,~4.7x faster; ~3.9x lower allocation,Design target
+Approval_Pending_100_Optimized,100 pending batch creator,3.0,512,Estimated,~5x faster; ~2.5x lower allocation,Design target
+StockCard_10000_Paginated,10000 movements paginated,5.0,512,Estimated,~6x faster; ~10x lower memory,Design target

@@ -15,6 +15,10 @@ Folder ini adalah **salinan terorganisir** dari commit:
 | `03-database-access-and-security` | Library akses, koneksi, keamanan, role, performa + Word | `169a891` |
 | `04-programming-fundamentals` | Tipe data, flowchart, algoritma, prosedur/fungsi, kompleksitas + Word | `169a891` |
 | `05-code-documentation` | Dokumentasi modul/method/eksepsi, annotated code, DocFX | `169a891` |
+| `06-code-preparation-and-debugging` | Persiapan kode, debugging tools, build, log kesalahan, perbaikan | working tree |
+| `07-performance-profiling` | Pengukuran waktu/memori, bottleneck, solusi, kompleksitas | working tree |
+| `08-code-guidelines-compliance` | Kesesuaian kode, perbaikan, pengecualian | working tree |
+| `09-software-testing` | Kebutuhan, data, skenario, hasil, coverage | working tree |
 | `99-source-map` | Peta file, commit, dan manifest | keduanya |
 
 ## Urutan Membaca
@@ -24,6 +28,10 @@ Folder ini adalah **salinan terorganisir** dari commit:
 3. `03-database-access-and-security/README.md`
 4. `04-programming-fundamentals/README.md`
 5. `05-code-documentation/README.md`
+6. `06-code-preparation-and-debugging/README.md`
+7. `07-performance-profiling/README.md`
+8. `08-code-guidelines-compliance/README.md`
+9. `09-software-testing/README.md`
 
 ## SQL
 

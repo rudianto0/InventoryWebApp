@@ -288,6 +288,10 @@ dotnet test
 - [deliverables/03-database-access-and-security/README.md](deliverables/03-database-access-and-security/README.md) — akses, koneksi, keamanan, pengujian database
 - [deliverables/04-programming-fundamentals/README.md](deliverables/04-programming-fundamentals/README.md) — tipe data, flowchart, algoritma, kompleksitas
 - [deliverables/05-code-documentation/README.md](deliverables/05-code-documentation/README.md) — dokumentasi modul, method, eksepsi, DocFX
+- [deliverables/06-code-preparation-and-debugging/README.md](deliverables/06-code-preparation-and-debugging/README.md) — persiapan kode, build, debugging, perbaikan
+- [deliverables/07-performance-profiling/README.md](deliverables/07-performance-profiling/README.md) — pengukuran performa, bottleneck, solusi, kompleksitas
+- [deliverables/08-code-guidelines-compliance/README.md](deliverables/08-code-guidelines-compliance/README.md) — kesesuaian kode, perbaikan, pengecualian
+- [deliverables/09-software-testing/README.md](deliverables/09-software-testing/README.md) — kebutuhan, data, skenario, hasil, coverage
 - [docs/adr/](docs/adr/) — Architecture Decision Records
 - [docs/adr/005-guid-soft-delete-audit.md](docs/adr/005-guid-soft-delete-audit.md) — GUID, soft delete, audit user
 - [docs/adr/006-api-first-client-server.md](docs/adr/006-api-first-client-server.md) — boundary API-first dan roadmap pemisahan BE/FE
