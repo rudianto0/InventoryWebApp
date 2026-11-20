@@ -7,18 +7,18 @@ namespace Inventory.Client;
 
 public sealed class InProcessCatalogClient(CatalogService service) : ICatalogClient
 {
-    public Task<IReadOnlyList<CategoryResponse>> GetCategoriesAsync(string? search = null, CancellationToken ct = default) => service.GetCategoriesAsync(search, ct);
+    public Task<PagedResult<CategoryResponse>> GetCategoriesAsync(string? search = null, int page = 1, int pageSize = 20, SortSpec? sort = null, CancellationToken ct = default) => service.GetCategoriesAsync(search, page, pageSize, sort, ct);
     public Task<CategoryResponse?> GetCategoryAsync(Guid id, CancellationToken ct = default) => service.GetCategoryAsync(id, ct);
     public Task<CategoryResponse> CreateCategoryAsync(CategoryInput input, CancellationToken ct = default) => service.CreateCategoryAsync(input, ct);
     public Task UpdateCategoryAsync(Guid id, CategoryInput input, CancellationToken ct = default) => service.UpdateCategoryAsync(id, input, ct);
     public Task DeactivateCategoryAsync(Guid id, CancellationToken ct = default) => service.DeactivateCategoryAsync(id, ct);
     public Task DeleteCategoryAsync(Guid id, CancellationToken ct = default) => service.DeleteCategoryAsync(id, ct);
-    public Task<IReadOnlyList<UnitResponse>> GetUnitsAsync(string? search = null, CancellationToken ct = default) => service.GetUnitsAsync(search, ct);
+    public Task<PagedResult<UnitResponse>> GetUnitsAsync(string? search = null, int page = 1, int pageSize = 20, SortSpec? sort = null, CancellationToken ct = default) => service.GetUnitsAsync(search, page, pageSize, sort, ct);
     public Task<UnitResponse?> GetUnitAsync(Guid id, CancellationToken ct = default) => service.GetUnitAsync(id, ct);
     public Task<UnitResponse> CreateUnitAsync(UnitInput input, CancellationToken ct = default) => service.CreateUnitAsync(input, ct);
     public Task UpdateUnitAsync(Guid id, UnitInput input, CancellationToken ct = default) => service.UpdateUnitAsync(id, input, ct);
     public Task DeleteUnitAsync(Guid id, CancellationToken ct = default) => service.DeleteUnitAsync(id, ct);
-    public Task<IReadOnlyList<ProductListItem>> GetProductsAsync(string? search = null, Guid? categoryId = null, bool? activeOnly = null, CancellationToken ct = default) => service.GetProductsAsync(search, categoryId, activeOnly, ct);
+    public Task<PagedResult<ProductListItem>> GetProductsAsync(string? search = null, Guid? categoryId = null, bool? activeOnly = null, int page = 1, int pageSize = 20, SortSpec? sort = null, CancellationToken ct = default) => service.GetProductsAsync(search, categoryId, activeOnly, page, pageSize, sort, ct);
     public Task<ProductResponse?> GetProductAsync(Guid id, CancellationToken ct = default) => service.GetProductAsync(id, ct);
     public Task<ProductResponse> CreateProductAsync(ProductInput input, CancellationToken ct = default) => service.CreateProductAsync(input, ct);
     public Task UpdateProductAsync(Guid id, ProductInput input, CancellationToken ct = default) => service.UpdateProductAsync(id, input, ct);
@@ -31,7 +31,7 @@ public sealed class InProcessCatalogClient(CatalogService service) : ICatalogCli
 
 public sealed class InProcessSupplierClient(SupplierService service) : ISupplierClient
 {
-    public Task<IReadOnlyList<SupplierResponse>> ListAsync(string? search = null, bool? activeOnly = null, CancellationToken ct = default) => service.ListAsync(search, activeOnly, ct);
+    public Task<PagedResult<SupplierResponse>> ListAsync(string? search = null, bool? activeOnly = null, int page = 1, int pageSize = 20, SortSpec? sort = null, CancellationToken ct = default) => service.ListAsync(search, activeOnly, page, pageSize, sort, ct);
     public Task<SupplierResponse?> GetAsync(Guid id, CancellationToken ct = default) => service.GetAsync(id, ct);
     public Task<SupplierResponse> CreateAsync(SupplierInput input, CancellationToken ct = default) => service.CreateAsync(input, ct);
     public Task UpdateAsync(Guid id, SupplierInput input, CancellationToken ct = default) => service.UpdateAsync(id, input, ct);
@@ -42,7 +42,7 @@ public sealed class InProcessSupplierClient(SupplierService service) : ISupplier
 
 public sealed class InProcessLocationClient(LocationService service) : ILocationClient
 {
-    public Task<IReadOnlyList<LocationResponse>> ListAsync(LocationType? type = null, bool? activeOnly = null, CancellationToken ct = default) => service.ListAsync(type, activeOnly, ct);
+    public Task<PagedResult<LocationResponse>> ListAsync(LocationType? type = null, bool? activeOnly = null, int page = 1, int pageSize = 20, SortSpec? sort = null, CancellationToken ct = default) => service.ListAsync(type, activeOnly, page, pageSize, sort, ct);
     public Task<LocationResponse?> GetAsync(Guid id, CancellationToken ct = default) => service.GetAsync(id, ct);
     public Task<LocationResponse> CreateAsync(LocationInput input, CancellationToken ct = default) => service.CreateAsync(input, ct);
     public Task UpdateAsync(Guid id, LocationInput input, CancellationToken ct = default) => service.UpdateAsync(id, input, ct);
@@ -113,7 +113,7 @@ public sealed class InProcessStockOpnameClient(StockOpnameService service) : ISt
 
 public sealed class InProcessApprovalClient(ApprovalService service) : IApprovalClient
 {
-    public Task<IReadOnlyList<ApprovalItem>> GetPendingAsync(CancellationToken ct = default) => service.GetPendingAsync(ct);
+    public Task<IReadOnlyList<ApprovalItem>> GetPendingAsync(SortSpec? sort = null, CancellationToken ct = default) => service.GetPendingAsync(sort, ct);
 }
 
 public sealed class InProcessReportClient(ReportService service) : IReportClient

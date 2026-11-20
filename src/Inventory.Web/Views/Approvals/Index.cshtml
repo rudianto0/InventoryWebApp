@@ -17,6 +17,8 @@
         "StockAdjustment" => "Stock Adjustment",
         _ => "Stock Opname"
     };
+    var sortBy = ViewBag.SortBy as string;
+    var sortDir = ViewBag.SortDir is SortDirection d ? d : SortDirection.Asc;
 }
 
 <h4>Pending Approvals</h4>
@@ -25,7 +27,15 @@
 <div class="card shadow-sm">
     <div class="table-responsive">
         <table class="table table-hover mb-0">
-            <thead><tr><th>Tipe</th><th>No Dokumen</th><th>Tanggal</th><th>Lokasi</th><th>Requester</th><th>Submitted</th><th class="text-end">Aksi</th></tr></thead>
+            <thead><tr>
+                @Html.SortHeader("Tipe", "type", sortBy, sortDir)
+                @Html.SortHeader("No Dokumen", "docno", sortBy, sortDir)
+                @Html.SortHeader("Tanggal", "date", sortBy, sortDir)
+                @Html.SortHeader("Lokasi", "location", sortBy, sortDir)
+                <th>Requester</th>
+                @Html.SortHeader("Submitted", "submittedat", sortBy, sortDir)
+                <th class="text-end">Aksi</th>
+            </tr></thead>
             <tbody>
             @foreach (var item in Model)
             {

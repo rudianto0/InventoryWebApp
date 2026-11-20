@@ -17,6 +17,8 @@ public sealed class UserFilter
     public string? Search { get; set; }
     public string? RoleName { get; set; }
     public bool? IsActive { get; set; }
+    public string? SortBy { get; set; }
+    public SortDirection SortDir { get; set; } = SortDirection.Asc;
     public int Page { get; set; } = 1;
     public int PageSize { get; set; } = 20;
 }

@@ -15,9 +15,9 @@ public sealed class StockInsController(
     ILocationClient locations) : AppControllerBase
 {
     [HttpGet]
-    public async Task<IActionResult> Index(ApprovalStatus? status, DateTime? from, DateTime? to, int page = 1, CancellationToken ct = default)
+    public async Task<IActionResult> Index(ApprovalStatus? status, DateTime? from, DateTime? to, string? sortBy, SortDirection sortDir, int page = 1, CancellationToken ct = default)
     {
-        var filter = new TransactionFilter { Status = status, From = from, To = to, Page = page };
+        var filter = new TransactionFilter { Status = status, From = from, To = to, SortBy = sortBy, SortDir = sortDir, Page = page };
         return View("~/Views/Transactions/Index.cshtml", new TransactionIndexModel
         {
             Title = "Stock In (Receiving)",

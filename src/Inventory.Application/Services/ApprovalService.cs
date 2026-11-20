@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using Inventory.Application.Abstractions;
+using Inventory.Application.Common;
 using Inventory.Contracts;
 using Inventory.Domain.Entities;
 using Inventory.Contracts.Enums;
@@ -15,7 +16,7 @@ public sealed class ApprovalService(
     private int CurrentUserId => currentUser.UserId ?? throw new ValidationException("Sesi pengguna tidak valid.");
     private bool IsAdmin => currentUser.IsInRole("Admin");
 
-    public async Task<IReadOnlyList<ApprovalItem>> GetPendingAsync(CancellationToken ct = default)
+    public async Task<IReadOnlyList<ApprovalItem>> GetPendingAsync(SortSpec? sort = null, CancellationToken ct = default)
     {
         var userId = CurrentUserId;
         var permissions = db.StockInHeaders.AsNoTracking()
@@ -68,8 +69,11 @@ public sealed class ApprovalService(
                 LocationName = x.Location!.Name, RequesterName = null, SubmittedAt = x.SubmittedAt
             });
 
-        var items = await permissions.Concat(outs).Concat(transfers).Concat(adjustments).Concat(opnames)
-            .OrderBy(x => x.SubmittedAt).ThenBy(x => x.DocNo).ToListAsync(ct);
+        var items = await SortPending(
+                permissions.Concat(outs).Concat(transfers).Concat(adjustments).Concat(opnames),
+                Sorting.NormalizeKey(sort?.SortBy),
+                sort?.SortDir ?? SortDirection.Asc)
+            .ToListAsync(ct);
 
         var creators = new List<int>();
         foreach (var item in items)
@@ -96,5 +100,28 @@ public sealed class ApprovalService(
             RequesterName = names.GetValueOrDefault(creators[index]),
             SubmittedAt = item.SubmittedAt
         }).ToList();
+    }
+
+    private static IOrderedQueryable<ApprovalItem> SortPending(IQueryable<ApprovalItem> query, string? sortBy, SortDirection direction)
+    {
+        if (string.IsNullOrEmpty(sortBy))
+            return query.OrderBy(x => x.SubmittedAt).ThenBy(x => x.DocNo);
+
+        var desc = Sorting.IsDesc(direction);
+        IOrderedQueryable<ApprovalItem> ordered = (sortBy, desc) switch
+        {
+            ("type", false) => query.OrderBy(x => x.Type.ToLower()),
+            ("type", true) => query.OrderByDescending(x => x.Type.ToLower()),
+            ("docno", false) => query.OrderBy(x => x.DocNo.ToLower()),
+            ("docno", true) => query.OrderByDescending(x => x.DocNo.ToLower()),
+            ("date", false) => query.OrderBy(x => x.Date),
+            ("date", true) => query.OrderByDescending(x => x.Date),
+            ("location", false) => query.OrderBy(x => x.LocationName.ToLower()),
+            ("location", true) => query.OrderByDescending(x => x.LocationName.ToLower()),
+            ("submittedat", false) => query.OrderBy(x => x.SubmittedAt == null).ThenBy(x => x.SubmittedAt),
+            ("submittedat", true) => query.OrderBy(x => x.SubmittedAt == null).ThenByDescending(x => x.SubmittedAt),
+            _ => query.OrderBy(x => x.SubmittedAt)
+        };
+        return ordered.ThenBy(x => x.DocNo);
     }
 }

@@ -15,8 +15,12 @@ public sealed class ApprovalsController(
     IStockOpnameClient opnames) : AppControllerBase
 {
     [HttpGet]
-    public async Task<IActionResult> Index(CancellationToken ct) =>
-        View(await approvals.GetPendingAsync(ct));
+    public async Task<IActionResult> Index(string? sortBy, SortDirection sortDir, CancellationToken ct = default)
+    {
+        ViewBag.SortBy = sortBy;
+        ViewBag.SortDir = sortDir;
+        return View(await approvals.GetPendingAsync(new SortSpec { SortBy = sortBy, SortDir = sortDir }, ct));
+    }
 
     [HttpPost]
     [ValidateAntiForgeryToken]

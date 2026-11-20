@@ -1,14 +1,18 @@
-@model IReadOnlyList<LocationResponse>
+@model PagedResult<LocationResponse>
 @{
     ViewData["Title"] = "Locations";
     var isAdmin = User.IsInRole("Admin");
     var type = ViewBag.Type as LocationType?;
+    var sortBy = ViewBag.SortBy as string;
+    var sortDir = ViewBag.SortDir is SortDirection d ? d : SortDirection.Asc;
 }
 <div class="d-flex justify-content-between mb-3">
     <h4>Locations</h4>
     @if (isAdmin) { <a class="btn btn-primary" asp-action="Create">Tambah Lokasi</a> }
 </div>
 <form method="get" class="row g-2 mb-3">
+    <input type="hidden" name="sortBy" value="@sortBy" />
+    <input type="hidden" name="sortDir" value="@sortDir" />
     <div class="col-auto">
         <select name="type" class="form-select" asp-items="Html.GetEnumSelectList<LocationType>()">
             <option value="">Semua Tipe</option>
@@ -18,9 +22,17 @@
 </form>
 <div class="card shadow-sm">
     <table class="table table-hover mb-0">
-        <thead><tr><th>Kode</th><th>Nama</th><th>Tipe</th><th>Parent</th><th>Branch</th><th>Status</th><th class="text-end">Aksi</th></tr></thead>
+        <thead><tr>
+            @Html.SortHeader("Kode", "code", sortBy, sortDir)
+            @Html.SortHeader("Nama", "name", sortBy, sortDir)
+            @Html.SortHeader("Tipe", "type", sortBy, sortDir)
+            @Html.SortHeader("Parent", "parent", sortBy, sortDir)
+            @Html.SortHeader("Branch", "branch", sortBy, sortDir)
+            @Html.SortHeader("Status", "status", sortBy, sortDir)
+            <th class="text-end">Aksi</th>
+        </tr></thead>
         <tbody>
-        @foreach (var item in Model)
+        @foreach (var item in Model.Items)
         {
             <tr>
                 <td>@item.Code</td>
@@ -46,10 +58,11 @@
                 </td>
             </tr>
         }
-        @if (Model.Count == 0)
+        @if (Model.Items.Count == 0)
         {
             <tr><td colspan="7" class="text-center text-muted py-3">Belum ada data.</td></tr>
         }
         </tbody>
     </table>
 </div>
+<partial name="_Pager" model="Model" />

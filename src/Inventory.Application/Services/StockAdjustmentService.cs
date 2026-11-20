@@ -29,7 +29,7 @@ public sealed class StockAdjustmentService(
             query = query.Where(x => x.Date < filter.To.Value.Date.AddDays(1));
 
         var total = await query.CountAsync(ct);
-        var headers = await query.OrderByDescending(x => x.Date).ThenByDescending(x => x.CreatedAt)
+        var headers = await SortHeaders(query, Sorting.NormalizeKey(filter.SortBy), filter.SortDir)
             .Skip((Math.Max(filter.Page, 1) - 1) * Math.Clamp(filter.PageSize, 1, 200))
             .Take(Math.Clamp(filter.PageSize, 1, 200)).ToListAsync(ct);
 
@@ -53,6 +53,29 @@ public sealed class StockAdjustmentService(
             Page = Math.Max(filter.Page, 1),
             PageSize = Math.Clamp(filter.PageSize, 1, 200)
         };
+    }
+
+    private static IOrderedQueryable<StockAdjustmentHeader> SortHeaders(IQueryable<StockAdjustmentHeader> query, string? sortBy, SortDirection direction)
+    {
+        if (string.IsNullOrEmpty(sortBy))
+            return query.OrderByDescending(x => x.Date).ThenByDescending(x => x.CreatedAt).ThenByDescending(x => x.Id);
+
+        var desc = Sorting.IsDesc(direction);
+        IOrderedQueryable<StockAdjustmentHeader> ordered = (sortBy, desc) switch
+        {
+            ("docno", false) => query.OrderBy(x => x.DocNo.ToLower()),
+            ("docno", true) => query.OrderByDescending(x => x.DocNo.ToLower()),
+            ("date", false) => query.OrderBy(x => x.Date),
+            ("date", true) => query.OrderByDescending(x => x.Date),
+            ("location", false) => query.OrderBy(x => x.Location!.Name.ToLower()),
+            ("location", true) => query.OrderByDescending(x => x.Location!.Name.ToLower()),
+            ("status", false) => query.OrderBy(x => x.Status),
+            ("status", true) => query.OrderByDescending(x => x.Status),
+            ("createdat", false) => query.OrderBy(x => x.CreatedAt),
+            ("createdat", true) => query.OrderByDescending(x => x.CreatedAt),
+            _ => query.OrderByDescending(x => x.Date)
+        };
+        return ordered.ThenBy(x => x.Id);
     }
 
     public async Task<TransactionDetailView?> GetDetailAsync(Guid id, CancellationToken ct = default)

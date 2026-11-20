@@ -9,7 +9,7 @@ namespace Inventory.Application.Services;
 
 public sealed class SupplierService(IAppDbContext db)
 {
-    public async Task<IReadOnlyList<SupplierResponse>> ListAsync(string? search = null, bool? activeOnly = null, CancellationToken ct = default)
+    public async Task<PagedResult<SupplierResponse>> ListAsync(string? search = null, bool? activeOnly = null, int page = 1, int pageSize = 20, SortSpec? sort = null, CancellationToken ct = default)
     {
         var query = db.Suppliers.AsNoTracking();
         if (!string.IsNullOrWhiteSpace(search))
@@ -19,11 +19,47 @@ public sealed class SupplierService(IAppDbContext db)
         }
         if (activeOnly == true)
             query = query.Where(x => x.IsActive);
-        return await query.OrderBy(x => x.Code).Select(x => new SupplierResponse
+
+        var total = await query.CountAsync(ct);
+        var currentPage = Sorting.NormalizePage(page);
+        var size = Sorting.NormalizePageSize(pageSize);
+        var items = await SortSuppliers(query, Sorting.NormalizeKey(sort?.SortBy), sort?.SortDir ?? SortDirection.Asc)
+            .Skip((currentPage - 1) * size)
+            .Take(size)
+            .Select(x => new SupplierResponse
+            {
+                Id = x.Id, Code = x.Code, Name = x.Name, ContactPerson = x.ContactPerson,
+                Phone = x.Phone, Email = x.Email, Address = x.Address, IsActive = x.IsActive
+            }).ToListAsync(ct);
+
+        return new PagedResult<SupplierResponse>
         {
-            Id = x.Id, Code = x.Code, Name = x.Name, ContactPerson = x.ContactPerson,
-            Phone = x.Phone, Email = x.Email, Address = x.Address, IsActive = x.IsActive
-        }).ToListAsync(ct);
+            Items = items,
+            TotalCount = total,
+            Page = currentPage,
+            PageSize = size
+        };
+    }
+
+    private static IOrderedQueryable<Supplier> SortSuppliers(IQueryable<Supplier> query, string? sortBy, SortDirection direction)
+    {
+        var desc = Sorting.IsDesc(direction);
+        IOrderedQueryable<Supplier> ordered = (sortBy, desc) switch
+        {
+            ("code", true) => query.OrderByDescending(x => x.Code.ToLower()),
+            ("name", false) => query.OrderBy(x => x.Name.ToLower()),
+            ("name", true) => query.OrderByDescending(x => x.Name.ToLower()),
+            ("contact", false) => query.OrderBy(x => x.ContactPerson == null).ThenBy(x => x.ContactPerson!.ToLower()),
+            ("contact", true) => query.OrderBy(x => x.ContactPerson == null).ThenByDescending(x => x.ContactPerson!.ToLower()),
+            ("phone", false) => query.OrderBy(x => x.Phone == null).ThenBy(x => x.Phone!.ToLower()),
+            ("phone", true) => query.OrderBy(x => x.Phone == null).ThenByDescending(x => x.Phone!.ToLower()),
+            ("email", false) => query.OrderBy(x => x.Email == null).ThenBy(x => x.Email!.ToLower()),
+            ("email", true) => query.OrderBy(x => x.Email == null).ThenByDescending(x => x.Email!.ToLower()),
+            ("status", false) => query.OrderBy(x => x.IsActive),
+            ("status", true) => query.OrderByDescending(x => x.IsActive),
+            _ => query.OrderBy(x => x.Code.ToLower())
+        };
+        return ordered.ThenBy(x => x.Id);
     }
 
     public Task<SupplierResponse?> GetAsync(Guid id, CancellationToken ct = default) =>

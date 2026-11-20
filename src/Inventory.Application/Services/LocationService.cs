@@ -10,19 +10,55 @@ namespace Inventory.Application.Services;
 
 public sealed class LocationService(IAppDbContext db)
 {
-    public async Task<IReadOnlyList<LocationResponse>> ListAsync(LocationType? type = null, bool? activeOnly = null, CancellationToken ct = default)
+    public async Task<PagedResult<LocationResponse>> ListAsync(LocationType? type = null, bool? activeOnly = null, int page = 1, int pageSize = 20, SortSpec? sort = null, CancellationToken ct = default)
     {
         var query = db.Locations.AsNoTracking().AsQueryable();
         if (type.HasValue)
             query = query.Where(x => x.Type == type.Value);
         if (activeOnly == true)
             query = query.Where(x => x.IsActive);
-        return await query.OrderBy(x => x.Code).Select(x => new LocationResponse
+
+        var total = await query.CountAsync(ct);
+        var currentPage = Sorting.NormalizePage(page);
+        var size = Sorting.NormalizePageSize(pageSize);
+        var items = await SortLocations(query, Sorting.NormalizeKey(sort?.SortBy), sort?.SortDir ?? SortDirection.Asc)
+            .Skip((currentPage - 1) * size)
+            .Take(size)
+            .Select(x => new LocationResponse
+            {
+                Id = x.Id, Code = x.Code, Name = x.Name, Type = x.Type,
+                ParentLocationId = x.ParentLocationId, ParentLocationName = x.ParentLocation!.Name,
+                BranchCode = x.BranchCode, Address = x.Address, IsActive = x.IsActive
+            }).ToListAsync(ct);
+
+        return new PagedResult<LocationResponse>
         {
-            Id = x.Id, Code = x.Code, Name = x.Name, Type = x.Type,
-            ParentLocationId = x.ParentLocationId, ParentLocationName = x.ParentLocation!.Name,
-            BranchCode = x.BranchCode, Address = x.Address, IsActive = x.IsActive
-        }).ToListAsync(ct);
+            Items = items,
+            TotalCount = total,
+            Page = currentPage,
+            PageSize = size
+        };
+    }
+
+    private static IOrderedQueryable<Location> SortLocations(IQueryable<Location> query, string? sortBy, SortDirection direction)
+    {
+        var desc = Sorting.IsDesc(direction);
+        IOrderedQueryable<Location> ordered = (sortBy, desc) switch
+        {
+            ("code", true) => query.OrderByDescending(x => x.Code.ToLower()),
+            ("name", false) => query.OrderBy(x => x.Name.ToLower()),
+            ("name", true) => query.OrderByDescending(x => x.Name.ToLower()),
+            ("type", false) => query.OrderBy(x => x.Type),
+            ("type", true) => query.OrderByDescending(x => x.Type),
+            ("parent", false) => query.OrderBy(x => x.ParentLocation == null).ThenBy(x => x.ParentLocation!.Name.ToLower()),
+            ("parent", true) => query.OrderBy(x => x.ParentLocation == null).ThenByDescending(x => x.ParentLocation!.Name.ToLower()),
+            ("branch", false) => query.OrderBy(x => x.BranchCode == null).ThenBy(x => x.BranchCode!.ToLower()),
+            ("branch", true) => query.OrderBy(x => x.BranchCode == null).ThenByDescending(x => x.BranchCode!.ToLower()),
+            ("status", false) => query.OrderBy(x => x.IsActive),
+            ("status", true) => query.OrderByDescending(x => x.IsActive),
+            _ => query.OrderBy(x => x.Code.ToLower())
+        };
+        return ordered.ThenBy(x => x.Id);
     }
 
     public Task<LocationResponse?> GetAsync(Guid id, CancellationToken ct = default) =>

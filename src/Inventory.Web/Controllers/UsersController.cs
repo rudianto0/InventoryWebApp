@@ -10,13 +10,15 @@ namespace Inventory.Web.Controllers;
 public sealed class UsersController(IUserClient users) : AppControllerBase
 {
     [HttpGet]
-    public async Task<IActionResult> Index(string? search, string? roleName, bool? isActive, int page = 1, CancellationToken ct = default)
+    public async Task<IActionResult> Index(string? search, string? roleName, bool? isActive, string? sortBy, SortDirection sortDir, int page = 1, CancellationToken ct = default)
     {
-        var filter = new UserFilter { Search = search, RoleName = roleName, IsActive = isActive, Page = page };
+        var filter = new UserFilter { Search = search, RoleName = roleName, IsActive = isActive, SortBy = sortBy, SortDir = sortDir, Page = page };
         ViewBag.Roles = await users.GetRolesAsync(ct);
         ViewBag.Search = search;
         ViewBag.RoleName = roleName;
         ViewBag.IsActive = isActive;
+        ViewBag.SortBy = sortBy;
+        ViewBag.SortDir = sortDir;
         return View(await users.ListAsync(filter, ct));
     }
 

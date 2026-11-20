@@ -71,7 +71,7 @@ public sealed class ReportService(IAppDbContext db)
         query = ApplyStockFilter(query, filter);
 
         var total = await query.CountAsync(ct);
-        var items = await query.OrderBy(x => x.Product!.Sku).ThenBy(x => x.Location!.Code)
+        var items = await SortStockBalance(query, Sorting.NormalizeKey(filter.SortBy), filter.SortDir)
             .Skip((Math.Max(filter.Page, 1) - 1) * Math.Clamp(filter.PageSize, 1, 200))
             .Take(Math.Clamp(filter.PageSize, 1, 200))
             .Select(x => new StockBalanceItem
@@ -160,7 +160,7 @@ public sealed class ReportService(IAppDbContext db)
             query = query.Where(x => x.CreatedAt < filter.To.Value.AddDays(1).ToDateTime(TimeOnly.MinValue));
 
         var total = await query.CountAsync(ct);
-        var items = await query.OrderByDescending(x => x.CreatedAt).ThenByDescending(x => x.CreatedAt)
+        var items = await SortMovements(query, Sorting.NormalizeKey(filter.SortBy), filter.SortDir)
             .Skip((Math.Max(filter.Page, 1) - 1) * Math.Clamp(filter.PageSize, 1, 200))
             .Take(Math.Clamp(filter.PageSize, 1, 200))
             .Select(x => new StockMovementItem
@@ -193,7 +193,7 @@ public sealed class ReportService(IAppDbContext db)
             query = query.Where(x => x.Location!.BranchCode == filter.BranchCode);
 
         var total = await query.CountAsync(ct);
-        var items = await query.OrderBy(x => x.Quantity)
+        var items = await SortReorder(query, Sorting.NormalizeKey(filter.SortBy), filter.SortDir)
             .Skip((Math.Max(filter.Page, 1) - 1) * Math.Clamp(filter.PageSize, 1, 200))
             .Take(Math.Clamp(filter.PageSize, 1, 200))
             .Select(x => new ReorderItem
@@ -215,6 +215,72 @@ public sealed class ReportService(IAppDbContext db)
         };
     }
 
+    private static IOrderedQueryable<Domain.Entities.Stock> SortStockBalance(IQueryable<Domain.Entities.Stock> query, string? sortBy, SortDirection direction)
+    {
+        var desc = Sorting.IsDesc(direction);
+        IOrderedQueryable<Domain.Entities.Stock> ordered = (sortBy, desc) switch
+        {
+            ("sku", true) => query.OrderByDescending(x => x.Product!.Sku.ToLower()),
+            ("product", false) => query.OrderBy(x => x.Product!.Name.ToLower()),
+            ("product", true) => query.OrderByDescending(x => x.Product!.Name.ToLower()),
+            ("unit", false) => query.OrderBy(x => x.Product!.Unit!.Name.ToLower()),
+            ("unit", true) => query.OrderByDescending(x => x.Product!.Unit!.Name.ToLower()),
+            ("location", false) => query.OrderBy(x => x.Location!.Name.ToLower()),
+            ("location", true) => query.OrderByDescending(x => x.Location!.Name.ToLower()),
+            ("branch", false) => query.OrderBy(x => x.Location!.BranchCode == null).ThenBy(x => x.Location!.BranchCode!.ToLower()),
+            ("branch", true) => query.OrderBy(x => x.Location!.BranchCode == null).ThenByDescending(x => x.Location!.BranchCode!.ToLower()),
+            ("quantity", false) => query.OrderBy(x => x.Quantity),
+            ("quantity", true) => query.OrderByDescending(x => x.Quantity),
+            ("updatedat", false) => query.OrderBy(x => x.UpdatedAt),
+            ("updatedat", true) => query.OrderByDescending(x => x.UpdatedAt),
+            _ => query.OrderBy(x => x.Product!.Sku.ToLower()).ThenBy(x => x.Location!.Code.ToLower())
+        };
+        return ordered.ThenBy(x => x.ProductId).ThenBy(x => x.LocationId);
+    }
+
+    private static IOrderedQueryable<Domain.Entities.StockMovement> SortMovements(IQueryable<Domain.Entities.StockMovement> query, string? sortBy, SortDirection direction)
+    {
+        var desc = Sorting.IsDesc(direction);
+        IOrderedQueryable<Domain.Entities.StockMovement> ordered = (sortBy, desc) switch
+        {
+            ("movementno", false) => query.OrderBy(x => x.MovementNo.ToLower()),
+            ("movementno", true) => query.OrderByDescending(x => x.MovementNo.ToLower()),
+            ("type", false) => query.OrderBy(x => x.Type),
+            ("type", true) => query.OrderByDescending(x => x.Type),
+            ("sku", false) => query.OrderBy(x => x.Product!.Sku.ToLower()),
+            ("sku", true) => query.OrderByDescending(x => x.Product!.Sku.ToLower()),
+            ("product", false) => query.OrderBy(x => x.Product!.Name.ToLower()),
+            ("product", true) => query.OrderByDescending(x => x.Product!.Name.ToLower()),
+            ("location", false) => query.OrderBy(x => x.Location!.Name.ToLower()),
+            ("location", true) => query.OrderByDescending(x => x.Location!.Name.ToLower()),
+            ("quantity", false) => query.OrderBy(x => x.Quantity),
+            ("quantity", true) => query.OrderByDescending(x => x.Quantity),
+            ("createdat", false) => query.OrderBy(x => x.CreatedAt),
+            ("createdat", true) => query.OrderByDescending(x => x.CreatedAt),
+            _ => query.OrderByDescending(x => x.CreatedAt)
+        };
+        return ordered.ThenByDescending(x => x.Id);
+    }
+
+    private static IOrderedQueryable<Domain.Entities.Stock> SortReorder(IQueryable<Domain.Entities.Stock> query, string? sortBy, SortDirection direction)
+    {
+        var desc = Sorting.IsDesc(direction);
+        IOrderedQueryable<Domain.Entities.Stock> ordered = (sortBy, desc) switch
+        {
+            ("sku", false) => query.OrderBy(x => x.Product!.Sku.ToLower()),
+            ("sku", true) => query.OrderByDescending(x => x.Product!.Sku.ToLower()),
+            ("product", false) => query.OrderBy(x => x.Product!.Name.ToLower()),
+            ("product", true) => query.OrderByDescending(x => x.Product!.Name.ToLower()),
+            ("location", false) => query.OrderBy(x => x.Location!.Name.ToLower()),
+            ("location", true) => query.OrderByDescending(x => x.Location!.Name.ToLower()),
+            ("quantity", true) => query.OrderByDescending(x => x.Quantity),
+            ("reorderlevel", false) => query.OrderBy(x => x.Product!.ReorderLevel),
+            ("reorderlevel", true) => query.OrderByDescending(x => x.Product!.ReorderLevel),
+            _ => query.OrderBy(x => x.Quantity)
+        };
+        return ordered.ThenBy(x => x.ProductId).ThenBy(x => x.LocationId);
+    }
+
     public async Task<string> ExportCsvAsync(string report, ReportFilter filter, CancellationToken ct = default)
     {
         var builder = new StringBuilder();
@@ -225,7 +291,8 @@ public sealed class ReportService(IAppDbContext db)
                 var result = await GetStockBalanceAsync(new ReportFilter
                 {
                     LocationId = filter.LocationId, BranchCode = filter.BranchCode,
-                    ProductId = filter.ProductId, Page = 1, PageSize = 200
+                    ProductId = filter.ProductId, SortBy = filter.SortBy, SortDir = filter.SortDir,
+                    Page = 1, PageSize = 200
                 }, ct);
                 builder.AppendLine("SKU,Product,Unit,Location,BranchCode,Quantity,UpdatedAt");
                 foreach (var item in result.Items)
@@ -236,7 +303,8 @@ public sealed class ReportService(IAppDbContext db)
             {
                 var result = await GetReorderAsync(new ReportFilter
                 {
-                    LocationId = filter.LocationId, BranchCode = filter.BranchCode, Page = 1, PageSize = 200
+                    LocationId = filter.LocationId, BranchCode = filter.BranchCode,
+                    SortBy = filter.SortBy, SortDir = filter.SortDir, Page = 1, PageSize = 200
                 }, ct);
                 builder.AppendLine("SKU,Product,Location,Quantity,ReorderLevel");
                 foreach (var item in result.Items)
@@ -248,7 +316,8 @@ public sealed class ReportService(IAppDbContext db)
                 var result = await GetMovementsAsync(new ReportFilter
                 {
                     LocationId = filter.LocationId, BranchCode = filter.BranchCode, ProductId = filter.ProductId,
-                    From = filter.From, To = filter.To, Page = 1, PageSize = 200
+                    From = filter.From, To = filter.To, SortBy = filter.SortBy, SortDir = filter.SortDir,
+                    Page = 1, PageSize = 200
                 }, ct);
                 builder.AppendLine("Date,MovementNo,Type,SKU,Product,Location,Quantity,Notes");
                 foreach (var item in result.Items)

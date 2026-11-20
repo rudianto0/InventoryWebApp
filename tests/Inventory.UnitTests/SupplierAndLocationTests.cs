@@ -135,8 +135,8 @@ public class SupplierServiceTests
         var inactive = await service.ListAsync(activeOnly: false);
         var active = await service.ListAsync("off", activeOnly: true);
 
-        inactive.Should().HaveCount(2);
-        active.Should().BeEmpty();
+        inactive.Items.Should().HaveCount(2);
+        active.Items.Should().BeEmpty();
     }
 
     [Fact]
@@ -340,7 +340,7 @@ public class LocationServiceTests
 
         var warehouses = await service.ListAsync(LocationType.Warehouse, activeOnly: true);
 
-        warehouses.Should().OnlyContain(x => x.Type == LocationType.Warehouse && x.IsActive);
+        warehouses.Items.Should().OnlyContain(x => x.Type == LocationType.Warehouse && x.IsActive);
     }
 
     [Fact]

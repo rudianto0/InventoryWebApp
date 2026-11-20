@@ -10,10 +10,12 @@ namespace Inventory.Web.Controllers;
 public sealed class CategoriesController(ICatalogClient catalog) : AppControllerBase
 {
     [HttpGet]
-    public async Task<IActionResult> Index(string? search, CancellationToken ct)
+    public async Task<IActionResult> Index(string? search, string? sortBy, SortDirection sortDir, int page = 1, CancellationToken ct = default)
     {
         ViewBag.Search = search;
-        return View(await catalog.GetCategoriesAsync(search, ct));
+        ViewBag.SortBy = sortBy;
+        ViewBag.SortDir = sortDir;
+        return View(await catalog.GetCategoriesAsync(search, page, 20, new SortSpec { SortBy = sortBy, SortDir = sortDir }, ct));
     }
 
     [Authorize(Roles = "Admin")]
@@ -114,10 +116,12 @@ public sealed class CategoriesController(ICatalogClient catalog) : AppController
 public sealed class UnitsController(ICatalogClient catalog) : AppControllerBase
 {
     [HttpGet]
-    public async Task<IActionResult> Index(string? search, CancellationToken ct)
+    public async Task<IActionResult> Index(string? search, string? sortBy, SortDirection sortDir, int page = 1, CancellationToken ct = default)
     {
         ViewBag.Search = search;
-        return View(await catalog.GetUnitsAsync(search, ct));
+        ViewBag.SortBy = sortBy;
+        ViewBag.SortDir = sortDir;
+        return View(await catalog.GetUnitsAsync(search, page, 20, new SortSpec { SortBy = sortBy, SortDir = sortDir }, ct));
     }
 
     [Authorize(Roles = "Admin")]
@@ -192,12 +196,14 @@ public sealed class UnitsController(ICatalogClient catalog) : AppControllerBase
 public sealed class ProductsController(ICatalogClient catalog) : AppControllerBase
 {
     [HttpGet]
-    public async Task<IActionResult> Index(string? search, Guid? categoryId, CancellationToken ct)
+    public async Task<IActionResult> Index(string? search, Guid? categoryId, string? sortBy, SortDirection sortDir, int page = 1, CancellationToken ct = default)
     {
         ViewBag.Search = search;
         ViewBag.CategoryId = categoryId;
+        ViewBag.SortBy = sortBy;
+        ViewBag.SortDir = sortDir;
         ViewBag.Categories = await catalog.GetCategoryOptionsAsync(ct);
-        return View(await catalog.GetProductsAsync(search, categoryId, null, ct));
+        return View(await catalog.GetProductsAsync(search, categoryId, null, page, 20, new SortSpec { SortBy = sortBy, SortDir = sortDir }, ct));
     }
 
     [Authorize(Roles = "Admin")]

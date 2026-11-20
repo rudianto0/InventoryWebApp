@@ -15,6 +15,8 @@
 </div>
 
 <form method="get" class="row g-2 mb-3">
+    <input type="hidden" name="sortBy" value="@Model.Filter.SortBy" />
+    <input type="hidden" name="sortDir" value="@Model.Filter.SortDir" />
     <div class="col-auto">
         <select name="status" class="form-select">
             <option value="">Semua Status</option>
@@ -34,13 +36,13 @@
         <table class="table table-hover mb-0">
             <thead>
                 <tr>
-                    <th>No Dokumen</th>
-                    <th>Tanggal</th>
-                    <th>Lokasi</th>
+                    @Html.SortHeader("No Dokumen", "docno", Model.Filter.SortBy, Model.Filter.SortDir)
+                    @Html.SortHeader("Tanggal", "date", Model.Filter.SortBy, Model.Filter.SortDir)
+                    @Html.SortHeader("Lokasi", "location", Model.Filter.SortBy, Model.Filter.SortDir)
                     @if (Model.ShowSecondaryLocation) { <th>Tujuan</th> }
                     @if (Model.ShowPartner) { <th>Keterangan</th> }
                     <th class="text-end">Baris</th>
-                    <th>Status</th>
+                    @Html.SortHeader("Status", "status", Model.Filter.SortBy, Model.Filter.SortDir)
                     <th>Dibuat Oleh</th>
                     <th class="text-end">Aksi</th>
                 </tr>

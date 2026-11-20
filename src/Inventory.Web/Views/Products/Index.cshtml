@@ -1,10 +1,12 @@
-@model IReadOnlyList<ProductListItem>
+@model PagedResult<ProductListItem>
 @{
     ViewData["Title"] = "Products";
     var isAdmin = User.IsInRole("Admin");
     var categories = (IReadOnlyList<SelectOption>)ViewBag.Categories;
     var categoryId = ViewBag.CategoryId as Guid?;
     var iconSprite = Url.Content("~/images/icons.svg");
+    var sortBy = ViewBag.SortBy as string;
+    var sortDir = ViewBag.SortDir is SortDirection d ? d : SortDirection.Asc;
 }
 
 <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-3">
@@ -19,6 +21,8 @@
 </div>
 
 <form method="get" class="toolbar-card">
+    <input type="hidden" name="sortBy" value="@sortBy" />
+    <input type="hidden" name="sortDir" value="@sortDir" />
     <input name="search" value="@ViewBag.Search" class="form-control" style="max-width: 260px" placeholder="Cari SKU atau nama..." />
     <select name="categoryId" class="form-select" style="max-width: 220px" asp-items="@(new SelectList(categories, "Id", "Text", categoryId))">
         <option value="">Semua Kategori</option>
@@ -31,17 +35,17 @@
         <table class="table table-hover align-middle">
             <thead>
                 <tr>
-                    <th>SKU</th>
-                    <th>Nama</th>
-                    <th>Kategori</th>
-                    <th>Unit</th>
-                    <th class="text-end">Reorder</th>
-                    <th>Status</th>
+                    @Html.SortHeader("SKU", "sku", sortBy, sortDir)
+                    @Html.SortHeader("Nama", "name", sortBy, sortDir)
+                    @Html.SortHeader("Kategori", "category", sortBy, sortDir)
+                    @Html.SortHeader("Unit", "unit", sortBy, sortDir)
+                    @Html.SortHeader("Reorder", "reorder", sortBy, sortDir, "text-end")
+                    @Html.SortHeader("Status", "status", sortBy, sortDir)
                     <th class="text-end">Aksi</th>
                 </tr>
             </thead>
             <tbody>
-            @foreach (var item in Model)
+            @foreach (var item in Model.Items)
             {
                 <tr>
                     <td class="fw-semibold">@item.Sku</td>
@@ -67,7 +71,7 @@
                     </td>
                 </tr>
             }
-            @if (Model.Count == 0)
+            @if (Model.Items.Count == 0)
             {
                 <tr>
                     <td colspan="7">
@@ -82,3 +86,4 @@
         </table>
     </div>
 </div>
+<partial name="_Pager" model="Model" />

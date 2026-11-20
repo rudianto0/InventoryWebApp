@@ -128,8 +128,8 @@ public class CatalogCategoryTests
 
         var result = await service.GetCategoriesAsync("a");
 
-        result.Select(x => x.Name).Should().Contain(new[] { "Alpha", "Beta" });
-        result.Select(x => x.Name).Should().BeInAscendingOrder();
+        result.Items.Select(x => x.Name).Should().Contain(new[] { "Alpha", "Beta" });
+        result.Items.Select(x => x.Name).Should().BeInAscendingOrder();
     }
 }
 
@@ -367,8 +367,8 @@ public class CatalogProductTests
         var active = await service.GetProductsAsync(activeOnly: true);
         var filtered = await service.GetProductsAsync("INACTIVE", categoryId: fixture.CategoryId);
 
-        active.Should().OnlyContain(x => x.IsActive);
-        filtered.Should().ContainSingle(x => x.Sku == "SKU-INACTIVE");
+        active.Items.Should().OnlyContain(x => x.IsActive);
+        filtered.Items.Should().ContainSingle(x => x.Sku == "SKU-INACTIVE");
     }
 
     [Fact]

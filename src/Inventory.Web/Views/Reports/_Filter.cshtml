@@ -5,6 +5,8 @@
     var reportKey = ViewBag.ReportKey as string;
 }
 <form method="get" class="row g-2 mb-3 align-items-end">
+    <input type="hidden" name="SortBy" value="@Model.SortBy" />
+    <input type="hidden" name="SortDir" value="@Model.SortDir" />
     <div class="col-auto">
         <label class="form-label small mb-0">Lokasi</label>
         <select name="LocationId" class="form-select form-select-sm" asp-items="@(new SelectList(locations, "Id", "Text", Model.LocationId))">

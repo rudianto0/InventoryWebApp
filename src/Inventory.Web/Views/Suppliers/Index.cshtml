@@ -1,21 +1,33 @@
-@model IReadOnlyList<SupplierResponse>
+@model PagedResult<SupplierResponse>
 @{
     ViewData["Title"] = "Suppliers";
     var isAdmin = User.IsInRole("Admin");
+    var sortBy = ViewBag.SortBy as string;
+    var sortDir = ViewBag.SortDir is SortDirection d ? d : SortDirection.Asc;
 }
 <div class="d-flex justify-content-between mb-3">
     <h4>Suppliers</h4>
     @if (isAdmin) { <a class="btn btn-primary" asp-action="Create">Tambah Supplier</a> }
 </div>
 <form method="get" class="row g-2 mb-3">
+    <input type="hidden" name="sortBy" value="@sortBy" />
+    <input type="hidden" name="sortDir" value="@sortDir" />
     <div class="col-auto"><input name="search" value="@ViewBag.Search" class="form-control" placeholder="Cari kode/nama..." /></div>
     <div class="col-auto"><button class="btn btn-outline-secondary">Cari</button></div>
 </form>
 <div class="card shadow-sm">
     <table class="table table-hover mb-0">
-        <thead><tr><th>Kode</th><th>Nama</th><th>Kontak</th><th>Telepon</th><th>Email</th><th>Status</th><th class="text-end">Aksi</th></tr></thead>
+        <thead><tr>
+            @Html.SortHeader("Kode", "code", sortBy, sortDir)
+            @Html.SortHeader("Nama", "name", sortBy, sortDir)
+            @Html.SortHeader("Kontak", "contact", sortBy, sortDir)
+            @Html.SortHeader("Telepon", "phone", sortBy, sortDir)
+            @Html.SortHeader("Email", "email", sortBy, sortDir)
+            @Html.SortHeader("Status", "status", sortBy, sortDir)
+            <th class="text-end">Aksi</th>
+        </tr></thead>
         <tbody>
-        @foreach (var item in Model)
+        @foreach (var item in Model.Items)
         {
             <tr>
                 <td>@item.Code</td>
@@ -41,10 +53,11 @@
                 </td>
             </tr>
         }
-        @if (Model.Count == 0)
+        @if (Model.Items.Count == 0)
         {
             <tr><td colspan="7" class="text-center text-muted py-3">Belum ada data.</td></tr>
         }
         </tbody>
     </table>
 </div>
+<partial name="_Pager" model="Model" />

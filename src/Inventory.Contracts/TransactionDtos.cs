@@ -74,6 +74,8 @@ public sealed class TransactionFilter
     public ApprovalStatus? Status { get; set; }
     public DateTime? From { get; set; }
     public DateTime? To { get; set; }
+    public string? SortBy { get; set; }
+    public SortDirection SortDir { get; set; } = SortDirection.Asc;
     public int Page { get; set; } = 1;
     public int PageSize { get; set; } = 20;
 }

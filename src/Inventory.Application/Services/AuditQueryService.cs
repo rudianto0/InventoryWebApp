@@ -22,7 +22,7 @@ public sealed class AuditQueryService(IAppDbContext db, IUserDirectory users)
             query = query.Where(x => x.CreatedAt < filter.To.Value.AddDays(1).ToDateTime(TimeOnly.MinValue));
 
         var total = await query.CountAsync(ct);
-        var logs = await query.OrderByDescending(x => x.CreatedAt).ThenByDescending(x => x.Id)
+        var logs = await SortLogs(query, Sorting.NormalizeKey(filter.SortBy), filter.SortDir)
             .Skip((Math.Max(filter.Page, 1) - 1) * Math.Clamp(filter.PageSize, 1, 200))
             .Take(Math.Clamp(filter.PageSize, 1, 200)).ToListAsync(ct);
 
@@ -44,6 +44,29 @@ public sealed class AuditQueryService(IAppDbContext db, IUserDirectory users)
             Page = Math.Max(filter.Page, 1),
             PageSize = Math.Clamp(filter.PageSize, 1, 200)
         };
+    }
+
+    private static IOrderedQueryable<Domain.Entities.AuditLog> SortLogs(IQueryable<Domain.Entities.AuditLog> query, string? sortBy, SortDirection direction)
+    {
+        if (string.IsNullOrEmpty(sortBy))
+            return query.OrderByDescending(x => x.CreatedAt).ThenByDescending(x => x.Id);
+
+        var desc = Sorting.IsDesc(direction);
+        IOrderedQueryable<Domain.Entities.AuditLog> ordered = (sortBy, desc) switch
+        {
+            ("entity", false) => query.OrderBy(x => x.EntityName.ToLower()),
+            ("entity", true) => query.OrderByDescending(x => x.EntityName.ToLower()),
+            ("action", false) => query.OrderBy(x => x.Action.ToLower()),
+            ("action", true) => query.OrderByDescending(x => x.Action.ToLower()),
+            ("userid", false) => query.OrderBy(x => x.UserId == null).ThenBy(x => x.UserId),
+            ("userid", true) => query.OrderBy(x => x.UserId == null).ThenByDescending(x => x.UserId),
+            ("ip", false) => query.OrderBy(x => x.IpAddress == null).ThenBy(x => x.IpAddress!.ToLower()),
+            ("ip", true) => query.OrderBy(x => x.IpAddress == null).ThenByDescending(x => x.IpAddress!.ToLower()),
+            ("createdat", false) => query.OrderBy(x => x.CreatedAt),
+            ("createdat", true) => query.OrderByDescending(x => x.CreatedAt),
+            _ => query.OrderByDescending(x => x.CreatedAt)
+        };
+        return ordered.ThenByDescending(x => x.Id);
     }
 
     public async Task<AuditDetailItem?> GetAsync(int id, CancellationToken ct = default)

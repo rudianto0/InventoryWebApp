@@ -4,9 +4,13 @@
     var entities = (IReadOnlyList<string>)ViewBag.EntityNames;
     var actions = (string[])ViewBag.Actions;
     var filter = ViewBag.Filter as AuditFilter;
+    var sortBy = filter?.SortBy;
+    var sortDir = filter?.SortDir ?? SortDirection.Asc;
 }
 <h4>Audit Trail</h4>
 <form method="get" class="row g-2 mb-3">
+    <input type="hidden" name="sortBy" value="@sortBy" />
+    <input type="hidden" name="sortDir" value="@sortDir" />
     <div class="col-auto">
         <select name="EntityName" class="form-select form-select-sm">
             <option value="">Semua Entity</option>
@@ -33,7 +37,15 @@
 <div class="card shadow-sm">
     <div class="table-responsive">
         <table class="table table-hover mb-0">
-            <thead><tr><th>Waktu</th><th>Entity</th><th>Entity ID</th><th>Action</th><th>User</th><th>IP</th><th class="text-end">Aksi</th></tr></thead>
+            <thead><tr>
+                @Html.SortHeader("Waktu", "createdat", sortBy, sortDir)
+                @Html.SortHeader("Entity", "entity", sortBy, sortDir)
+                <th>Entity ID</th>
+                @Html.SortHeader("Action", "action", sortBy, sortDir)
+                <th>User</th>
+                @Html.SortHeader("IP", "ip", sortBy, sortDir)
+                <th class="text-end">Aksi</th>
+            </tr></thead>
             <tbody>
             @foreach (var item in Model.Items)
             {

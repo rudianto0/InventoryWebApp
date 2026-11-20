@@ -39,7 +39,24 @@ public sealed class UserService(
         if (filter.IsActive.HasValue)
             filtered = filtered.Where(x => x.IsActive == filter.IsActive.Value);
 
-        var list = filtered.ToList();
+        var sortKey = Sorting.NormalizeKey(filter.SortBy);
+        var desc = Sorting.IsDesc(filter.SortDir);
+        IOrderedEnumerable<AppUser> ordered = (sortKey, desc) switch
+        {
+            ("username", true) => filtered.OrderByDescending(x => x.UserName!.ToLowerInvariant()),
+            ("fullname", false) => filtered.OrderBy(x => x.FullName.ToLowerInvariant()),
+            ("fullname", true) => filtered.OrderByDescending(x => x.FullName.ToLowerInvariant()),
+            ("email", false) => filtered.OrderBy(x => x.Email!.ToLowerInvariant()),
+            ("email", true) => filtered.OrderByDescending(x => x.Email!.ToLowerInvariant()),
+            ("role", false) => filtered.OrderBy(x => (roleLookup.GetValueOrDefault(x.Id) ?? string.Empty).ToLowerInvariant()),
+            ("role", true) => filtered.OrderByDescending(x => (roleLookup.GetValueOrDefault(x.Id) ?? string.Empty).ToLowerInvariant()),
+            ("parent", false) => filtered.OrderBy(x => !x.ParentId.HasValue).ThenBy(x => x.ParentId.HasValue ? (parents.GetValueOrDefault(x.ParentId.Value) ?? string.Empty).ToLowerInvariant() : string.Empty),
+            ("parent", true) => filtered.OrderBy(x => !x.ParentId.HasValue).ThenByDescending(x => x.ParentId.HasValue ? (parents.GetValueOrDefault(x.ParentId.Value) ?? string.Empty).ToLowerInvariant() : string.Empty),
+            ("status", false) => filtered.OrderBy(x => x.IsActive),
+            ("status", true) => filtered.OrderByDescending(x => x.IsActive),
+            _ => filtered.OrderBy(x => x.UserName!.ToLowerInvariant())
+        };
+        var list = ordered.ThenBy(x => x.Id).ToList();
         var total = list.Count;
         var page = Math.Max(filter.Page, 1);
         var pageSize = Math.Clamp(filter.PageSize, 1, 200);

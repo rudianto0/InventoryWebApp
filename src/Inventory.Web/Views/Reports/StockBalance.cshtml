@@ -8,7 +8,15 @@
 <div class="card shadow-sm">
     <div class="table-responsive">
         <table class="table table-hover mb-0">
-            <thead><tr><th>SKU</th><th>Produk</th><th>Unit</th><th>Lokasi</th><th>Branch</th><th class="text-end">Quantity</th><th>Update Terakhir</th></tr></thead>
+            <thead><tr>
+                @Html.SortHeader("SKU", "sku", Model.Filter.SortBy, Model.Filter.SortDir)
+                @Html.SortHeader("Produk", "product", Model.Filter.SortBy, Model.Filter.SortDir)
+                @Html.SortHeader("Unit", "unit", Model.Filter.SortBy, Model.Filter.SortDir)
+                @Html.SortHeader("Lokasi", "location", Model.Filter.SortBy, Model.Filter.SortDir)
+                @Html.SortHeader("Branch", "branch", Model.Filter.SortBy, Model.Filter.SortDir)
+                @Html.SortHeader("Quantity", "quantity", Model.Filter.SortBy, Model.Filter.SortDir, "text-end")
+                @Html.SortHeader("Update Terakhir", "updatedat", Model.Filter.SortBy, Model.Filter.SortDir)
+            </tr></thead>
             <tbody>
             @foreach (var item in Model.Result.Items)
             {

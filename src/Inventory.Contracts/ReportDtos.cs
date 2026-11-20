@@ -9,6 +9,8 @@ public sealed class ReportFilter
     public Guid? ProductId { get; set; }
     public DateOnly? From { get; set; }
     public DateOnly? To { get; set; }
+    public string? SortBy { get; set; }
+    public SortDirection SortDir { get; set; } = SortDirection.Asc;
     public int Page { get; set; } = 1;
     public int PageSize { get; set; } = 20;
 }
@@ -20,6 +22,8 @@ public sealed class AuditFilter
     public int? UserId { get; set; }
     public DateOnly? From { get; set; }
     public DateOnly? To { get; set; }
+    public string? SortBy { get; set; }
+    public SortDirection SortDir { get; set; } = SortDirection.Asc;
     public int Page { get; set; } = 1;
     public int PageSize { get; set; } = 20;
 }

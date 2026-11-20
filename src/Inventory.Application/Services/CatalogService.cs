@@ -9,7 +9,7 @@ namespace Inventory.Application.Services;
 
 public sealed class CatalogService(IAppDbContext db)
 {
-    public async Task<IReadOnlyList<CategoryResponse>> GetCategoriesAsync(string? search = null, CancellationToken ct = default)
+    public async Task<PagedResult<CategoryResponse>> GetCategoriesAsync(string? search = null, int page = 1, int pageSize = 20, SortSpec? sort = null, CancellationToken ct = default)
     {
         var query = db.Categories.AsNoTracking();
         if (!string.IsNullOrWhiteSpace(search))
@@ -17,10 +17,40 @@ public sealed class CatalogService(IAppDbContext db)
             var term = search.Trim();
             query = query.Where(x => x.Name.Contains(term));
         }
-        return await query.OrderBy(x => x.Name).Select(x => new CategoryResponse
+
+        var total = await query.CountAsync(ct);
+        var currentPage = Sorting.NormalizePage(page);
+        var size = Sorting.NormalizePageSize(pageSize);
+        var items = await SortCategories(query, Sorting.NormalizeKey(sort?.SortBy), sort?.SortDir ?? SortDirection.Asc)
+            .Skip((currentPage - 1) * size)
+            .Take(size)
+            .Select(x => new CategoryResponse
+            {
+                Id = x.Id, Name = x.Name, Description = x.Description, IsActive = x.IsActive
+            }).ToListAsync(ct);
+
+        return new PagedResult<CategoryResponse>
         {
-            Id = x.Id, Name = x.Name, Description = x.Description, IsActive = x.IsActive
-        }).ToListAsync(ct);
+            Items = items,
+            TotalCount = total,
+            Page = currentPage,
+            PageSize = size
+        };
+    }
+
+    private static IOrderedQueryable<Category> SortCategories(IQueryable<Category> query, string? sortBy, SortDirection direction)
+    {
+        var desc = Sorting.IsDesc(direction);
+        IOrderedQueryable<Category> ordered = (sortBy, desc) switch
+        {
+            ("name", true) => query.OrderByDescending(x => x.Name.ToLower()),
+            ("description", false) => query.OrderBy(x => x.Description == null).ThenBy(x => x.Description!.ToLower()),
+            ("description", true) => query.OrderBy(x => x.Description == null).ThenByDescending(x => x.Description!.ToLower()),
+            ("status", false) => query.OrderBy(x => x.IsActive),
+            ("status", true) => query.OrderByDescending(x => x.IsActive),
+            _ => query.OrderBy(x => x.Name.ToLower())
+        };
+        return ordered.ThenBy(x => x.Id);
     }
 
     public Task<CategoryResponse?> GetCategoryAsync(Guid id, CancellationToken ct = default) =>
@@ -81,7 +111,7 @@ public sealed class CatalogService(IAppDbContext db)
         await db.SaveChangesAsync(ct);
     }
 
-    public async Task<IReadOnlyList<UnitResponse>> GetUnitsAsync(string? search = null, CancellationToken ct = default)
+    public async Task<PagedResult<UnitResponse>> GetUnitsAsync(string? search = null, int page = 1, int pageSize = 20, SortSpec? sort = null, CancellationToken ct = default)
     {
         var query = db.Units.AsNoTracking();
         if (!string.IsNullOrWhiteSpace(search))
@@ -89,10 +119,38 @@ public sealed class CatalogService(IAppDbContext db)
             var term = search.Trim();
             query = query.Where(x => x.Code.Contains(term) || x.Name.Contains(term));
         }
-        return await query.OrderBy(x => x.Code).Select(x => new UnitResponse
+
+        var total = await query.CountAsync(ct);
+        var currentPage = Sorting.NormalizePage(page);
+        var size = Sorting.NormalizePageSize(pageSize);
+        var items = await SortUnits(query, Sorting.NormalizeKey(sort?.SortBy), sort?.SortDir ?? SortDirection.Asc)
+            .Skip((currentPage - 1) * size)
+            .Take(size)
+            .Select(x => new UnitResponse
+            {
+                Id = x.Id, Code = x.Code, Name = x.Name
+            }).ToListAsync(ct);
+
+        return new PagedResult<UnitResponse>
         {
-            Id = x.Id, Code = x.Code, Name = x.Name
-        }).ToListAsync(ct);
+            Items = items,
+            TotalCount = total,
+            Page = currentPage,
+            PageSize = size
+        };
+    }
+
+    private static IOrderedQueryable<Unit> SortUnits(IQueryable<Unit> query, string? sortBy, SortDirection direction)
+    {
+        var desc = Sorting.IsDesc(direction);
+        IOrderedQueryable<Unit> ordered = (sortBy, desc) switch
+        {
+            ("code", true) => query.OrderByDescending(x => x.Code.ToLower()),
+            ("name", false) => query.OrderBy(x => x.Name.ToLower()),
+            ("name", true) => query.OrderByDescending(x => x.Name.ToLower()),
+            _ => query.OrderBy(x => x.Code.ToLower())
+        };
+        return ordered.ThenBy(x => x.Id);
     }
 
     public Task<UnitResponse?> GetUnitAsync(Guid id, CancellationToken ct = default) =>
@@ -140,7 +198,7 @@ public sealed class CatalogService(IAppDbContext db)
         await db.SaveChangesAsync(ct);
     }
 
-    public async Task<IReadOnlyList<ProductListItem>> GetProductsAsync(string? search = null, Guid? categoryId = null, bool? activeOnly = null, CancellationToken ct = default)
+    public async Task<PagedResult<ProductListItem>> GetProductsAsync(string? search = null, Guid? categoryId = null, bool? activeOnly = null, int page = 1, int pageSize = 20, SortSpec? sort = null, CancellationToken ct = default)
     {
         var query = db.Products.AsNoTracking().Include(x => x.Category).Include(x => x.Unit).AsQueryable();
         if (!string.IsNullOrWhiteSpace(search))
@@ -153,16 +211,51 @@ public sealed class CatalogService(IAppDbContext db)
         if (activeOnly == true)
             query = query.Where(x => x.IsActive);
 
-        return await query.OrderBy(x => x.Sku).Select(x => new ProductListItem
+        var total = await query.CountAsync(ct);
+        var currentPage = Sorting.NormalizePage(page);
+        var size = Sorting.NormalizePageSize(pageSize);
+        var items = await SortProducts(query, Sorting.NormalizeKey(sort?.SortBy), sort?.SortDir ?? SortDirection.Asc)
+            .Skip((currentPage - 1) * size)
+            .Take(size)
+            .Select(x => new ProductListItem
+            {
+                Id = x.Id,
+                Sku = x.Sku,
+                Name = x.Name,
+                CategoryName = x.Category!.Name,
+                UnitName = x.Unit!.Name,
+                ReorderLevel = x.ReorderLevel,
+                IsActive = x.IsActive
+            }).ToListAsync(ct);
+
+        return new PagedResult<ProductListItem>
         {
-            Id = x.Id,
-            Sku = x.Sku,
-            Name = x.Name,
-            CategoryName = x.Category!.Name,
-            UnitName = x.Unit!.Name,
-            ReorderLevel = x.ReorderLevel,
-            IsActive = x.IsActive
-        }).ToListAsync(ct);
+            Items = items,
+            TotalCount = total,
+            Page = currentPage,
+            PageSize = size
+        };
+    }
+
+    private static IOrderedQueryable<Product> SortProducts(IQueryable<Product> query, string? sortBy, SortDirection direction)
+    {
+        var desc = Sorting.IsDesc(direction);
+        IOrderedQueryable<Product> ordered = (sortBy, desc) switch
+        {
+            ("sku", true) => query.OrderByDescending(x => x.Sku.ToLower()),
+            ("name", false) => query.OrderBy(x => x.Name.ToLower()),
+            ("name", true) => query.OrderByDescending(x => x.Name.ToLower()),
+            ("category", false) => query.OrderBy(x => x.Category!.Name.ToLower()),
+            ("category", true) => query.OrderByDescending(x => x.Category!.Name.ToLower()),
+            ("unit", false) => query.OrderBy(x => x.Unit!.Name.ToLower()),
+            ("unit", true) => query.OrderByDescending(x => x.Unit!.Name.ToLower()),
+            ("reorder", false) => query.OrderBy(x => x.ReorderLevel),
+            ("reorder", true) => query.OrderByDescending(x => x.ReorderLevel),
+            ("status", false) => query.OrderBy(x => x.IsActive),
+            ("status", true) => query.OrderByDescending(x => x.IsActive),
+            _ => query.OrderBy(x => x.Sku.ToLower())
+        };
+        return ordered.ThenBy(x => x.Id);
     }
 
     public Task<ProductResponse?> GetProductAsync(Guid id, CancellationToken ct = default) =>

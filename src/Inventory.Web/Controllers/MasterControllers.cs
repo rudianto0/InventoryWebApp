@@ -10,10 +10,12 @@ namespace Inventory.Web.Controllers;
 public sealed class LocationsController(ILocationClient locations) : AppControllerBase
 {
     [HttpGet]
-    public async Task<IActionResult> Index(Contracts.Enums.LocationType? type, CancellationToken ct)
+    public async Task<IActionResult> Index(Contracts.Enums.LocationType? type, string? sortBy, SortDirection sortDir, int page = 1, CancellationToken ct = default)
     {
         ViewBag.Type = type;
-        return View(await locations.ListAsync(type, null, ct));
+        ViewBag.SortBy = sortBy;
+        ViewBag.SortDir = sortDir;
+        return View(await locations.ListAsync(type, null, page, 20, new SortSpec { SortBy = sortBy, SortDir = sortDir }, ct));
     }
 
     [Authorize(Roles = "Admin")]
@@ -139,10 +141,12 @@ public sealed class LocationsController(ILocationClient locations) : AppControll
 public sealed class SuppliersController(ISupplierClient suppliers) : AppControllerBase
 {
     [HttpGet]
-    public async Task<IActionResult> Index(string? search, CancellationToken ct)
+    public async Task<IActionResult> Index(string? search, string? sortBy, SortDirection sortDir, int page = 1, CancellationToken ct = default)
     {
         ViewBag.Search = search;
-        return View(await suppliers.ListAsync(search, null, ct));
+        ViewBag.SortBy = sortBy;
+        ViewBag.SortDir = sortDir;
+        return View(await suppliers.ListAsync(search, null, page, 20, new SortSpec { SortBy = sortBy, SortDir = sortDir }, ct));
     }
 
     [Authorize(Roles = "Admin")]

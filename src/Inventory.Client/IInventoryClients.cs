@@ -5,18 +5,18 @@ namespace Inventory.Client;
 
 public interface ICatalogClient
 {
-    Task<IReadOnlyList<CategoryResponse>> GetCategoriesAsync(string? search = null, CancellationToken ct = default);
+    Task<PagedResult<CategoryResponse>> GetCategoriesAsync(string? search = null, int page = 1, int pageSize = 20, SortSpec? sort = null, CancellationToken ct = default);
     Task<CategoryResponse?> GetCategoryAsync(Guid id, CancellationToken ct = default);
     Task<CategoryResponse> CreateCategoryAsync(CategoryInput input, CancellationToken ct = default);
     Task UpdateCategoryAsync(Guid id, CategoryInput input, CancellationToken ct = default);
     Task DeactivateCategoryAsync(Guid id, CancellationToken ct = default);
     Task DeleteCategoryAsync(Guid id, CancellationToken ct = default);
-    Task<IReadOnlyList<UnitResponse>> GetUnitsAsync(string? search = null, CancellationToken ct = default);
+    Task<PagedResult<UnitResponse>> GetUnitsAsync(string? search = null, int page = 1, int pageSize = 20, SortSpec? sort = null, CancellationToken ct = default);
     Task<UnitResponse?> GetUnitAsync(Guid id, CancellationToken ct = default);
     Task<UnitResponse> CreateUnitAsync(UnitInput input, CancellationToken ct = default);
     Task UpdateUnitAsync(Guid id, UnitInput input, CancellationToken ct = default);
     Task DeleteUnitAsync(Guid id, CancellationToken ct = default);
-    Task<IReadOnlyList<ProductListItem>> GetProductsAsync(string? search = null, Guid? categoryId = null, bool? activeOnly = null, CancellationToken ct = default);
+    Task<PagedResult<ProductListItem>> GetProductsAsync(string? search = null, Guid? categoryId = null, bool? activeOnly = null, int page = 1, int pageSize = 20, SortSpec? sort = null, CancellationToken ct = default);
     Task<ProductResponse?> GetProductAsync(Guid id, CancellationToken ct = default);
     Task<ProductResponse> CreateProductAsync(ProductInput input, CancellationToken ct = default);
     Task UpdateProductAsync(Guid id, ProductInput input, CancellationToken ct = default);
@@ -29,7 +29,7 @@ public interface ICatalogClient
 
 public interface ISupplierClient
 {
-    Task<IReadOnlyList<SupplierResponse>> ListAsync(string? search = null, bool? activeOnly = null, CancellationToken ct = default);
+    Task<PagedResult<SupplierResponse>> ListAsync(string? search = null, bool? activeOnly = null, int page = 1, int pageSize = 20, SortSpec? sort = null, CancellationToken ct = default);
     Task<SupplierResponse?> GetAsync(Guid id, CancellationToken ct = default);
     Task<SupplierResponse> CreateAsync(SupplierInput input, CancellationToken ct = default);
     Task UpdateAsync(Guid id, SupplierInput input, CancellationToken ct = default);
@@ -40,7 +40,7 @@ public interface ISupplierClient
 
 public interface ILocationClient
 {
-    Task<IReadOnlyList<LocationResponse>> ListAsync(LocationType? type = null, bool? activeOnly = null, CancellationToken ct = default);
+    Task<PagedResult<LocationResponse>> ListAsync(LocationType? type = null, bool? activeOnly = null, int page = 1, int pageSize = 20, SortSpec? sort = null, CancellationToken ct = default);
     Task<LocationResponse?> GetAsync(Guid id, CancellationToken ct = default);
     Task<LocationResponse> CreateAsync(LocationInput input, CancellationToken ct = default);
     Task UpdateAsync(Guid id, LocationInput input, CancellationToken ct = default);
@@ -111,7 +111,7 @@ public interface IStockOpnameClient
 
 public interface IApprovalClient
 {
-    Task<IReadOnlyList<ApprovalItem>> GetPendingAsync(CancellationToken ct = default);
+    Task<IReadOnlyList<ApprovalItem>> GetPendingAsync(SortSpec? sort = null, CancellationToken ct = default);
 }
 
 public interface IReportClient
