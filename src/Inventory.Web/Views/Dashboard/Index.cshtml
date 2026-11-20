@@ -3,64 +3,103 @@
     ViewData["Title"] = "Dashboard";
     var locations = (IReadOnlyList<SelectOption>)ViewBag.Locations;
     var locationId = ViewBag.LocationId as Guid?;
+    var iconSprite = Url.Content("~/images/icons.svg");
+    var canViewRestrictedReports = User.IsInRole("Admin") || User.IsInRole("Manager")
+        || User.IsInRole("Auditor") || User.IsInRole("SPV");
 }
 
-<div class="d-flex justify-content-between align-items-center mb-3">
-    <h4 class="mb-0">Dashboard</h4>
-    <form method="get" class="d-flex gap-2">
+<div class="dash-toolbar">
+    <div>
+        <h4>Dashboard</h4>
+        <p class="text-muted">Ringkasan persediaan dan aktivitas stok terkini.</p>
+    </div>
+    <form method="get" class="dash-filter">
         <select name="locationId" class="form-select form-select-sm" asp-items="@(new SelectList(locations, "Id", "Text", locationId))">
             <option value="">Semua Lokasi</option>
         </select>
-        <button type="submit" class="btn btn-sm btn-outline-primary">Filter</button>
+        <button type="submit" class="btn btn-sm btn-primary">Filter</button>
     </form>
 </div>
 
 <div class="row g-3 mb-4">
     <div class="col-6 col-lg-3">
-        <div class="card shadow-sm h-100"><div class="card-body">
-            <div class="text-muted small">Total Produk Aktif</div>
-            <div class="fs-3 fw-semibold">@Model.TotalProducts</div>
-        </div></div>
+        <div class="stat-card">
+            <span class="stat-icon" aria-hidden="true">
+                <svg><use href="@(iconSprite)#i-package"></use></svg>
+            </span>
+            <div class="stat-label">Produk Aktif</div>
+            <div class="stat-value">@Model.TotalProducts</div>
+        </div>
     </div>
     <div class="col-6 col-lg-3">
-        <div class="card shadow-sm h-100"><div class="card-body">
-            <div class="text-muted small">Total Saldo Stok</div>
-            <div class="fs-3 fw-semibold">@Model.TotalStockQuantity</div>
-        </div></div>
+        <div class="stat-card is-success">
+            <span class="stat-icon" aria-hidden="true">
+                <svg><use href="@(iconSprite)#i-box"></use></svg>
+            </span>
+            <div class="stat-label">Total Saldo Stok</div>
+            <div class="stat-value">@Model.TotalStockQuantity</div>
+        </div>
     </div>
     <div class="col-6 col-lg-3">
-        <div class="card shadow-sm h-100"><div class="card-body">
-            <div class="text-muted small">Di Bawah Reorder Level</div>
-            <div class="fs-3 fw-semibold text-danger">@Model.BelowReorderCount</div>
-        </div></div>
+        <div class="stat-card is-danger">
+            <span class="stat-icon" aria-hidden="true">
+                <svg><use href="@(iconSprite)#i-alert"></use></svg>
+            </span>
+            <div class="stat-label">Di Bawah Reorder</div>
+            <div class="stat-value">@Model.BelowReorderCount</div>
+        </div>
     </div>
     <div class="col-6 col-lg-3">
-        <div class="card shadow-sm h-100"><div class="card-body">
-            <div class="text-muted small">Menunggu Approval</div>
-            <div class="fs-3 fw-semibold text-warning">@Model.PendingApprovals</div>
-        </div></div>
+        <div class="stat-card is-warning">
+            <span class="stat-icon" aria-hidden="true">
+                <svg><use href="@(iconSprite)#i-check-circle"></use></svg>
+            </span>
+            <div class="stat-label">Menunggu Approval</div>
+            <div class="stat-value">@Model.PendingApprovals</div>
+        </div>
     </div>
 </div>
 
 <div class="row g-3">
     <div class="col-lg-6">
-        <div class="card shadow-sm h-100">
-            <div class="card-header bg-white fw-semibold">Reorder Alert</div>
+        <div class="card h-100">
+            <div class="table-card-header">
+                <h5>Reorder Alert</h5>
+                @if (canViewRestrictedReports)
+                {
+                    <a class="btn btn-sm btn-outline-secondary" asp-controller="Reports" asp-action="Reorder">Lihat semua</a>
+                }
+            </div>
             <div class="table-responsive">
-                <table class="table table-sm mb-0">
-                    <thead><tr><th>SKU</th><th>Produk</th><th>Lokasi</th><th class="text-end">Stok</th><th class="text-end">Reorder</th></tr></thead>
+                <table class="table table-hover align-middle">
+                    <thead>
+                        <tr>
+                            <th>SKU</th>
+                            <th>Produk</th>
+                            <th>Lokasi</th>
+                            <th class="text-end">Stok</th>
+                            <th class="text-end">Reorder</th>
+                        </tr>
+                    </thead>
                     <tbody>
                     @if (Model.ReorderItems.Count == 0)
                     {
-                        <tr><td colspan="5" class="text-center text-muted py-3">Tidak ada produk di bawah reorder level.</td></tr>
+                        <tr>
+                            <td colspan="5">
+                                <div class="empty-state">
+                                    <svg aria-hidden="true"><use href="@(iconSprite)#i-empty"></use></svg>
+                                    <div>Tidak ada produk di bawah reorder level.</div>
+                                </div>
+                            </td>
+                        </tr>
                     }
                     @foreach (var item in Model.ReorderItems)
                     {
                         <tr>
-                            <td>@item.Sku</td>
+                            <td class="fw-semibold">@item.Sku</td>
                             <td>@item.ProductName</td>
                             <td>@item.LocationName</td>
-                            <td class="text-end text-danger">@item.Quantity</td>
+                            <td class="text-end text-danger fw-semibold">@item.Quantity</td>
                             <td class="text-end">@item.ReorderLevel</td>
                         </tr>
                     }
@@ -70,21 +109,42 @@
         </div>
     </div>
     <div class="col-lg-6">
-        <div class="card shadow-sm h-100">
-            <div class="card-header bg-white fw-semibold">Mutasi Terakhir</div>
+        <div class="card h-100">
+            <div class="table-card-header">
+                <h5>Mutasi Terakhir</h5>
+                @if (canViewRestrictedReports)
+                {
+                    <a class="btn btn-sm btn-outline-secondary" asp-controller="Reports" asp-action="Movements">Lihat semua</a>
+                }
+            </div>
             <div class="table-responsive">
-                <table class="table table-sm mb-0">
-                    <thead><tr><th>Waktu</th><th>No</th><th>Produk</th><th>Lokasi</th><th class="text-end">Qty</th></tr></thead>
+                <table class="table table-hover align-middle">
+                    <thead>
+                        <tr>
+                            <th>Waktu</th>
+                            <th>No</th>
+                            <th>Produk</th>
+                            <th>Lokasi</th>
+                            <th class="text-end">Qty</th>
+                        </tr>
+                    </thead>
                     <tbody>
                     @if (Model.RecentMovements.Count == 0)
                     {
-                        <tr><td colspan="5" class="text-center text-muted py-3">Belum ada mutasi stok.</td></tr>
+                        <tr>
+                            <td colspan="5">
+                                <div class="empty-state">
+                                    <svg aria-hidden="true"><use href="@(iconSprite)#i-empty"></use></svg>
+                                    <div>Belum ada mutasi stok.</div>
+                                </div>
+                            </td>
+                        </tr>
                     }
                     @foreach (var item in Model.RecentMovements)
                     {
                         <tr>
-                            <td>@item.CreatedAt.ToLocalTime().ToString("dd/MM/yyyy HH:mm")</td>
-                            <td>@item.MovementNo</td>
+                            <td class="text-nowrap">@item.CreatedAt.ToLocalTime().ToString("dd/MM/yyyy HH:mm")</td>
+                            <td class="fw-semibold">@item.MovementNo</td>
                             <td>@item.Sku - @item.ProductName</td>
                             <td>@item.LocationName</td>
                             <td class="text-end">@item.Quantity</td>

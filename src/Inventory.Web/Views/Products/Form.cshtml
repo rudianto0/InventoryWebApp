@@ -2,21 +2,31 @@
 @{
     ViewData["Title"] = Model.Id.HasValue ? "Edit Produk" : "Tambah Produk";
 }
-<h4>@ViewData["Title"]</h4>
+
+<div class="mb-3">
+    <h4 class="mb-1">@ViewData["Title"]</h4>
+    <p class="text-muted mb-0 small">Lengkapi informasi produk dengan benar agar stok dan laporan tetap akurat.</p>
+</div>
+
 <div class="row">
-    <div class="col-md-6">
-        <form method="post" asp-action="@(Model.Id.HasValue ? "Edit" : "Create")" asp-route-id="@Model.Id" class="card card-body shadow-sm">
-            <div asp-validation-summary="ModelOnly" class="text-danger small mb-2"></div>
-            <div class="mb-3">
-                <label asp-for="Sku" class="form-label">SKU</label>
-                <input asp-for="Sku" class="form-control" />
-                <span asp-validation-for="Sku" class="text-danger small"></span>
+    <div class="col-lg-8">
+        <form method="post" asp-action="@(Model.Id.HasValue ? "Edit" : "Create")" asp-route-id="@Model.Id" class="card card-body form-card">
+            <div asp-validation-summary="ModelOnly" class="text-danger small mb-3"></div>
+
+            <div class="form-section-title">Informasi Produk</div>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label asp-for="Sku" class="form-label">SKU</label>
+                    <input asp-for="Sku" class="form-control" placeholder="Contoh: SKU-001" />
+                    <span asp-validation-for="Sku" class="text-danger small"></span>
+                </div>
+                <div class="col-md-8 mb-3">
+                    <label asp-for="Name" class="form-label">Nama Produk</label>
+                    <input asp-for="Name" class="form-control" placeholder="Nama produk" />
+                    <span asp-validation-for="Name" class="text-danger small"></span>
+                </div>
             </div>
-            <div class="mb-3">
-                <label asp-for="Name" class="form-label">Nama Produk</label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger small"></span>
-            </div>
+
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label asp-for="CategoryId" class="form-label">Kategori</label>
@@ -31,20 +41,29 @@
                     </select>
                 </div>
             </div>
-            <div class="mb-3">
-                <label asp-for="ReorderLevel" class="form-label">Reorder Level</label>
-                <input asp-for="ReorderLevel" type="number" min="0" class="form-control" />
-                <span asp-validation-for="ReorderLevel" class="text-danger small"></span>
+
+            <div class="form-section-title mt-2">Pengaturan Stok</div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="ReorderLevel" class="form-label">Reorder Level</label>
+                    <input asp-for="ReorderLevel" type="number" min="0" class="form-control" />
+                    <div class="form-text">Batas minimum stok sebelum muncul peringatan pembelian ulang.</div>
+                    <span asp-validation-for="ReorderLevel" class="text-danger small"></span>
+                </div>
+                <div class="col-md-6 mb-3 d-flex align-items-end">
+                    <div class="form-check mb-2">
+                        <input asp-for="IsActive" class="form-check-input" />
+                        <label asp-for="IsActive" class="form-check-label">Produk aktif</label>
+                    </div>
+                </div>
             </div>
-            <div class="form-check mb-3">
-                <input asp-for="IsActive" class="form-check-input" />
-                <label asp-for="IsActive" class="form-check-label">Aktif</label>
-            </div>
-            <div>
-                <button class="btn btn-primary">Simpan</button>
+
+            <div class="form-actions">
                 <a class="btn btn-outline-secondary" asp-action="Index">Batal</a>
+                <button class="btn btn-primary">Simpan</button>
             </div>
         </form>
     </div>
 </div>
+
 @section Scripts { <partial name="_ValidationScriptsPartial" /> }

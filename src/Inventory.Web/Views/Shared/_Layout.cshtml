@@ -17,62 +17,160 @@
             .Select(part => char.ToUpperInvariant(part[0])));
     if (string.IsNullOrEmpty(initials))
         initials = "?";
+    var iconSprite = Url.Content("~/images/icons.svg");
 }
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1f2937" />
     <title>@ViewData["Title"] - Inventory</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
-<body class="bg-light @(isAuthenticated ? "is-authenticated" : "")">
+<body class="app-body @(isAuthenticated ? "is-authenticated" : "")">
+    <a class="skip-link" href="#mainContent">Lewati ke konten</a>
+
     <div class="app-shell">
         @if (isAuthenticated)
         {
             <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
             <aside class="sidebar" id="appSidebar">
-                <a class="sidebar-brand" asp-controller="Dashboard" asp-action="Index">Inventory</a>
+                <a class="sidebar-brand" asp-controller="Dashboard" asp-action="Index">
+                    <span class="brand-mark" aria-hidden="true">
+                        <svg class="brand-icon"><use href="@(iconSprite)#i-box"></use></svg>
+                    </span>
+                    <span class="brand-text">
+                        <span class="brand-name">Inventory</span>
+                        <span class="brand-sub">Management</span>
+                    </span>
+                </a>
+
+                <div class="sidebar-user">
+                    <span class="user-avatar sidebar-avatar" aria-hidden="true">@initials</span>
+                    <span class="sidebar-user-meta">
+                        <span class="sidebar-user-name">@displayName</span>
+                        <span class="sidebar-user-role">@roleText</span>
+                    </span>
+                </div>
 
                 <nav class="sidebar-nav" aria-label="Main navigation">
                     <div class="sidebar-heading">Overview</div>
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link @NavActive("Dashboard")" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
+                            <a class="nav-link @NavActive("Dashboard")" asp-controller="Dashboard" asp-action="Index">
+                                <svg class="nav-icon" aria-hidden="true"><use href="@(iconSprite)#i-dashboard"></use></svg>
+                                <span>Dashboard</span>
+                            </a>
                         </li>
                     </ul>
 
                     <div class="sidebar-heading">Master Data</div>
                     <ul class="nav flex-column">
-                        <li class="nav-item"><a class="nav-link @NavActive("Categories")" asp-controller="Categories" asp-action="Index">Categories</a></li>
-                        <li class="nav-item"><a class="nav-link @NavActive("Units")" asp-controller="Units" asp-action="Index">Units</a></li>
-                        <li class="nav-item"><a class="nav-link @NavActive("Products")" asp-controller="Products" asp-action="Index">Products</a></li>
-                        <li class="nav-item"><a class="nav-link @NavActive("Locations")" asp-controller="Locations" asp-action="Index">Locations</a></li>
-                        <li class="nav-item"><a class="nav-link @NavActive("Suppliers")" asp-controller="Suppliers" asp-action="Index">Suppliers</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link @NavActive("Categories")" asp-controller="Categories" asp-action="Index">
+                                <svg class="nav-icon" aria-hidden="true"><use href="@(iconSprite)#i-layers"></use></svg>
+                                <span>Categories</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @NavActive("Units")" asp-controller="Units" asp-action="Index">
+                                <svg class="nav-icon" aria-hidden="true"><use href="@(iconSprite)#i-ruler"></use></svg>
+                                <span>Units</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @NavActive("Products")" asp-controller="Products" asp-action="Index">
+                                <svg class="nav-icon" aria-hidden="true"><use href="@(iconSprite)#i-package"></use></svg>
+                                <span>Products</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @NavActive("Locations")" asp-controller="Locations" asp-action="Index">
+                                <svg class="nav-icon" aria-hidden="true"><use href="@(iconSprite)#i-map-pin"></use></svg>
+                                <span>Locations</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @NavActive("Suppliers")" asp-controller="Suppliers" asp-action="Index">
+                                <svg class="nav-icon" aria-hidden="true"><use href="@(iconSprite)#i-truck"></use></svg>
+                                <span>Suppliers</span>
+                            </a>
+                        </li>
                     </ul>
 
                     <div class="sidebar-heading">Transactions</div>
                     <ul class="nav flex-column">
-                        <li class="nav-item"><a class="nav-link @NavActive("StockIns")" asp-controller="StockIns" asp-action="Index">Stock In</a></li>
-                        <li class="nav-item"><a class="nav-link @NavActive("StockOuts")" asp-controller="StockOuts" asp-action="Index">Stock Out</a></li>
-                        <li class="nav-item"><a class="nav-link @NavActive("StockTransfers")" asp-controller="StockTransfers" asp-action="Index">Stock Transfer</a></li>
-                        <li class="nav-item"><a class="nav-link @NavActive("StockAdjustments")" asp-controller="StockAdjustments" asp-action="Index">Stock Adjustment</a></li>
-                        <li class="nav-item"><a class="nav-link @NavActive("StockOpnames")" asp-controller="StockOpnames" asp-action="Index">Stock Opname</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link @NavActive("StockIns")" asp-controller="StockIns" asp-action="Index">
+                                <svg class="nav-icon" aria-hidden="true"><use href="@(iconSprite)#i-in"></use></svg>
+                                <span>Stock In</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @NavActive("StockOuts")" asp-controller="StockOuts" asp-action="Index">
+                                <svg class="nav-icon" aria-hidden="true"><use href="@(iconSprite)#i-out"></use></svg>
+                                <span>Stock Out</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @NavActive("StockTransfers")" asp-controller="StockTransfers" asp-action="Index">
+                                <svg class="nav-icon" aria-hidden="true"><use href="@(iconSprite)#i-transfer"></use></svg>
+                                <span>Stock Transfer</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @NavActive("StockAdjustments")" asp-controller="StockAdjustments" asp-action="Index">
+                                <svg class="nav-icon" aria-hidden="true"><use href="@(iconSprite)#i-sliders"></use></svg>
+                                <span>Stock Adjustment</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @NavActive("StockOpnames")" asp-controller="StockOpnames" asp-action="Index">
+                                <svg class="nav-icon" aria-hidden="true"><use href="@(iconSprite)#i-clipboard"></use></svg>
+                                <span>Stock Opname</span>
+                            </a>
+                        </li>
                         @if (User.IsInRole("Admin") || User.IsInRole("SPV") || User.IsInRole("Manager"))
                         {
-                            <li class="nav-item"><a class="nav-link @NavActive("Approvals")" asp-controller="Approvals" asp-action="Index">Approvals</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link @NavActive("Approvals")" asp-controller="Approvals" asp-action="Index">
+                                    <svg class="nav-icon" aria-hidden="true"><use href="@(iconSprite)#i-check-circle"></use></svg>
+                                    <span>Approvals</span>
+                                </a>
+                            </li>
                         }
                     </ul>
 
                     <div class="sidebar-heading">Reports</div>
                     <ul class="nav flex-column">
-                        <li class="nav-item"><a class="nav-link @NavActive("Reports", "StockBalance")" asp-controller="Reports" asp-action="StockBalance">Stock Balance</a></li>
-                        <li class="nav-item"><a class="nav-link @NavActive("Reports", "StockCard")" asp-controller="Reports" asp-action="StockCard">Stock Card</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link @NavActive("Reports", "StockBalance")" asp-controller="Reports" asp-action="StockBalance">
+                                <svg class="nav-icon" aria-hidden="true"><use href="@(iconSprite)#i-chart"></use></svg>
+                                <span>Stock Balance</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @NavActive("Reports", "StockCard")" asp-controller="Reports" asp-action="StockCard">
+                                <svg class="nav-icon" aria-hidden="true"><use href="@(iconSprite)#i-file"></use></svg>
+                                <span>Stock Card</span>
+                            </a>
+                        </li>
                         @if (!User.IsInRole("Staff"))
                         {
-                            <li class="nav-item"><a class="nav-link @NavActive("Reports", "Movements")" asp-controller="Reports" asp-action="Movements">Movements</a></li>
-                            <li class="nav-item"><a class="nav-link @NavActive("Reports", "Reorder")" asp-controller="Reports" asp-action="Reorder">Reorder Alert</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link @NavActive("Reports", "Movements")" asp-controller="Reports" asp-action="Movements">
+                                    <svg class="nav-icon" aria-hidden="true"><use href="@(iconSprite)#i-transfer"></use></svg>
+                                    <span>Movements</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link @NavActive("Reports", "Reorder")" asp-controller="Reports" asp-action="Reorder">
+                                    <svg class="nav-icon" aria-hidden="true"><use href="@(iconSprite)#i-alert"></use></svg>
+                                    <span>Reorder Alert</span>
+                                </a>
+                            </li>
                         }
                     </ul>
 
@@ -82,17 +180,30 @@
                         <ul class="nav flex-column">
                             @if (User.IsInRole("Admin"))
                             {
-                                <li class="nav-item"><a class="nav-link @NavActive("Users")" asp-controller="Users" asp-action="Index">Users</a></li>
+                                <li class="nav-item">
+                                    <a class="nav-link @NavActive("Users")" asp-controller="Users" asp-action="Index">
+                                        <svg class="nav-icon" aria-hidden="true"><use href="@(iconSprite)#i-users"></use></svg>
+                                        <span>Users</span>
+                                    </a>
+                                </li>
                             }
                             @if (User.IsInRole("Admin") || User.IsInRole("Auditor"))
                             {
-                                <li class="nav-item"><a class="nav-link @NavActive("AuditLogs")" asp-controller="AuditLogs" asp-action="Index">Audit Trail</a></li>
+                                <li class="nav-item">
+                                    <a class="nav-link @NavActive("AuditLogs")" asp-controller="AuditLogs" asp-action="Index">
+                                        <svg class="nav-icon" aria-hidden="true"><use href="@(iconSprite)#i-shield"></use></svg>
+                                        <span>Audit Trail</span>
+                                    </a>
+                                </li>
                             }
                         </ul>
                     }
                 </nav>
 
-                <div class="sidebar-footer">Inventory Management</div>
+                <div class="sidebar-footer">
+                    <span>Inventory</span>
+                    <span class="sidebar-version">v1.0</span>
+                </div>
             </aside>
         }
 
@@ -103,7 +214,10 @@
                     <button type="button" class="btn sidebar-toggle" id="sidebarToggle" aria-controls="appSidebar" aria-expanded="false" aria-label="Toggle navigation">
                         <span aria-hidden="true">&#9776;</span>
                     </button>
-                    <span class="topbar-title text-truncate">@ViewData["Title"]</span>
+                    <div class="topbar-heading">
+                        <span class="topbar-eyebrow">Workspace</span>
+                        <span class="topbar-title text-truncate">@ViewData["Title"]</span>
+                    </div>
 
                     <div class="dropdown ms-auto">
                         <a class="topbar-user text-decoration-none text-reset dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -127,7 +241,7 @@
                 </header>
             }
 
-            <main role="main" class="app-content">
+            <main role="main" class="app-content" id="mainContent">
                 @if (TempData["Success"] is string success)
                 {
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
