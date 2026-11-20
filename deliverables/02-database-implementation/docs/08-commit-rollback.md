@@ -22,11 +22,17 @@ satuan (`UnitCost`) disimpan dengan cara yang sama.
 
 ```sql
 BEGIN;
-DELETE FROM "Suppliers" WHERE "Code" = 'SUP-TRX-COMMIT';
+INSERT INTO "Suppliers" ("Id", "Code", "Name", "IsActive", "IsDeleted")
+VALUES (gen_random_uuid(), 'SUP-TRX-ROLLBACK', 'Supplier Rollback', true, false);
 ROLLBACK;
 
-SELECT COUNT(*) FROM "Suppliers" WHERE "Code" = 'SUP-TRX-COMMIT';
+SELECT COUNT(*) FROM "Suppliers" WHERE "Code" = 'SUP-TRX-ROLLBACK';
 ```
 
-Hasil: data tetap ada (jumlah 1) karena penghapusan dibatalkan. Pada contoh
-"pelanggan", data pelanggan dipadankan dengan data supplier.
+Hasil: data batal tersimpan (jumlah 0). Script aktual di
+`sql/08-transaction/09-transactions.sql` memakai pola INSERT lalu ROLLBACK.
+Pada contoh "pelanggan", data pelanggan dipadankan dengan data supplier.
+
+Untuk demonstrasi rollback setelah menghapus satu data, pola `BEGIN; DELETE ...;
+ROLLBACK;` juga valid dan menghasilkan data tetap ada. Script utama memakai
+INSERT agar data uji lain tidak ikut terhapus.

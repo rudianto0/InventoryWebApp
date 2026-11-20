@@ -75,14 +75,14 @@ dan approval. Mencatat system quantity vs counted quantity.
 
 | Method | Path | Deskripsi |
 |--------|------|-----------|
-| GET | `/stock-adjustments` | List + filter |
-| GET/POST | `/stock-adjustments/create` | Form draft |
-| GET/POST | `/stock-adjustments/edit/{id}` | Edit draft/rejected |
-| POST | `/stock-adjustments/submit/{id}` | Submit |
-| POST | `/stock-adjustments/approve/{id}` | Approve |
-| POST | `/stock-adjustments/reject/{id}` | Reject + reason |
-| POST | `/stock-adjustments/delete/{id}` | Soft delete (Draft) |
-| GET | `/stock-adjustments/details/{id}` | Detail |
+| GET | `/StockAdjustments` | List + filter |
+| GET/POST | `/StockAdjustments/Create` | Form draft |
+| GET/POST | `/StockAdjustments/Edit/{id}` | Edit draft/rejected |
+| POST | `/StockAdjustments/Submit/{id}` | Submit |
+| POST | `/StockAdjustments/Approve/{id}` | Approve |
+| POST | `/StockAdjustments/Reject/{id}` | Reject + reason |
+| POST | `/StockAdjustments/Delete/{id}` | Soft delete (Draft) |
+| GET | `/StockAdjustments/Details/{id}` | Detail |
 
 ## 7. Validasi & Business Rules
 

@@ -56,15 +56,15 @@ Catatan:
 
 1. User melakukan aksi pada entity yang diaudit.
 2. `SaveChanges` interceptor menangkap perubahan → menulis baris `AuditLogs`.
-3. Auditor membuka `/audit-logs`, memfilter berdasarkan entity/action/user/tanggal.
+3. Auditor membuka `/AuditLogs`, memfilter berdasarkan entity/action/user/tanggal.
 4. Detail menampilkan diff old vs new.
 
 ## 6. Routing / Contract
 
 | Method | Path | Deskripsi |
 |--------|------|-----------|
-| GET | `/audit-logs` | List + filter + paging |
-| GET | `/audit-logs/details/{id}` | Detail old/new |
+| GET | `/AuditLogs` | List + filter + paging |
+| GET | `/AuditLogs/Details/{id}` | Detail old/new |
 
 ### Filter
 ```csharp

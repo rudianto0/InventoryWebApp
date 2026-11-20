@@ -89,12 +89,12 @@ filter `IsDeleted = false`.
 
 | Method | Path | Deskripsi |
 |--------|------|-----------|
-| GET | `/dashboard` | Ringkasan KPI |
-| GET | `/reports/stock-balance` | Saldo stok per produk/lokasi |
-| GET | `/reports/stock-card` | Kartu stok per produk |
-| GET | `/reports/movements` | Mutasi per periode |
-| GET | `/reports/reorder` | Produk di bawah reorder level |
-| GET | `/reports/export` | CSV sesuai filter |
+| GET | `/Dashboard` | Ringkasan KPI |
+| GET | `/Reports/StockBalance` | Saldo stok per produk/lokasi |
+| GET | `/Reports/StockCard` | Kartu stok per produk |
+| GET | `/Reports/Movements` | Mutasi per periode |
+| GET | `/Reports/Reorder` | Produk di bawah reorder level |
+| GET | `/Reports/Export` | CSV sesuai filter |
 
 ### Filter umum
 ```csharp

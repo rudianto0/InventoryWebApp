@@ -3,6 +3,11 @@
 Pengukuran dilakukan dengan **BenchmarkDotNet** pada .NET 10 menggunakan
 database SQLite in-memory agar hasil mudah diulang.
 
+> Catatan: `Ledger_Apply_100`, `Approval_Pending_100`, dan `StockCard_10000`
+> memanggil service aplikasi. `StockCheck_*` dan `CreatorLookup_*` adalah
+> **prototipe di project benchmark**, bukan method service aplikasi; hasilnya
+> menggambarkan pola query, bukan pengukuran langsung method produksi.
+
 ## 1.1 Kumpulkan informasi waktu eksekusi function, procedure, atau method
 
 | Benchmark | Skenario | Waktu rata-rata | Perkiraan query |

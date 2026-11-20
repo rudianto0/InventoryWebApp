@@ -16,7 +16,7 @@ dihapus. Trigger yang tersedia:
 ```sql
 CREATE TRIGGER trg_stockout_details_qty
 BEFORE INSERT OR UPDATE ON "StockOutDetails"
-FOR EACH ROW EXECUTE FUNCTION fn_check_positive_quantity();
+FOR EACH ROW EXECUTE FUNCTION fn_validate_positive_quantity();
 ```
 
 Catatan penyesuaian: pada aplikasi Inventory, contoh "tagihan setelah input

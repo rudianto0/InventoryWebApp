@@ -1,5 +1,9 @@
 # 07 - Performance Profiling
 
+> Catatan: benchmark `StockCheck_*` dan `CreatorLookup_*` adalah prototipe di
+> project benchmark, bukan method service aplikasi. `Ledger_Apply_100`,
+> `Approval_Pending_100`, dan `StockCard_10000` memanggil service asli.
+
 ## Konteks
 
 Mengukur waktu eksekusi dan penggunaan memori komponen aplikasi Inventory,

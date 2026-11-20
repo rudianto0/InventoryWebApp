@@ -1,5 +1,10 @@
 # 1. Menjelaskan Varian dan Invarian
 
+> Catatan: dokumen bagian 04 adalah **latihan algoritma terpisah** (program menu
+> angka). Bubble Sort/Linear Search di bagian 03 bukan bagian dari source code
+> aplikasi Inventory. Implementasi aplikasi memakai LINQ/EF Core dan algoritma
+> bisnis inventori.
+
 ## 1.1 Tipe data yang sesuai kaidah pemrograman
 
 Program menu angka memakai tipe data sederhana agar mudah diurutkan dan dicari.

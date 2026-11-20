@@ -74,14 +74,14 @@ yang ditemukan ditindaklanjuti sebagai adjustment setelah approval.
 
 | Method | Path | Deskripsi |
 |--------|------|-----------|
-| GET | `/stock-opnames` | List sesi |
-| GET/POST | `/stock-opnames/create` | Buat sesi + pilih lokasi |
-| GET/POST | `/stock-opnames/edit/{id}` | Input hasil hitung |
-| POST | `/stock-opnames/submit/{id}` | Submit |
-| POST | `/stock-opnames/approve/{id}` | Approve |
-| POST | `/stock-opnames/reject/{id}` | Reject + reason |
-| POST | `/stock-opnames/delete/{id}` | Soft delete (Draft) |
-| GET | `/stock-opnames/details/{id}` | Detail + selisih |
+| GET | `/StockOpnames` | List sesi |
+| GET/POST | `/StockOpnames/Create` | Buat sesi + pilih lokasi |
+| GET/POST | `/StockOpnames/Edit/{id}` | Input hasil hitung |
+| POST | `/StockOpnames/Submit/{id}` | Submit |
+| POST | `/StockOpnames/Approve/{id}` | Approve |
+| POST | `/StockOpnames/Reject/{id}` | Reject + reason |
+| POST | `/StockOpnames/Delete/{id}` | Soft delete (Draft) |
+| GET | `/StockOpnames/Details/{id}` | Detail + selisih |
 
 ## 7. Validasi & Business Rules
 

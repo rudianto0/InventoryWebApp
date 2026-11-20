@@ -2,13 +2,15 @@
 
 ## a. Terapkan library akses basis data.
 
-Aplikasi memakai **EF Core** dengan penghubung **Npgsql** untuk berbicara
-dengan PostgreSQL. Library ini menerjemahkan perintah aplikasi menjadi SQL.
+Aplikasi memakai **EF Core**. Provider PostgreSQL memakai **Npgsql**;
+provider SQL Server memakai **Microsoft.EntityFrameworkCore.SqlServer**.
+Library ini menerjemahkan perintah aplikasi menjadi SQL.
 
 | Komponen | Fungsi sederhana |
 |---|---|
 | EF Core | Mengubah data aplikasi menjadi perintah database |
-| Npgsql | Penghubung resmi ke PostgreSQL |
+| Npgsql | Penghubung ke PostgreSQL |
+| SQL Server provider | Penghubung ke SQL Server |
 | ASP.NET Core Identity | Menangani login/logout dan peran |
 | LINQ | Cara menulis query dalam bahasa C# |
 
@@ -21,26 +23,35 @@ var products = await db.Products.AsNoTracking()
 
 ## b. Terapkan perintah akses basis data yang relevan dengan teknologi atau jenis data baru untuk mengakses data.
 
-| Kebutuhan | Perintah yang dipakai |
+Aplikasi saat ini mengakses database melalui **EF Core + LINQ**. View, function,
+dan stored procedure tersedia di script SQL, tetapi **belum dipanggil langsung**
+oleh kode aplikasi.
+
+| Kebutuhan | Perintah yang dipakai aplikasi |
 |---|---|
 | Tambah/ubah/hapus | `Add`, `Update`, `Remove`, `SaveChangesAsync` |
 | Baca data | `Select`, `Where`, `OrderBy`, `ToListAsync` |
-| Ambil view | `SqlQuery<T>` dari `v_...` |
-| Panggil function | `SELECT fn_...` |
-| Panggil procedure | `CALL sp_...` |
+| Query baca tanpa tracking | `AsNoTracking` |
 | Transaksi | `BeginTransactionAsync` |
 | Halaman | `Skip`/`Take` |
+| Panggil data turunan | Service Application, bukan raw SQL |
 
-Contoh memanggil view dan function:
+**Tersedia di database, belum dipakai aplikasi:**
+
+| Objek | Contoh |
+|---|---|
+| View | `v_stock_balance`, `v_pending_approvals`, `v_stock_card` |
+| Function | `fn_available_stock`, `fn_stock_balance`, `fn_stock_card` |
+| Procedure | `sp_receive_stock`, `sp_issue_stock`, `sp_transfer_stock` |
+
+Jika nanti ingin memanggil objek tersebut langsung, EF Core menyediakan
+`SqlQuery<T>`/`ExecuteSqlInterpolatedAsync`. Contoh berikut adalah **contoh
+manual**, bukan alur yang dipakai aplikasi saat ini:
 
 ```csharp
 var pending = await db.Database
     .SqlQuery<ApprovalItem>($"SELECT * FROM \"v_pending_approvals\"")
     .ToListAsync(ct);
-
-var stock = await db.Database
-    .SqlQuery<int>($"SELECT fn_available_stock({productId}, {locationId})")
-    .SingleAsync(ct);
 ```
 
 Tipe data yang dipakai: `uuid` untuk ID, `integer` untuk jumlah, `numeric`

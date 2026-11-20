@@ -65,13 +65,13 @@ dipilih sebagai parent dan harus aktif.
 
 | Method | Path | Deskripsi |
 |--------|------|-----------|
-| GET | `/users` | List (search, paging, filter role/status) |
-| GET | `/users/create` | Form create |
-| POST | `/users/create` | Simpan |
-| GET | `/users/edit/{id}` | Form edit |
-| POST | `/users/edit/{id}` | Update |
-| POST | `/users/deactivate/{id}` | Non-aktifkan |
-| POST | `/users/reset-password/{id}` | Reset password |
+| GET | `/Users` | List (search, paging, filter role/status) |
+| GET | `/Users/Create` | Form create |
+| POST | `/Users/Create` | Simpan |
+| GET | `/Users/Edit/{id}` | Form edit |
+| POST | `/Users/Edit/{id}` | Update |
+| POST | `/Users/Deactivate/{id}` | Non-aktifkan |
+| POST | `/Users/ResetPassword/{id}` | Reset password |
 
 ### UserFormViewModel
 ```csharp

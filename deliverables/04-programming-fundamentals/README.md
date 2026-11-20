@@ -1,5 +1,8 @@
 # 04 - Programming Fundamentals
 
+> Catatan: bagian ini adalah latihan algoritma terpisah (program menu angka),
+> bukan implementasi fitur aplikasi Inventory. Kode aplikasi memakai LINQ/EF Core.
+
 ## Konteks
 
 Penerapan dasar pemrograman pada program menu angka: tipe data, variabel,

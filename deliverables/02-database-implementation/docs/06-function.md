@@ -19,8 +19,10 @@ SELECT fn_available_stock(
 );
 ```
 
-Rekap stok masuk dan keluar per bulan dapat diambil dari `fn_stock_card` atau
-`v_stock_movement_daily` dengan filter bulan yang diinginkan.
+Belum ada function khusus rekap bulanan. Rekap stok masuk dan keluar dapat
+dihitung dari `fn_stock_card` atau `v_stock_movement_daily` dengan filter
+tanggal/bulan. Jika rekap bulanan perlu menjadi satu function tersendiri,
+function tersebut belum dibuat.
 
 ## 6.2 Tulis perintah SQL pada function secara efisien
 

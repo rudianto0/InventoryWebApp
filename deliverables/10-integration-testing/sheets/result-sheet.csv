@@ -1,11 +1,11 @@
 TestID,Actual,Status,Evidence,Notes
-INT-01,Status Approved; stock 7; 1 movement,Pass,StockInServiceTests.ApproveStockIn_AsAssignedApprover_UpdatesStock,In-memory SQLite
+INT-01,Status Approved; stock 7; 1 movement,Pass,StockTransactionApprovalTests.ApproveStockIn_AsAssignedApprover_UpdatesStock,In-memory SQLite
 INT-02,Stock 6; 1 movement Out,Pass,StockOutServiceTests.Approve_DecreasesStock,In-memory SQLite
 INT-03,ValidationException; stock 2,Pass,StockOutServiceTests.Submit_RejectsInsufficientStock,In-memory SQLite
 INT-04,WH1 6; WH2 4; 2 movements,Pass,StockTransferServiceTests.Approve_MovesStockAndCreatesTwoMovements,In-memory SQLite
 INT-05,Difference -3; stock 7,Pass,StockAdjustmentServiceTests.Approve_AppliesNegativeDifference,In-memory SQLite
-INT-06,Stock 12; movement Opname,Pass,StockAdjustmentServiceTests.Approve_AppliesDifference,In-memory SQLite
-INT-07,ValidationException; stock unchanged,Pass,StockInServiceTests.Approve_RejectsNonApprover,In-memory SQLite
+INT-06,Stock 12; movement Opname,Pass,StockOpnameServiceTests.Approve_AppliesDifference,In-memory SQLite
+INT-07,ValidationException; stock unchanged,Pass,StockTransactionApprovalTests.ApproveStockIn_ByNonApprover_IsRejected,In-memory SQLite
 INT-08,Approved; stock +7,Pass,StockInServiceTests.AdminSubmit_AutoApprovesAndAppliesStock,In-memory SQLite
 INT-09,Hidden; IsDeleted true,Pass,SoftDeleteTests.Delete_MasterData_IsSoftDeletedAndHiddenFromQueries,In-memory SQLite
 INT-10,AuditLogs written,Pass,SoftDeleteTests.Delete_WritesAuditLogWithStringEntityId; AuditTrailExtraTests.Update_WritesOldAndNewValues,In-memory SQLite

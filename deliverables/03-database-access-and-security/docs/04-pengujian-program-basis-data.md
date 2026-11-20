@@ -30,10 +30,13 @@ LIMIT 10;
 
 ## c. Uji performansi mengacu pada kinerja statement akses data yang akan dibaca.
 
-**Data uji:** 10.000 produk, 20.000 baris stok, 100.000 pergerakan stok,
-20.000 header transaksi, dan 100.000 audit.
+**Data uji benchmark saat ini:** 100 produk, 10.000 movement, 100 header
+transaksi, dan 100 user (lihat `deliverables/07-performance-profiling`).
 
-**Langkah pengujian:**
+**Target pengujian produksi (belum dijalankan):** 10.000 produk, 20.000 baris
+stok, 100.000 pergerakan stok, 20.000 header transaksi, dan 100.000 audit.
+
+**Langkah pengujian target produksi:**
 
 1. Catat waktu query sebelum indeks ditambahkan.
 2. Tambahkan indeks yang diperlukan.

@@ -73,14 +73,14 @@ dua mutasi: keluar dari lokasi asal dan masuk ke lokasi tujuan.
 
 | Method | Path | Deskripsi |
 |--------|------|-----------|
-| GET | `/stock-transfers` | List + filter |
-| GET/POST | `/stock-transfers/create` | Form draft |
-| GET/POST | `/stock-transfers/edit/{id}` | Edit draft/rejected |
-| POST | `/stock-transfers/submit/{id}` | Submit |
-| POST | `/stock-transfers/approve/{id}` | Approve |
-| POST | `/stock-transfers/reject/{id}` | Reject + reason |
-| POST | `/stock-transfers/delete/{id}` | Soft delete (Draft) |
-| GET | `/stock-transfers/details/{id}` | Detail |
+| GET | `/StockTransfers` | List + filter |
+| GET/POST | `/StockTransfers/Create` | Form draft |
+| GET/POST | `/StockTransfers/Edit/{id}` | Edit draft/rejected |
+| POST | `/StockTransfers/Submit/{id}` | Submit |
+| POST | `/StockTransfers/Approve/{id}` | Approve |
+| POST | `/StockTransfers/Reject/{id}` | Reject + reason |
+| POST | `/StockTransfers/Delete/{id}` | Soft delete (Draft) |
+| GET | `/StockTransfers/Details/{id}` | Detail |
 
 ## 7. Validasi & Business Rules
 

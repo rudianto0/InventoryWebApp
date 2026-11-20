@@ -73,14 +73,14 @@ single-level. Stok berkurang saat Approved.
 
 | Method | Path | Deskripsi | Akses |
 |--------|------|-----------|-------|
-| GET | `/stock-outs` | List + filter | Auth |
-| GET/POST | `/stock-outs/create` | Form draft | Staff/Admin |
-| GET/POST | `/stock-outs/edit/{id}` | Edit draft/rejected | Owner/Admin |
-| POST | `/stock-outs/submit/{id}` | Submit | Owner |
-| POST | `/stock-outs/approve/{id}` | Approve | SPV/Admin |
-| POST | `/stock-outs/reject/{id}` | Reject + reason | SPV/Admin |
-| POST | `/stock-outs/delete/{id}` | Soft delete (Draft) | Owner/Admin |
-| GET | `/stock-outs/details/{id}` | Detail | Auth |
+| GET | `/StockOuts` | List + filter | Auth |
+| GET/POST | `/StockOuts/Create` | Form draft | Staff/Admin |
+| GET/POST | `/StockOuts/Edit/{id}` | Edit draft/rejected | Owner/Admin |
+| POST | `/StockOuts/Submit/{id}` | Submit | Owner |
+| POST | `/StockOuts/Approve/{id}` | Approve | SPV/Admin |
+| POST | `/StockOuts/Reject/{id}` | Reject + reason | SPV/Admin |
+| POST | `/StockOuts/Delete/{id}` | Soft delete (Draft) | Owner/Admin |
+| GET | `/StockOuts/Details/{id}` | Detail | Auth |
 
 ## 7. Validasi & Business Rules
 

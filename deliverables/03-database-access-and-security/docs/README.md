@@ -1,14 +1,15 @@
 # Operasi dan Akses Basis Data
 
-Dokumen ini menjelaskan bagaimana aplikasi Inventory mengoperasikan database
-PostgreSQL: menyimpan/mengubah data, membaca informasi, memakai indeks,
-mengakses data dari aplikasi, mengelola koneksi dan hak akses, serta menguji
-logika dan performa akses data.
+Dokumen ini menjelaskan bagaimana aplikasi Inventory mengoperasikan database:
+menyimpan/mengubah data, membaca informasi, memakai indeks, mengakses data dari
+aplikasi, mengelola koneksi dan hak akses, serta menguji logika dan performa
+akses data.
 
 ## Target
 
-- Database: **PostgreSQL** (`InventoryAppDB`).
-- Aplikasi: ASP.NET Core MVC + EF Core 10 + Npgsql.
+- Database: **PostgreSQL** atau **SQL Server** (dipilih via `Database:Provider`).
+- Aplikasi: ASP.NET Core MVC + EF Core 10 (Npgsql untuk PostgreSQL, provider
+  SQL Server untuk SQL Server).
 - Tool manual: DBeaver.
 - Dokumen terkait: `../../02-database-implementation/docs/`.
 

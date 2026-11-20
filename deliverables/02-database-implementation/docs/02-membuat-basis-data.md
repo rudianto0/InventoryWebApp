@@ -42,5 +42,5 @@ CREATE TABLE "Products" (
 );
 ```
 
-Hasil: sekitar 27 tabel (20 tabel bisnis dan 7 tabel pengguna), lengkap dengan
-kunci utama, kunci relasi, dan aturan unik.
+Hasil: 27 tabel, terdiri dari 19 tabel bisnis, 7 tabel Identity, dan 1 tabel
+riwayat migrasi, lengkap dengan kunci utama, kunci relasi, dan aturan unik.

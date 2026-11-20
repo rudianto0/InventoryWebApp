@@ -2,8 +2,9 @@
 
 ## a. Pilih teknologi koneksi yang sesuai.
 
-Koneksi memakai Npgsql melalui EF Core. Pengaturan koneksi disimpan di
-konfigurasi, dengan nilai yang wajar untuk aplikasi web.
+Koneksi memakai EF Core. Provider dipilih melalui konfigurasi
+`Database:Provider`: **PostgreSQL** memakai Npgsql, **SQL Server** memakai
+provider SQL Server. Contoh di bawah adalah konfigurasi PostgreSQL.
 
 ```
 Host=db.internal;Port=5432;Database=InventoryAppDB;Username=inventory_app;
@@ -38,6 +39,9 @@ Ada dua lapisan hak akses:
 - `inventory_owner` menjalankan migrasi dan perubahan struktur.
 - `inventory_app` hanya boleh membaca dan mengubah data, tidak boleh mengubah
   struktur.
+- Role tersebut tersedia di script `sql/01-roles-and-grants/10-roles-and-grants.sql`.
+  Konfigurasi aplikasi saat ini belum memakai `inventory_app`; untuk produksi
+  disarankan menerapkan role ini dan menyimpan connection string di secret.
 - Hak Admin/Staff/SPV/Manager/Auditor diatur aplikasi (RBAC), bukan dengan
   membuat banyak akun database.
 

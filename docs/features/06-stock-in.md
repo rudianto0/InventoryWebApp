@@ -81,14 +81,14 @@ submit, dan approval single-level ke SPV. Stok bertambah hanya saat Approved.
 
 | Method | Path | Deskripsi | Akses |
 |--------|------|-----------|-------|
-| GET | `/stock-ins` | List + filter status/date | Auth |
-| GET/POST | `/stock-ins/create` | Form draft | Staff/Admin |
-| GET/POST | `/stock-ins/edit/{id}` | Edit draft/rejected | Owner/Admin |
-| POST | `/stock-ins/submit/{id}` | Submit | Owner |
-| POST | `/stock-ins/approve/{id}` | Approve | SPV/Admin |
-| POST | `/stock-ins/reject/{id}` | Reject + reason | SPV/Admin |
-| POST | `/stock-ins/delete/{id}` | Soft delete (Draft) | Owner/Admin |
-| GET | `/stock-ins/details/{id}` | Detail | Auth |
+| GET | `/StockIns` | List + filter status/date | Auth |
+| GET/POST | `/StockIns/Create` | Form draft | Staff/Admin |
+| GET/POST | `/StockIns/Edit/{id}` | Edit draft/rejected | Owner/Admin |
+| POST | `/StockIns/Submit/{id}` | Submit | Owner |
+| POST | `/StockIns/Approve/{id}` | Approve | SPV/Admin |
+| POST | `/StockIns/Reject/{id}` | Reject + reason | SPV/Admin |
+| POST | `/StockIns/Delete/{id}` | Soft delete (Draft) | Owner/Admin |
+| GET | `/StockIns/Details/{id}` | Detail | Auth |
 
 ### Detail line (dynamic rows)
 ```csharp
