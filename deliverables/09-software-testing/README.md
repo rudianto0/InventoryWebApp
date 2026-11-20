@@ -3,22 +3,20 @@
 ## Konteks
 
 Dokumen pengujian aplikasi Inventory: kebutuhan uji, dokumentasi, data uji,
-skenario, pelaksanaan, dan evaluasi hasil.
+pelaksanaan, dan evaluasi hasil.
 
 ## Dokumen
 
-| File | Isi |
+`docs/` disusun mengikuti 5 langkah kerja:
+
+| File | Butir |
 |---|---|
-| `docs/00-ringkasan.md` | Ringkasan hasil |
-| `docs/01-kebutuhan-uji-coba.md` | SDLC, tools, standar |
-| `docs/02-dokumentasi-uji-coba.md` | Kebutuhan dokumentasi & variasi |
-| `docs/03-data-uji.md` | Data uji unit & generator |
-| `docs/04-skenario-dan-prosedur.md` | Skenario + algoritma |
-| `docs/05-pelaksanaan-uji-coba.md` | Eksekusi |
-| `docs/06-hasil-uji-coba.md` | Hasil |
-| `docs/07-analisis-hasil.md` | Analisis |
-| `docs/08-laporan-dan-perbaikan.md` | Laporan & perbaikan |
-| `Inventory-Software-Testing.docx` | Gabungan Word |
+| `docs/01-kebutuhan-uji-coba.md` | 1. Kebutuhan uji coba (SDLC, tools, standar) |
+| `docs/02-dokumentasi-uji-coba.md` | 2. Dokumentasi, variasi, skenario |
+| `docs/03-data-uji.md` | 3. Data uji dan cara membangkitkannya |
+| `docs/04-pelaksanaan-uji-coba.md` | 4. Skenario, algoritma, pelaksanaan |
+| `docs/05-evaluasi-hasil.md` | 5. Hasil, analisis, laporan, perbaikan |
+| `09-Inventory-Software-Testing.docx` | Gabungan Word |
 
 ## Hasil Eksekusi
 
@@ -29,8 +27,8 @@ skenario, pelaksanaan, dan evaluasi hasil.
 | Failed | 0 |
 | Skipped | 0 |
 | Durasi | ±10 detik |
-| Line coverage | 74.69% |
-| Branch coverage | 60.17% |
+| Line coverage | 74,69% |
+| Branch coverage | 60,17% |
 
 ## Artefak
 

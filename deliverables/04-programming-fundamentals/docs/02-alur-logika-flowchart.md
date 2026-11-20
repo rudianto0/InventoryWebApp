@@ -1,140 +1,63 @@
-# 02 - Alur Logika (Flowchart)
+# 2. Membuat Alur Logika (Flowchart)
 
-## 2.1 Metode yang Dipilih
+## 2.1 Metode yang sesuai ditentukan
 
-Metode: **flowchart standar** dengan simbol:
+Metode yang dipakai adalah **flowchart standar** dengan simbol:
 
-| Simbol | Komponen |
+| Simbol | Arti |
 |---|---|
-| Oval | Start / End |
-| Persegi panjang | Process |
-| Jajar genjang | Input / Output |
-| Belah ketupat | Decision |
-| Panah | Alur |
-| Lingkaran kecil | Connector |
+| Oval | Mulai / selesai |
+| Persegi panjang | Proses |
+| Jajar genjang | Input / output |
+| Belah ketupat | Keputusan |
+| Panah | Arah alur |
 
-Flowchart dibuat untuk alur yang paling penting di aplikasi:
+## 2.2 Komponen yang dibutuhkan ditentukan
 
-1. Stock In → Submit → Approval → Update stok.
-2. Stock Out → validasi stok → Approval → Update stok.
-3. Sorting/Searching data produk.
-
-## 2.2 Komponen yang Dibutuhkan
-
-| Komponen | Contoh di aplikasi |
+| Komponen | Contoh |
 |---|---|
-| Input | user, supplier, lokasi, produk, quantity |
-| Process | validasi, simpan draft, submit, approve, ledger |
-| Decision | stok cukup? approver valid? parent ada? |
-| Output | dokumen berhasil, pesan validasi, status |
-| Data store | `StockInHeaders`, `Stocks`, `StockMovements` |
+| Input | n, angka, pilihan menu, angka dicari |
+| Proses | simpan angka, sorting, searching |
+| Keputusan | pilihan menu, data ditemukan atau tidak |
+| Output | hasil sorting, "Angka ditemukan/tidak" |
+| Penyimpanan | array atau list angka |
 
-## 2.3 Relasi Antar Komponen
+## 2.3 Relasi antar komponen ditetapkan
 
-- Input menghasilkan Draft.
-- Submit memerlukan atasan (parent user).
-- Approve memerlukan approver yang sesuai.
-- Approve memicu `StockLedger` yang mengubah `Stocks` dan `StockMovements`.
-- Reject mengubah status tanpa mutasi stok.
+- Menu 1: input angka lalu kembali ke menu.
+- Menu 2: sorting lalu tampilkan hasil lalu kembali ke menu.
+- Menu 3: input angka dicari, searching, tampilkan hasil, kembali ke menu.
+- Menu 4: keluar dari program.
 
-## 2.4 Alur Mulai dan Selesai
+## 2.4 Alur mulai dan selesai ditetapkan
 
-- Setiap alur dimulai dari **Start** (user membuka form).
-- Setiap alur berakhir di **End** (sukses/gagal).
-- Alur gagal tetap memiliki end (pesan error).
+Program dimulai dari **Start**, menampilkan menu, lalu berulang sampai
+pengguna memilih **Keluar** dan berakhir di **End**.
 
----
+![Flowchart Menu Utama](assets/flowchart-menu.png)
 
-## Flowchart 1 - Stock In Approval
+### Pseudocode menu utama
 
-![Flowchart Stock In](assets/flowchart-stock-in.png)
-
-```mermaid
-flowchart TD
-    A([Start]) --> B[Input supplier, lokasi, produk, qty]
-    B --> C{Valid?}
-    C -- Tidak --> E[Tampilkan error] --> Z([End gagal])
-    C -- Ya --> D[Simpan Draft + detail]
-    D --> F[Submit]
-    F --> G{Atasan/SPV ada & aktif?}
-    G -- Tidak --> E
-    G -- Ya --> H[Status Submitted + Approver]
-    H --> I{Approver setuju?}
-    I -- Tidak --> J[Status Rejected] --> Z
-    I -- Ya --> K[Status Approved]
-    K --> L[Update Stocks]
-    L --> M[Insert StockMovements]
-    M --> N([End sukses])
 ```
+PROCEDURE MenuUtama
+    ulang ← true
+    WHILE ulang DO
+        TAMPILKAN "1. Input angka"
+        TAMPILKAN "2. Sorting"
+        TAMPILKAN "3. Searching"
+        TAMPILKAN "4. Keluar"
+        BACA pilihan
 
-### Langkah
-
-1. User mengisi form.
-2. Service memvalidasi supplier, lokasi, produk, quantity.
-3. Dokumen disimpan sebagai Draft.
-4. Submit mencari atasan; jika tidak ada/non-aktif → gagal.
-5. Approver menyetujui/menolak.
-6. Jika approve, ledger mengubah saldo dan mencatat movement.
-
----
-
-## Flowchart 2 - Stock Out
-
-![Flowchart Stock Out](assets/flowchart-stock-out.png)
-
-```mermaid
-flowchart TD
-    A([Start]) --> B[Input lokasi, produk, qty]
-    B --> C{Valid?}
-    C -- Tidak --> E[Tampilkan error] --> Z([End gagal])
-    C -- Ya --> D[Simpan Draft]
-    D --> F[Submit]
-    F --> G{Stok cukup?}
-    G -- Tidak --> E
-    G -- Ya --> H[Status Submitted]
-    H --> I{Approver setuju?}
-    I -- Tidak --> J[Status Rejected] --> Z
-    I -- Ya --> K[Kurangi Stocks]
-    K --> L[Insert StockMovements negatif]
-    L --> N([End sukses])
+        CASE pilihan OF
+            1: InputAngka()
+            2: SortAngka(angka)
+               TampilkanAngka(angka)
+            3: BACA target
+               posisi ← LinearSearch(angka, target)
+               TampilkanHasil(posisi)
+            4: ulang ← false
+            LAINNYA: TAMPILKAN "Pilihan tidak valid"
+        END CASE
+    END WHILE
+END PROCEDURE
 ```
-
-### Catatan
-
-- Pengecekan stok dilakukan saat submit **dan** approve.
-- Jika saldo berubah di antara submit dan approve, approve dapat gagal.
-
----
-
-## Flowchart 3 - Sorting dan Searching
-
-![Flowchart Sorting Searching](assets/flowchart-sorting-searching.png)
-
-```mermaid
-flowchart TD
-    A([Start]) --> B[Input data / kata kunci]
-    B --> C{Pilih operasi}
-    C -- Sorting --> D[Pilih algoritma: LINQ / Merge / Quick]
-    D --> E[Urutkan data]
-    C -- Searching --> F[Pilih algoritma: Linear / Binary / LINQ / Index]
-    F --> G[Cari data]
-    E --> H[Tampilkan hasil]
-    G --> H
-    H --> Z([End])
-```
-
-### Catatan
-
-- Sorting: `OrderBy` LINQ atau algoritma manual.
-- Searching: linear/binary di memori, atau query index di database.
-- Binary search hanya untuk data terurut.
-
----
-
-## Ringkasan Komponen
-
-| Alur | Decision utama | Efek samping |
-|---|---|---|
-| Stock In | validasi, atasan, approve | stok bertambah |
-| Stock Out | validasi, stok cukup, approve | stok berkurang |
-| Sorting/Searching | pilih algoritma, data terurut? | tidak ada (read-only) |

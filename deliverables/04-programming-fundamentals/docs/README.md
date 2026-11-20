@@ -1,31 +1,30 @@
 # Dasar Pemrograman: Varian, Flowchart, Algoritma, Prosedur/Fungsi, Kompleksitas
 
-Dokumen ini menjelaskan penerapan dasar-dasar pemrograman pada aplikasi
-Inventory: tipe data, variabel, konstanta, invarian, flowchart, algoritma
-sorting/searching, prosedur/fungsi, serta kompleksitas waktu dan memori.
+Dokumen ini menjelaskan penerapan dasar-dasar pemrograman pada program menu
+angka: tipe data, variabel, konstanta, flowchart, algoritma sorting/searching,
+prosedur/fungsi, serta kompleksitas waktu dan memori.
 
 ## Daftar Dokumen
 
+| File | Butir |
+|---|---|
+| `01-varian-dan-invarian.md` | 1. Varian dan invarian |
+| `02-alur-logika-flowchart.md` | 2. Alur logika (flowchart) |
+| `03-algoritma-sorting-searching.md` | 3. Algoritma sorting dan searching |
+| `04-prosedur-dan-fungsi.md` | 4. Prosedur dan fungsi |
+| `05-kompleksitas-algoritma.md` | 5. Kompleksitas algoritma |
+
+## Aset Flowchart
+
 | File | Isi |
 |---|---|
-| `00-ringkasan.md` | Ringkasan dan peta materi |
-| `01-varian-dan-invarian.md` | Tipe data, variabel, konstanta, invarian |
-| `02-alur-logika-flowchart.md` | Komponen dan flowchart alur transaksi |
-| `03-algoritma-sorting-searching.md` | Sorting, searching, pseudocode, C#, SQL |
-| `04-prosedur-dan-fungsi.md` | Konsep reuse, prosedur, fungsi |
-| `05-kompleksitas-algoritma.md` | Kompleksitas waktu dan memori |
-| `../Inventory-Programming-Fundamentals.docx` | Gabungan dokumen + flowchart |
-
-## Sumber Kode
-
-- `src/Inventory.Domain/Entities/*`
-- `src/Inventory.Application/Services/*`
-- `src/Inventory.Application/Common/Guard.cs`
-- `src/Inventory.Contracts/*`
-- `../../02-database-implementation/sql/`
+| `../assets/flowchart-menu.png` | Menu utama: input, sorting, searching, keluar |
+| `../assets/flowchart-sorting.png` | Alur Bubble Sort |
+| `../assets/flowchart-searching.png` | Alur Linear Search |
 
 ## Konvensi
 
-- Contoh kode memakai **C#** sesuai aplikasi dan menyertakan **pseudocode**.
-- Contoh SQL memakai PostgreSQL dengan quoted PascalCase.
-- Flowchart tersedia sebagai Mermaid dan gambar PNG di `assets/`.
+- Contoh kode memakai **C#** dan disertai **pseudocode**.
+- Flowchart dibuat dengan simbol standar (oval, persegi, jajar genjang,
+  belah ketupat, panah).
+- Kompleksitas ditulis dengan notasi `O(...)`.

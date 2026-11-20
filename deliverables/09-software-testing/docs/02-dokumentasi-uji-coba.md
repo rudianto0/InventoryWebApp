@@ -1,69 +1,69 @@
-# 02 - Dokumentasi Uji Coba
+# 2. Persiapkan Dokumentasi Uji Coba
 
-## 1. Kebutuhan Dokumentasi
+## b. Tentukan kebutuhan untuk uji coba
 
 | Dokumen | Isi |
 |---|---|
-| Test plan | Tujuan, scope, tools, jadwal |
-| Test scenario | Daftar skenario |
-| Test case | Langkah, data, expected |
-| Test data | Data valid/invalid/boundary |
-| Test result | Pass/fail + bukti |
-| Defect log | Error + perbaikan |
-| Coverage report | Line/branch |
+| Rencana uji | Tujuan, ruang lingkup, tools, jadwal |
+| Skenario uji | Daftar hal yang akan diuji |
+| Test case | Langkah, data, hasil yang diharapkan |
+| Data uji | Data valid, batas, dan tidak valid |
+| Hasil uji | Lulus/gagal dan bukti |
+| Laporan bug | Kesalahan dan perbaikan |
+| Laporan cakupan | Persentase kode yang diuji |
 
-## 2. Template Test Case
+**Format test case:**
 
 | Field | Keterangan |
 |---|---|
 | ID | `TC-<MODUL>-NNN` |
-| Modul | `MOD-*` |
-| Judul | Ringkas |
-| Precondition | Data/user |
-| Steps | Langkah |
-| Expected | Hasil |
-| Actual | Hasil nyata |
-| Status | Pass/Fail |
-| Evidence | Log/TRX |
+| Modul | ID modul yang diuji |
+| Judul | Ringkasan pengujian |
+| Kondisi awal | Data dan pengguna yang disiapkan |
+| Langkah | Urutan tindakan |
+| Hasil diharapkan | Hasil yang benar |
+| Hasil nyata | Hasil saat dijalankan |
+| Status | Lulus atau gagal |
+| Bukti | Log atau file hasil |
 
-## 3. Variasi Kondisi
+## c. Laksanakan uji coba dengan variasi kondisi
 
 | Variasi | Contoh |
 |---|---|
-| Data valid | master lengkap, qty > 0 |
-| Boundary | qty 0/1, page size 1/200 |
-| Invalid | string kosong, negatif, duplikat |
-| State | aktif/nonaktif/soft-deleted |
-| Authorization | Staff/SPV/Admin/parent invalid |
-| Concurrency | dua update stok |
-| Empty | tanpa stok/produk |
-| Error DB | constraint/concurrency |
+| Data valid | Produk lengkap, jumlah lebih dari 0 |
+| Batas | Jumlah 1, ukuran halaman 1 dan 200 |
+| Tidak valid | Kosong, negatif, duplikat |
+| Status data | Aktif, nonaktif, sudah dihapus |
+| Hak akses | Staff, SPV, Admin, atasan tidak valid |
+| Bersamaan | Dua perubahan stok pada waktu sama |
+| Data kosong | Tidak ada produk atau stok |
+| Kesalahan database | Aturan unik atau konflik data |
 
-## 4. Struktur Dokumentasi
+## d. Buat skenario uji coba
 
-```
-Test Plan
- ├─ Scope
- ├─ Tools
- ├─ Data
- ├─ Skenario
- ├─ Eksekusi
- └─ Hasil & Analisis
-```
+| Kelompok | File test | Jumlah |
+|---|---|---:|
+| Validasi dan ledger | `GuardAndLedgerTests`, `CoreTests` | 15+ |
+| Barang masuk dan keluar | `StockInServiceTests`, `StockOutServiceTests` | 20+ |
+| Transfer | `StockTransferServiceTests` | 12 |
+| Adjustment dan opname | `StockAdjustmentServiceTests` | 30+ |
+| Katalog | `CatalogServiceTests` | 30+ |
+| Supplier dan lokasi | `SupplierAndLocationTests` | 25+ |
+| Persetujuan, laporan, audit | `ApprovalServiceTests`, `ReportServiceTests` | 30+ |
+| Pengguna dan hak akses | `UserServiceTests` | 12 |
+| **Total** | | **171** |
 
-## 5. Aturan
+**Contoh skenario:**
 
-- Setiap test harus dapat direproduksi.
-- Setiap bug harus punya test regresi.
-- Hasil disimpan di `results/`.
-- Coverage diperbarui setiap perubahan.
-
-## 6. Traceability
-
-| Requirement | Test |
-|---|---|
-| Approval 1 level | `Stock*ServiceTests`, `ApprovalServiceTests` |
-| Stok tidak negatif | `StockLedgerTests` |
-| Validasi master | `CatalogServiceTests`, `SupplierAndLocationTests` |
-| Audit/soft delete | `SoftDeleteTests`, `AuditTrailExtraTests` |
-| User/role | `UserServiceTests` |
+| ID | Skenario | Hasil yang diharapkan |
+|---|---|---|
+| TC-LED-001 | Tambah stok 10 | Saldo menjadi 10 |
+| TC-LED-002 | Keluar melebihi stok | Ditolak |
+| TC-SIN-001 | Simpan barang masuk valid | Tersimpan sebagai draft |
+| TC-SIN-002 | Setujui oleh bukan penyetuju | Ditolak |
+| TC-SOUT-001 | Keluar dengan stok kurang | Ditolak |
+| TC-TRF-001 | Transfer antar lokasi | Saldo asal turun, tujuan naik |
+| TC-CAT-001 | SKU duplikat | Ditolak |
+| TC-SUP-001 | Email tidak valid | Ditolak |
+| TC-LOC-001 | Lokasi induk berputar | Ditolak |
+| TC-USR-001 | Menurunkan admin terakhir | Ditolak |

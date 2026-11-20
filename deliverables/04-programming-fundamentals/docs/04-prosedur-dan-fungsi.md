@@ -1,160 +1,77 @@
-# 04 - Prosedur dan Fungsi
+# 4. Menggunakan Prosedur dan Fungsi
 
-## 4.1 Konsep Penggunaan Ulang
+## 4.1 Identifikasi konsep penggunaan kembali prosedur dan fungsi
 
-Prinsip **DRY (Don't Repeat Yourself)**: logika yang sama tidak ditulis berulang.
+Logika yang sama tidak perlu ditulis berulang. Cukup dibuat sekali, lalu
+dipanggil berkali-kali. Prinsip ini disebut **DRY (Don't Repeat Yourself)**.
 
-Contoh reuse di aplikasi:
+| Bagian | Dipakai untuk |
+|---|---|
+| `InputAngka` | Menu input dan pencarian |
+| `SortAngka` | Menu sorting |
+| `TampilkanAngka` | Menampilkan data dan hasil sorting |
+| `LinearSearch` | Mencari angka |
 
-| Komponen | Dipakai oleh | Tujuan |
-|---|---|---|
-| `Guard.Required` | semua service | validasi field wajib |
-| `Guard.Positive` | Stock In/Out/Transfer | quantity > 0 |
-| `Guard.NotNegative` | Adjustment/UnitCost | nilai tidak negatif |
-| `StockLedger.ApplyAsync` | 5 service transaksi | satu jalur mutasi stok |
-| `ApprovalGuard` | 5 header transaksi | aturan approval konsisten |
-| `DocumentNumberService` | semua create dokumen | format nomor konsisten |
-| `IUserDirectory` | approval/list | lookup user |
-| `AppDbContext.SaveChangesAsync` | semua service | audit + soft delete |
+## 4.2 Gunakan prosedur
 
-Manfaat:
-
-- Mengurangi duplikasi.
-- Perubahan aturan hanya di satu tempat.
-- Lebih mudah diuji.
-- Konsistensi perilaku.
-
-## 4.2 Prosedur
-
-Definisi: rutin yang melakukan **aksi/efek samping**, boleh mengubah state.
-
-### C# — `StockLedger.ApplyAsync`
-
-```csharp
-public async Task ApplyAsync(IEnumerable<StockChange> changes, CancellationToken ct = default)
-{
-    foreach (var change in changes)
-    {
-        if (change.Quantity == 0) continue;
-
-        var stock = await db.Stocks.FirstOrDefaultAsync(...)
-            ?? new Stock { ... };
-
-        var newQuantity = stock.Quantity + change.Quantity;
-        if (newQuantity < 0)
-            throw new ValidationException("Stok tidak mencukupi.");
-
-        stock.Quantity = newQuantity;
-        stock.Version++;
-
-        db.StockMovements.Add(new StockMovement { ... });
-    }
-}
-```
-
-Ciri prosedur:
-
-- Mengubah `Stocks` dan `StockMovements`.
-- Tidak mengembalikan nilai domain (hanya `Task`).
-- Biasanya dipanggil dalam transaksi.
-
-### Pseudocode
+Prosedur adalah rutin yang melakukan tindakan. Prosedur tidak wajib
+mengembalikan nilai.
 
 ```
-PROCEDURE ApplyStockChanges(changes):
-    FOR EACH change IN changes DO
-        IF change.Quantity = 0 THEN CONTINUE
-        stock ← FIND_OR_CREATE(change.ProductId, change.LocationId)
-        newQty ← stock.Quantity + change.Quantity
-        IF newQty < 0 THEN THROW "Stok tidak mencukupi"
-        stock.Quantity ← newQty
-        stock.Version ← stock.Version + 1
-        INSERT StockMovement(change)
+PROCEDURE InputAngka(A, n)
+    BACA n
+    FOR i ← 0 TO n-1 DO
+        BACA A[i]
     END FOR
+END PROCEDURE
+
+PROCEDURE SortAngka(A, n)
+    CALL BubbleSort(A, n)
+END PROCEDURE
+
+PROCEDURE TampilkanHasil(posisi)
+    IF posisi >= 0 THEN
+        TAMPILKAN "Angka ditemukan"
+    ELSE
+        TAMPILKAN "Angka tidak ditemukan"
+    END IF
 END PROCEDURE
 ```
 
-### SQL — stored procedure
-
-```sql
-CALL sp_receive_stock(
-    NULL,
-    '<supplier-id>',
-    '<location-id>',
-    '<product-id>',
-    5,
-    1
-);
-```
-
-`sp_receive_stock` melakukan insert header/detail, update stok, dan movement.
-
-## 4.3 Fungsi
-
-Definisi: rutin yang **mengembalikan nilai**, idealnya tanpa efek samping.
-
-### C# — `Guard`
-
 ```csharp
-public static void Positive(int value, string field)
+void InputAngka(int[] A)
 {
-    if (value <= 0)
-        throw new ValidationException($"{field} harus lebih besar dari 0.");
+    for (var i = 0; i < A.Length; i++)
+        A[i] = int.Parse(Console.ReadLine());
+}
+
+void TampilkanHasil(int posisi)
+{
+    Console.WriteLine(posisi >= 0
+        ? "Angka ditemukan"
+        : "Angka tidak ditemukan");
 }
 ```
 
-Walaupun melempar exception, fungsi ini tidak mengubah state.
+## 4.3 Gunakan fungsi
 
-### C# — `ReportService.GetStockBalanceAsync`
+Fungsi adalah rutin yang **mengembalikan nilai**, misalnya posisi angka yang
+dicari.
+
+```
+FUNCTION CariAngka(A, n, target)
+    RETURN LinearSearch(A, n, target)
+END FUNCTION
+```
 
 ```csharp
-public async Task<PagedResult<StockBalanceItem>> GetStockBalanceAsync(
-    ReportFilter filter, CancellationToken ct = default)
-{
-    var query = JoinStocks(db.Stocks.AsNoTracking());
-    // ... filter ...
-    return new PagedResult<StockBalanceItem> { ... };
-}
+int CariAngka(int[] A, int target) => LinearSearch(A, target);
 ```
-
-### SQL — function
-
-```sql
-SELECT fn_available_stock('<product-id>', '<location-id>') AS "Available";
-
-SELECT fn_next_document_number('IN', CURRENT_DATE) AS "DocNo";
-
-SELECT * FROM fn_stock_balance('<product-id>', '<location-id>');
-```
-
-### Pseudocode
-
-```
-FUNCTION AvailableStock(productId, locationId):
-    stock ← FIND Stock BY (productId, locationId)
-    IF stock = NULL THEN RETURN 0
-    RETURN stock.Quantity
-END FUNCTION
-
-FUNCTION NextDocumentNumber(prefix, date):
-    sequence ← INCREMENT DocumentSequences(prefix, year, month)
-    RETURN prefix + '-' + FORMAT(date,'YYYYMM') + '-' + PAD(sequence, 4)
-END FUNCTION
-```
-
-## 4.4 Perbandingan Prosedur vs Fungsi
 
 | Aspek | Prosedur | Fungsi |
 |---|---|---|
-| Return | Tidak wajib | Wajib |
-| Efek samping | Boleh | Sebaiknya tidak |
-| Contoh C# | `ApplyAsync`, `ApproveAsync` | `Guard.Positive`, `NextAsync` |
-| Contoh SQL | `sp_receive_stock` | `fn_available_stock` |
-| Pemanggilan | `CALL` | `SELECT` |
+| Mengembalikan nilai | Tidak wajib | Wajib |
+| Contoh | `InputAngka`, `TampilkanHasil` | `LinearSearch`, `BinarySearch` |
+| Tujuan | Melakukan aksi | Menghitung atau mencari |
 
-## 4.5 Kapan Memakai
-
-- **Prosedur**: alur bisnis yang mengubah beberapa tabel/state.
-- **Fungsi**: perhitungan, validasi, lookup, query read-only.
-- **Hindari** prosedur besar yang melakukan terlalu banyak hal; pecah menjadi
-  fungsi/prosedur kecil yang dapat diuji.
+Dengan prosedur dan fungsi, program lebih rapi, mudah diuji, dan mudah diubah.

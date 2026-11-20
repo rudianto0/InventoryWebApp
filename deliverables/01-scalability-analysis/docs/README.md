@@ -1,7 +1,8 @@
-# Analisis Skalabilitas Aplikasi Inventory
+# Analisis Kebutuhan Skalabilitas Aplikasi Inventory
 
-Folder ini berisi analisis kebutuhan skalabilitas aplikasi Inventory Web App
-berdasarkan kondisi kode saat ini. Dokumen disusun mengikuti butir:
+Dokumen ini menjelaskan kebutuhan, alasan, dan hasil analisis yang menjadi
+dasar perancangan solusi aplikasi Inventory, disusun sebagai bahan presentasi
+teknis 10 menit kepada asesor mengikuti butir:
 
 1. Mengumpulkan kebutuhan skalabilitas
    1.1 Identifikasi lingkup (scope) sistem
@@ -14,35 +15,22 @@ berdasarkan kondisi kode saat ini. Dokumen disusun mengikuti butir:
 
 ## Daftar Dokumen
 
-| File | Isi |
+| File | Butir |
 |---|---|
-| `00-ringkasan-eksekutif.md` | Ringkasan temuan dan rekomendasi utama |
-| `01-lingkup-dan-lingkungan-operasi.md` | Butir 1.1 dan 1.2 |
-| `02-analisis-masalah-skalabilitas.md` | Butir 2.1 |
-| `03-kompleksitas-dan-beban-kerja.md` | Butir 2.2 |
-| `04-kebutuhan-perangkat-keras.md` | Butir 2.3 |
-| `05-hasil-analisis.md` | Butir 2.4 |
-| `../Inventory-Scalability-Analysis.docx` | Gabungan seluruh dokumen dalam format Word |
-
-## Konteks Aplikasi
-
-Aplikasi Inventory adalah aplikasi web untuk mengelola persediaan barang:
-stok masuk/keluar, transfer, adjustment, opname, approval, laporan, dan audit.
-Aplikasi ditujukan untuk perusahaan kecil–menengah (CV) dengan approval satu
-level (Staff → SPV/Manager), bukan enterprise multi-level.
+| `01-lingkup-dan-lingkungan-operasi.md` | 1.1 dan 1.2 |
+| `02-analisis-masalah-skalabilitas.md` | 2.1 |
+| `03-kompleksitas-dan-beban-kerja.md` | 2.2 |
+| `04-kebutuhan-perangkat-keras.md` | 2.3 |
+| `05-hasil-analisis.md` | 2.4 |
+| `../01-Inventory-Scalability-Analysis.docx` | Gabungan seluruh dokumen |
 
 ## Asumsi
 
-Angka pada dokumen ini adalah **estimasi awal** dan harus divalidasi dengan data
+Angka pada dokumen adalah estimasi awal dan harus divalidasi dengan data
 operasional nyata serta load test:
 
-- 20–100 karyawan, 10–50 pengguna aktif bersamaan pada jam sibuk.
+- 20–100 karyawan, 10–50 pengguna aktif pada jam sibuk.
 - 500–10.000 produk aktif, 2–20 lokasi/gudang.
-- 1.000–10.000 transaksi per bulan, dengan puncak pada akhir bulan.
+- 1.000–10.000 transaksi per bulan, puncak pada akhir bulan.
 - Retensi data transaksi dan audit 3 tahun.
-- Deployment awal: satu server aplikasi + satu database (VM/on-prem/cloud kecil).
-- SLA awal: uptime 99% pada jam kerja, respons halaman < 2 detik.
-
-## Catatan Keamanan
-
-Dokumen ini tidak memuat connection string, password, atau data sensitif lain.
+- Deployment awal: satu server aplikasi + satu database terpisah.

@@ -1,88 +1,64 @@
-# 03 - Data Uji
+# 3. Persiapkan Data Uji
 
-## 1. Identifikasi Data Uji Unit
+## a. Identifikasi data uji unit test
 
-| Sumber | Isi |
+| Sumber data | Isi |
 |---|---|
-| `TestDatabase.SeedBasicsAsync` | category, unit, product, HQ/WH1/WH2, supplier |
-| `SeedStockAsync` | saldo per produk/lokasi |
-| `SeedLocationAsync` | lokasi aktif/nonaktif + parent |
-| `SeedProductAsync` | produk aktif/nonaktif |
-| `IdentityFixture` | user, role, password |
-| `FakeCurrentUser` | user login + role |
-| `FakeUserDirectory` | parent/active/display name |
-| `FakeDocumentNumbers` | nomor dokumen deterministik |
+| `SeedBasicsAsync` | Kategori, satuan, produk, gudang, supplier |
+| `SeedStockAsync` | Saldo stok per produk dan lokasi |
+| `SeedLocationAsync` | Lokasi aktif/nonaktif dan induknya |
+| `SeedProductAsync` | Produk aktif/nonaktif |
+| `IdentityFixture` | Pengguna, peran, kata sandi |
+| `FakeCurrentUser` | Pengguna yang sedang login |
+| `FakeUserDirectory` | Atasan dan status aktif |
+| `FakeDocumentNumbers` | Nomor dokumen tetap untuk pengujian |
 
-## 2. Data Dasar
+**Data dasar:**
 
 ```text
-Category: General
-Unit    : PCS
-Product : SKU-1 / Product 1
-Branch  : HQ
-Warehouse: WH1, WH2
-Supplier: SUP
+Kategori : General
+Satuan   : PCS
+Produk   : SKU-1 / Product 1
+Cabang   : HQ
+Gudang   : WH1, WH2
+Supplier : SUP
 ```
 
-## 3. Variasi Data
+## b. Bangkitkan data uji unit test
 
-### Valid
-- Quantity 5, product aktif, lokasi aktif, supplier aktif.
-- User Staff dengan parent SPV aktif.
+Setiap test membuat data sendiri agar tidak saling mengganggu:
 
-### Boundary
-- Quantity 1.
-- Page size 1 dan 200.
-- Stok tepat sama dengan quantity.
+1. Buat database sementara `SQLite in-memory`.
+2. Bentuk tabel dengan `EnsureCreated`.
+3. Isi data awal memakai helper.
+4. Gunakan ID tetap untuk data yang saling berhubungan.
+5. Hapus database setelah test selesai.
 
-### Invalid
-- Empty lines.
-- Quantity 0 / negatif.
-- SKU/kode duplikat.
-- Supplier/lokasi/produk nonaktif.
-- Parent user tidak ada / nonaktif / diri sendiri.
-- Counted quantity negatif.
+**Variasi data yang dibuat:**
 
-### State
-- Produk soft-deleted.
-- Lokasi nonaktif.
-- Dokumen Draft/Submitted/Approved/Rejected.
-
-### Authorization
-- Staff, SPV, Admin.
-- Owner vs non-owner.
-- Approver vs non-approver.
-
-### Concurrency
-- Dua perubahan stok pada `(ProductId, LocationId)` sama.
-
-## 4. Generate Data
-
-- Setiap test membuat `SqliteConnection("DataSource=:memory:")`.
-- `EnsureCreated` membuat schema.
-- Seed via helper (bukan file SQL).
-- ID tetap untuk data yang perlu referensi.
-- `FakeDocumentNumbers` menghindari ketergantungan sequence DB.
-
-## 5. Aturan Data
-
-- Tidak memakai data produksi.
-- Tidak menyimpan PII.
-- Data dibersihkan saat fixture dispose.
-- Nilai waktu memakai UTC.
-
-## 6. Contoh Test Data
-
-| Test | Data |
+| Variasi | Contoh |
 |---|---|
-| Stock Out insufficient | stok 2, request 5 |
-| Approval non-approver | creator 10, approver 20, actor 99 |
-| Duplicate SKU | `SKU-1` dua kali |
-| Soft delete product | product + stock, lalu IsDeleted |
-| Page size 500 | clamp menjadi 200 |
+| Valid | Jumlah 5, produk dan lokasi aktif |
+| Batas | Jumlah 1, halaman 1 dan 200 |
+| Tidak valid | Jumlah 0/negatif, SKU duplikat, data nonaktif |
+| Status | Produk terhapus, dokumen Draft/Submitted/Approved |
+| Hak akses | Pemilik, bukan pemilik, admin, penyetuju |
+| Bersamaan | Dua perubahan pada produk dan lokasi sama |
 
-## 7. Gap Data
+**Contoh data uji:**
 
-- Belum ada data volume besar (100k movement) di unit test.
-- Belum ada data PostgreSQL nyata.
-- Belum ada data multi-cabang skala besar.
+| Pengujian | Data |
+|---|---|
+| Stok keluar tidak cukup | Stok 2, diminta 5 |
+| Bukan penyetuju | Pembuat 10, penyetuju 20, aktor 99 |
+| SKU duplikat | `SKU-1` dipakai dua kali |
+| Produk terhapus | Produk dan stok, lalu ditandai terhapus |
+| Ukuran halaman 500 | Dibatasi menjadi 200 |
+
+**Aturan data:**
+
+- Tidak memakai data asli produksi.
+- Tidak menyimpan data pribadi.
+- Data dihapus setelah pengujian.
+- Waktu memakai UTC.
+- Tidak bergantung pada nomor urut database.

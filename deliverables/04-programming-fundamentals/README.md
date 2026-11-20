@@ -2,28 +2,27 @@
 
 ## Konteks
 
-Penerapan dasar pemrograman pada aplikasi Inventory: tipe data, variabel,
-konstanta, invarian, flowchart, sorting/searching, prosedur/fungsi, dan
-kompleksitas algoritma.
+Penerapan dasar pemrograman pada program menu angka: tipe data, variabel,
+konstanta, flowchart, sorting/searching, prosedur/fungsi, dan kompleksitas
+algoritma.
 
 ## Dokumentasi
 
-| File | Isi |
+`docs/` disusun mengikuti 5 langkah kerja:
+
+| File | Butir |
 |---|---|
-| `docs/00-ringkasan.md` | Ringkasan |
-| `docs/01-varian-dan-invarian.md` | Tipe data, variabel, konstanta, invarian |
-| `docs/02-alur-logika-flowchart.md` | Flowchart + Mermaid |
-| `docs/03-algoritma-sorting-searching.md` | Pseudocode, C#, SQL |
-| `docs/04-prosedur-dan-fungsi.md` | Reuse, prosedur, fungsi |
-| `docs/05-kompleksitas-algoritma.md` | Waktu & memori |
+| `docs/01-varian-dan-invarian.md` | 1. Varian dan invarian |
+| `docs/02-alur-logika-flowchart.md` | 2. Alur logika (flowchart) |
+| `docs/03-algoritma-sorting-searching.md` | 3. Algoritma sorting dan searching |
+| `docs/04-prosedur-dan-fungsi.md` | 4. Prosedur dan fungsi |
+| `docs/05-kompleksitas-algoritma.md` | 5. Kompleksitas algoritma |
+| `04-Inventory-Programming-Fundamentals.docx` | Word |
 
 ## Aset
 
-- `assets/flowchart-stock-in.png`
-- `assets/flowchart-stock-out.png`
-- `assets/flowchart-sorting-searching.png`
-- `Inventory-Programming-Fundamentals.docx`
-
-## Sumber
-
-Commit `169a891` (dokumentasi dipindahkan ke section ini).
+| File | Isi |
+|---|---|
+| `assets/flowchart-menu.png` | Menu utama |
+| `assets/flowchart-sorting.png` | Alur Bubble Sort |
+| `assets/flowchart-searching.png` | Alur Linear Search |

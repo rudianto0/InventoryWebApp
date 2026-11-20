@@ -1,63 +1,36 @@
-# 07 - Trigger
+# 7. Membuat Trigger
 
-Script: `../sql/07-trigger/08-triggers.sql`
+## 7.1 Buat trigger dengan perintah SQL
 
-Sesuai keputusan, **tidak ada trigger audit**. Audit tetap dilakukan aplikasi
-melalui `AppDbContext`.
+Trigger adalah aksi otomatis yang berjalan saat data ditambah, diubah, atau
+dihapus. Trigger yang tersedia:
 
-## Daftar Trigger
-
-| Trigger | Tabel | Aksi |
-|---|---|---|
-| `trg_stockin_details_qty` | `StockInDetails` | Tolak quantity ≤ 0 |
-| `trg_stockout_details_qty` | `StockOutDetails` | Tolak quantity ≤ 0 |
-| `trg_transfer_details_qty` | `StockTransferDetails` | Tolak quantity ≤ 0 |
-| `trg_stocks_nonnegative` | `Stocks` | Tolak saldo negatif |
-| `trg_adjustment_calculate` | `StockAdjustmentDetails` | Hitung `Difference` |
-| `trg_opname_calculate` | `StockOpnameDetails` | Hitung `Difference` |
-| `trg_document_sequence_guard` | `DocumentSequences` | Normalisasi prefix + validasi |
-| `trg_movement_nonzero` | `StockMovements` | Tolak quantity 0 |
-
-## Contoh
-
-### Validasi quantity
+| Trigger | Tugas |
+|---|---|
+| Validasi quantity | Menolak jumlah 0 atau negatif |
+| Stok tidak negatif | Menolak saldo di bawah nol |
+| Hitung selisih | Mengisi selisih adjustment dan opname |
+| Normalisasi prefix | Merapikan kode nomor dokumen |
+| Pergerakan tidak nol | Menolak pencatatan pergerakan kosong |
 
 ```sql
-INSERT INTO "StockInDetails" (..., "Quantity")
-VALUES (..., 0);  -- gagal
+CREATE TRIGGER trg_stockout_details_qty
+BEFORE INSERT OR UPDATE ON "StockOutDetails"
+FOR EACH ROW EXECUTE FUNCTION fn_check_positive_quantity();
 ```
 
-### Saldo negatif
+Catatan penyesuaian: pada aplikasi Inventory, contoh "tagihan setelah input
+penggunaan listrik" dipadankan dengan pencatatan pergerakan stok setelah
+transaksi pemakaian barang. Validasi dijalankan oleh trigger, sedangkan
+pencatatan pergerakan dilakukan oleh procedure.
+
+## 7.2 Uji kesesuaian hasil trigger
 
 ```sql
-UPDATE "Stocks" SET "Quantity" = -1 WHERE ...;  -- gagal
+-- Harus gagal karena jumlah 0
+INSERT INTO "StockOutDetails" ("Id", "Quantity")
+VALUES (gen_random_uuid(), 0);
 ```
 
-### Difference otomatis
-
-```sql
-INSERT INTO "StockAdjustmentDetails"
-    ("SystemQuantity", "CountedQuantity", "Difference", ...)
-VALUES (10, 7, 999, ...);
-
-SELECT "Difference";  -- menjadi -3
-```
-
-### Normalisasi prefix
-
-```sql
-INSERT INTO "DocumentSequences" ("Prefix", ...) VALUES (' tst ', ...);
-SELECT "Prefix";  -- menjadi TST
-```
-
-## Uji Kesesuaian
-
-Script `09-transactions.sql` menguji trigger dengan `DO $$ ... EXCEPTION ... $$`
-agar error yang diharapkan tidak menghentikan eksekusi script. Output berupa
-`NOTICE` jika trigger bekerja.
-
-## Catatan
-
-- Trigger tidak mengubah `Version` stok; concurrency tetap ditangani aplikasi.
-- Trigger kalkulasi `Difference` konsisten dengan logika service aplikasi.
-- Trigger validasi bersifat pertahanan terakhir di level database.
+Uji lain: isi selisih adjustment dengan angka salah, lalu periksa apakah
+selisih otomatis berubah sesuai hitungan sistem.

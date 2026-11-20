@@ -5,34 +5,28 @@ PostgreSQL: menyimpan/mengubah data, membaca informasi, memakai indeks,
 mengakses data dari aplikasi, mengelola koneksi dan hak akses, serta menguji
 logika dan performa akses data.
 
-## Ruang Lingkup
+## Target
 
-- Database: PostgreSQL (`InventoryAppDB`).
+- Database: **PostgreSQL** (`InventoryAppDB`).
 - Aplikasi: ASP.NET Core MVC + EF Core 10 + Npgsql.
 - Tool manual: DBeaver.
-- Dokumen terkait: `../../02-database-implementation/docs/` (schema, seed, view, procedure, function,
-  trigger, transaksi).
+- Dokumen terkait: `../../02-database-implementation/docs/`.
 
 ## Daftar Dokumen
 
-| File | Isi |
+| File | Butir |
 |---|---|
-| `00-ringkasan.md` | Ringkasan implementasi dan temuan |
-| `01-tujuan-dan-lingkup.md` | Tujuan, aktor, batasan |
-| `02-teknologi-akses-data.md` | EF Core, Npgsql, pola akses |
-| `03-objek-database-yang-digunakan.md` | Tabel, view, index, function, procedure |
-| `04-operasi-basis-data.md` | Simpan/ubah, query, indeks |
-| `05-prosedur-akses-basis-data.md` | Library dan perintah akses data |
-| `06-koneksi-basis-data.md` | Teknologi koneksi, keamanan, hak akses |
-| `07-pengujian-program-basis-data.md` | Skenario uji, logika, performa |
-| `../Inventory-Database-Access.docx` | Gabungan seluruh dokumen dalam Word |
+| `01-operasi-basis-data.md` | 1. Operasi basis data (simpan/ubah, query, indeks) |
+| `02-prosedur-akses-basis-data.md` | 2. Library dan perintah akses data |
+| `03-koneksi-basis-data.md` | 3. Teknologi koneksi, keamanan, hak akses |
+| `04-pengujian-program-basis-data.md` | 4. Skenario uji, logika, performa |
 
 ## Script SQL Pendukung
 
 | File | Isi |
 |---|---|
 | `../sql/01-roles-and-grants/10-roles-and-grants.sql` | Role `inventory_owner` + `inventory_app`, grant/revoke |
-| `../sql/02-performance-tests/11-performance-tests.sql` | EXPLAIN ANALYZE, statistik query, uji index |
+| `../sql/02-performance-tests/11-performance-tests.sql` | EXPLAIN ANALYZE, statistik query, uji indeks |
 
 ## Catatan Keamanan
 

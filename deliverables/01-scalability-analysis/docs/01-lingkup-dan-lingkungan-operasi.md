@@ -1,119 +1,55 @@
-# 01 - Lingkup Sistem dan Lingkungan Operasi
+# 1. Mengumpulkan Kebutuhan Skalabilitas
 
 ## 1.1 Identifikasi Lingkup (Scope) Sistem
 
-### Tujuan Sistem
+Aplikasi Inventory adalah aplikasi web untuk mencatat barang masuk, barang
+keluar, dan perpindahan barang antar lokasi. Tujuannya agar stok selalu akurat,
+mudah diperiksa, dan tidak lagi bergantung pada pencatatan manual.
 
-Menyediakan satu sumber kebenaran (single source of truth) untuk data persediaan
-barang, mencatat setiap mutasi stok, dan menyediakan alur approval satu level
-serta laporan yang dapat diaudit.
+**Siapa yang memakai**
 
-### Aktor
-
-| Aktor | Peran utama |
+| Pengguna | Tugas |
 |---|---|
-| Admin | Kelola user, role, master data, konfigurasi |
-| Staff | Membuat transaksi stok, opname, adjustment |
-| SPV | Approve transaksi dan monitoring stok |
-| Manager | Dashboard, laporan, approval tertentu |
-| Auditor | Read-only laporan dan audit trail |
+| Admin | Mengatur pengguna dan data dasar |
+| Staff | Mencatat transaksi stok |
+| SPV | Menyetujui transaksi dan memantau stok |
+| Manager | Melihat laporan dan ringkasan |
+| Auditor | Memeriksa riwayat tanpa mengubah data |
 
-### Modul dalam Lingkup
+**Fitur utama**
 
-1. Authentication & authorization (Identity + cookie, RBAC).
-2. User & role management, relasi atasan (parent).
-3. Master produk, kategori, unit.
-4. Master lokasi (Branch/Warehouse/Store) dan hierarki.
-5. Master supplier.
-6. Stock In (receiving) + unit cost.
-7. Stock Out (issuing).
-8. Stock Transfer antar lokasi.
-9. Stock Adjustment dengan alasan.
-10. Stock Opname (cycle count).
-11. Approval satu level.
-12. Dashboard, stock balance, stock card, movement, reorder, CSV export.
-13. Audit trail dan soft delete.
+- Login dan hak akses sesuai peran.
+- Data barang, kategori, satuan, gudang, dan supplier.
+- Barang masuk, keluar, pindah lokasi, penyesuaian, dan stok opname.
+- Persetujuan transaksi satu tingkat.
+- Laporan stok dan riwayat perubahan.
 
-### Batas Sistem
+**Mengapa operasinya cukup kompleks**
 
-- Tidak termasuk integrasi marketplace/e-commerce.
-- Tidak termasuk barcode scanner hardware khusus.
-- Tidak multi-tenant/multi-company.
-- Tidak termasuk payroll/accounting penuh.
-- Approval hanya satu level (bukan multi-level enterprise).
+- Satu transaksi bisa berisi banyak barang sekaligus.
+- Stok dihitung per barang dan per lokasi.
+- Setiap perubahan harus tercatat agar bisa diaudit.
+- Ada proses persetujuan dan pengecekan stok berkala.
 
-### Entitas & Data Utama
+**Yang tidak termasuk**
 
-- Master: `Categories`, `Units`, `Products`, `Suppliers`, `Locations`.
-- Inventory: `Stocks`, `StockMovements`.
-- Transaksi: header/detail Stock In, Stock Out, Stock Transfer,
-  Stock Adjustment, Stock Opname.
-- Sistem: `Users`, `Roles`, `DocumentSequences`, `AuditLogs`.
-
-Karakteristik data:
-
-- ID bisnis `Guid` (time-ordered), ID user `int`.
-- Quantity berupa `int`; `UnitCost` `decimal(18,4)`.
-- Soft delete pada master dan transaksi.
-- Audit create/update/delete otomatis.
-- Concurrency token pada `Stocks.Version`.
-
-### Pola Penggunaan
-
-- Mayoritas read: dashboard, daftar transaksi, laporan, pencarian master.
-- Write: pembuatan dokumen, submit, approve, dan mutasi stok.
-- Puncak beban: awal/akhir bulan, opname periodik, dan export laporan.
+- Tidak untuk banyak perusahaan sekaligus.
+- Tidak terhubung ke marketplace.
+- Tidak memakai alat barcode khusus.
+- Persetujuan hanya satu tingkat.
 
 ## 1.2 Identifikasi Lingkungan Operasi Aplikasi
 
-### Runtime dan Teknologi
-
-| Komponen | Kondisi saat ini |
-|---|---|
-| Framework | ASP.NET Core MVC .NET 10 |
-| UI | Razor Views + Bootstrap 5 |
-| ORM | EF Core 10 |
-| Database | PostgreSQL **atau** SQL Server |
-| Auth | ASP.NET Core Identity + cookie |
-| Client boundary | `Inventory.Client` in-process |
-| Migrasi | Otomatis saat startup (`DatabaseBootstrapper`) |
-| Logging | Built-in ILogger (level default) |
-
-### Topologi Saat Ini
+Aplikasi dipakai lewat browser di jaringan kantor. Cukup satu server aplikasi
+dan satu server database terpisah, sehingga cocok untuk tim IT kecil.
 
 ```
-Browser
-   │ HTTPS (cookie)
-   ▼
-Inventory.Web (satu proses)
-   ├─ Razor MVC
-   ├─ Inventory.Client (in-process)
-   ├─ Inventory.Application
-   └─ EF Core
-          │
-          ▼
-   Satu database PostgreSQL/SQL Server
+Pengguna (browser) -> Server aplikasi -> Server database
 ```
 
-### Lingkungan Deployment
+**Hal yang perlu diperhatikan**
 
-- Satu server aplikasi (VM/on-prem/cloud kecil).
-- Database dapat berada di server yang sama atau terpisah.
-- Tanpa load balancer, tanpa cache terdistribusi, tanpa queue.
-- Backup database bergantung pada konfigurasi server/DB.
-- Migrasi dan seeding berjalan setiap aplikasi start (idempotent untuk seeding).
-
-### Ketergantungan Eksternal
-
-- Database PostgreSQL/SQL Server.
-- Tidak ada object storage, message broker, atau layanan eksternal lain.
-- Tidak ada API publik; UI dan service masih satu host.
-
-### Keterbatasan Lingkungan Saat Ini
-
-1. Belum ada health check/readiness untuk monitoring.
-2. Belum ada rate limiting dan response compression.
-3. Belum ada distributed cache.
-4. Cookie validation melakukan query user ke database setiap request.
-5. Data Protection keys belum disiapkan untuk multi-instance.
-6. Belum ada metrics/tracing terpusat.
+- Tim IT kecil, jadi sistem harus mudah dirawat.
+- Anggaran terbatas, jadi mulai dari satu server lebih dulu.
+- Data harus aman dan hanya bisa diakses pihak berwenang.
+- Jumlah data akan terus bertambah seiring waktu.

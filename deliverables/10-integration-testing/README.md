@@ -3,22 +3,21 @@
 ## Konteks
 
 Dokumentasi peralatan, lingkungan, data uji integrasi, pelaksanaan uji modul,
-analisis hasil, dan arsip pengujian.
+analisis hasil, laporan, dan arsip pengujian.
 
 ## Dokumen
 
-| File | Isi |
+`docs/` disusun mengikuti 6 langkah kerja:
+
+| File | Butir |
 |---|---|
-| `docs/00-ringkasan.md` | Ringkasan hasil |
-| `docs/01-peralatan-dan-lingkungan.md` | Peralatan & lingkungan |
-| `docs/02-dokumen-pendukung.md` | Dokumen pendukung |
-| `docs/03-data-uji-integrasi.md` | Data uji integrasi |
-| `docs/04-pelaksanaan-uji-unit.md` | Pelaksanaan uji modul |
-| `docs/05-analisis-data-integrasi.md` | Analisis hasil |
-| `docs/06-laporan-hasil-integrasi.md` | Laporan hasil |
-| `docs/07-dokumentasi-dan-arsip.md` | Dokumentasi & arsip |
-| `docs/08-kesimpulan.md` | Kesimpulan |
-| `Inventory-Integration-Testing.docx` | Gabungan Word |
+| `docs/01-peralatan-dan-lingkungan.md` | 1. Peralatan dan dokumen pendukung |
+| `docs/02-data-uji-integrasi.md` | 2. Identifikasi dan pembangkitan data uji |
+| `docs/03-pelaksanaan-pengujian.md` | 3. Pelaksanaan dan pencatatan hasil |
+| `docs/04-analisis-data-pengujian.md` | 4. Analisis modul dan hasil |
+| `docs/05-laporan-hasil.md` | 5. Laporan hasil pengujian |
+| `docs/06-dokumentasi-dan-arsip.md` | 6. Pelaporan dan pengarsipan |
+| `10-Inventory-Integration-Testing.docx` | Gabungan Word |
 
 ## Sheets
 
@@ -34,8 +33,8 @@ analisis hasil, dan arsip pengujian.
 | Build | 0 error |
 | Test | 171 passed |
 | Failed | 0 |
-| Line coverage | 74.69% |
-| Branch coverage | 60.17% |
+| Line coverage | 74,69% |
+| Branch coverage | 60,17% |
 
 ## Catatan
 

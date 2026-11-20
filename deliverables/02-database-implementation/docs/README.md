@@ -1,30 +1,28 @@
-# Database Implementation - PostgreSQL
+# Implementasi Database PostgreSQL
 
-Dokumen dan script SQL untuk membuat database **InventoryAppDB** di PostgreSQL,
-mengisi data, membuat indeks/view, menjalankan operasi relasional, serta
-membuat stored procedure, function, trigger, dan simulasi commit/rollback.
+Dokumen dan script SQL untuk membangun database **InventoryAppDB** di
+PostgreSQL, mengisi data, membuat indeks/view, menjalankan operasi relasional,
+serta membuat stored procedure, function, trigger, dan simulasi commit/rollback.
 
 ## Target
 
 - Database: **PostgreSQL**
 - Nama database: **InventoryAppDB**
-- Tool eksekusi: **DBeaver** (SQL Editor → Execute SQL Script)
-- Schema dibuat dari **EF Core migration script** aplikasi.
+- Tool eksekusi: **DBeaver** (SQL Editor)
+- Schema berasal dari **EF Core migration** aplikasi.
 
-## Daftar File
+## Daftar Dokumen
 
-| File | Isi |
+| File | Butir |
 |---|---|
-| `../Inventory-Database-Implementation.docx` | Dokumen lengkap format Word |
-| `00-ringkasan-implementasi.md` | Ringkasan implementasi |
-| `01-lingkup-dan-arsitektur-database.md` | Lingkup dan arsitektur DB |
-| `02-migrasi-dan-seed-data.md` | Migrasi dan pengisian data |
-| `03-indeks-dan-view.md` | Indeks dan view |
-| `04-operasi-relasional.md` | DML antar tabel dan view |
-| `05-stored-procedure.md` | Stored procedure |
-| `06-function.md` | Function |
-| `07-trigger.md` | Trigger (tanpa audit trigger) |
-| `08-transaksi-commit-rollback.md` | Commit, rollback, savepoint |
+| `01-persiapan-software.md` | 1. Persiapan perangkat lunak |
+| `02-membuat-basis-data.md` | 2. Membuat basis data (DDL) |
+| `03-mengisi-tabel.md` | 3. Mengisi tabel, indeks, view |
+| `04-operasi-relasional.md` | 4. Operasi relasional (DML) |
+| `05-stored-procedure.md` | 5. Stored procedure |
+| `06-function.md` | 6. Function |
+| `07-trigger.md` | 7. Trigger |
+| `08-commit-rollback.md` | 8. Commit dan rollback |
 
 ## Script SQL
 
@@ -41,28 +39,20 @@ membuat stored procedure, function, trigger, dan simulasi commit/rollback.
 └─ 99-run-all/             99-run-all.sql
 ```
 
-SQL role/performance ada di section
-`03-database-access-and-security/sql/`.
-
 ## Urutan Eksekusi di DBeaver
 
-1. Koneksi ke database **postgres** → jalankan `00-create-database.sql`.
+1. Koneksi ke database **postgres**, jalankan `00-create-database.sql`.
 2. Ganti koneksi ke **InventoryAppDB**.
 3. Jalankan berurutan:
    `01-schema.sql` → `02-seed-data.sql` → `03-indexes.sql` → `04-views.sql`
    → `05-relational-dml.sql` → `06-stored-procedures.sql` → `07-functions.sql`
    → `08-triggers.sql` → `09-transactions.sql`.
-4. Alternatif: setelah database dibuat, jalankan `99-run-all.sql` pada database
-   **InventoryAppDB**.
-
-> Semua script kompatibel dengan DBeaver dan tidak memakai meta-command `psql`
-> seperti `\i` atau `\echo`.
+4. Alternatif: jalankan `99-run-all.sql` pada database **InventoryAppDB**.
 
 ## Catatan
 
 - Agar aplikasi memakai database ini, ubah `ConnectionStrings:Default` di
   `src/Inventory.Web/appsettings.json` menjadi `Database=InventoryAppDB`.
-- Koneksi string/password tidak disimpan di dokumen ini.
-- Schema mengikuti aplikasi: quantity `integer`, `UnitCost numeric(18,4)`,
-  enum disimpan sebagai `integer`, nama tabel/kolom PascalCase.
-- Tidak ada trigger audit; audit tetap ditangani aplikasi.
+- Koneksi string dan password tidak disimpan di dokumen ini.
+- Quantity `integer`, `UnitCost numeric(18,4)`, enum disimpan sebagai `integer`.
+- Audit ditangani aplikasi; tidak ada trigger audit.

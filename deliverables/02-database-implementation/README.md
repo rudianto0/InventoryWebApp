@@ -8,8 +8,20 @@ trigger, dan commit/rollback.
 
 ## Dokumentasi
 
-- `docs/` — Markdown penjelasan tiap tahap.
-- `Inventory-Database-Implementation.docx` — dokumen Word.
+`docs/` disusun mengikuti 8 langkah kerja:
+
+| File | Butir |
+|---|---|
+| `docs/01-persiapan-software.md` | 1. Persiapan perangkat lunak |
+| `docs/02-membuat-basis-data.md` | 2. Membuat basis data (DDL) |
+| `docs/03-mengisi-tabel.md` | 3. Mengisi tabel, indeks, view |
+| `docs/04-operasi-relasional.md` | 4. Operasi relasional (DML) |
+| `docs/05-stored-procedure.md` | 5. Stored procedure |
+| `docs/06-function.md` | 6. Function |
+| `docs/07-trigger.md` | 7. Trigger |
+| `docs/08-commit-rollback.md` | 8. Commit dan rollback |
+
+- `02-Inventory-Database-Implementation.docx` — dokumen Word.
 
 ## SQL per Konteks
 

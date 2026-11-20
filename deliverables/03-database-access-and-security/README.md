@@ -7,17 +7,15 @@ keamanan, hak akses, dan pengujian performa.
 
 ## Dokumentasi
 
-| File | Isi |
+`docs/` disusun mengikuti 4 langkah kerja:
+
+| File | Butir |
 |---|---|
-| `docs/00-ringkasan.md` | Ringkasan & temuan |
-| `docs/01-tujuan-dan-lingkup.md` | Tujuan, aktor, batasan |
-| `docs/02-teknologi-akses-data.md` | EF Core, Npgsql, pola akses |
-| `docs/03-objek-database-yang-digunakan.md` | Tabel, view, function, procedure |
-| `docs/04-operasi-basis-data.md` | DML, query, index |
-| `docs/05-prosedur-akses-basis-data.md` | Library & perintah akses |
-| `docs/06-koneksi-basis-data.md` | Koneksi, TLS, role |
-| `docs/07-pengujian-program-basis-data.md` | Skenario & performa |
-| `Inventory-Database-Access.docx` | Word |
+| `docs/01-operasi-basis-data.md` | 1. Operasi basis data |
+| `docs/02-prosedur-akses-basis-data.md` | 2. Prosedur akses data |
+| `docs/03-koneksi-basis-data.md` | 3. Koneksi, keamanan, hak akses |
+| `docs/04-pengujian-program-basis-data.md` | 4. Pengujian program |
+| `03-Inventory-Database-Access.docx` | Word |
 
 ## SQL
 

@@ -1,22 +1,12 @@
 - name: Home
   href: index.md
-- name: Ringkasan
-  href: 00-ringkasan.md
-- name: Modul
-  href: 01-identifikasi-modul.md
-- name: Parameter
-  href: 02-parameter-dan-kontrak.md
-- name: Algoritma
-  href: 03-algoritma-dan-definisi-masalah.md
+- name: 1. Identifikasi Kode
+  href: 01-identifikasi-kode.md
+- name: 2. Dokumentasi Modul
+  href: 02-dokumentasi-modul.md
+- name: 3. Dokumentasi Method
+  href: 03-dokumentasi-method.md
+- name: 4. Generate Dokumentasi
+  href: 04-generate-dokumentasi.md
 - name: Annotated Code
   href: 04-annotated-code/
-- name: Dokumentasi Modul
-  href: 05-dokumentasi-modul.md
-- name: Method
-  href: 06-dokumentasi-method.md
-- name: Eksepsi
-  href: 07-katalog-eksepsi.md
-- name: Generate
-  href: 08-generate-dokumentasi.md
-- name: Revisi
-  href: 09-revisi-dan-traceability.md

@@ -8,19 +8,15 @@ algoritma yang berdampak pada performa.
 
 ## Dokumen
 
-| File | Isi |
+`docs/` disusun mengikuti 4 langkah kerja:
+
+| File | Butir |
 |---|---|
-| `docs/00-ringkasan.md` | Ringkasan hasil |
-| `docs/01-metodologi-pengukuran.md` | Tools, environment, skenario |
-| `docs/02-data-waktu-dan-memory.md` | Data waktu & memori |
-| `docs/03-modul-bermasalah.md` | Modul terindikasi bermasalah |
-| `docs/04-analisis-bottleneck.md` | Bottleneck |
-| `docs/05-dampak-bottleneck.md` | Dampak negatif |
-| `docs/06-rancangan-solusi.md` | Rancangan metode |
-| `docs/07-peningkatan-performa.md` | Before/after performa |
-| `docs/08-kompleksitas-algoritma.md` | Analisis kompleksitas |
-| `docs/09-kesimpulan.md` | Kesimpulan |
-| `Inventory-Performance-Analysis.docx` | Gabungan Word |
+| `docs/01-data-waktu-dan-memory.md` | 1. Data waktu eksekusi dan memori |
+| `docs/02-bottleneck-performa.md` | 2. Bottleneck dan dampaknya |
+| `docs/03-rancangan-solusi.md` | 3. Rancangan solusi dan peningkatan |
+| `docs/04-kompleksitas-algoritma.md` | 4. Kompleksitas algoritma |
+| `07-Inventory-Performance-Analysis.docx` | Gabungan Word |
 
 ## Data
 

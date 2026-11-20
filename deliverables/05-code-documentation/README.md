@@ -7,19 +7,16 @@ eksepsi, traceability, dan API docs.
 
 ## Dokumentasi
 
-| File | Isi |
+`docs/` disusun mengikuti 4 langkah kerja:
+
+| File | Butir |
 |---|---|
-| `docs/00-ringkasan.md` | Ringkasan |
-| `docs/01-identifikasi-modul.md` | Modul + ID |
-| `docs/02-parameter-dan-kontrak.md` | Parameter & DTO |
-| `docs/03-algoritma-dan-definisi-masalah.md` | Algoritma |
-| `docs/04-annotated-code/` | 7 modul inti |
-| `docs/05-dokumentasi-modul.md` | Modul |
-| `docs/06-dokumentasi-method.md` | Method |
-| `docs/07-katalog-eksepsi.md` | Eksepsi |
-| `docs/08-generate-dokumentasi.md` | DocFX |
-| `docs/09-revisi-dan-traceability.md` | Revisi |
-| `Inventory-Code-Documentation.docx` | Word |
+| `docs/01-identifikasi-kode.md` | 1. Identifikasi kode program |
+| `docs/02-dokumentasi-modul.md` | 2. Dokumentasi modul |
+| `docs/03-dokumentasi-method.md` | 3. Dokumentasi method dan eksepsi |
+| `docs/04-generate-dokumentasi.md` | 4. Generate dokumentasi |
+| `docs/04-annotated-code/` | Komentar baris demi baris |
+| `05-Inventory-Code-Documentation.docx` | Word |
 
 ## Generate API Docs
 

@@ -1,56 +1,51 @@
-# 01 - Peralatan dan Lingkungan Pengujian
+# 1. Mempersiapkan Dokumentasi Peralatan dan Lingkungan
 
-## 1. Peralatan Pengujian
+## 1.1 Tentukan peralatan pengujian sesuai dengan kebutuhan
 
-| No | Peralatan | Versi | Fungsi |
-|---|---|---|---|
-| 1 | Windows 11 | - | Sistem operasi |
-| 2 | .NET SDK | 10.0.404 | Build & test runner |
-| 3 | .NET Runtime | 10.0.15 | Eksekusi |
-| 4 | xUnit | 2.9.3 | Framework test |
-| 5 | FluentAssertions | 8.11.0 | Assertion |
-| 6 | EF Core SQLite | 10.0.15 | Database integrasi in-memory |
-| 7 | coverlet.collector | 10.1.0 | Coverage |
-| 8 | Rider / Visual Studio | latest | Debug & test explorer |
-| 9 | DBeaver | latest | Verifikasi database |
-| 10 | BenchmarkDotNet | 0.14.0 | Performance (section 07) |
+| No | Peralatan | Versi | Fungsi | Status |
+|---|---|---|---|---|
+| 1 | Windows 11 | - | Sistem operasi | Tersedia |
+| 2 | .NET SDK | 10.0.404 | Build dan menjalankan test | Tersedia |
+| 3 | .NET Runtime | 10.0.15 | Menjalankan aplikasi | Tersedia |
+| 4 | xUnit | 2.9.3 | Kerangka pengujian | Tersedia |
+| 5 | FluentAssertions | 8.11.0 | Memeriksa hasil uji | Tersedia |
+| 6 | EF Core SQLite | 10.0.15 | Database uji sementara | Tersedia |
+| 7 | coverlet.collector | 10.1.0 | Mengukur cakupan kode | Tersedia |
+| 8 | Rider / Visual Studio | terbaru | Debug dan test explorer | Tersedia |
+| 9 | DBeaver | terbaru | Memeriksa database | Tersedia |
 
-## 2. Lingkungan
+**Lingkungan pengujian:**
 
 | Aspek | Nilai |
 |---|---|
-| OS | Windows 11 |
+| Sistem operasi | Windows 11 |
 | Runtime | .NET 10.0.15 |
 | Konfigurasi | Debug |
 | Database uji | SQLite in-memory |
-| Test directory | `tests/Inventory.UnitTests` |
-| Hasil | `deliverables/10-integration-testing/results` |
-| CI | Belum tersedia |
+| Hasil pengujian | `results/` |
+| CI otomatis | Belum tersedia |
 
-## 3. Kebutuhan Hardware
+**Kebutuhan perangkat:** CPU 2 core (disarankan 4), RAM 4 GB (disarankan 8),
+dan ruang disk 2 GB. SQLite dipilih agar pengujian cepat dan tidak bergantung
+pada server database.
 
-| Komponen | Minimum | Disarankan |
+## 1.2 Siapkan dokumen pendukung pengujian
+
+| Dokumen | Isi | Lokasi |
 |---|---|---|
-| CPU | 2 core | 4 core |
-| RAM | 4 GB | 8 GB |
-| Disk | 2 GB free | 10 GB free |
-| Jaringan | - | Untuk restore NuGet |
+| Rencana uji | Ruang lingkup, jadwal, tools | Dokumen ini |
+| Lembar test case | Skenario dan hasil yang diharapkan | `sheets/test-case-sheet.csv` |
+| Lembar hasil | Hasil nyata setiap test | `sheets/result-sheet.csv` |
+| Lembar cacat | Ketidaksesuaian dan perbaikan | `sheets/defect-sheet.csv` |
+| Lembar peralatan | Daftar peralatan uji | `sheets/equipment-sheet.csv` |
+| Hasil test | TRX dan CSV | `results/` |
+| Laporan cakupan | Baris dan cabang | `results/coverage-*` |
+| Skema database | Tabel dan relasi | `deliverables/02` |
 
-## 4. Kesesuaian Peralatan
+**Aturan pengisian lembar:**
 
-| Kebutuhan | Peralatan | Status |
-|---|---|---|
-| Build .NET 10 | SDK 10.0.404 | Sesuai |
-| Unit/integration test | xUnit | Sesuai |
-| Assertion | FluentAssertions | Sesuai |
-| Database uji | SQLite in-memory | Sesuai ( terbatas ) |
-| Coverage | coverlet | Sesuai |
-| Debug | Rider/VS | Sesuai |
-| Verifikasi DB | DBeaver | Sesuai |
-| PostgreSQL nyata | Belum disiapkan | Gap |
-
-## 5. Catatan
-
-SQLite in-memory dipilih agar test cepat, deterministik, dan tidak membutuhkan
-server. Konsekuensinya, perilaku khusus PostgreSQL (constraint, locking, query
-planner) belum tercakup.
+- Setiap test memiliki ID unik.
+- Hasil yang diharapkan ditulis sebelum pengujian.
+- Hasil nyata diisi setelah pengujian.
+- Status diisi Pass, Fail, Blocked, atau Not Run.
+- Bukti diisi nama test atau file TRX.

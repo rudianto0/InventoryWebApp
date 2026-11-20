@@ -7,24 +7,25 @@ guidelines, perbaikan yang aman, serta pengecualian yang didokumentasikan.
 
 ## Dokumen
 
-| File | Isi |
+`docs/` disusun mengikuti 3 langkah kerja:
+
+| File | Butir |
 |---|---|
-| `docs/00-ringkasan.md` | Ringkasan hasil |
-| `docs/01-kesesuaian-kode.md` | Kesesuaian |
-| `docs/02-ketidaksesuaian-kode.md` | Ketidaksesuaian |
-| `docs/03-perbaikan-coding-guideline.md` | Perbaikan guideline |
-| `docs/04-perbaikan-best-practices.md` | Perbaikan best practices |
-| `docs/05-pengecualian-coding-guideline.md` | Pengecualian wajar |
-| `docs/06-komentar-pengecualian.md` | Komentar pengecualian |
-| `docs/07-verifikasi-dan-regresi.md` | Verifikasi & regresi |
-| `docs/08-kesimpulan.md` | Kesimpulan |
-| `Inventory-Code-Guidelines-Compliance.docx` | Gabungan Word |
+| `docs/01-evaluasi-kesesuaian.md` | 1. Evaluasi kesesuaian dan ketidaksesuaian |
+| `docs/02-perbaikan-kode.md` | 2. Perbaikan coding guideline dan best practices |
+| `docs/03-pengecualian-guidelines.md` | 3. Pengecualian dan komentar pengecualian |
+| `08-Inventory-Code-Guidelines-Compliance.docx` | Gabungan Word |
+
+## Aset
+
+- `assets/compliance-summary.png` — ringkasan status kesesuaian.
 
 ## Ringkasan Perbaikan yang Diterapkan
 
 - Menghapus `Class1.cs` (Domain, Application, Infrastructure).
 - Memisahkan `ApprovalGuard` ke file sendiri.
 - Menambahkan `.editorconfig`.
+- Menambahkan komentar pengecualian pada `ApprovalGuard` dan `AppControllerBase`.
 - Build: sukses.
-- Test: 171 passed.
+- Test: 171 lulus.
 - Perbaikan lain didokumentasikan sebagai rekomendasi (tanpa ubah spesifikasi).
