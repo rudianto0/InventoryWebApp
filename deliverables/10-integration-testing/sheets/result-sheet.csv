@@ -9,3 +9,18 @@ INT-07,ValidationException; stock unchanged,Pass,StockTransactionApprovalTests.A
 INT-08,Approved; stock +7,Pass,StockInServiceTests.AdminSubmit_AutoApprovesAndAppliesStock,In-memory SQLite
 INT-09,Hidden; IsDeleted true,Pass,SoftDeleteTests.Delete_MasterData_IsSoftDeletedAndHiddenFromQueries,In-memory SQLite
 INT-10,AuditLogs written,Pass,SoftDeleteTests.Delete_WritesAuditLogWithStringEntityId; AuditTrailExtraTests.Update_WritesOldAndNewValues,In-memory SQLite
+EXT-01,Draft with qty 7,Pass,ProcurementToStockInIntegrationTests.ProcurementPayload_Valid_CreatesDraft,In-memory SQLite
+EXT-02,Submitted; approver 20,Pass,ProcurementToStockInIntegrationTests.ProcurementPayload_SubmitAndApprove_UpdatesStockAndAudit,In-memory SQLite
+EXT-03,Approved; stock 7; movement In,Pass,ProcurementToStockInIntegrationTests.ProcurementPayload_SubmitAndApprove_UpdatesStockAndAudit,In-memory SQLite
+EXT-04,ValidationException; no document,Pass,ProcurementToStockInIntegrationTests.ProcurementPayload_InactiveSupplier_IsRejected,In-memory SQLite
+EXT-05,ValidationException; no document,Pass,ProcurementToStockInIntegrationTests.ProcurementPayload_InactiveProduct_IsRejected,In-memory SQLite
+EXT-06,ValidationException; no document,Pass,ProcurementToStockInIntegrationTests.ProcurementPayload_MultiLineOneInvalid_RejectsWholeDocument,In-memory SQLite
+EXT-07,2 stocks; 2 movements,Pass,ProcurementToStockInIntegrationTests.ProcurementPayload_MultiLineAllValid_AppliesAllLines,In-memory SQLite
+EXT-08,Rejected; stock 0,Pass,ProcurementToStockInIntegrationTests.ExternalApproval_Reject_LeavesStockUnchanged,In-memory SQLite
+EXT-09,ValidationException; stock 0,Pass,ProcurementToStockInIntegrationTests.ExternalApproval_UnauthorizedApprover_IsRejected,In-memory SQLite
+EXT-10,2 drafts; stock 0,Pass,ProcurementToStockInIntegrationTests.ProcurementPayload_Retry_CreatesSeparateDrafts_CurrentBehavior,In-memory SQLite
+EXT-11,Approved; stock 7; movement In,Pass,ThirdPartyApprovalIntegrationTests.ThirdPartyApproval_ApproveViaHttp_UpdatesStock,Local HTTP stub
+EXT-12,Rejected; stock 0,Pass,ThirdPartyApprovalIntegrationTests.ThirdPartyApproval_RejectViaHttp_LeavesStockUnchanged,Local HTTP stub
+EXT-13,401 Unauthorized; stock 0,Pass,ThirdPartyApprovalIntegrationTests.ThirdPartyApproval_InvalidApiKey_Returns401AndDoesNotApprove,Local HTTP stub
+EXT-14,500 error; stock 0,Pass,ThirdPartyApprovalIntegrationTests.ThirdPartyApproval_ServerError_DoesNotApprove,Local HTTP stub
+EXT-15,Second 409; stock 7,Pass,ThirdPartyApprovalIntegrationTests.ThirdPartyApproval_DuplicateCallback_DoesNotDoubleApply,Local HTTP stub

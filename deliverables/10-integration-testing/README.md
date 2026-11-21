@@ -17,6 +17,7 @@ analisis hasil, laporan, dan arsip pengujian.
 | `docs/04-analisis-data-pengujian.md` | 4. Analisis modul dan hasil |
 | `docs/05-laporan-hasil.md` | 5. Laporan hasil pengujian |
 | `docs/06-dokumentasi-dan-arsip.md` | 6. Pelaporan dan pengarsipan |
+| `docs/07-third-party-integration-testing.md` | 7. Integration test procurement, stock in, approval, third party |
 | `10-Inventory-Integration-Testing.docx` | Gabungan Word |
 
 ## Sheets
@@ -31,7 +32,8 @@ analisis hasil, laporan, dan arsip pengujian.
 | Metrik | Nilai |
 |---|---:|
 | Build | 0 error |
-| Test | 171 passed |
+| Test unit/modul | 171 (artefak 09) / 182 run terbaru |
+| Test integrasi procurement & approval | 14 passed |
 | Failed | 0 |
 | Line coverage | 74,69% |
 | Branch coverage | 60,17% |

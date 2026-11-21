@@ -7,7 +7,7 @@ pelaksanaan, dan evaluasi hasil.
 
 ## Dokumen
 
-`docs/` disusun mengikuti 5 langkah kerja:
+`docs/` disusun mengikuti 5 langkah kerja, ditambah bagian white box testing:
 
 | File | Butir |
 |---|---|
@@ -16,6 +16,7 @@ pelaksanaan, dan evaluasi hasil.
 | `docs/03-data-uji.md` | 3. Data uji dan cara membangkitkannya |
 | `docs/04-pelaksanaan-uji-coba.md` | 4. Skenario, algoritma, pelaksanaan |
 | `docs/05-evaluasi-hasil.md` | 5. Hasil, analisis, laporan, perbaikan |
+| `docs/06-white-box-testing.md` | White box: branch/path, bukti test, gap coverage |
 | `09-Inventory-Software-Testing.docx` | Gabungan Word |
 
 ## Hasil Eksekusi

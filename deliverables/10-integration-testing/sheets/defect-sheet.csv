@@ -2,3 +2,5 @@ DefectID,TestID,Description,Expected,Actual,RootCause,FixStatus
 DEF-INT-01,INT-ALL,No real PostgreSQL integration test,Module integration on PostgreSQL,Mocked by SQLite in-memory,Test scope limitation,Open
 DEF-INT-02,INT-ALL,No API/controller integration test,HTTP endpoint tested end-to-end,Not executed,Test scope limitation,Open
 DEF-INT-03,INT-ALL,No UI integration test,Razor flow tested,Not executed,Test scope limitation,Open
+DEF-INT-04,EXT-10,No ExternalReference/idempotency key,Duplicate external PO ignored or rejected,Two drafts created,Missing idempotency field,Open
+DEF-INT-05,EXT-ALL,No production third-party vendor API,Real vendor API tested end-to-end,Local HTTP stub with API key and status codes,No external vendor contract/credentials,Open

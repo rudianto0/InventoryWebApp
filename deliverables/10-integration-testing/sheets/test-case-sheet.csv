@@ -9,3 +9,18 @@ INT-07,MOD-APP-APPROVAL,Approve by non-approver,Submitted doc approver=20,Actor=
 INT-08,MOD-APP-STOCKIN,Admin submit auto-approve,Admin user,Quantity 7,Status Approved; stock +7,Pass
 INT-09,MOD-INF-DBCONTEXT,Soft delete product,Product with stock,Remove product,Product hidden from queries; IsDeleted=true,Pass
 INT-10,MOD-INF-DBCONTEXT,Audit create-update-delete,Category entity,Create/update/delete,AuditLogs contains action and user,Pass
+EXT-01,MOD-EXT-PROC,Procurement payload creates draft,Master active; staff 10,PO-2026-001; SKU-1 qty 7,Draft with qty 7,Pass
+EXT-02,MOD-EXT-PROC,Submit procurement Stock In,Header Draft; staff 10,Submit header,Status Submitted + approver 20,Pass
+EXT-03,MOD-EXT-APPROVAL,Approve by separate approver,Header Submitted; approver 20,Approve header,Status Approved + stock 7 + movement In,Pass
+EXT-04,MOD-EXT-PROC,Inactive supplier rejected,Supplier inactive,PO with SUP,ValidationException; no document,Pass
+EXT-05,MOD-EXT-PROC,Inactive product rejected,Product inactive,PO with SKU-OFF,ValidationException; no document,Pass
+EXT-06,MOD-EXT-PROC,Multi-line one invalid,SKU-OFF inactive,SKU-1 qty 2 + SKU-OFF qty 1,Whole document rejected,Pass
+EXT-07,MOD-EXT-PROC,Multi-line all valid,Two active products,SKU-1 qty 7 + SKU-2 qty 3,2 stocks + 2 movements,Pass
+EXT-08,MOD-EXT-APPROVAL,External approval reject,Header Submitted,Reject with reason,Status Rejected; stock unchanged,Pass
+EXT-09,MOD-EXT-APPROVAL,Unauthorized approver rejected,Header Submitted; actor 99,Approve header,ValidationException; stock unchanged,Pass
+EXT-10,MOD-EXT-PROC,Retry payload creates separate drafts,No idempotency key,Create same PO twice,2 drafts; no stock until approve,Pass
+EXT-11,MOD-EXT-APPROVAL,Third-party approval via HTTP,Header Submitted; local HTTP stub,POST approve with API key,Status Approved + stock 7,Pass
+EXT-12,MOD-EXT-APPROVAL,Third-party reject via HTTP,Header Submitted; local HTTP stub,POST reject with reason,Status Rejected; stock unchanged,Pass
+EXT-13,MOD-EXT-APPROVAL,Third-party API key invalid,Header Submitted; local HTTP stub,POST with wrong API key,401 Unauthorized; stock unchanged,Pass
+EXT-14,MOD-EXT-APPROVAL,Third-party server error,Header Submitted; stub returns 500,POST approve,500 error; stock unchanged,Pass
+EXT-15,MOD-EXT-APPROVAL,Third-party duplicate callback,Header Approved after first callback,POST approve twice,Second 409; stock 7 not 14,Pass
