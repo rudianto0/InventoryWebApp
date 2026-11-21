@@ -38,6 +38,7 @@ cacat.
 | Dokumen | `docs/` |
 | Word | `10-Inventory-Integration-Testing.docx` |
 | Lembar uji | `sheets/` |
+| Lembar hasil third party | `sheets/result-sheet-third-party.csv` |
 | Hasil TRX | `results/test-results.trx` |
 | Hasil CSV | `results/test-results.csv` |
 | Ringkasan | `results/test-summary.csv` |

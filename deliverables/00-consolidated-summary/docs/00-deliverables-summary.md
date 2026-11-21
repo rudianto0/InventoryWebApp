@@ -17,7 +17,7 @@ benar-benar ada di implementasi beserta lokasinya.
 | 07 | Performance Profiling | Waktu, memori, bottleneck, benchmark | `tests/Inventory.Benchmarks/Program.cs` | Terverifikasi dengan catatan |
 | 08 | Code Guidelines Compliance | Kesesuaian aturan, perbaikan, pengecualian | `.editorconfig`, `AppControllerBase.cs:18` | Terverifikasi |
 | 09 | Software Testing | Skenario, data, hasil, coverage | `tests/Inventory.UnitTests/**` | Terverifikasi |
-| 10 | Integration Testing | Uji integrasi modul + lembar hasil | `sheets/result-sheet.csv` | Terverifikasi dengan catatan |
+| 10 | Integration Testing | Uji integrasi modul + lembar hasil + third party | `sheets/result-sheet.csv`, `sheets/result-sheet-third-party.csv` | Terverifikasi dengan catatan |
 
 ## 2. Peta Arsitektur
 
@@ -675,7 +675,9 @@ Bukti:
 Isi: peralatan, data uji integrasi, pelaksanaan, analisis, laporan, dan arsip.
 
 Skenario INT-01 s.d. INT-10 ada di
-`deliverables/10-integration-testing/sheets/result-sheet.csv`.
+`deliverables/10-integration-testing/sheets/result-sheet.csv`. Hasil uji
+integrasi third party (EXT-11 s.d. EXT-15, HTTP stub lokal) dicatat terpisah di
+`deliverables/10-integration-testing/sheets/result-sheet-third-party.csv`.
 
 Contoh evidence yang sudah cocok dengan test aktual:
 - `StockTransactionApprovalTests.ApproveStockIn_AsAssignedApprover_UpdatesStock`

@@ -72,6 +72,12 @@ Database: SQLite in-memory. Tidak ada perubahan kode produksi.
 
 ## 7.4 Skenario dan Hasil
 
+Hasil dipisahkan menjadi dua tabel: integrasi internal (procurement/stock in/
+approval) dan integrasi third party melalui HTTP. Hasil third party juga
+dicatat pada sheet tersendiri `sheets/result-sheet-third-party.csv`.
+
+### 7.4.1 Integrasi Internal (Procurement, Stock In, Approval)
+
 | ID | Skenario | Test | Hasil |
 |---|---|---|---|
 | EXT-01 | Payload procurement valid membuat Draft | `ProcurementPayload_Valid_CreatesDraft` | Pass |
@@ -84,22 +90,28 @@ Database: SQLite in-memory. Tidak ada perubahan kode produksi.
 | EXT-08 | External approval reject | `ExternalApproval_Reject_LeavesStockUnchanged` | Pass |
 | EXT-09 | Approver tidak berwenang ditolak | `ExternalApproval_UnauthorizedApprover_IsRejected` | Pass |
 | EXT-10 | Retry payload yang sama | `ProcurementPayload_Retry_CreatesSeparateDrafts_CurrentBehavior` | Pass (gap idempotency) |
-| EXT-11 | Approval third-party via HTTP | `ThirdPartyApproval_ApproveViaHttp_UpdatesStock` | Pass |
-| EXT-12 | Reject third-party via HTTP | `ThirdPartyApproval_RejectViaHttp_LeavesStockUnchanged` | Pass |
-| EXT-13 | API key salah | `ThirdPartyApproval_InvalidApiKey_Returns401AndDoesNotApprove` | Pass |
-| EXT-14 | Third-party error 500 | `ThirdPartyApproval_ServerError_DoesNotApprove` | Pass |
-| EXT-15 | Callback approval duplikat | `ThirdPartyApproval_DuplicateCallback_DoesNotDoubleApply` | Pass |
+
+### 7.4.2 Integrasi Third Party (HTTP Stub)
+
+| ID | Endpoint | Auth | Skenario | Test | Status Code | Stock | Hasil |
+|---|---|---|---|---|---|---|---|
+| EXT-11 | `POST /api/approvals` | valid key | Approval third-party via HTTP | `ThirdPartyApproval_ApproveViaHttp_UpdatesStock` | 200 | 7 | Pass |
+| EXT-12 | `POST /api/approvals` | valid key | Reject third-party via HTTP | `ThirdPartyApproval_RejectViaHttp_LeavesStockUnchanged` | 200 | 0 | Pass |
+| EXT-13 | `POST /api/approvals` | invalid key | API key salah | `ThirdPartyApproval_InvalidApiKey_Returns401AndDoesNotApprove` | 401 | 0 | Pass |
+| EXT-14 | `POST /api/approvals` | valid key | Third-party error 500 | `ThirdPartyApproval_ServerError_DoesNotApprove` | 500 | 0 | Pass |
+| EXT-15 | `POST /api/approvals` | valid key | Callback approval duplikat | `ThirdPartyApproval_DuplicateCallback_DoesNotDoubleApply` | 200/409 | 7 | Pass |
 
 Ringkasan:
 
 ```text
 Project : Inventory.IntegrationTests
-Total   : 14
+Total   : 14 test method (15 scenario ID)
 Passed  : 14
 Failed  : 0
 Skipped : 0
 Database: SQLite in-memory
 Third party approval: HTTP stub lokal
+Third party scenarios: 5 passed
 ```
 
 ## 7.5 Hasil yang Diverifikasi
@@ -139,6 +151,7 @@ disarankan menambahkan:
 | Ringkasan | `results/integration/integration-test-summary.csv` |
 | Coverage | `results/integration/coverage.cobertura.xml` |
 | Lembar uji | `sheets/test-case-sheet.csv`, `sheets/result-sheet.csv` |
+| Lembar hasil third party | `sheets/result-sheet-third-party.csv` |
 
 ## 7.8 Third-Party Approval API (HTTP Stub)
 
@@ -172,8 +185,8 @@ vendor eksternal.
 ## 7.9 Kesimpulan
 
 Integrasi procurement → stock in → approval berhasil diuji pada level contract
-dan service dengan 14 skenario lulus, termasuk approval third-party melalui HTTP
-stub lokal. Pola ini membuktikan alur antar-modul dan kesiapan boundary
+dan service dengan 15 skenario lulus, termasuk 5 skenario approval third-party
+melalui HTTP stub lokal. Pola ini membuktikan alur antar-modul dan kesiapan boundary
 `Inventory.Client` untuk pemisahan API. Untuk integrasi third-party produksi,
 langkah berikutnya adalah API intake, autentikasi, dan idempotency berbasis
 `ExternalReference`.

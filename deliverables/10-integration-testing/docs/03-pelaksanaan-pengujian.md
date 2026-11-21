@@ -50,6 +50,7 @@ Duration: 7 s
 |---|---|
 | `sheets/test-case-sheet.csv` | Skenario dan hasil yang diharapkan |
 | `sheets/result-sheet.csv` | Hasil nyata dan status |
+| `sheets/result-sheet-third-party.csv` | Hasil nyata uji integrasi third party |
 | `sheets/defect-sheet.csv` | Ketidaksesuaian yang ditemukan |
 | `sheets/equipment-sheet.csv` | Peralatan yang dipakai |
 | `results/test-results.trx` | Bukti lengkap pengujian |

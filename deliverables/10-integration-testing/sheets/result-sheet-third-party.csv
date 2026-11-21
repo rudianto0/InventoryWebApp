@@ -1,0 +1,6 @@
+TestID,Endpoint,AuthScenario,Request,Expected,Actual,StatusCode,StockAfter,Status,Evidence,Notes;;;
+EXT-11,POST /api/approvals,Valid API key,Approve documentId,Approved; stock 7,Status Approved; stock 7; 1 movement In,200,7,Pass,ThirdPartyApprovalIntegrationTests.ThirdPartyApproval_ApproveViaHttp_UpdatesStock,Local HTTP stub
+EXT-12,POST /api/approvals,Valid API key,Reject documentId,Rejected; stock 0,Status Rejected; stock unchanged; 0 movements,200,0,Pass,ThirdPartyApprovalIntegrationTests.ThirdPartyApproval_RejectViaHttp_LeavesStockUnchanged,Local HTTP stub
+EXT-13,POST /api/approvals,Invalid API key,Approve documentId,401; stock 0,401 Unauthorized; callback not invoked; stock 0,401,0,Pass,ThirdPartyApprovalIntegrationTests.ThirdPartyApproval_InvalidApiKey_Returns401AndDoesNotApprove,Local HTTP stub
+EXT-14,POST /api/approvals,Valid API key,Approve documentId,500; stock 0,500 Internal Server Error; callback not invoked; stock 0,500,0,Pass,ThirdPartyApprovalIntegrationTests.ThirdPartyApproval_ServerError_DoesNotApprove,Local HTTP stub
+EXT-15,POST /api/approvals,Valid API key,Approve twice,Second 409; stock 7,First 200 approved; second 409 Conflict; stock 7 not 14,200/409,7,Pass,ThirdPartyApprovalIntegrationTests.ThirdPartyApproval_DuplicateCallback_DoesNotDoubleApply,Local HTTP stub

@@ -36,6 +36,7 @@ pada server database.
 | Rencana uji | Ruang lingkup, jadwal, tools | Dokumen ini |
 | Lembar test case | Skenario dan hasil yang diharapkan | `sheets/test-case-sheet.csv` |
 | Lembar hasil | Hasil nyata setiap test | `sheets/result-sheet.csv` |
+| Lembar hasil third party | Hasil nyata uji integrasi third party | `sheets/result-sheet-third-party.csv` |
 | Lembar cacat | Ketidaksesuaian dan perbaikan | `sheets/defect-sheet.csv` |
 | Lembar peralatan | Daftar peralatan uji | `sheets/equipment-sheet.csv` |
 | Hasil test | TRX dan CSV | `results/` |

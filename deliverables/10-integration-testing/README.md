@@ -25,6 +25,7 @@ analisis hasil, laporan, dan arsip pengujian.
 - `sheets/equipment-sheet.csv`
 - `sheets/test-case-sheet.csv`
 - `sheets/result-sheet.csv`
+- `sheets/result-sheet-third-party.csv`
 - `sheets/defect-sheet.csv`
 
 ## Hasil
@@ -33,7 +34,9 @@ analisis hasil, laporan, dan arsip pengujian.
 |---|---:|
 | Build | 0 error |
 | Test unit/modul | 171 (artefak 09) / 182 run terbaru |
-| Test integrasi procurement & approval | 14 passed |
+| Test integrasi procurement & approval | 9 passed |
+| Test integrasi third party (HTTP stub) | 5 passed |
+| Total test integrasi | 14 passed |
 | Failed | 0 |
 | Line coverage | 74,69% |
 | Branch coverage | 60,17% |

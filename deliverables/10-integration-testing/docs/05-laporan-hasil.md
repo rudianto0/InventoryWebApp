@@ -62,3 +62,28 @@ Peralatan dicatat pada `sheets/equipment-sheet.csv`.
 
 **Kesimpulan:** seluruh skenario integrasi inti berhasil dan terdokumentasi.
 Perlu pengujian tambahan dengan PostgreSQL nyata dan lapisan API/UI.
+
+## 5.5 Hasil Pengujian Integrasi Third Party
+
+Pengujian integrasi dengan pihak ketiga dilakukan melalui **HTTP stub lokal**
+(`ThirdPartyApprovalStub`) yang mensimulasikan kontrak API approval vendor.
+Hasil dicatat terpisah dari pengujian integrasi internal pada
+`sheets/result-sheet-third-party.csv`.
+
+| Test ID | Endpoint | Auth | Expected | Actual | Status Code | Stock | Status |
+|---|---|---|---|---|---|---|---|
+| EXT-11 | `POST /api/approvals` | valid key | Approved; stock 7 | Approved; stock 7; 1 movement In | 200 | 7 | Pass |
+| EXT-12 | `POST /api/approvals` | valid key | Rejected; stock 0 | Rejected; stock 0 | 200 | 0 | Pass |
+| EXT-13 | `POST /api/approvals` | invalid key | 401; stock 0 | 401; callback tidak jalan | 401 | 0 | Pass |
+| EXT-14 | `POST /api/approvals` | valid key | 500; stock 0 | 500; stock 0 | 500 | 0 | Pass |
+| EXT-15 | `POST /api/approvals` | valid key | Callback kedua 409; stock 7 | Callback pertama 200; kedua 409; stock 7 | 200/409 | 7 | Pass |
+
+**Ringkasan third party:**
+
+| Metrik | Nilai |
+|---|---:|
+| Total skenario | 5 |
+| Passed | 5 |
+| Failed | 0 |
+| Transport | HTTP stub lokal (`127.0.0.1`) |
+| Autentikasi | Header `X-Api-Key` |

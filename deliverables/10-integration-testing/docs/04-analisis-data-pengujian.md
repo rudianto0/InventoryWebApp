@@ -38,6 +38,14 @@ Status dicatat pada `sheets/result-sheet.csv` dengan kolom:
 - **Evidence** berisi nama test atau file TRX.
 - **Notes** berisi kondisi khusus, misalnya "in-memory SQLite".
 
+Hasil uji integrasi third party dicatat terpisah pada
+`sheets/result-sheet-third-party.csv` dengan kolom:
+
+`TestID, Endpoint, AuthScenario, Request, Expected, Actual, StatusCode, StockAfter, Status, Evidence, Notes`
+
+- **Endpoint** dan **AuthScenario** mencatat kontrak HTTP yang diuji.
+- **StatusCode** dan **StockAfter** mencatat status respons dan stok akhir.
+
 ## 4.4 Catat kondisi data yang tidak sesuai dan perkiraannya
 
 Tidak ada ketidaksesuaian fungsional pada INT-01 sampai INT-10. Kondisi yang
