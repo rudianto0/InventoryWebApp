@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="4fd9743d-1584-4cc6-ad40-6e108c9aacc9" name="Rudi@LEGION 2026-11-21 10:51:09" runUser="Legion\Rudi" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-11-21T10:51:09.2416056+07:00" queuing="2026-11-21T10:51:09.2416058+07:00" start="2026-11-21T10:51:03.6926159+07:00" finish="2026-11-21T10:51:10.4520057+07:00" />
+  <TestSettings name="default" id="c9532194-2e54-4644-bf57-7377d608a378">
+    <Deployment runDeploymentRoot="Rudi_LEGION_2026-11-21_10_51_09" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="fb81126f-440f-4f5c-9ff5-88a8e5a246eb" testId="d2fd2275-8fdd-2399-84d5-e50e53c37972" testName="Inventory.IntegrationTests.ProcurementToStockInIntegrationTests.ProcurementPayload_InactiveSupplier_IsRejected" computerName="LEGION" duration="00:00:00.0772402" startTime="2026-11-21T10:51:10.0219671+07:00" endTime="2026-11-21T10:51:10.0219673+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fb81126f-440f-4f5c-9ff5-88a8e5a246eb" />
+    <UnitTestResult executionId="076966b1-c512-4fda-8170-9a96afb7e368" testId="1cc48448-2ffa-990b-0664-7547927f13d4" testName="Inventory.IntegrationTests.ProcurementToStockInIntegrationTests.ProcurementPayload_InactiveProduct_IsRejected" computerName="LEGION" duration="00:00:00.0758878" startTime="2026-11-21T10:51:09.7789458+07:00" endTime="2026-11-21T10:51:09.7789459+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="076966b1-c512-4fda-8170-9a96afb7e368" />
+    <UnitTestResult executionId="f62cca89-5a44-4dcc-a26f-2fb3a41d8bef" testId="63eb56a6-b15f-a7e7-38cd-b730e70f82c1" testName="Inventory.IntegrationTests.ThirdPartyApprovalIntegrationTests.ThirdPartyApproval_DuplicateCallback_DoesNotDoubleApply" computerName="LEGION" duration="00:00:03.1427918" startTime="2026-11-21T10:51:09.6656826+07:00" endTime="2026-11-21T10:51:09.6656830+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f62cca89-5a44-4dcc-a26f-2fb3a41d8bef" />
+    <UnitTestResult executionId="e34fd221-212b-4c79-b6a3-78da57cef061" testId="074bf4e4-41a6-53ec-dd32-2fd388dc9561" testName="Inventory.IntegrationTests.ProcurementToStockInIntegrationTests.ProcurementPayload_MultiLineAllValid_AppliesAllLines" computerName="LEGION" duration="00:00:00.1944922" startTime="2026-11-21T10:51:09.6246418+07:00" endTime="2026-11-21T10:51:09.6246419+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e34fd221-212b-4c79-b6a3-78da57cef061" />
+    <UnitTestResult executionId="e461ceb1-4f01-46b2-b367-39c1294380eb" testId="c7fe8983-a72e-d0f8-4633-ebabf7d4796d" testName="Inventory.IntegrationTests.ThirdPartyApprovalIntegrationTests.ThirdPartyApproval_RejectViaHttp_LeavesStockUnchanged" computerName="LEGION" duration="00:00:00.1520520" startTime="2026-11-21T10:51:09.8203349+07:00" endTime="2026-11-21T10:51:09.8203353+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e461ceb1-4f01-46b2-b367-39c1294380eb" />
+    <UnitTestResult executionId="ba8e23f8-f29f-4dda-bd39-4f5752f3f56f" testId="e2faa8b3-1858-66c8-bf17-f51eb1284fa3" testName="Inventory.IntegrationTests.ProcurementToStockInIntegrationTests.ProcurementPayload_Valid_CreatesDraft" computerName="LEGION" duration="00:00:00.0773121" startTime="2026-11-21T10:51:09.7029184+07:00" endTime="2026-11-21T10:51:09.7029188+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ba8e23f8-f29f-4dda-bd39-4f5752f3f56f" />
+    <UnitTestResult executionId="49375e4e-c83b-4335-9342-9c162a90477a" testId="f7d5d742-e329-d86c-12ed-f803f02bf52a" testName="Inventory.IntegrationTests.ProcurementToStockInIntegrationTests.ProcurementPayload_MultiLineOneInvalid_RejectsWholeDocument" computerName="LEGION" duration="00:00:00.0966543" startTime="2026-11-21T10:51:09.4300331+07:00" endTime="2026-11-21T10:51:09.4300333+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="49375e4e-c83b-4335-9342-9c162a90477a" />
+    <UnitTestResult executionId="46d3f70e-9cfb-4571-8e73-7b531a4a653e" testId="45631ae9-2993-2376-d995-8e02de5a18ca" testName="Inventory.IntegrationTests.ThirdPartyApprovalIntegrationTests.ThirdPartyApproval_ServerError_DoesNotApprove" computerName="LEGION" duration="00:00:00.0673791" startTime="2026-11-21T10:51:10.0665484+07:00" endTime="2026-11-21T10:51:10.0665488+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="46d3f70e-9cfb-4571-8e73-7b531a4a653e" />
+    <UnitTestResult executionId="04891d0e-d816-44f2-a7e4-e6fc8ec55f2a" testId="b5ce2b6f-2626-c9bb-7278-9777773e6053" testName="Inventory.IntegrationTests.ProcurementToStockInIntegrationTests.ExternalApproval_Reject_LeavesStockUnchanged" computerName="LEGION" duration="00:00:00.0774428" startTime="2026-11-21T10:51:09.8564973+07:00" endTime="2026-11-21T10:51:09.8564975+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="04891d0e-d816-44f2-a7e4-e6fc8ec55f2a" />
+    <UnitTestResult executionId="c1512c11-de24-472d-9883-03bbab0b6371" testId="9c44dc11-fe63-7baf-4cdb-d9cc3ff8293f" testName="Inventory.IntegrationTests.ThirdPartyApprovalIntegrationTests.ThirdPartyApproval_ApproveViaHttp_UpdatesStock" computerName="LEGION" duration="00:00:00.0969447" startTime="2026-11-21T10:51:09.9179990+07:00" endTime="2026-11-21T10:51:09.9179993+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c1512c11-de24-472d-9883-03bbab0b6371" />
+    <UnitTestResult executionId="290c78e6-7048-4815-be15-eb7509b61d8a" testId="828219f5-1483-4534-4643-e3639173bf9c" testName="Inventory.IntegrationTests.ProcurementToStockInIntegrationTests.ProcurementPayload_Retry_CreatesSeparateDrafts_CurrentBehavior" computerName="LEGION" duration="00:00:02.5764265" startTime="2026-11-21T10:51:09.0995402+07:00" endTime="2026-11-21T10:51:09.0995728+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="290c78e6-7048-4815-be15-eb7509b61d8a" />
+    <UnitTestResult executionId="6613bdc5-f023-4be8-9a4a-3d159fad23fb" testId="221dac00-13a5-06c6-9011-159937cde1be" testName="Inventory.IntegrationTests.ThirdPartyApprovalIntegrationTests.ThirdPartyApproval_InvalidApiKey_Returns401AndDoesNotApprove" computerName="LEGION" duration="00:00:00.0802019" startTime="2026-11-21T10:51:09.9986323+07:00" endTime="2026-11-21T10:51:09.9986325+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6613bdc5-f023-4be8-9a4a-3d159fad23fb" />
+    <UnitTestResult executionId="56a3596a-c202-488a-ab5c-048a5ea78689" testId="90280091-7040-de86-fed1-20dd1e104c31" testName="Inventory.IntegrationTests.ProcurementToStockInIntegrationTests.ExternalApproval_UnauthorizedApprover_IsRejected" computerName="LEGION" duration="00:00:00.2339476" startTime="2026-11-21T10:51:09.3333553+07:00" endTime="2026-11-21T10:51:09.3333557+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="56a3596a-c202-488a-ab5c-048a5ea78689" />
+    <UnitTestResult executionId="e53d7b58-dbdd-4d07-98e2-707896ba4c06" testId="d1ca572a-2cd5-e70f-124c-d173af74a5ed" testName="Inventory.IntegrationTests.ProcurementToStockInIntegrationTests.ProcurementPayload_SubmitAndApprove_UpdatesStockAndAudit" computerName="LEGION" duration="00:00:00.0880288" startTime="2026-11-21T10:51:09.9446217+07:00" endTime="2026-11-21T10:51:09.9446219+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e53d7b58-dbdd-4d07-98e2-707896ba4c06" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Inventory.IntegrationTests.ProcurementToStockInIntegrationTests.ProcurementPayload_Valid_CreatesDraft" storage="d:\rudi\s2\inventory\tests\inventory.integrationtests\bin\release\net10.0\inventory.integrationtests.dll" id="e2faa8b3-1858-66c8-bf17-f51eb1284fa3">
+      <Execution id="ba8e23f8-f29f-4dda-bd39-4f5752f3f56f" />
+      <TestMethod codeBase="D:\Rudi\s2\Inventory\tests\Inventory.IntegrationTests\bin\Release\net10.0\Inventory.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Inventory.IntegrationTests.ProcurementToStockInIntegrationTests" name="ProcurementPayload_Valid_CreatesDraft" />
+    </UnitTest>
+    <UnitTest name="Inventory.IntegrationTests.ThirdPartyApprovalIntegrationTests.ThirdPartyApproval_DuplicateCallback_DoesNotDoubleApply" storage="d:\rudi\s2\inventory\tests\inventory.integrationtests\bin\release\net10.0\inventory.integrationtests.dll" id="63eb56a6-b15f-a7e7-38cd-b730e70f82c1">
+      <Execution id="f62cca89-5a44-4dcc-a26f-2fb3a41d8bef" />
+      <TestMethod codeBase="D:\Rudi\s2\Inventory\tests\Inventory.IntegrationTests\bin\Release\net10.0\Inventory.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Inventory.IntegrationTests.ThirdPartyApprovalIntegrationTests" name="ThirdPartyApproval_DuplicateCallback_DoesNotDoubleApply" />
+    </UnitTest>
+    <UnitTest name="Inventory.IntegrationTests.ThirdPartyApprovalIntegrationTests.ThirdPartyApproval_InvalidApiKey_Returns401AndDoesNotApprove" storage="d:\rudi\s2\inventory\tests\inventory.integrationtests\bin\release\net10.0\inventory.integrationtests.dll" id="221dac00-13a5-06c6-9011-159937cde1be">
+      <Execution id="6613bdc5-f023-4be8-9a4a-3d159fad23fb" />
+      <TestMethod codeBase="D:\Rudi\s2\Inventory\tests\Inventory.IntegrationTests\bin\Release\net10.0\Inventory.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Inventory.IntegrationTests.ThirdPartyApprovalIntegrationTests" name="ThirdPartyApproval_InvalidApiKey_Returns401AndDoesNotApprove" />
+    </UnitTest>
+    <UnitTest name="Inventory.IntegrationTests.ProcurementToStockInIntegrationTests.ExternalApproval_Reject_LeavesStockUnchanged" storage="d:\rudi\s2\inventory\tests\inventory.integrationtests\bin\release\net10.0\inventory.integrationtests.dll" id="b5ce2b6f-2626-c9bb-7278-9777773e6053">
+      <Execution id="04891d0e-d816-44f2-a7e4-e6fc8ec55f2a" />
+      <TestMethod codeBase="D:\Rudi\s2\Inventory\tests\Inventory.IntegrationTests\bin\Release\net10.0\Inventory.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Inventory.IntegrationTests.ProcurementToStockInIntegrationTests" name="ExternalApproval_Reject_LeavesStockUnchanged" />
+    </UnitTest>
+    <UnitTest name="Inventory.IntegrationTests.ProcurementToStockInIntegrationTests.ProcurementPayload_MultiLineAllValid_AppliesAllLines" storage="d:\rudi\s2\inventory\tests\inventory.integrationtests\bin\release\net10.0\inventory.integrationtests.dll" id="074bf4e4-41a6-53ec-dd32-2fd388dc9561">
+      <Execution id="e34fd221-212b-4c79-b6a3-78da57cef061" />
+      <TestMethod codeBase="D:\Rudi\s2\Inventory\tests\Inventory.IntegrationTests\bin\Release\net10.0\Inventory.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Inventory.IntegrationTests.ProcurementToStockInIntegrationTests" name="ProcurementPayload_MultiLineAllValid_AppliesAllLines" />
+    </UnitTest>
+    <UnitTest name="Inventory.IntegrationTests.ProcurementToStockInIntegrationTests.ProcurementPayload_Retry_CreatesSeparateDrafts_CurrentBehavior" storage="d:\rudi\s2\inventory\tests\inventory.integrationtests\bin\release\net10.0\inventory.integrationtests.dll" id="828219f5-1483-4534-4643-e3639173bf9c">
+      <Execution id="290c78e6-7048-4815-be15-eb7509b61d8a" />
+      <TestMethod codeBase="D:\Rudi\s2\Inventory\tests\Inventory.IntegrationTests\bin\Release\net10.0\Inventory.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Inventory.IntegrationTests.ProcurementToStockInIntegrationTests" name="ProcurementPayload_Retry_CreatesSeparateDrafts_CurrentBehavior" />
+    </UnitTest>
+    <UnitTest name="Inventory.IntegrationTests.ProcurementToStockInIntegrationTests.ProcurementPayload_MultiLineOneInvalid_RejectsWholeDocument" storage="d:\rudi\s2\inventory\tests\inventory.integrationtests\bin\release\net10.0\inventory.integrationtests.dll" id="f7d5d742-e329-d86c-12ed-f803f02bf52a">
+      <Execution id="49375e4e-c83b-4335-9342-9c162a90477a" />
+      <TestMethod codeBase="D:\Rudi\s2\Inventory\tests\Inventory.IntegrationTests\bin\Release\net10.0\Inventory.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Inventory.IntegrationTests.ProcurementToStockInIntegrationTests" name="ProcurementPayload_MultiLineOneInvalid_RejectsWholeDocument" />
+    </UnitTest>
+    <UnitTest name="Inventory.IntegrationTests.ProcurementToStockInIntegrationTests.ProcurementPayload_InactiveSupplier_IsRejected" storage="d:\rudi\s2\inventory\tests\inventory.integrationtests\bin\release\net10.0\inventory.integrationtests.dll" id="d2fd2275-8fdd-2399-84d5-e50e53c37972">
+      <Execution id="fb81126f-440f-4f5c-9ff5-88a8e5a246eb" />
+      <TestMethod codeBase="D:\Rudi\s2\Inventory\tests\Inventory.IntegrationTests\bin\Release\net10.0\Inventory.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Inventory.IntegrationTests.ProcurementToStockInIntegrationTests" name="ProcurementPayload_InactiveSupplier_IsRejected" />
+    </UnitTest>
+    <UnitTest name="Inventory.IntegrationTests.ProcurementToStockInIntegrationTests.ProcurementPayload_SubmitAndApprove_UpdatesStockAndAudit" storage="d:\rudi\s2\inventory\tests\inventory.integrationtests\bin\release\net10.0\inventory.integrationtests.dll" id="d1ca572a-2cd5-e70f-124c-d173af74a5ed">
+      <Execution id="e53d7b58-dbdd-4d07-98e2-707896ba4c06" />
+      <TestMethod codeBase="D:\Rudi\s2\Inventory\tests\Inventory.IntegrationTests\bin\Release\net10.0\Inventory.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Inventory.IntegrationTests.ProcurementToStockInIntegrationTests" name="ProcurementPayload_SubmitAndApprove_UpdatesStockAndAudit" />
+    </UnitTest>
+    <UnitTest name="Inventory.IntegrationTests.ProcurementToStockInIntegrationTests.ProcurementPayload_InactiveProduct_IsRejected" storage="d:\rudi\s2\inventory\tests\inventory.integrationtests\bin\release\net10.0\inventory.integrationtests.dll" id="1cc48448-2ffa-990b-0664-7547927f13d4">
+      <Execution id="076966b1-c512-4fda-8170-9a96afb7e368" />
+      <TestMethod codeBase="D:\Rudi\s2\Inventory\tests\Inventory.IntegrationTests\bin\Release\net10.0\Inventory.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Inventory.IntegrationTests.ProcurementToStockInIntegrationTests" name="ProcurementPayload_InactiveProduct_IsRejected" />
+    </UnitTest>
+    <UnitTest name="Inventory.IntegrationTests.ThirdPartyApprovalIntegrationTests.ThirdPartyApproval_ServerError_DoesNotApprove" storage="d:\rudi\s2\inventory\tests\inventory.integrationtests\bin\release\net10.0\inventory.integrationtests.dll" id="45631ae9-2993-2376-d995-8e02de5a18ca">
+      <Execution id="46d3f70e-9cfb-4571-8e73-7b531a4a653e" />
+      <TestMethod codeBase="D:\Rudi\s2\Inventory\tests\Inventory.IntegrationTests\bin\Release\net10.0\Inventory.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Inventory.IntegrationTests.ThirdPartyApprovalIntegrationTests" name="ThirdPartyApproval_ServerError_DoesNotApprove" />
+    </UnitTest>
+    <UnitTest name="Inventory.IntegrationTests.ThirdPartyApprovalIntegrationTests.ThirdPartyApproval_ApproveViaHttp_UpdatesStock" storage="d:\rudi\s2\inventory\tests\inventory.integrationtests\bin\release\net10.0\inventory.integrationtests.dll" id="9c44dc11-fe63-7baf-4cdb-d9cc3ff8293f">
+      <Execution id="c1512c11-de24-472d-9883-03bbab0b6371" />
+      <TestMethod codeBase="D:\Rudi\s2\Inventory\tests\Inventory.IntegrationTests\bin\Release\net10.0\Inventory.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Inventory.IntegrationTests.ThirdPartyApprovalIntegrationTests" name="ThirdPartyApproval_ApproveViaHttp_UpdatesStock" />
+    </UnitTest>
+    <UnitTest name="Inventory.IntegrationTests.ThirdPartyApprovalIntegrationTests.ThirdPartyApproval_RejectViaHttp_LeavesStockUnchanged" storage="d:\rudi\s2\inventory\tests\inventory.integrationtests\bin\release\net10.0\inventory.integrationtests.dll" id="c7fe8983-a72e-d0f8-4633-ebabf7d4796d">
+      <Execution id="e461ceb1-4f01-46b2-b367-39c1294380eb" />
+      <TestMethod codeBase="D:\Rudi\s2\Inventory\tests\Inventory.IntegrationTests\bin\Release\net10.0\Inventory.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Inventory.IntegrationTests.ThirdPartyApprovalIntegrationTests" name="ThirdPartyApproval_RejectViaHttp_LeavesStockUnchanged" />
+    </UnitTest>
+    <UnitTest name="Inventory.IntegrationTests.ProcurementToStockInIntegrationTests.ExternalApproval_UnauthorizedApprover_IsRejected" storage="d:\rudi\s2\inventory\tests\inventory.integrationtests\bin\release\net10.0\inventory.integrationtests.dll" id="90280091-7040-de86-fed1-20dd1e104c31">
+      <Execution id="56a3596a-c202-488a-ab5c-048a5ea78689" />
+      <TestMethod codeBase="D:\Rudi\s2\Inventory\tests\Inventory.IntegrationTests\bin\Release\net10.0\Inventory.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Inventory.IntegrationTests.ProcurementToStockInIntegrationTests" name="ExternalApproval_UnauthorizedApprover_IsRejected" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="d2fd2275-8fdd-2399-84d5-e50e53c37972" executionId="fb81126f-440f-4f5c-9ff5-88a8e5a246eb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1cc48448-2ffa-990b-0664-7547927f13d4" executionId="076966b1-c512-4fda-8170-9a96afb7e368" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="63eb56a6-b15f-a7e7-38cd-b730e70f82c1" executionId="f62cca89-5a44-4dcc-a26f-2fb3a41d8bef" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="074bf4e4-41a6-53ec-dd32-2fd388dc9561" executionId="e34fd221-212b-4c79-b6a3-78da57cef061" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c7fe8983-a72e-d0f8-4633-ebabf7d4796d" executionId="e461ceb1-4f01-46b2-b367-39c1294380eb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e2faa8b3-1858-66c8-bf17-f51eb1284fa3" executionId="ba8e23f8-f29f-4dda-bd39-4f5752f3f56f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f7d5d742-e329-d86c-12ed-f803f02bf52a" executionId="49375e4e-c83b-4335-9342-9c162a90477a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="45631ae9-2993-2376-d995-8e02de5a18ca" executionId="46d3f70e-9cfb-4571-8e73-7b531a4a653e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b5ce2b6f-2626-c9bb-7278-9777773e6053" executionId="04891d0e-d816-44f2-a7e4-e6fc8ec55f2a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9c44dc11-fe63-7baf-4cdb-d9cc3ff8293f" executionId="c1512c11-de24-472d-9883-03bbab0b6371" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="828219f5-1483-4534-4643-e3639173bf9c" executionId="290c78e6-7048-4815-be15-eb7509b61d8a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="221dac00-13a5-06c6-9011-159937cde1be" executionId="6613bdc5-f023-4be8-9a4a-3d159fad23fb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="90280091-7040-de86-fed1-20dd1e104c31" executionId="56a3596a-c202-488a-ab5c-048a5ea78689" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d1ca572a-2cd5-e70f-124c-d173af74a5ed" executionId="e53d7b58-dbdd-4d07-98e2-707896ba4c06" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="14" executed="14" passed="14" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.8.2+699d445a1a (64-bit .NET 10.0.15)&#xD;
+[xUnit.net 00:00:00.12]   Discovering: Inventory.IntegrationTests&#xD;
+[xUnit.net 00:00:00.17]   Discovered:  Inventory.IntegrationTests&#xD;
+[xUnit.net 00:00:00.18]   Starting:    Inventory.IntegrationTests&#xD;
+     Warning:&#xD;
+     The component "Fluent Assertions" is governed by the rules defined in the Xceed License Agreement and&#xD;
+     the Xceed Fluent Assertions Community License. You may use Fluent Assertions free of charge for&#xD;
+     non-commercial use only. An active subscription is required to use Fluent Assertions for commercial use.&#xD;
+     Please contact Xceed Sales mailto:sales@xceed.com to acquire a subscription at a very low cost.&#xD;
+     A paid commercial license supports the development and continued increasing support of&#xD;
+     Fluent Assertions users under both commercial and community licenses. Help us&#xD;
+     keep Fluent Assertions at the forefront of unit testing.&#xD;
+     For more information, visit https://xceed.com/products/unit-testing/fluent-assertions/&#xD;
+[xUnit.net 00:00:03.79]   Finished:    Inventory.IntegrationTests&#xD;
+</StdOut>
+    </Output>
+    <CollectorDataEntries>
+      <Collector agentName="LEGION" uri="datacollector://microsoft/CoverletCodeCoverage/1.0" collectorDisplayName="XPlat code coverage">
+        <UriAttachments>
+          <UriAttachment>
+            <A href="LEGION\coverage.cobertura.xml"></A>
+          </UriAttachment>
+        </UriAttachments>
+      </Collector>
+    </CollectorDataEntries>
+  </ResultSummary>
+</TestRun>
